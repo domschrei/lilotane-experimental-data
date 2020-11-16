@@ -1,0 +1,87 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version dbg-2020-10-21T11:59:28+02:00-glucose4
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020
+using SAT solver glucose4
+
+0.002 Sorts extracted.
+0.006 Mined 93 new reduction preconditions (+320.7%).
+0.006 25 operators and 24 methods created.
+0.006 Iteration 0.
+0.006 Creating initial layer of size 2
+0.007 Attempting to solve formula with 3 clauses (3 literals) and 1 assumptions
+0.007 Unsolvable at layer 0 -- expanding.
+0.007 Iteration 1.
+0.007 New layer size: 3
+0.007 Instantiating ...
+0.009 Collected 0 relevant facts at this layer
+0.009 Encoding ...
+0.009 Attempting to solve formula with 81 clauses (179 literals) and 2 assumptions
+0.009 Unsolvable at layer 1 -- expanding.
+0.009 Iteration 2.
+0.009 New layer size: 7
+0.009 Instantiating ...
+0.012 Collected 19 relevant facts at this layer
+0.012 Encoding ...
+0.012 Attempting to solve formula with 932 clauses (2234 literals) and 6 assumptions
+0.012 Unsolvable at layer 2 -- expanding.
+0.012 Iteration 3.
+0.012 New layer size: 17
+0.012 Instantiating ...
+0.013 Retroactively prune action (__SURROGATE*_method_for_multiple_expansions_of_plug|instance_4*plug|instance_4* dvd-1 Q_2,0_connector:0_c36e5d87ee4c2f33 Q_1,0_equipment:0_3eb3aa0439216316 Q_2,0_connector:1_c36e5d87ee4c2f33) due to impossible effect !(unused Q_2,0_connector:0_c36e5d87ee4c2f33)
+0.017 Retroactively prune action (__SURROGATE*_method_for_multiple_expansions_of_plug|instance_4*plug|instance_4* game-console-1 Q_2,3_connector:0_c36e5d87ee4c2f33 Q_1,1_equipment:0_3eb3aa0439216316 Q_2,3_connector:1_c36e5d87ee4c2f33) due to impossible effect !(unused Q_2,3_connector:0_c36e5d87ee4c2f33)
+0.020 Collected 59 relevant facts at this layer
+0.020 Encoding ...
+0.022 Attempting to solve formula with 6104 clauses (16440 literals) and 16 assumptions
+0.022 Unsolvable at layer 3 -- expanding.
+0.022 Iteration 4.
+0.022 New layer size: 39
+0.022 Instantiating ...
+0.023 Retroactively prune action (__SURROGATE*_method_for_multiple_expansions_of_plug|instance_4*plug|instance_4* dvd-1 Q_3,0_connector:0_c36e5d87ee4c2f33 Q_1,0_equipment:0_3eb3aa0439216316 Q_3,0_connector:1_c36e5d87ee4c2f33) due to impossible effect !(unused Q_3,0_connector:0_c36e5d87ee4c2f33)
+0.025 Retroactively prune action (__SURROGATE*_method_for_multiple_expansions_of_plug|instance_4*plug|instance_4* dvd-1 Q_3,2_connector:0_c36e5d87ee4c2f33 Q_1,0_equipment:0_3eb3aa0439216316 Q_3,2_connector:1_c36e5d87ee4c2f33) due to impossible effect !(unused Q_3,2_connector:0_c36e5d87ee4c2f33)
+0.035 Retroactively prune action (__SURROGATE*_method_for_multiple_expansions_of_plug|instance_4*plug|instance_4* game-console-1 Q_3,8_connector:0_c36e5d87ee4c2f33 Q_1,1_equipment:0_3eb3aa0439216316 Q_3,8_connector:1_c36e5d87ee4c2f33) due to impossible effect !(unused Q_3,8_connector:0_c36e5d87ee4c2f33)
+0.037 Retroactively prune action (__SURROGATE*_method_for_multiple_expansions_of_plug|instance_4*plug|instance_4* game-console-1 Q_3,10_connector:0_c36e5d87ee4c2f33 Q_1,1_equipment:0_3eb3aa0439216316 Q_3,10_connector:1_c36e5d87ee4c2f33) due to impossible effect !(unused Q_3,10_connector:0_c36e5d87ee4c2f33)
+0.046 Collected 59 relevant facts at this layer
+0.046 Encoding ...
+0.052 Attempting to solve formula with 21814 clauses (67642 literals) and 36 assumptions
+c last restart ## conflicts  :  19 933 
+0.053 Found a solution at layer 4.
+==>
+1539 plug dvd-1 dvd-1-scart-1 scart-cable-1 scart-cable-1-scart-1
+2192 plug scart-cable-1 scart-cable-1-scart-2 tv1-1 tv1-1-scart-1
+2699 plug game-console-1 game-console-1-scart-1 scart-cable-2 scart-cable-2-scart-1
+2827 plug scart-cable-2 scart-cable-2-scart-2 tv1-1 tv1-1-scart-2
+root 5 15
+5 av_connect dvd-1 tv1-1 -> m-connect-split-2 28 79 109
+15 av_connect game-console-1 tv1-1 -> m-connect-rec-av-1 138 190
+28 v_connect dvd-1 scart-cable-1 -> m-connect-direct-v 273
+79 a_connect dvd-1 scart-cable-1 -> m-connect-direct-a 434
+109 av_connect scart-cable-1 tv1-1 -> m-connect-direct-av 667
+138 direct_av_connect game-console-1 scart-cable-2 -> m-dconnect-av 2699
+190 av_connect scart-cable-2 tv1-1 -> m-connect-direct-av 1044
+273 direct_v_connect dvd-1 scart-cable-1 -> m-dconnect-v 1539
+434 direct_a_connect dvd-1 scart-cable-1 -> m-dconnect-a-empty
+667 direct_av_connect scart-cable-1 tv1-1 -> m-dconnect-av 2192
+1044 direct_av_connect scart-cable-2 tv1-1 -> m-dconnect-av 2827
+<==
+0.054 End of solution plan. (counted length of 5)
+0.054 Total amount of clauses encoded: 21814
+0.054 - directframeaxioms : 6498 cls
+0.054 - reductionconstraints : 4937 cls
+0.054 - substitutionconstraints : 3740 cls
+0.054 - qfactsemantics : 2401 cls
+0.054 - indirectframeaxioms : 1664 cls
+0.054 - atmostoneelement : 1342 cls
+0.054 - expansions : 441 cls
+0.054 - predecessors : 406 cls
+0.054 - actionconstraints : 202 cls
+0.054 - actioneffects : 122 cls
+0.054 - truefacts : 59 cls
+0.054 - axiomaticops : 2 cls
+0.054 Exiting happily.
+RUNWATCH_RESULT EXIT TIME_SECS 0.073 MEMPEAK_KBS 5455.872

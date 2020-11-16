@@ -1,0 +1,1040 @@
+PANDA - Planning and Acting in a Network Decomposition Architecture
+Believe us: It's great, it's fantastic!
+
+PANDA Copyright (C) 2014-2018 Gregor Behnke, Pascal Bercher, Thomas Geier, Kadir
+Dede, Daniel Höller, Kristof Mickeleit, Matthias Englert
+This program comes with ABSOLUTELY NO WARRANTY
+This is free software, and you are welcome to redistribute it under certain
+conditions; run PANDA with -license for details.
+
+Main Developers:
+- Gregor Behnke, http://www.uni-ulm.de/in/ki/behnke
+- Daniel Höller, http://www.uni-ulm.de/in/ki/hoeller
+
+With many thanks to various further contributors.
+Run PANDA with the command line argument -contributors for an extensive list.
+
+Run it with -help for more information like available options.
+
+
+PANDA was called with: "-systemConfig AAAI-2018-totSAT(cryptominisat) -programPath cryptominisat=./cryptominisat5 instances/Elevator/domain.hddl instances/Elevator/p09.hddl"
+
+
+Planner Configuration
+=====================
+Domain: instances/Elevator/domain.hddl
+Problem: instances/Elevator/p09.hddl
+Output: none
+
+Planning Configuration
+======================
+	printGeneralInformation : true
+	printAdditionalData     : true
+	random seed             : 42
+	time limit (in seconds) : none
+
+	external programs:
+		cryptominisat : ./cryptominisat5
+
+	Parsing Configuration
+	---------------------
+	Parser                : autodetect file-type
+	Expand Sort Hierarchy : true
+	ClosedWordAssumption  : true
+	CompileSHOPMethods    : true
+	Eliminate Equality    : true
+	Strip Hybridity       : true
+	Reduce General Tasks  : true
+	
+	Preprocessing Configuration
+	---------------------------
+	Compile negative preconditions    : true
+	Compile unit methods              : false
+	Compile order in methods          : false
+	Compile initial plan              : true
+	Ensure Methods Have Last Task     : false
+	Split independent parameters      : true
+	Remove unnecessary predicates     : true
+	Expand choiceless abstract tasks  : true
+	Domain Cleanup                    : true
+	Convert to SAS+                   : false
+	Grounded Reachability Analysis    : Planning Graph (mutex-free)
+	Grounded Task Decomposition Graph : Two Way TDG
+	Iterate reachability analysis     : true
+	Ground domain                     : true
+	Iterate reachability analysis     : true
+	Stop directly after grounding     : false
+	
+	SAT-Planning Configuration
+	--------------------------
+	solver           : cryptominisat
+	full planner run : true
+	reduction method : only normalise 
+	check result     : true
+	
+	Post-processing Configuration
+	-----------------------------
+	search result with Decomposition Tree
+	statistics
+	timings
+	search status
+	search result
+#0 "00 global:01:problem"="p09.hddl";"00 global:00:domain"="domain.hddl"
+Parsing domain ... using HDDL parser ... done
+Preparing internal domain representation ... done.
+Initial domain
+	number of abstract tasks = 5
+	number of tasks = 21
+	number of decomposition methods = 11
+	number of predicates = 8
+	number of sorts = 3
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 11
+	number of epsilon methods = 0
+	number of primitive tasks = 16
+	number of constants = 27
+Compiling negative preconditions ... done.
+	number of abstract tasks = 5
+	number of tasks = 21
+	number of decomposition methods = 11
+	number of predicates = 16
+	number of sorts = 3
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 11
+	number of epsilon methods = 0
+	number of primitive tasks = 16
+	number of constants = 27
+Compiling split parameters ... done.
+	number of abstract tasks = 5
+	number of tasks = 21
+	number of decomposition methods = 11
+	number of predicates = 16
+	number of sorts = 3
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 11
+	number of epsilon methods = 0
+	number of primitive tasks = 16
+	number of constants = 27
+Lifted reachability analysis and domain cleanup ... done.
+	number of abstract tasks = 5
+	number of tasks = 21
+	number of decomposition methods = 11
+	number of predicates = 8
+	number of sorts = 3
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 11
+	number of epsilon methods = 0
+	number of primitive tasks = 16
+	number of constants = 27
+Grounded planning graph ... done in 298ms.
+	Number of Grounded Actions 739
+	Number of Grounded Literals 225
+	number of abstract tasks = 5
+	number of tasks = 21
+	number of decomposition methods = 11
+	number of predicates = 8
+	number of sorts = 3
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 11
+	number of epsilon methods = 0
+	number of primitive tasks = 16
+	number of constants = 27
+Two Way TDG ... done.
+	number of abstract tasks = 5
+	number of tasks = 21
+	number of decomposition methods = 11
+	number of predicates = 8
+	number of sorts = 3
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 11
+	number of epsilon methods = 0
+	number of primitive tasks = 16
+	number of constants = 27
+Grounding ... done.
+	number of abstract tasks = 56
+	number of tasks = 693
+	number of decomposition methods = 414
+	number of predicates = 225
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 414
+	number of epsilon methods = 0
+	number of primitive tasks = 637
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 56
+	number of tasks = 693
+	number of decomposition methods = 414
+	number of predicates = 54
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 414
+	number of epsilon methods = 0
+	number of primitive tasks = 637
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 77ms.
+	Number of Grounded Actions 427
+	Number of Grounded Literals 48
+	number of abstract tasks = 38
+	number of tasks = 465
+	number of decomposition methods = 276
+	number of predicates = 54
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 276
+	number of epsilon methods = 0
+	number of primitive tasks = 427
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 38
+	number of tasks = 465
+	number of decomposition methods = 276
+	number of predicates = 54
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 276
+	number of epsilon methods = 0
+	number of primitive tasks = 427
+	number of constants = 0
+Compiling expand choiceless abstract tasks ... done.
+	number of abstract tasks = 38
+	number of tasks = 465
+	number of decomposition methods = 276
+	number of predicates = 54
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 276
+	number of epsilon methods = 0
+	number of primitive tasks = 427
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 38
+	number of tasks = 465
+	number of decomposition methods = 277
+	number of predicates = 54
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 276
+	number of epsilon methods = 0
+	number of primitive tasks = 427
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 38
+	number of tasks = 465
+	number of decomposition methods = 277
+	number of predicates = 48
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 276
+	number of epsilon methods = 0
+	number of primitive tasks = 427
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 31ms.
+	Number of Grounded Actions 427
+	Number of Grounded Literals 48
+	number of abstract tasks = 38
+	number of tasks = 465
+	number of decomposition methods = 277
+	number of predicates = 48
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 276
+	number of epsilon methods = 0
+	number of primitive tasks = 427
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 38
+	number of tasks = 465
+	number of decomposition methods = 276
+	number of predicates = 48
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 276
+	number of epsilon methods = 0
+	number of primitive tasks = 427
+	number of constants = 0
+Compiling expand choiceless abstract tasks ... done.
+	number of abstract tasks = 38
+	number of tasks = 465
+	number of decomposition methods = 276
+	number of predicates = 48
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 276
+	number of epsilon methods = 0
+	number of primitive tasks = 427
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 38
+	number of tasks = 465
+	number of decomposition methods = 277
+	number of predicates = 48
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 276
+	number of epsilon methods = 0
+	number of primitive tasks = 427
+	number of constants = 0
+Compiling methods with identical tasks ... done.
+	number of abstract tasks = 39
+	number of tasks = 466
+	number of decomposition methods = 278
+	number of predicates = 48
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 276
+	number of epsilon methods = 0
+	number of primitive tasks = 427
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 39
+	number of tasks = 466
+	number of decomposition methods = 278
+	number of predicates = 48
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 276
+	number of epsilon methods = 0
+	number of primitive tasks = 427
+	number of constants = 0
+Tasks 427 - 0
+Domain is acyclic: false
+Domain is mostly acyclic: false
+Domain is regular: false
+Domain is tail recursive: true
+Domain is totally ordered: true
+Domain has last task in all methods: true
+Time remaining for planner 9223372036854773017ms
+Computing minimum decomposition height: 4
+
+Running SAT search with K = 4
+Generating initial PDT ... Still waiting ... running for 101 will abort at 9223372036854772956
+done
+initial PDT has 20 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 14 leafs
+SHOP LEAFS 12
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Computing invariants [Rintanen]
+candidates build 3384
+Size 3384 at 0/427
+Size 2014
+Size 2014 at 0/427
+Size 138
+Size 138 at 0/427
+Size 102
+Size 102 at 0/427
+Size 102
+Invariant time: 0.149
+Number of invariants: 102
+Invariant Clauses 1530
+NUMBER OF CLAUSES 10918
+NUMBER OF STATE CLAUSES 3706
+NUMBER OF DECOMPOSITION CLAUSES 7212
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 33.94% 66.06% 0.0% 
+NUMBER OF PATHS 14
+Starting cryptominisat
+Setting starttime of solver to 1603874631265
+Command exited with non-zero status 20
+0.00 0.00
+
+Time command gave the following runtime for the solver: 0
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 5
+Generating initial PDT ... done
+initial PDT has 34 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 26 leafs
+SHOP LEAFS 20
+Assignment implications
+Generating clauses representing decomposition ... Still waiting ... running for 100 will abort at 9223372036854772024
+done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 2754
+NUMBER OF CLAUSES 24725
+NUMBER OF STATE CLAUSES 7165
+NUMBER OF DECOMPOSITION CLAUSES 17560
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 28.98% 71.02% 0.0% 
+NUMBER OF PATHS 26
+Starting cryptominisat
+Setting starttime of solver to 1603874631813
+Command exited with non-zero status 20
+0.00 0.00
+
+Time command gave the following runtime for the solver: 0
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 6
+Generating initial PDT ... done
+initial PDT has 52 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 42 leafs
+SHOP LEAFS 30
+Assignment implications
+Generating clauses representing decomposition ... Still waiting ... running for 100 will abort at 9223372036854771507
+done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 4386
+NUMBER OF CLAUSES 38936
+NUMBER OF STATE CLAUSES 11446
+NUMBER OF DECOMPOSITION CLAUSES 27490
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 29.400000000000002% 70.60000000000001% 0.0% 
+NUMBER OF PATHS 42
+Starting cryptominisat
+Setting starttime of solver to 1603874632446
+Command exited with non-zero status 20
+0.01 0.00
+
+Time command gave the following runtime for the solver: 10
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 7
+Generating initial PDT ... done
+initial PDT has 74 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 62 leafs
+SHOP LEAFS 42
+Assignment implications
+Generating clauses representing decomposition ... Still waiting ... running for 100 will abort at 9223372036854770894
+done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 6426
+NUMBER OF CLAUSES 55917
+NUMBER OF STATE CLAUSES 16717
+NUMBER OF DECOMPOSITION CLAUSES 39200
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 29.900000000000002% 70.10000000000001% 0.0% 
+NUMBER OF PATHS 62
+Starting cryptominisat
+Setting starttime of solver to 1603874633008
+Command exited with non-zero status 20
+0.01 0.00
+
+Time command gave the following runtime for the solver: 10
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 8
+Generating initial PDT ... done
+initial PDT has 100 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 86 leafs
+SHOP LEAFS 56
+Assignment implications
+Generating clauses representing decomposition ... Still waiting ... running for 100 will abort at 9223372036854770451
+done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 8874
+NUMBER OF CLAUSES 75668
+NUMBER OF STATE CLAUSES 22978
+NUMBER OF DECOMPOSITION CLAUSES 52690
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 30.37% 69.63% 0.0% 
+NUMBER OF PATHS 86
+Starting cryptominisat
+Setting starttime of solver to 1603874633529
+Command exited with non-zero status 20
+0.01 0.00
+
+Time command gave the following runtime for the solver: 10
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 9
+Generating initial PDT ... done
+initial PDT has 130 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 114 leafs
+SHOP LEAFS 72
+Assignment implications
+Generating clauses representing decomposition ... Still waiting ... running for 100 will abort at 9223372036854769919
+done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 11730
+NUMBER OF CLAUSES 98189
+NUMBER OF STATE CLAUSES 30229
+NUMBER OF DECOMPOSITION CLAUSES 67960
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 30.79% 69.21000000000001% 0.0% 
+NUMBER OF PATHS 114
+Starting cryptominisat
+Setting starttime of solver to 1603874634124
+Command exited with non-zero status 20
+0.09 0.00
+
+Time command gave the following runtime for the solver: 90
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 10
+Generating initial PDT ... done
+initial PDT has 164 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 146 leafs
+SHOP LEAFS 90
+Assignment implications
+Still waiting ... running for 100 will abort at 9223372036854769155
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 14994
+NUMBER OF CLAUSES 123480
+NUMBER OF STATE CLAUSES 38470
+NUMBER OF DECOMPOSITION CLAUSES 85010
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 31.150000000000002% 68.85000000000001% 0.0% 
+NUMBER OF PATHS 146
+Starting cryptominisat
+Setting starttime of solver to 1603874634912
+Command exited with non-zero status 20
+1.71 0.00
+
+Time command gave the following runtime for the solver: 1710
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 11
+Generating initial PDT ... done
+initial PDT has 202 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 182 leafs
+SHOP LEAFS 110
+Assignment implications
+Still waiting ... running for 100 will abort at 9223372036854766879
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 18666
+NUMBER OF CLAUSES 151541
+NUMBER OF STATE CLAUSES 47701
+NUMBER OF DECOMPOSITION CLAUSES 103840
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 31.48% 68.52% 0.0% 
+NUMBER OF PATHS 182
+Starting cryptominisat
+Setting starttime of solver to 1603874637168
+Command exited with non-zero status 10
+0.07 0.00
+
+Time command gave the following runtime for the solver: 70
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... done
+SAT-Solver says: SATISFIABLE
+
+extracting solution
+Consider method^5_0;3;1;3;3,11 11 m10_do_throw_all
+0;3;1;3;3 100 pathaction!5_0;3;1;3;3,312
+Consider method^2_0;1,234 234 m1_do_check_floor
+0;1 87 pathaction!2_0;1,304
+Consider method^0_,277 277 __top_3
+ 38 pathaction!0_,465
+Consider method^3_0;3;1,123 123 m10_do_throw_all
+0;3;1 142 pathaction!3_0;3;1,306
+Consider method^6_0;3;1;3;2;2,4 4 m2_do_check_floor
+0;3;1;3;2;2 147 pathaction!6_0;3;1;3;2;2,299
+Consider method^2_0;3,269 269 m7_do_start_throw_all
+0;3 160 pathaction!2_0;3,305
+Consider method^6_0;2;3;3;2;2,234 234 m1_do_check_floor
+0;2;3;3;2;2 151 pathaction!6_0;2;3;3;2;2,304
+Consider method^5_0;2;3;3;2,263 263 m2_do_check_floor
+0;2;3;3;2 169 pathaction!5_0;2;3;3;2,304
+Consider method^5_0;2;2;2;2,250 250 m1_do_check_floor
+0;2;2;2;2 170 pathaction!5_0;2;2;2;2,300
+Consider method^4_0;2;2;2,78 78 m3_do_check_floor
+0;2;2;2 23 pathaction!4_0;2;2;2,300
+Consider method^4_0;2;3;2,111 111 m3_do_check_floor
+0;2;3;2 0 pathaction!4_0;2;3;2,295
+Consider method^9_0;3;1;3;3;3;3;3;3,145 145 m8_do_throw_all
+0;3;1;3;3;3;3;3;3 190 pathaction!9_0;3;1;3;3;3;3;3;3,309
+Consider method^7_0;2;3;3;3;3;2,274 274 m3_do_check_floor
+0;2;3;3;3;3;2 135 pathaction!7_0;2;3;3;3;3;2,302
+Consider method^7_0;3;1;3;3;3;2,209 209 m2_do_check_floor
+0;3;1;3;3;3;2 182 pathaction!7_0;3;1;3;3;3;2,294
+Consider method^1_0,27 27 m0_do_problem
+0 9 pathaction!1_0,292
+Consider method^3_0;2;2,127 127 m3_do_check_floor
+0;2;2 192 pathaction!3_0;2;2,300
+Consider method^6_0;3;1;3;3;3,58 58 m9_do_throw_all
+0;3;1;3;3;3 27 pathaction!6_0;3;1;3;3;3,306
+Consider method^9_0;2;3;3;3;3;3;3;2,216 216 m3_do_check_floor
+0;2;3;3;3;3;3;3;2 84 pathaction!9_0;2;3;3;3;3;3;3;2,303
+Consider method^9_0;2;3;3;3;3;3;3;3,99 99 m6_do_take_all
+0;2;3;3;3;3;3;3;3 140 pathaction!9_0;2;3;3;3;3;3;3;3,395
+Consider method^8_0;2;3;3;3;3;2;2,228 228 m2_do_check_floor
+0;2;3;3;3;3;2;2 130 pathaction!8_0;2;3;3;3;3;2;2,302
+Consider method^4_0;2;3;3,249 249 m6_do_take_all
+0;2;3;3 168 pathaction!4_0;2;3;3,387
+Consider method^8_0;3;1;3;3;3;3;3,204 204 m10_do_throw_all
+0;3;1;3;3;3;3;3 94 pathaction!8_0;3;1;3;3;3;3;3,314
+Consider method^5_0;2;3;3;3,67 67 m5_do_take_all
+0;2;3;3;3 106 pathaction!5_0;2;3;3;3,396
+Consider method^10_0;3;1;3;3;3;3;3;2;2,208 208 m1_do_check_floor
+0;3;1;3;3;3;3;3;2;2 177 pathaction!10_0;3;1;3;3;3;3;3;2;2,296
+Consider method^8_0;2;3;3;3;3;3;3,155 155 m5_do_take_all
+0;2;3;3;3;3;3;3 11 pathaction!8_0;2;3;3;3;3;3;3,396
+Consider method^6_0;3;1;3;3;2,15 15 m2_do_check_floor
+0;3;1;3;3;2 12 pathaction!6_0;3;1;3;3;2,293
+Consider method^8_0;3;1;3;3;3;2;2,232 232 m1_do_check_floor
+0;3;1;3;3;3;2;2 118 pathaction!8_0;3;1;3;3;3;2;2,294
+Consider method^7_0;3;1;3;2;2;2,0 0 m1_do_check_floor
+0;3;1;3;2;2;2 52 pathaction!7_0;3;1;3;2;2;2,299
+Consider method^10_0;2;3;3;3;3;3;3;3;2,60 60 m1_do_check_floor
+0;2;3;3;3;3;3;3;3;2 80 pathaction!10_0;2;3;3;3;3;3;3;3;2,293
+Consider method^6_0;2;3;3;3;3,267 267 m6_do_take_all
+0;2;3;3;3;3 81 pathaction!6_0;2;3;3;3;3,390
+Consider method^7_0;3;1;3;3;3;3,1 1 m10_do_throw_all
+0;3;1;3;3;3;3 20 pathaction!7_0;3;1;3;3;3;3,307
+Consider method^7_0;3;1;3;3;2;2,150 150 m3_do_check_floor
+0;3;1;3;3;2;2 95 pathaction!7_0;3;1;3;3;2;2,293
+Consider method^5_0;3;1;2;2,32 32 m2_do_check_floor
+0;3;1;2;2 62 pathaction!5_0;3;1;2;2,297
+Consider method^6_0;3;1;2;2;2,230 230 m1_do_check_floor
+0;3;1;2;2;2 129 pathaction!6_0;3;1;2;2;2,297
+Consider method^9_0;2;3;3;3;3;2;2;2,167 167 m1_do_check_floor
+0;2;3;3;3;3;2;2;2 164 pathaction!9_0;2;3;3;3;3;2;2;2,302
+Consider method^7_0;2;3;3;3;2;2,83 83 m1_do_check_floor
+0;2;3;3;3;2;2 74 pathaction!7_0;2;3;3;3;2;2,298
+Consider method^10_0;2;3;3;3;3;3;3;3;3,131 131 m4_do_take_all
+0;2;3;3;3;3;3;3;3;3 33 pathaction!10_0;2;3;3;3;3;3;3;3;3,385
+Consider method^4_0;3;1;2,186 186 m3_do_check_floor
+0;3;1;2 7 pathaction!4_0;3;1;2,297
+Consider method^8_0;3;1;3;3;3;3;2,252 252 m2_do_check_floor
+0;3;1;3;3;3;3;2 24 pathaction!8_0;3;1;3;3;3;3;2,301
+Consider method^4_0;3;1;3,223 223 m9_do_throw_all
+0;3;1;3 76 pathaction!4_0;3;1;3,310
+Consider method^7_0;2;3;3;3;3;3,229 229 m6_do_take_all
+0;2;3;3;3;3;3 120 pathaction!7_0;2;3;3;3;3;3,394
+Consider method^6_0;2;3;3;3;2,163 163 m3_do_check_floor
+0;2;3;3;3;2 146 pathaction!6_0;2;3;3;3;2,298
+Consider method^5_0;3;1;3;2,137 137 m2_do_check_floor
+0;3;1;3;2 162 pathaction!5_0;3;1;3;2,299
+Consider method^2_0;2,256 256 m5_do_take_all
+0;2 166 pathaction!2_0;2,396
+Consider method^8_0;3;1;3;3;2;2;2,60 60 m1_do_check_floor
+0;3;1;3;3;2;2;2 30 pathaction!8_0;3;1;3;3;2;2;2,293
+Consider method^10_0;2;3;3;3;3;3;3;2;2,161 161 m1_do_check_floor
+0;2;3;3;3;3;3;3;2;2 89 pathaction!10_0;2;3;3;3;3;3;3;2;2,303
+Consider method^3_0;2;3,215 215 m6_do_take_all
+0;2;3 185 pathaction!3_0;2;3,392
+Consider method^9_0;3;1;3;3;3;3;2;2,82 82 m1_do_check_floor
+0;3;1;3;3;3;3;2;2 97 pathaction!9_0;3;1;3;3;3;3;2;2,301
+Consider method^9_0;2;3;3;3;3;3;2;2,234 234 m1_do_check_floor
+0;2;3;3;3;3;3;2;2 17 pathaction!9_0;2;3;3;3;3;3;2;2,304
+Consider method^9_0;3;1;3;3;3;3;3;2,213 213 m2_do_check_floor
+0;3;1;3;3;3;3;3;2 71 pathaction!9_0;3;1;3;3;3;3;3;2,296
+Consider method^8_0;2;3;3;3;3;3;2,142 142 m3_do_check_floor
+0;2;3;3;3;3;3;2 102 pathaction!8_0;2;3;3;3;3;3;2,304
+Consider method^5_0;2;3;2;2,74 74 m1_do_check_floor
+0;2;3;2;2 56 pathaction!5_0;2;3;2;2,295
+
+
+CHECKING primitive solution of length 100 ...
+true 132 __method_precondition_m0_do_problem_0_precondition[f0;]
+true 48 __method_precondition_m1_do_check_floor_1_precondition[f0;]
+true 78 nop[;]
+true 43 __method_precondition_m5_do_take_all_5_precondition[f0,f17,p6;]
+true 123 up[f0,f17;]
+true 172 __method_precondition_m3_do_check_floor_3_precondition[f17,p1;]
+true 53 board[f17,p1;]
+true 137 __method_precondition_m3_do_check_floor_3_precondition[f17,p6;]
+true 68 board[f17,p6;]
+true 104 __method_precondition_m1_do_check_floor_1_precondition[f17;]
+true 64 nop[;]
+true 51 __method_precondition_m6_do_take_all_6_precondition[f17,f16,p2;]
+true 188 down[f17,f16;]
+true 28 __method_precondition_m3_do_check_floor_3_precondition[f16,p2;]
+true 58 board[f16,p2;]
+true 15 __method_precondition_m1_do_check_floor_1_precondition[f16;]
+true 191 nop[;]
+true 110 __method_precondition_m6_do_take_all_6_precondition[f16,f0,p5;]
+true 41 down[f16,f0;]
+true 34 __method_precondition_m2_do_check_floor_2_precondition[f0,p6;]
+true 165 depart[f0,p6;]
+true 3 __method_precondition_m1_do_check_floor_1_precondition[f0;]
+true 2 nop[;]
+true 1 __method_precondition_m5_do_take_all_5_precondition[f0,f13,p4;]
+true 189 up[f0,f13;]
+true 93 __method_precondition_m3_do_check_floor_3_precondition[f13,p4;]
+true 92 board[f13,p4;]
+true 4 __method_precondition_m1_do_check_floor_1_precondition[f13;]
+true 121 nop[;]
+true 117 __method_precondition_m6_do_take_all_6_precondition[f13,f7,p7;]
+true 22 down[f13,f7;]
+true 25 __method_precondition_m3_do_check_floor_3_precondition[f7,p7;]
+true 161 board[f7,p7;]
+true 21 __method_precondition_m2_do_check_floor_2_precondition[f7,p4;]
+true 174 depart[f7,p4;]
+true 32 __method_precondition_m1_do_check_floor_1_precondition[f7;]
+true 86 nop[;]
+true 40 __method_precondition_m6_do_take_all_6_precondition[f7,f0,p5;]
+true 153 down[f7,f0;]
+true 72 __method_precondition_m3_do_check_floor_3_precondition[f0,p5;]
+true 13 board[f0,p5;]
+true 44 __method_precondition_m1_do_check_floor_1_precondition[f0;]
+true 157 nop[;]
+true 103 __method_precondition_m5_do_take_all_5_precondition[f0,f6,p8;]
+true 173 up[f0,f6;]
+true 152 __method_precondition_m3_do_check_floor_3_precondition[f6,p8;]
+true 96 board[f6,p8;]
+true 116 __method_precondition_m1_do_check_floor_1_precondition[f6;]
+true 75 nop[;]
+true 109 __method_precondition_m6_do_take_all_6_precondition[f6,f2,p0;]
+true 187 down[f6,f2;]
+true 66 __method_precondition_m1_do_check_floor_1_precondition[f2;]
+true 59 nop[;]
+true 61 __method_precondition_m4_do_take_all_4_precondition[f2;]
+true 63 nop[;]
+true 136 __method_precondition_m7_do_start_throw_all_7_precondition[f2;]
+true 181 __method_precondition_m10_do_throw_all_10_precondition[f2,f1,p2;]
+true 105 down[f2,f1;]
+true 127 __method_precondition_m3_do_check_floor_3_precondition[f1,p3;]
+true 42 board[f1,p3;]
+true 82 __method_precondition_m2_do_check_floor_2_precondition[f1,p2;]
+true 60 depart[f1,p2;]
+true 119 __method_precondition_m1_do_check_floor_1_precondition[f1;]
+true 139 nop[;]
+true 184 __method_precondition_m9_do_throw_all_9_precondition[f1,f10,p7;]
+true 39 up[f1,f10;]
+true 88 __method_precondition_m2_do_check_floor_2_precondition[f10,p7;]
+true 26 depart[f10,p7;]
+true 144 __method_precondition_m2_do_check_floor_2_precondition[f10,p3;]
+true 5 depart[f10,p3;]
+true 10 __method_precondition_m1_do_check_floor_1_precondition[f10;]
+true 180 nop[;]
+true 128 __method_precondition_m10_do_throw_all_10_precondition[f10,f2,p1;]
+true 122 down[f10,f2;]
+true 133 __method_precondition_m2_do_check_floor_2_precondition[f2,p1;]
+true 124 depart[f2,p1;]
+true 178 __method_precondition_m3_do_check_floor_3_precondition[f2,p0;]
+true 149 board[f2,p0;]
+true 6 __method_precondition_m1_do_check_floor_1_precondition[f2;]
+true 36 nop[;]
+true 163 __method_precondition_m9_do_throw_all_9_precondition[f2,f12,p8;]
+true 70 up[f2,f12;]
+true 45 __method_precondition_m2_do_check_floor_2_precondition[f12,p8;]
+true 91 depart[f12,p8;]
+true 145 __method_precondition_m1_do_check_floor_1_precondition[f12;]
+true 156 nop[;]
+true 176 __method_precondition_m10_do_throw_all_10_precondition[f12,f5,p0;]
+true 14 down[f12,f5;]
+true 46 __method_precondition_m2_do_check_floor_2_precondition[f5,p0;]
+true 107 depart[f5,p0;]
+true 171 __method_precondition_m1_do_check_floor_1_precondition[f5;]
+true 148 nop[;]
+true 18 __method_precondition_m10_do_throw_all_10_precondition[f5,f4,p5;]
+true 108 down[f5,f4;]
+true 67 __method_precondition_m2_do_check_floor_2_precondition[f4,p5;]
+true 98 depart[f4,p5;]
+true 155 __method_precondition_m1_do_check_floor_1_precondition[f4;]
+true 126 nop[;]
+true 101 __method_precondition_m8_do_throw_all_8_precondition[f4;]
+true 141 nop[;]
+ done.
+Panda says: SOLUTION
+============ global ============
+randomseed     = 42
+peak memory    = 178511232
+planner result = SOLUTION
+============ properties ============
+acyclic                  = false
+mostly acyclic           = false
+regular                  = false
+tail recursive           = true
+totally ordered          = true
+last task in all methods = true
+============ problem ============
+number of constants                  = 0
+number of predicates                 = 48
+number of actions                    = 466
+number of abstract actions           = 39
+number of primitive actions          = 427
+number of methods                    = 278
+number of primitive shop actions     = 276
+number of primitive non-shop actions = 151
+size of largest method               = 4
+average method size                  = 3
+============ sat ============
+plan length                     = -1
+number of variables             = 28380
+number of clauses               = 151541
+average size of clauses         = 2.734104961693535
+number of assert                = 29
+number of horn                  = 136874
+K offset                        = 0
+K chosen value                  = 11
+state formula                   = 47701
+method children clauses         = 0
+number of paths                 = 182
+maximum plan length             = 182
+number of decomposition clauses = 103840
+number of ordering clauses      = 0
+number of state clauses         = 47701
+solved                          = true
+timeout                         = false
+
+----------------- TIMINGS -----------------
+============ total ============
+total = 10055
+============ parsing ============
+total                         = 942
+file parser                   = 559
+sort expansion                = 153
+closed world assumption       = 117
+inherit preconditions         = 0
+shop methods                  = 7
+eliminate identical variables = 48
+strip domain of hybridity     = 2
+flatten formula               = 55
+============ preprocessing ============
+total                                      = 1712
+compile negative preconditions             = 56
+compile unit methods                       = 0
+split parameter                            = 34
+expand choiceless abstract tasks           = 0
+compile methods with identical tasks       = 20
+removing unnecessary predicates            = 270
+lifted reachabiltiy analysis               = 66
+grounded planning graph analysis           = 540
+grounded task decomposition graph analysis = 525
+grounding                                  = 187
+create artificial top task                 = 3
+============ search preparation ============
+compute state invariants = 187
+============ sat ============
+total                                        = 5580
+generate formula                             = 2810
+generate path decomposition tree             = 425
+normalise path decomposition tree            = 159
+sog optimisation                             = 133
+translate path decomposition tree to clauses = 1080
+generate state formula                       = 2743
+generate state invariant formula             = 106
+transform to DIMACS                          = 353
+SAT solver                                   = 1900
+SAT solver for K=0004                        = 0
+SAT solver for K=0005                        = 0
+SAT solver for K=0006                        = 10
+SAT solver for K=0007                        = 10
+SAT solver for K=0008                        = 10
+SAT solver for K=0009                        = 90
+SAT solver for K=0010                        = 1710
+SAT solver for K=0011                        = 70
+
+#1 "40 sat:90:solved"="true";"30 problem:05:number of primitive actions"="427";"30 problem:01:number of constants"="0";"30 problem:04:number of abstract actions"="39";"02 properties:04:tail recursive"="true";"00 global:80:peak memory"="178511232";"40 sat:20:state formula"="47701";"40 sat:01:number of variables"="28380";"40 sat:14:K offset"="0";"40 sat:30:number of paths"="182";"40 sat:00:plan length"="-1";"40 sat:50:number of ordering clauses"="0";"02 properties:02:mostly acyclic"="false";"30 problem:06:number of methods"="278";"30 problem:07:number of primitive shop actions"="276";"02 properties:05:totally ordered"="true";"02 properties:06:last task in all methods"="true";"30 problem:03:number of actions"="466";"30 problem:08:number of primitive non-shop actions"="151";"30 problem:02:number of predicates"="48";"40 sat:03:number of horn"="136874";"40 sat:15:K chosen value"="11";"30 problem:10:average method size"="3";"02 properties:03:regular"="false";"30 problem:09:size of largest method"="4";"40 sat:03:average size of clauses"="2.734104961693535";"40 sat:02:number of clauses"="151541";"40 sat:50:number of state clauses"="47701";"40 sat:03:number of assert"="29";"40 sat:22:method children clauses"="0";"00 global:90:planner result"="SOLUTION";"02 properties:01:acyclic"="false";"40 sat:31:maximum plan length"="182";"40 sat:50:number of decomposition clauses"="103840";"00 global:02:randomseed"="42";"40 sat:91:timeout"="false";"01 parsing:01:file parser"="559";"01 parsing:08:flatten formula"="55";"40 sat:41:SAT solver for K=0004"="0";"40 sat:00:total"="5580";"40 sat:16:generate state formula"="2743";"40 sat:20:transform to DIMACS"="353";"40 sat:11:generate path decomposition tree"="425";"02 preprocessing:07:compile methods with identical tasks"="20";"01 parsing:07:strip domain of hybridity"="2";"40 sat:41:SAT solver for K=0008"="10";"02 preprocessing:08:removing unnecessary predicates"="270";"01 parsing:03:closed world assumption"="117";"02 preprocessing:11:lifted reachabiltiy analysis"="66";"01 parsing:02:sort expansion"="153";"40 sat:12:normalise path decomposition tree"="159";"40 sat:40:SAT solver"="1900";"01 parsing:00:total"="942";"40 sat:10:generate formula"="2810";"40 sat:41:SAT solver for K=0005"="0";"01 parsing:04:inherit preconditions"="0";"40 sat:41:SAT solver for K=0009"="90";"02 preprocessing:01:compile negative preconditions"="56";"00 total:00:total"="10055";"40 sat:41:SAT solver for K=0011"="70";"40 sat:13:sog optimisation"="133";"02 preprocessing:12:grounded planning graph analysis"="540";"02 preprocessing:02:compile unit methods"="0";"02 preprocessing:23:grounded task decomposition graph analysis"="525";"40 sat:41:SAT solver for K=0006"="10";"02 preprocessing:04:split parameter"="34";"01 parsing:05:shop methods"="7";"10 search preparation:02:compute state invariants"="187";"01 parsing:06:eliminate identical variables"="48";"40 sat:15:translate path decomposition tree to clauses"="1080";"02 preprocessing:05:expand choiceless abstract tasks"="0";"40 sat:17:generate state invariant formula"="106";"40 sat:41:SAT solver for K=0010"="1710";"02 preprocessing:00:total"="1712";"02 preprocessing:99:create artificial top task"="3";"02 preprocessing:84:grounding"="187";"40 sat:41:SAT solver for K=0007"="10"
+#!verify __method_precondition_m0_do_problem_0_precondition[f0];__method_precondition_m1_do_check_floor_1_precondition[f0];nop[];__method_precondition_m5_do_take_all_5_precondition[f0,f17,p6];up[f0,f17];__method_precondition_m3_do_check_floor_3_precondition[f17,p1];board[f17,p1];__method_precondition_m3_do_check_floor_3_precondition[f17,p6];board[f17,p6];__method_precondition_m1_do_check_floor_1_precondition[f17];nop[];__method_precondition_m6_do_take_all_6_precondition[f17,f16,p2];down[f17,f16];__method_precondition_m3_do_check_floor_3_precondition[f16,p2];board[f16,p2];__method_precondition_m1_do_check_floor_1_precondition[f16];nop[];__method_precondition_m6_do_take_all_6_precondition[f16,f0,p5];down[f16,f0];__method_precondition_m2_do_check_floor_2_precondition[f0,p6];depart[f0,p6];__method_precondition_m1_do_check_floor_1_precondition[f0];nop[];__method_precondition_m5_do_take_all_5_precondition[f0,f13,p4];up[f0,f13];__method_precondition_m3_do_check_floor_3_precondition[f13,p4];board[f13,p4];__method_precondition_m1_do_check_floor_1_precondition[f13];nop[];__method_precondition_m6_do_take_all_6_precondition[f13,f7,p7];down[f13,f7];__method_precondition_m3_do_check_floor_3_precondition[f7,p7];board[f7,p7];__method_precondition_m2_do_check_floor_2_precondition[f7,p4];depart[f7,p4];__method_precondition_m1_do_check_floor_1_precondition[f7];nop[];__method_precondition_m6_do_take_all_6_precondition[f7,f0,p5];down[f7,f0];__method_precondition_m3_do_check_floor_3_precondition[f0,p5];board[f0,p5];__method_precondition_m1_do_check_floor_1_precondition[f0];nop[];__method_precondition_m5_do_take_all_5_precondition[f0,f6,p8];up[f0,f6];__method_precondition_m3_do_check_floor_3_precondition[f6,p8];board[f6,p8];__method_precondition_m1_do_check_floor_1_precondition[f6];nop[];__method_precondition_m6_do_take_all_6_precondition[f6,f2,p0];down[f6,f2];__method_precondition_m1_do_check_floor_1_precondition[f2];nop[];__method_precondition_m4_do_take_all_4_precondition[f2];nop[];__method_precondition_m7_do_start_throw_all_7_precondition[f2];__method_precondition_m10_do_throw_all_10_precondition[f2,f1,p2];down[f2,f1];__method_precondition_m3_do_check_floor_3_precondition[f1,p3];board[f1,p3];__method_precondition_m2_do_check_floor_2_precondition[f1,p2];depart[f1,p2];__method_precondition_m1_do_check_floor_1_precondition[f1];nop[];__method_precondition_m9_do_throw_all_9_precondition[f1,f10,p7];up[f1,f10];__method_precondition_m2_do_check_floor_2_precondition[f10,p7];depart[f10,p7];__method_precondition_m2_do_check_floor_2_precondition[f10,p3];depart[f10,p3];__method_precondition_m1_do_check_floor_1_precondition[f10];nop[];__method_precondition_m10_do_throw_all_10_precondition[f10,f2,p1];down[f10,f2];__method_precondition_m2_do_check_floor_2_precondition[f2,p1];depart[f2,p1];__method_precondition_m3_do_check_floor_3_precondition[f2,p0];board[f2,p0];__method_precondition_m1_do_check_floor_1_precondition[f2];nop[];__method_precondition_m9_do_throw_all_9_precondition[f2,f12,p8];up[f2,f12];__method_precondition_m2_do_check_floor_2_precondition[f12,p8];depart[f12,p8];__method_precondition_m1_do_check_floor_1_precondition[f12];nop[];__method_precondition_m10_do_throw_all_10_precondition[f12,f5,p0];down[f12,f5];__method_precondition_m2_do_check_floor_2_precondition[f5,p0];depart[f5,p0];__method_precondition_m1_do_check_floor_1_precondition[f5];nop[];__method_precondition_m10_do_throw_all_10_precondition[f5,f4,p5];down[f5,f4];__method_precondition_m2_do_check_floor_2_precondition[f4,p5];depart[f4,p5];__method_precondition_m1_do_check_floor_1_precondition[f4];nop[];__method_precondition_m8_do_throw_all_8_precondition[f4];nop[]
+==>
+0 __method_precondition_m0_do_problem_0_precondition f0 
+1 __method_precondition_m1_do_check_floor_1_precondition f0 
+2 nop  
+3 __method_precondition_m5_do_take_all_5_precondition f0 f17 p6 
+4 up f0 f17 
+5 __method_precondition_m3_do_check_floor_3_precondition f17 p1 
+6 board f17 p1 
+7 __method_precondition_m3_do_check_floor_3_precondition f17 p6 
+8 board f17 p6 
+9 __method_precondition_m1_do_check_floor_1_precondition f17 
+10 nop  
+11 __method_precondition_m6_do_take_all_6_precondition f17 f16 p2 
+12 down f17 f16 
+13 __method_precondition_m3_do_check_floor_3_precondition f16 p2 
+14 board f16 p2 
+15 __method_precondition_m1_do_check_floor_1_precondition f16 
+16 nop  
+17 __method_precondition_m6_do_take_all_6_precondition f16 f0 p5 
+18 down f16 f0 
+19 __method_precondition_m2_do_check_floor_2_precondition f0 p6 
+20 depart f0 p6 
+21 __method_precondition_m1_do_check_floor_1_precondition f0 
+22 nop  
+23 __method_precondition_m5_do_take_all_5_precondition f0 f13 p4 
+24 up f0 f13 
+25 __method_precondition_m3_do_check_floor_3_precondition f13 p4 
+26 board f13 p4 
+27 __method_precondition_m1_do_check_floor_1_precondition f13 
+28 nop  
+29 __method_precondition_m6_do_take_all_6_precondition f13 f7 p7 
+30 down f13 f7 
+31 __method_precondition_m3_do_check_floor_3_precondition f7 p7 
+32 board f7 p7 
+33 __method_precondition_m2_do_check_floor_2_precondition f7 p4 
+34 depart f7 p4 
+35 __method_precondition_m1_do_check_floor_1_precondition f7 
+36 nop  
+37 __method_precondition_m6_do_take_all_6_precondition f7 f0 p5 
+38 down f7 f0 
+39 __method_precondition_m3_do_check_floor_3_precondition f0 p5 
+40 board f0 p5 
+41 __method_precondition_m1_do_check_floor_1_precondition f0 
+42 nop  
+43 __method_precondition_m5_do_take_all_5_precondition f0 f6 p8 
+44 up f0 f6 
+45 __method_precondition_m3_do_check_floor_3_precondition f6 p8 
+46 board f6 p8 
+47 __method_precondition_m1_do_check_floor_1_precondition f6 
+48 nop  
+49 __method_precondition_m6_do_take_all_6_precondition f6 f2 p0 
+50 down f6 f2 
+51 __method_precondition_m1_do_check_floor_1_precondition f2 
+52 nop  
+53 __method_precondition_m4_do_take_all_4_precondition f2 
+54 nop  
+55 __method_precondition_m7_do_start_throw_all_7_precondition f2 
+56 __method_precondition_m10_do_throw_all_10_precondition f2 f1 p2 
+57 down f2 f1 
+58 __method_precondition_m3_do_check_floor_3_precondition f1 p3 
+59 board f1 p3 
+60 __method_precondition_m2_do_check_floor_2_precondition f1 p2 
+61 depart f1 p2 
+62 __method_precondition_m1_do_check_floor_1_precondition f1 
+63 nop  
+64 __method_precondition_m9_do_throw_all_9_precondition f1 f10 p7 
+65 up f1 f10 
+66 __method_precondition_m2_do_check_floor_2_precondition f10 p7 
+67 depart f10 p7 
+68 __method_precondition_m2_do_check_floor_2_precondition f10 p3 
+69 depart f10 p3 
+70 __method_precondition_m1_do_check_floor_1_precondition f10 
+71 nop  
+72 __method_precondition_m10_do_throw_all_10_precondition f10 f2 p1 
+73 down f10 f2 
+74 __method_precondition_m2_do_check_floor_2_precondition f2 p1 
+75 depart f2 p1 
+76 __method_precondition_m3_do_check_floor_3_precondition f2 p0 
+77 board f2 p0 
+78 __method_precondition_m1_do_check_floor_1_precondition f2 
+79 nop  
+80 __method_precondition_m9_do_throw_all_9_precondition f2 f12 p8 
+81 up f2 f12 
+82 __method_precondition_m2_do_check_floor_2_precondition f12 p8 
+83 depart f12 p8 
+84 __method_precondition_m1_do_check_floor_1_precondition f12 
+85 nop  
+86 __method_precondition_m10_do_throw_all_10_precondition f12 f5 p0 
+87 down f12 f5 
+88 __method_precondition_m2_do_check_floor_2_precondition f5 p0 
+89 depart f5 p0 
+90 __method_precondition_m1_do_check_floor_1_precondition f5 
+91 nop  
+92 __method_precondition_m10_do_throw_all_10_precondition f5 f4 p5 
+93 down f5 f4 
+94 __method_precondition_m2_do_check_floor_2_precondition f4 p5 
+95 depart f4 p5 
+96 __method_precondition_m1_do_check_floor_1_precondition f4 
+97 nop  
+98 __method_precondition_m8_do_throw_all_8_precondition f4 
+99 nop  
+root 130
+100 do_take_all f2  -> m4_do_take_all 53 54
+101 do_check_floor f10  -> m2_do_check_floor 68 69 123
+102 do_start_throw_all   -> m7_do_start_throw_all 55 109
+103 do_check_floor f12  -> m2_do_check_floor 82 83 113
+104 do_check_floor f13  -> m1_do_check_floor 27 28
+105 do_check_floor f1  -> m1_do_check_floor 62 63
+106 do_check_floor f4  -> m1_do_check_floor 96 97
+107 do_take_all f16  -> m6_do_take_all 17 18 110 119
+108 do_take_all f7  -> m6_do_take_all 37 38 125 122
+109 do_throw_all f2  -> m10_do_throw_all 56 57 124 132
+110 do_check_floor f0  -> m2_do_check_floor 19 20 121
+111 do_check_floor f17  -> m3_do_check_floor 7 8 127
+112 do_check_floor f6  -> m1_do_check_floor 47 48
+113 do_check_floor f12  -> m1_do_check_floor 84 85
+114 do_check_floor f2  -> m2_do_check_floor 74 75 149
+115 do_take_all f0  -> m5_do_take_all 3 4 142 147
+116 do_problem   -> m0_do_problem 0 129 115 102
+117 do_check_floor f7  -> m3_do_check_floor 31 32 126
+118 do_throw_all f4  -> m8_do_throw_all 98 99
+119 do_take_all f0  -> m5_do_take_all 23 24 131 151
+120 do_check_floor f10  -> m2_do_check_floor 66 67 101
+121 do_check_floor f0  -> m1_do_check_floor 21 22
+122 do_take_all f0  -> m5_do_take_all 43 44 135 134
+123 do_check_floor f10  -> m1_do_check_floor 70 71
+124 do_check_floor f1  -> m3_do_check_floor 58 59 145
+125 do_check_floor f0  -> m3_do_check_floor 39 40 141
+126 do_check_floor f7  -> m2_do_check_floor 33 34 133
+127 do_check_floor f17  -> m1_do_check_floor 9 10
+128 do_check_floor f16  -> m1_do_check_floor 15 16
+129 do_check_floor f0  -> m1_do_check_floor 1 2
+130 __MakeMethodSubTasksUniqueCompilation__top_3  -> __top_3 116
+131 do_check_floor f13  -> m3_do_check_floor 25 26 104
+132 do_throw_all f1  -> m9_do_throw_all 64 65 120 146
+133 do_check_floor f7  -> m1_do_check_floor 35 36
+134 do_take_all f6  -> m6_do_take_all 49 50 139 100
+135 do_check_floor f6  -> m3_do_check_floor 45 46 112
+136 do_check_floor f5  -> m2_do_check_floor 88 89 143
+137 do_check_floor f16  -> m3_do_check_floor 13 14 128
+138 do_check_floor f4  -> m2_do_check_floor 94 95 106
+139 do_check_floor f2  -> m1_do_check_floor 51 52
+140 do_throw_all f12  -> m10_do_throw_all 86 87 136 144
+141 do_check_floor f0  -> m1_do_check_floor 41 42
+142 do_check_floor f17  -> m3_do_check_floor 5 6 111
+143 do_check_floor f5  -> m1_do_check_floor 90 91
+144 do_throw_all f5  -> m10_do_throw_all 92 93 138 118
+145 do_check_floor f1  -> m2_do_check_floor 60 61 105
+146 do_throw_all f10  -> m10_do_throw_all 72 73 114 148
+147 do_take_all f17  -> m6_do_take_all 11 12 137 107
+148 do_throw_all f2  -> m9_do_throw_all 80 81 103 140
+149 do_check_floor f2  -> m3_do_check_floor 76 77 150
+150 do_check_floor f2  -> m1_do_check_floor 78 79
+151 do_take_all f13  -> m6_do_take_all 29 30 117 108
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 11.254 MEMPEAK_KBS 554158.08

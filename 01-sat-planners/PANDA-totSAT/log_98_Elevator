@@ -1,0 +1,724 @@
+PANDA - Planning and Acting in a Network Decomposition Architecture
+Believe us: It's great, it's fantastic!
+
+PANDA Copyright (C) 2014-2018 Gregor Behnke, Pascal Bercher, Thomas Geier, Kadir
+Dede, Daniel Höller, Kristof Mickeleit, Matthias Englert
+This program comes with ABSOLUTELY NO WARRANTY
+This is free software, and you are welcome to redistribute it under certain
+conditions; run PANDA with -license for details.
+
+Main Developers:
+- Gregor Behnke, http://www.uni-ulm.de/in/ki/behnke
+- Daniel Höller, http://www.uni-ulm.de/in/ki/hoeller
+
+With many thanks to various further contributors.
+Run PANDA with the command line argument -contributors for an extensive list.
+
+Run it with -help for more information like available options.
+
+
+PANDA was called with: "-systemConfig AAAI-2018-totSAT(cryptominisat) -programPath cryptominisat=./cryptominisat5 instances/Elevator/domain.hddl instances/Elevator/p18.hddl"
+
+
+Planner Configuration
+=====================
+Domain: instances/Elevator/domain.hddl
+Problem: instances/Elevator/p18.hddl
+Output: none
+
+Planning Configuration
+======================
+	printGeneralInformation : true
+	printAdditionalData     : true
+	random seed             : 42
+	time limit (in seconds) : none
+
+	external programs:
+		cryptominisat : ./cryptominisat5
+
+	Parsing Configuration
+	---------------------
+	Parser                : autodetect file-type
+	Expand Sort Hierarchy : true
+	ClosedWordAssumption  : true
+	CompileSHOPMethods    : true
+	Eliminate Equality    : true
+	Strip Hybridity       : true
+	Reduce General Tasks  : true
+	
+	Preprocessing Configuration
+	---------------------------
+	Compile negative preconditions    : true
+	Compile unit methods              : false
+	Compile order in methods          : false
+	Compile initial plan              : true
+	Ensure Methods Have Last Task     : false
+	Split independent parameters      : true
+	Remove unnecessary predicates     : true
+	Expand choiceless abstract tasks  : true
+	Domain Cleanup                    : true
+	Convert to SAS+                   : false
+	Grounded Reachability Analysis    : Planning Graph (mutex-free)
+	Grounded Task Decomposition Graph : Two Way TDG
+	Iterate reachability analysis     : true
+	Ground domain                     : true
+	Iterate reachability analysis     : true
+	Stop directly after grounding     : false
+	
+	SAT-Planning Configuration
+	--------------------------
+	solver           : cryptominisat
+	full planner run : true
+	reduction method : only normalise 
+	check result     : true
+	
+	Post-processing Configuration
+	-----------------------------
+	search result with Decomposition Tree
+	statistics
+	timings
+	search status
+	search result
+#0 "00 global:01:problem"="p18.hddl";"00 global:00:domain"="domain.hddl"
+Parsing domain ... using HDDL parser ... done
+Preparing internal domain representation ... done.
+Initial domain
+	number of abstract tasks = 5
+	number of tasks = 21
+	number of decomposition methods = 11
+	number of predicates = 8
+	number of sorts = 3
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 11
+	number of epsilon methods = 0
+	number of primitive tasks = 16
+	number of constants = 54
+Compiling negative preconditions ... done.
+	number of abstract tasks = 5
+	number of tasks = 21
+	number of decomposition methods = 11
+	number of predicates = 16
+	number of sorts = 3
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 11
+	number of epsilon methods = 0
+	number of primitive tasks = 16
+	number of constants = 54
+Compiling split parameters ... done.
+	number of abstract tasks = 5
+	number of tasks = 21
+	number of decomposition methods = 11
+	number of predicates = 16
+	number of sorts = 3
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 11
+	number of epsilon methods = 0
+	number of primitive tasks = 16
+	number of constants = 54
+Lifted reachability analysis and domain cleanup ... done.
+	number of abstract tasks = 5
+	number of tasks = 21
+	number of decomposition methods = 11
+	number of predicates = 8
+	number of sorts = 3
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 11
+	number of epsilon methods = 0
+	number of primitive tasks = 16
+	number of constants = 54
+Grounded planning graph ... done in 396ms.
+	Number of Grounded Actions 2773
+	Number of Grounded Literals 774
+	number of abstract tasks = 5
+	number of tasks = 21
+	number of decomposition methods = 11
+	number of predicates = 8
+	number of sorts = 3
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 11
+	number of epsilon methods = 0
+	number of primitive tasks = 16
+	number of constants = 54
+Two Way TDG ... done.
+	number of abstract tasks = 5
+	number of tasks = 21
+	number of decomposition methods = 11
+	number of predicates = 8
+	number of sorts = 3
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 11
+	number of epsilon methods = 0
+	number of primitive tasks = 16
+	number of constants = 54
+Grounding ... done.
+	number of abstract tasks = 110
+	number of tasks = 2428
+	number of decomposition methods = 1476
+	number of predicates = 774
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 1476
+	number of epsilon methods = 0
+	number of primitive tasks = 2318
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 110
+	number of tasks = 2428
+	number of decomposition methods = 1476
+	number of predicates = 108
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 1476
+	number of epsilon methods = 0
+	number of primitive tasks = 2318
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 175ms.
+	Number of Grounded Actions 1486
+	Number of Grounded Literals 95
+	number of abstract tasks = 71
+	number of tasks = 1557
+	number of decomposition methods = 943
+	number of predicates = 108
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 943
+	number of epsilon methods = 0
+	number of primitive tasks = 1486
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 71
+	number of tasks = 1557
+	number of decomposition methods = 943
+	number of predicates = 108
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 943
+	number of epsilon methods = 0
+	number of primitive tasks = 1486
+	number of constants = 0
+Compiling expand choiceless abstract tasks ... done.
+	number of abstract tasks = 71
+	number of tasks = 1557
+	number of decomposition methods = 943
+	number of predicates = 108
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 943
+	number of epsilon methods = 0
+	number of primitive tasks = 1486
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 71
+	number of tasks = 1557
+	number of decomposition methods = 944
+	number of predicates = 108
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 943
+	number of epsilon methods = 0
+	number of primitive tasks = 1486
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 71
+	number of tasks = 1557
+	number of decomposition methods = 944
+	number of predicates = 95
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 943
+	number of epsilon methods = 0
+	number of primitive tasks = 1486
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 87ms.
+	Number of Grounded Actions 1486
+	Number of Grounded Literals 95
+	number of abstract tasks = 71
+	number of tasks = 1557
+	number of decomposition methods = 944
+	number of predicates = 95
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 943
+	number of epsilon methods = 0
+	number of primitive tasks = 1486
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 71
+	number of tasks = 1557
+	number of decomposition methods = 943
+	number of predicates = 95
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 943
+	number of epsilon methods = 0
+	number of primitive tasks = 1486
+	number of constants = 0
+Compiling expand choiceless abstract tasks ... done.
+	number of abstract tasks = 71
+	number of tasks = 1557
+	number of decomposition methods = 943
+	number of predicates = 95
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 943
+	number of epsilon methods = 0
+	number of primitive tasks = 1486
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 71
+	number of tasks = 1557
+	number of decomposition methods = 944
+	number of predicates = 95
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 943
+	number of epsilon methods = 0
+	number of primitive tasks = 1486
+	number of constants = 0
+Compiling methods with identical tasks ... done.
+	number of abstract tasks = 72
+	number of tasks = 1558
+	number of decomposition methods = 945
+	number of predicates = 95
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 943
+	number of epsilon methods = 0
+	number of primitive tasks = 1486
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 72
+	number of tasks = 1558
+	number of decomposition methods = 945
+	number of predicates = 95
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 943
+	number of epsilon methods = 0
+	number of primitive tasks = 1486
+	number of constants = 0
+Tasks 1486 - 0
+Domain is acyclic: false
+Domain is mostly acyclic: false
+Domain is regular: false
+Domain is tail recursive: true
+Domain is totally ordered: true
+Domain has last task in all methods: true
+Time remaining for planner 9223372036854771172ms
+Computing minimum decomposition height: 4
+
+Running SAT search with K = 4
+Generating initial PDT ... Still waiting ... running for 102 will abort at 9223372036854771077
+done
+initial PDT has 20 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 14 leafs
+SHOP LEAFS 12
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Computing invariants [Rintanen]
+candidates build 13395
+Size 13395 at 0/1486
+Size 12971 at 500/1486
+Size 7741 at 1000/1486
+Size 7289
+Size 7289 at 0/1486
+Size 3683 at 500/1486
+Size 2429 at 1000/1486
+Size 2323
+Size 2323 at 0/1486
+Size 1015 at 500/1486
+Size 871 at 1000/1486
+Size 621
+Size 621 at 0/1486
+Size 365 at 500/1486
+Size 325 at 1000/1486
+Size 325
+Size 325 at 0/1486
+Size 325 at 500/1486
+Size 325 at 1000/1486
+Size 325
+Invariant time: 0.351
+Number of invariants: 325
+Invariant Clauses 4875
+NUMBER OF CLAUSES 43772
+NUMBER OF STATE CLAUSES 10178
+NUMBER OF DECOMPOSITION CLAUSES 33594
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 23.25% 76.75% 0.0% 
+NUMBER OF PATHS 14
+Starting cryptominisat
+Setting starttime of solver to 1603875508314
+Command exited with non-zero status 20
+0.01 0.00
+
+Time command gave the following runtime for the solver: 10
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 5
+Generating initial PDT ... done
+initial PDT has 34 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... Still waiting ... running for 100 will abort at 9223372036854769621
+done
+PDT has 26 leafs
+SHOP LEAFS 20
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 8775
+NUMBER OF CLAUSES 102650
+NUMBER OF STATE CLAUSES 19907
+NUMBER OF DECOMPOSITION CLAUSES 82743
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 19.39% 80.61% 0.0% 
+NUMBER OF PATHS 26
+Starting cryptominisat
+Setting starttime of solver to 1603875509078
+Command exited with non-zero status 20
+0.02 0.00
+
+Time command gave the following runtime for the solver: 20
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 6
+Generating initial PDT ... done
+initial PDT has 52 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 42 leafs
+SHOP LEAFS 30
+Assignment implications
+Still waiting ... running for 100 will abort at 9223372036854768968
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 13975
+NUMBER OF CLAUSES 154216
+NUMBER OF STATE CLAUSES 31441
+NUMBER OF DECOMPOSITION CLAUSES 122775
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 20.39% 79.61% 0.0% 
+NUMBER OF PATHS 42
+Starting cryptominisat
+Setting starttime of solver to 1603875509859
+Command exited with non-zero status 20
+0.03 0.00
+
+Time command gave the following runtime for the solver: 30
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 7
+Generating initial PDT ... done
+initial PDT has 74 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 62 leafs
+SHOP LEAFS 42
+Assignment implications
+Still waiting ... running for 101 will abort at 9223372036854768062
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 20475
+NUMBER OF CLAUSES 213019
+NUMBER OF STATE CLAUSES 45428
+NUMBER OF DECOMPOSITION CLAUSES 167591
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 21.330000000000002% 78.67% 0.0% 
+NUMBER OF PATHS 62
+Starting cryptominisat
+Setting starttime of solver to 1603875510868
+Command exited with non-zero status 20
+0.06 0.00
+
+Time command gave the following runtime for the solver: 60
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 8
+Generating initial PDT ... done
+initial PDT has 100 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... Still waiting ... running for 100 will abort at 9223372036854767194
+done
+PDT has 86 leafs
+SHOP LEAFS 56
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 28275
+NUMBER OF CLAUSES 279059
+NUMBER OF STATE CLAUSES 61868
+NUMBER OF DECOMPOSITION CLAUSES 217191
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 22.17% 77.83% 0.0% 
+NUMBER OF PATHS 86
+Starting cryptominisat
+Setting starttime of solver to 1603875511844
+Command exited with non-zero status 20
+0.08 0.00
+
+Time command gave the following runtime for the solver: 80
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 9
+Generating initial PDT ... done
+initial PDT has 130 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... Still waiting ... running for 100 will abort at 9223372036854766129
+done
+PDT has 114 leafs
+SHOP LEAFS 72
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 37375
+NUMBER OF CLAUSES 352336
+NUMBER OF STATE CLAUSES 80761
+NUMBER OF DECOMPOSITION CLAUSES 271575
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 22.92% 77.08% 0.0% 
+NUMBER OF PATHS 114
+Starting cryptominisat
+Setting starttime of solver to 1603875512925
+Command exited with non-zero status 20
+0.12 0.00
+
+Time command gave the following runtime for the solver: 120
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 10
+Generating initial PDT ... done
+initial PDT has 164 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 146 leafs
+SHOP LEAFS 90
+Assignment implications
+Still waiting ... running for 100 will abort at 9223372036854764970
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 47775
+NUMBER OF CLAUSES 432850
+NUMBER OF STATE CLAUSES 102107
+NUMBER OF DECOMPOSITION CLAUSES 330743
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 23.59% 76.41% 0.0% 
+NUMBER OF PATHS 146
+Starting cryptominisat
+Setting starttime of solver to 1603875513993
+Command exited with non-zero status 20
+0.16 0.00
+
+Time command gave the following runtime for the solver: 160
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 11
+Generating initial PDT ... done
+initial PDT has 202 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 182 leafs
+SHOP LEAFS 110
+Assignment implications
+Still waiting ... running for 100 will abort at 9223372036854763893
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 59475
+NUMBER OF CLAUSES 520601
+NUMBER OF STATE CLAUSES 125906
+NUMBER OF DECOMPOSITION CLAUSES 394695
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 24.18% 75.82000000000001% 0.0% 
+NUMBER OF PATHS 182
+Starting cryptominisat
+Setting starttime of solver to 1603875515240
+Command exited with non-zero status 20
+0.44 0.01
+
+Time command gave the following runtime for the solver: 450
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 12
+Generating initial PDT ... done
+initial PDT has 244 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 222 leafs
+SHOP LEAFS 132
+Assignment implications
+Still waiting ... running for 100 will abort at 9223372036854762414
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 72475
+NUMBER OF CLAUSES 615589
+NUMBER OF STATE CLAUSES 152158
+NUMBER OF DECOMPOSITION CLAUSES 463431
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 24.72% 75.28% 0.0% 
+NUMBER OF PATHS 222
+Starting cryptominisat
+Setting starttime of solver to 1603875516840
+Command exited with non-zero status 20
+1.23 0.02
+
+Time command gave the following runtime for the solver: 1250
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 13
+Generating initial PDT ... done
+initial PDT has 290 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... Still waiting ... running for 100 will abort at 9223372036854759907
+done
+PDT has 266 leafs
+SHOP LEAFS 156
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 86775
+NUMBER OF CLAUSES 717814
+NUMBER OF STATE CLAUSES 180863
+NUMBER OF DECOMPOSITION CLAUSES 536951
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 25.2% 74.8% 0.0% 
+NUMBER OF PATHS 266
+Starting cryptominisat
+Setting starttime of solver to 1603875519659
+Command exited with non-zero status 20
+12.66 0.03
+
+Time command gave the following runtime for the solver: 12690
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 14
+Generating initial PDT ... done
+initial PDT has 340 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... Still waiting ... running for 101 will abort at 9223372036854745714
+done
+PDT has 314 leafs
+SHOP LEAFS 182
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 102375
+NUMBER OF CLAUSES 827276
+NUMBER OF STATE CLAUSES 212021
+NUMBER OF DECOMPOSITION CLAUSES 615255
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 25.63% 74.37% 0.0% 
+NUMBER OF PATHS 314
+Starting cryptominisat
+Setting starttime of solver to 1603875534037
+Still waiting ... running for 60277 will abort at 9223372036854745714
+Still waiting ... running for 120317 will abort at 9223372036854745714
+Command exited with non-zero status 20
+122.65 0.13
+
+Time command gave the following runtime for the solver: 122780
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 15
+Generating initial PDT ... Still waiting ... running for 101 will abort at 9223372036854621177
+done
+initial PDT has 394 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 366 leafs
+SHOP LEAFS 210
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 119275
+NUMBER OF CLAUSES 943975
+NUMBER OF STATE CLAUSES 245632
+NUMBER OF DECOMPOSITION CLAUSES 698343
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 26.02% 73.98% 0.0% 
+NUMBER OF PATHS 366
+Starting cryptominisat
+Setting starttime of solver to 1603875658600
+Still waiting ... running for 60265 will abort at 9223372036854621177
+Still waiting ... running for 120305 will abort at 9223372036854621177
+
+RUNWATCH_RESULT TIMEOUT RETVAL 130 TIME_SECS 300.061 MEMPEAK_KBS 857892.864

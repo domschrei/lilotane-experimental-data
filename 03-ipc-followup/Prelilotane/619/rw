@@ -1,0 +1,85 @@
+0.000 
+0.000 Hello from  L i l o t a n e  version rls-2020-11-06T08:48:42+01:00-glucose4
+0.000 by Dominik Schreiber <dominik.schreiber@kit.edu> 2020
+0.000 using SAT solver glucose4
+0.000 
+0.022 83 methods, 57 abstract tasks, 65 primitive tasks
+0.022 Sorts extracted.
+0.058 Mined 75 new reduction preconditions (+7500.0%).
+0.058 86 operators and 83 methods created.
+0.058 Iteration 0.
+0.058 Creating initial layer of size 2
+0.070 Attempting to solve formula with 2081 clauses (2082 literals) and 1 assumptions
+0.070 Unsolvable at layer 0 -- expanding.
+0.070 Iteration 1.
+0.070 New layer size: 2
+0.159 Attempting to solve formula with 3144 clauses (4374 literals) and 1 assumptions
+0.159 Unsolvable at layer 1 -- expanding.
+0.159 Iteration 2.
+0.159 New layer size: 2
+0.231 Forbidding reduction (m_tlt_clear_road_tree Q_1,0_7:0_point Q_1,0_8:1_point)@(1,0): no children at offset 0
+0.247 Attempting to solve formula with 3376 clauses (5029 literals) and 1 assumptions
+0.247 Unsolvable at layer 2 -- expanding.
+0.247 Iteration 3.
+0.247 New layer size: 7
+0.269 Forbidding reduction (m_provide_medical_attention_in_hospital Q_2,0_14:0_hospital Q_1,0_12:0_adult)@(2,0): no children at offset 0
+0.269 Forbidding reduction (m_provide_medical_attention_simple_on_site Q_1,0_12:0_adult)@(2,0): no children at offset 0
+0.327 Forbidding reduction (m_clear_road_wreck Q_1,0_5:0_point Q_1,0_6:1_point)@(2,0): no children at offset 1
+0.400 Attempting to solve formula with 28305 clauses (76465 literals) and 4 assumptions
+0.400 Unsolvable at layer 3 -- expanding.
+0.400 Iteration 4.
+0.400 New layer size: 27
+0.542 Forbidding reduction (m_clean_up_hazard_normal Q_1,0_3:0_point Q_3,1_26:1_hazard_team Q_1,0_4:1_point very_hazardous very_hazardous)@(3,1): no children at offset 2
+0.677 Attempting to solve formula with 149574 clauses (449005 literals) and 23 assumptions
+0.680 Unsolvable at layer 4 -- expanding.
+0.680 Iteration 5.
+0.680 New layer size: 82
+1.185 Attempting to solve formula with 488281 clauses (1440560 literals) and 50 assumptions
+c last restart ## conflicts  :  2 3939 
+1.207 Found a solution at layer 5.
+==>
+52145 SHOP_methodm_get_to_person_drives_themself_precondition pcrew1 brighton_dump van1 pittsford_plaza
+61777 SHOP_methodm_drive_to_precondition van1 pittsford_plaza pcrew1
+61880 p_1Navegate_vehicle
+74716 SHOP_methodm_get_to_already_there_precondition van1 brighton_dump
+108504 SHOP_methodm_repair_line_without_tree_precondition brighton_dump pcrew1
+118221 SHOP_methodm_shut_off_power_precondition brighton_dump brighton rge
+118319 p_2Call
+118355 p_3Remove_wire
+122586 p_4String_wire
+124754 SHOP_methodm_turn_on_power_precondition brighton_dump brighton rge
+124804 call rge
+root 4160
+4160 tlt -> m_tlt_fix_power_line 4340
+4340 fix_power_line brighton_dump -> m_fix_power_line 4391 74715 6950
+4391 get_to pcrew1 brighton_dump -> m_get_to_person_drives_themself 52145 13458
+6950 repair_line pcrew1 brighton_dump -> m_repair_line_without_tree 108504 35056 118354 122585 40409
+13458 drive_to pcrew1 van1 brighton_dump -> m_drive_to 61777 61879
+35056 shut_off_power pcrew1 brighton_dump -> m_shut_off_power 118221 118318
+40409 turn_on_power pcrew1 brighton_dump -> m_turn_on_power 124754 124803
+61879 cnavegate_vehicle pcrew1 van1 brighton_dump pittsford_plaza -> prefix_1 61880
+74715 get_to van1 brighton_dump -> m_get_to_already_there 74716
+118318 ccall rge -> prefix_2 118319
+118354 cremove_wire pcrew1 brighton_dump -> prefix_3 118355
+122585 cstring_wire pcrew1 brighton_dump -> prefix_4 122586
+124803 ccall rge -> regular_2 124804
+<==
+1.208 End of solution plan.
+1.208 Total amount of clauses encoded: 488281
+1.208 - frameaxioms : 391505 cls
+1.208 - qfactsemantics : 63942 cls
+1.208 - reductionconstraints : 15237 cls
+1.208 - actionconstraints : 4992 cls
+1.208 - substitutionconstraints : 4141 cls
+1.208 - atmostoneelement : 2883 cls
+1.208 - truefacts : 2764 cls
+1.208 - expansions : 988 cls
+1.208 - predecessors : 729 cls
+1.208 - qconstequality : 165 cls
+1.208 - actioneffects : 150 cls
+1.208 - atleastoneelement : 122 cls
+1.208 - qtypeconstraints : 70 cls
+1.208 - axiomaticops : 2 cls
+1.208 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 1.502 MEMPEAK_KBS 0

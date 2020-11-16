@@ -1,0 +1,125 @@
+> Preprocessed problem (395 ms)
+Before elimination: 522 tasks
+After elimination: 522 tasks
+  522/1009 tasks are reachable.
+Initial task network before elimination: 5 tasks
+Initial task network after elimination: 5 tasks
+  139/322 facts are reachable.
+> Created HtnProblemData instance (40 ms)
+> Encoded problem into SAT (190 ms)
+> Wrote formula to file (44 ms)
+> Executed SAT solver (58 ms)
+> Decoded result (2 ms)
+> Reported result (0 ms)
+Total execution time: 729ms. Exiting.
+Command: ['java', '-jar', 'htnsat_patched.jar', '-d', '../problems/Depots/domain.pddl', '-p', '../problems/Depots/p07.pddl', '-e', 't-rex', '-i', '"{-P,-b8192}"']
+Limiting to 300.00s of run time
+Limiting to 8000000.00KB of RSS memory
+Limiting to CPUs {0}
+[CHILD] Returned 0
+Command: ['java', '-jar', 'htnsat_patched.jar', '-d', '../problems/Depots/domain.pddl', '-p', '../problems/Depots/p07.pddl', '-e', 't-rex', '-i', '"{-P,-b8192}"']
+Limiting to 300.00s of run time
+Limiting to 8000000.00KB of RSS memory
+Limiting to CPUs {0}
+Child python process: PID 10298
+Watching PID 10299
+Using CPU 1 for watching
+RUNWATCH_RESULT EXIT TIME_SECS 1.190 MEMPEAK_KBS 214716.416
+> Preprocessed problem (395 ms)
+> Created HtnProblemData instance (40 ms)
+> Encoded problem into SAT (190 ms)
+> Wrote formula to file (44 ms)
+> Executed SAT solver (58 ms)
+> Decoded result (2 ms)
+> Reported result (0 ms)
+Total execution time: 729ms. Exiting.
+Command : ./interpreter_t-rex -P -b8192 -i f.cnf 
+[0.000] This is T-REX interpreter, prototype version 04/2018, patched 09/2020.
+[0.000] Reading problem encoding from file "f.cnf".
+[0.000] Parsed head comment information.
+[0.004] Processed problem encoding.
+[0.005] Calculated possible fact changes of composite elements.
+[0.005] Initialized instantiation procedure.
+Init
+  150 clauses, 1475 variables
+Univ
+  0 clauses, 1475 variables
+Goal
+  1 clauses, 1475 variables
+Tran
+  0 clauses, 1475 variables
+[0.005] 
+[0.005] *************************************
+[0.005] * * *   M a k e s p a n     0   * * *
+[0.005] *************************************
+[0.006] Instantiated 1,811 initial clauses.
+[0.006] The encoding contains a total of 1,210 distinct variables.
+[0.006] Attempting solve with solver <glucose4> ...
+c 6 assumptions
+[0.006] Executed solver; result: UNSAT.
+[0.006] 
+[0.006] *************************************
+[0.006] * * *   M a k e s p a n     1   * * *
+[0.006] *************************************
+[0.006] Computed next depth properties: array size of 21.
+[0.008] Instantiated 2,910 transitional clauses.
+[0.010] Instantiated 9,282 universal clauses.
+[0.010] Instantiated and added clauses for a total of 14,003 clauses.
+[0.010] The encoding contains a total of 3,591 distinct variables.
+[0.010] Attempting solve with solver <glucose4> ...
+c 21 assumptions
+[0.010] Executed solver; result: UNSAT.
+[0.010] 
+[0.010] *************************************
+[0.010] * * *   M a k e s p a n     2   * * *
+[0.010] *************************************
+[0.010] Computed next depth properties: array size of 61.
+[0.031] Instantiated 7,722 transitional clauses.
+[0.036] Instantiated 26,501 universal clauses.
+[0.036] Instantiated and added clauses for a total of 48,226 clauses.
+[0.036] The encoding contains a total of 8,596 distinct variables.
+[0.036] Attempting solve with solver <glucose4> ...
+c 61 assumptions
+c last restart ## conflicts  :  4 88 
+[0.037] Executed solver; result: SAT.
+[0.037] Solver returned SAT; a solution has been found at makespan 2.
+22
+solution 168 1
+168 92 43 20 7 127 78 106 3 38 112 87 22 8 16 6 42 62 63 32 26 11 
+[0.038] Total amount of clauses encoded: 48226
+[0.038] - actionconstraints : 3220 cls
+[0.038] - actioneffects : 3432 cls
+[0.038] - atmostoneelement : 8312 cls
+[0.038] - expansions : 4351 cls
+[0.038] - frameaxioms : 13916 cls
+[0.038] - planlengthcounting : 0 cls
+[0.038] - predecessors : 3115 cls
+[0.038] - reductionconstraints : 11730 cls
+[0.038] - truefacts : 150 cls
+[0.038] Exiting.
+
+Compact plan:
+0: (lift hoist2 crate3 crate2 distributor1)
+1: (load hoist2 crate3 truck0 distributor1)
+2: (drive truck0 distributor1 distributor0)
+3: (unload hoist1 crate3 truck0 distributor0)
+4: (drop hoist1 crate3 pallet1 distributor0)
+5: (lift hoist1 crate4 crate0 distributor0)
+6: (load hoist1 crate4 truck0 distributor0)
+7: (lift hoist1 crate0 pallet4 distributor0)
+8: (drop hoist1 crate0 pallet3 distributor0)
+9: (drive truck0 distributor0 distributor1)
+10: (lift hoist2 crate1 pallet5 distributor1)
+11: (load hoist2 crate1 truck0 distributor1)
+12: (unload hoist2 crate4 truck0 distributor1)
+13: (drop hoist2 crate4 pallet5 distributor1)
+14: (unload hoist2 crate1 truck0 distributor1)
+15: (drop hoist2 crate1 crate4 distributor1)
+16: (drive truck0 distributor1 depot0)
+17: (lift hoist0 crate5 pallet0 depot0)
+18: (load hoist0 crate5 truck0 depot0)
+19: (drive truck0 depot0 distributor1)
+20: (unload hoist2 crate5 truck0 distributor1)
+21: (drop hoist2 crate5 crate1 distributor1)
+
+

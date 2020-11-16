@@ -1,0 +1,812 @@
+PANDA - Planning and Acting in a Network Decomposition Architecture
+Believe us: It's great, it's fantastic!
+
+PANDA Copyright (C) 2014-2018 Gregor Behnke, Pascal Bercher, Thomas Geier, Kadir
+Dede, Daniel Höller, Kristof Mickeleit, Matthias Englert
+This program comes with ABSOLUTELY NO WARRANTY
+This is free software, and you are welcome to redistribute it under certain
+conditions; run PANDA with -license for details.
+
+Main Developers:
+- Gregor Behnke, http://www.uni-ulm.de/in/ki/behnke
+- Daniel Höller, http://www.uni-ulm.de/in/ki/hoeller
+
+With many thanks to various further contributors.
+Run PANDA with the command line argument -contributors for an extensive list.
+
+Run it with -help for more information like available options.
+
+
+PANDA was called with: "-systemConfig AAAI-2018-totSAT(cryptominisat) -programPath cryptominisat=./cryptominisat5 instances/RoverG/domain.hddl instances/RoverG/p04.hddl"
+
+
+Planner Configuration
+=====================
+Domain: instances/RoverG/domain.hddl
+Problem: instances/RoverG/p04.hddl
+Output: none
+
+Planning Configuration
+======================
+	printGeneralInformation : true
+	printAdditionalData     : true
+	random seed             : 42
+	time limit (in seconds) : none
+
+	external programs:
+		cryptominisat : ./cryptominisat5
+
+	Parsing Configuration
+	---------------------
+	Parser                : autodetect file-type
+	Expand Sort Hierarchy : true
+	ClosedWordAssumption  : true
+	CompileSHOPMethods    : true
+	Eliminate Equality    : true
+	Strip Hybridity       : true
+	Reduce General Tasks  : true
+	
+	Preprocessing Configuration
+	---------------------------
+	Compile negative preconditions    : true
+	Compile unit methods              : false
+	Compile order in methods          : false
+	Compile initial plan              : true
+	Ensure Methods Have Last Task     : false
+	Split independent parameters      : true
+	Remove unnecessary predicates     : true
+	Expand choiceless abstract tasks  : true
+	Domain Cleanup                    : true
+	Convert to SAS+                   : false
+	Grounded Reachability Analysis    : Planning Graph (mutex-free)
+	Grounded Task Decomposition Graph : Two Way TDG
+	Iterate reachability analysis     : true
+	Ground domain                     : true
+	Iterate reachability analysis     : true
+	Stop directly after grounding     : false
+	
+	SAT-Planning Configuration
+	--------------------------
+	solver           : cryptominisat
+	full planner run : true
+	reduction method : only normalise 
+	check result     : true
+	
+	Post-processing Configuration
+	-----------------------------
+	search result with Decomposition Tree
+	statistics
+	timings
+	search status
+	search result
+#0 "00 global:01:problem"="p04.hddl";"00 global:00:domain"="domain.hddl"
+Parsing domain ... using HDDL parser ... done
+Preparing internal domain representation ... done.
+Initial domain
+	number of abstract tasks = 10
+	number of tasks = 40
+	number of decomposition methods = 16
+	number of predicates = 26
+	number of sorts = 8
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 16
+	number of epsilon methods = 0
+	number of primitive tasks = 30
+	number of constants = 18
+Compiling negative preconditions ... done.
+	number of abstract tasks = 10
+	number of tasks = 40
+	number of decomposition methods = 16
+	number of predicates = 52
+	number of sorts = 8
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 16
+	number of epsilon methods = 0
+	number of primitive tasks = 30
+	number of constants = 18
+Compiling split parameters ... done.
+	number of abstract tasks = 10
+	number of tasks = 40
+	number of decomposition methods = 16
+	number of predicates = 52
+	number of sorts = 8
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 16
+	number of epsilon methods = 0
+	number of primitive tasks = 30
+	number of constants = 18
+Lifted reachability analysis and domain cleanup ... done.
+	number of abstract tasks = 10
+	number of tasks = 40
+	number of decomposition methods = 16
+	number of predicates = 29
+	number of sorts = 8
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 16
+	number of epsilon methods = 0
+	number of primitive tasks = 30
+	number of constants = 18
+Grounded planning graph ... done in 178ms.
+	Number of Grounded Actions 201
+	Number of Grounded Literals 123
+	number of abstract tasks = 10
+	number of tasks = 40
+	number of decomposition methods = 16
+	number of predicates = 29
+	number of sorts = 8
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 16
+	number of epsilon methods = 0
+	number of primitive tasks = 30
+	number of constants = 18
+Two Way TDG ... done.
+	number of abstract tasks = 10
+	number of tasks = 40
+	number of decomposition methods = 16
+	number of predicates = 29
+	number of sorts = 8
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 16
+	number of epsilon methods = 0
+	number of primitive tasks = 30
+	number of constants = 18
+Grounding ... done.
+	number of abstract tasks = 54
+	number of tasks = 243
+	number of decomposition methods = 156
+	number of predicates = 155
+	number of sorts = 0
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 101
+	number of epsilon methods = 0
+	number of primitive tasks = 189
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 54
+	number of tasks = 243
+	number of decomposition methods = 156
+	number of predicates = 45
+	number of sorts = 0
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 101
+	number of epsilon methods = 0
+	number of primitive tasks = 189
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 40ms.
+	Number of Grounded Actions 189
+	Number of Grounded Literals 45
+	number of abstract tasks = 54
+	number of tasks = 243
+	number of decomposition methods = 156
+	number of predicates = 45
+	number of sorts = 0
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 101
+	number of epsilon methods = 0
+	number of primitive tasks = 189
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 54
+	number of tasks = 243
+	number of decomposition methods = 156
+	number of predicates = 45
+	number of sorts = 0
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 101
+	number of epsilon methods = 0
+	number of primitive tasks = 189
+	number of constants = 0
+Compiling expand choiceless abstract tasks ... done.
+	number of abstract tasks = 51
+	number of tasks = 240
+	number of decomposition methods = 153
+	number of predicates = 45
+	number of sorts = 0
+	number of tasks in largest method = 23
+	number of primitive SHOP tasks = 101
+	number of epsilon methods = 0
+	number of primitive tasks = 189
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 51
+	number of tasks = 240
+	number of decomposition methods = 153
+	number of predicates = 45
+	number of sorts = 0
+	number of tasks in largest method = 23
+	number of primitive SHOP tasks = 101
+	number of epsilon methods = 0
+	number of primitive tasks = 189
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 51
+	number of tasks = 240
+	number of decomposition methods = 153
+	number of predicates = 45
+	number of sorts = 0
+	number of tasks in largest method = 23
+	number of primitive SHOP tasks = 101
+	number of epsilon methods = 0
+	number of primitive tasks = 189
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 23ms.
+	Number of Grounded Actions 189
+	Number of Grounded Literals 45
+	number of abstract tasks = 51
+	number of tasks = 240
+	number of decomposition methods = 153
+	number of predicates = 45
+	number of sorts = 0
+	number of tasks in largest method = 23
+	number of primitive SHOP tasks = 101
+	number of epsilon methods = 0
+	number of primitive tasks = 189
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 51
+	number of tasks = 240
+	number of decomposition methods = 153
+	number of predicates = 45
+	number of sorts = 0
+	number of tasks in largest method = 23
+	number of primitive SHOP tasks = 101
+	number of epsilon methods = 0
+	number of primitive tasks = 189
+	number of constants = 0
+Compiling expand choiceless abstract tasks ... done.
+	number of abstract tasks = 51
+	number of tasks = 240
+	number of decomposition methods = 153
+	number of predicates = 45
+	number of sorts = 0
+	number of tasks in largest method = 23
+	number of primitive SHOP tasks = 101
+	number of epsilon methods = 0
+	number of primitive tasks = 189
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 51
+	number of tasks = 240
+	number of decomposition methods = 153
+	number of predicates = 45
+	number of sorts = 0
+	number of tasks in largest method = 23
+	number of primitive SHOP tasks = 101
+	number of epsilon methods = 0
+	number of primitive tasks = 189
+	number of constants = 0
+Compiling methods with identical tasks ... done.
+	number of abstract tasks = 59
+	number of tasks = 248
+	number of decomposition methods = 161
+	number of predicates = 45
+	number of sorts = 0
+	number of tasks in largest method = 23
+	number of primitive SHOP tasks = 101
+	number of epsilon methods = 0
+	number of primitive tasks = 189
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 59
+	number of tasks = 248
+	number of decomposition methods = 161
+	number of predicates = 45
+	number of sorts = 0
+	number of tasks in largest method = 23
+	number of primitive SHOP tasks = 101
+	number of epsilon methods = 0
+	number of primitive tasks = 189
+	number of constants = 0
+Tasks 189 - 54
+Domain is acyclic: true
+Domain is mostly acyclic: true
+Domain is regular: false
+Domain is tail recursive: true
+Domain is totally ordered: true
+Domain has last task in all methods: true
+Time remaining for planner 9223372036854773380ms
+Computing minimum decomposition height: 4
+
+Running SAT search with K = 4
+Generating initial PDT ... Still waiting ... running for 101 will abort at 9223372036854773319
+done
+initial PDT has 158 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 125 leafs
+SHOP LEAFS 59
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Computing invariants [Rintanen]
+candidates build 2970
+Size 2970 at 0/189
+Size 819
+Size 819 at 0/189
+Size 48
+Size 48 at 0/189
+Size 45
+Size 45 at 0/189
+Size 45
+Invariant time: 0.078
+Number of invariants: 45
+Invariant Clauses 5670
+NUMBER OF CLAUSES 26101
+NUMBER OF STATE CLAUSES 17859
+NUMBER OF DECOMPOSITION CLAUSES 8242
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 68.42% 31.580000000000002% 0.0% 
+NUMBER OF PATHS 125
+Starting cryptominisat
+Setting starttime of solver to 1603879073550
+Command exited with non-zero status 10
+0.01 0.00
+
+Time command gave the following runtime for the solver: 10
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... done
+SAT-Solver says: SATISFIABLE
+
+extracting solution
+Consider method^1_17,155 155 __UNIQUE-replacement_3
+17 3 pathaction!1_17,243
+Consider method^2_21;1,125 125 m15_do_calibrate
+21;1 149 pathaction!2_21;1,63
+Consider method^3_20;2;2,134 134 m3_do_navigate2
+20;2;2 105 pathaction!3_20;2;2,199
+Consider method^2_16;2,140 140 m3_do_navigate2
+16;2 99 pathaction!2_16;2,188
+Consider method^1_11,5 5 m1_do_navigate1
+11 68 pathaction!1_11,69
+Consider method^1_5,157 157 __UNIQUE-replacement_5
+5 138 pathaction!1_5,245
+Consider method^2_20;4,135 135 m14_send_image_data
+20;4 46 pathaction!2_20;4,109
+Consider method^3_9;1;2,21 21 m2_do_navigate2
+9;1;2 76 pathaction!3_9;1;2,196
+Consider method^3_21;2;2,18 18 m3_do_navigate2
+21;2;2 26 pathaction!3_21;2;2,180
+Consider method^2_11;2,17 17 m4_do_navigate2
+11;2 50 pathaction!2_11;2,175
+Consider method^3_20;4;1,81 81 m0_do_navigate1
+20;4;1 10 pathaction!3_20;4;1,66
+Consider method^2_21;2,28 28 m1_do_navigate1
+21;2 130 pathaction!2_21;2,67
+Consider method^3_22;2;2,71 71 m3_do_navigate2
+22;2;2 51 pathaction!3_22;2;2,193
+Consider method^3_22;1;1,85 85 m0_do_navigate1
+22;1;1 66 pathaction!3_22;1;1,67
+Consider method^1_15,159 159 __UNIQUE-replacement_7
+15 2 pathaction!1_15,247
+Consider method^2_7;0,145 145 m6_empty_store
+7;0 83 pathaction!2_7;0,85
+Consider method^2_20;2,1 1 m1_do_navigate1
+20;2 116 pathaction!2_20;2,66
+Consider method^3_21;4;1,85 85 m0_do_navigate1
+21;4;1 60 pathaction!3_21;4;1,67
+Consider method^1_19,14 14 m11_send_rock_data
+19 64 pathaction!1_19,139
+Consider method^1_16,45 45 m1_do_navigate1
+16 5 pathaction!1_16,71
+Consider method^2_22;1,10 10 m15_do_calibrate
+22;1 1 pathaction!2_22;1,62
+Consider method^3_22;4;1,81 81 m0_do_navigate1
+22;4;1 17 pathaction!3_22;4;1,66
+Consider method^2_1;2,71 71 m3_do_navigate2
+1;2 155 pathaction!2_1;2,193
+Consider method^1_10,158 158 __UNIQUE-replacement_6
+10 98 pathaction!1_10,246
+Consider method^2_17;0,79 79 m6_empty_store
+17;0 94 pathaction!2_17;0,84
+Consider method^2_14;1,128 128 m0_do_navigate1
+14;1 4 pathaction!2_14;1,69
+Consider method^1_1,97 97 m1_do_navigate1
+1 106 pathaction!1_1,66
+Consider method^3_11;2;3,90 90 m3_do_navigate2
+11;2;3 14 pathaction!3_11;2;3,192
+Consider method^1_9,92 92 m8_send_soil_data
+9 112 pathaction!1_9,112
+Consider method^2_19;1,106 106 m1_do_navigate1
+19;1 40 pathaction!2_19;1,69
+Consider method^2_2;0,100 100 m5_empty_store
+2;0 41 pathaction!2_2;0,85
+Consider method^1_21,37 37 m13_get_image_data
+21 24 pathaction!1_21,94
+Consider method^3_19;1;2,15 15 m3_do_navigate2
+19;1;2 53 pathaction!3_19;1;2,198
+Consider method^1_4,27 27 m9_send_soil_data
+4 144 pathaction!1_4,111
+Consider method^2_6;2,50 50 m3_do_navigate2
+6;2 90 pathaction!2_6;2,195
+Consider method^1_22,86 86 m13_get_image_data
+22 146 pathaction!1_22,93
+Consider method^2_9;1,57 57 m1_do_navigate1
+9;1 44 pathaction!2_9;1,65
+Consider method^3_21;1;1,81 81 m0_do_navigate1
+21;1;1 152 pathaction!3_21;1;1,66
+Consider method^1_14,41 41 m11_send_rock_data
+14 103 pathaction!1_14,138
+Consider method^1_20,59 59 m13_get_image_data
+20 91 pathaction!1_20,92
+Consider method^3_20;1;1,65 65 m0_do_navigate1
+20;1;1 111 pathaction!3_20;1;1,65
+Consider method^1_0,156 156 __UNIQUE-replacement_4
+0 77 pathaction!1_0,244
+Consider method^2_12;0,24 24 m5_empty_store
+12;0 8 pathaction!2_12;0,84
+Consider method^1_2,152 152 __UNIQUE-replacement_0
+2 137 pathaction!1_2,240
+Consider method^2_22;4,111 111 m14_send_image_data
+22;4 38 pathaction!2_22;4,108
+Consider method^2_20;1,110 110 m15_do_calibrate
+20;1 47 pathaction!2_20;1,62
+Consider method^1_7,153 153 __UNIQUE-replacement_1
+7 139 pathaction!1_7,241
+Consider method^2_21;4,54 54 m14_send_image_data
+21;4 122 pathaction!2_21;4,106
+Consider method^0_,160 160 <<<<__top_1;get_soil_data[waypoint1];m7_get_soil_data;0;-1,-2,-3,-4,-5,1,2,3,4,5,6>;get_rock_data[waypoint0];m10_get_rock_data;6;0,1,2,3,4,5,-1,-2,-3,-4,-5,7,8,9,10>;get_rock_data[waypoint1];m10_get_rock_data;11;0,1,2,3,4,5,6,7,8,9,10,-1,-2,-3,-4,-5,12,13,14>;get_soil_data[waypoint2];m7_get_soil_data;5;0,1,2,3,4,-1,-2,-3,-4,-5,6,7,8,9,10,11,12,13,14,15,16,17,18>
+ 65 pathaction!0_,239
+Consider method^2_22;2,97 97 m1_do_navigate1
+22;2 6 pathaction!2_22;2,66
+Consider method^1_12,154 154 __UNIQUE-replacement_2
+12 13 pathaction!1_12,242
+Consider method^1_6,84 84 m1_do_navigate1
+6 110 pathaction!1_6,65
+
+
+CHECKING primitive solution of length 105 ...
+true 37 __method_precondition_m7_get_soil_data_7_precondition[rover1store,rover1;]
+true 63 __method_precondition_m1_do_navigate1_1_precondition[rover1,waypoint0;]
+true 100 visit[waypoint0;]
+true 67 __method_precondition_m3_do_navigate2_3_precondition[rover1,waypoint0,waypoint1;]
+true 131 navigate[rover1,waypoint0,waypoint1;]
+true 127 unvisit[waypoint0;]
+true 135 __method_precondition_m5_empty_store_5_precondition[rover1store;]
+true 136 nop[;]
+true 109 sample_soil[rover1,rover1store,waypoint1;]
+true 119 __method_precondition_m9_send_soil_data_9_precondition[general,waypoint3,waypoint1,rover1;]
+true 58 communicate_soil_data2[rover1,general,waypoint1,waypoint3;]
+true 43 __method_precondition_m7_get_soil_data_7_precondition[rover1store,rover1;]
+true 45 __method_precondition_m1_do_navigate1_1_precondition[rover1,waypoint1;]
+true 57 visit[waypoint1;]
+true 153 __method_precondition_m3_do_navigate2_3_precondition[rover1,waypoint1,waypoint2;]
+true 34 navigate[rover1,waypoint1,waypoint2;]
+true 96 unvisit[waypoint1;]
+true 129 __method_precondition_m6_empty_store_6_precondition[rover1store;]
+true 0 drop[rover1,rover1store;]
+true 81 sample_soil[rover1,rover1store,waypoint2;]
+true 104 __method_precondition_m8_send_soil_data_8_precondition[general,waypoint3,waypoint2;]
+true 89 __method_precondition_m1_do_navigate1_1_precondition[rover1,waypoint2;]
+true 33 visit[waypoint2;]
+true 85 __method_precondition_m2_do_navigate2_2_precondition[rover1,waypoint2;]
+true 18 nop[;]
+true 143 unvisit[waypoint2;]
+true 70 communicate_soil_data1[rover1,general,waypoint2,waypoint2,waypoint3;]
+true 31 __method_precondition_m10_get_rock_data_10_precondition[rover0store,rover0;]
+true 150 __method_precondition_m1_do_navigate1_1_precondition[rover0,waypoint0;]
+true 97 visit[waypoint0;]
+true 69 __method_precondition_m4_do_navigate2_4_precondition[rover0,waypoint0,waypoint0,waypoint3;]
+true 73 navigate[rover0,waypoint0,waypoint3;]
+true 115 visit[waypoint3;]
+true 7 __method_precondition_m3_do_navigate2_3_precondition[rover0,waypoint3,waypoint0;]
+true 107 navigate[rover0,waypoint3,waypoint0;]
+true 87 unvisit[waypoint3;]
+true 61 unvisit[waypoint0;]
+true 48 __method_precondition_m5_empty_store_5_precondition[rover0store;]
+true 75 nop[;]
+true 54 sample_rock[rover0,rover0store,waypoint0;]
+true 156 __method_precondition_m11_send_rock_data_11_precondition[general,waypoint3,waypoint0;]
+true 42 __method_precondition_m0_do_navigate1_0_precondition[rover0,waypoint0;]
+true 79 nop[;]
+true 145 communicate_rock_data1[rover0,general,waypoint0,waypoint0,waypoint3;]
+true 9 __method_precondition_m10_get_rock_data_10_precondition[rover0store,rover0;]
+true 133 __method_precondition_m1_do_navigate1_1_precondition[rover0,waypoint0;]
+true 12 visit[waypoint0;]
+true 101 __method_precondition_m3_do_navigate2_3_precondition[rover0,waypoint0,waypoint1;]
+true 158 navigate[rover0,waypoint0,waypoint1;]
+true 142 unvisit[waypoint0;]
+true 151 __method_precondition_m6_empty_store_6_precondition[rover0store;]
+true 32 drop[rover0,rover0store;]
+true 148 sample_rock[rover0,rover0store,waypoint1;]
+true 29 __method_precondition_m11_send_rock_data_11_precondition[general,waypoint3,waypoint0;]
+true 113 __method_precondition_m1_do_navigate1_1_precondition[rover0,waypoint1;]
+true 92 visit[waypoint1;]
+true 16 __method_precondition_m3_do_navigate2_3_precondition[rover0,waypoint1,waypoint0;]
+true 82 navigate[rover0,waypoint1,waypoint0;]
+true 102 unvisit[waypoint1;]
+true 59 communicate_rock_data1[rover0,general,waypoint1,waypoint0,waypoint3;]
+true 124 __method_precondition_m13_get_image_data_13_precondition[waypoint1,rover1,high_res,camera1,objective0;]
+true 154 __method_precondition_m15_do_calibrate_15_precondition[camera1,objective1,waypoint2;]
+true 27 __method_precondition_m0_do_navigate1_0_precondition[rover1,waypoint2;]
+true 80 nop[;]
+true 55 calibrate[rover1,camera1,objective1,waypoint2;]
+true 161 __method_precondition_m1_do_navigate1_1_precondition[rover1,waypoint2;]
+true 126 visit[waypoint2;]
+true 78 __method_precondition_m3_do_navigate2_3_precondition[rover1,waypoint2,waypoint1;]
+true 157 navigate[rover1,waypoint2,waypoint1;]
+true 160 unvisit[waypoint2;]
+true 19 take_image[rover1,waypoint1,objective0,camera1,high_res;]
+true 123 __method_precondition_m14_send_image_data_14_precondition[general,waypoint3,waypoint1;]
+true 147 __method_precondition_m0_do_navigate1_0_precondition[rover1,waypoint1;]
+true 74 nop[;]
+true 118 communicate_image_data[rover1,general,objective0,high_res,waypoint1,waypoint3;]
+true 25 __method_precondition_m13_get_image_data_13_precondition[waypoint0,rover1,high_res,camera0,objective2;]
+true 52 __method_precondition_m15_do_calibrate_15_precondition[camera0,objective1,waypoint1;]
+true 88 __method_precondition_m0_do_navigate1_0_precondition[rover1,waypoint1;]
+true 11 nop[;]
+true 15 calibrate[rover1,camera0,objective1,waypoint1;]
+true 71 __method_precondition_m1_do_navigate1_1_precondition[rover1,waypoint1;]
+true 132 visit[waypoint1;]
+true 134 __method_precondition_m3_do_navigate2_3_precondition[rover1,waypoint1,waypoint0;]
+true 36 navigate[rover1,waypoint1,waypoint0;]
+true 23 unvisit[waypoint1;]
+true 93 take_image[rover1,waypoint0,objective2,camera0,high_res;]
+true 20 __method_precondition_m14_send_image_data_14_precondition[general,waypoint3,waypoint0;]
+true 108 __method_precondition_m0_do_navigate1_0_precondition[rover1,waypoint0;]
+true 141 nop[;]
+true 120 communicate_image_data[rover1,general,objective2,high_res,waypoint0,waypoint3;]
+true 21 __method_precondition_m13_get_image_data_13_precondition[waypoint1,rover1,colour,camera1,objective0;]
+true 125 __method_precondition_m15_do_calibrate_15_precondition[camera1,objective1,waypoint0;]
+true 140 __method_precondition_m0_do_navigate1_0_precondition[rover1,waypoint0;]
+true 22 nop[;]
+true 84 calibrate[rover1,camera1,objective1,waypoint0;]
+true 121 __method_precondition_m1_do_navigate1_1_precondition[rover1,waypoint0;]
+true 30 visit[waypoint0;]
+true 28 __method_precondition_m3_do_navigate2_3_precondition[rover1,waypoint0,waypoint1;]
+true 35 navigate[rover1,waypoint0,waypoint1;]
+true 39 unvisit[waypoint0;]
+true 95 take_image[rover1,waypoint1,objective0,camera1,colour;]
+true 86 __method_precondition_m14_send_image_data_14_precondition[general,waypoint3,waypoint1;]
+true 114 __method_precondition_m0_do_navigate1_0_precondition[rover1,waypoint1;]
+true 56 nop[;]
+true 72 communicate_image_data[rover1,general,objective0,colour,waypoint1,waypoint3;]
+ done.
+Panda says: SOLUTION
+============ global ============
+randomseed     = 42
+peak memory    = 162176568
+planner result = SOLUTION
+============ properties ============
+acyclic                  = true
+mostly acyclic           = true
+regular                  = false
+tail recursive           = true
+totally ordered          = true
+last task in all methods = true
+============ problem ============
+number of constants                  = 0
+number of predicates                 = 45
+number of actions                    = 248
+number of abstract actions           = 59
+number of primitive actions          = 189
+number of methods                    = 161
+number of primitive shop actions     = 101
+number of primitive non-shop actions = 88
+size of largest method               = 23
+average method size                  = 3
+============ sat ============
+plan length                     = -1
+number of variables             = 11685
+number of clauses               = 26101
+average size of clauses         = 2.380062066587487
+number of assert                = 20
+number of horn                  = 23120
+K offset                        = 0
+K chosen value                  = 4
+state formula                   = 17859
+method children clauses         = 0
+number of paths                 = 125
+maximum plan length             = 125
+number of decomposition clauses = 8242
+number of ordering clauses      = 0
+number of state clauses         = 17859
+solved                          = true
+timeout                         = false
+
+----------------- TIMINGS -----------------
+============ total ============
+total = 3857
+============ parsing ============
+total                         = 1001
+file parser                   = 563
+sort expansion                = 163
+closed world assumption       = 114
+inherit preconditions         = 0
+shop methods                  = 9
+eliminate identical variables = 51
+strip domain of hybridity     = 1
+flatten formula               = 98
+============ preprocessing ============
+total                                      = 1296
+compile negative preconditions             = 28
+compile unit methods                       = 0
+split parameter                            = 49
+expand choiceless abstract tasks           = 109
+compile methods with identical tasks       = 27
+removing unnecessary predicates            = 89
+lifted reachabiltiy analysis               = 90
+grounded planning graph analysis           = 405
+grounded task decomposition graph analysis = 367
+grounding                                  = 122
+create artificial top task                 = 1
+============ search preparation ============
+compute state invariants = 132
+============ sat ============
+total                                        = 845
+generate formula                             = 671
+generate path decomposition tree             = 131
+normalise path decomposition tree            = 50
+sog optimisation                             = 36
+translate path decomposition tree to clauses = 184
+generate state formula                       = 662
+generate state invariant formula             = 10
+transform to DIMACS                          = 63
+SAT solver                                   = 10
+SAT solver for K=0004                        = 10
+
+#1 "40 sat:90:solved"="true";"30 problem:05:number of primitive actions"="189";"30 problem:01:number of constants"="0";"30 problem:04:number of abstract actions"="59";"02 properties:04:tail recursive"="true";"00 global:80:peak memory"="162176568";"40 sat:20:state formula"="17859";"40 sat:01:number of variables"="11685";"40 sat:14:K offset"="0";"40 sat:30:number of paths"="125";"40 sat:00:plan length"="-1";"40 sat:50:number of ordering clauses"="0";"02 properties:02:mostly acyclic"="true";"30 problem:06:number of methods"="161";"30 problem:07:number of primitive shop actions"="101";"02 properties:05:totally ordered"="true";"02 properties:06:last task in all methods"="true";"30 problem:03:number of actions"="248";"30 problem:08:number of primitive non-shop actions"="88";"30 problem:02:number of predicates"="45";"40 sat:03:number of horn"="23120";"40 sat:15:K chosen value"="4";"30 problem:10:average method size"="3";"02 properties:03:regular"="false";"30 problem:09:size of largest method"="23";"40 sat:03:average size of clauses"="2.380062066587487";"40 sat:02:number of clauses"="26101";"40 sat:50:number of state clauses"="17859";"40 sat:03:number of assert"="20";"40 sat:22:method children clauses"="0";"00 global:90:planner result"="SOLUTION";"02 properties:01:acyclic"="true";"40 sat:31:maximum plan length"="125";"40 sat:50:number of decomposition clauses"="8242";"00 global:02:randomseed"="42";"40 sat:91:timeout"="false";"01 parsing:01:file parser"="563";"01 parsing:08:flatten formula"="98";"40 sat:41:SAT solver for K=0004"="10";"40 sat:00:total"="845";"40 sat:16:generate state formula"="662";"40 sat:20:transform to DIMACS"="63";"40 sat:11:generate path decomposition tree"="131";"02 preprocessing:07:compile methods with identical tasks"="27";"01 parsing:07:strip domain of hybridity"="1";"02 preprocessing:08:removing unnecessary predicates"="89";"01 parsing:03:closed world assumption"="114";"02 preprocessing:11:lifted reachabiltiy analysis"="90";"01 parsing:02:sort expansion"="163";"40 sat:12:normalise path decomposition tree"="50";"40 sat:40:SAT solver"="10";"01 parsing:00:total"="1001";"40 sat:10:generate formula"="671";"01 parsing:04:inherit preconditions"="0";"02 preprocessing:01:compile negative preconditions"="28";"00 total:00:total"="3857";"40 sat:13:sog optimisation"="36";"02 preprocessing:12:grounded planning graph analysis"="405";"02 preprocessing:02:compile unit methods"="0";"02 preprocessing:23:grounded task decomposition graph analysis"="367";"02 preprocessing:04:split parameter"="49";"01 parsing:05:shop methods"="9";"10 search preparation:02:compute state invariants"="132";"01 parsing:06:eliminate identical variables"="51";"40 sat:15:translate path decomposition tree to clauses"="184";"02 preprocessing:05:expand choiceless abstract tasks"="109";"40 sat:17:generate state invariant formula"="10";"02 preprocessing:00:total"="1296";"02 preprocessing:99:create artificial top task"="1";"02 preprocessing:84:grounding"="122"
+#!verify __method_precondition_m7_get_soil_data_7_precondition[rover1store,rover1];__method_precondition_m1_do_navigate1_1_precondition[rover1,waypoint0];visit[waypoint0];__method_precondition_m3_do_navigate2_3_precondition[rover1,waypoint0,waypoint1];navigate[rover1,waypoint0,waypoint1];unvisit[waypoint0];__method_precondition_m5_empty_store_5_precondition[rover1store];nop[];sample_soil[rover1,rover1store,waypoint1];__method_precondition_m9_send_soil_data_9_precondition[general,waypoint3,waypoint1,rover1];communicate_soil_data2[rover1,general,waypoint1,waypoint3];__method_precondition_m7_get_soil_data_7_precondition[rover1store,rover1];__method_precondition_m1_do_navigate1_1_precondition[rover1,waypoint1];visit[waypoint1];__method_precondition_m3_do_navigate2_3_precondition[rover1,waypoint1,waypoint2];navigate[rover1,waypoint1,waypoint2];unvisit[waypoint1];__method_precondition_m6_empty_store_6_precondition[rover1store];drop[rover1,rover1store];sample_soil[rover1,rover1store,waypoint2];__method_precondition_m8_send_soil_data_8_precondition[general,waypoint3,waypoint2];__method_precondition_m1_do_navigate1_1_precondition[rover1,waypoint2];visit[waypoint2];__method_precondition_m2_do_navigate2_2_precondition[rover1,waypoint2];nop[];unvisit[waypoint2];communicate_soil_data1[rover1,general,waypoint2,waypoint2,waypoint3];__method_precondition_m10_get_rock_data_10_precondition[rover0store,rover0];__method_precondition_m1_do_navigate1_1_precondition[rover0,waypoint0];visit[waypoint0];__method_precondition_m4_do_navigate2_4_precondition[rover0,waypoint0,waypoint0,waypoint3];navigate[rover0,waypoint0,waypoint3];visit[waypoint3];__method_precondition_m3_do_navigate2_3_precondition[rover0,waypoint3,waypoint0];navigate[rover0,waypoint3,waypoint0];unvisit[waypoint3];unvisit[waypoint0];__method_precondition_m5_empty_store_5_precondition[rover0store];nop[];sample_rock[rover0,rover0store,waypoint0];__method_precondition_m11_send_rock_data_11_precondition[general,waypoint3,waypoint0];__method_precondition_m0_do_navigate1_0_precondition[rover0,waypoint0];nop[];communicate_rock_data1[rover0,general,waypoint0,waypoint0,waypoint3];__method_precondition_m10_get_rock_data_10_precondition[rover0store,rover0];__method_precondition_m1_do_navigate1_1_precondition[rover0,waypoint0];visit[waypoint0];__method_precondition_m3_do_navigate2_3_precondition[rover0,waypoint0,waypoint1];navigate[rover0,waypoint0,waypoint1];unvisit[waypoint0];__method_precondition_m6_empty_store_6_precondition[rover0store];drop[rover0,rover0store];sample_rock[rover0,rover0store,waypoint1];__method_precondition_m11_send_rock_data_11_precondition[general,waypoint3,waypoint0];__method_precondition_m1_do_navigate1_1_precondition[rover0,waypoint1];visit[waypoint1];__method_precondition_m3_do_navigate2_3_precondition[rover0,waypoint1,waypoint0];navigate[rover0,waypoint1,waypoint0];unvisit[waypoint1];communicate_rock_data1[rover0,general,waypoint1,waypoint0,waypoint3];__method_precondition_m13_get_image_data_13_precondition[waypoint1,rover1,high_res,camera1,objective0];__method_precondition_m15_do_calibrate_15_precondition[camera1,objective1,waypoint2];__method_precondition_m0_do_navigate1_0_precondition[rover1,waypoint2];nop[];calibrate[rover1,camera1,objective1,waypoint2];__method_precondition_m1_do_navigate1_1_precondition[rover1,waypoint2];visit[waypoint2];__method_precondition_m3_do_navigate2_3_precondition[rover1,waypoint2,waypoint1];navigate[rover1,waypoint2,waypoint1];unvisit[waypoint2];take_image[rover1,waypoint1,objective0,camera1,high_res];__method_precondition_m14_send_image_data_14_precondition[general,waypoint3,waypoint1];__method_precondition_m0_do_navigate1_0_precondition[rover1,waypoint1];nop[];communicate_image_data[rover1,general,objective0,high_res,waypoint1,waypoint3];__method_precondition_m13_get_image_data_13_precondition[waypoint0,rover1,high_res,camera0,objective2];__method_precondition_m15_do_calibrate_15_precondition[camera0,objective1,waypoint1];__method_precondition_m0_do_navigate1_0_precondition[rover1,waypoint1];nop[];calibrate[rover1,camera0,objective1,waypoint1];__method_precondition_m1_do_navigate1_1_precondition[rover1,waypoint1];visit[waypoint1];__method_precondition_m3_do_navigate2_3_precondition[rover1,waypoint1,waypoint0];navigate[rover1,waypoint1,waypoint0];unvisit[waypoint1];take_image[rover1,waypoint0,objective2,camera0,high_res];__method_precondition_m14_send_image_data_14_precondition[general,waypoint3,waypoint0];__method_precondition_m0_do_navigate1_0_precondition[rover1,waypoint0];nop[];communicate_image_data[rover1,general,objective2,high_res,waypoint0,waypoint3];__method_precondition_m13_get_image_data_13_precondition[waypoint1,rover1,colour,camera1,objective0];__method_precondition_m15_do_calibrate_15_precondition[camera1,objective1,waypoint0];__method_precondition_m0_do_navigate1_0_precondition[rover1,waypoint0];nop[];calibrate[rover1,camera1,objective1,waypoint0];__method_precondition_m1_do_navigate1_1_precondition[rover1,waypoint0];visit[waypoint0];__method_precondition_m3_do_navigate2_3_precondition[rover1,waypoint0,waypoint1];navigate[rover1,waypoint0,waypoint1];unvisit[waypoint0];take_image[rover1,waypoint1,objective0,camera1,colour];__method_precondition_m14_send_image_data_14_precondition[general,waypoint3,waypoint1];__method_precondition_m0_do_navigate1_0_precondition[rover1,waypoint1];nop[];communicate_image_data[rover1,general,objective0,colour,waypoint1,waypoint3]
+==>
+0 __method_precondition_m7_get_soil_data_7_precondition rover1store rover1 
+1 __method_precondition_m1_do_navigate1_1_precondition rover1 waypoint0 
+2 visit waypoint0 
+3 __method_precondition_m3_do_navigate2_3_precondition rover1 waypoint0 waypoint1 
+4 navigate rover1 waypoint0 waypoint1 
+5 unvisit waypoint0 
+6 __method_precondition_m5_empty_store_5_precondition rover1store 
+7 nop  
+8 sample_soil rover1 rover1store waypoint1 
+9 __method_precondition_m9_send_soil_data_9_precondition general waypoint3 waypoint1 rover1 
+10 communicate_soil_data2 rover1 general waypoint1 waypoint3 
+11 __method_precondition_m7_get_soil_data_7_precondition rover1store rover1 
+12 __method_precondition_m1_do_navigate1_1_precondition rover1 waypoint1 
+13 visit waypoint1 
+14 __method_precondition_m3_do_navigate2_3_precondition rover1 waypoint1 waypoint2 
+15 navigate rover1 waypoint1 waypoint2 
+16 unvisit waypoint1 
+17 __method_precondition_m6_empty_store_6_precondition rover1store 
+18 drop rover1 rover1store 
+19 sample_soil rover1 rover1store waypoint2 
+20 __method_precondition_m8_send_soil_data_8_precondition general waypoint3 waypoint2 
+21 __method_precondition_m1_do_navigate1_1_precondition rover1 waypoint2 
+22 visit waypoint2 
+23 __method_precondition_m2_do_navigate2_2_precondition rover1 waypoint2 
+24 nop  
+25 unvisit waypoint2 
+26 communicate_soil_data1 rover1 general waypoint2 waypoint2 waypoint3 
+27 __method_precondition_m10_get_rock_data_10_precondition rover0store rover0 
+28 __method_precondition_m1_do_navigate1_1_precondition rover0 waypoint0 
+29 visit waypoint0 
+30 __method_precondition_m4_do_navigate2_4_precondition rover0 waypoint0 waypoint0 waypoint3 
+31 navigate rover0 waypoint0 waypoint3 
+32 visit waypoint3 
+33 __method_precondition_m3_do_navigate2_3_precondition rover0 waypoint3 waypoint0 
+34 navigate rover0 waypoint3 waypoint0 
+35 unvisit waypoint3 
+36 unvisit waypoint0 
+37 __method_precondition_m5_empty_store_5_precondition rover0store 
+38 nop  
+39 sample_rock rover0 rover0store waypoint0 
+40 __method_precondition_m11_send_rock_data_11_precondition general waypoint3 waypoint0 
+41 __method_precondition_m0_do_navigate1_0_precondition rover0 waypoint0 
+42 nop  
+43 communicate_rock_data1 rover0 general waypoint0 waypoint0 waypoint3 
+44 __method_precondition_m10_get_rock_data_10_precondition rover0store rover0 
+45 __method_precondition_m1_do_navigate1_1_precondition rover0 waypoint0 
+46 visit waypoint0 
+47 __method_precondition_m3_do_navigate2_3_precondition rover0 waypoint0 waypoint1 
+48 navigate rover0 waypoint0 waypoint1 
+49 unvisit waypoint0 
+50 __method_precondition_m6_empty_store_6_precondition rover0store 
+51 drop rover0 rover0store 
+52 sample_rock rover0 rover0store waypoint1 
+53 __method_precondition_m11_send_rock_data_11_precondition general waypoint3 waypoint0 
+54 __method_precondition_m1_do_navigate1_1_precondition rover0 waypoint1 
+55 visit waypoint1 
+56 __method_precondition_m3_do_navigate2_3_precondition rover0 waypoint1 waypoint0 
+57 navigate rover0 waypoint1 waypoint0 
+58 unvisit waypoint1 
+59 communicate_rock_data1 rover0 general waypoint1 waypoint0 waypoint3 
+60 __method_precondition_m13_get_image_data_13_precondition waypoint1 rover1 high_res camera1 objective0 
+61 __method_precondition_m15_do_calibrate_15_precondition camera1 objective1 waypoint2 
+62 __method_precondition_m0_do_navigate1_0_precondition rover1 waypoint2 
+63 nop  
+64 calibrate rover1 camera1 objective1 waypoint2 
+65 __method_precondition_m1_do_navigate1_1_precondition rover1 waypoint2 
+66 visit waypoint2 
+67 __method_precondition_m3_do_navigate2_3_precondition rover1 waypoint2 waypoint1 
+68 navigate rover1 waypoint2 waypoint1 
+69 unvisit waypoint2 
+70 take_image rover1 waypoint1 objective0 camera1 high_res 
+71 __method_precondition_m14_send_image_data_14_precondition general waypoint3 waypoint1 
+72 __method_precondition_m0_do_navigate1_0_precondition rover1 waypoint1 
+73 nop  
+74 communicate_image_data rover1 general objective0 high_res waypoint1 waypoint3 
+75 __method_precondition_m13_get_image_data_13_precondition waypoint0 rover1 high_res camera0 objective2 
+76 __method_precondition_m15_do_calibrate_15_precondition camera0 objective1 waypoint1 
+77 __method_precondition_m0_do_navigate1_0_precondition rover1 waypoint1 
+78 nop  
+79 calibrate rover1 camera0 objective1 waypoint1 
+80 __method_precondition_m1_do_navigate1_1_precondition rover1 waypoint1 
+81 visit waypoint1 
+82 __method_precondition_m3_do_navigate2_3_precondition rover1 waypoint1 waypoint0 
+83 navigate rover1 waypoint1 waypoint0 
+84 unvisit waypoint1 
+85 take_image rover1 waypoint0 objective2 camera0 high_res 
+86 __method_precondition_m14_send_image_data_14_precondition general waypoint3 waypoint0 
+87 __method_precondition_m0_do_navigate1_0_precondition rover1 waypoint0 
+88 nop  
+89 communicate_image_data rover1 general objective2 high_res waypoint0 waypoint3 
+90 __method_precondition_m13_get_image_data_13_precondition waypoint1 rover1 colour camera1 objective0 
+91 __method_precondition_m15_do_calibrate_15_precondition camera1 objective1 waypoint0 
+92 __method_precondition_m0_do_navigate1_0_precondition rover1 waypoint0 
+93 nop  
+94 calibrate rover1 camera1 objective1 waypoint0 
+95 __method_precondition_m1_do_navigate1_1_precondition rover1 waypoint0 
+96 visit waypoint0 
+97 __method_precondition_m3_do_navigate2_3_precondition rover1 waypoint0 waypoint1 
+98 navigate rover1 waypoint0 waypoint1 
+99 unvisit waypoint0 
+100 take_image rover1 waypoint1 objective0 camera1 colour 
+101 __method_precondition_m14_send_image_data_14_precondition general waypoint3 waypoint1 
+102 __method_precondition_m0_do_navigate1_0_precondition rover1 waypoint1 
+103 nop  
+104 communicate_image_data rover1 general objective0 colour waypoint1 waypoint3 
+root 116
+105 do_navigate2 rover1 waypoint1 waypoint0  -> m3_do_navigate2 82 83
+106 empty_store rover0store rover0  -> m5_empty_store 37 38
+107 __method_precondition_m7_get_soil_data_7_precondition rover1store rover1  -> __UNIQUE-replacement_4 0
+108 do_calibrate rover1 camera1  -> m15_do_calibrate 91 151 94
+109 send_image_data rover1 objective0 high_res  -> m14_send_image_data 71 129 74
+110 do_navigate1 rover0 waypoint0  -> m1_do_navigate1 54 55 149 58
+111 do_navigate2 rover0 waypoint3 waypoint0  -> m3_do_navigate2 33 34
+112 do_navigate1 rover0 waypoint0  -> m0_do_navigate1 41 42
+113 do_calibrate rover1 camera0  -> m15_do_calibrate 76 154 79
+114 do_navigate1 rover1 waypoint1  -> m1_do_navigate1 1 2 148 5
+115 send_image_data rover1 objective0 colour  -> m14_send_image_data 101 142 104
+116 __choicelessATCompilation__top_1  -> <<<<__top_1;get_soil_data[waypoint1];m7_get_soil_data;0;-1,-2,-3,-4,-5,1,2,3,4,5,6>;get_rock_data[waypoint0];m10_get_rock_data;6;0,1,2,3,4,5,-1,-2,-3,-4,-5,7,8,9,10>;get_rock_data[waypoint1];m10_get_rock_data;11;0,1,2,3,4,5,6,7,8,9,10,-1,-2,-3,-4,-5,12,13,14>;get_soil_data[waypoint2];m7_get_soil_data;5;0,1,2,3,4,-1,-2,-3,-4,-5,6,7,8,9,10,11,12,13,14,15,16,17,18> 107 114 118 8 140 132 128 120 19 136 144 117 134 39 125 121 130 126 52 123 135 137 146
+117 do_navigate1 rover0 waypoint0  -> m1_do_navigate1 28 29 127 36
+118 empty_store rover1store rover1  -> __UNIQUE-replacement_0 152
+119 do_navigate1 rover1 waypoint1  -> m1_do_navigate1 95 96 138 99
+120 empty_store rover1store rover1  -> __UNIQUE-replacement_1 147
+121 __method_precondition_m10_get_rock_data_10_precondition rover0store rover0  -> __UNIQUE-replacement_7 44
+122 do_navigate2 rover1 waypoint2 waypoint1  -> m3_do_navigate2 67 68
+123 send_rock_data rover0 waypoint1  -> m11_send_rock_data 53 110 59
+124 do_navigate2 rover1 waypoint1 waypoint2  -> m3_do_navigate2 14 15
+125 send_rock_data rover0 waypoint0  -> m11_send_rock_data 40 112 43
+126 empty_store rover0store rover0  -> __UNIQUE-replacement_3 143
+127 do_navigate2 rover0 waypoint0 waypoint0  -> m4_do_navigate2 30 31 32 111 35
+128 do_navigate1 rover1 waypoint2  -> m1_do_navigate1 12 13 124 16
+129 do_navigate1 rover1 waypoint1  -> m0_do_navigate1 72 73
+130 do_navigate1 rover0 waypoint1  -> m1_do_navigate1 45 46 131 49
+131 do_navigate2 rover0 waypoint0 waypoint1  -> m3_do_navigate2 47 48
+132 __method_precondition_m7_get_soil_data_7_precondition rover1store rover1  -> __UNIQUE-replacement_5 11
+133 do_navigate2 rover1 waypoint2 waypoint2  -> m2_do_navigate2 23 24
+134 empty_store rover0store rover0  -> __UNIQUE-replacement_2 106
+135 get_image_data objective0 high_res  -> m13_get_image_data 60 145 155 70 109
+136 send_soil_data rover1 waypoint2  -> m8_send_soil_data 20 141 26
+137 get_image_data objective2 high_res  -> m13_get_image_data 75 113 153 85 139
+138 do_navigate2 rover1 waypoint0 waypoint1  -> m3_do_navigate2 97 98
+139 send_image_data rover1 objective2 high_res  -> m14_send_image_data 86 156 89
+140 send_soil_data rover1 waypoint1  -> m9_send_soil_data 9 10
+141 do_navigate1 rover1 waypoint2  -> m1_do_navigate1 21 22 133 25
+142 do_navigate1 rover1 waypoint1  -> m0_do_navigate1 102 103
+143 empty_store rover0store rover0  -> m6_empty_store 50 51
+144 __method_precondition_m10_get_rock_data_10_precondition rover0store rover0  -> __UNIQUE-replacement_6 27
+145 do_calibrate rover1 camera1  -> m15_do_calibrate 61 150 64
+146 get_image_data objective0 colour  -> m13_get_image_data 90 108 119 100 115
+147 empty_store rover1store rover1  -> m6_empty_store 17 18
+148 do_navigate2 rover1 waypoint0 waypoint1  -> m3_do_navigate2 3 4
+149 do_navigate2 rover0 waypoint1 waypoint0  -> m3_do_navigate2 56 57
+150 do_navigate1 rover1 waypoint2  -> m0_do_navigate1 62 63
+151 do_navigate1 rover1 waypoint0  -> m0_do_navigate1 92 93
+152 empty_store rover1store rover1  -> m5_empty_store 6 7
+153 do_navigate1 rover1 waypoint0  -> m1_do_navigate1 80 81 105 84
+154 do_navigate1 rover1 waypoint1  -> m0_do_navigate1 77 78
+155 do_navigate1 rover1 waypoint1  -> m1_do_navigate1 65 66 122 69
+156 do_navigate1 rover1 waypoint0  -> m0_do_navigate1 87 88
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 4.856 MEMPEAK_KBS 279702.528

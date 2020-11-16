@@ -1,0 +1,155 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version rls-2020-11-02T15:57:46+01:00-glucose4
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020
+using SAT solver glucose4
+
+0.008 Sorts extracted.
+0.009 Mined 2 new reduction preconditions (+4.3%).
+0.009 37 operators and 24 methods created.
+0.009 Iteration 0.
+0.009 Creating initial layer of size 2
+0.010 Attempting to solve formula with 3 clauses (3 literals) and 1 assumptions
+0.010 Unsolvable at layer 0 -- expanding.
+0.010 Iteration 1.
+0.010 New layer size: 2
+0.010 Instantiating ...
+0.010 Collected 0 relevant facts at this layer
+0.010 Encoding ...
+0.010 Attempting to solve formula with 8 clauses (12 literals) and 1 assumptions
+0.010 Unsolvable at layer 1 -- expanding.
+0.010 Iteration 2.
+0.010 New layer size: 5
+0.010 Instantiating ...
+0.011 Collected 15 relevant facts at this layer
+0.011 Encoding ...
+0.011 Attempting to solve formula with 152 clauses (356 literals) and 3 assumptions
+0.011 Unsolvable at layer 2 -- expanding.
+0.011 Iteration 3.
+0.011 New layer size: 13
+0.011 Instantiating ...
+0.013 Collected 29 relevant facts at this layer
+0.013 Encoding ...
+0.013 Attempting to solve formula with 655 clauses (1715 literals) and 5 assumptions
+0.013 Unsolvable at layer 3 -- expanding.
+0.013 Iteration 4.
+0.013 New layer size: 23
+0.013 Instantiating ...
+0.015 Collected 32 relevant facts at this layer
+0.015 Encoding ...
+0.028 Attempting to solve formula with 1389 clauses (3721 literals) and 4 assumptions
+0.028 Unsolvable at layer 4 -- expanding.
+0.028 Iteration 5.
+0.028 New layer size: 33
+0.028 Instantiating ...
+0.030 Collected 35 relevant facts at this layer
+0.030 Encoding ...
+0.031 Attempting to solve formula with 2157 clauses (5863 literals) and 3 assumptions
+0.031 Unsolvable at layer 5 -- expanding.
+0.031 Iteration 6.
+0.031 New layer size: 40
+0.031 Instantiating ...
+0.033 Collected 35 relevant facts at this layer
+0.033 Encoding ...
+0.034 Attempting to solve formula with 2792 clauses (7594 literals) and 1 assumptions
+c last restart ## conflicts  :  28 201 
+0.034 Found a solution at layer 6.
+0.035 Initial plan at most shallow layer has length 19
+0.035 Iteration 7. (extra)
+0.035 New layer size: 42
+0.035 Instantiating ...
+0.036 Collected 35 relevant facts at this layer
+0.036 Encoding ...
+0.042 Attempting to solve formula with 3149 clauses (8477 literals) and 0 assumptions
+c last restart ## conflicts  :  0 284 
+0.043 Initial plan at final layer has length 19
+0.043 Tightened initial plan length bounds at layer 7: [0,41] => [8,19]
+0.043 Searching for a plan of length < 19
+0.043 Attempting to solve formula with 3751 clauses (10279 literals) and 0 assumptions
+c last restart ## conflicts  :  33 294 
+0.044 Shorter plan (length 18) found
+0.044 Searching for a plan of length < 18
+0.044 Attempting to solve formula with 3753 clauses (10281 literals) and 0 assumptions
+c last restart ## conflicts  :  1 348 
+0.045 Shorter plan (length 17) found
+0.045 Searching for a plan of length < 17
+0.045 Attempting to solve formula with 3755 clauses (10283 literals) and 0 assumptions
+c last restart ## conflicts  :  29 293 
+0.045 Shorter plan (length 15) found
+0.045 Searching for a plan of length < 15
+0.045 Attempting to solve formula with 3758 clauses (10286 literals) and 0 assumptions
+c last restart ## conflicts  :  195 286 
+0.049 Shorter plan (length 14) found
+0.049 Searching for a plan of length < 14
+0.049 Attempting to solve formula with 3760 clauses (10288 literals) and 0 assumptions
+c last restart ## conflicts  :  1 300 
+0.050 Shorter plan (length 12) found
+0.050 Searching for a plan of length < 12
+0.050 Attempting to solve formula with 3763 clauses (10291 literals) and 0 assumptions
+c last restart ## conflicts  :  20 294 
+0.051 Shorter plan (length 10) found
+0.051 Searching for a plan of length < 10
+0.051 Attempting to solve formula with 3766 clauses (10294 literals) and 0 assumptions
+==>
+1041 grasp left shot1
+1046 fill-shot shot1 ingredient2 left right dispenser2
+1057 pour-shot-to-clean-shaker shot1 ingredient2 shaker1 left level1 level1
+1111 clean-shot shot1 ingredient2 left right
+1133 fill-shot shot1 ingredient1 left right dispenser1
+1144 pour-shot-to-used-shaker shot1 ingredient1 shaker1 left level1 level1
+1148 drop left shot1
+1152 grasp left shaker1
+1157 shake cocktail1 ingredient2 ingredient1 shaker1 left right
+1188 pour-shaker-to-shot cocktail1 shot2 left shaker1 level1 level1
+root 5
+5 AchieveContainsShotCocktail shot2 cocktail1 -> MakeAndPourCocktail 9 31 295 1187
+9 AchieveContainsShakerCocktail shaker1 cocktail1 -> MakeCocktail 92 108 119 148 171 1157
+31 AchieveCleanShot shot2 -> CleanShotNull
+92 AchieveCleanShaker shaker1 -> CleanShakerNull
+108 AchieveContainsShakerIngredient shaker1 ingredient2 -> AddIngredientToEmptyShaker 318 324 1057
+119 AchieveContainsShakerIngredient shaker1 ingredient1 -> AddIngredientToUsedShaker 354 367 1144
+148 AchieveHolding left shaker1 -> PickUp 1147 418 1152
+171 AchieveHandEmpty right -> HandEmptyNull
+295 AchieveHolding left shaker1 -> HoldingNull
+318 AchieveContainsShotIngredient shot1 ingredient2 -> AddIngredientToShot 552 554 557 1046
+324 AchieveHolding left shot1 -> HoldingNull
+354 AchieveContainsShotIngredient shot1 ingredient1 -> AddIngredientToShot 641 653 674 1133
+367 AchieveHolding left shot1 -> HoldingNull
+418 AchieveOnTable shaker1 -> OnTableNull
+552 AchieveCleanShot shot1 -> CleanShotNull
+554 AchieveHolding left shot1 -> PickUp 814 818 1041
+557 AchieveHandEmpty right -> HandEmptyNull
+641 AchieveCleanShot shot1 -> CleanEmptyShot 844 851 1111
+653 AchieveHolding left shot1 -> HoldingNull
+674 AchieveHandEmpty right -> HandEmptyNull
+814 AchieveHandEmpty left -> HandEmptyNull
+818 AchieveOnTable shot1 -> OnTableNull
+844 AchieveHolding left shot1 -> HoldingNull
+851 AchieveHandEmpty right -> HandEmptyNull
+1147 AchieveHandEmpty left -> EmptyHand 1148
+1187 DoPourShakerToShot shaker1 shot2 cocktail1 -> pour_shaker_to_shot_action 1188
+<==
+0.067 End of solution plan. (counted length of 10)
+0.067 Total amount of clauses encoded: 3766
+0.067 - directframeaxioms : 916 cls
+0.067 - planlengthcounting : 617 cls
+0.067 - qfactsemantics : 510 cls
+0.067 - indirectframeaxioms : 383 cls
+0.067 - predecessors : 303 cls
+0.067 - expansions : 293 cls
+0.067 - atmostoneelement : 210 cls
+0.067 - reductionconstraints : 160 cls
+0.067 - actionconstraints : 152 cls
+0.067 - actioneffects : 136 cls
+0.067 - truefacts : 35 cls
+0.067 - substitutionconstraints : 30 cls
+0.067 - qconstequality : 19 cls
+0.067 - axiomaticops : 2 cls
+0.067 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 1.138 MEMPEAK_KBS 0

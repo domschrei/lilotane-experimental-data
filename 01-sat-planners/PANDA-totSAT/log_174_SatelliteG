@@ -1,0 +1,718 @@
+PANDA - Planning and Acting in a Network Decomposition Architecture
+Believe us: It's great, it's fantastic!
+
+PANDA Copyright (C) 2014-2018 Gregor Behnke, Pascal Bercher, Thomas Geier, Kadir
+Dede, Daniel Höller, Kristof Mickeleit, Matthias Englert
+This program comes with ABSOLUTELY NO WARRANTY
+This is free software, and you are welcome to redistribute it under certain
+conditions; run PANDA with -license for details.
+
+Main Developers:
+- Gregor Behnke, http://www.uni-ulm.de/in/ki/behnke
+- Daniel Höller, http://www.uni-ulm.de/in/ki/hoeller
+
+With many thanks to various further contributors.
+Run PANDA with the command line argument -contributors for an extensive list.
+
+Run it with -help for more information like available options.
+
+
+PANDA was called with: "-systemConfig AAAI-2018-totSAT(cryptominisat) -programPath cryptominisat=./cryptominisat5 instances/SatelliteG/domain.hddl instances/SatelliteG/p02.hddl"
+
+
+Planner Configuration
+=====================
+Domain: instances/SatelliteG/domain.hddl
+Problem: instances/SatelliteG/p02.hddl
+Output: none
+
+Planning Configuration
+======================
+	printGeneralInformation : true
+	printAdditionalData     : true
+	random seed             : 42
+	time limit (in seconds) : none
+
+	external programs:
+		cryptominisat : ./cryptominisat5
+
+	Parsing Configuration
+	---------------------
+	Parser                : autodetect file-type
+	Expand Sort Hierarchy : true
+	ClosedWordAssumption  : true
+	CompileSHOPMethods    : true
+	Eliminate Equality    : true
+	Strip Hybridity       : true
+	Reduce General Tasks  : true
+	
+	Preprocessing Configuration
+	---------------------------
+	Compile negative preconditions    : true
+	Compile unit methods              : false
+	Compile order in methods          : false
+	Compile initial plan              : true
+	Ensure Methods Have Last Task     : false
+	Split independent parameters      : true
+	Remove unnecessary predicates     : true
+	Expand choiceless abstract tasks  : true
+	Domain Cleanup                    : true
+	Convert to SAS+                   : false
+	Grounded Reachability Analysis    : Planning Graph (mutex-free)
+	Grounded Task Decomposition Graph : Two Way TDG
+	Iterate reachability analysis     : true
+	Ground domain                     : true
+	Iterate reachability analysis     : true
+	Stop directly after grounding     : false
+	
+	SAT-Planning Configuration
+	--------------------------
+	solver           : cryptominisat
+	full planner run : true
+	reduction method : only normalise 
+	check result     : true
+	
+	Post-processing Configuration
+	-----------------------------
+	search result with Decomposition Tree
+	statistics
+	timings
+	search status
+	search result
+#0 "00 global:01:problem"="p02.hddl";"00 global:00:domain"="domain.hddl"
+Parsing domain ... using HDDL parser ... done
+Preparing internal domain representation ... done.
+Initial domain
+	number of abstract tasks = 6
+	number of tasks = 20
+	number of decomposition methods = 10
+	number of predicates = 8
+	number of sorts = 5
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 8
+	number of epsilon methods = 0
+	number of primitive tasks = 14
+	number of constants = 14
+Compiling negative preconditions ... done.
+	number of abstract tasks = 6
+	number of tasks = 20
+	number of decomposition methods = 10
+	number of predicates = 16
+	number of sorts = 5
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 8
+	number of epsilon methods = 0
+	number of primitive tasks = 14
+	number of constants = 14
+Compiling split parameters ... done.
+	number of abstract tasks = 7
+	number of tasks = 21
+	number of decomposition methods = 11
+	number of predicates = 16
+	number of sorts = 5
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 8
+	number of epsilon methods = 0
+	number of primitive tasks = 14
+	number of constants = 14
+Lifted reachability analysis and domain cleanup ... done.
+	number of abstract tasks = 7
+	number of tasks = 21
+	number of decomposition methods = 11
+	number of predicates = 11
+	number of sorts = 5
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 8
+	number of epsilon methods = 0
+	number of primitive tasks = 14
+	number of constants = 14
+Grounded planning graph ... done in 148ms.
+	Number of Grounded Actions 150
+	Number of Grounded Literals 38
+	number of abstract tasks = 7
+	number of tasks = 21
+	number of decomposition methods = 11
+	number of predicates = 11
+	number of sorts = 5
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 8
+	number of epsilon methods = 0
+	number of primitive tasks = 14
+	number of constants = 14
+Two Way TDG ... done.
+	number of abstract tasks = 7
+	number of tasks = 21
+	number of decomposition methods = 11
+	number of predicates = 11
+	number of sorts = 5
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 8
+	number of epsilon methods = 0
+	number of primitive tasks = 14
+	number of constants = 14
+Grounding ... done.
+	number of abstract tasks = 45
+	number of tasks = 180
+	number of decomposition methods = 134
+	number of predicates = 38
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 70
+	number of epsilon methods = 0
+	number of primitive tasks = 135
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 45
+	number of tasks = 180
+	number of decomposition methods = 134
+	number of predicates = 28
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 70
+	number of epsilon methods = 0
+	number of primitive tasks = 135
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 51ms.
+	Number of Grounded Actions 121
+	Number of Grounded Literals 27
+	number of abstract tasks = 45
+	number of tasks = 166
+	number of decomposition methods = 127
+	number of predicates = 28
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 63
+	number of epsilon methods = 0
+	number of primitive tasks = 121
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 45
+	number of tasks = 166
+	number of decomposition methods = 127
+	number of predicates = 28
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 63
+	number of epsilon methods = 0
+	number of primitive tasks = 121
+	number of constants = 0
+Compiling expand choiceless abstract tasks ... done.
+	number of abstract tasks = 19
+	number of tasks = 140
+	number of decomposition methods = 101
+	number of predicates = 28
+	number of sorts = 0
+	number of tasks in largest method = 6
+	number of primitive SHOP tasks = 63
+	number of epsilon methods = 0
+	number of primitive tasks = 121
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 19
+	number of tasks = 140
+	number of decomposition methods = 101
+	number of predicates = 28
+	number of sorts = 0
+	number of tasks in largest method = 6
+	number of primitive SHOP tasks = 63
+	number of epsilon methods = 0
+	number of primitive tasks = 121
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 19
+	number of tasks = 140
+	number of decomposition methods = 101
+	number of predicates = 27
+	number of sorts = 0
+	number of tasks in largest method = 6
+	number of primitive SHOP tasks = 63
+	number of epsilon methods = 0
+	number of primitive tasks = 121
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 59ms.
+	Number of Grounded Actions 121
+	Number of Grounded Literals 27
+	number of abstract tasks = 19
+	number of tasks = 140
+	number of decomposition methods = 101
+	number of predicates = 27
+	number of sorts = 0
+	number of tasks in largest method = 6
+	number of primitive SHOP tasks = 63
+	number of epsilon methods = 0
+	number of primitive tasks = 121
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 19
+	number of tasks = 140
+	number of decomposition methods = 77
+	number of predicates = 27
+	number of sorts = 0
+	number of tasks in largest method = 6
+	number of primitive SHOP tasks = 63
+	number of epsilon methods = 0
+	number of primitive tasks = 121
+	number of constants = 0
+Compiling expand choiceless abstract tasks ... done.
+	number of abstract tasks = 18
+	number of tasks = 139
+	number of decomposition methods = 76
+	number of predicates = 27
+	number of sorts = 0
+	number of tasks in largest method = 7
+	number of primitive SHOP tasks = 63
+	number of epsilon methods = 0
+	number of primitive tasks = 121
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 18
+	number of tasks = 139
+	number of decomposition methods = 76
+	number of predicates = 27
+	number of sorts = 0
+	number of tasks in largest method = 7
+	number of primitive SHOP tasks = 63
+	number of epsilon methods = 0
+	number of primitive tasks = 121
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 18
+	number of tasks = 139
+	number of decomposition methods = 76
+	number of predicates = 27
+	number of sorts = 0
+	number of tasks in largest method = 7
+	number of primitive SHOP tasks = 63
+	number of epsilon methods = 0
+	number of primitive tasks = 121
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 13ms.
+	Number of Grounded Actions 121
+	Number of Grounded Literals 27
+	number of abstract tasks = 18
+	number of tasks = 139
+	number of decomposition methods = 76
+	number of predicates = 27
+	number of sorts = 0
+	number of tasks in largest method = 7
+	number of primitive SHOP tasks = 63
+	number of epsilon methods = 0
+	number of primitive tasks = 121
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 18
+	number of tasks = 139
+	number of decomposition methods = 76
+	number of predicates = 27
+	number of sorts = 0
+	number of tasks in largest method = 7
+	number of primitive SHOP tasks = 63
+	number of epsilon methods = 0
+	number of primitive tasks = 121
+	number of constants = 0
+Compiling expand choiceless abstract tasks ... done.
+	number of abstract tasks = 18
+	number of tasks = 139
+	number of decomposition methods = 76
+	number of predicates = 27
+	number of sorts = 0
+	number of tasks in largest method = 7
+	number of primitive SHOP tasks = 63
+	number of epsilon methods = 0
+	number of primitive tasks = 121
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 18
+	number of tasks = 139
+	number of decomposition methods = 76
+	number of predicates = 27
+	number of sorts = 0
+	number of tasks in largest method = 7
+	number of primitive SHOP tasks = 63
+	number of epsilon methods = 0
+	number of primitive tasks = 121
+	number of constants = 0
+Compiling methods with identical tasks ... done.
+	number of abstract tasks = 18
+	number of tasks = 139
+	number of decomposition methods = 76
+	number of predicates = 27
+	number of sorts = 0
+	number of tasks in largest method = 7
+	number of primitive SHOP tasks = 63
+	number of epsilon methods = 0
+	number of primitive tasks = 121
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 18
+	number of tasks = 139
+	number of decomposition methods = 76
+	number of predicates = 27
+	number of sorts = 0
+	number of tasks in largest method = 7
+	number of primitive SHOP tasks = 63
+	number of epsilon methods = 0
+	number of primitive tasks = 121
+	number of constants = 0
+Tasks 121 - 0
+Domain is acyclic: false
+Domain is mostly acyclic: false
+Domain is regular: false
+Domain is tail recursive: false
+Domain is totally ordered: true
+Domain has last task in all methods: true
+Time remaining for planner 9223372036854773618ms
+Computing minimum decomposition height: 3
+
+Running SAT search with K = 3
+Generating initial PDT ... done
+initial PDT has 42 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 37 leafs
+SHOP LEAFS 21
+Assignment implications
+Still waiting ... running for 102 will abort at 9223372036854773572
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Computing invariants [Rintanen]
+candidates build 1053
+Size 1053 at 0/121
+Size 431
+Size 431 at 0/121
+Size 216
+Size 216 at 0/121
+Size 119
+Size 119 at 0/121
+Size 109
+Size 109 at 0/121
+Size 109
+Invariant time: 0.068
+Number of invariants: 109
+Invariant Clauses 4142
+NUMBER OF CLAUSES 7629
+NUMBER OF STATE CLAUSES 6525
+NUMBER OF DECOMPOSITION CLAUSES 1104
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 85.53% 14.47% 0.0% 
+NUMBER OF PATHS 37
+Starting cryptominisat
+Setting starttime of solver to 1603882053074
+Command exited with non-zero status 20
+0.00 0.00
+
+Time command gave the following runtime for the solver: 0
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 4
+Generating initial PDT ... done
+initial PDT has 58 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 52 leafs
+SHOP LEAFS 29
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Still waiting ... running for 100 will abort at 9223372036854773040
+Invariant Clauses 5777
+NUMBER OF CLAUSES 11255
+NUMBER OF STATE CLAUSES 9148
+NUMBER OF DECOMPOSITION CLAUSES 2107
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 81.28% 18.72% 0.0% 
+NUMBER OF PATHS 52
+Starting cryptominisat
+Setting starttime of solver to 1603882053341
+Command exited with non-zero status 20
+0.00 0.00
+
+Time command gave the following runtime for the solver: 0
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 5
+Generating initial PDT ... done
+initial PDT has 98 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 88 leafs
+SHOP LEAFS 50
+Assignment implications
+Generating clauses representing decomposition ... Still waiting ... running for 100 will abort at 9223372036854772823
+done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 9701
+NUMBER OF CLAUSES 19968
+NUMBER OF STATE CLAUSES 15554
+NUMBER OF DECOMPOSITION CLAUSES 4414
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 77.89% 22.11% 0.0% 
+NUMBER OF PATHS 88
+Starting cryptominisat
+Setting starttime of solver to 1603882053617
+Command exited with non-zero status 10
+0.01 0.00
+
+Time command gave the following runtime for the solver: 10
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... done
+SAT-Solver says: SATISFIABLE
+
+extracting solution
+Consider method^2_6;0,40 40 m4_do_switching
+6;0 59 pathaction!2_6;0,80
+Consider method^2_5;1,54 54 m8_do_turning
+5;1 19 pathaction!2_5;1,17
+Consider method^0_,75 75 <<__top_1;do_mission[Phenomenon5,image2];m0_do_mission;2;0,1,-1,-2,3,4>;do_prepare[satellite0,instrument1,Phenomenon5];m1_do_prepare;2;0,1,-1,-2,3,4,5>
+ 48 pathaction!0_,138
+Consider method^1_2,63 63 <m2_do_switching;make_power_available[satellite0,instrument0];m7_make_power_available;1;0,-1,-2,2,3>
+2 30 pathaction!1_2,80
+Consider method^2_1;1,53 53 m8_do_turning
+1;1 22 pathaction!2_1;1,23
+Consider method^1_0,16 16 <m0_do_mission;do_prepare[satellite0,instrument0,Planet3];m1_do_prepare;0;-1,-2,1>
+0 43 pathaction!1_0,126
+Consider method^1_3,37 37 m8_do_turning
+3 52 pathaction!1_3,22
+Consider method^2_5;0,40 40 m4_do_switching
+5;0 24 pathaction!2_5;0,80
+Consider method^2_6;1,29 29 m8_do_turning
+6;1 33 pathaction!2_6;1,19
+Consider method^2_0;0,67 67 m3_do_switching
+0;0 27 pathaction!2_0;0,81
+Consider method^4_2;4;3;2,71 71 m8_do_turning
+2;4;3;2 44 pathaction!4_2;4;3;2,18
+Consider method^3_0;0;4,32 32 <m5_do_calibration;do_prepare[satellite0,instrument0,Star0];m1_do_prepare;1;0,-1,-2,2>
+0;0;4 58 pathaction!3_0;0;4,15
+Consider method^4_2;4;3;1,40 40 m4_do_switching
+2;4;3;1 50 pathaction!4_2;4;3;1,80
+Consider method^1_5,65 65 <m0_do_mission;do_prepare[satellite0,instrument1,Phenomenon6];m1_do_prepare;0;-1,-2,1>
+5 28 pathaction!1_5,124
+Consider method^2_1;0,60 60 m4_do_switching
+1;0 10 pathaction!2_1;0,81
+Consider method^2_0;1,12 12 m8_do_turning
+0;1 39 pathaction!2_0;1,21
+Consider method^4_0;0;4;2,5 5 m8_do_turning
+0;0;4;2 65 pathaction!4_0;0;4;2,20
+Consider method^3_2;4;3,3 3 <m5_do_calibration;do_prepare[satellite0,instrument1,GroundStation2];m1_do_prepare;1;0,-1,-2,2>
+2;4;3 29 pathaction!3_2;4;3,16
+Consider method^2_2;4,44 44 _m2_do_switching_4
+2;4 12 pathaction!2_2;4,0
+Consider method^1_6,9 9 <m0_do_mission;do_prepare[satellite0,instrument1,Star7];m1_do_prepare;0;-1,-2,1>
+6 2 pathaction!1_6,125
+Consider method^1_1,49 49 <m0_do_mission;do_prepare[satellite0,instrument0,Planet4];m1_do_prepare;0;-1,-2,1>
+1 45 pathaction!1_1,127
+Consider method^4_0;0;4;1,60 60 m4_do_switching
+0;0;4;1 67 pathaction!4_0;0;4;1,81
+
+
+CHECKING primitive solution of length 39 ...
+true 42 __method_precondition_m3_do_switching_3_precondition[instrument0,satellite0;]
+true 15 switch_on[instrument0,satellite0;]
+true 66 __method_precondition_m5_do_calibration_5_precondition[instrument0;]
+true 41 __method_precondition_m4_do_switching_4_precondition[instrument0;]
+true 36 nop[;]
+true 61 __method_precondition_m8_do_turning_8_precondition[satellite0,Planet4,Star0;]
+true 20 turn_to[satellite0,Star0,Planet4;]
+true 60 calibrate[satellite0,instrument0,Star0;]
+true 32 __method_precondition_m8_do_turning_8_precondition[satellite0,Star0,Planet3;]
+true 57 turn_to[satellite0,Planet3,Star0;]
+true 49 take_image[satellite0,Planet3,instrument0,infrared0;]
+true 7 __method_precondition_m4_do_switching_4_precondition[instrument0;]
+true 11 nop[;]
+true 55 __method_precondition_m8_do_turning_8_precondition[satellite0,Planet3,Planet4;]
+true 8 turn_to[satellite0,Planet4,Planet3;]
+true 3 take_image[satellite0,Planet4,instrument0,infrared0;]
+true 6 __method_precondition_m2_do_switching_2_precondition[instrument1,satellite0,instrument0;]
+true 18 __method_precondition_m7_make_power_available_7_precondition[instrument0,satellite0;]
+true 63 switch_off[instrument0,satellite0;]
+true 31 switch_on[instrument1,satellite0;]
+true 0 __method_precondition_m5_do_calibration_5_precondition[instrument1;]
+true 37 __method_precondition_m4_do_switching_4_precondition[instrument1;]
+true 47 nop[;]
+true 40 __method_precondition_m8_do_turning_8_precondition[satellite0,Planet4,GroundStation2;]
+true 56 turn_to[satellite0,GroundStation2,Planet4;]
+true 23 calibrate[satellite0,instrument1,GroundStation2;]
+true 53 __method_precondition_m8_do_turning_8_precondition[satellite0,GroundStation2,Phenomenon5;]
+true 34 turn_to[satellite0,Phenomenon5,GroundStation2;]
+true 14 take_image[satellite0,Phenomenon5,instrument1,image2;]
+true 62 __method_precondition_m4_do_switching_4_precondition[instrument1;]
+true 46 nop[;]
+true 1 __method_precondition_m8_do_turning_8_precondition[satellite0,Phenomenon5,Phenomenon6;]
+true 26 turn_to[satellite0,Phenomenon6,Phenomenon5;]
+true 54 take_image[satellite0,Phenomenon6,instrument1,infrared0;]
+true 17 __method_precondition_m4_do_switching_4_precondition[instrument1;]
+true 38 nop[;]
+true 13 __method_precondition_m8_do_turning_8_precondition[satellite0,Phenomenon6,Star7;]
+true 16 turn_to[satellite0,Star7,Phenomenon6;]
+true 4 take_image[satellite0,Star7,instrument1,infrared0;]
+ done.
+Panda says: SOLUTION
+============ global ============
+randomseed     = 42
+peak memory    = 155757280
+planner result = SOLUTION
+============ properties ============
+acyclic                  = false
+mostly acyclic           = false
+regular                  = false
+tail recursive           = false
+totally ordered          = true
+last task in all methods = true
+============ problem ============
+number of constants                  = 0
+number of predicates                 = 27
+number of actions                    = 139
+number of abstract actions           = 18
+number of primitive actions          = 121
+number of methods                    = 76
+number of primitive shop actions     = 63
+number of primitive non-shop actions = 58
+size of largest method               = 7
+average method size                  = 2
+============ sat ============
+plan length                     = -1
+number of variables             = 5400
+number of clauses               = 19968
+average size of clauses         = 2.096905048076923
+number of assert                = 16
+number of horn                  = 16279
+K offset                        = 0
+K chosen value                  = 5
+state formula                   = 15554
+method children clauses         = 0
+number of paths                 = 88
+maximum plan length             = 88
+number of decomposition clauses = 4414
+number of ordering clauses      = 0
+number of state clauses         = 15554
+solved                          = true
+timeout                         = false
+
+----------------- TIMINGS -----------------
+============ total ============
+total = 3546
+============ parsing ============
+total                         = 876
+file parser                   = 524
+sort expansion                = 126
+closed world assumption       = 87
+inherit preconditions         = 0
+shop methods                  = 22
+eliminate identical variables = 52
+strip domain of hybridity     = 1
+flatten formula               = 63
+============ preprocessing ============
+total                                      = 1239
+compile negative preconditions             = 27
+compile unit methods                       = 0
+split parameter                            = 31
+expand choiceless abstract tasks           = 171
+compile methods with identical tasks       = 2
+removing unnecessary predicates            = 82
+lifted reachabiltiy analysis               = 78
+grounded planning graph analysis           = 423
+grounded task decomposition graph analysis = 314
+grounding                                  = 103
+create artificial top task                 = 1
+============ search preparation ============
+compute state invariants = 78
+============ sat ============
+total                                        = 843
+generate formula                             = 655
+generate path decomposition tree             = 138
+normalise path decomposition tree            = 34
+sog optimisation                             = 52
+translate path decomposition tree to clauses = 178
+generate state formula                       = 636
+generate state invariant formula             = 36
+transform to DIMACS                          = 31
+SAT solver                                   = 10
+SAT solver for K=0003                        = 0
+SAT solver for K=0004                        = 0
+SAT solver for K=0005                        = 10
+
+#1 "40 sat:90:solved"="true";"30 problem:05:number of primitive actions"="121";"30 problem:01:number of constants"="0";"30 problem:04:number of abstract actions"="18";"02 properties:04:tail recursive"="false";"00 global:80:peak memory"="155757280";"40 sat:20:state formula"="15554";"40 sat:01:number of variables"="5400";"40 sat:14:K offset"="0";"40 sat:30:number of paths"="88";"40 sat:00:plan length"="-1";"40 sat:50:number of ordering clauses"="0";"02 properties:02:mostly acyclic"="false";"30 problem:06:number of methods"="76";"30 problem:07:number of primitive shop actions"="63";"02 properties:05:totally ordered"="true";"02 properties:06:last task in all methods"="true";"30 problem:03:number of actions"="139";"30 problem:08:number of primitive non-shop actions"="58";"30 problem:02:number of predicates"="27";"40 sat:03:number of horn"="16279";"40 sat:15:K chosen value"="5";"30 problem:10:average method size"="2";"02 properties:03:regular"="false";"30 problem:09:size of largest method"="7";"40 sat:03:average size of clauses"="2.096905048076923";"40 sat:02:number of clauses"="19968";"40 sat:50:number of state clauses"="15554";"40 sat:03:number of assert"="16";"40 sat:22:method children clauses"="0";"00 global:90:planner result"="SOLUTION";"02 properties:01:acyclic"="false";"40 sat:31:maximum plan length"="88";"40 sat:50:number of decomposition clauses"="4414";"00 global:02:randomseed"="42";"40 sat:91:timeout"="false";"01 parsing:01:file parser"="524";"01 parsing:08:flatten formula"="63";"40 sat:41:SAT solver for K=0004"="0";"40 sat:00:total"="843";"40 sat:16:generate state formula"="636";"40 sat:20:transform to DIMACS"="31";"40 sat:11:generate path decomposition tree"="138";"02 preprocessing:07:compile methods with identical tasks"="2";"01 parsing:07:strip domain of hybridity"="1";"02 preprocessing:08:removing unnecessary predicates"="82";"01 parsing:03:closed world assumption"="87";"02 preprocessing:11:lifted reachabiltiy analysis"="78";"01 parsing:02:sort expansion"="126";"40 sat:12:normalise path decomposition tree"="34";"40 sat:40:SAT solver"="10";"01 parsing:00:total"="876";"40 sat:10:generate formula"="655";"40 sat:41:SAT solver for K=0005"="10";"01 parsing:04:inherit preconditions"="0";"02 preprocessing:01:compile negative preconditions"="27";"00 total:00:total"="3546";"40 sat:13:sog optimisation"="52";"02 preprocessing:12:grounded planning graph analysis"="423";"02 preprocessing:02:compile unit methods"="0";"02 preprocessing:23:grounded task decomposition graph analysis"="314";"02 preprocessing:04:split parameter"="31";"01 parsing:05:shop methods"="22";"10 search preparation:02:compute state invariants"="78";"01 parsing:06:eliminate identical variables"="52";"40 sat:15:translate path decomposition tree to clauses"="178";"02 preprocessing:05:expand choiceless abstract tasks"="171";"40 sat:41:SAT solver for K=0003"="0";"40 sat:17:generate state invariant formula"="36";"02 preprocessing:00:total"="1239";"02 preprocessing:99:create artificial top task"="1";"02 preprocessing:84:grounding"="103"
+#!verify __method_precondition_m3_do_switching_3_precondition[instrument0,satellite0];switch_on[instrument0,satellite0];__method_precondition_m5_do_calibration_5_precondition[instrument0];__method_precondition_m4_do_switching_4_precondition[instrument0];nop[];__method_precondition_m8_do_turning_8_precondition[satellite0,Planet4,Star0];turn_to[satellite0,Star0,Planet4];calibrate[satellite0,instrument0,Star0];__method_precondition_m8_do_turning_8_precondition[satellite0,Star0,Planet3];turn_to[satellite0,Planet3,Star0];take_image[satellite0,Planet3,instrument0,infrared0];__method_precondition_m4_do_switching_4_precondition[instrument0];nop[];__method_precondition_m8_do_turning_8_precondition[satellite0,Planet3,Planet4];turn_to[satellite0,Planet4,Planet3];take_image[satellite0,Planet4,instrument0,infrared0];__method_precondition_m2_do_switching_2_precondition[instrument1,satellite0,instrument0];__method_precondition_m7_make_power_available_7_precondition[instrument0,satellite0];switch_off[instrument0,satellite0];switch_on[instrument1,satellite0];__method_precondition_m5_do_calibration_5_precondition[instrument1];__method_precondition_m4_do_switching_4_precondition[instrument1];nop[];__method_precondition_m8_do_turning_8_precondition[satellite0,Planet4,GroundStation2];turn_to[satellite0,GroundStation2,Planet4];calibrate[satellite0,instrument1,GroundStation2];__method_precondition_m8_do_turning_8_precondition[satellite0,GroundStation2,Phenomenon5];turn_to[satellite0,Phenomenon5,GroundStation2];take_image[satellite0,Phenomenon5,instrument1,image2];__method_precondition_m4_do_switching_4_precondition[instrument1];nop[];__method_precondition_m8_do_turning_8_precondition[satellite0,Phenomenon5,Phenomenon6];turn_to[satellite0,Phenomenon6,Phenomenon5];take_image[satellite0,Phenomenon6,instrument1,infrared0];__method_precondition_m4_do_switching_4_precondition[instrument1];nop[];__method_precondition_m8_do_turning_8_precondition[satellite0,Phenomenon6,Star7];turn_to[satellite0,Star7,Phenomenon6];take_image[satellite0,Star7,instrument1,infrared0]
+==>
+0 __method_precondition_m3_do_switching_3_precondition instrument0 satellite0 
+1 switch_on instrument0 satellite0 
+2 __method_precondition_m5_do_calibration_5_precondition instrument0 
+3 __method_precondition_m4_do_switching_4_precondition instrument0 
+4 nop  
+5 __method_precondition_m8_do_turning_8_precondition satellite0 Planet4 Star0 
+6 turn_to satellite0 Star0 Planet4 
+7 calibrate satellite0 instrument0 Star0 
+8 __method_precondition_m8_do_turning_8_precondition satellite0 Star0 Planet3 
+9 turn_to satellite0 Planet3 Star0 
+10 take_image satellite0 Planet3 instrument0 infrared0 
+11 __method_precondition_m4_do_switching_4_precondition instrument0 
+12 nop  
+13 __method_precondition_m8_do_turning_8_precondition satellite0 Planet3 Planet4 
+14 turn_to satellite0 Planet4 Planet3 
+15 take_image satellite0 Planet4 instrument0 infrared0 
+16 __method_precondition_m2_do_switching_2_precondition instrument1 satellite0 instrument0 
+17 __method_precondition_m7_make_power_available_7_precondition instrument0 satellite0 
+18 switch_off instrument0 satellite0 
+19 switch_on instrument1 satellite0 
+20 __method_precondition_m5_do_calibration_5_precondition instrument1 
+21 __method_precondition_m4_do_switching_4_precondition instrument1 
+22 nop  
+23 __method_precondition_m8_do_turning_8_precondition satellite0 Planet4 GroundStation2 
+24 turn_to satellite0 GroundStation2 Planet4 
+25 calibrate satellite0 instrument1 GroundStation2 
+26 __method_precondition_m8_do_turning_8_precondition satellite0 GroundStation2 Phenomenon5 
+27 turn_to satellite0 Phenomenon5 GroundStation2 
+28 take_image satellite0 Phenomenon5 instrument1 image2 
+29 __method_precondition_m4_do_switching_4_precondition instrument1 
+30 nop  
+31 __method_precondition_m8_do_turning_8_precondition satellite0 Phenomenon5 Phenomenon6 
+32 turn_to satellite0 Phenomenon6 Phenomenon5 
+33 take_image satellite0 Phenomenon6 instrument1 infrared0 
+34 __method_precondition_m4_do_switching_4_precondition instrument1 
+35 nop  
+36 __method_precondition_m8_do_turning_8_precondition satellite0 Phenomenon6 Star7 
+37 turn_to satellite0 Star7 Phenomenon6 
+38 take_image satellite0 Star7 instrument1 infrared0 
+root 53
+39 do_calibration satellite0 instrument0 Star0  -> <m5_do_calibration;do_prepare[satellite0,instrument0,Star0];m1_do_prepare;1;0,-1,-2,2> 2 57 58 7
+40 do_switching satellite0 instrument1  -> <m2_do_switching;make_power_available[satellite0,instrument0];m7_make_power_available;1;0,-1,-2,2,3> 16 17 18 19 44
+41 do_turning satellite0 Phenomenon6  -> m8_do_turning 31 32
+42 do_switching satellite0 instrument1  -> m4_do_switching 34 35
+43 do_turning satellite0 Planet4  -> m8_do_turning 13 14
+44 do_calibration_m2_do_switching_sip_4 satellite0 instrument1  -> _m2_do_switching_4 49
+45 do_turning satellite0 GroundStation2  -> m8_do_turning 23 24
+46 do_switching satellite0 instrument1  -> m4_do_switching 21 22
+47 do_turning satellite0 Phenomenon5  -> m8_do_turning 26 27
+48 do_mission Phenomenon6 infrared0  -> <m0_do_mission;do_prepare[satellite0,instrument1,Phenomenon6];m1_do_prepare;0;-1,-2,1> 56 41 33
+49 do_calibration satellite0 instrument1 GroundStation2  -> <m5_do_calibration;do_prepare[satellite0,instrument1,GroundStation2];m1_do_prepare;1;0,-1,-2,2> 20 46 45 25
+50 do_mission Star7 infrared0  -> <m0_do_mission;do_prepare[satellite0,instrument1,Star7];m1_do_prepare;0;-1,-2,1> 42 55 38
+51 do_switching satellite0 instrument0  -> m4_do_switching 11 12
+52 do_turning satellite0 Planet3  -> m8_do_turning 8 9
+53 __choicelessATCompilation__top_1  -> <<__top_1;do_mission[Phenomenon5,image2];m0_do_mission;2;0,1,-1,-2,3,4>;do_prepare[satellite0,instrument1,Phenomenon5];m1_do_prepare;2;0,1,-1,-2,3,4,5> 60 54 40 47 28 48 50
+54 do_mission Planet4 infrared0  -> <m0_do_mission;do_prepare[satellite0,instrument0,Planet4];m1_do_prepare;0;-1,-2,1> 51 43 15
+55 do_turning satellite0 Star7  -> m8_do_turning 36 37
+56 do_switching satellite0 instrument1  -> m4_do_switching 29 30
+57 do_switching satellite0 instrument0  -> m4_do_switching 3 4
+58 do_turning satellite0 Star0  -> m8_do_turning 5 6
+59 do_switching satellite0 instrument0  -> m3_do_switching 0 1 39
+60 do_mission Planet3 infrared0  -> <m0_do_mission;do_prepare[satellite0,instrument0,Planet3];m1_do_prepare;0;-1,-2,1> 59 52 10
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 4.449 MEMPEAK_KBS 487845.888

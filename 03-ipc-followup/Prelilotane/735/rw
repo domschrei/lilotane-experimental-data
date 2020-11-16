@@ -1,0 +1,78 @@
+0.000 
+0.000 Hello from  L i l o t a n e  version rls-2020-11-06T08:48:42+01:00-glucose4
+0.000 by Dominik Schreiber <dominik.schreiber@kit.edu> 2020
+0.000 using SAT solver glucose4
+0.000 
+0.003 17 methods, 11 abstract tasks, 30 primitive tasks
+0.003 Sorts extracted.
+0.036 Mined 32 new reduction preconditions (+103.2%).
+0.036 38 operators and 17 methods created.
+0.036 Iteration 0.
+0.036 Creating initial layer of size 2
+0.036 Attempting to solve formula with 44 clauses (47 literals) and 1 assumptions
+0.036 Unsolvable at layer 0 -- expanding.
+0.036 Iteration 1.
+0.036 New layer size: 4
+0.037 Attempting to solve formula with 167 clauses (348 literals) and 3 assumptions
+0.037 Unsolvable at layer 1 -- expanding.
+0.037 Iteration 2.
+0.037 New layer size: 13
+0.039 Attempting to solve formula with 972 clauses (2668 literals) and 7 assumptions
+0.039 Unsolvable at layer 2 -- expanding.
+0.039 Iteration 3.
+0.039 New layer size: 23
+0.042 Attempting to solve formula with 2720 clauses (8098 literals) and 7 assumptions
+c last restart ## conflicts  :  2 100 
+0.042 Found a solution at layer 3.
+==>
+381 nop
+430 nop
+433 sample_soil rover0 rover0store waypoint3
+435 communicate_soil_data2 rover0 general waypoint3 waypoint2
+466 visit waypoint2
+468 navigate rover1 waypoint2 waypoint1
+496 unvisit waypoint2
+514 nop
+518 sample_rock rover1 rover1store waypoint1
+520 communicate_rock_data2 rover1 general waypoint1 waypoint2
+550 nop
+559 calibrate rover1 camera0 objective0 waypoint1
+575 nop
+633 take_image rover1 waypoint1 objective0 camera0 high_res
+636 nop
+645 communicate_image_data rover1 general objective0 high_res waypoint1 waypoint2
+root 77 90 122
+77 get_soil_data waypoint3 -> m7_get_soil_data 380 429 433 434
+90 get_rock_data waypoint1 -> m10_get_rock_data 231 513 518 519
+122 get_image_data objective0 high_res -> m13_get_image_data 295 574 633 359
+231 do_navigate1 rover1 waypoint1 -> m1_do_navigate1 466 467 496
+295 do_calibrate rover1 camera0 -> m15_do_calibrate 549 559
+359 send_image_data rover1 objective0 high_res -> m14_send_image_data 635 645
+380 do_navigate1 rover0 waypoint3 -> m0_do_navigate1 381
+429 empty_store rover0store rover0 -> m5_empty_store 430
+434 send_soil_data rover0 waypoint3 -> m9_send_soil_data 435
+467 do_navigate2 rover1 waypoint2 waypoint1 -> m3_do_navigate2 468
+513 empty_store rover1store rover1 -> m5_empty_store 514
+519 send_rock_data rover1 waypoint1 -> m12_send_rock_data 520
+549 do_navigate1 rover1 waypoint1 -> m0_do_navigate1 550
+574 do_navigate1 rover1 waypoint1 -> m0_do_navigate1 575
+635 do_navigate1 rover1 waypoint1 -> m0_do_navigate1 636
+<==
+0.042 End of solution plan.
+0.042 Total amount of clauses encoded: 2720
+0.042 - qfactsemantics : 878 cls
+0.042 - frameaxioms : 853 cls
+0.042 - substitutionconstraints : 243 cls
+0.042 - reductionconstraints : 196 cls
+0.042 - actionconstraints : 135 cls
+0.042 - truefacts : 104 cls
+0.042 - predecessors : 70 cls
+0.042 - expansions : 54 cls
+0.042 - actioneffects : 52 cls
+0.042 - atleastoneelement : 42 cls
+0.042 - atmostoneelement : 41 cls
+0.042 - qconstequality : 12 cls
+0.042 - axiomaticops : 2 cls
+0.042 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.701 MEMPEAK_KBS 0

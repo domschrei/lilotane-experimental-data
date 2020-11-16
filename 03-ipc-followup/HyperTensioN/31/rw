@@ -1,0 +1,80 @@
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 4077507
+max locked memory       (kbytes, -l) 65536
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 1024
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) unlimited
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 4077507
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+15728640
+----------------------Tasks-----------------------
+0 achievecontainsshotcocktail shot2 cocktail1
+---------------------Planning---------------------
+Time: 0.0004825592041015625s
+-----------------------Plan-----------------------
+==>
+20 grasp right shot1
+17 fill_shot shot1 ingredient2 right left dispenser2
+24 drop right shot1
+23 grasp left shot1
+13 pour_shot_to_clean_shaker shot1 ingredient2 shaker1 left level1 level1
+38 drop left shot1
+37 grasp right shot1
+34 clean_shot shot1 ingredient2 right left
+31 fill_shot shot1 ingredient1 right left dispenser1
+42 drop right shot1
+41 grasp left shot1
+27 pour_shot_to_used_shaker shot1 ingredient1 shaker1 left level1 level1
+45 grasp right shaker1
+46 drop left shot1
+10 shake cocktail1 ingredient2 ingredient1 shaker1 right left
+50 drop right shaker1
+49 grasp left shaker1
+51 pour_shaker_to_shot cocktail1 shot2 left shaker1 level1 level1
+root 0
+0 achievecontainsshotcocktail shot2 cocktail1 -> makeandpourcocktail 1 2 3 4
+1 achievecontainsshakercocktail shaker1 cocktail1 -> makecocktail 5 6 7 8 9 10
+5 achievecleanshaker shaker1 -> cleanshakernull 
+6 achievecontainsshakeringredient shaker1 ingredient2 -> addingredienttoemptyshaker 11 12 13
+11 achievecontainsshotingredient shot1 ingredient2 -> addingredienttoshot 14 15 16 17
+14 achievecleanshot shot1 -> cleanshotnull 
+15 achieveholding right shot1 -> pickup 18 19 20
+18 achievehandempty right -> handemptynull 
+19 achieveontable shot1 -> ontablenull 
+16 achievehandempty left -> handemptynull 
+12 achieveholding left shot1 -> pickup 21 22 23
+21 achievehandempty left -> handemptynull 
+22 achieveontable shot1 -> putdown 24
+7 achievecontainsshakeringredient shaker1 ingredient1 -> addingredienttousedshaker 25 26 27
+25 achievecontainsshotingredient shot1 ingredient1 -> addingredienttoshot 28 29 30 31
+28 achievecleanshot shot1 -> cleanemptyshot 32 33 34
+32 achieveholding right shot1 -> pickup 35 36 37
+35 achievehandempty right -> handemptynull 
+36 achieveontable shot1 -> putdown 38
+33 achievehandempty left -> handemptynull 
+29 achieveholding right shot1 -> holdingnull 
+30 achievehandempty left -> handemptynull 
+26 achieveholding left shot1 -> pickup 39 40 41
+39 achievehandempty left -> handemptynull 
+40 achieveontable shot1 -> putdown 42
+8 achieveholding right shaker1 -> pickup 43 44 45
+43 achievehandempty right -> handemptynull 
+44 achieveontable shaker1 -> ontablenull 
+9 achievehandempty left -> emptyhand 46
+2 achievecleanshot shot2 -> cleanshotnull 
+3 achieveholding left shaker1 -> pickup 47 48 49
+47 achievehandempty left -> handemptynull 
+48 achieveontable shaker1 -> putdown 50
+4 dopourshakertoshot shaker1 shot2 cocktail1 -> pour_shaker_to_shot_action 51
+<==
+Total time: 0.021918535232543945s
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 1.161 MEMPEAK_KBS 0

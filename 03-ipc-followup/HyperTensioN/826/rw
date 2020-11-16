@@ -1,0 +1,81 @@
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 4077507
+max locked memory       (kbytes, -l) 65536
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 1024
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) unlimited
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 4077507
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+15728640
+----------------------Tasks-----------------------
+0 deliver package_1 city_loc_0
+1 deliver package_0 city_loc_3
+2 deliver package_3 city_loc_0
+3 deliver package_2 city_loc_1
+---------------------Planning---------------------
+Time: 0.0005970001220703125s
+-----------------------Plan-----------------------
+==>
+12 drive truck_0 city_loc_0 city_loc_3
+11 drive truck_0 city_loc_3 city_loc_2
+9 drive truck_0 city_loc_2 city_loc_1
+13 pick_up truck_0 city_loc_1 package_1 capacity_2 capacity_3
+18 drive truck_0 city_loc_1 city_loc_2
+17 drive truck_0 city_loc_2 city_loc_3
+15 drive truck_0 city_loc_3 city_loc_0
+19 drop truck_0 city_loc_0 package_1 capacity_2 capacity_3
+26 drive truck_0 city_loc_0 city_loc_3
+25 drive truck_0 city_loc_3 city_loc_0
+27 pick_up truck_0 city_loc_0 package_0 capacity_2 capacity_3
+28 drive truck_0 city_loc_0 city_loc_3
+29 drop truck_0 city_loc_3 package_0 capacity_2 capacity_3
+34 drive truck_0 city_loc_3 city_loc_2
+35 pick_up truck_0 city_loc_2 package_3 capacity_2 capacity_3
+38 drive truck_0 city_loc_2 city_loc_3
+37 drive truck_0 city_loc_3 city_loc_0
+39 drop truck_0 city_loc_0 package_3 capacity_2 capacity_3
+44 drive truck_0 city_loc_0 city_loc_3
+45 pick_up truck_0 city_loc_3 package_2 capacity_2 capacity_3
+48 drive truck_0 city_loc_3 city_loc_2
+47 drive truck_0 city_loc_2 city_loc_1
+49 drop truck_0 city_loc_1 package_2 capacity_2 capacity_3
+root 0 1 2 3
+0 deliver package_1 city_loc_0 -> m_deliver_ordering_0 4 5 6 7
+4 get_to truck_0 city_loc_1 -> m_drive_to_via_ordering_0 8 9
+8 get_to truck_0 city_loc_2 -> m_drive_to_via_ordering_0 10 11
+10 get_to truck_0 city_loc_3 -> m_drive_to_ordering_0 12
+5 load truck_0 city_loc_1 package_1 -> m_load_ordering_0 13
+6 get_to truck_0 city_loc_0 -> m_drive_to_via_ordering_0 14 15
+14 get_to truck_0 city_loc_3 -> m_drive_to_via_ordering_0 16 17
+16 get_to truck_0 city_loc_2 -> m_drive_to_ordering_0 18
+7 unload truck_0 city_loc_0 package_1 -> m_unload_ordering_0 19
+1 deliver package_0 city_loc_3 -> m_deliver_ordering_0 20 21 22 23
+20 get_to truck_0 city_loc_0 -> m_drive_to_via_ordering_0 24 25
+24 get_to truck_0 city_loc_3 -> m_drive_to_ordering_0 26
+21 load truck_0 city_loc_0 package_0 -> m_load_ordering_0 27
+22 get_to truck_0 city_loc_3 -> m_drive_to_ordering_0 28
+23 unload truck_0 city_loc_3 package_0 -> m_unload_ordering_0 29
+2 deliver package_3 city_loc_0 -> m_deliver_ordering_0 30 31 32 33
+30 get_to truck_0 city_loc_2 -> m_drive_to_ordering_0 34
+31 load truck_0 city_loc_2 package_3 -> m_load_ordering_0 35
+32 get_to truck_0 city_loc_0 -> m_drive_to_via_ordering_0 36 37
+36 get_to truck_0 city_loc_3 -> m_drive_to_ordering_0 38
+33 unload truck_0 city_loc_0 package_3 -> m_unload_ordering_0 39
+3 deliver package_2 city_loc_1 -> m_deliver_ordering_0 40 41 42 43
+40 get_to truck_0 city_loc_3 -> m_drive_to_ordering_0 44
+41 load truck_0 city_loc_3 package_2 -> m_load_ordering_0 45
+42 get_to truck_0 city_loc_1 -> m_drive_to_via_ordering_0 46 47
+46 get_to truck_0 city_loc_2 -> m_drive_to_ordering_0 48
+43 unload truck_0 city_loc_1 package_2 -> m_unload_ordering_0 49
+<==
+Total time: 0.0043261051177978516s
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.123 MEMPEAK_KBS 0

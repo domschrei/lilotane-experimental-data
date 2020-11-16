@@ -1,0 +1,127 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version rls-2020-11-02T15:57:46+01:00-glucose4
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020
+using SAT solver glucose4
+
+0.022 Sorts extracted.
+0.054 Mined 99 new reduction preconditions (+9900.0%).
+0.054 82 operators and 80 methods created.
+0.055 Iteration 0.
+0.055 Creating initial layer of size 2
+0.063 Attempting to solve formula with 5 clauses (6 literals) and 1 assumptions
+0.063 Unsolvable at layer 0 -- expanding.
+0.063 Iteration 1.
+0.063 New layer size: 2
+0.063 Instantiating ...
+0.111 Collected 1 relevant facts at this layer
+0.111 Encoding ...
+0.112 Attempting to solve formula with 881 clauses (1885 literals) and 1 assumptions
+0.112 Unsolvable at layer 1 -- expanding.
+0.112 Iteration 2.
+0.112 New layer size: 2
+0.112 Instantiating ...
+0.113 Retroactively prune reduction (m_tlt_clear_road_tree Q_1,0_point:0_e3d2349022d5703d Q_1,0_point:1_e3d2349022d5703d)@(1,0): no children at offset 0
+0.158 Collected 1 relevant facts at this layer
+0.158 Encoding ...
+0.159 Attempting to solve formula with 970 clauses (2098 literals) and 1 assumptions
+0.159 Unsolvable at layer 2 -- expanding.
+0.159 Iteration 3.
+0.159 New layer size: 4
+0.159 Instantiating ...
+0.183 Retroactively prune reduction (m_clear_road_wreck Q_1,0_point:0_e3d2349022d5703d Q_1,0_point:1_e3d2349022d5703d)@(2,0): no children at offset 1
+0.237 Collected 229 relevant facts at this layer
+0.237 Encoding ...
+0.240 Attempting to solve formula with 3558 clauses (9316 literals) and 3 assumptions
+0.241 Unsolvable at layer 3 -- expanding.
+0.241 Iteration 4.
+0.241 New layer size: 18
+0.241 Instantiating ...
+0.333 Retroactively prune reduction (m_clean_up_hazard_normal Q_1,0_point:0_e3d2349022d5703d Q_3,1_hazard_team:0_62fe43bfa4467996 Q_1,0_point:1_e3d2349022d5703d very_hazardous very_hazardous)@(3,1): no children at offset 2
+0.363 Collected 607 relevant facts at this layer
+0.363 Encoding ...
+0.387 Attempting to solve formula with 28661 clauses (87668 literals) and 14 assumptions
+0.388 Unsolvable at layer 4 -- expanding.
+0.388 Iteration 5.
+0.388 New layer size: 52
+0.388 Instantiating ...
+0.389 Retroactively prune reduction (m_drive_to Q_1,0_point:0_e3d2349022d5703d pcrew1 van1 Q_4,1_point:0_e3d2349022d5703d)@(4,1): no children at offset 1
+0.558 Collected 610 relevant facts at this layer
+0.558 Encoding ...
+0.615 Attempting to solve formula with 93153 clauses (286290 literals) and 25 assumptions
+0.618 Unsolvable at layer 5 -- expanding.
+0.618 Iteration 6.
+0.618 New layer size: 122
+0.618 Instantiating ...
+0.620 Retroactively prune reduction (m_drive_to brighton_dump Q_4,1_person:0_1be3daacfb39da56 Q_3,0_vehicle:0_9700a5b110e4d656 Q_5,3_point:0_4c31288a1f8de1dc)@(5,3): no children at offset 1
+0.890 Collected 665 relevant facts at this layer
+0.890 Encoding ...
+1.003 Attempting to solve formula with 214824 clauses (648236 literals) and 53 assumptions
+c last restart ## conflicts  :  2 2691 
+1.010 Found a solution at layer 6.
+1.012 Initial plan at most shallow layer has length 12
+1.012 Iteration 7. (extra)
+1.012 New layer size: 219
+1.012 Instantiating ...
+1.266 Collected 665 relevant facts at this layer
+1.266 Encoding ...
+1.396 Attempting to solve formula with 400363 clauses (1212748 literals) and 82 assumptions
+c last restart ## conflicts  :  0 4857 
+1.412 Initial plan at final layer has length 12
+1.413 Tightened initial plan length bounds at layer 7: [0,218] => [2,12]
+1.417 Searching for a plan of length < 12
+1.417 Attempting to solve formula with 404664 clauses (1225117 literals) and 0 assumptions
+==>
+23576 SHOP_methodm_provide_medical_attention_in_hospital_precondition person_208195 light_burn strong
+33655 SHOP_methodm_get_to_as_cargo_precondition person_208195 strong park_ridge plow1
+38987 SHOP_methodm_get_to_vehicle_gets_driven_precondition plow1 park_ridge marketplace pdriver2
+38997 SHOP_methodm_drive_to_precondition plow1 marketplace pdriver2
+39016 p_1Navegate_vehicle
+41623 SHOP_methodm_get_in_ambulatory_person_precondition person_208195 park_ridge plow1
+42332 p_2Climb_in
+45060 SHOP_methodm_get_to_vehicle_gets_driven_precondition plow1 strong park_ridge pdriver2
+45066 SHOP_methodm_drive_to_precondition plow1 park_ridge pdriver2
+45087 p_3Navegate_vehicle
+47620 climb_out person_208195 plow1 strong
+52253 treat_in_hospital person_208195 strong
+root 11
+11 tlt -> m_tlt_provide_medical_attention 65
+65 provide_medical_attention person_208195 -> m_provide_medical_attention_in_hospital 23576 339 52253
+339 get_to person_208195 strong -> m_get_to_as_cargo 33655 5049 5713 6343 47619
+5049 get_to plow1 park_ridge -> m_get_to_vehicle_gets_driven 38987 15659
+5713 get_in person_208195 plow1 -> m_get_in_ambulatory_person 41623 42331
+6343 get_to plow1 strong -> m_get_to_vehicle_gets_driven 45060 19360
+15659 drive_to pdriver2 plow1 park_ridge -> m_drive_to 38997 39015
+19360 drive_to pdriver2 plow1 strong -> m_drive_to 45066 45086
+39015 cnavegate_vehicle pdriver2 plow1 park_ridge marketplace -> prefix_1 39016
+42331 cclimb_in person_208195 plow1 park_ridge -> prefix_2 42332
+45086 cnavegate_vehicle pdriver2 plow1 strong park_ridge -> prefix_3 45087
+47619 get_out person_208195 plow1 -> m_get_out_ambulatory_person 47620
+<==
+1.420 End of solution plan. (counted length of 12)
+1.420 Total amount of clauses encoded: 404664
+1.420 - directframeaxioms : 267394 cls
+1.420 - qfactsemantics : 59298 cls
+1.420 - indirectframeaxioms : 27800 cls
+1.420 - reductionconstraints : 20130 cls
+1.420 - actionconstraints : 9393 cls
+1.420 - substitutionconstraints : 6701 cls
+1.420 - planlengthcounting : 4219 cls
+1.420 - atmostoneelement : 3118 cls
+1.420 - expansions : 2078 cls
+1.420 - predecessors : 1599 cls
+1.420 - qtypeconstraints : 937 cls
+1.420 - qconstequality : 814 cls
+1.420 - truefacts : 665 cls
+1.420 - actioneffects : 420 cls
+1.420 - assumptions : 82 cls
+1.420 - forbiddenoperations : 14 cls
+1.420 - axiomaticops : 2 cls
+1.420 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 1.535 MEMPEAK_KBS 0

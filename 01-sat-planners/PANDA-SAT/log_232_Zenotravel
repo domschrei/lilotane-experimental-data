@@ -1,0 +1,966 @@
+PANDA - Planning and Acting in a Network Decomposition Architecture
+Believe us: It's great, it's fantastic!
+
+PANDA Copyright (C) 2014-2018 Gregor Behnke, Pascal Bercher, Thomas Geier, Kadir
+Dede, Daniel Höller, Kristof Mickeleit, Matthias Englert
+This program comes with ABSOLUTELY NO WARRANTY
+This is free software, and you are welcome to redistribute it under certain
+conditions; run PANDA with -license for details.
+
+Main Developers:
+- Gregor Behnke, http://www.uni-ulm.de/in/ki/behnke
+- Daniel Höller, http://www.uni-ulm.de/in/ki/hoeller
+
+With many thanks to various further contributors.
+Run PANDA with the command line argument -contributors for an extensive list.
+
+Run it with -help for more information like available options.
+
+
+PANDA was called with: "-systemConfig sat-exists-forbidden-implication(cms55) -programPath cryptominisat55=./cryptominisat5 instances/Zenotravel/domain.hddl instances/Zenotravel/p10.hddl"
+
+
+Planner Configuration
+=====================
+Domain: instances/Zenotravel/domain.hddl
+Problem: instances/Zenotravel/p10.hddl
+Output: none
+
+Planning Configuration
+======================
+	printGeneralInformation : true
+	printAdditionalData     : true
+	random seed             : 42
+	time limit (in seconds) : none
+
+	external programs:
+		cryptominisat5.5 : ./cryptominisat5
+
+	Parsing Configuration
+	---------------------
+	Parser                : autodetect file-type
+	Expand Sort Hierarchy : true
+	ClosedWordAssumption  : true
+	CompileSHOPMethods    : true
+	Eliminate Equality    : true
+	Strip Hybridity       : true
+	Reduce General Tasks  : true
+	
+	Preprocessing Configuration
+	---------------------------
+	Compile negative preconditions    : true
+	Compile unit methods              : false
+	Compile order in methods          : false
+	Compile initial plan              : true
+	Ensure Methods Have Last Task     : false
+	Split independent parameters      : true
+	Remove unnecessary predicates     : true
+	Expand choiceless abstract tasks  : true
+	Domain Cleanup                    : true
+	Convert to SAS+                   : false
+	Grounded Reachability Analysis    : Planning Graph (mutex-free)
+	Grounded Task Decomposition Graph : Two Way TDG
+	Iterate reachability analysis     : true
+	Ground domain                     : true
+	Iterate reachability analysis     : true
+	Stop directly after grounding     : false
+	
+	SAT-Planning Configuration
+	--------------------------
+	solver           : cryptominisat5.5
+	full planner run : true
+	reduction method : only normalise 
+	check result     : true
+	
+	Post-processing Configuration
+	-----------------------------
+	search result with Decomposition Tree
+	statistics
+	timings
+	search status
+	search result
+#0 "00 global:01:problem"="p10.hddl";"00 global:00:domain"="domain.hddl"
+Parsing domain ... using HDDL parser ... done
+Preparing internal domain representation ... done.
+Initial domain
+	number of abstract tasks = 5
+	number of tasks = 23
+	number of decomposition methods = 12
+	number of predicates = 4
+	number of sorts = 6
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 12
+	number of epsilon methods = 0
+	number of primitive tasks = 18
+	number of constants = 23
+Compiling negative preconditions ... done.
+	number of abstract tasks = 5
+	number of tasks = 23
+	number of decomposition methods = 12
+	number of predicates = 8
+	number of sorts = 6
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 12
+	number of epsilon methods = 0
+	number of primitive tasks = 18
+	number of constants = 23
+Compiling split parameters ... done.
+	number of abstract tasks = 5
+	number of tasks = 23
+	number of decomposition methods = 12
+	number of predicates = 8
+	number of sorts = 6
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 12
+	number of epsilon methods = 0
+	number of primitive tasks = 18
+	number of constants = 23
+Lifted reachability analysis and domain cleanup ... done.
+	number of abstract tasks = 5
+	number of tasks = 22
+	number of decomposition methods = 12
+	number of predicates = 7
+	number of sorts = 6
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 12
+	number of epsilon methods = 0
+	number of primitive tasks = 17
+	number of constants = 23
+Grounded planning graph ... done in 545ms.
+	Number of Grounded Actions 4842
+	Number of Grounded Literals 228
+	number of abstract tasks = 5
+	number of tasks = 22
+	number of decomposition methods = 12
+	number of predicates = 7
+	number of sorts = 6
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 12
+	number of epsilon methods = 0
+	number of primitive tasks = 17
+	number of constants = 23
+Two Way TDG ... done.
+	number of abstract tasks = 5
+	number of tasks = 22
+	number of decomposition methods = 12
+	number of predicates = 7
+	number of sorts = 6
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 12
+	number of epsilon methods = 0
+	number of primitive tasks = 17
+	number of constants = 23
+Grounding ... done.
+	number of abstract tasks = 182
+	number of tasks = 5024
+	number of decomposition methods = 4061
+	number of predicates = 277
+	number of sorts = 0
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 4061
+	number of epsilon methods = 0
+	number of primitive tasks = 4842
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 182
+	number of tasks = 5024
+	number of decomposition methods = 4061
+	number of predicates = 179
+	number of sorts = 0
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 4061
+	number of epsilon methods = 0
+	number of primitive tasks = 4842
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 533ms.
+	Number of Grounded Actions 4842
+	Number of Grounded Literals 179
+	number of abstract tasks = 182
+	number of tasks = 5024
+	number of decomposition methods = 4061
+	number of predicates = 179
+	number of sorts = 0
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 4061
+	number of epsilon methods = 0
+	number of primitive tasks = 4842
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 182
+	number of tasks = 5024
+	number of decomposition methods = 4061
+	number of predicates = 179
+	number of sorts = 0
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 4061
+	number of epsilon methods = 0
+	number of primitive tasks = 4842
+	number of constants = 0
+Compiling expand choiceless abstract tasks ... done.
+	number of abstract tasks = 39
+	number of tasks = 4881
+	number of decomposition methods = 3918
+	number of predicates = 179
+	number of sorts = 0
+	number of tasks in largest method = 9
+	number of primitive SHOP tasks = 4061
+	number of epsilon methods = 0
+	number of primitive tasks = 4842
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 39
+	number of tasks = 4881
+	number of decomposition methods = 3918
+	number of predicates = 179
+	number of sorts = 0
+	number of tasks in largest method = 9
+	number of primitive SHOP tasks = 4061
+	number of epsilon methods = 0
+	number of primitive tasks = 4842
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 39
+	number of tasks = 4881
+	number of decomposition methods = 3918
+	number of predicates = 179
+	number of sorts = 0
+	number of tasks in largest method = 9
+	number of primitive SHOP tasks = 4061
+	number of epsilon methods = 0
+	number of primitive tasks = 4842
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 271ms.
+	Number of Grounded Actions 4842
+	Number of Grounded Literals 179
+	number of abstract tasks = 39
+	number of tasks = 4881
+	number of decomposition methods = 3918
+	number of predicates = 179
+	number of sorts = 0
+	number of tasks in largest method = 9
+	number of primitive SHOP tasks = 4061
+	number of epsilon methods = 0
+	number of primitive tasks = 4842
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 39
+	number of tasks = 4881
+	number of decomposition methods = 3918
+	number of predicates = 179
+	number of sorts = 0
+	number of tasks in largest method = 9
+	number of primitive SHOP tasks = 4061
+	number of epsilon methods = 0
+	number of primitive tasks = 4842
+	number of constants = 0
+Compiling expand choiceless abstract tasks ... done.
+	number of abstract tasks = 39
+	number of tasks = 4881
+	number of decomposition methods = 3918
+	number of predicates = 179
+	number of sorts = 0
+	number of tasks in largest method = 9
+	number of primitive SHOP tasks = 4061
+	number of epsilon methods = 0
+	number of primitive tasks = 4842
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 39
+	number of tasks = 4881
+	number of decomposition methods = 3918
+	number of predicates = 179
+	number of sorts = 0
+	number of tasks in largest method = 9
+	number of primitive SHOP tasks = 4061
+	number of epsilon methods = 0
+	number of primitive tasks = 4842
+	number of constants = 0
+Compiling methods with identical tasks ... done.
+	number of abstract tasks = 183
+	number of tasks = 5025
+	number of decomposition methods = 4062
+	number of predicates = 179
+	number of sorts = 0
+	number of tasks in largest method = 9
+	number of primitive SHOP tasks = 4061
+	number of epsilon methods = 0
+	number of primitive tasks = 4842
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 183
+	number of tasks = 5025
+	number of decomposition methods = 4062
+	number of predicates = 179
+	number of sorts = 0
+	number of tasks in largest method = 9
+	number of primitive SHOP tasks = 4061
+	number of epsilon methods = 0
+	number of primitive tasks = 4842
+	number of constants = 0
+Tasks 4842 - 0
+Domain is acyclic: false
+Domain is mostly acyclic: false
+Domain is regular: false
+Domain is tail recursive: true
+Domain is totally ordered: true
+Domain has last task in all methods: true
+Time remaining for planner 9223372036854766974ms
+Computing minimum decomposition height: 3
+
+Running SAT search with K = 3
+Generating initial PDT ... Still waiting ... running for 101 will abort at 9223372036854766651
+done
+initial PDT has 162 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 23 leafs
+SHOP LEAFS 20
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Computing invariants [Rintanen]
+candidates build 47793
+Size 47793 at 0/4842
+Size 47793 at 500/4842
+Size 47793 at 1000/4842
+Size 47793 at 1500/4842
+Size 47793 at 2000/4842
+Size 47793 at 2500/4842
+Size 46697 at 3000/4842
+Size 42409 at 3500/4842
+Size 33853 at 4000/4842
+Size 33851 at 4500/4842
+Size 33851
+Size 33851 at 0/4842
+Size 33851 at 500/4842
+Size 33851 at 1000/4842
+Size 33851 at 1500/4842
+Size 33851 at 2000/4842
+Size 33851 at 2500/4842
+Size 32519 at 3000/4842
+Size 12169 at 3500/4842
+Size 11019 at 4000/4842
+Size 11019 at 4500/4842
+Size 11019
+Size 11019 at 0/4842
+Size 11019 at 500/4842
+Size 11019 at 1000/4842
+Size 11019 at 1500/4842
+Size 11019 at 2000/4842
+Size 11019 at 2500/4842
+Size 11019 at 3000/4842
+Size 1237 at 3500/4842
+Size 1237 at 4000/4842
+Size 1237 at 4500/4842
+Size 1237
+Size 1237 at 0/4842
+Size 1237 at 500/4842
+Size 1237 at 1000/4842
+Size 1237 at 1500/4842
+Size 1237 at 2000/4842
+Size 1237 at 2500/4842
+Size 1237 at 3000/4842
+Size 1237 at 3500/4842
+Size 1237 at 4000/4842
+Size 1237 at 4500/4842
+Size 1237
+Invariant time: 1.441
+Number of invariants: 1237
+Invariant Clauses 29688
+NUMBER OF CLAUSES 59015
+NUMBER OF STATE CLAUSES 40058
+NUMBER OF DECOMPOSITION CLAUSES 18957
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 67.88% 32.12% 0.0% 
+NUMBER OF PATHS 23
+Starting cryptominisat5.5
+Setting starttime of solver to 1604490521059
+Command exited with non-zero status 20
+0.01 0.00
+
+Time command gave the following runtime for the solver: 10
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 4
+Generating initial PDT ... Still waiting ... running for 100 will abort at 9223372036854763356
+done
+initial PDT has 312 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 229 leafs
+SHOP LEAFS 127
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 284510
+NUMBER OF CLAUSES 11324354
+NUMBER OF STATE CLAUSES 558678
+NUMBER OF DECOMPOSITION CLAUSES 10765676
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 4.93% 95.07000000000001% 0.0% 
+NUMBER OF PATHS 229
+Starting cryptominisat5.5
+Setting starttime of solver to 1604490542654
+Command exited with non-zero status 10
+4.68 0.16
+
+Time command gave the following runtime for the solver: 4840
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... done
+SAT-Solver says: SATISFIABLE
+
+extracting solution
+Consider method^2_3;5,3017 3017 m5_do_fly
+3;5 163 pathaction!2_3;5,4705
+Consider method^2_2;4,855 855 m10_do_check_city
+2;4 223 pathaction!2_2;4,16
+Consider method^1_8,1262 1262 m5_do_fly
+8 165 pathaction!1_8,4694
+Consider method^3_0;5;1,838 838 m11_do_check_city
+0;5;1 42 pathaction!3_0;5;1,14
+Consider method^3_4;8;2,139 139 m11_do_check_city
+4;8;2 179 pathaction!3_4;8;2,22
+Consider method^3_0;4;2,2252 2252 m11_do_check_city
+0;4;2 153 pathaction!3_0;4;2,14
+Consider method^3_6;4;2,2 2 m9_do_check_city
+6;4;2 151 pathaction!3_6;4;2,21
+Consider method^1_7,209 209 <<m2_do_carry_person;do_debark[plane3,person8,city3];m8_do_debark;4;0,1,2,3,-1,-2,-3>;do_board[plane3,person8,city0];m7_do_board;2;0,1,-1,-2,-3,3,4,5,6>
+7 63 pathaction!1_7,7
+Consider method^2_4;8,1263 1263 m10_do_check_city
+4;8 228 pathaction!2_4;8,22
+Consider method^1_1,1869 1869 <m1_do_carry_person;do_debark[plane2,person2,city2];m8_do_debark;2;0,1,-1,-2,-3>
+1 18 pathaction!1_1,2
+Consider method^2_5;5,1614 1614 m6_do_fly
+5;5 191 pathaction!2_5;5,4698
+Consider method^2_2;1,2204 2204 m5_do_fly
+2;1 233 pathaction!2_2;1,4700
+Consider method^3_0;1;2,1420 1420 m11_do_check_city
+0;1;2 89 pathaction!3_0;1;2,16
+Consider method^3_2;5;2,2491 2491 m11_do_check_city
+2;5;2 64 pathaction!3_2;5;2,16
+Consider method^1_3,906 906 <m1_do_carry_person;do_debark[plane2,person4,city1];m8_do_debark;2;0,1,-1,-2,-3>
+3 148 pathaction!1_3,0
+Consider method^1_2,244 244 <<m2_do_carry_person;do_debark[plane2,person3,city3];m8_do_debark;4;0,1,2,3,-1,-2,-3>;do_board[plane2,person3,city4];m7_do_board;2;0,1,-1,-2,-3,3,4,5,6>
+2 1 pathaction!1_2,4
+Consider method^1_0,1107 1107 <<m2_do_carry_person;do_debark[plane2,person1,city1];m8_do_debark;4;0,1,2,3,-1,-2,-3>;do_board[plane2,person1,city3];m7_do_board;2;0,1,-1,-2,-3,3,4,5,6>
+0 45 pathaction!1_0,5
+Consider method^3_5;5;2,2224 2224 m11_do_check_city
+5;5;2 129 pathaction!3_5;5;2,22
+Consider method^3_3;8;2,2963 2963 m11_do_check_city
+3;8;2 100 pathaction!3_3;8;2,21
+Consider method^2_5;8,278 278 m10_do_check_city
+5;8 40 pathaction!2_5;8,14
+Consider method^2_0;4,3783 3783 m10_do_check_city
+0;4 70 pathaction!2_0;4,14
+Consider method^2_2;5,2531 2531 m6_do_fly
+2;5 222 pathaction!2_2;5,4698
+Consider method^2_6;1,3097 3097 m6_do_fly
+6;1 88 pathaction!2_6;1,4705
+Consider method^2_0;8,1241 1241 m10_do_check_city
+0;8 190 pathaction!2_0;8,21
+Consider method^2_0;1,1710 1710 m6_do_fly
+0;1 173 pathaction!2_0;1,4698
+Consider method^2_3;8,1241 1241 m10_do_check_city
+3;8 144 pathaction!2_3;8,21
+Consider method^2_8;1,1797 1797 m11_do_check_city
+8;1 130 pathaction!2_8;1,18
+Consider method^2_1;8,3752 3752 m10_do_check_city
+1;8 23 pathaction!2_1;8,15
+Consider method^2_4;5,2644 2644 m6_do_fly
+4;5 11 pathaction!2_4;5,4706
+Consider method^3_7;1;1,377 377 m11_do_check_city
+7;1;1 125 pathaction!3_7;1;1,8
+Consider method^1_6,2336 2336 <<m2_do_carry_person;do_debark[plane2,person7,city4];m8_do_debark;4;0,1,2,3,-1,-2,-3>;do_board[plane2,person7,city1];m7_do_board;2;0,1,-1,-2,-3,3,4,5,6>
+6 142 pathaction!1_6,3
+Consider method^2_6;4,847 847 m10_do_check_city
+6;4 4 pathaction!2_6;4,21
+Consider method^3_7;8;2,3847 3847 m9_do_check_city
+7;8;2 62 pathaction!3_7;8;2,9
+Consider method^2_0;5,3352 3352 m5_do_fly
+0;5 77 pathaction!2_0;5,4705
+Consider method^3_2;4;2,1420 1420 m11_do_check_city
+2;4;2 216 pathaction!3_2;4;2,16
+Consider method^3_7;5;1,95 95 m9_do_check_city
+7;5;1 17 pathaction!3_7;5;1,11
+Consider method^2_2;8,838 838 m11_do_check_city
+2;8 232 pathaction!2_2;8,14
+Consider method^2_7;5,3588 3588 m5_do_fly
+7;5 210 pathaction!2_7;5,4693
+Consider method^3_0;8;2,2455 2455 m9_do_check_city
+0;8;2 183 pathaction!3_0;8;2,21
+Consider method^3_4;5;2,2397 2397 m11_do_check_city
+4;5;2 218 pathaction!3_4;5;2,21
+Consider method^3_6;8;2,1016 1016 m9_do_check_city
+6;8;2 80 pathaction!3_6;8;2,16
+Consider method^1_4,4026 4026 <m1_do_carry_person;do_debark[plane2,person5,city0];m8_do_debark;2;0,1,-1,-2,-3>
+4 104 pathaction!1_4,6
+Consider method^3_3;5;1,3509 3509 m11_do_check_city
+3;5;1 93 pathaction!3_3;5;1,14
+Consider method^2_6;5,2266 2266 m5_do_fly
+6;5 66 pathaction!2_6;5,4700
+Consider method^3_1;8;2,1627 1627 m11_do_check_city
+1;8;2 79 pathaction!3_1;8;2,15
+Consider method^2_7;4,3803 3803 m10_do_check_city
+7;4 136 pathaction!2_7;4,11
+Consider method^2_7;8,3982 3982 m10_do_check_city
+7;8 36 pathaction!2_7;8,9
+Consider method^3_6;5;1,1409 1409 m11_do_check_city
+6;5;1 114 pathaction!3_6;5;1,21
+Consider method^2_7;1,2949 2949 m5_do_fly
+7;1 52 pathaction!2_7;1,4695
+Consider method^1_5,2079 2079 <m1_do_carry_person;do_debark[plane2,person6,city3];m8_do_debark;2;0,1,-1,-2,-3>
+5 98 pathaction!1_5,1
+Consider method^2_1;5,2433 2433 m5_do_fly
+1;5 137 pathaction!2_1;5,4699
+Consider method^3_2;1;1,2012 2012 m9_do_check_city
+2;1;1 33 pathaction!3_2;1;1,15
+Consider method^3_5;8;2,3509 3509 m11_do_check_city
+5;8;2 31 pathaction!3_5;8;2,14
+Consider method^0_,4061 4061 __top_1
+ 85 pathaction!0_,4880
+Consider method^3_7;4;2,356 356 m11_do_check_city
+7;4;2 110 pathaction!3_7;4;2,11
+Consider method^3_6;1;2,3189 3189 m9_do_check_city
+6;1;2 29 pathaction!3_6;1;2,14
+Consider method^2_6;8,2929 2929 m10_do_check_city
+6;8 25 pathaction!2_6;8,16
+Consider method^3_1;5;1,1409 1409 m11_do_check_city
+1;5;1 102 pathaction!3_1;5;1,21
+
+
+CHECKING primitive solution of length 138 ...
+true 37 __method_precondition_m2_do_carry_person_2_precondition[person1,city1,city3,plane2;]
+true 43 __method_precondition_m6_do_fly_6_precondition[plane2,city3,fl5,fl4,city4;]
+true 219 __method_precondition_m11_do_check_city_11_precondition[plane2,city4,person8;]
+true 111 nop[;]
+true 213 fly[plane2,city4,city3,fl5,fl4;]
+true 211 __method_precondition_m7_do_board_7_precondition[person1,city3,plane2;]
+true 24 board[person1,plane2,city3;]
+true 161 __method_precondition_m10_do_check_city_10_precondition[plane2,city3,person2;]
+true 7 board[person2,plane2,city3;]
+true 225 __method_precondition_m11_do_check_city_11_precondition[plane2,city3,person5;]
+true 60 nop[;]
+true 122 __method_precondition_m5_do_fly_5_precondition[fl5,city1,fl4,city3,plane2,fl4;]
+true 74 __method_precondition_m11_do_check_city_11_precondition[plane2,city3,person4;]
+true 150 nop[;]
+true 82 refuel[plane2,city3,fl4,fl5;]
+true 38 fly[plane2,city3,city1,fl5,fl4;]
+true 55 __method_precondition_m8_do_debark_8_precondition[plane2,city1,person1;]
+true 155 debark[person1,plane2,city1;]
+true 94 __method_precondition_m10_do_check_city_10_precondition[plane2,city1,person5;]
+true 124 board[person5,plane2,city1;]
+true 76 __method_precondition_m9_do_check_city_9_precondition[plane2,city1,person5;]
+true 198 debark[person5,plane2,city1;]
+true 57 __method_precondition_m1_do_carry_person_1_precondition[person2,plane2;]
+true 109 __method_precondition_m5_do_fly_5_precondition[fl5,city2,fl6,city1,plane2,fl4;]
+true 186 __method_precondition_m11_do_check_city_11_precondition[plane2,city1,person6;]
+true 20 nop[;]
+true 127 refuel[plane2,city1,fl4,fl5;]
+true 156 fly[plane2,city1,city2,fl5,fl4;]
+true 107 __method_precondition_m8_do_debark_8_precondition[plane2,city2,person2;]
+true 139 debark[person2,plane2,city2;]
+true 112 __method_precondition_m10_do_check_city_10_precondition[plane2,city2,person2;]
+true 6 board[person2,plane2,city2;]
+true 138 __method_precondition_m11_do_check_city_11_precondition[plane2,city2,person7;]
+true 143 nop[;]
+true 182 __method_precondition_m2_do_carry_person_2_precondition[person3,city3,city4,plane2;]
+true 206 __method_precondition_m5_do_fly_5_precondition[fl5,city4,fl2,city2,plane2,fl4;]
+true 47 __method_precondition_m9_do_check_city_9_precondition[plane2,city2,person2;]
+true 5 debark[person2,plane2,city2;]
+true 61 refuel[plane2,city2,fl4,fl5;]
+true 90 fly[plane2,city2,city4,fl5,fl4;]
+true 169 __method_precondition_m7_do_board_7_precondition[person3,city4,plane2;]
+true 123 board[person3,plane2,city4;]
+true 157 __method_precondition_m10_do_check_city_10_precondition[plane2,city4,person4;]
+true 134 board[person4,plane2,city4;]
+true 69 __method_precondition_m11_do_check_city_11_precondition[plane2,city4,person8;]
+true 135 nop[;]
+true 224 __method_precondition_m6_do_fly_6_precondition[plane2,city3,fl4,fl3,city4;]
+true 50 __method_precondition_m11_do_check_city_11_precondition[plane2,city4,plane3;]
+true 34 nop[;]
+true 86 fly[plane2,city4,city3,fl4,fl3;]
+true 131 __method_precondition_m8_do_debark_8_precondition[plane2,city3,person3;]
+true 35 debark[person3,plane2,city3;]
+true 174 __method_precondition_m11_do_check_city_11_precondition[plane2,city3,person4;]
+true 87 nop[;]
+true 203 __method_precondition_m1_do_carry_person_1_precondition[person4,plane2;]
+true 121 __method_precondition_m5_do_fly_5_precondition[fl4,city1,fl4,city3,plane2,fl3;]
+true 108 __method_precondition_m11_do_check_city_11_precondition[plane2,city3,plane3;]
+true 194 nop[;]
+true 118 refuel[plane2,city3,fl3,fl4;]
+true 164 fly[plane2,city3,city1,fl4,fl3;]
+true 159 __method_precondition_m8_do_debark_8_precondition[plane2,city1,person4;]
+true 215 debark[person4,plane2,city1;]
+true 9 __method_precondition_m10_do_check_city_10_precondition[plane2,city1,person5;]
+true 196 board[person5,plane2,city1;]
+true 158 __method_precondition_m11_do_check_city_11_precondition[plane2,city1,person2;]
+true 56 nop[;]
+true 160 __method_precondition_m1_do_carry_person_1_precondition[person5,plane2;]
+true 16 __method_precondition_m6_do_fly_6_precondition[plane2,city0,fl3,fl2,city1;]
+true 75 __method_precondition_m11_do_check_city_11_precondition[plane2,city1,person5;]
+true 189 nop[;]
+true 152 fly[plane2,city1,city0,fl3,fl2;]
+true 0 __method_precondition_m8_do_debark_8_precondition[plane2,city0,person5;]
+true 10 debark[person5,plane2,city0;]
+true 230 __method_precondition_m10_do_check_city_10_precondition[plane2,city0,person6;]
+true 99 board[person6,plane2,city0;]
+true 39 __method_precondition_m11_do_check_city_11_precondition[plane2,city0,person4;]
+true 115 nop[;]
+true 227 __method_precondition_m1_do_carry_person_1_precondition[person6,plane2;]
+true 184 __method_precondition_m6_do_fly_6_precondition[plane2,city3,fl2,fl1,city0;]
+true 221 __method_precondition_m11_do_check_city_11_precondition[plane2,city0,plane3;]
+true 171 nop[;]
+true 21 fly[plane2,city0,city3,fl2,fl1;]
+true 140 __method_precondition_m8_do_debark_8_precondition[plane2,city3,person6;]
+true 32 debark[person6,plane2,city3;]
+true 95 __method_precondition_m10_do_check_city_10_precondition[plane2,city3,person6;]
+true 177 board[person6,plane2,city3;]
+true 214 __method_precondition_m11_do_check_city_11_precondition[plane2,city3,plane3;]
+true 192 nop[;]
+true 8 __method_precondition_m2_do_carry_person_2_precondition[person7,city4,city1,plane2;]
+true 149 __method_precondition_m6_do_fly_6_precondition[plane2,city1,fl1,fl0,city3;]
+true 188 __method_precondition_m9_do_check_city_9_precondition[plane2,city3,person6;]
+true 202 debark[person6,plane2,city3;]
+true 166 fly[plane2,city3,city1,fl1,fl0;]
+true 105 __method_precondition_m7_do_board_7_precondition[person7,city1,plane2;]
+true 204 board[person7,plane2,city1;]
+true 220 __method_precondition_m10_do_check_city_10_precondition[plane2,city1,person1;]
+true 106 board[person1,plane2,city1;]
+true 54 __method_precondition_m9_do_check_city_9_precondition[plane2,city1,person1;]
+true 231 debark[person1,plane2,city1;]
+true 44 __method_precondition_m5_do_fly_5_precondition[fl1,city4,fl3,city1,plane2,fl0;]
+true 78 __method_precondition_m11_do_check_city_11_precondition[plane2,city1,person6;]
+true 96 nop[;]
+true 176 refuel[plane2,city1,fl0,fl1;]
+true 145 fly[plane2,city1,city4,fl1,fl0;]
+true 209 __method_precondition_m8_do_debark_8_precondition[plane2,city4,person7;]
+true 126 debark[person7,plane2,city4;]
+true 154 __method_precondition_m10_do_check_city_10_precondition[plane2,city4,person7;]
+true 53 board[person7,plane2,city4;]
+true 27 __method_precondition_m9_do_check_city_9_precondition[plane2,city4,person7;]
+true 59 debark[person7,plane2,city4;]
+true 133 __method_precondition_m2_do_carry_person_2_precondition[person8,city3,city0,plane3;]
+true 207 __method_precondition_m5_do_fly_5_precondition[fl3,city0,fl5,city2,plane3,fl2;]
+true 168 __method_precondition_m11_do_check_city_11_precondition[plane3,city2,person3;]
+true 200 nop[;]
+true 201 refuel[plane3,city2,fl2,fl3;]
+true 19 fly[plane3,city2,city0,fl3,fl2;]
+true 48 __method_precondition_m7_do_board_7_precondition[person8,city0,plane3;]
+true 197 board[person8,plane3,city0;]
+true 212 __method_precondition_m10_do_check_city_10_precondition[plane3,city0,person5;]
+true 3 board[person5,plane3,city0;]
+true 72 __method_precondition_m11_do_check_city_11_precondition[plane3,city0,person2;]
+true 97 nop[;]
+true 180 __method_precondition_m5_do_fly_5_precondition[fl3,city3,fl3,city0,plane3,fl2;]
+true 101 __method_precondition_m9_do_check_city_9_precondition[plane3,city0,person5;]
+true 167 debark[person5,plane3,city0;]
+true 14 refuel[plane3,city0,fl2,fl3;]
+true 26 fly[plane3,city0,city3,fl3,fl2;]
+true 199 __method_precondition_m8_do_debark_8_precondition[plane3,city3,person8;]
+true 217 debark[person8,plane3,city3;]
+true 116 __method_precondition_m10_do_check_city_10_precondition[plane3,city3,person6;]
+true 68 board[person6,plane3,city3;]
+true 119 __method_precondition_m9_do_check_city_9_precondition[plane3,city3,person6;]
+true 22 debark[person6,plane3,city3;]
+true 92 __method_precondition_m5_do_fly_5_precondition[fl3,city2,fl4,city0,plane1,fl2;]
+true 65 __method_precondition_m11_do_check_city_11_precondition[plane1,city0,person4;]
+true 146 nop[;]
+true 103 refuel[plane1,city0,fl2,fl3;]
+true 67 fly[plane1,city0,city2,fl3,fl2;]
+ done.
+Panda says: SOLUTION
+============ global ============
+randomseed     = 42
+peak memory    = 2204065920
+planner result = SOLUTION
+============ properties ============
+acyclic                  = false
+mostly acyclic           = false
+regular                  = false
+tail recursive           = true
+totally ordered          = true
+last task in all methods = true
+============ problem ============
+number of constants                  = 0
+number of predicates                 = 179
+number of actions                    = 5025
+number of abstract actions           = 183
+number of primitive actions          = 4842
+number of methods                    = 4062
+number of primitive shop actions     = 4061
+number of primitive non-shop actions = 781
+size of largest method               = 9
+average method size                  = 3
+============ sat ============
+plan length                     = -1
+number of variables             = 422795
+number of clauses               = 11324354
+average size of clauses         = 2.9185114665260374
+number of assert                = 92
+number of horn                  = 11124904
+K offset                        = 0
+K chosen value                  = 4
+state formula                   = 558678
+method children clauses         = 0
+number of paths                 = 229
+maximum plan length             = 229
+number of decomposition clauses = 10765676
+number of ordering clauses      = 0
+number of state clauses         = 558678
+solved                          = true
+timeout                         = false
+
+----------------- TIMINGS -----------------
+============ total ============
+total = 41230
+============ parsing ============
+total                         = 981
+file parser                   = 555
+sort expansion                = 155
+closed world assumption       = 137
+inherit preconditions         = 0
+shop methods                  = 31
+eliminate identical variables = 40
+strip domain of hybridity     = 1
+flatten formula               = 61
+============ preprocessing ============
+total                                      = 7055
+compile negative preconditions             = 55
+compile unit methods                       = 0
+split parameter                            = 43
+expand choiceless abstract tasks           = 760
+compile methods with identical tasks       = 60
+removing unnecessary predicates            = 1216
+lifted reachabiltiy analysis               = 75
+grounded planning graph analysis           = 1783
+grounded task decomposition graph analysis = 2293
+grounding                                  = 704
+create artificial top task                 = 22
+============ search preparation ============
+compute state invariants = 1588
+============ sat ============
+total                                        = 29381
+generate formula                             = 20315
+generate path decomposition tree             = 1496
+normalise path decomposition tree            = 346
+sog optimisation                             = 331
+translate path decomposition tree to clauses = 11259
+generate state formula                       = 19550
+generate state invariant formula             = 471
+transform to DIMACS                          = 3716
+SAT solver                                   = 4850
+SAT solver for K=0003                        = 10
+SAT solver for K=0004                        = 4840
+
+#1 "40 sat:90:solved"="true";"30 problem:05:number of primitive actions"="4842";"30 problem:01:number of constants"="0";"30 problem:04:number of abstract actions"="183";"02 properties:04:tail recursive"="true";"00 global:80:peak memory"="2204065920";"40 sat:20:state formula"="558678";"40 sat:01:number of variables"="422795";"40 sat:14:K offset"="0";"40 sat:30:number of paths"="229";"40 sat:00:plan length"="-1";"40 sat:50:number of ordering clauses"="0";"02 properties:02:mostly acyclic"="false";"30 problem:06:number of methods"="4062";"30 problem:07:number of primitive shop actions"="4061";"02 properties:05:totally ordered"="true";"02 properties:06:last task in all methods"="true";"30 problem:03:number of actions"="5025";"30 problem:08:number of primitive non-shop actions"="781";"30 problem:02:number of predicates"="179";"40 sat:03:number of horn"="11124904";"40 sat:15:K chosen value"="4";"30 problem:10:average method size"="3";"02 properties:03:regular"="false";"30 problem:09:size of largest method"="9";"40 sat:03:average size of clauses"="2.9185114665260374";"40 sat:02:number of clauses"="11324354";"40 sat:50:number of state clauses"="558678";"40 sat:03:number of assert"="92";"40 sat:22:method children clauses"="0";"00 global:90:planner result"="SOLUTION";"02 properties:01:acyclic"="false";"40 sat:31:maximum plan length"="229";"40 sat:50:number of decomposition clauses"="10765676";"00 global:02:randomseed"="42";"40 sat:91:timeout"="false";"01 parsing:01:file parser"="555";"01 parsing:08:flatten formula"="61";"40 sat:41:SAT solver for K=0004"="4840";"40 sat:00:total"="29381";"40 sat:16:generate state formula"="19550";"40 sat:20:transform to DIMACS"="3716";"40 sat:11:generate path decomposition tree"="1496";"02 preprocessing:07:compile methods with identical tasks"="60";"01 parsing:07:strip domain of hybridity"="1";"02 preprocessing:08:removing unnecessary predicates"="1216";"01 parsing:03:closed world assumption"="137";"02 preprocessing:11:lifted reachabiltiy analysis"="75";"01 parsing:02:sort expansion"="155";"40 sat:12:normalise path decomposition tree"="346";"40 sat:40:SAT solver"="4850";"01 parsing:00:total"="981";"40 sat:10:generate formula"="20315";"01 parsing:04:inherit preconditions"="0";"02 preprocessing:01:compile negative preconditions"="55";"00 total:00:total"="41230";"40 sat:13:sog optimisation"="331";"02 preprocessing:12:grounded planning graph analysis"="1783";"02 preprocessing:02:compile unit methods"="0";"02 preprocessing:23:grounded task decomposition graph analysis"="2293";"02 preprocessing:04:split parameter"="43";"01 parsing:05:shop methods"="31";"10 search preparation:02:compute state invariants"="1588";"01 parsing:06:eliminate identical variables"="40";"40 sat:15:translate path decomposition tree to clauses"="11259";"02 preprocessing:05:expand choiceless abstract tasks"="760";"40 sat:41:SAT solver for K=0003"="10";"40 sat:17:generate state invariant formula"="471";"02 preprocessing:00:total"="7055";"02 preprocessing:99:create artificial top task"="22";"02 preprocessing:84:grounding"="704"
+#!verify __method_precondition_m2_do_carry_person_2_precondition[person1,city1,city3,plane2];__method_precondition_m6_do_fly_6_precondition[plane2,city3,fl5,fl4,city4];__method_precondition_m11_do_check_city_11_precondition[plane2,city4,person8];nop[];fly[plane2,city4,city3,fl5,fl4];__method_precondition_m7_do_board_7_precondition[person1,city3,plane2];board[person1,plane2,city3];__method_precondition_m10_do_check_city_10_precondition[plane2,city3,person2];board[person2,plane2,city3];__method_precondition_m11_do_check_city_11_precondition[plane2,city3,person5];nop[];__method_precondition_m5_do_fly_5_precondition[fl5,city1,fl4,city3,plane2,fl4];__method_precondition_m11_do_check_city_11_precondition[plane2,city3,person4];nop[];refuel[plane2,city3,fl4,fl5];fly[plane2,city3,city1,fl5,fl4];__method_precondition_m8_do_debark_8_precondition[plane2,city1,person1];debark[person1,plane2,city1];__method_precondition_m10_do_check_city_10_precondition[plane2,city1,person5];board[person5,plane2,city1];__method_precondition_m9_do_check_city_9_precondition[plane2,city1,person5];debark[person5,plane2,city1];__method_precondition_m1_do_carry_person_1_precondition[person2,plane2];__method_precondition_m5_do_fly_5_precondition[fl5,city2,fl6,city1,plane2,fl4];__method_precondition_m11_do_check_city_11_precondition[plane2,city1,person6];nop[];refuel[plane2,city1,fl4,fl5];fly[plane2,city1,city2,fl5,fl4];__method_precondition_m8_do_debark_8_precondition[plane2,city2,person2];debark[person2,plane2,city2];__method_precondition_m10_do_check_city_10_precondition[plane2,city2,person2];board[person2,plane2,city2];__method_precondition_m11_do_check_city_11_precondition[plane2,city2,person7];nop[];__method_precondition_m2_do_carry_person_2_precondition[person3,city3,city4,plane2];__method_precondition_m5_do_fly_5_precondition[fl5,city4,fl2,city2,plane2,fl4];__method_precondition_m9_do_check_city_9_precondition[plane2,city2,person2];debark[person2,plane2,city2];refuel[plane2,city2,fl4,fl5];fly[plane2,city2,city4,fl5,fl4];__method_precondition_m7_do_board_7_precondition[person3,city4,plane2];board[person3,plane2,city4];__method_precondition_m10_do_check_city_10_precondition[plane2,city4,person4];board[person4,plane2,city4];__method_precondition_m11_do_check_city_11_precondition[plane2,city4,person8];nop[];__method_precondition_m6_do_fly_6_precondition[plane2,city3,fl4,fl3,city4];__method_precondition_m11_do_check_city_11_precondition[plane2,city4,plane3];nop[];fly[plane2,city4,city3,fl4,fl3];__method_precondition_m8_do_debark_8_precondition[plane2,city3,person3];debark[person3,plane2,city3];__method_precondition_m11_do_check_city_11_precondition[plane2,city3,person4];nop[];__method_precondition_m1_do_carry_person_1_precondition[person4,plane2];__method_precondition_m5_do_fly_5_precondition[fl4,city1,fl4,city3,plane2,fl3];__method_precondition_m11_do_check_city_11_precondition[plane2,city3,plane3];nop[];refuel[plane2,city3,fl3,fl4];fly[plane2,city3,city1,fl4,fl3];__method_precondition_m8_do_debark_8_precondition[plane2,city1,person4];debark[person4,plane2,city1];__method_precondition_m10_do_check_city_10_precondition[plane2,city1,person5];board[person5,plane2,city1];__method_precondition_m11_do_check_city_11_precondition[plane2,city1,person2];nop[];__method_precondition_m1_do_carry_person_1_precondition[person5,plane2];__method_precondition_m6_do_fly_6_precondition[plane2,city0,fl3,fl2,city1];__method_precondition_m11_do_check_city_11_precondition[plane2,city1,person5];nop[];fly[plane2,city1,city0,fl3,fl2];__method_precondition_m8_do_debark_8_precondition[plane2,city0,person5];debark[person5,plane2,city0];__method_precondition_m10_do_check_city_10_precondition[plane2,city0,person6];board[person6,plane2,city0];__method_precondition_m11_do_check_city_11_precondition[plane2,city0,person4];nop[];__method_precondition_m1_do_carry_person_1_precondition[person6,plane2];__method_precondition_m6_do_fly_6_precondition[plane2,city3,fl2,fl1,city0];__method_precondition_m11_do_check_city_11_precondition[plane2,city0,plane3];nop[];fly[plane2,city0,city3,fl2,fl1];__method_precondition_m8_do_debark_8_precondition[plane2,city3,person6];debark[person6,plane2,city3];__method_precondition_m10_do_check_city_10_precondition[plane2,city3,person6];board[person6,plane2,city3];__method_precondition_m11_do_check_city_11_precondition[plane2,city3,plane3];nop[];__method_precondition_m2_do_carry_person_2_precondition[person7,city4,city1,plane2];__method_precondition_m6_do_fly_6_precondition[plane2,city1,fl1,fl0,city3];__method_precondition_m9_do_check_city_9_precondition[plane2,city3,person6];debark[person6,plane2,city3];fly[plane2,city3,city1,fl1,fl0];__method_precondition_m7_do_board_7_precondition[person7,city1,plane2];board[person7,plane2,city1];__method_precondition_m10_do_check_city_10_precondition[plane2,city1,person1];board[person1,plane2,city1];__method_precondition_m9_do_check_city_9_precondition[plane2,city1,person1];debark[person1,plane2,city1];__method_precondition_m5_do_fly_5_precondition[fl1,city4,fl3,city1,plane2,fl0];__method_precondition_m11_do_check_city_11_precondition[plane2,city1,person6];nop[];refuel[plane2,city1,fl0,fl1];fly[plane2,city1,city4,fl1,fl0];__method_precondition_m8_do_debark_8_precondition[plane2,city4,person7];debark[person7,plane2,city4];__method_precondition_m10_do_check_city_10_precondition[plane2,city4,person7];board[person7,plane2,city4];__method_precondition_m9_do_check_city_9_precondition[plane2,city4,person7];debark[person7,plane2,city4];__method_precondition_m2_do_carry_person_2_precondition[person8,city3,city0,plane3];__method_precondition_m5_do_fly_5_precondition[fl3,city0,fl5,city2,plane3,fl2];__method_precondition_m11_do_check_city_11_precondition[plane3,city2,person3];nop[];refuel[plane3,city2,fl2,fl3];fly[plane3,city2,city0,fl3,fl2];__method_precondition_m7_do_board_7_precondition[person8,city0,plane3];board[person8,plane3,city0];__method_precondition_m10_do_check_city_10_precondition[plane3,city0,person5];board[person5,plane3,city0];__method_precondition_m11_do_check_city_11_precondition[plane3,city0,person2];nop[];__method_precondition_m5_do_fly_5_precondition[fl3,city3,fl3,city0,plane3,fl2];__method_precondition_m9_do_check_city_9_precondition[plane3,city0,person5];debark[person5,plane3,city0];refuel[plane3,city0,fl2,fl3];fly[plane3,city0,city3,fl3,fl2];__method_precondition_m8_do_debark_8_precondition[plane3,city3,person8];debark[person8,plane3,city3];__method_precondition_m10_do_check_city_10_precondition[plane3,city3,person6];board[person6,plane3,city3];__method_precondition_m9_do_check_city_9_precondition[plane3,city3,person6];debark[person6,plane3,city3];__method_precondition_m5_do_fly_5_precondition[fl3,city2,fl4,city0,plane1,fl2];__method_precondition_m11_do_check_city_11_precondition[plane1,city0,person4];nop[];refuel[plane1,city0,fl2,fl3];fly[plane1,city0,city2,fl3,fl2]
+==>
+0 __method_precondition_m2_do_carry_person_2_precondition person1 city1 city3 plane2 
+1 __method_precondition_m6_do_fly_6_precondition plane2 city3 fl5 fl4 city4 
+2 __method_precondition_m11_do_check_city_11_precondition plane2 city4 person8 
+3 nop  
+4 fly plane2 city4 city3 fl5 fl4 
+5 __method_precondition_m7_do_board_7_precondition person1 city3 plane2 
+6 board person1 plane2 city3 
+7 __method_precondition_m10_do_check_city_10_precondition plane2 city3 person2 
+8 board person2 plane2 city3 
+9 __method_precondition_m11_do_check_city_11_precondition plane2 city3 person5 
+10 nop  
+11 __method_precondition_m5_do_fly_5_precondition fl5 city1 fl4 city3 plane2 fl4 
+12 __method_precondition_m11_do_check_city_11_precondition plane2 city3 person4 
+13 nop  
+14 refuel plane2 city3 fl4 fl5 
+15 fly plane2 city3 city1 fl5 fl4 
+16 __method_precondition_m8_do_debark_8_precondition plane2 city1 person1 
+17 debark person1 plane2 city1 
+18 __method_precondition_m10_do_check_city_10_precondition plane2 city1 person5 
+19 board person5 plane2 city1 
+20 __method_precondition_m9_do_check_city_9_precondition plane2 city1 person5 
+21 debark person5 plane2 city1 
+22 __method_precondition_m1_do_carry_person_1_precondition person2 plane2 
+23 __method_precondition_m5_do_fly_5_precondition fl5 city2 fl6 city1 plane2 fl4 
+24 __method_precondition_m11_do_check_city_11_precondition plane2 city1 person6 
+25 nop  
+26 refuel plane2 city1 fl4 fl5 
+27 fly plane2 city1 city2 fl5 fl4 
+28 __method_precondition_m8_do_debark_8_precondition plane2 city2 person2 
+29 debark person2 plane2 city2 
+30 __method_precondition_m10_do_check_city_10_precondition plane2 city2 person2 
+31 board person2 plane2 city2 
+32 __method_precondition_m11_do_check_city_11_precondition plane2 city2 person7 
+33 nop  
+34 __method_precondition_m2_do_carry_person_2_precondition person3 city3 city4 plane2 
+35 __method_precondition_m5_do_fly_5_precondition fl5 city4 fl2 city2 plane2 fl4 
+36 __method_precondition_m9_do_check_city_9_precondition plane2 city2 person2 
+37 debark person2 plane2 city2 
+38 refuel plane2 city2 fl4 fl5 
+39 fly plane2 city2 city4 fl5 fl4 
+40 __method_precondition_m7_do_board_7_precondition person3 city4 plane2 
+41 board person3 plane2 city4 
+42 __method_precondition_m10_do_check_city_10_precondition plane2 city4 person4 
+43 board person4 plane2 city4 
+44 __method_precondition_m11_do_check_city_11_precondition plane2 city4 person8 
+45 nop  
+46 __method_precondition_m6_do_fly_6_precondition plane2 city3 fl4 fl3 city4 
+47 __method_precondition_m11_do_check_city_11_precondition plane2 city4 plane3 
+48 nop  
+49 fly plane2 city4 city3 fl4 fl3 
+50 __method_precondition_m8_do_debark_8_precondition plane2 city3 person3 
+51 debark person3 plane2 city3 
+52 __method_precondition_m11_do_check_city_11_precondition plane2 city3 person4 
+53 nop  
+54 __method_precondition_m1_do_carry_person_1_precondition person4 plane2 
+55 __method_precondition_m5_do_fly_5_precondition fl4 city1 fl4 city3 plane2 fl3 
+56 __method_precondition_m11_do_check_city_11_precondition plane2 city3 plane3 
+57 nop  
+58 refuel plane2 city3 fl3 fl4 
+59 fly plane2 city3 city1 fl4 fl3 
+60 __method_precondition_m8_do_debark_8_precondition plane2 city1 person4 
+61 debark person4 plane2 city1 
+62 __method_precondition_m10_do_check_city_10_precondition plane2 city1 person5 
+63 board person5 plane2 city1 
+64 __method_precondition_m11_do_check_city_11_precondition plane2 city1 person2 
+65 nop  
+66 __method_precondition_m1_do_carry_person_1_precondition person5 plane2 
+67 __method_precondition_m6_do_fly_6_precondition plane2 city0 fl3 fl2 city1 
+68 __method_precondition_m11_do_check_city_11_precondition plane2 city1 person5 
+69 nop  
+70 fly plane2 city1 city0 fl3 fl2 
+71 __method_precondition_m8_do_debark_8_precondition plane2 city0 person5 
+72 debark person5 plane2 city0 
+73 __method_precondition_m10_do_check_city_10_precondition plane2 city0 person6 
+74 board person6 plane2 city0 
+75 __method_precondition_m11_do_check_city_11_precondition plane2 city0 person4 
+76 nop  
+77 __method_precondition_m1_do_carry_person_1_precondition person6 plane2 
+78 __method_precondition_m6_do_fly_6_precondition plane2 city3 fl2 fl1 city0 
+79 __method_precondition_m11_do_check_city_11_precondition plane2 city0 plane3 
+80 nop  
+81 fly plane2 city0 city3 fl2 fl1 
+82 __method_precondition_m8_do_debark_8_precondition plane2 city3 person6 
+83 debark person6 plane2 city3 
+84 __method_precondition_m10_do_check_city_10_precondition plane2 city3 person6 
+85 board person6 plane2 city3 
+86 __method_precondition_m11_do_check_city_11_precondition plane2 city3 plane3 
+87 nop  
+88 __method_precondition_m2_do_carry_person_2_precondition person7 city4 city1 plane2 
+89 __method_precondition_m6_do_fly_6_precondition plane2 city1 fl1 fl0 city3 
+90 __method_precondition_m9_do_check_city_9_precondition plane2 city3 person6 
+91 debark person6 plane2 city3 
+92 fly plane2 city3 city1 fl1 fl0 
+93 __method_precondition_m7_do_board_7_precondition person7 city1 plane2 
+94 board person7 plane2 city1 
+95 __method_precondition_m10_do_check_city_10_precondition plane2 city1 person1 
+96 board person1 plane2 city1 
+97 __method_precondition_m9_do_check_city_9_precondition plane2 city1 person1 
+98 debark person1 plane2 city1 
+99 __method_precondition_m5_do_fly_5_precondition fl1 city4 fl3 city1 plane2 fl0 
+100 __method_precondition_m11_do_check_city_11_precondition plane2 city1 person6 
+101 nop  
+102 refuel plane2 city1 fl0 fl1 
+103 fly plane2 city1 city4 fl1 fl0 
+104 __method_precondition_m8_do_debark_8_precondition plane2 city4 person7 
+105 debark person7 plane2 city4 
+106 __method_precondition_m10_do_check_city_10_precondition plane2 city4 person7 
+107 board person7 plane2 city4 
+108 __method_precondition_m9_do_check_city_9_precondition plane2 city4 person7 
+109 debark person7 plane2 city4 
+110 __method_precondition_m2_do_carry_person_2_precondition person8 city3 city0 plane3 
+111 __method_precondition_m5_do_fly_5_precondition fl3 city0 fl5 city2 plane3 fl2 
+112 __method_precondition_m11_do_check_city_11_precondition plane3 city2 person3 
+113 nop  
+114 refuel plane3 city2 fl2 fl3 
+115 fly plane3 city2 city0 fl3 fl2 
+116 __method_precondition_m7_do_board_7_precondition person8 city0 plane3 
+117 board person8 plane3 city0 
+118 __method_precondition_m10_do_check_city_10_precondition plane3 city0 person5 
+119 board person5 plane3 city0 
+120 __method_precondition_m11_do_check_city_11_precondition plane3 city0 person2 
+121 nop  
+122 __method_precondition_m5_do_fly_5_precondition fl3 city3 fl3 city0 plane3 fl2 
+123 __method_precondition_m9_do_check_city_9_precondition plane3 city0 person5 
+124 debark person5 plane3 city0 
+125 refuel plane3 city0 fl2 fl3 
+126 fly plane3 city0 city3 fl3 fl2 
+127 __method_precondition_m8_do_debark_8_precondition plane3 city3 person8 
+128 debark person8 plane3 city3 
+129 __method_precondition_m10_do_check_city_10_precondition plane3 city3 person6 
+130 board person6 plane3 city3 
+131 __method_precondition_m9_do_check_city_9_precondition plane3 city3 person6 
+132 debark person6 plane3 city3 
+133 __method_precondition_m5_do_fly_5_precondition fl3 city2 fl4 city0 plane1 fl2 
+134 __method_precondition_m11_do_check_city_11_precondition plane1 city0 person4 
+135 nop  
+136 refuel plane1 city0 fl2 fl3 
+137 fly plane1 city0 city2 fl3 fl2 
+root 177
+138 do_check_city plane2 city3  -> m10_do_check_city 7 8 183
+139 do_check_city plane2 city1  -> m10_do_check_city 18 19 156
+140 do_fly plane2 city3  -> m6_do_fly 1 164 4
+141 do_check_city plane2 city1  -> m11_do_check_city 24 25
+142 do_check_city plane2 city4  -> m9_do_check_city 108 109
+143 do_carry_person person4 city1  -> <m1_do_carry_person;do_debark[plane2,person4,city1];m8_do_debark;2;0,1,-1,-2,-3> 54 188 60 61 182
+144 do_carry_person person6 city3  -> <m1_do_carry_person;do_debark[plane2,person6,city3];m8_do_debark;2;0,1,-1,-2,-3> 77 159 82 83 172
+145 do_carry_person person8 city3  -> <<m2_do_carry_person;do_debark[plane3,person8,city3];m8_do_debark;4;0,1,2,3,-1,-2,-3>;do_board[plane3,person8,city0];m7_do_board;2;0,1,-1,-2,-3,3,4,5,6> 110 160 116 117 187 150 127 128 193
+146 do_fly plane2 city4  -> m5_do_fly 35 173 38 39
+147 do_check_city plane2 city0  -> m11_do_check_city 79 80
+148 do_check_city plane2 city0  -> m11_do_check_city 75 76
+149 do_carry_person person5 city0  -> <m1_do_carry_person;do_debark[plane2,person5,city0];m8_do_debark;2;0,1,-1,-2,-3> 66 166 71 72 181
+150 do_fly plane3 city3  -> m5_do_fly 122 176 125 126
+151 do_fly plane2 city1  -> m6_do_fly 89 155 92
+152 do_check_city plane2 city4  -> m11_do_check_city 44 45
+153 do_check_city plane2 city1  -> m9_do_check_city 97 98
+154 do_check_city plane2 city2  -> m10_do_check_city 30 31 184
+155 do_check_city plane2 city3  -> m9_do_check_city 90 91
+156 do_check_city plane2 city1  -> m9_do_check_city 20 21
+157 do_check_city plane1 city0  -> m11_do_check_city 134 135
+158 do_check_city plane2 city3  -> m11_do_check_city 56 57
+159 do_fly plane2 city3  -> m6_do_fly 78 147 81
+160 do_fly plane3 city0  -> m5_do_fly 111 171 114 115
+161 do_fly plane1 city2  -> m5_do_fly 133 157 136 137
+162 do_check_city plane2 city1  -> m11_do_check_city 100 101
+163 do_fly plane2 city1  -> m5_do_fly 11 185 14 15
+164 do_check_city plane2 city4  -> m11_do_check_city 2 3
+165 do_fly plane2 city3  -> m6_do_fly 46 175 49
+166 do_fly plane2 city0  -> m6_do_fly 67 195 70
+167 do_fly plane2 city2  -> m5_do_fly 23 141 26 27
+168 do_check_city plane2 city1  -> m11_do_check_city 64 65
+169 do_fly plane2 city4  -> m5_do_fly 99 162 102 103
+170 do_check_city plane2 city1  -> m10_do_check_city 95 96 153
+171 do_check_city plane3 city2  -> m11_do_check_city 112 113
+172 do_check_city plane2 city3  -> m10_do_check_city 84 85 189
+173 do_check_city plane2 city2  -> m9_do_check_city 36 37
+174 do_check_city plane2 city4  -> m10_do_check_city 106 107 142
+175 do_check_city plane2 city4  -> m11_do_check_city 47 48
+176 do_check_city plane3 city0  -> m9_do_check_city 123 124
+177 __choicelessATCompilation__top_1  -> __top_1 194 190 191 143 149 144 186 145 161
+178 do_check_city plane3 city3  -> m9_do_check_city 131 132
+179 do_check_city plane2 city4  -> m10_do_check_city 42 43 152
+180 do_check_city plane3 city0  -> m11_do_check_city 120 121
+181 do_check_city plane2 city0  -> m10_do_check_city 73 74 148
+182 do_check_city plane2 city1  -> m10_do_check_city 62 63 168
+183 do_check_city plane2 city3  -> m11_do_check_city 9 10
+184 do_check_city plane2 city2  -> m11_do_check_city 32 33
+185 do_check_city plane2 city3  -> m11_do_check_city 12 13
+186 do_carry_person person7 city4  -> <<m2_do_carry_person;do_debark[plane2,person7,city4];m8_do_debark;4;0,1,2,3,-1,-2,-3>;do_board[plane2,person7,city1];m7_do_board;2;0,1,-1,-2,-3,3,4,5,6> 88 151 93 94 170 169 104 105 174
+187 do_check_city plane3 city0  -> m10_do_check_city 118 119 180
+188 do_fly plane2 city1  -> m5_do_fly 55 158 58 59
+189 do_check_city plane2 city3  -> m11_do_check_city 86 87
+190 do_carry_person person2 city2  -> <m1_do_carry_person;do_debark[plane2,person2,city2];m8_do_debark;2;0,1,-1,-2,-3> 22 167 28 29 154
+191 do_carry_person person3 city3  -> <<m2_do_carry_person;do_debark[plane2,person3,city3];m8_do_debark;4;0,1,2,3,-1,-2,-3>;do_board[plane2,person3,city4];m7_do_board;2;0,1,-1,-2,-3,3,4,5,6> 34 146 40 41 179 165 50 51 192
+192 do_check_city plane2 city3  -> m11_do_check_city 52 53
+193 do_check_city plane3 city3  -> m10_do_check_city 129 130 178
+194 do_carry_person person1 city1  -> <<m2_do_carry_person;do_debark[plane2,person1,city1];m8_do_debark;4;0,1,2,3,-1,-2,-3>;do_board[plane2,person1,city3];m7_do_board;2;0,1,-1,-2,-3,3,4,5,6> 0 140 5 6 138 163 16 17 139
+195 do_check_city plane2 city1  -> m11_do_check_city 68 69
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 42.288 MEMPEAK_KBS 2701236.224

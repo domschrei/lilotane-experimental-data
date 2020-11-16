@@ -1,0 +1,104 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version rls-2020-11-02T15:57:46+01:00-glucose4
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020
+using SAT solver glucose4
+
+0.002 Sorts extracted.
+0.003 Mined 11 new reduction preconditions (+44.0%).
+0.003 23 operators and 15 methods created.
+0.003 Iteration 0.
+0.003 Creating initial layer of size 2
+0.004 Attempting to solve formula with 7 clauses (9 literals) and 1 assumptions
+0.004 Unsolvable at layer 0 -- expanding.
+0.004 Iteration 1.
+0.004 New layer size: 3
+0.004 Instantiating ...
+0.005 Collected 9 relevant facts at this layer
+0.005 Encoding ...
+0.006 Attempting to solve formula with 74 clauses (162 literals) and 2 assumptions
+0.006 Unsolvable at layer 1 -- expanding.
+0.006 Iteration 2.
+0.006 New layer size: 9
+0.006 Instantiating ...
+0.007 Collected 49 relevant facts at this layer
+0.007 Encoding ...
+0.008 Attempting to solve formula with 1118 clauses (3116 literals) and 5 assumptions
+0.008 Unsolvable at layer 2 -- expanding.
+0.008 Iteration 3.
+0.008 New layer size: 16
+0.008 Instantiating ...
+0.011 Collected 49 relevant facts at this layer
+0.011 Encoding ...
+0.026 Attempting to solve formula with 2307 clauses (6433 literals) and 5 assumptions
+0.026 Unsolvable at layer 3 -- expanding.
+0.026 Iteration 4.
+0.026 New layer size: 25
+0.026 Instantiating ...
+0.027 Retroactively prune action (__REPEATED___SURROGATE*m4_do_clear*nop* pallet1 depot0)@(3,1): no children at offset 0
+0.027 Retroactively prune action (__REPEATED_Lift Q_2,1_hoist:0_946fcaf1bfc7ab0f Q_2,1_crate:0_1038d8c2d4c45e34 pallet1 depot0) due to impossible effect !(clear Q_2,1_crate:0_1038d8c2d4c45e34)
+0.027 Retroactively prune action (__SURROGATE*m4_do_clear*nop* pallet1 distributor0)@(3,5): no children at offset 0
+0.028 Collected 49 relevant facts at this layer
+0.028 Encoding ...
+0.029 Attempting to solve formula with 3058 clauses (8325 literals) and 3 assumptions
+c last restart ## conflicts  :  0 163 
+0.029 Found a solution at layer 4.
+0.029 Initial plan at final layer has length 15
+0.029 Tightened initial plan length bounds at layer 4: [0,24] => [13,15]
+0.029 Searching for a plan of length < 15
+0.029 Attempting to solve formula with 3103 clauses (8440 literals) and 0 assumptions
+==>
+671 nop
+674 nop
+678 Lift hoist0 crate1 pallet0 depot0
+680 Load hoist0 crate1 truck1 depot0
+691 Drive truck1 depot0 distributor0
+700 nop
+702 Lift hoist1 crate0 pallet1 distributor0
+704 nop
+714 Load hoist1 crate0 truck1 distributor0
+722 Unload hoist1 crate1 truck1 distributor0
+726 Drop hoist1 crate1 pallet1 distributor0
+731 Drive truck1 distributor0 distributor1
+771 nop
+777 Unload hoist2 crate0 truck1 distributor1
+797 Drop hoist2 crate0 pallet2 distributor1
+root 9 25
+9 do_put_on crate1 pallet1 -> m3_do_put_on 455 691 159
+25 do_put_on crate0 pallet2 -> m2_do_put_on 270 770 777 797
+159 do_unload_truck crate1 pallet1 distributor0 truck1 -> m11_do_unload_truck 508 722 726
+270 do_get_truck truck1 distributor1 -> m7_do_get_truck 731
+455 do_load_truck crate1 pallet0 depot0 truck1 -> m10_do_load_truck 670 673 678 680
+508 do_clear pallet1 distributor0 -> m5_do_clear 699 702 703 714
+670 do_get_truck truck1 depot0 -> m6_do_get_truck 671
+673 do_clear crate1 depot0 -> m4_do_clear 674
+699 do_clear crate0 distributor0 -> m4_do_clear 700
+703 do_get_truck truck1 distributor0 -> m6_do_get_truck 704
+770 do_clear pallet2 distributor1 -> m4_do_clear 771
+<==
+0.029 End of solution plan. (counted length of 15)
+0.029 Total amount of clauses encoded: 3103
+0.029 - directframeaxioms : 1496 cls
+0.029 - qfactsemantics : 405 cls
+0.029 - indirectframeaxioms : 275 cls
+0.029 - actionconstraints : 166 cls
+0.029 - reductionconstraints : 130 cls
+0.029 - expansions : 125 cls
+0.029 - predecessors : 116 cls
+0.029 - atmostoneelement : 104 cls
+0.029 - actioneffects : 95 cls
+0.029 - truefacts : 49 cls
+0.029 - substitutionconstraints : 44 cls
+0.029 - planlengthcounting : 42 cls
+0.029 - qconstequality : 30 cls
+0.029 - forbiddenoperations : 21 cls
+0.029 - assumptions : 3 cls
+0.029 - axiomaticops : 2 cls
+0.029 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.001 MEMPEAK_KBS 0

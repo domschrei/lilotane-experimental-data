@@ -1,0 +1,135 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version rls-2020-11-02T15:57:46+01:00-glucose4
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020
+using SAT solver glucose4
+
+0.001 Sorts extracted.
+0.002 Mined 13 new reduction preconditions (+inf%).
+0.002 9 operators and 7 methods created.
+0.002 Iteration 0.
+0.002 Creating initial layer of size 2
+0.011 Attempting to solve formula with 3 clauses (3 literals) and 1 assumptions
+0.011 Unsolvable at layer 0 -- expanding.
+0.011 Iteration 1.
+0.011 New layer size: 5
+0.011 Instantiating ...
+0.011 Collected 0 relevant facts at this layer
+0.011 Encoding ...
+0.011 Attempting to solve formula with 17 clauses (27 literals) and 4 assumptions
+0.011 Unsolvable at layer 1 -- expanding.
+0.011 Iteration 2.
+0.011 New layer size: 17
+0.011 Instantiating ...
+0.011 Retroactively prune action (__SURROGATE*m_drive_to_ordering_0*drive* Q_2,0_location:0_a92a34751411e303 city_loc_1 truck_0) due to impossible effect !(at truck_0 Q_2,0_location:0_a92a34751411e303)
+0.013 Collected 20 relevant facts at this layer
+0.013 Encoding ...
+0.013 Attempting to solve formula with 827 clauses (2257 literals) and 8 assumptions
+0.014 Unsolvable at layer 2 -- expanding.
+0.014 Iteration 3.
+0.014 New layer size: 25
+0.014 Instantiating ...
+0.014 Retroactively prune action (__SURROGATE*m_drive_to_ordering_0*drive* Q_3,0_location:0_98f1de72b601ef52 city_loc_2 truck_0) due to impossible effect !(at truck_0 Q_3,0_location:0_98f1de72b601ef52)
+0.015 Collected 20 relevant facts at this layer
+0.015 Encoding ...
+0.016 Attempting to solve formula with 1497 clauses (4068 literals) and 8 assumptions
+0.016 Unsolvable at layer 3 -- expanding.
+0.016 Iteration 4.
+0.016 New layer size: 33
+0.016 Instantiating ...
+0.018 Collected 20 relevant facts at this layer
+0.018 Encoding ...
+0.020 Attempting to solve formula with 2591 clauses (7207 literals) and 8 assumptions
+c last restart ## conflicts  :  1 188 
+0.020 Found a solution at layer 4.
+0.020 Initial plan at final layer has length 25
+0.020 Tightened initial plan length bounds at layer 4: [0,32] => [18,25]
+0.020 Searching for a plan of length < 25
+0.020 Attempting to solve formula with 2794 clauses (7782 literals) and 0 assumptions
+c last restart ## conflicts  :  67 168 
+0.021 Shorter plan (length 24) found
+0.021 Searching for a plan of length < 24
+0.021 Attempting to solve formula with 2796 clauses (7784 literals) and 0 assumptions
+c last restart ## conflicts  :  51 162 
+0.022 Shorter plan (length 23) found
+0.022 Searching for a plan of length < 23
+0.022 Attempting to solve formula with 2798 clauses (7786 literals) and 0 assumptions
+c last restart ## conflicts  :  3 161 
+0.023 Shorter plan (length 22) found
+0.023 Searching for a plan of length < 22
+0.023 Attempting to solve formula with 2800 clauses (7788 literals) and 0 assumptions
+==>
+486 drive truck_0 city_loc_0 city_loc_3
+492 drive truck_0 city_loc_3 city_loc_2
+501 drive truck_0 city_loc_2 city_loc_1
+504 pick_up truck_0 city_loc_1 package_1 capacity_2 capacity_3
+508 drive truck_0 city_loc_1 city_loc_2
+520 drive truck_0 city_loc_2 city_loc_3
+530 drive truck_0 city_loc_3 city_loc_0
+534 drop truck_0 city_loc_0 package_1 capacity_2 capacity_3
+538 noop truck_0 city_loc_0
+564 pick_up truck_0 city_loc_0 package_0 capacity_2 capacity_3
+568 drive truck_0 city_loc_0 city_loc_3
+591 drop truck_0 city_loc_3 package_0 capacity_2 capacity_3
+594 drive truck_0 city_loc_3 city_loc_2
+622 pick_up truck_0 city_loc_2 package_3 capacity_2 capacity_3
+627 drive truck_0 city_loc_2 city_loc_3
+648 drive truck_0 city_loc_3 city_loc_0
+652 drop truck_0 city_loc_0 package_3 capacity_2 capacity_3
+655 drive truck_0 city_loc_0 city_loc_3
+679 pick_up truck_0 city_loc_3 package_2 capacity_2 capacity_3
+685 drive truck_0 city_loc_3 city_loc_2
+708 drive truck_0 city_loc_2 city_loc_1
+712 drop truck_0 city_loc_1 package_2 capacity_2 capacity_3
+root 5 7 9 11
+5 deliver package_1 city_loc_0 -> m_deliver_ordering_0 15 503 51 533
+7 deliver package_0 city_loc_3 -> m_deliver_ordering_0 537 563 567 590
+9 deliver package_3 city_loc_0 -> m_deliver_ordering_0 593 621 188 651
+11 deliver package_2 city_loc_1 -> m_deliver_ordering_0 654 678 257 711
+15 get_to truck_0 city_loc_1 -> m_drive_to_via_ordering_0 299 501
+51 get_to truck_0 city_loc_0 -> m_drive_to_via_ordering_0 315 530
+188 get_to truck_0 city_loc_0 -> m_drive_to_via_ordering_0 626 648
+257 get_to truck_0 city_loc_1 -> m_drive_to_via_ordering_0 684 708
+299 get_to truck_0 city_loc_2 -> m_drive_to_via_ordering_0 485 492
+315 get_to truck_0 city_loc_3 -> m_drive_to_via_ordering_0 507 520
+485 get_to truck_0 city_loc_3 -> m_drive_to_ordering_0 486
+503 load truck_0 city_loc_1 package_1 -> m_load_ordering_0 504
+507 get_to truck_0 city_loc_2 -> m_drive_to_ordering_0 508
+533 unload truck_0 city_loc_0 package_1 -> m_unload_ordering_0 534
+537 get_to truck_0 city_loc_0 -> m_i_am_there_ordering_0 538
+563 load truck_0 city_loc_0 package_0 -> m_load_ordering_0 564
+567 get_to truck_0 city_loc_3 -> m_drive_to_ordering_0 568
+590 unload truck_0 city_loc_3 package_0 -> m_unload_ordering_0 591
+593 get_to truck_0 city_loc_2 -> m_drive_to_ordering_0 594
+621 load truck_0 city_loc_2 package_3 -> m_load_ordering_0 622
+626 get_to truck_0 city_loc_3 -> m_drive_to_ordering_0 627
+651 unload truck_0 city_loc_0 package_3 -> m_unload_ordering_0 652
+654 get_to truck_0 city_loc_3 -> m_drive_to_ordering_0 655
+678 load truck_0 city_loc_3 package_2 -> m_load_ordering_0 679
+684 get_to truck_0 city_loc_2 -> m_drive_to_ordering_0 685
+711 unload truck_0 city_loc_1 package_2 -> m_unload_ordering_0 712
+<==
+0.031 End of solution plan. (counted length of 22)
+0.031 Total amount of clauses encoded: 2800
+0.031 - directframeaxioms : 400 cls
+0.031 - qfactsemantics : 307 cls
+0.031 - atmostoneelement : 248 cls
+0.031 - indirectframeaxioms : 244 cls
+0.031 - planlengthcounting : 201 cls
+0.031 - substitutionconstraints : 192 cls
+0.031 - qconstequality : 190 cls
+0.031 - predecessors : 184 cls
+0.031 - expansions : 173 cls
+0.031 - reductionconstraints : 123 cls
+0.031 - actioneffects : 108 cls
+0.031 - truefacts : 20 cls
+0.031 - assumptions : 8 cls
+0.031 - axiomaticops : 2 cls
+0.031 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.001 MEMPEAK_KBS 0

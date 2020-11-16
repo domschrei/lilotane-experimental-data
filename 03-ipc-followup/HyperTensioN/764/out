@@ -1,0 +1,92 @@
+----------------------Tasks-----------------------
+0 do_mission planet3 infrared0
+1 do_mission planet4 infrared0
+2 do_mission phenomenon5 image2
+3 do_mission phenomenon6 infrared0
+4 do_mission star7 infrared0
+5 invisible_goal
+---------------------Planning---------------------
+Time: 0.0007648468017578125s
+-----------------------Plan-----------------------
+==>
+9 switch_on instrument0 satellite0
+15 nop
+16 turn_to satellite0 star0 planet4
+12 calibrate satellite0 instrument0 star0
+17 turn_to satellite0 planet3 star0
+6 take_image satellite0 planet3 instrument0 infrared0
+25 switch_off instrument0 satellite0
+23 switch_on instrument0 satellite0
+30 nop
+31 turn_to satellite0 star0 planet3
+27 calibrate satellite0 instrument0 star0
+32 turn_to satellite0 planet4 star0
+19 take_image satellite0 planet4 instrument0 infrared0
+40 switch_off instrument0 satellite0
+38 switch_on instrument1 satellite0
+45 nop
+46 turn_to satellite0 groundstation2 planet4
+42 calibrate satellite0 instrument1 groundstation2
+47 turn_to satellite0 phenomenon5 groundstation2
+34 take_image satellite0 phenomenon5 instrument1 image2
+55 switch_off instrument1 satellite0
+53 switch_on instrument0 satellite0
+60 nop
+61 turn_to satellite0 star0 phenomenon5
+57 calibrate satellite0 instrument0 star0
+62 turn_to satellite0 phenomenon6 star0
+49 take_image satellite0 phenomenon6 instrument0 infrared0
+70 switch_off instrument0 satellite0
+68 switch_on instrument0 satellite0
+75 nop
+76 turn_to satellite0 star0 phenomenon6
+72 calibrate satellite0 instrument0 star0
+77 turn_to satellite0 star7 star0
+64 take_image satellite0 star7 instrument0 infrared0
+root 0 1 2 3 4
+0 do_mission planet3 infrared0 -> m0_do_mission 5 6
+5 do_prepare satellite0 instrument0 planet3 -> m1_do_prepare 7 8
+7 do_switching satellite0 instrument0 -> m3_do_switching 9 10
+10 do_calibration satellite0 instrument0 star0 -> m5_do_calibration 11 12
+11 do_prepare satellite0 instrument0 star0 -> m1_do_prepare 13 14
+13 do_switching satellite0 instrument0 -> m4_do_switching 15
+14 do_turning satellite0 star0 -> m8_do_turning 16
+8 do_turning satellite0 planet3 -> m8_do_turning 17
+1 do_mission planet4 infrared0 -> m0_do_mission 18 19
+18 do_prepare satellite0 instrument0 planet4 -> m1_do_prepare 20 21
+20 do_switching satellite0 instrument0 -> m2_do_switching 22 23 24
+22 make_power_available satellite0 instrument0 -> m7_make_power_available 25
+24 do_calibration satellite0 instrument0 star0 -> m5_do_calibration 26 27
+26 do_prepare satellite0 instrument0 star0 -> m1_do_prepare 28 29
+28 do_switching satellite0 instrument0 -> m4_do_switching 30
+29 do_turning satellite0 star0 -> m8_do_turning 31
+21 do_turning satellite0 planet4 -> m8_do_turning 32
+2 do_mission phenomenon5 image2 -> m0_do_mission 33 34
+33 do_prepare satellite0 instrument1 phenomenon5 -> m1_do_prepare 35 36
+35 do_switching satellite0 instrument1 -> m2_do_switching 37 38 39
+37 make_power_available satellite0 instrument0 -> m7_make_power_available 40
+39 do_calibration satellite0 instrument1 groundstation2 -> m5_do_calibration 41 42
+41 do_prepare satellite0 instrument1 groundstation2 -> m1_do_prepare 43 44
+43 do_switching satellite0 instrument1 -> m4_do_switching 45
+44 do_turning satellite0 groundstation2 -> m8_do_turning 46
+36 do_turning satellite0 phenomenon5 -> m8_do_turning 47
+3 do_mission phenomenon6 infrared0 -> m0_do_mission 48 49
+48 do_prepare satellite0 instrument0 phenomenon6 -> m1_do_prepare 50 51
+50 do_switching satellite0 instrument0 -> m2_do_switching 52 53 54
+52 make_power_available satellite0 instrument1 -> m7_make_power_available 55
+54 do_calibration satellite0 instrument0 star0 -> m5_do_calibration 56 57
+56 do_prepare satellite0 instrument0 star0 -> m1_do_prepare 58 59
+58 do_switching satellite0 instrument0 -> m4_do_switching 60
+59 do_turning satellite0 star0 -> m8_do_turning 61
+51 do_turning satellite0 phenomenon6 -> m8_do_turning 62
+4 do_mission star7 infrared0 -> m0_do_mission 63 64
+63 do_prepare satellite0 instrument0 star7 -> m1_do_prepare 65 66
+65 do_switching satellite0 instrument0 -> m2_do_switching 67 68 69
+67 make_power_available satellite0 instrument0 -> m7_make_power_available 70
+69 do_calibration satellite0 instrument0 star0 -> m5_do_calibration 71 72
+71 do_prepare satellite0 instrument0 star0 -> m1_do_prepare 73 74
+73 do_switching satellite0 instrument0 -> m4_do_switching 75
+74 do_turning satellite0 star0 -> m8_do_turning 76
+66 do_turning satellite0 star7 -> m8_do_turning 77
+<==
+Total time: 0.0049517154693603516s

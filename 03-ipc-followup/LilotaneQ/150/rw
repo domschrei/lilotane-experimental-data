@@ -1,0 +1,148 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version rls-2020-11-02T15:57:46+01:00-glucose4
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020
+using SAT solver glucose4
+
+0.002 Sorts extracted.
+0.004 Mined 11 new reduction preconditions (+44.0%).
+0.004 23 operators and 15 methods created.
+0.004 Iteration 0.
+0.004 Creating initial layer of size 2
+0.018 Attempting to solve formula with 11 clauses (15 literals) and 1 assumptions
+0.018 Unsolvable at layer 0 -- expanding.
+0.018 Iteration 1.
+0.018 New layer size: 5
+0.018 Instantiating ...
+0.022 Collected 27 relevant facts at this layer
+0.022 Encoding ...
+0.022 Attempting to solve formula with 313 clauses (708 literals) and 4 assumptions
+0.022 Unsolvable at layer 1 -- expanding.
+0.022 Iteration 2.
+0.022 New layer size: 17
+0.022 Instantiating ...
+0.038 Collected 157 relevant facts at this layer
+0.038 Encoding ...
+0.043 Attempting to solve formula with 6133 clauses (17774 literals) and 11 assumptions
+0.043 Unsolvable at layer 2 -- expanding.
+0.043 Iteration 3.
+0.043 New layer size: 37
+0.043 Instantiating ...
+0.055 Collected 175 relevant facts at this layer
+0.055 Encoding ...
+0.064 Attempting to solve formula with 15676 clauses (46288 literals) and 15 assumptions
+0.064 Unsolvable at layer 3 -- expanding.
+0.064 Iteration 4.
+0.064 New layer size: 67
+0.064 Instantiating ...
+0.064 Retroactively prune action (__REPEATED___SURROGATE*m4_do_clear*nop* pallet0 distributor2)@(3,1): no children at offset 0
+0.076 Collected 175 relevant facts at this layer
+0.076 Encoding ...
+0.089 Attempting to solve formula with 26970 clauses (80777 literals) and 17 assumptions
+0.090 Unsolvable at layer 4 -- expanding.
+0.090 Iteration 5.
+0.090 New layer size: 88
+0.090 Instantiating ...
+0.104 Collected 175 relevant facts at this layer
+0.104 Encoding ...
+0.122 Attempting to solve formula with 37601 clauses (114202 literals) and 14 assumptions
+c last restart ## conflicts  :  17 952 
+0.124 Found a solution at layer 5.
+0.126 Initial plan at final layer has length 38
+0.127 Tightened initial plan length bounds at layer 5: [0,87] => [12,38]
+0.128 Searching for a plan of length < 38
+0.128 Attempting to solve formula with 41374 clauses (125391 literals) and 0 assumptions
+==>
+6040 Drive truck0 depot1 distributor2
+6044 nop
+6050 Lift hoist5 crate3 crate2 distributor2
+6053 Load hoist5 crate3 truck0 distributor2
+6056 Drive truck0 distributor2 depot0
+6243 nop
+6249 Lift hoist0 crate1 pallet0 depot0
+6252 Drive truck1 depot2 depot0
+6261 Load hoist0 crate1 truck1 depot0
+6266 Unload hoist0 crate3 truck0 depot0
+6268 Drop hoist0 crate3 pallet0 depot0
+6278 Drive truck0 depot0 distributor2
+6527 nop
+6768 Lift hoist5 crate2 pallet5 distributor2
+6781 Load hoist5 crate2 truck0 distributor2
+6798 Drive truck0 distributor2 distributor0
+7093 nop
+7361 Lift hoist3 crate5 pallet3 distributor0
+7366 Drive truck1 depot0 distributor0
+7376 Load hoist3 crate5 truck1 distributor0
+7383 Unload hoist3 crate2 truck0 distributor0
+7385 Drop hoist3 crate2 pallet3 distributor0
+7393 Drive truck1 distributor0 depot2
+7403 nop
+7409 Lift hoist2 crate4 pallet2 depot2
+7411 Load hoist2 crate4 truck1 depot2
+7414 Drive truck1 depot2 distributor2
+7737 nop
+8042 Unload hoist5 crate4 truck1 distributor2
+8044 Drop hoist5 crate4 pallet5 distributor2
+8051 Drive truck1 distributor2 depot1
+8061 nop
+8068 Lift hoist1 crate0 pallet1 depot1
+8070 Load hoist1 crate0 truck1 depot1
+8074 Drive truck1 depot1 distributor2
+8080 nop
+8084 Unload hoist5 crate0 truck1 distributor2
+8087 Drop hoist5 crate0 crate4 distributor2
+root 14 47 93 143
+14 do_put_on crate3 pallet0 -> m3_do_put_on 2154 6056 468
+47 do_put_on crate2 pallet3 -> m3_do_put_on 2585 6798 885
+93 do_put_on crate4 pallet5 -> m3_do_put_on 3332 7414 1387
+143 do_put_on crate0 crate4 -> m3_do_put_on 3895 8074 1917
+468 do_unload_truck crate3 pallet0 depot0 truck0 -> m11_do_unload_truck 2400 6266 6268
+885 do_unload_truck crate2 pallet3 distributor0 truck0 -> m11_do_unload_truck 3107 7383 7385
+1387 do_unload_truck crate4 pallet5 distributor2 truck1 -> m11_do_unload_truck 7736 8042 8044
+1917 do_unload_truck crate0 crate4 distributor2 truck1 -> m11_do_unload_truck 8079 8084 8087
+2154 do_load_truck crate3 crate2 distributor2 truck0 -> m10_do_load_truck 4018 6043 6050 6053
+2400 do_clear pallet0 depot0 -> m5_do_clear 6242 6249 4307 6261
+2585 do_load_truck crate2 pallet5 distributor2 truck0 -> m10_do_load_truck 4342 6526 6768 6781
+3107 do_clear pallet3 distributor0 -> m5_do_clear 7092 7361 5188 7376
+3332 do_load_truck crate4 pallet2 depot2 truck1 -> m10_do_load_truck 5289 7402 7409 7411
+3895 do_load_truck crate0 pallet1 depot1 truck1 -> m10_do_load_truck 5955 8060 8068 8070
+4018 do_get_truck truck0 distributor2 -> m7_do_get_truck 6040
+4307 do_get_truck truck1 depot0 -> m7_do_get_truck 6252
+4342 do_get_truck truck0 distributor2 -> m7_do_get_truck 6278
+5188 do_get_truck truck1 distributor0 -> m7_do_get_truck 7366
+5289 do_get_truck truck1 depot2 -> m7_do_get_truck 7393
+5955 do_get_truck truck1 depot1 -> m7_do_get_truck 8051
+6043 do_clear crate3 distributor2 -> m4_do_clear 6044
+6242 do_clear crate1 depot0 -> m4_do_clear 6243
+6526 do_clear crate2 distributor2 -> m4_do_clear 6527
+7092 do_clear crate5 distributor0 -> m4_do_clear 7093
+7402 do_clear crate4 depot2 -> m4_do_clear 7403
+7736 do_clear pallet5 distributor2 -> m4_do_clear 7737
+8060 do_clear crate0 depot1 -> m4_do_clear 8061
+8079 do_clear crate4 distributor2 -> m4_do_clear 8080
+<==
+0.129 End of solution plan. (counted length of 38)
+0.129 Total amount of clauses encoded: 41374
+0.129 - directframeaxioms : 19310 cls
+0.129 - qfactsemantics : 6243 cls
+0.129 - indirectframeaxioms : 5411 cls
+0.129 - planlengthcounting : 3759 cls
+0.129 - reductionconstraints : 1558 cls
+0.129 - actionconstraints : 1047 cls
+0.129 - substitutionconstraints : 1032 cls
+0.129 - expansions : 728 cls
+0.129 - atmostoneelement : 714 cls
+0.129 - predecessors : 598 cls
+0.129 - qconstequality : 426 cls
+0.129 - actioneffects : 355 cls
+0.129 - truefacts : 175 cls
+0.129 - assumptions : 14 cls
+0.129 - forbiddenoperations : 2 cls
+0.129 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 1.472 MEMPEAK_KBS 0

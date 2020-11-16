@@ -1,0 +1,72 @@
+----------------------Tasks-----------------------
+0 achieve_served p1
+1 achieve_served p0
+---------------------Planning---------------------
+Time: 0.0005252361297607422s
+-----------------------Plan-----------------------
+==>
+20 up f0 f1
+22 up f1 f2
+19 i_lock_lift_at f2
+24 i_unlock_lift_at f2
+17 board f2 p1
+12 i_lock_boarded p1
+27 up f2 f3
+26 i_lock_lift_at f3
+29 i_unlock_lift_at f3
+30 i_unlock_boarded p1
+10 depart f3 p1
+3 i_lock_served p1
+49 down f3 f0
+51 up f0 f1
+48 i_lock_lift_at f1
+53 i_unlock_lift_at f1
+46 board f1 p0
+41 i_lock_boarded p0
+56 up f1 f2
+58 up f2 f3
+55 i_lock_lift_at f3
+60 i_unlock_lift_at f3
+61 i_unlock_boarded p0
+39 depart f3 p0
+32 i_lock_served p0
+root 0 1
+0 achieve_served p1 -> m22_achieve_served 2 3
+2 achieve_served2 p1 -> m24_achieve_served2 4 5
+4 do_served_depart2 f3 p1 -> m8_do_served_depart2 6 7 8 9 10
+6 achieve_boarded p1 -> m17_achieve_boarded 11 12
+11 achieve_boarded1 p1 -> m19_achieve_boarded1 13 14
+13 do_boarded_board1 f2 p1 -> m7_do_boarded_board1 15 16 17
+15 achieve_lift_at f2 -> m11_achieve_lift_at 18 19
+18 achieve_lift_at0 f2 -> m13_achieve_lift_at0 20 21
+21 achieve_lift_at0 f2 -> m13_achieve_lift_at0 22 23
+23 achieve_lift_at0 f2 -> m12_achieve_lift_at0 
+16 ifunlock_lift_at f2 -> ifunlock5_lift_at 24
+14 achieve_boarded1 p1 -> m18_achieve_boarded1 
+7 achieve_lift_at f3 -> m11_achieve_lift_at 25 26
+25 achieve_lift_at0 f3 -> m13_achieve_lift_at0 27 28
+28 achieve_lift_at0 f3 -> m12_achieve_lift_at0 
+8 ifunlock_lift_at f3 -> ifunlock5_lift_at 29
+9 ifunlock_boarded p1 -> ifunlock1_boarded 30
+5 achieve_served2 p1 -> m23_achieve_served2 
+1 achieve_served p0 -> m22_achieve_served 31 32
+31 achieve_served2 p0 -> m24_achieve_served2 33 34
+33 do_served_depart2 f3 p0 -> m8_do_served_depart2 35 36 37 38 39
+35 achieve_boarded p0 -> m17_achieve_boarded 40 41
+40 achieve_boarded1 p0 -> m19_achieve_boarded1 42 43
+42 do_boarded_board1 f1 p0 -> m7_do_boarded_board1 44 45 46
+44 achieve_lift_at f1 -> m11_achieve_lift_at 47 48
+47 achieve_lift_at0 f1 -> m14_achieve_lift_at0 49 50
+50 achieve_lift_at0 f1 -> m13_achieve_lift_at0 51 52
+52 achieve_lift_at0 f1 -> m12_achieve_lift_at0 
+45 ifunlock_lift_at f1 -> ifunlock5_lift_at 53
+43 achieve_boarded1 p0 -> m18_achieve_boarded1 
+36 achieve_lift_at f3 -> m11_achieve_lift_at 54 55
+54 achieve_lift_at0 f3 -> m13_achieve_lift_at0 56 57
+57 achieve_lift_at0 f3 -> m13_achieve_lift_at0 58 59
+59 achieve_lift_at0 f3 -> m12_achieve_lift_at0 
+37 ifunlock_lift_at f3 -> ifunlock5_lift_at 60
+38 ifunlock_boarded p0 -> ifunlock1_boarded 61
+34 achieve_served2 p0 -> m23_achieve_served2 
+<==
+Total time: 0.023522615432739258s

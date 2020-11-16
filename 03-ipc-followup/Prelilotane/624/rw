@@ -1,0 +1,101 @@
+0.000 
+0.000 Hello from  L i l o t a n e  version rls-2020-11-06T08:48:42+01:00-glucose4
+0.000 by Dominik Schreiber <dominik.schreiber@kit.edu> 2020
+0.000 using SAT solver glucose4
+0.000 
+0.026 84 methods, 56 abstract tasks, 67 primitive tasks
+0.026 Sorts extracted.
+0.103 Mined 88 new reduction preconditions (+8800.0%).
+0.103 89 operators and 84 methods created.
+0.103 Iteration 0.
+0.103 Creating initial layer of size 2
+0.128 Attempting to solve formula with 2083 clauses (2084 literals) and 1 assumptions
+0.128 Unsolvable at layer 0 -- expanding.
+0.128 Iteration 1.
+0.128 New layer size: 2
+0.330 Attempting to solve formula with 3146 clauses (4376 literals) and 1 assumptions
+0.330 Unsolvable at layer 1 -- expanding.
+0.330 Iteration 2.
+0.330 New layer size: 2
+0.508 Forbidding reduction (m_tlt_clear_road_tree Q_1,0_7:0_point Q_1,0_8:1_point)@(1,0): no children at offset 0
+0.532 Attempting to solve formula with 3386 clauses (5048 literals) and 1 assumptions
+0.532 Unsolvable at layer 2 -- expanding.
+0.532 Iteration 3.
+0.532 New layer size: 7
+0.584 Forbidding reduction (m_provide_medical_attention_in_hospital Q_2,0_14:0_hospital Q_1,0_12:0_adult)@(2,0): no children at offset 0
+0.584 Forbidding reduction (m_provide_medical_attention_simple_on_site Q_1,0_12:0_adult)@(2,0): no children at offset 0
+0.686 Forbidding reduction (m_clear_road_wreck Q_1,0_5:0_point Q_1,0_6:1_point)@(2,0): no children at offset 1
+0.776 Attempting to solve formula with 28345 clauses (76570 literals) and 4 assumptions
+0.776 Unsolvable at layer 3 -- expanding.
+0.776 Iteration 4.
+0.776 New layer size: 27
+0.961 Forbidding reduction (m_clean_up_hazard_normal Q_1,0_3:0_point Q_3,1_23:1_hazard_team Q_1,0_4:1_point very_hazardous very_hazardous)@(3,1): no children at offset 2
+1.339 Attempting to solve formula with 149758 clauses (449544 literals) and 23 assumptions
+1.342 Unsolvable at layer 4 -- expanding.
+1.342 Iteration 5.
+1.342 New layer size: 82
+1.863 Attempting to solve formula with 489357 clauses (1443253 literals) and 50 assumptions
+1.871 Unsolvable at layer 5 -- expanding.
+1.871 Iteration 6.
+1.871 New layer size: 239
+3.489 Attempting to solve formula with 1304971 clauses (3752394 literals) and 122 assumptions
+c last restart ## conflicts  :  7 8820 
+3.538 Found a solution at layer 6.
+==>
+140200 SHOP_methodm_quell_riot_precondition rochester_general rochester
+194426 p_1Call
+210042 p_2Call
+266067 SHOP_methodm_get_to_person_drives_themself_precondition pu1 rochester_general pvan1 strong
+284749 SHOP_methodm_drive_to_precondition pvan1 strong pu1
+284763 p_3Navegate_vehicle
+313008 SHOP_methodm_get_to_as_cargo_precondition pu2 rochester_general park_ridge pvan1
+313015 SHOP_methodm_get_to_vehicle_gets_driven_precondition pvan1 park_ridge rochester_general pu1
+313022 SHOP_methodm_drive_to_precondition pvan1 rochester_general pu1
+313029 p_4Navegate_vehicle
+313095 SHOP_methodm_get_in_ambulatory_person_precondition pu2 park_ridge pvan1
+315237 p_5Climb_in
+321765 SHOP_methodm_get_to_vehicle_gets_driven_precondition pvan1 rochester_general park_ridge pu1
+321774 SHOP_methodm_drive_to_precondition pvan1 park_ridge pu1
+321798 p_6Navegate_vehicle
+328291 climb_out pu2 pvan1 rochester_general
+341263 set_up_barricades pu1
+341266 set_up_barricades pu2
+root 4163
+4163 tlt -> m_tlt_quell_riot 4337
+4337 quell_riot rochester_general -> m_quell_riot 140200 4451 6958 9098 341263 341266
+4451 declare_curfew rochester -> m_declare_curfew 194425 210041
+6958 get_to pu1 rochester_general -> m_get_to_person_drives_themself 266067 35107
+9098 get_to pu2 rochester_general -> m_get_to_as_cargo 313008 44712 44747 45866 328290
+35107 drive_to pu1 pvan1 rochester_general -> m_drive_to 284749 284762
+44712 get_to pvan1 park_ridge -> m_get_to_vehicle_gets_driven 313015 129390
+44747 get_in pu2 pvan1 -> m_get_in_ambulatory_person 313095 315236
+45866 get_to pvan1 rochester_general -> m_get_to_vehicle_gets_driven 321765 133679
+129390 drive_to pu1 pvan1 park_ridge -> m_drive_to 313022 313028
+133679 drive_to pu1 pvan1 rochester_general -> m_drive_to 321774 321797
+194425 ccall ebs -> prefix_1 194426
+210041 ccall police_chief -> prefix_2 210042
+284762 cnavegate_vehicle pu1 pvan1 rochester_general strong -> prefix_3 284763
+313028 cnavegate_vehicle pu1 pvan1 park_ridge rochester_general -> prefix_4 313029
+315236 cclimb_in pu2 pvan1 park_ridge -> prefix_5 315237
+321797 cnavegate_vehicle pu1 pvan1 rochester_general park_ridge -> prefix_6 321798
+328290 get_out pu2 pvan1 -> m_get_out_ambulatory_person 328291
+<==
+3.539 End of solution plan.
+3.539 Total amount of clauses encoded: 1304971
+3.539 - frameaxioms : 1070543 cls
+3.539 - qfactsemantics : 159616 cls
+3.539 - reductionconstraints : 31813 cls
+3.539 - actionconstraints : 12636 cls
+3.539 - substitutionconstraints : 11944 cls
+3.539 - atmostoneelement : 6625 cls
+3.539 - truefacts : 2814 cls
+3.539 - expansions : 2771 cls
+3.539 - predecessors : 1932 cls
+3.539 - qtypeconstraints : 1155 cls
+3.539 - qconstequality : 787 cls
+3.539 - actioneffects : 744 cls
+3.539 - atleastoneelement : 361 cls
+3.539 - axiomaticops : 2 cls
+3.539 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 4.038 MEMPEAK_KBS 206606.336

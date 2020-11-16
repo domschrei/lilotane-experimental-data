@@ -1,0 +1,145 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version dbg-2020-10-27T10:30:37+01:00-glucose4
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020
+using SAT solver glucose4
+
+0.001 Sorts extracted.
+0.001 Mined 13 new reduction preconditions (+inf%).
+0.001 9 operators and 7 methods created.
+0.001 Iteration 0.
+0.001 Creating initial layer of size 2
+0.002 Attempting to solve formula with 3 clauses (3 literals) and 1 assumptions
+0.002 Unsolvable at layer 0 -- expanding.
+0.002 Iteration 1.
+0.002 New layer size: 8
+0.002 Instantiating ...
+0.002 Collected 0 relevant facts at this layer
+0.002 Encoding ...
+0.002 Attempting to solve formula with 26 clauses (42 literals) and 7 assumptions
+0.002 Unsolvable at layer 1 -- expanding.
+0.002 Iteration 2.
+0.002 New layer size: 29
+0.002 Instantiating ...
+0.002 Retroactively prune action (__SURROGATE*m-drive-to*drive* truck-0 Q_2,0_location:0_60b7fe5f14846fbf city-loc-4) due to impossible effect !(at truck-0 Q_2,0_location:0_60b7fe5f14846fbf)
+0.004 Collected 31 relevant facts at this layer
+0.004 Encoding ...
+0.005 Attempting to solve formula with 1719 clauses (4660 literals) and 14 assumptions
+0.005 Unsolvable at layer 2 -- expanding.
+0.005 Iteration 3.
+0.005 New layer size: 43
+0.005 Instantiating ...
+0.008 Collected 31 relevant facts at this layer
+0.008 Encoding ...
+0.009 Attempting to solve formula with 3366 clauses (9186 literals) and 14 assumptions
+c last restart ## conflicts  :  2 271 
+0.009 Found a solution at layer 3.
+0.009 Initial plan at final layer has length 34
+0.009 Tightened initial plan length bounds at layer 3: [0,42] => [28,34]
+0.009 Searching for a plan of length < 34
+0.009 Attempting to solve formula with 3579 clauses (9777 literals) and 0 assumptions
+c last restart ## conflicts  :  50 268 
+0.010 Shorter plan (length 32) found
+0.010 Searching for a plan of length < 32
+0.010 Attempting to solve formula with 3582 clauses (9780 literals) and 0 assumptions
+c last restart ## conflicts  :  0 258 
+0.010 Shorter plan (length 31) found
+0.010 Searching for a plan of length < 31
+0.010 Attempting to solve formula with 3584 clauses (9782 literals) and 0 assumptions
+==>
+584 noop truck-0 city-loc-4
+601 pick-up truck-0 city-loc-4 package-0 capacity-2 capacity-3
+605 drive truck-0 city-loc-4 city-loc-1
+633 drop truck-0 city-loc-1 package-0 capacity-2 capacity-3
+638 drive truck-0 city-loc-1 city-loc-4
+664 pick-up truck-0 city-loc-4 package-1 capacity-2 capacity-3
+670 drive truck-0 city-loc-4 city-loc-2
+692 drop truck-0 city-loc-2 package-1 capacity-2 capacity-3
+697 drive truck-0 city-loc-2 city-loc-4
+711 drive truck-0 city-loc-4 city-loc-1
+723 pick-up truck-0 city-loc-1 package-2 capacity-2 capacity-3
+726 drive truck-0 city-loc-1 city-loc-4
+754 drop truck-0 city-loc-4 package-2 capacity-2 capacity-3
+758 drive truck-0 city-loc-4 city-loc-2
+782 pick-up truck-0 city-loc-2 package-3 capacity-2 capacity-3
+785 drive truck-0 city-loc-2 city-loc-4
+801 drive truck-0 city-loc-4 city-loc-1
+813 drop truck-0 city-loc-1 package-3 capacity-2 capacity-3
+817 drive truck-0 city-loc-1 city-loc-1
+845 pick-up truck-0 city-loc-1 package-4 capacity-2 capacity-3
+848 drive truck-0 city-loc-1 city-loc-4
+863 drive truck-0 city-loc-4 city-loc-2
+873 drop truck-0 city-loc-2 package-4 capacity-2 capacity-3
+876 drive truck-0 city-loc-2 city-loc-4
+903 pick-up truck-0 city-loc-4 package-5 capacity-2 capacity-3
+908 drive truck-0 city-loc-4 city-loc-1
+935 drop truck-0 city-loc-1 package-5 capacity-2 capacity-3
+940 noop truck-0 city-loc-1
+967 pick-up truck-0 city-loc-1 package-6 capacity-2 capacity-3
+971 drive truck-0 city-loc-1 city-loc-4
+998 drop truck-0 city-loc-4 package-6 capacity-2 capacity-3
+root 5 7 9 11 13 15 17
+5 deliver package-0 city-loc-1 -> m-deliver 583 600 604 632
+7 deliver package-1 city-loc-2 -> m-deliver 637 663 669 691
+9 deliver package-2 city-loc-4 -> m-deliver 188 722 725 753
+11 deliver package-3 city-loc-1 -> m-deliver 757 781 303 812
+13 deliver package-4 city-loc-2 -> m-deliver 816 844 381 872
+15 deliver package-5 city-loc-1 -> m-deliver 875 902 907 934
+17 deliver package-6 city-loc-4 -> m-deliver 939 966 970 997
+188 get-to truck-0 city-loc-1 -> m-drive-to-via 696 711
+303 get-to truck-0 city-loc-1 -> m-drive-to-via 784 801
+381 get-to truck-0 city-loc-2 -> m-drive-to-via 847 863
+583 get-to truck-0 city-loc-4 -> m-i-am-there 584
+600 load truck-0 city-loc-4 package-0 -> m-load 601
+604 get-to truck-0 city-loc-1 -> m-drive-to 605
+632 unload truck-0 city-loc-1 package-0 -> m-unload 633
+637 get-to truck-0 city-loc-4 -> m-drive-to 638
+663 load truck-0 city-loc-4 package-1 -> m-load 664
+669 get-to truck-0 city-loc-2 -> m-drive-to 670
+691 unload truck-0 city-loc-2 package-1 -> m-unload 692
+696 get-to truck-0 city-loc-4 -> m-drive-to 697
+722 load truck-0 city-loc-1 package-2 -> m-load 723
+725 get-to truck-0 city-loc-4 -> m-drive-to 726
+753 unload truck-0 city-loc-4 package-2 -> m-unload 754
+757 get-to truck-0 city-loc-2 -> m-drive-to 758
+781 load truck-0 city-loc-2 package-3 -> m-load 782
+784 get-to truck-0 city-loc-4 -> m-drive-to 785
+812 unload truck-0 city-loc-1 package-3 -> m-unload 813
+816 get-to truck-0 city-loc-1 -> m-drive-to 817
+844 load truck-0 city-loc-1 package-4 -> m-load 845
+847 get-to truck-0 city-loc-4 -> m-drive-to 848
+872 unload truck-0 city-loc-2 package-4 -> m-unload 873
+875 get-to truck-0 city-loc-4 -> m-drive-to 876
+902 load truck-0 city-loc-4 package-5 -> m-load 903
+907 get-to truck-0 city-loc-1 -> m-drive-to 908
+934 unload truck-0 city-loc-1 package-5 -> m-unload 935
+939 get-to truck-0 city-loc-1 -> m-i-am-there 940
+966 load truck-0 city-loc-1 package-6 -> m-load 967
+970 get-to truck-0 city-loc-4 -> m-drive-to 971
+997 unload truck-0 city-loc-4 package-6 -> m-unload 998
+<==
+0.011 End of solution plan. (counted length of 32)
+0.011 Total amount of clauses encoded: 3584
+0.011 - actionconstraints : 758 cls
+0.011 - directframeaxioms : 672 cls
+0.011 - qfactsemantics : 457 cls
+0.011 - indirectframeaxioms : 252 cls
+0.011 - qconstequality : 243 cls
+0.011 - substitutionconstraints : 219 cls
+0.011 - planlengthcounting : 204 cls
+0.011 - atmostoneelement : 187 cls
+0.011 - predecessors : 175 cls
+0.011 - actioneffects : 138 cls
+0.011 - expansions : 134 cls
+0.011 - reductionconstraints : 98 cls
+0.011 - truefacts : 31 cls
+0.011 - assumptions : 14 cls
+0.011 - axiomaticops : 2 cls
+0.011 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.028 MEMPEAK_KBS 3763.2

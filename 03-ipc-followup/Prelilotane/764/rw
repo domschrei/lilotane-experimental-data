@@ -1,0 +1,141 @@
+0.000 
+0.000 Hello from  L i l o t a n e  version rls-2020-11-06T08:48:42+01:00-glucose4
+0.000 by Dominik Schreiber <dominik.schreiber@kit.edu> 2020
+0.000 using SAT solver glucose4
+0.000 
+0.002 13 methods, 9 abstract tasks, 14 primitive tasks
+0.002 Sorts extracted.
+0.026 Mined 7 new reduction preconditions (+53.8%).
+0.026 20 operators and 13 methods created.
+0.026 Iteration 0.
+0.026 Creating initial layer of size 2
+0.026 Attempting to solve formula with 28 clauses (33 literals) and 1 assumptions
+0.026 Unsolvable at layer 0 -- expanding.
+0.026 Iteration 1.
+0.026 New layer size: 6
+0.027 Attempting to solve formula with 120 clauses (244 literals) and 5 assumptions
+0.027 Unsolvable at layer 1 -- expanding.
+0.027 Iteration 2.
+0.027 New layer size: 11
+0.028 Attempting to solve formula with 382 clauses (797 literals) and 5 assumptions
+0.028 Unsolvable at layer 2 -- expanding.
+0.028 Iteration 3.
+0.028 New layer size: 16
+0.029 Attempting to solve formula with 1461 clauses (3485 literals) and 5 assumptions
+0.029 Unsolvable at layer 3 -- expanding.
+0.029 Iteration 4.
+0.030 New layer size: 25
+0.032 Attempting to solve formula with 2747 clauses (6715 literals) and 9 assumptions
+0.032 Unsolvable at layer 4 -- expanding.
+0.032 Iteration 5.
+0.032 New layer size: 25
+0.034 Attempting to solve formula with 3834 clauses (9523 literals) and 9 assumptions
+0.034 Unsolvable at layer 5 -- expanding.
+0.034 Iteration 6.
+0.034 New layer size: 34
+0.036 Attempting to solve formula with 5521 clauses (13815 literals) and 9 assumptions
+0.036 Unsolvable at layer 6 -- expanding.
+0.036 Iteration 7.
+0.036 New layer size: 43
+0.050 Attempting to solve formula with 9804 clauses (26334 literals) and 9 assumptions
+c last restart ## conflicts  :  43 230 
+0.052 Found a solution at layer 7.
+==>
+1043 switch_on instrument0 satellite0
+1045 nop
+1053 turn_to satellite0 Star0 Planet4
+1136 calibrate satellite0 instrument0 Star0
+1141 turn_to satellite0 Planet3 Star0
+1143 take_image satellite0 Planet3 instrument0 infrared0
+1145 switch_off instrument0 satellite0
+1151 switch_on instrument0 satellite0
+1195 nop
+1205 turn_to satellite0 Star0 Planet3
+1233 calibrate satellite0 instrument0 Star0
+1238 turn_to satellite0 Planet4 Star0
+1241 take_image satellite0 Planet4 instrument0 infrared0
+1244 switch_off instrument0 satellite0
+1250 switch_on instrument1 satellite0
+1293 nop
+1303 turn_to satellite0 GroundStation2 Planet4
+1331 calibrate satellite0 instrument1 GroundStation2
+1336 turn_to satellite0 Phenomenon5 GroundStation2
+1339 take_image satellite0 Phenomenon5 instrument1 image2
+1343 switch_off instrument1 satellite0
+1346 switch_on instrument0 satellite0
+1391 nop
+1401 turn_to satellite0 Star0 Phenomenon5
+1429 calibrate satellite0 instrument0 Star0
+1435 turn_to satellite0 Phenomenon6 Star0
+1437 take_image satellite0 Phenomenon6 instrument0 infrared0
+1441 switch_off instrument0 satellite0
+1443 switch_on instrument1 satellite0
+1490 nop
+1499 turn_to satellite0 GroundStation2 Phenomenon6
+1527 calibrate satellite0 instrument1 GroundStation2
+1532 turn_to satellite0 Star7 GroundStation2
+1535 take_image satellite0 Star7 instrument1 infrared0
+root 41 51 71 92 111
+41 do_mission Planet3 infrared0 -> m0_do_mission 133 1143
+51 do_mission Planet4 infrared0 -> m0_do_mission 152 1241
+71 do_mission Phenomenon5 image2 -> m0_do_mission 171 1339
+92 do_mission Phenomenon6 infrared0 -> m0_do_mission 190 1437
+111 do_mission Star7 infrared0 -> m0_do_mission 209 1535
+133 do_prepare satellite0 instrument0 Planet3 -> m1_do_prepare 230 1140
+152 do_prepare satellite0 instrument0 Planet4 -> m1_do_prepare 269 1237
+171 do_prepare satellite0 instrument1 Phenomenon5 -> m1_do_prepare 315 1335
+190 do_prepare satellite0 instrument0 Phenomenon6 -> m1_do_prepare 359 1434
+209 do_prepare satellite0 instrument1 Star7 -> m1_do_prepare 404 1531
+230 do_switching satellite0 instrument0 -> m3_do_switching 1043 698
+269 do_switching satellite0 instrument0 -> m2_do_switching 1144 1151 720
+315 do_switching satellite0 instrument1 -> m2_do_switching 1243 1250 740
+359 do_switching satellite0 instrument0 -> m2_do_switching 1342 1346 760
+404 do_switching satellite0 instrument1 -> m2_do_switching 1440 1443 780
+698 do_calibration satellite0 instrument0 Star0 -> m5_do_calibration 792 1136
+720 do_calibration satellite0 instrument0 Star0 -> m5_do_calibration 847 1233
+740 do_calibration satellite0 instrument1 GroundStation2 -> m5_do_calibration 903 1331
+760 do_calibration satellite0 instrument0 Star0 -> m5_do_calibration 959 1429
+780 do_calibration satellite0 instrument1 GroundStation2 -> m5_do_calibration 1015 1527
+792 do_prepare satellite0 instrument0 Star0 -> m1_do_prepare 1044 1052
+847 do_prepare satellite0 instrument0 Star0 -> m1_do_prepare 1194 1204
+903 do_prepare satellite0 instrument1 GroundStation2 -> m1_do_prepare 1292 1302
+959 do_prepare satellite0 instrument0 Star0 -> m1_do_prepare 1390 1400
+1015 do_prepare satellite0 instrument1 GroundStation2 -> m1_do_prepare 1489 1498
+1044 do_switching satellite0 instrument0 -> m4_do_switching 1045
+1052 do_turning satellite0 Star0 -> m8_do_turning 1053
+1140 do_turning satellite0 Planet3 -> m8_do_turning 1141
+1144 make_power_available satellite0 instrument0 -> m7_make_power_available 1145
+1194 do_switching satellite0 instrument0 -> m4_do_switching 1195
+1204 do_turning satellite0 Star0 -> m8_do_turning 1205
+1237 do_turning satellite0 Planet4 -> m8_do_turning 1238
+1243 make_power_available satellite0 instrument0 -> m7_make_power_available 1244
+1292 do_switching satellite0 instrument1 -> m4_do_switching 1293
+1302 do_turning satellite0 GroundStation2 -> m8_do_turning 1303
+1335 do_turning satellite0 Phenomenon5 -> m8_do_turning 1336
+1342 make_power_available satellite0 instrument1 -> m7_make_power_available 1343
+1390 do_switching satellite0 instrument0 -> m4_do_switching 1391
+1400 do_turning satellite0 Star0 -> m8_do_turning 1401
+1434 do_turning satellite0 Phenomenon6 -> m8_do_turning 1435
+1440 make_power_available satellite0 instrument0 -> m7_make_power_available 1441
+1489 do_switching satellite0 instrument1 -> m4_do_switching 1490
+1498 do_turning satellite0 GroundStation2 -> m8_do_turning 1499
+1531 do_turning satellite0 Star7 -> m8_do_turning 1532
+<==
+0.054 End of solution plan.
+0.054 Total amount of clauses encoded: 9804
+0.054 - frameaxioms : 4028 cls
+0.054 - qfactsemantics : 2240 cls
+0.054 - actionconstraints : 977 cls
+0.054 - reductionconstraints : 414 cls
+0.054 - predecessors : 348 cls
+0.054 - expansions : 328 cls
+0.054 - atmostoneelement : 317 cls
+0.054 - actioneffects : 256 cls
+0.054 - substitutionconstraints : 250 cls
+0.054 - qconstequality : 216 cls
+0.054 - atleastoneelement : 162 cls
+0.054 - truefacts : 116 cls
+0.054 - axiomaticops : 2 cls
+0.054 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 1.227 MEMPEAK_KBS 0

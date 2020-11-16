@@ -1,0 +1,86 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version rls-2020-11-02T15:57:46+01:00-glucose4
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020
+using SAT solver glucose4
+
+0.009 Sorts extracted.
+0.019 Mined 66 new reduction preconditions (+6600.0%).
+0.019 74 operators and 75 methods created.
+0.020 Iteration 0.
+0.020 Creating initial layer of size 2
+0.025 Attempting to solve formula with 3 clauses (3 literals) and 1 assumptions
+0.025 Unsolvable at layer 0 -- expanding.
+0.025 Iteration 1.
+0.025 New layer size: 2
+0.025 Instantiating ...
+0.051 Collected 0 relevant facts at this layer
+0.051 Encoding ...
+0.052 Attempting to solve formula with 1063 clauses (2283 literals) and 1 assumptions
+0.052 Unsolvable at layer 1 -- expanding.
+0.052 Iteration 2.
+0.052 New layer size: 2
+0.052 Instantiating ...
+0.053 Retroactively prune reduction (m_tlt_clear_road_tree Q_1,0_point:0_ee9b33a324f957cf Q_1,0_point:1_ee9b33a324f957cf)@(1,0): no children at offset 0
+0.078 Collected 0 relevant facts at this layer
+0.078 Encoding ...
+0.079 Attempting to solve formula with 1223 clauses (2673 literals) and 1 assumptions
+0.079 Unsolvable at layer 2 -- expanding.
+0.079 Iteration 3.
+0.079 New layer size: 7
+0.079 Instantiating ...
+0.080 Retroactively prune reduction (m_provide_medical_attention_in_hospital Q_2,0_hospital:0_c8b51b3007c1109b Q_1,0_adult:0_a87372cd408ec417)@(2,0): no children at offset 0
+0.080 Retroactively prune reduction (m_provide_medical_attention_simple_on_site Q_1,0_adult:0_a87372cd408ec417)@(2,0): no children at offset 0
+0.090 Retroactively prune reduction (m_clear_road_wreck Q_1,0_point:0_ee9b33a324f957cf Q_1,0_point:1_ee9b33a324f957cf)@(2,0): no children at offset 1
+0.122 Collected 60 relevant facts at this layer
+0.122 Encoding ...
+0.124 Attempting to solve formula with 2699 clauses (6545 literals) and 4 assumptions
+0.124 Unsolvable at layer 3 -- expanding.
+0.124 Iteration 4.
+0.124 New layer size: 27
+0.124 Instantiating ...
+0.168 Retroactively prune reduction (m_clean_up_hazard_normal Q_1,0_point:0_ee9b33a324f957cf Q_3,1_hazard_team:0_a8d5bcc188907940 Q_1,0_point:1_ee9b33a324f957cf very_hazardous very_hazardous)@(3,1): no children at offset 2
+0.275 Collected 345 relevant facts at this layer
+0.275 Encoding ...
+0.291 Attempting to solve formula with 26129 clauses (76210 literals) and 21 assumptions
+c last restart ## conflicts  :  10 620 
+0.292 Found a solution at layer 4.
+0.292 Initial plan at final layer has length 3
+0.292 Tightened initial plan length bounds at layer 4: [0,26] => [3,3]
+0.292 Length of current plan is at lower bound (3): finished
+==>
+526 SHOP_methodm_get_electricity_noop_precondition rochester_general
+2692 SHOP_methodm_get_to_already_there_precondition sleader2 rochester_general
+4467 SHOP_methodm_get_to_already_there_precondition food3 rochester_general
+root 5
+5 tlt -> m_tlt_set_up_shelter 63
+63 set_up_shelter rochester_general -> m_set_up_shelter 525 2691 4466
+525 get_electricity rochester_general -> m_get_electricity_noop 526
+2691 get_to sleader2 rochester_general -> m_get_to_already_there 2692
+4466 get_to food3 rochester_general -> m_get_to_already_there 4467
+<==
+0.292 End of solution plan. (counted length of 3)
+0.292 Total amount of clauses encoded: 26207
+0.292 - directframeaxioms : 15000 cls
+0.292 - reductionconstraints : 4251 cls
+0.292 - qfactsemantics : 3552 cls
+0.292 - actionconstraints : 1480 cls
+0.292 - atmostoneelement : 511 cls
+0.292 - truefacts : 345 cls
+0.292 - indirectframeaxioms : 319 cls
+0.292 - expansions : 235 cls
+0.292 - substitutionconstraints : 225 cls
+0.292 - predecessors : 186 cls
+0.292 - planlengthcounting : 57 cls
+0.292 - assumptions : 21 cls
+0.292 - actioneffects : 12 cls
+0.292 - forbiddenoperations : 11 cls
+0.292 - axiomaticops : 2 cls
+0.292 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.401 MEMPEAK_KBS 39368.704

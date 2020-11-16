@@ -1,0 +1,101 @@
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 4077507
+max locked memory       (kbytes, -l) 65536
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 1024
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) unlimited
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 4077507
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+15728640
+----------------------Tasks-----------------------
+0 do_put_on b3 b5
+1 do_put_on b6 b3
+2 do_put_on b1 b6
+3 do_put_on b2 b1
+4 do_put_on b4 b2
+5 do_put_on b7 b4
+6 invisible_goal
+---------------------Planning---------------------
+Time: 0.0014984607696533203s
+-----------------------Plan-----------------------
+==>
+10 nop
+17 nop
+15 unstack b3 b6
+16 put_down b3
+12 unstack b6 b5
+13 put_down b6
+18 unstack b5 b1
+19 put_down b5
+20 pick_up b3
+21 stack b3 b5
+26 nop
+27 nop
+28 nop
+29 pick_up b6
+30 stack b6 b3
+35 nop
+36 nop
+37 nop
+38 unstack b1 b7
+39 stack b1 b6
+44 nop
+45 nop
+46 nop
+47 pick_up b2
+48 stack b2 b1
+53 nop
+54 nop
+55 nop
+56 pick_up b4
+57 stack b4 b2
+62 nop
+63 nop
+64 nop
+65 pick_up b7
+66 stack b7 b4
+root 0 1 2 3 4 5
+0 do_put_on b3 b5 -> m1_do_put_on 6 7 8 9
+6 do_clear b3 -> m6_do_clear 10
+7 do_clear b5 -> m7_do_clear 11 12 13
+11 do_clear b6 -> m7_do_clear 14 15 16
+14 do_clear b3 -> m6_do_clear 17
+8 do_on_table b5 -> m2_do_on_table 18 19
+9 do_move b3 b5 -> m4_do_move 20 21
+1 do_put_on b6 b3 -> m1_do_put_on 22 23 24 25
+22 do_clear b6 -> m6_do_clear 26
+23 do_clear b3 -> m6_do_clear 27
+24 do_on_table b3 -> m3_do_on_table 28
+25 do_move b6 b3 -> m4_do_move 29 30
+2 do_put_on b1 b6 -> m1_do_put_on 31 32 33 34
+31 do_clear b1 -> m6_do_clear 35
+32 do_clear b6 -> m6_do_clear 36
+33 do_on_table b6 -> m3_do_on_table 37
+34 do_move b1 b6 -> m5_do_move 38 39
+3 do_put_on b2 b1 -> m1_do_put_on 40 41 42 43
+40 do_clear b2 -> m6_do_clear 44
+41 do_clear b1 -> m6_do_clear 45
+42 do_on_table b1 -> m3_do_on_table 46
+43 do_move b2 b1 -> m4_do_move 47 48
+4 do_put_on b4 b2 -> m1_do_put_on 49 50 51 52
+49 do_clear b4 -> m6_do_clear 53
+50 do_clear b2 -> m6_do_clear 54
+51 do_on_table b2 -> m3_do_on_table 55
+52 do_move b4 b2 -> m4_do_move 56 57
+5 do_put_on b7 b4 -> m1_do_put_on 58 59 60 61
+58 do_clear b7 -> m6_do_clear 62
+59 do_clear b4 -> m6_do_clear 63
+60 do_on_table b4 -> m3_do_on_table 64
+61 do_move b7 b4 -> m4_do_move 65 66
+<==
+Total time: 0.00865626335144043s
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 1.158 MEMPEAK_KBS 0

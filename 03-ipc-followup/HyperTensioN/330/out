@@ -1,0 +1,71 @@
+----------------------Tasks-----------------------
+0 construct_factory last_factory last_location
+---------------------Planning---------------------
+Time: 0.022564172744750977s
+-----------------------Plan-----------------------
+==>
+11 produce_without_demands resource_0 factory_0 location_0
+16 move location_0 location_1
+18 move location_1 location_0
+13 pickup resource_0 location_0
+20 move location_0 location_1
+22 move location_1 last_location
+24 move last_location location_1
+15 drop resource_0 location_1
+7 construct factory_1 resource_0 location_1
+31 produce_without_demands resource_0 factory_0 location_0
+36 move location_1 location_0
+33 pickup resource_0 location_0
+38 move location_0 location_1
+40 move location_1 last_location
+42 move last_location location_1
+35 drop resource_0 location_1
+27 produce resource_1 resource_0 factory_1 location_1
+48 move location_1 location_0
+50 move location_0 location_1
+52 move location_1 last_location
+54 move last_location location_1
+45 pickup resource_1 location_1
+56 move location_1 location_0
+58 move location_0 location_1
+60 move location_1 last_location
+47 drop resource_1 last_location
+2 construct last_factory resource_1 last_location
+root 0
+0 construct_factory last_factory last_location -> m_construct_factory 1 2
+1 get_resource resource_1 last_location -> m_get_resource 3 4 5
+3 construct_factory factory_1 location_1 -> m_construct_factory 6 7
+6 get_resource resource_0 location_1 -> m_get_resource 8 9 10
+8 construct_factory factory_0 location_0 -> m_factory_already_constructed 
+9 produce_resource resource_0 -> m_produce_resource 11
+10 deliver_resource resource_0 location_1 -> m_deliver_resource 12 13 14 15
+12 goto location_0 -> m_goto 16 17
+17 goto location_0 -> m_goto 18 19
+19 goto location_0 -> m_already_there 
+14 goto location_1 -> m_goto 20 21
+21 goto location_1 -> m_goto 22 23
+23 goto location_1 -> m_goto 24 25
+25 goto location_1 -> m_already_there 
+4 produce_resource resource_1 -> m_get_and_produce_resource 26 27
+26 get_resource resource_0 location_1 -> m_get_resource 28 29 30
+28 construct_factory factory_0 location_0 -> m_factory_already_constructed 
+29 produce_resource resource_0 -> m_produce_resource 31
+30 deliver_resource resource_0 location_1 -> m_deliver_resource 32 33 34 35
+32 goto location_0 -> m_goto 36 37
+37 goto location_0 -> m_already_there 
+34 goto location_1 -> m_goto 38 39
+39 goto location_1 -> m_goto 40 41
+41 goto location_1 -> m_goto 42 43
+43 goto location_1 -> m_already_there 
+5 deliver_resource resource_1 last_location -> m_deliver_resource 44 45 46 47
+44 goto location_1 -> m_goto 48 49
+49 goto location_1 -> m_goto 50 51
+51 goto location_1 -> m_goto 52 53
+53 goto location_1 -> m_goto 54 55
+55 goto location_1 -> m_already_there 
+46 goto last_location -> m_goto 56 57
+57 goto last_location -> m_goto 58 59
+59 goto last_location -> m_goto 60 61
+61 goto last_location -> m_already_there 
+<==
+Total time: 0.0463414192199707s

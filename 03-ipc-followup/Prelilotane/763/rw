@@ -1,0 +1,100 @@
+0.000 
+0.000 Hello from  L i l o t a n e  version rls-2020-11-06T08:48:42+01:00-glucose4
+0.000 by Dominik Schreiber <dominik.schreiber@kit.edu> 2020
+0.000 using SAT solver glucose4
+0.000 
+0.001 13 methods, 9 abstract tasks, 14 primitive tasks
+0.002 Sorts extracted.
+0.023 Mined 7 new reduction preconditions (+53.8%).
+0.023 20 operators and 13 methods created.
+0.023 Iteration 0.
+0.023 Creating initial layer of size 2
+0.023 Attempting to solve formula with 21 clauses (24 literals) and 1 assumptions
+0.023 Unsolvable at layer 0 -- expanding.
+0.023 Iteration 1.
+0.023 New layer size: 4
+0.023 Attempting to solve formula with 47 clauses (67 literals) and 3 assumptions
+0.023 Unsolvable at layer 1 -- expanding.
+0.023 Iteration 2.
+0.023 New layer size: 7
+0.024 Attempting to solve formula with 162 clauses (290 literals) and 3 assumptions
+0.024 Unsolvable at layer 2 -- expanding.
+0.024 Iteration 3.
+0.024 New layer size: 10
+0.025 Attempting to solve formula with 666 clauses (1533 literals) and 3 assumptions
+0.025 Unsolvable at layer 3 -- expanding.
+0.025 Iteration 4.
+0.025 New layer size: 15
+0.026 Attempting to solve formula with 1202 clauses (2805 literals) and 5 assumptions
+0.026 Unsolvable at layer 4 -- expanding.
+0.026 Iteration 5.
+0.026 New layer size: 15
+0.026 Attempting to solve formula with 1679 clauses (3944 literals) and 5 assumptions
+0.026 Unsolvable at layer 5 -- expanding.
+0.026 Iteration 6.
+0.026 New layer size: 20
+0.027 Attempting to solve formula with 2387 clauses (5612 literals) and 5 assumptions
+0.027 Unsolvable at layer 6 -- expanding.
+0.027 Iteration 7.
+0.027 New layer size: 25
+0.030 Attempting to solve formula with 4299 clauses (11061 literals) and 5 assumptions
+c last restart ## conflicts  :  2 121 
+0.030 Found a solution at layer 7.
+==>
+488 switch_on instrument0 satellite0
+490 nop
+495 turn_to satellite0 GroundStation2 Phenomenon6
+559 calibrate satellite0 instrument0 GroundStation2
+564 turn_to satellite0 Phenomenon4 GroundStation2
+566 take_image satellite0 Phenomenon4 instrument0 thermograph0
+570 nop
+644 turn_to satellite0 Star5 Phenomenon4
+646 take_image satellite0 Star5 instrument0 thermograph0
+649 switch_off instrument0 satellite0
+652 switch_on instrument0 satellite0
+689 nop
+694 turn_to satellite0 GroundStation2 Star5
+718 calibrate satellite0 instrument0 GroundStation2
+724 turn_to satellite0 Phenomenon6 GroundStation2
+726 take_image satellite0 Phenomenon6 instrument0 thermograph0
+root 31 35 48
+31 do_mission Phenomenon4 thermograph0 -> m0_do_mission 63 566
+35 do_mission Star5 thermograph0 -> m0_do_mission 77 646
+48 do_mission Phenomenon6 thermograph0 -> m0_do_mission 91 726
+63 do_prepare satellite0 instrument0 Phenomenon4 -> m1_do_prepare 107 563
+77 do_prepare satellite0 instrument0 Star5 -> m1_do_prepare 569 643
+91 do_prepare satellite0 instrument0 Phenomenon6 -> m1_do_prepare 176 723
+107 do_switching satellite0 instrument0 -> m3_do_switching 488 321
+176 do_switching satellite0 instrument0 -> m2_do_switching 648 652 362
+321 do_calibration satellite0 instrument0 GroundStation2 -> m5_do_calibration 374 559
+362 do_calibration satellite0 instrument0 GroundStation2 -> m5_do_calibration 465 718
+374 do_prepare satellite0 instrument0 GroundStation2 -> m1_do_prepare 489 494
+465 do_prepare satellite0 instrument0 GroundStation2 -> m1_do_prepare 688 693
+489 do_switching satellite0 instrument0 -> m4_do_switching 490
+494 do_turning satellite0 GroundStation2 -> m8_do_turning 495
+563 do_turning satellite0 Phenomenon4 -> m8_do_turning 564
+569 do_switching satellite0 instrument0 -> m4_do_switching 570
+643 do_turning satellite0 Star5 -> m8_do_turning 644
+648 make_power_available satellite0 instrument0 -> m7_make_power_available 649
+688 do_switching satellite0 instrument0 -> m4_do_switching 689
+693 do_turning satellite0 GroundStation2 -> m8_do_turning 694
+723 do_turning satellite0 Phenomenon6 -> m8_do_turning 724
+<==
+0.030 End of solution plan.
+0.030 Total amount of clauses encoded: 4299
+0.030 - frameaxioms : 1683 cls
+0.030 - qfactsemantics : 830 cls
+0.030 - actionconstraints : 501 cls
+0.030 - predecessors : 194 cls
+0.030 - expansions : 182 cls
+0.030 - reductionconstraints : 168 cls
+0.030 - atmostoneelement : 163 cls
+0.030 - actioneffects : 144 cls
+0.030 - qconstequality : 105 cls
+0.030 - atleastoneelement : 98 cls
+0.030 - truefacts : 76 cls
+0.030 - substitutionconstraints : 73 cls
+0.030 - axiomaticops : 2 cls
+0.030 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.421 MEMPEAK_KBS 0

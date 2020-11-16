@@ -1,0 +1,30 @@
+----------------------Tasks-----------------------
+0 connectdevices pc printer data
+1 invisible_goal
+---------------------Planning---------------------
+Time: 0.07985734939575195s
+-----------------------Plan-----------------------
+==>
+3 connect_3 cablewithplugtype1_a adapterfromplugtype1toplugtype2_aplugtype1 plugtype1
+6 connect_3 cablewithplugtype2_a printer_aplugtype2 plugtype2
+9 connect_8 pc_bplugtype1 cablewithplugtype1_b plugtype1
+12 connect_7 adapterfromplugtype1toplugtype2_bplugtype2 cablewithplugtype2_b plugtype2
+13 guard
+19 ok
+root 0
+0 connectdevices pc printer data -> m1 1 2
+1 connect cablewithplugtype1_a adapterfromplugtype1toplugtype2_aplugtype1 -> c3 3
+2 connectdevices pc printer data -> m1 4 5
+4 connect cablewithplugtype2_a printer_aplugtype2 -> c3 6
+5 connectdevices pc printer data -> m1 7 8
+7 connect pc_bplugtype1 cablewithplugtype1_b -> c8 9
+8 connectdevices pc printer data -> m1 10 11
+10 connect adapterfromplugtype1toplugtype2_bplugtype2 cablewithplugtype2_b -> c7 12
+11 connectdevices pc printer data -> m3 13 14
+14 validatedeviceconnection pc printer data -> vdc_to_vpc_1 15
+15 validateportconnection pc_bplugtype1 printer_aplugtype2 data -> vpc_to_vpc 16
+16 validateportconnection cablewithplugtype1_a printer_aplugtype2 data -> vpc_to_vpc 17
+17 validateportconnection adapterfromplugtype1toplugtype2_bplugtype2 printer_aplugtype2 data -> vpc_to_vpc 18
+18 validateportconnection cablewithplugtype2_a printer_aplugtype2 data -> finish 19
+<==
+Total time: 0.08917403221130371s

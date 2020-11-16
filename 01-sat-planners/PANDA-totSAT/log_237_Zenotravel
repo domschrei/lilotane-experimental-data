@@ -1,0 +1,658 @@
+PANDA - Planning and Acting in a Network Decomposition Architecture
+Believe us: It's great, it's fantastic!
+
+PANDA Copyright (C) 2014-2018 Gregor Behnke, Pascal Bercher, Thomas Geier, Kadir
+Dede, Daniel Höller, Kristof Mickeleit, Matthias Englert
+This program comes with ABSOLUTELY NO WARRANTY
+This is free software, and you are welcome to redistribute it under certain
+conditions; run PANDA with -license for details.
+
+Main Developers:
+- Gregor Behnke, http://www.uni-ulm.de/in/ki/behnke
+- Daniel Höller, http://www.uni-ulm.de/in/ki/hoeller
+
+With many thanks to various further contributors.
+Run PANDA with the command line argument -contributors for an extensive list.
+
+Run it with -help for more information like available options.
+
+
+PANDA was called with: "-systemConfig AAAI-2018-totSAT(cryptominisat) -programPath cryptominisat=./cryptominisat5 instances/Zenotravel/domain.hddl instances/Zenotravel/p15.hddl"
+
+
+Planner Configuration
+=====================
+Domain: instances/Zenotravel/domain.hddl
+Problem: instances/Zenotravel/p15.hddl
+Output: none
+
+Planning Configuration
+======================
+	printGeneralInformation : true
+	printAdditionalData     : true
+	random seed             : 42
+	time limit (in seconds) : none
+
+	external programs:
+		cryptominisat : ./cryptominisat5
+
+	Parsing Configuration
+	---------------------
+	Parser                : autodetect file-type
+	Expand Sort Hierarchy : true
+	ClosedWordAssumption  : true
+	CompileSHOPMethods    : true
+	Eliminate Equality    : true
+	Strip Hybridity       : true
+	Reduce General Tasks  : true
+	
+	Preprocessing Configuration
+	---------------------------
+	Compile negative preconditions    : true
+	Compile unit methods              : false
+	Compile order in methods          : false
+	Compile initial plan              : true
+	Ensure Methods Have Last Task     : false
+	Split independent parameters      : true
+	Remove unnecessary predicates     : true
+	Expand choiceless abstract tasks  : true
+	Domain Cleanup                    : true
+	Convert to SAS+                   : false
+	Grounded Reachability Analysis    : Planning Graph (mutex-free)
+	Grounded Task Decomposition Graph : Two Way TDG
+	Iterate reachability analysis     : true
+	Ground domain                     : true
+	Iterate reachability analysis     : true
+	Stop directly after grounding     : false
+	
+	SAT-Planning Configuration
+	--------------------------
+	solver           : cryptominisat
+	full planner run : true
+	reduction method : only normalise 
+	check result     : true
+	
+	Post-processing Configuration
+	-----------------------------
+	search result with Decomposition Tree
+	statistics
+	timings
+	search status
+	search result
+#0 "00 global:01:problem"="p15.hddl";"00 global:00:domain"="domain.hddl"
+Parsing domain ... using HDDL parser ... done
+Preparing internal domain representation ... done.
+Initial domain
+	number of abstract tasks = 5
+	number of tasks = 23
+	number of decomposition methods = 12
+	number of predicates = 4
+	number of sorts = 6
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 12
+	number of epsilon methods = 0
+	number of primitive tasks = 18
+	number of constants = 39
+Compiling negative preconditions ... done.
+	number of abstract tasks = 5
+	number of tasks = 23
+	number of decomposition methods = 12
+	number of predicates = 8
+	number of sorts = 6
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 12
+	number of epsilon methods = 0
+	number of primitive tasks = 18
+	number of constants = 39
+Compiling split parameters ... done.
+	number of abstract tasks = 5
+	number of tasks = 23
+	number of decomposition methods = 12
+	number of predicates = 8
+	number of sorts = 6
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 12
+	number of epsilon methods = 0
+	number of primitive tasks = 18
+	number of constants = 39
+Lifted reachability analysis and domain cleanup ... done.
+	number of abstract tasks = 5
+	number of tasks = 22
+	number of decomposition methods = 12
+	number of predicates = 7
+	number of sorts = 6
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 12
+	number of epsilon methods = 0
+	number of primitive tasks = 17
+	number of constants = 39
+Grounded planning graph ... done in 2084ms.
+	Number of Grounded Actions 43175
+	Number of Grounded Literals 714
+	number of abstract tasks = 5
+	number of tasks = 22
+	number of decomposition methods = 12
+	number of predicates = 7
+	number of sorts = 6
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 12
+	number of epsilon methods = 0
+	number of primitive tasks = 17
+	number of constants = 39
+Two Way TDG ... done.
+	number of abstract tasks = 5
+	number of tasks = 22
+	number of decomposition methods = 12
+	number of predicates = 7
+	number of sorts = 6
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 12
+	number of epsilon methods = 0
+	number of primitive tasks = 17
+	number of constants = 39
+Grounding ... done.
+	number of abstract tasks = 1044
+	number of tasks = 44219
+	number of decomposition methods = 36694
+	number of predicates = 763
+	number of sorts = 0
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 36694
+	number of epsilon methods = 0
+	number of primitive tasks = 43175
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 1044
+	number of tasks = 44219
+	number of decomposition methods = 36694
+	number of predicates = 665
+	number of sorts = 0
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 36694
+	number of epsilon methods = 0
+	number of primitive tasks = 43175
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 2487ms.
+	Number of Grounded Actions 43175
+	Number of Grounded Literals 665
+	number of abstract tasks = 1044
+	number of tasks = 44219
+	number of decomposition methods = 36694
+	number of predicates = 665
+	number of sorts = 0
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 36694
+	number of epsilon methods = 0
+	number of primitive tasks = 43175
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 1044
+	number of tasks = 44219
+	number of decomposition methods = 36694
+	number of predicates = 665
+	number of sorts = 0
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 36694
+	number of epsilon methods = 0
+	number of primitive tasks = 43175
+	number of constants = 0
+Compiling expand choiceless abstract tasks ... done.
+	number of abstract tasks = 135
+	number of tasks = 43310
+	number of decomposition methods = 35785
+	number of predicates = 665
+	number of sorts = 0
+	number of tasks in largest method = 14
+	number of primitive SHOP tasks = 36694
+	number of epsilon methods = 0
+	number of primitive tasks = 43175
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 135
+	number of tasks = 43310
+	number of decomposition methods = 35785
+	number of predicates = 665
+	number of sorts = 0
+	number of tasks in largest method = 14
+	number of primitive SHOP tasks = 36694
+	number of epsilon methods = 0
+	number of primitive tasks = 43175
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 135
+	number of tasks = 43310
+	number of decomposition methods = 35785
+	number of predicates = 665
+	number of sorts = 0
+	number of tasks in largest method = 14
+	number of primitive SHOP tasks = 36694
+	number of epsilon methods = 0
+	number of primitive tasks = 43175
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 1567ms.
+	Number of Grounded Actions 43175
+	Number of Grounded Literals 665
+	number of abstract tasks = 135
+	number of tasks = 43310
+	number of decomposition methods = 35785
+	number of predicates = 665
+	number of sorts = 0
+	number of tasks in largest method = 14
+	number of primitive SHOP tasks = 36694
+	number of epsilon methods = 0
+	number of primitive tasks = 43175
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 135
+	number of tasks = 43310
+	number of decomposition methods = 35785
+	number of predicates = 665
+	number of sorts = 0
+	number of tasks in largest method = 14
+	number of primitive SHOP tasks = 36694
+	number of epsilon methods = 0
+	number of primitive tasks = 43175
+	number of constants = 0
+Compiling expand choiceless abstract tasks ... done.
+	number of abstract tasks = 135
+	number of tasks = 43310
+	number of decomposition methods = 35785
+	number of predicates = 665
+	number of sorts = 0
+	number of tasks in largest method = 14
+	number of primitive SHOP tasks = 36694
+	number of epsilon methods = 0
+	number of primitive tasks = 43175
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 135
+	number of tasks = 43310
+	number of decomposition methods = 35785
+	number of predicates = 665
+	number of sorts = 0
+	number of tasks in largest method = 14
+	number of primitive SHOP tasks = 36694
+	number of epsilon methods = 0
+	number of primitive tasks = 43175
+	number of constants = 0
+Compiling methods with identical tasks ... done.
+	number of abstract tasks = 555
+	number of tasks = 43730
+	number of decomposition methods = 36205
+	number of predicates = 665
+	number of sorts = 0
+	number of tasks in largest method = 14
+	number of primitive SHOP tasks = 36694
+	number of epsilon methods = 0
+	number of primitive tasks = 43175
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 555
+	number of tasks = 43730
+	number of decomposition methods = 36205
+	number of predicates = 665
+	number of sorts = 0
+	number of tasks in largest method = 14
+	number of primitive SHOP tasks = 36694
+	number of epsilon methods = 0
+	number of primitive tasks = 43175
+	number of constants = 0
+Tasks 43175 - 0
+Domain is acyclic: false
+Domain is mostly acyclic: false
+Domain is regular: false
+Domain is tail recursive: true
+Domain is totally ordered: true
+Domain has last task in all methods: true
+Time remaining for planner 9223372036854739084ms
+Computing minimum decomposition height: 2
+
+Running SAT search with K = 2
+Generating initial PDT ... Still waiting ... running for 101 will abort at 9223372036854733379
+done
+initial PDT has 112 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 28 leafs
+SHOP LEAFS 28
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Computing invariants [Rintanen]
+candidates build 662340
+Size 662340 at 0/43175
+Size 658973 at 500/43175
+Size 655431 at 1000/43175
+Size 655431 at 1500/43175
+Size 655431 at 2000/43175
+Size 655431 at 2500/43175
+Size 655431 at 3000/43175
+Size 655431 at 3500/43175
+Size 655431 at 4000/43175
+Size 655431 at 4500/43175
+Size 655431 at 5000/43175
+Size 655431 at 5500/43175
+Size 646929 at 6000/43175
+Size 620342 at 6500/43175
+Size 603540 at 7000/43175
+Size 586406 at 7500/43175
+Size 581106 at 8000/43175
+Size 579768 at 8500/43175
+Size 579768 at 9000/43175
+Size 579768 at 9500/43175
+Size 579768 at 10000/43175
+Size 579768 at 10500/43175
+Size 579768 at 11000/43175
+Size 579768 at 11500/43175
+Size 579768 at 12000/43175
+Size 579768 at 12500/43175
+Size 579768 at 13000/43175
+Size 579768 at 13500/43175
+Size 579768 at 14000/43175
+Size 569211 at 14500/43175
+Size 565375 at 15000/43175
+Size 565375 at 15500/43175
+Size 565375 at 16000/43175
+Size 565375 at 16500/43175
+Size 565375 at 17000/43175
+Size 565375 at 17500/43175
+Size 565375 at 18000/43175
+Size 565375 at 18500/43175
+Size 565375 at 19000/43175
+Size 565375 at 19500/43175
+Size 565375 at 20000/43175
+Size 565375 at 20500/43175
+Size 565375 at 21000/43175
+Size 565375 at 21500/43175
+Size 565375 at 22000/43175
+Size 565375 at 22500/43175
+Size 565375 at 23000/43175
+Size 565375 at 23500/43175
+Size 565375 at 24000/43175
+Size 565375 at 24500/43175
+Size 565375 at 25000/43175
+Size 565375 at 25500/43175
+Size 565375 at 26000/43175
+Size 565375 at 26500/43175
+Size 565375 at 27000/43175
+Size 565375 at 27500/43175
+Size 565375 at 28000/43175
+Size 565375 at 28500/43175
+Size 565375 at 29000/43175
+Size 565375 at 29500/43175
+Size 565375 at 30000/43175
+Size 565375 at 30500/43175
+Size 565375 at 31000/43175
+Size 565375 at 31500/43175
+Size 565375 at 32000/43175
+Size 565375 at 32500/43175
+Size 565375 at 33000/43175
+Size 565375 at 33500/43175
+Size 565375 at 34000/43175
+Size 565375 at 34500/43175
+Size 565375 at 35000/43175
+Size 565375 at 35500/43175
+Size 565375 at 36000/43175
+Size 565375 at 36500/43175
+Size 565375 at 37000/43175
+Size 565375 at 37500/43175
+Size 565375 at 38000/43175
+Size 565375 at 38500/43175
+Size 565375 at 39000/43175
+Size 565375 at 39500/43175
+Size 565375 at 40000/43175
+Size 565375 at 40500/43175
+Size 565375 at 41000/43175
+Size 543744 at 41500/43175
+Size 470855 at 42000/43175
+Size 434403 at 42500/43175
+Size 434403 at 43000/43175
+Size 434403
+Size 434403 at 0/43175
+Size 123249 at 500/43175
+Size 80827 at 1000/43175
+Size 80827 at 1500/43175
+Size 80827 at 2000/43175
+Size 80827 at 2500/43175
+Size 80827 at 3000/43175
+Size 80827 at 3500/43175
+Size 80827 at 4000/43175
+Size 80827 at 4500/43175
+Size 80827 at 5000/43175
+Size 80827 at 5500/43175
+Size 72397 at 6000/43175
+Size 64203 at 6500/43175
+Size 62363 at 7000/43175
+Size 54721 at 7500/43175
+Size 50065 at 8000/43175
+Size 50065 at 8500/43175
+Size 50065 at 9000/43175
+Size 50065 at 9500/43175
+Size 50065 at 10000/43175
+Size 50065 at 10500/43175
+Size 50065 at 11000/43175
+Size 50065 at 11500/43175
+Size 50065 at 12000/43175
+Size 50065 at 12500/43175
+Size 50065 at 13000/43175
+Size 50065 at 13500/43175
+Size 50065 at 14000/43175
+Size 45197 at 14500/43175
+Size 44043 at 15000/43175
+Size 44043 at 15500/43175
+Size 44043 at 16000/43175
+Size 44043 at 16500/43175
+Size 44043 at 17000/43175
+Size 44043 at 17500/43175
+Size 44043 at 18000/43175
+Size 44043 at 18500/43175
+Size 44043 at 19000/43175
+Size 44043 at 19500/43175
+Size 44043 at 20000/43175
+Size 44043 at 20500/43175
+Size 44043 at 21000/43175
+Size 44043 at 21500/43175
+Size 44043 at 22000/43175
+Size 44043 at 22500/43175
+Size 44043 at 23000/43175
+Size 44043 at 23500/43175
+Size 44043 at 24000/43175
+Size 44043 at 24500/43175
+Size 44043 at 25000/43175
+Size 44043 at 25500/43175
+Size 44043 at 26000/43175
+Size 44043 at 26500/43175
+Size 44043 at 27000/43175
+Size 44043 at 27500/43175
+Size 44043 at 28000/43175
+Size 44043 at 28500/43175
+Size 44043 at 29000/43175
+Size 44043 at 29500/43175
+Size 44043 at 30000/43175
+Size 44043 at 30500/43175
+Size 44043 at 31000/43175
+Size 44043 at 31500/43175
+Size 44043 at 32000/43175
+Size 44043 at 32500/43175
+Size 44043 at 33000/43175
+Size 44043 at 33500/43175
+Size 44043 at 34000/43175
+Size 44043 at 34500/43175
+Size 44043 at 35000/43175
+Size 44043 at 35500/43175
+Size 44043 at 36000/43175
+Size 44043 at 36500/43175
+Size 44043 at 37000/43175
+Size 44043 at 37500/43175
+Size 44043 at 38000/43175
+Size 44043 at 38500/43175
+Size 44043 at 39000/43175
+Size 44043 at 39500/43175
+Size 44043 at 40000/43175
+Size 44043 at 40500/43175
+Size 44043 at 41000/43175
+Size 21399 at 41500/43175
+Size 10215 at 42000/43175
+Size 10215 at 42500/43175
+Size 10215 at 43000/43175
+Size 10215
+Size 10215 at 0/43175
+Size 10215 at 500/43175
+Size 10215 at 1000/43175
+Size 10215 at 1500/43175
+Size 10215 at 2000/43175
+Size 10215 at 2500/43175
+Size 10215 at 3000/43175
+Size 10215 at 3500/43175
+Size 10215 at 4000/43175
+Size 10215 at 4500/43175
+Size 10215 at 5000/43175
+Size 10215 at 5500/43175
+Size 10215 at 6000/43175
+Size 10215 at 6500/43175
+Size 10215 at 7000/43175
+Size 10215 at 7500/43175
+Size 10215 at 8000/43175
+Size 10215 at 8500/43175
+Size 10215 at 9000/43175
+Size 10215 at 9500/43175
+Size 10215 at 10000/43175
+Size 10215 at 10500/43175
+Size 10215 at 11000/43175
+Size 10215 at 11500/43175
+Size 10215 at 12000/43175
+Size 10215 at 12500/43175
+Size 10215 at 13000/43175
+Size 10215 at 13500/43175
+Size 10215 at 14000/43175
+Size 10215 at 14500/43175
+Size 10215 at 15000/43175
+Size 10215 at 15500/43175
+Size 10215 at 16000/43175
+Size 10215 at 16500/43175
+Size 10215 at 17000/43175
+Size 10215 at 17500/43175
+Size 10215 at 18000/43175
+Size 10215 at 18500/43175
+Size 10215 at 19000/43175
+Size 10215 at 19500/43175
+Size 10215 at 20000/43175
+Size 10215 at 20500/43175
+Size 10215 at 21000/43175
+Size 10215 at 21500/43175
+Size 10215 at 22000/43175
+Size 10215 at 22500/43175
+Size 10215 at 23000/43175
+Size 10215 at 23500/43175
+Size 10215 at 24000/43175
+Size 10215 at 24500/43175
+Size 10215 at 25000/43175
+Size 10215 at 25500/43175
+Size 10215 at 26000/43175
+Size 10215 at 26500/43175
+Size 10215 at 27000/43175
+Size 10215 at 27500/43175
+Size 10215 at 28000/43175
+Size 10215 at 28500/43175
+Size 10215 at 29000/43175
+Size 10215 at 29500/43175
+Size 10215 at 30000/43175
+Size 10215 at 30500/43175
+Size 10215 at 31000/43175
+Size 10215 at 31500/43175
+Size 10215 at 32000/43175
+Size 10215 at 32500/43175
+Size 10215 at 33000/43175
+Size 10215 at 33500/43175
+Size 10215 at 34000/43175
+Size 10215 at 34500/43175
+Size 10215 at 35000/43175
+Size 10215 at 35500/43175
+Size 10215 at 36000/43175
+Size 10215 at 36500/43175
+Size 10215 at 37000/43175
+Size 10215 at 37500/43175
+Size 10215 at 38000/43175
+Size 10215 at 38500/43175
+Size 10215 at 39000/43175
+Size 10215 at 39500/43175
+Size 10215 at 40000/43175
+Size 10215 at 40500/43175
+Size 10215 at 41000/43175
+Size 10215 at 41500/43175
+Size 10215 at 42000/43175
+Size 10215 at 42500/43175
+Size 10215 at 43000/43175
+Size 10215
+Invariant time: 24.698
+Number of invariants: 10215
+Invariant Clauses 296235
+NUMBER OF CLAUSES 334340
+NUMBER OF STATE CLAUSES 334168
+NUMBER OF DECOMPOSITION CLAUSES 172
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 99.95% 0.05% 0.0% 
+NUMBER OF PATHS 28
+Starting cryptominisat
+Setting starttime of solver to 1603886046808
+Command exited with non-zero status 20
+0.08 0.00
+
+Time command gave the following runtime for the solver: 80
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 3
+Generating initial PDT ... Still waiting ... running for 101 will abort at 9223372036854706407
+done
+initial PDT has 266 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 28 leafs
+SHOP LEAFS 28
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 296235
+NUMBER OF CLAUSES 334368
+NUMBER OF STATE CLAUSES 334168
+NUMBER OF DECOMPOSITION CLAUSES 200
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 99.94% 0.06% 0.0% 
+NUMBER OF PATHS 28
+Starting cryptominisat
+Setting starttime of solver to 1603886053385
+Command exited with non-zero status 20
+0.07 0.00
+
+Time command gave the following runtime for the solver: 70
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 4
+Generating initial PDT ... Still waiting ... running for 100 will abort at 9223372036854699898
+done
+initial PDT has 518 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 378 leafs
+SHOP LEAFS 210
+Assignment implications
+Generating clauses representing decomposition ... Still waiting ... running for 73407 will abort at 9223372036854699898
+Still waiting ... running for 145777 will abort at 9223372036854699898
+
+RUNWATCH_RESULT MEMOUT RETVAL 130 TIME_SECS 233.812 MEMPEAK_KBS 8048236.544

@@ -1,0 +1,102 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version dbg-2020-10-27T10:30:37+01:00-glucose4
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020
+using SAT solver glucose4
+
+0.001 Sorts extracted.
+0.001 Mined 13 new reduction preconditions (+inf%).
+0.001 9 operators and 7 methods created.
+0.001 Iteration 0.
+0.001 Creating initial layer of size 2
+0.001 Attempting to solve formula with 3 clauses (3 literals) and 1 assumptions
+0.001 Unsolvable at layer 0 -- expanding.
+0.001 Iteration 1.
+0.001 New layer size: 4
+0.001 Instantiating ...
+0.002 Collected 0 relevant facts at this layer
+0.002 Encoding ...
+0.002 Attempting to solve formula with 14 clauses (22 literals) and 3 assumptions
+0.002 Unsolvable at layer 1 -- expanding.
+0.002 Iteration 2.
+0.002 New layer size: 13
+0.002 Instantiating ...
+0.002 Collected 15 relevant facts at this layer
+0.002 Encoding ...
+0.003 Attempting to solve formula with 511 clauses (1372 literals) and 6 assumptions
+0.003 Unsolvable at layer 2 -- expanding.
+0.003 Iteration 3.
+0.003 New layer size: 19
+0.003 Instantiating ...
+0.004 Collected 15 relevant facts at this layer
+0.004 Encoding ...
+0.004 Attempting to solve formula with 1034 clauses (2849 literals) and 6 assumptions
+c last restart ## conflicts  :  8 66 
+0.004 Found a solution at layer 3.
+0.005 Initial plan at final layer has length 15
+0.005 Tightened initial plan length bounds at layer 3: [0,18] => [12,15]
+0.005 Searching for a plan of length < 15
+0.005 Attempting to solve formula with 1084 clauses (2977 literals) and 0 assumptions
+c last restart ## conflicts  :  28 59 
+0.005 Shorter plan (length 14) found
+0.005 Searching for a plan of length < 14
+0.005 Attempting to solve formula with 1086 clauses (2979 literals) and 0 assumptions
+==>
+202 drive truck-0 city-loc-0 city-loc-1
+219 pick-up truck-0 city-loc-1 package-0 capacity-1 capacity-2
+223 drive truck-0 city-loc-1 city-loc-0
+241 drop truck-0 city-loc-0 package-0 capacity-1 capacity-2
+244 drive truck-0 city-loc-0 city-loc-1
+255 drive truck-0 city-loc-1 city-loc-2
+264 pick-up truck-0 city-loc-2 package-1 capacity-1 capacity-2
+267 drive truck-0 city-loc-2 city-loc-1
+286 drop truck-0 city-loc-1 package-1 capacity-1 capacity-2
+288 drive truck-0 city-loc-1 city-loc-2
+308 pick-up truck-0 city-loc-2 package-2 capacity-1 capacity-2
+311 drive truck-0 city-loc-2 city-loc-1
+322 drive truck-0 city-loc-1 city-loc-0
+331 drop truck-0 city-loc-0 package-2 capacity-1 capacity-2
+root 5 7 9
+5 deliver package-0 city-loc-0 -> m-deliver 201 218 222 240
+7 deliver package-1 city-loc-1 -> m-deliver 76 263 266 285
+9 deliver package-2 city-loc-0 -> m-deliver 287 307 164 330
+76 get-to truck-0 city-loc-2 -> m-drive-to-via 243 255
+164 get-to truck-0 city-loc-0 -> m-drive-to-via 310 322
+201 get-to truck-0 city-loc-1 -> m-drive-to 202
+218 load truck-0 city-loc-1 package-0 -> m-load 219
+222 get-to truck-0 city-loc-0 -> m-drive-to 223
+240 unload truck-0 city-loc-0 package-0 -> m-unload 241
+243 get-to truck-0 city-loc-1 -> m-drive-to 244
+263 load truck-0 city-loc-2 package-1 -> m-load 264
+266 get-to truck-0 city-loc-1 -> m-drive-to 267
+285 unload truck-0 city-loc-1 package-1 -> m-unload 286
+287 get-to truck-0 city-loc-2 -> m-drive-to 288
+307 load truck-0 city-loc-2 package-2 -> m-load 308
+310 get-to truck-0 city-loc-1 -> m-drive-to 311
+330 unload truck-0 city-loc-0 package-2 -> m-unload 331
+<==
+0.005 End of solution plan. (counted length of 15)
+0.005 Total amount of clauses encoded: 1086
+0.005 - directframeaxioms : 168 cls
+0.005 - actionconstraints : 159 cls
+0.005 - qfactsemantics : 133 cls
+0.005 - indirectframeaxioms : 96 cls
+0.005 - qconstequality : 86 cls
+0.005 - atmostoneelement : 78 cls
+0.005 - predecessors : 76 cls
+0.005 - actioneffects : 60 cls
+0.005 - expansions : 58 cls
+0.005 - reductionconstraints : 56 cls
+0.005 - substitutionconstraints : 47 cls
+0.005 - planlengthcounting : 46 cls
+0.005 - truefacts : 15 cls
+0.005 - assumptions : 6 cls
+0.005 - axiomaticops : 2 cls
+0.005 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.021 MEMPEAK_KBS 3694.592

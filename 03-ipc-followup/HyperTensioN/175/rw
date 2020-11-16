@@ -1,0 +1,84 @@
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 4077507
+max locked memory       (kbytes, -l) 65536
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 1024
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) unlimited
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 4077507
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+15728640
+----------------------Tasks-----------------------
+0 achieve_served p1
+1 achieve_served p0
+---------------------Planning---------------------
+Time: 0.00046563148498535156s
+-----------------------Plan-----------------------
+==>
+18 i_lock_lift_at f0
+19 i_unlock_lift_at f0
+17 board f0 p1
+12 i_lock_boarded p1
+22 up f0 f1
+24 up f1 f2
+21 i_lock_lift_at f2
+26 i_unlock_lift_at f2
+27 i_unlock_boarded p1
+10 depart f2 p1
+3 i_lock_served p1
+46 up f2 f3
+45 i_lock_lift_at f3
+48 i_unlock_lift_at f3
+43 board f3 p0
+38 i_lock_boarded p0
+51 down f3 f0
+50 i_lock_lift_at f0
+53 i_unlock_lift_at f0
+54 i_unlock_boarded p0
+36 depart f0 p0
+29 i_lock_served p0
+root 0 1
+0 achieve_served p1 -> m22_achieve_served 2 3
+2 achieve_served2 p1 -> m24_achieve_served2 4 5
+4 do_served_depart2 f2 p1 -> m8_do_served_depart2 6 7 8 9 10
+6 achieve_boarded p1 -> m17_achieve_boarded 11 12
+11 achieve_boarded1 p1 -> m19_achieve_boarded1 13 14
+13 do_boarded_board1 f0 p1 -> m7_do_boarded_board1 15 16 17
+15 achieve_lift_at f0 -> m10_achieve_lift_at 18
+16 ifunlock_lift_at f0 -> ifunlock5_lift_at 19
+14 achieve_boarded1 p1 -> m18_achieve_boarded1 
+7 achieve_lift_at f2 -> m11_achieve_lift_at 20 21
+20 achieve_lift_at0 f2 -> m13_achieve_lift_at0 22 23
+23 achieve_lift_at0 f2 -> m13_achieve_lift_at0 24 25
+25 achieve_lift_at0 f2 -> m12_achieve_lift_at0 
+8 ifunlock_lift_at f2 -> ifunlock5_lift_at 26
+9 ifunlock_boarded p1 -> ifunlock1_boarded 27
+5 achieve_served2 p1 -> m23_achieve_served2 
+1 achieve_served p0 -> m22_achieve_served 28 29
+28 achieve_served2 p0 -> m24_achieve_served2 30 31
+30 do_served_depart2 f0 p0 -> m8_do_served_depart2 32 33 34 35 36
+32 achieve_boarded p0 -> m17_achieve_boarded 37 38
+37 achieve_boarded1 p0 -> m19_achieve_boarded1 39 40
+39 do_boarded_board1 f3 p0 -> m7_do_boarded_board1 41 42 43
+41 achieve_lift_at f3 -> m11_achieve_lift_at 44 45
+44 achieve_lift_at0 f3 -> m13_achieve_lift_at0 46 47
+47 achieve_lift_at0 f3 -> m12_achieve_lift_at0 
+42 ifunlock_lift_at f3 -> ifunlock5_lift_at 48
+40 achieve_boarded1 p0 -> m18_achieve_boarded1 
+33 achieve_lift_at f0 -> m11_achieve_lift_at 49 50
+49 achieve_lift_at0 f0 -> m14_achieve_lift_at0 51 52
+52 achieve_lift_at0 f0 -> m12_achieve_lift_at0 
+34 ifunlock_lift_at f0 -> ifunlock5_lift_at 53
+35 ifunlock_boarded p0 -> ifunlock1_boarded 54
+31 achieve_served2 p0 -> m23_achieve_served2 
+<==
+Total time: 0.017287492752075195s
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.261 MEMPEAK_KBS 0

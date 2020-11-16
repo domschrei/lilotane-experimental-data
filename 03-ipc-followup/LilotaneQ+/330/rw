@@ -1,0 +1,152 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version rls-2020-11-02T15:57:46+01:00-glucose4
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020
+using SAT solver glucose4
+
+0.002 Sorts extracted.
+0.003 Mined 0 new reduction preconditions (+0.0%).
+0.003 19 operators and 12 methods created.
+0.004 Iteration 0.
+0.004 Creating initial layer of size 2
+0.012 Attempting to solve formula with 3 clauses (3 literals) and 1 assumptions
+0.012 Unsolvable at layer 0 -- expanding.
+0.012 Iteration 1.
+0.012 New layer size: 2
+0.012 Instantiating ...
+0.012 Collected 0 relevant facts at this layer
+0.012 Encoding ...
+0.012 Attempting to solve formula with 8 clauses (12 literals) and 1 assumptions
+0.012 Unsolvable at layer 1 -- expanding.
+0.012 Iteration 2.
+0.012 New layer size: 3
+0.012 Instantiating ...
+0.013 Collected 4 relevant facts at this layer
+0.013 Encoding ...
+0.013 Attempting to solve formula with 33 clauses (61 literals) and 1 assumptions
+0.013 Unsolvable at layer 2 -- expanding.
+0.013 Iteration 3.
+0.013 New layer size: 5
+0.013 Instantiating ...
+0.014 Collected 13 relevant facts at this layer
+0.014 Encoding ...
+0.014 Attempting to solve formula with 137 clauses (323 literals) and 3 assumptions
+0.014 Unsolvable at layer 3 -- expanding.
+0.014 Iteration 4.
+0.014 New layer size: 9
+0.014 Instantiating ...
+0.014 Collected 20 relevant facts at this layer
+0.014 Encoding ...
+0.015 Attempting to solve formula with 405 clauses (1058 literals) and 4 assumptions
+0.015 Unsolvable at layer 4 -- expanding.
+0.015 Iteration 5.
+0.015 New layer size: 14
+0.015 Instantiating ...
+0.016 Collected 22 relevant facts at this layer
+0.016 Encoding ...
+0.016 Attempting to solve formula with 882 clauses (2367 literals) and 6 assumptions
+0.016 Unsolvable at layer 5 -- expanding.
+0.016 Iteration 6.
+0.016 New layer size: 22
+0.016 Instantiating ...
+0.018 Collected 23 relevant facts at this layer
+0.018 Encoding ...
+0.018 Attempting to solve formula with 1667 clauses (4599 literals) and 9 assumptions
+0.018 Unsolvable at layer 6 -- expanding.
+0.018 Iteration 7.
+0.018 New layer size: 33
+0.018 Instantiating ...
+0.024 Collected 23 relevant facts at this layer
+0.024 Encoding ...
+0.026 Attempting to solve formula with 2835 clauses (7767 literals) and 11 assumptions
+0.026 Unsolvable at layer 7 -- expanding.
+0.026 Iteration 8.
+0.026 New layer size: 47
+0.026 Instantiating ...
+0.029 Collected 23 relevant facts at this layer
+0.029 Encoding ...
+0.031 Attempting to solve formula with 4385 clauses (12098 literals) and 16 assumptions
+c last restart ## conflicts  :  5 336 
+0.031 Found a solution at layer 8.
+0.031 Initial plan at most shallow layer has length 17
+0.031 Iteration 9. (extra)
+0.031 New layer size: 66
+0.031 Instantiating ...
+0.043 Collected 23 relevant facts at this layer
+0.043 Encoding ...
+0.046 Attempting to solve formula with 6500 clauses (17920 literals) and 19 assumptions
+c last restart ## conflicts  :  54 494 
+0.047 Initial plan at final layer has length 23
+0.048 Tightened initial plan length bounds at layer 9: [0,65] => [6,17]
+0.048 Searching for a plan of length < 17
+0.048 Attempting to solve formula with 7654 clauses (21272 literals) and 0 assumptions
+c last restart ## conflicts  :  86 506 
+0.050 Shorter plan (length 15) found
+0.050 Searching for a plan of length < 15
+0.050 Attempting to solve formula with 7657 clauses (21275 literals) and 0 assumptions
+==>
+1325 produce-without-demands resource_0 factory_0 location_0
+1446 pickup resource_0 location_0
+1449 move location_0 location_1
+1473 drop resource_0 location_1
+1475 construct factory_1 resource_0 location_1
+1568 produce-without-demands resource_0 factory_0 location_0
+1737 move location_1 location_0
+1766 pickup resource_0 location_0
+1769 move location_0 location_1
+1797 drop resource_0 location_1
+1800 produce resource_1 resource_0 factory_1 location_1
+1836 pickup resource_1 location_1
+1839 move location_1 last_location
+1871 drop resource_1 last_location
+1873 construct last_factory resource_1 last_location
+root 5
+5 construct_factory last_factory last_location -> m_construct_factory 9 1873
+9 get_resource resource_1 last_location -> m_get_resource 92 42 66
+42 produce_resource resource_1 -> m_get_and_produce_resource 103 1800
+66 deliver_resource resource_1 last_location -> m_deliver_resource 141 1836 163 1871
+92 construct_factory factory_1 location_1 -> m_construct_factory 187 1475
+103 get_resource resource_0 location_1 -> m_get_resource 423 1567 265
+141 goto location_1 -> m_already_there
+163 goto last_location -> m_goto 1839 325
+187 get_resource resource_0 location_1 -> m_get_resource 579 1324 387
+265 deliver_resource resource_0 location_1 -> m_deliver_resource 467 1766 488 1797
+325 goto last_location -> m_already_there
+387 deliver_resource resource_0 location_1 -> m_deliver_resource 614 1446 634 1473
+423 construct_factory factory_0 location_0 -> m_factory_already_constructed
+467 goto location_0 -> m_goto 1737 781
+488 goto location_1 -> m_goto 1769 805
+579 construct_factory factory_0 location_0 -> m_factory_already_constructed
+614 goto location_0 -> m_already_there
+634 goto location_1 -> m_goto 1449 996
+781 goto location_0 -> m_already_there
+805 goto location_1 -> m_already_there
+996 goto location_1 -> m_already_there
+1324 produce_resource resource_0 -> m_produce_resource 1325
+1567 produce_resource resource_0 -> m_produce_resource 1568
+<==
+0.050 End of solution plan. (counted length of 15)
+0.050 Total amount of clauses encoded: 7657
+0.050 - directframeaxioms : 2396 cls
+0.050 - planlengthcounting : 1138 cls
+0.050 - qfactsemantics : 778 cls
+0.050 - reductionconstraints : 577 cls
+0.050 - indirectframeaxioms : 555 cls
+0.050 - expansions : 435 cls
+0.050 - predecessors : 431 cls
+0.050 - substitutionconstraints : 404 cls
+0.050 - atmostoneelement : 327 cls
+0.050 - actionconstraints : 253 cls
+0.050 - qconstequality : 216 cls
+0.050 - actioneffects : 103 cls
+0.050 - truefacts : 23 cls
+0.050 - assumptions : 19 cls
+0.050 - axiomaticops : 2 cls
+0.050 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 1.107 MEMPEAK_KBS 0

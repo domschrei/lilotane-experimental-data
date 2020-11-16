@@ -1,0 +1,113 @@
+0.000 
+0.000 Hello from  L i l o t a n e  version rls-2020-11-06T08:48:42+01:00-glucose4
+0.000 by Dominik Schreiber <dominik.schreiber@kit.edu> 2020
+0.000 using SAT solver glucose4
+0.000 
+0.001 12 methods, 7 abstract tasks, 17 primitive tasks
+0.001 Sorts extracted.
+0.019 Mined 0 new reduction preconditions (+0.0%).
+0.019 19 operators and 12 methods created.
+0.019 Iteration 0.
+0.019 Creating initial layer of size 2
+0.019 Attempting to solve formula with 35 clauses (35 literals) and 1 assumptions
+0.019 Unsolvable at layer 0 -- expanding.
+0.019 Iteration 1.
+0.019 New layer size: 2
+0.019 Attempting to solve formula with 46 clauses (53 literals) and 1 assumptions
+0.019 Unsolvable at layer 1 -- expanding.
+0.019 Iteration 2.
+0.019 New layer size: 3
+0.019 Attempting to solve formula with 125 clauses (210 literals) and 1 assumptions
+0.019 Unsolvable at layer 2 -- expanding.
+0.019 Iteration 3.
+0.019 New layer size: 5
+0.020 Attempting to solve formula with 379 clauses (887 literals) and 3 assumptions
+0.020 Unsolvable at layer 3 -- expanding.
+0.020 Iteration 4.
+0.020 New layer size: 9
+0.021 Attempting to solve formula with 907 clauses (2285 literals) and 4 assumptions
+0.021 Unsolvable at layer 4 -- expanding.
+0.021 Iteration 5.
+0.021 New layer size: 14
+0.026 Attempting to solve formula with 1824 clauses (4747 literals) and 6 assumptions
+0.026 Unsolvable at layer 5 -- expanding.
+0.026 Iteration 6.
+0.026 New layer size: 22
+0.027 Attempting to solve formula with 3259 clauses (8743 literals) and 9 assumptions
+0.027 Unsolvable at layer 6 -- expanding.
+0.027 Iteration 7.
+0.027 New layer size: 33
+0.030 Attempting to solve formula with 5438 clauses (14702 literals) and 11 assumptions
+0.030 Unsolvable at layer 7 -- expanding.
+0.030 Iteration 8.
+0.030 New layer size: 47
+0.033 Attempting to solve formula with 8491 clauses (23172 literals) and 16 assumptions
+c last restart ## conflicts  :  34 371 
+0.033 Found a solution at layer 8.
+==>
+1131 produce-without-demands resource_0 factory_0 location_0
+1255 pickup resource_0 location_0
+1257 move location_0 location_1
+1279 drop resource_0 location_1
+1281 construct factory_1 resource_0 location_1
+1387 produce-without-demands resource_0 factory_0 location_0
+1497 move location_1 location_0
+1522 pickup resource_0 location_0
+1525 move location_0 location_1
+1550 drop resource_0 location_1
+1553 produce resource_1 resource_0 factory_1 location_1
+1556 move location_1 location_0
+1559 move location_0 location_1
+1562 move location_1 last_location
+1565 move last_location location_1
+1587 pickup resource_1 location_1
+1589 move location_1 last_location
+1619 drop resource_1 last_location
+1621 construct last_factory resource_1 last_location
+root 65
+65 construct_factory last_factory last_location -> m_construct_factory 70 1621
+70 get_resource resource_1 last_location -> m_get_resource 208 113 167
+113 produce_resource resource_1 -> m_get_and_produce_resource 214 1553
+167 deliver_resource resource_1 last_location -> m_deliver_resource 257 1587 281 1619
+208 construct_factory factory_1 location_1 -> m_construct_factory 306 1281
+214 get_resource resource_0 location_1 -> m_get_resource 601 1386 409
+257 goto location_1 -> m_goto 1556 454
+281 goto last_location -> m_goto 1589 478
+306 get_resource resource_0 location_1 -> m_get_resource 770 1130 559
+409 deliver_resource resource_0 location_1 -> m_deliver_resource 654 1522 681 1550
+454 goto location_1 -> m_goto 1559 720
+478 goto last_location -> m_already_there
+559 deliver_resource resource_0 location_1 -> m_deliver_resource 816 1255 839 1279
+601 construct_factory factory_0 location_0 -> m_factory_already_constructed
+654 goto location_0 -> m_goto 1497 1018
+681 goto location_1 -> m_goto 1525 1042
+720 goto location_1 -> m_goto 1562 1077
+770 construct_factory factory_0 location_0 -> m_factory_already_constructed
+816 goto location_0 -> m_already_there
+839 goto location_1 -> m_goto 1257 1261
+1018 goto location_0 -> m_already_there
+1042 goto location_1 -> m_already_there
+1077 goto location_1 -> m_goto 1565 1569
+1130 produce_resource resource_0 -> m_produce_resource 1131
+1261 goto location_1 -> m_already_there
+1386 produce_resource resource_0 -> m_produce_resource 1387
+1569 goto location_1 -> m_already_there
+<==
+0.034 End of solution plan.
+0.034 Total amount of clauses encoded: 8491
+0.034 - frameaxioms : 4656 cls
+0.034 - qfactsemantics : 1506 cls
+0.034 - reductionconstraints : 408 cls
+0.034 - substitutionconstraints : 292 cls
+0.034 - actionconstraints : 282 cls
+0.034 - expansions : 266 cls
+0.034 - predecessors : 263 cls
+0.034 - actioneffects : 191 cls
+0.034 - atmostoneelement : 169 cls
+0.034 - qconstequality : 138 cls
+0.034 - atleastoneelement : 137 cls
+0.034 - truefacts : 50 cls
+0.034 - axiomaticops : 2 cls
+0.034 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.109 MEMPEAK_KBS 0

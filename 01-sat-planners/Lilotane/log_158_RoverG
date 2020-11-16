@@ -1,0 +1,181 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version dbg-2020-10-21T11:59:28+02:00-glucose4
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020
+using SAT solver glucose4
+
+0.006 Sorts extracted.
+0.007 Mined 33 new reduction preconditions (+106.5%).
+0.007 38 operators and 17 methods created.
+0.007 Iteration 0.
+0.007 Creating initial layer of size 2
+0.008 Attempting to solve formula with 15 clauses (21 literals) and 1 assumptions
+0.008 Unsolvable at layer 0 -- expanding.
+0.008 Iteration 1.
+0.008 New layer size: 7
+0.008 Instantiating ...
+0.009 Collected 6 relevant facts at this layer
+0.009 Encoding ...
+0.009 Attempting to solve formula with 203 clauses (494 literals) and 6 assumptions
+0.009 Unsolvable at layer 1 -- expanding.
+0.009 Iteration 2.
+0.009 New layer size: 25
+0.009 Instantiating ...
+0.012 Collected 69 relevant facts at this layer
+0.012 Encoding ...
+0.013 Attempting to solve formula with 2499 clauses (6960 literals) and 15 assumptions
+0.013 Unsolvable at layer 2 -- expanding.
+0.013 Iteration 3.
+0.013 New layer size: 46
+0.013 Instantiating ...
+0.020 Collected 77 relevant facts at this layer
+0.020 Encoding ...
+0.023 Attempting to solve formula with 8466 clauses (27023 literals) and 15 assumptions
+0.023 Unsolvable at layer 3 -- expanding.
+0.023 Iteration 4.
+0.023 New layer size: 82
+0.023 Instantiating ...
+0.037 Collected 77 relevant facts at this layer
+0.037 Encoding ...
+0.045 Attempting to solve formula with 20197 clauses (75202 literals) and 15 assumptions
+c last restart ## conflicts  :  89 388 
+0.048 Found a solution at layer 4.
+==>
+2039 visit waypoint4
+2041 navigate rover1 waypoint4 waypoint2
+2044 visit waypoint2
+2082 navigate rover1 waypoint2 waypoint0
+2107 unvisit waypoint2
+2153 unvisit waypoint4
+2156 nop
+2158 sample_soil rover1 rover1store waypoint0
+2162 visit waypoint0
+2165 nop
+2190 unvisit waypoint0
+2238 communicate_soil_data1 rover1 general waypoint0 waypoint0 waypoint2
+2242 visit waypoint7
+2247 navigate rover3 waypoint7 waypoint3
+2358 unvisit waypoint7
+2361 nop
+2364 sample_rock rover3 rover3store waypoint3
+2367 visit waypoint3
+2371 navigate rover3 waypoint3 waypoint7
+2396 unvisit waypoint3
+2444 communicate_rock_data1 rover3 general waypoint3 waypoint7 waypoint2
+2448 visit waypoint7
+2451 navigate rover3 waypoint7 waypoint0
+2455 visit waypoint0
+2494 navigate rover3 waypoint0 waypoint6
+2517 unvisit waypoint0
+2564 unvisit waypoint7
+2568 drop rover3 rover3store
+2570 sample_rock rover3 rover3store waypoint6
+2573 visit waypoint6
+2577 navigate rover3 waypoint6 waypoint0
+2602 unvisit waypoint6
+2650 communicate_rock_data1 rover3 general waypoint6 waypoint0 waypoint2
+2653 nop
+2728 calibrate rover3 camera3 objective3 waypoint0
+2731 visit waypoint0
+2736 nop
+2848 unvisit waypoint0
+2852 take_image rover3 waypoint0 objective2 camera3 low_res
+2855 visit waypoint0
+2857 navigate rover3 waypoint0 waypoint7
+2882 unvisit waypoint0
+2929 communicate_image_data rover3 general objective2 low_res waypoint7 waypoint2
+2932 visit waypoint7
+2937 navigate rover3 waypoint7 waypoint2
+2960 unvisit waypoint7
+3007 calibrate rover3 camera0 objective2 waypoint2
+3010 visit waypoint2
+3015 navigate rover3 waypoint2 waypoint7
+3018 visit waypoint7
+3058 navigate rover3 waypoint7 waypoint3
+3081 unvisit waypoint7
+3128 unvisit waypoint2
+3131 take_image rover3 waypoint3 objective1 camera0 high_res
+3133 nop
+3208 communicate_image_data rover3 general objective1 high_res waypoint3 waypoint2
+3212 visit waypoint4
+3215 navigate rover0 waypoint4 waypoint2
+3239 unvisit waypoint4
+3286 calibrate rover0 camera2 objective0 waypoint2
+3289 nop
+3410 take_image rover0 waypoint2 objective3 camera2 low_res
+3412 visit waypoint2
+3416 navigate rover0 waypoint2 waypoint4
+3440 unvisit waypoint2
+3487 communicate_image_data rover0 general objective3 low_res waypoint4 waypoint2
+root 17 27 38 49 65 80
+17 get_soil_data waypoint0 -> m7_get_soil_data 99 2155 2158 204
+27 get_rock_data waypoint3 -> m10_get_rock_data 244 2360 2364 339
+38 get_rock_data waypoint6 -> m10_get_rock_data 376 2567 2570 471
+49 get_image_data objective2 low_res -> m13_get_image_data 508 553 2852 635
+65 get_image_data objective1 high_res -> m13_get_image_data 662 707 3131 789
+80 get_image_data objective3 low_res -> m13_get_image_data 816 3288 3410 943
+99 do_navigate1 rover1 waypoint0 -> m1_do_navigate1 2039 1015 2153
+204 send_soil_data rover1 waypoint0 -> m8_send_soil_data 1083 2238
+244 do_navigate1 rover3 waypoint3 -> m1_do_navigate1 2242 2246 2358
+339 send_rock_data rover3 waypoint3 -> m11_send_rock_data 1231 2444
+376 do_navigate1 rover3 waypoint6 -> m1_do_navigate1 2448 1295 2564
+471 send_rock_data rover3 waypoint6 -> m11_send_rock_data 1379 2650
+508 do_calibrate rover3 camera3 -> m15_do_calibrate 2652 2728
+553 do_navigate1 rover3 waypoint0 -> m1_do_navigate1 2731 2735 2848
+635 send_image_data rover3 objective2 low_res -> m14_send_image_data 1581 2929
+662 do_calibrate rover3 camera0 -> m15_do_calibrate 1638 3007
+707 do_navigate1 rover3 waypoint3 -> m1_do_navigate1 3010 1700 3128
+789 send_image_data rover3 objective1 high_res -> m14_send_image_data 3132 3208
+816 do_calibrate rover0 camera2 -> m15_do_calibrate 1838 3286
+943 send_image_data rover0 objective3 low_res -> m14_send_image_data 1981 3487
+1015 do_navigate2 rover1 waypoint4 waypoint0 -> m4_do_navigate2 2041 2044 2081 2107
+1083 do_navigate1 rover1 waypoint0 -> m1_do_navigate1 2162 2164 2190
+1231 do_navigate1 rover3 waypoint7 -> m1_do_navigate1 2367 2370 2396
+1295 do_navigate2 rover3 waypoint7 waypoint6 -> m4_do_navigate2 2451 2455 2493 2517
+1379 do_navigate1 rover3 waypoint0 -> m1_do_navigate1 2573 2576 2602
+1581 do_navigate1 rover3 waypoint7 -> m1_do_navigate1 2855 2856 2882
+1638 do_navigate1 rover3 waypoint2 -> m1_do_navigate1 2932 2936 2960
+1700 do_navigate2 rover3 waypoint2 waypoint3 -> m4_do_navigate2 3015 3018 3057 3081
+1838 do_navigate1 rover0 waypoint2 -> m1_do_navigate1 3212 3214 3239
+1981 do_navigate1 rover0 waypoint4 -> m1_do_navigate1 3412 3415 3440
+2081 do_navigate2 rover1 waypoint2 waypoint0 -> m3_do_navigate2 2082
+2155 empty_store rover1store rover1 -> m5_empty_store 2156
+2164 do_navigate2 rover1 waypoint0 waypoint0 -> m2_do_navigate2 2165
+2246 do_navigate2 rover3 waypoint7 waypoint3 -> m3_do_navigate2 2247
+2360 empty_store rover3store rover3 -> m5_empty_store 2361
+2370 do_navigate2 rover3 waypoint3 waypoint7 -> m3_do_navigate2 2371
+2493 do_navigate2 rover3 waypoint0 waypoint6 -> m3_do_navigate2 2494
+2567 empty_store rover3store rover3 -> m6_empty_store 2568
+2576 do_navigate2 rover3 waypoint6 waypoint0 -> m3_do_navigate2 2577
+2652 do_navigate1 rover3 waypoint0 -> m0_do_navigate1 2653
+2735 do_navigate2 rover3 waypoint0 waypoint0 -> m2_do_navigate2 2736
+2856 do_navigate2 rover3 waypoint0 waypoint7 -> m3_do_navigate2 2857
+2936 do_navigate2 rover3 waypoint7 waypoint2 -> m3_do_navigate2 2937
+3057 do_navigate2 rover3 waypoint7 waypoint3 -> m3_do_navigate2 3058
+3132 do_navigate1 rover3 waypoint3 -> m0_do_navigate1 3133
+3214 do_navigate2 rover0 waypoint4 waypoint2 -> m3_do_navigate2 3215
+3288 do_navigate1 rover0 waypoint2 -> m0_do_navigate1 3289
+3415 do_navigate2 rover0 waypoint2 waypoint4 -> m3_do_navigate2 3416
+<==
+0.050 End of solution plan. (counted length of 67)
+0.050 Total amount of clauses encoded: 20197
+0.050 - directframeaxioms : 6076 cls
+0.050 - qfactsemantics : 4043 cls
+0.050 - substitutionconstraints : 3381 cls
+0.050 - indirectframeaxioms : 3274 cls
+0.050 - reductionconstraints : 1665 cls
+0.050 - qconstequality : 444 cls
+0.050 - predecessors : 322 cls
+0.050 - expansions : 298 cls
+0.050 - atmostoneelement : 243 cls
+0.050 - actionconstraints : 242 cls
+0.050 - actioneffects : 130 cls
+0.050 - truefacts : 77 cls
+0.050 - axiomaticops : 2 cls
+0.050 Exiting happily.
+RUNWATCH_RESULT EXIT TIME_SECS 0.070 MEMPEAK_KBS 4616.192

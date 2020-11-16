@@ -1,0 +1,93 @@
+0.000 
+0.000 Hello from  L i l o t a n e  version rls-2020-11-06T08:48:42+01:00-glucose4
+0.000 by Dominik Schreiber <dominik.schreiber@kit.edu> 2020
+0.000 using SAT solver glucose4
+0.000 
+0.026 84 methods, 57 abstract tasks, 66 primitive tasks
+0.026 Sorts extracted.
+0.096 Mined 138 new reduction preconditions (+13800.0%).
+0.096 87 operators and 84 methods created.
+0.096 Iteration 0.
+0.096 Creating initial layer of size 2
+0.121 Attempting to solve formula with 2082 clauses (2083 literals) and 1 assumptions
+0.121 Unsolvable at layer 0 -- expanding.
+0.121 Iteration 1.
+0.121 New layer size: 2
+0.187 Attempting to solve formula with 2301 clauses (2548 literals) and 1 assumptions
+0.187 Unsolvable at layer 1 -- expanding.
+0.187 Iteration 2.
+0.187 New layer size: 2
+0.224 Forbidding reduction (m_tlt_provide_temp_heat Q_1,0_1:0_adult)@(1,0): no children at offset 0
+0.232 Attempting to solve formula with 2327 clauses (2610 literals) and 1 assumptions
+0.232 Unsolvable at layer 2 -- expanding.
+0.232 Iteration 3.
+0.232 New layer size: 7
+0.299 Attempting to solve formula with 15053 clauses (36502 literals) and 2 assumptions
+0.300 Unsolvable at layer 3 -- expanding.
+0.300 Iteration 4.
+0.300 New layer size: 11
+0.353 Attempting to solve formula with 41883 clauses (108984 literals) and 6 assumptions
+0.353 Unsolvable at layer 4 -- expanding.
+0.353 Iteration 5.
+0.353 New layer size: 22
+0.373 Forbidding reduction (m_drive_to Q_2,0_4:3_point Q_2,0_2:0_plowdriver Q_3,1_6:2_vehicle Q_4,2_13:3_point)@(4,2): no children at offset 1
+0.448 Attempting to solve formula with 89883 clauses (239551 literals) and 10 assumptions
+0.452 Unsolvable at layer 5 -- expanding.
+0.452 Iteration 6.
+0.452 New layer size: 33
+0.457 Forbidding reduction (m_get_in_ambulatory_person Q_3,1_5:0_shelter_leader Q_5,3_21:1_point Q_4,1_12:3_vehicle)@(5,3): no children at offset 1
+0.462 Forbidding reduction (m_get_out_ambulatory_person Q_3,1_5:0_shelter_leader Q_5,5_23:1_point Q_4,1_12:3_vehicle)@(5,5): no children at offset 0
+0.515 Attempting to solve formula with 148352 clauses (386635 literals) and 6 assumptions
+c last restart ## conflicts  :  0 471 
+0.515 Found a solution at layer 6.
+==>
+23763 SHOP_methodm_plow_road_precondition brighton_dump pittsford_plaza plow2 mendon_pond
+23770 SHOP_methodm_get_to_as_cargo_precondition pdriver1 mendon_pond rochester_general amb1
+23841 SHOP_methodm_get_to_vehicle_gets_driven_precondition amb1 rochester_general twelve_corners emt1
+23846 SHOP_methodm_drive_to_precondition amb1 twelve_corners emt1
+23849 p_1Navegate_vehicle
+23852 SHOP_methodm_get_in_ambulatory_person_precondition pdriver1 rochester_general amb1
+23855 p_2Climb_in
+23858 SHOP_methodm_get_to_vehicle_gets_driven_precondition amb1 mendon_pond rochester_general emt1
+23862 SHOP_methodm_drive_to_precondition amb1 rochester_general emt1
+23866 p_3Navegate_vehicle
+23868 p_4Climb_out
+23873 p_5Navegate_snowplow
+28285 engage_plow pdriver1 plow2
+28289 navegate_snowplow pdriver1 plow2 pittsford_plaza
+28292 disengage_plow pdriver1 plow2
+root 4157
+4157 tlt -> m_tlt_plow_road 4193
+4193 plow_road brighton_dump pittsford_plaza -> m_plow_road 23763 4222 23872 28285 28288 28292
+4222 get_to pdriver1 mendon_pond -> m_get_to_as_cargo 23770 8508 10630 11732 13820
+8508 get_to amb1 rochester_general -> m_get_to_vehicle_gets_driven 23841 19343
+10630 get_in pdriver1 amb1 -> m_get_in_ambulatory_person 23852 23854
+11732 get_to amb1 mendon_pond -> m_get_to_vehicle_gets_driven 23858 19384
+13820 get_out pdriver1 amb1 -> m_get_out_ambulatory_person 23867
+19343 drive_to emt1 amb1 rochester_general -> m_drive_to 23846 23848
+19384 drive_to emt1 amb1 mendon_pond -> m_drive_to 23862 23865
+23848 cnavegate_vehicle emt1 amb1 rochester_general twelve_corners -> prefix_1 23849
+23854 cclimb_in pdriver1 amb1 rochester_general -> prefix_2 23855
+23865 cnavegate_vehicle emt1 amb1 mendon_pond rochester_general -> prefix_3 23866
+23867 cclimb_out pdriver1 amb1 mendon_pond -> prefix_4 23868
+23872 cnavegate_snowplow pdriver1 plow2 brighton_dump -> prefix_5 23873
+28288 cnavegate_snowplow pdriver1 plow2 pittsford_plaza -> regular_3 28289
+<==
+0.516 End of solution plan.
+0.516 Total amount of clauses encoded: 148352
+0.516 - frameaxioms : 130286 cls
+0.516 - qfactsemantics : 11022 cls
+0.516 - truefacts : 2297 cls
+0.516 - reductionconstraints : 2127 cls
+0.516 - substitutionconstraints : 1233 cls
+0.516 - actionconstraints : 539 cls
+0.516 - expansions : 199 cls
+0.516 - predecessors : 184 cls
+0.516 - atmostoneelement : 164 cls
+0.516 - qtypeconstraints : 110 cls
+0.516 - atleastoneelement : 79 cls
+0.516 - actioneffects : 40 cls
+0.516 - axiomaticops : 2 cls
+0.516 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.571 MEMPEAK_KBS 0

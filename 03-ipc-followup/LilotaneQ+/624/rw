@@ -1,0 +1,139 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version rls-2020-11-02T15:57:46+01:00-glucose4
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020
+using SAT solver glucose4
+
+0.026 Sorts extracted.
+0.055 Mined 88 new reduction preconditions (+8800.0%).
+0.055 89 operators and 84 methods created.
+0.056 Iteration 0.
+0.056 Creating initial layer of size 2
+0.065 Attempting to solve formula with 5 clauses (6 literals) and 1 assumptions
+0.065 Unsolvable at layer 0 -- expanding.
+0.065 Iteration 1.
+0.065 New layer size: 2
+0.065 Instantiating ...
+0.131 Collected 1 relevant facts at this layer
+0.131 Encoding ...
+0.132 Attempting to solve formula with 1065 clauses (2286 literals) and 1 assumptions
+0.132 Unsolvable at layer 1 -- expanding.
+0.132 Iteration 2.
+0.132 New layer size: 2
+0.132 Instantiating ...
+0.133 Retroactively prune reduction (m_tlt_clear_road_tree Q_1,0_point:0_351489d9a7b52d02 Q_1,0_point:1_351489d9a7b52d02)@(1,0): no children at offset 0
+0.198 Collected 1 relevant facts at this layer
+0.198 Encoding ...
+0.199 Attempting to solve formula with 1215 clauses (2654 literals) and 1 assumptions
+0.199 Unsolvable at layer 2 -- expanding.
+0.199 Iteration 3.
+0.199 New layer size: 7
+0.199 Instantiating ...
+0.201 Retroactively prune reduction (m_provide_medical_attention_simple_on_site Q_1,0_adult:0_93398fa6ecd2677a)@(2,0): no children at offset 0
+0.201 Retroactively prune reduction (m_provide_medical_attention_in_hospital Q_2,0_hospital:0_755ad1054fd1d92c Q_1,0_adult:0_93398fa6ecd2677a)@(2,0): no children at offset 0
+0.225 Retroactively prune reduction (m_clear_road_wreck Q_1,0_point:0_351489d9a7b52d02 Q_1,0_point:1_351489d9a7b52d02)@(2,0): no children at offset 1
+0.293 Collected 49 relevant facts at this layer
+0.293 Encoding ...
+0.297 Attempting to solve formula with 2554 clauses (6146 literals) and 4 assumptions
+0.297 Unsolvable at layer 3 -- expanding.
+0.297 Iteration 4.
+0.297 New layer size: 27
+0.297 Instantiating ...
+0.391 Retroactively prune reduction (m_clean_up_hazard_normal Q_1,0_point:0_351489d9a7b52d02 Q_3,1_hazard_team:0_c90058d8a9308a44 Q_1,0_point:1_351489d9a7b52d02 very_hazardous very_hazardous)@(3,1): no children at offset 2
+0.480 Collected 337 relevant facts at this layer
+0.480 Encoding ...
+0.506 Attempting to solve formula with 25960 clauses (75807 literals) and 21 assumptions
+0.507 Unsolvable at layer 4 -- expanding.
+0.507 Iteration 5.
+0.507 New layer size: 72
+0.507 Instantiating ...
+0.755 Collected 480 relevant facts at this layer
+0.755 Encoding ...
+0.812 Attempting to solve formula with 90802 clauses (264529 literals) and 36 assumptions
+0.816 Unsolvable at layer 5 -- expanding.
+0.816 Iteration 6.
+0.816 New layer size: 178
+0.816 Instantiating ...
+1.449 Collected 590 relevant facts at this layer
+1.449 Encoding ...
+1.603 Attempting to solve formula with 252865 clauses (758641 literals) and 81 assumptions
+c last restart ## conflicts  :  11 3653 
+1.635 Found a solution at layer 6.
+1.639 Initial plan at most shallow layer has length 18
+1.639 Iteration 7. (extra)
+1.639 New layer size: 314
+1.639 Instantiating ...
+2.599 Collected 590 relevant facts at this layer
+2.599 Encoding ...
+2.848 Attempting to solve formula with 500139 clauses (1509978 literals) and 113 assumptions
+c last restart ## conflicts  :  0 6990 
+2.891 Initial plan at final layer has length 18
+2.895 Tightened initial plan length bounds at layer 7: [0,313] => [3,18]
+2.898 Searching for a plan of length < 18
+2.898 Attempting to solve formula with 509420 clauses (1537055 literals) and 0 assumptions
+==>
+25007 SHOP_methodm_quell_riot_precondition rochester_general rochester
+34386 p_1Call
+39344 p_2Call
+45686 SHOP_methodm_get_to_person_drives_themself_precondition pu1 rochester_general pvan1 strong
+47064 SHOP_methodm_drive_to_precondition pvan1 strong pu1
+47102 p_3Navegate_vehicle
+56456 SHOP_methodm_get_to_as_cargo_precondition pu2 rochester_general park_ridge pvan1
+56464 SHOP_methodm_get_to_vehicle_gets_driven_precondition pvan1 park_ridge rochester_general pu1
+56468 SHOP_methodm_drive_to_precondition pvan1 rochester_general pu1
+56475 p_4Navegate_vehicle
+56535 SHOP_methodm_get_in_ambulatory_person_precondition pu2 park_ridge pvan1
+57175 p_5Climb_in
+59355 SHOP_methodm_get_to_vehicle_gets_driven_precondition pvan1 rochester_general park_ridge pu1
+59365 SHOP_methodm_drive_to_precondition pvan1 park_ridge pu1
+59381 p_6Navegate_vehicle
+61533 climb_out pu2 pvan1 rochester_general
+65816 set_up_barricades pu1
+65819 set_up_barricades pu2
+root 11
+11 tlt -> m_tlt_quell_riot 62
+62 quell_riot rochester_general -> m_quell_riot 25007 173 240 327 65816 65819
+173 declare_curfew rochester -> m_declare_curfew 34385 39343
+240 get_to pu1 rochester_general -> m_get_to_person_drives_themself 45686 4670
+327 get_to pu2 rochester_general -> m_get_to_as_cargo 56456 6758 6791 7112 61532
+4670 drive_to pu1 pvan1 rochester_general -> m_drive_to 47064 47101
+6758 get_to pvan1 park_ridge -> m_get_to_vehicle_gets_driven 56464 22188
+6791 get_in pu2 pvan1 -> m_get_in_ambulatory_person 56535 57174
+7112 get_to pvan1 rochester_general -> m_get_to_vehicle_gets_driven 59355 23351
+22188 drive_to pu1 pvan1 park_ridge -> m_drive_to 56468 56474
+23351 drive_to pu1 pvan1 rochester_general -> m_drive_to 59365 59380
+34385 ccall ebs -> prefix_1 34386
+39343 ccall police_chief -> prefix_2 39344
+47101 cnavegate_vehicle pu1 pvan1 rochester_general strong -> prefix_3 47102
+56474 cnavegate_vehicle pu1 pvan1 park_ridge rochester_general -> prefix_4 56475
+57174 cclimb_in pu2 pvan1 park_ridge -> prefix_5 57175
+59380 cnavegate_vehicle pu1 pvan1 rochester_general park_ridge -> prefix_6 59381
+61532 get_out pu2 pvan1 -> m_get_out_ambulatory_person 61533
+<==
+2.962 End of solution plan. (counted length of 18)
+2.962 Total amount of clauses encoded: 509420
+2.962 - directframeaxioms : 327454 cls
+2.962 - qfactsemantics : 78735 cls
+2.962 - indirectframeaxioms : 29145 cls
+2.962 - reductionconstraints : 28893 cls
+2.962 - actionconstraints : 13619 cls
+2.962 - planlengthcounting : 9168 cls
+2.962 - substitutionconstraints : 8397 cls
+2.962 - atmostoneelement : 4573 cls
+2.962 - expansions : 2966 cls
+2.962 - predecessors : 2353 cls
+2.962 - qtypeconstraints : 1439 cls
+2.962 - qconstequality : 1306 cls
+2.962 - actioneffects : 656 cls
+2.962 - truefacts : 590 cls
+2.962 - assumptions : 113 cls
+2.962 - forbiddenoperations : 11 cls
+2.962 - axiomaticops : 2 cls
+2.962 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 3.579 MEMPEAK_KBS 277183.488

@@ -1,0 +1,55 @@
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 4077507
+max locked memory       (kbytes, -l) 65536
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 1024
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) unlimited
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 4077507
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+15728640
+----------------------Tasks-----------------------
+0 shifttower t1 t2 t3
+1 invisible_goal
+---------------------Planning---------------------
+Time: 0.0002987384796142578s
+-----------------------Plan-----------------------
+==>
+7 move r1 r2 t1 t3 t3
+10 move r2 r3 t1 t2 t2
+13 move r1 t3 t3 r2 t2
+16 move r3 t1 t1 t3 t3
+19 move r1 r2 t2 t1 t1
+22 move r2 t2 t2 r3 t3
+25 move r1 t1 t1 r2 t3
+root 0
+0 shifttower t1 t2 t3 -> m_shifttower 1
+1 selectdirection r1 t1 t2 t3 -> m_selectdirection 2
+2 selectdirection r2 t1 t3 t2 -> m_selectdirection 3
+3 selectdirection r3 t1 t2 t3 -> selecteddirection 4
+4 rotatetower t1 t3 t2 -> m_rotatetower 5 6
+5 move_abstract t1 t3 -> newmethod21 7
+6 exchange t1 t3 t2 -> exchangelr 8 9
+8 move_abstract t1 t2 -> newmethod21 10
+9 rotatetower t3 t2 t1 -> m_rotatetower 11 12
+11 move_abstract t3 t2 -> newmethod21 13
+12 exchange t3 t2 t1 -> exchangerl 14 15
+14 move_abstract t1 t3 -> newmethod21 16
+15 rotatetower t2 t1 t3 -> m_rotatetower 17 18
+17 move_abstract t2 t1 -> newmethod21 19
+18 exchange t2 t1 t3 -> exchangelr 20 21
+20 move_abstract t2 t3 -> newmethod21 22
+21 rotatetower t1 t3 t2 -> m_rotatetower 23 24
+23 move_abstract t1 t3 -> newmethod21 25
+24 exchange t1 t3 t2 -> exchangeclear 
+<==
+Total time: 0.013750553131103516s
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.352 MEMPEAK_KBS 0

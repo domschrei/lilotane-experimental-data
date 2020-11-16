@@ -1,0 +1,1103 @@
+PANDA - Planning and Acting in a Network Decomposition Architecture
+Believe us: It's great, it's fantastic!
+
+PANDA Copyright (C) 2014-2018 Gregor Behnke, Pascal Bercher, Thomas Geier, Kadir
+Dede, Daniel Höller, Kristof Mickeleit, Matthias Englert
+This program comes with ABSOLUTELY NO WARRANTY
+This is free software, and you are welcome to redistribute it under certain
+conditions; run PANDA with -license for details.
+
+Main Developers:
+- Gregor Behnke, http://www.uni-ulm.de/in/ki/behnke
+- Daniel Höller, http://www.uni-ulm.de/in/ki/hoeller
+
+With many thanks to various further contributors.
+Run PANDA with the command line argument -contributors for an extensive list.
+
+Run it with -help for more information like available options.
+
+
+PANDA was called with: "-systemConfig AAAI-2018-totSAT(cryptominisat) -programPath cryptominisat=./cryptominisat5 instances/depots/domain.hddl instances/depots/p05.hddl"
+
+
+Planner Configuration
+=====================
+Domain: instances/depots/domain.hddl
+Problem: instances/depots/p05.hddl
+Output: none
+
+Planning Configuration
+======================
+	printGeneralInformation : true
+	printAdditionalData     : true
+	random seed             : 42
+	time limit (in seconds) : none
+
+	external programs:
+		cryptominisat : ./cryptominisat5
+
+	Parsing Configuration
+	---------------------
+	Parser                : autodetect file-type
+	Expand Sort Hierarchy : true
+	ClosedWordAssumption  : true
+	CompileSHOPMethods    : true
+	Eliminate Equality    : true
+	Strip Hybridity       : true
+	Reduce General Tasks  : true
+	
+	Preprocessing Configuration
+	---------------------------
+	Compile negative preconditions    : true
+	Compile unit methods              : false
+	Compile order in methods          : false
+	Compile initial plan              : true
+	Ensure Methods Have Last Task     : false
+	Split independent parameters      : true
+	Remove unnecessary predicates     : true
+	Expand choiceless abstract tasks  : true
+	Domain Cleanup                    : true
+	Convert to SAS+                   : false
+	Grounded Reachability Analysis    : Planning Graph (mutex-free)
+	Grounded Task Decomposition Graph : Two Way TDG
+	Iterate reachability analysis     : true
+	Ground domain                     : true
+	Iterate reachability analysis     : true
+	Stop directly after grounding     : false
+	
+	SAT-Planning Configuration
+	--------------------------
+	solver           : cryptominisat
+	full planner run : true
+	reduction method : only normalise 
+	check result     : true
+	
+	Post-processing Configuration
+	-----------------------------
+	search result with Decomposition Tree
+	statistics
+	timings
+	search status
+	search result
+#0 "00 global:01:problem"="p05.hddl";"00 global:00:domain"="domain.hddl"
+Parsing domain ... using HDDL parser ... done
+Preparing internal domain representation ... done.
+Initial domain
+	number of abstract tasks = 6
+	number of tasks = 23
+	number of decomposition methods = 12
+	number of predicates = 6
+	number of sorts = 10
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 11
+	number of epsilon methods = 0
+	number of primitive tasks = 17
+	number of constants = 21
+Compiling negative preconditions ... done.
+	number of abstract tasks = 6
+	number of tasks = 23
+	number of decomposition methods = 12
+	number of predicates = 12
+	number of sorts = 10
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 11
+	number of epsilon methods = 0
+	number of primitive tasks = 17
+	number of constants = 21
+Compiling split parameters ... done.
+	number of abstract tasks = 7
+	number of tasks = 24
+	number of decomposition methods = 13
+	number of predicates = 12
+	number of sorts = 10
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 11
+	number of epsilon methods = 0
+	number of primitive tasks = 17
+	number of constants = 21
+Lifted reachability analysis and domain cleanup ... done.
+	number of abstract tasks = 7
+	number of tasks = 24
+	number of decomposition methods = 13
+	number of predicates = 8
+	number of sorts = 10
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 11
+	number of epsilon methods = 0
+	number of primitive tasks = 17
+	number of constants = 21
+Grounded planning graph ... done in 380ms.
+	Number of Grounded Actions 519
+	Number of Grounded Literals 168
+	number of abstract tasks = 7
+	number of tasks = 24
+	number of decomposition methods = 13
+	number of predicates = 8
+	number of sorts = 10
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 11
+	number of epsilon methods = 0
+	number of primitive tasks = 17
+	number of constants = 21
+Two Way TDG ... done.
+	number of abstract tasks = 7
+	number of tasks = 24
+	number of decomposition methods = 13
+	number of predicates = 8
+	number of sorts = 10
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 11
+	number of epsilon methods = 0
+	number of primitive tasks = 17
+	number of constants = 21
+Grounding ... done.
+	number of abstract tasks = 232
+	number of tasks = 681
+	number of decomposition methods = 573
+	number of predicates = 174
+	number of sorts = 0
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 279
+	number of epsilon methods = 0
+	number of primitive tasks = 449
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 232
+	number of tasks = 681
+	number of decomposition methods = 573
+	number of predicates = 158
+	number of sorts = 0
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 279
+	number of epsilon methods = 0
+	number of primitive tasks = 449
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 81ms.
+	Number of Grounded Actions 449
+	Number of Grounded Literals 158
+	number of abstract tasks = 232
+	number of tasks = 681
+	number of decomposition methods = 573
+	number of predicates = 158
+	number of sorts = 0
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 279
+	number of epsilon methods = 0
+	number of primitive tasks = 449
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 232
+	number of tasks = 681
+	number of decomposition methods = 573
+	number of predicates = 158
+	number of sorts = 0
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 279
+	number of epsilon methods = 0
+	number of primitive tasks = 449
+	number of constants = 0
+Compiling expand choiceless abstract tasks ... done.
+	number of abstract tasks = 119
+	number of tasks = 568
+	number of decomposition methods = 460
+	number of predicates = 158
+	number of sorts = 0
+	number of tasks in largest method = 10
+	number of primitive SHOP tasks = 279
+	number of epsilon methods = 0
+	number of primitive tasks = 449
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 119
+	number of tasks = 568
+	number of decomposition methods = 460
+	number of predicates = 158
+	number of sorts = 0
+	number of tasks in largest method = 10
+	number of primitive SHOP tasks = 279
+	number of epsilon methods = 0
+	number of primitive tasks = 449
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 119
+	number of tasks = 568
+	number of decomposition methods = 460
+	number of predicates = 158
+	number of sorts = 0
+	number of tasks in largest method = 10
+	number of primitive SHOP tasks = 279
+	number of epsilon methods = 0
+	number of primitive tasks = 449
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 31ms.
+	Number of Grounded Actions 449
+	Number of Grounded Literals 158
+	number of abstract tasks = 119
+	number of tasks = 568
+	number of decomposition methods = 460
+	number of predicates = 158
+	number of sorts = 0
+	number of tasks in largest method = 10
+	number of primitive SHOP tasks = 279
+	number of epsilon methods = 0
+	number of primitive tasks = 449
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 119
+	number of tasks = 568
+	number of decomposition methods = 460
+	number of predicates = 158
+	number of sorts = 0
+	number of tasks in largest method = 10
+	number of primitive SHOP tasks = 279
+	number of epsilon methods = 0
+	number of primitive tasks = 449
+	number of constants = 0
+Compiling expand choiceless abstract tasks ... done.
+	number of abstract tasks = 86
+	number of tasks = 535
+	number of decomposition methods = 427
+	number of predicates = 158
+	number of sorts = 0
+	number of tasks in largest method = 10
+	number of primitive SHOP tasks = 279
+	number of epsilon methods = 0
+	number of primitive tasks = 449
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 86
+	number of tasks = 535
+	number of decomposition methods = 427
+	number of predicates = 158
+	number of sorts = 0
+	number of tasks in largest method = 10
+	number of primitive SHOP tasks = 279
+	number of epsilon methods = 0
+	number of primitive tasks = 449
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 86
+	number of tasks = 535
+	number of decomposition methods = 427
+	number of predicates = 158
+	number of sorts = 0
+	number of tasks in largest method = 10
+	number of primitive SHOP tasks = 279
+	number of epsilon methods = 0
+	number of primitive tasks = 449
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 34ms.
+	Number of Grounded Actions 449
+	Number of Grounded Literals 158
+	number of abstract tasks = 86
+	number of tasks = 535
+	number of decomposition methods = 427
+	number of predicates = 158
+	number of sorts = 0
+	number of tasks in largest method = 10
+	number of primitive SHOP tasks = 279
+	number of epsilon methods = 0
+	number of primitive tasks = 449
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 86
+	number of tasks = 535
+	number of decomposition methods = 427
+	number of predicates = 158
+	number of sorts = 0
+	number of tasks in largest method = 10
+	number of primitive SHOP tasks = 279
+	number of epsilon methods = 0
+	number of primitive tasks = 449
+	number of constants = 0
+Compiling expand choiceless abstract tasks ... done.
+	number of abstract tasks = 84
+	number of tasks = 533
+	number of decomposition methods = 425
+	number of predicates = 158
+	number of sorts = 0
+	number of tasks in largest method = 11
+	number of primitive SHOP tasks = 279
+	number of epsilon methods = 0
+	number of primitive tasks = 449
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 84
+	number of tasks = 533
+	number of decomposition methods = 425
+	number of predicates = 158
+	number of sorts = 0
+	number of tasks in largest method = 11
+	number of primitive SHOP tasks = 279
+	number of epsilon methods = 0
+	number of primitive tasks = 449
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 84
+	number of tasks = 533
+	number of decomposition methods = 425
+	number of predicates = 158
+	number of sorts = 0
+	number of tasks in largest method = 11
+	number of primitive SHOP tasks = 279
+	number of epsilon methods = 0
+	number of primitive tasks = 449
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 45ms.
+	Number of Grounded Actions 449
+	Number of Grounded Literals 158
+	number of abstract tasks = 84
+	number of tasks = 533
+	number of decomposition methods = 425
+	number of predicates = 158
+	number of sorts = 0
+	number of tasks in largest method = 11
+	number of primitive SHOP tasks = 279
+	number of epsilon methods = 0
+	number of primitive tasks = 449
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 84
+	number of tasks = 533
+	number of decomposition methods = 425
+	number of predicates = 158
+	number of sorts = 0
+	number of tasks in largest method = 11
+	number of primitive SHOP tasks = 279
+	number of epsilon methods = 0
+	number of primitive tasks = 449
+	number of constants = 0
+Compiling expand choiceless abstract tasks ... done.
+	number of abstract tasks = 84
+	number of tasks = 533
+	number of decomposition methods = 425
+	number of predicates = 158
+	number of sorts = 0
+	number of tasks in largest method = 11
+	number of primitive SHOP tasks = 279
+	number of epsilon methods = 0
+	number of primitive tasks = 449
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 84
+	number of tasks = 533
+	number of decomposition methods = 425
+	number of predicates = 158
+	number of sorts = 0
+	number of tasks in largest method = 11
+	number of primitive SHOP tasks = 279
+	number of epsilon methods = 0
+	number of primitive tasks = 449
+	number of constants = 0
+Compiling methods with identical tasks ... done.
+	number of abstract tasks = 84
+	number of tasks = 533
+	number of decomposition methods = 425
+	number of predicates = 158
+	number of sorts = 0
+	number of tasks in largest method = 11
+	number of primitive SHOP tasks = 279
+	number of epsilon methods = 0
+	number of primitive tasks = 449
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 84
+	number of tasks = 533
+	number of decomposition methods = 425
+	number of predicates = 158
+	number of sorts = 0
+	number of tasks in largest method = 11
+	number of primitive SHOP tasks = 279
+	number of epsilon methods = 0
+	number of primitive tasks = 449
+	number of constants = 0
+Tasks 449 - 0
+Domain is acyclic: false
+Domain is mostly acyclic: false
+Domain is regular: false
+Domain is tail recursive: false
+Domain is totally ordered: true
+Domain has last task in all methods: true
+Time remaining for planner 9223372036854771762ms
+Computing minimum decomposition height: 2
+
+Running SAT search with K = 2
+Generating initial PDT ... Still waiting ... running for 102 will abort at 9223372036854771701
+done
+initial PDT has 66 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 20 leafs
+SHOP LEAFS 20
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Computing invariants [Rintanen]
+candidates build 37209
+Size 37209 at 0/449
+Size 28259
+Size 28259 at 0/449
+Size 17257
+Size 17257 at 0/449
+Size 8309
+Size 8309 at 0/449
+Size 4501
+Size 4501 at 0/449
+Size 3028
+Size 3028 at 0/449
+Size 2513
+Size 2513 at 0/449
+Size 2316
+Size 2316 at 0/449
+Size 2227
+Size 2227 at 0/449
+Size 2194
+Size 2194 at 0/449
+Size 2174
+Size 2174 at 0/449
+Size 2166
+Size 2166 at 0/449
+Size 2166
+Invariant time: 0.626
+Number of invariants: 2166
+Invariant Clauses 45486
+NUMBER OF CLAUSES 52098
+NUMBER OF STATE CLAUSES 51974
+NUMBER OF DECOMPOSITION CLAUSES 124
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 99.76% 0.24% 0.0% 
+NUMBER OF PATHS 20
+Starting cryptominisat
+Setting starttime of solver to 1603874317877
+Command exited with non-zero status 20
+0.01 0.00
+
+Time command gave the following runtime for the solver: 10
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 3
+Generating initial PDT ... done
+initial PDT has 222 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... Still waiting ... running for 100 will abort at 9223372036854770201
+done
+PDT has 136 leafs
+SHOP LEAFS 74
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 296742
+NUMBER OF CLAUSES 354163
+NUMBER OF STATE CLAUSES 342931
+NUMBER OF DECOMPOSITION CLAUSES 11232
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 96.83% 3.17% 0.0% 
+NUMBER OF PATHS 136
+Starting cryptominisat
+Setting starttime of solver to 1603874319214
+Command exited with non-zero status 20
+0.08 0.00
+
+Time command gave the following runtime for the solver: 80
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 4
+Generating initial PDT ... done
+initial PDT has 403 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... Still waiting ... running for 100 will abort at 9223372036854768846
+done
+PDT has 327 leafs
+SHOP LEAFS 170
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 710448
+NUMBER OF CLAUSES 856604
+NUMBER OF STATE CLAUSES 822225
+NUMBER OF DECOMPOSITION CLAUSES 34379
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 95.99000000000001% 4.01% 0.0% 
+NUMBER OF PATHS 327
+Starting cryptominisat
+Setting starttime of solver to 1603874320886
+Command exited with non-zero status 20
+0.19 0.02
+
+Time command gave the following runtime for the solver: 210
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 5
+Generating initial PDT ... Still waiting ... running for 100 will abort at 9223372036854767044
+done
+initial PDT has 547 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 483 leafs
+SHOP LEAFS 236
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 1048344
+NUMBER OF CLAUSES 1262340
+NUMBER OF STATE CLAUSES 1213787
+NUMBER OF DECOMPOSITION CLAUSES 48553
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 96.15% 3.85% 0.0% 
+NUMBER OF PATHS 483
+Starting cryptominisat
+Setting starttime of solver to 1603874323225
+Command exited with non-zero status 20
+0.30 0.01
+
+Time command gave the following runtime for the solver: 310
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 6
+Generating initial PDT ... done
+initial PDT has 691 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... Still waiting ... running for 100 will abort at 9223372036854764540
+done
+PDT has 628 leafs
+SHOP LEAFS 297
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 1362414
+NUMBER OF CLAUSES 1640953
+NUMBER OF STATE CLAUSES 1578093
+NUMBER OF DECOMPOSITION CLAUSES 62860
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 96.17% 3.83% 0.0% 
+NUMBER OF PATHS 628
+Starting cryptominisat
+Setting starttime of solver to 1603874326159
+Command exited with non-zero status 10
+0.50 0.04
+
+Time command gave the following runtime for the solver: 540
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... done
+SAT-Solver says: SATISFIABLE
+
+extracting solution
+Consider method^2_7;6,6 6 m7_do_get_truck
+7;6 155 pathaction!2_7;6,159
+Consider method^2_6;7,399 399 m4_do_clear
+6;7 136 pathaction!2_6;7,387
+Consider method^2_0;2,402 402 m4_do_clear
+0;2 11 pathaction!2_0;2,374
+Consider method^2_8;3,93 93 m4_do_clear
+8;3 73 pathaction!2_8;3,370
+Consider method^5_1;7;1;2;1,254 254 m4_do_clear
+1;7;1;2;1 50 pathaction!5_1;7;1;2;1,384
+Consider method^1_7,120 120 m2_do_put_on
+7 95 pathaction!1_7,501
+Consider method^2_7;7,378 378 m4_do_clear
+7;7 24 pathaction!2_7;7,392
+Consider method^5_0;7;1;1;2,266 266 m4_do_clear
+0;7;1;1;2 197 pathaction!5_0;7;1;1;2,372
+Consider method^2_4;7,235 235 m4_do_clear
+4;7 67 pathaction!2_4;7,391
+Consider method^3_2;7;1,203 203 m5_do_clear
+2;7;1 188 pathaction!3_2;7;1,371
+Consider method^4_2;7;1;1,213 213 <m5_do_clear;do_clear[crate8,distributor0];m4_do_clear;1;0,-1,-2,2,3,4>
+2;7;1;1 125 pathaction!4_2;7;1;1,375
+Consider method^2_5;2,323 323 m6_do_get_truck
+5;2 51 pathaction!2_5;2,155
+Consider method^2_2;7,40 40 m5_do_clear
+2;7 123 pathaction!2_2;7,383
+Consider method^5_1;7;1;2;3,28 28 m6_do_get_truck
+1;7;1;2;3 129 pathaction!5_1;7;1;2;3,158
+Consider method^5_2;7;1;1;4,104 104 m6_do_get_truck
+2;7;1;1;4 194 pathaction!5_2;7;1;1;4,157
+Consider method^3_1;7;3,28 28 m6_do_get_truck
+1;7;3 174 pathaction!3_1;7;3,158
+Consider method^4_1;7;1;4,401 401 m7_do_get_truck
+1;7;1;4 65 pathaction!4_1;7;1;4,154
+Consider method^1_1,263 263 m2_do_put_on
+1 152 pathaction!1_1,500
+Consider method^2_8;2,365 365 m7_do_get_truck
+8;2 122 pathaction!2_8;2,157
+Consider method^4_2;7;1;3,104 104 m6_do_get_truck
+2;7;1;3 45 pathaction!4_2;7;1;3,157
+Consider method^1_0,91 91 <<<m3_do_put_on;do_unload_truck[crate9,pallet0,depot0,truck1];m11_do_unload_truck;2;0,1,-1,-2,-3,-4>;do_load_truck_m3_do_put_on_sip_2[crate9,distributor1,truck1];_m3_do_put_on_2;0;-1,1,2,3,4,5>;do_load_truck[crate9,crate5,distributor1,truck1];m10_do_load_truck;0;-1,-2,-3,-4,-5,1,2,3,4,5>
+0 7 pathaction!1_0,496
+Consider method^2_3;6,345 345 m7_do_get_truck
+3;6 56 pathaction!2_3;6,155
+Consider method^1_8,326 326 m2_do_put_on
+8 184 pathaction!1_8,495
+Consider method^2_4;6,323 323 m6_do_get_truck
+4;6 52 pathaction!2_4;6,155
+Consider method^2_9;8,62 62 m4_do_clear
+9;8 107 pathaction!2_9;8,373
+Consider method^5_0;7;1;1;4,323 323 m6_do_get_truck
+0;7;1;1;4 108 pathaction!5_0;7;1;1;4,155
+Consider method^2_6;6,323 323 m6_do_get_truck
+6;6 36 pathaction!2_6;6,155
+Consider method^3_0;7;3,311 311 m6_do_get_truck
+0;7;3 69 pathaction!3_0;7;3,159
+Consider method^2_1;7,359 359 m5_do_clear
+1;7 47 pathaction!2_1;7,382
+Consider method^1_2,327 327 m2_do_put_on
+2 54 pathaction!1_2,503
+Consider method^3_0;7;1,97 97 m5_do_clear
+0;7;1 58 pathaction!3_0;7;1,381
+Consider method^2_0;1,127 127 m7_do_get_truck
+0;1 193 pathaction!2_0;1,154
+Consider method^1_9,133 133 m2_do_put_on
+9 148 pathaction!1_9,502
+Consider method^1_4,117 117 m2_do_put_on
+4 164 pathaction!1_4,497
+Consider method^2_0;7,281 281 m5_do_clear
+0;7 82 pathaction!2_0;7,390
+Consider method^3_1;7;1,52 52 m5_do_clear
+1;7;1 187 pathaction!3_1;7;1,377
+Consider method^2_3;7,77 77 m4_do_clear
+3;7 57 pathaction!2_3;7,376
+Consider method^1_3,114 114 m2_do_put_on
+3 168 pathaction!1_3,499
+Consider method^1_6,35 35 m2_do_put_on
+6 175 pathaction!1_6,498
+Consider method^2_2;6,126 126 m7_do_get_truck
+2;6 29 pathaction!2_2;6,157
+Consider method^1_5,165 165 m2_do_put_on
+5 64 pathaction!1_5,504
+Consider method^2_9;7,127 127 m7_do_get_truck
+9;7 17 pathaction!2_9;7,154
+Consider method^4_1;7;1;2,279 279 m5_do_clear
+1;7;1;2 9 pathaction!4_1;7;1;2,380
+Consider method^4_0;7;1;1,310 310 m5_do_clear
+0;7;1;1 139 pathaction!4_0;7;1;1,378
+Consider method^3_2;7;3,322 322 m7_do_get_truck
+2;7;3 141 pathaction!3_2;7;3,156
+Consider method^4_0;7;1;3,323 323 m6_do_get_truck
+0;7;1;3 83 pathaction!4_0;7;1;3,155
+Consider method^2_1;6,171 171 m7_do_get_truck
+1;6 74 pathaction!2_1;6,158
+Consider method^0_,424 424 __top_1
+ 41 pathaction!0_,532
+Consider method^2_5;3,266 266 m4_do_clear
+5;3 93 pathaction!2_5;3,372
+
+
+CHECKING primitive solution of length 121 ...
+true 89 __method_precondition_m10_do_load_truck_10_precondition[crate9,distributor1,crate5,hoist2;]
+true 28 __method_precondition_m7_do_get_truck_7_precondition[truck1,distributor1;]
+true 21 Drive[truck1,distributor0,distributor1;]
+true 91 __method_precondition_m4_do_clear_4_precondition[crate9,distributor1;]
+true 38 nop[;]
+true 149 Lift[hoist2,crate9,crate5,distributor1;]
+true 181 Load[hoist2,crate9,truck1,distributor1;]
+true 79 Drive[truck1,distributor1,depot0;]
+true 75 __method_precondition_m11_do_unload_truck_11_precondition[truck1,depot0,hoist0,crate9,pallet0;]
+true 198 __method_precondition_m5_do_clear_5_precondition[pallet0,crate1,depot0,hoist0;]
+true 172 __method_precondition_m5_do_clear_5_precondition[crate1,crate3,depot0,hoist0;]
+true 121 __method_precondition_m5_do_clear_5_precondition[crate3,crate4,depot0,hoist0;]
+true 61 __method_precondition_m4_do_clear_4_precondition[crate4,depot0;]
+true 32 nop[;]
+true 70 Lift[hoist0,crate4,crate3,depot0;]
+true 18 __method_precondition_m6_do_get_truck_6_precondition[truck0,depot0;]
+true 3 nop[;]
+true 167 Load[hoist0,crate4,truck0,depot0;]
+true 156 Lift[hoist0,crate3,crate1,depot0;]
+true 128 __method_precondition_m6_do_get_truck_6_precondition[truck0,depot0;]
+true 59 nop[;]
+true 78 Load[hoist0,crate3,truck0,depot0;]
+true 1 Lift[hoist0,crate1,pallet0,depot0;]
+true 35 __method_precondition_m6_do_get_truck_6_precondition[truck1,depot0;]
+true 101 nop[;]
+true 176 Load[hoist0,crate1,truck1,depot0;]
+true 117 Unload[hoist0,crate9,truck1,depot0;]
+true 86 Drop[hoist0,crate9,pallet0,depot0;]
+true 72 __method_precondition_m2_do_put_on_2_precondition[crate3,truck0;]
+true 190 __method_precondition_m7_do_get_truck_7_precondition[truck0,distributor1;]
+true 171 Drive[truck0,depot0,distributor1;]
+true 30 __method_precondition_m5_do_clear_5_precondition[pallet2,crate0,distributor1,hoist2;]
+true 62 __method_precondition_m5_do_clear_5_precondition[crate0,crate2,distributor1,hoist2;]
+true 196 __method_precondition_m5_do_clear_5_precondition[crate2,crate5,distributor1,hoist2;]
+true 25 __method_precondition_m4_do_clear_4_precondition[crate5,distributor1;]
+true 90 nop[;]
+true 8 Lift[hoist2,crate5,crate2,distributor1;]
+true 135 __method_precondition_m6_do_get_truck_6_precondition[truck0,distributor1;]
+true 10 nop[;]
+true 97 Load[hoist2,crate5,truck0,distributor1;]
+true 66 Lift[hoist2,crate2,crate0,distributor1;]
+true 166 __method_precondition_m7_do_get_truck_7_precondition[truck1,distributor1;]
+true 120 Drive[truck1,depot0,distributor1;]
+true 191 Load[hoist2,crate2,truck1,distributor1;]
+true 87 Lift[hoist2,crate0,pallet2,distributor1;]
+true 106 __method_precondition_m6_do_get_truck_6_precondition[truck0,distributor1;]
+true 26 nop[;]
+true 124 Load[hoist2,crate0,truck0,distributor1;]
+true 114 Unload[hoist2,crate3,truck0,distributor1;]
+true 33 Drop[hoist2,crate3,pallet2,distributor1;]
+true 144 __method_precondition_m2_do_put_on_2_precondition[crate1,truck1;]
+true 132 __method_precondition_m7_do_get_truck_7_precondition[truck1,distributor0;]
+true 169 Drive[truck1,distributor1,distributor0;]
+true 0 __method_precondition_m5_do_clear_5_precondition[pallet1,crate6,distributor0,hoist1;]
+true 162 __method_precondition_m5_do_clear_5_precondition[crate6,crate7,distributor0,hoist1;]
+true 13 __method_precondition_m5_do_clear_5_precondition[crate7,crate8,distributor0,hoist1;]
+true 71 __method_precondition_m4_do_clear_4_precondition[crate8,distributor0;]
+true 180 nop[;]
+true 20 Lift[hoist1,crate8,crate7,distributor0;]
+true 2 __method_precondition_m6_do_get_truck_6_precondition[truck1,distributor0;]
+true 46 nop[;]
+true 22 Load[hoist1,crate8,truck1,distributor0;]
+true 19 Lift[hoist1,crate7,crate6,distributor0;]
+true 92 __method_precondition_m6_do_get_truck_6_precondition[truck1,distributor0;]
+true 165 nop[;]
+true 147 Load[hoist1,crate7,truck1,distributor0;]
+true 53 Lift[hoist1,crate6,pallet1,distributor0;]
+true 126 __method_precondition_m7_do_get_truck_7_precondition[truck0,distributor0;]
+true 159 Drive[truck0,distributor1,distributor0;]
+true 118 Load[hoist1,crate6,truck0,distributor0;]
+true 185 Unload[hoist1,crate1,truck1,distributor0;]
+true 103 Drop[hoist1,crate1,pallet1,distributor0;]
+true 182 __method_precondition_m2_do_put_on_2_precondition[crate6,truck0;]
+true 40 __method_precondition_m7_do_get_truck_7_precondition[truck0,depot0;]
+true 80 Drive[truck0,distributor0,depot0;]
+true 14 __method_precondition_m4_do_clear_4_precondition[crate9,depot0;]
+true 100 nop[;]
+true 105 Unload[hoist0,crate6,truck0,depot0;]
+true 99 Drop[hoist0,crate6,crate9,depot0;]
+true 115 __method_precondition_m2_do_put_on_2_precondition[crate4,truck0;]
+true 44 __method_precondition_m6_do_get_truck_6_precondition[truck0,depot0;]
+true 177 nop[;]
+true 94 __method_precondition_m4_do_clear_4_precondition[crate6,depot0;]
+true 151 nop[;]
+true 145 Unload[hoist0,crate4,truck0,depot0;]
+true 153 Drop[hoist0,crate4,crate6,depot0;]
+true 84 __method_precondition_m2_do_put_on_2_precondition[crate5,truck0;]
+true 179 __method_precondition_m6_do_get_truck_6_precondition[truck0,depot0;]
+true 178 nop[;]
+true 150 __method_precondition_m4_do_clear_4_precondition[crate4,depot0;]
+true 189 nop[;]
+true 119 Unload[hoist0,crate5,truck0,depot0;]
+true 96 Drop[hoist0,crate5,crate4,depot0;]
+true 192 __method_precondition_m2_do_put_on_2_precondition[crate0,truck0;]
+true 134 __method_precondition_m6_do_get_truck_6_precondition[truck0,depot0;]
+true 154 nop[;]
+true 127 __method_precondition_m4_do_clear_4_precondition[crate5,depot0;]
+true 186 nop[;]
+true 146 Unload[hoist0,crate0,truck0,depot0;]
+true 49 Drop[hoist0,crate0,crate5,depot0;]
+true 137 __method_precondition_m2_do_put_on_2_precondition[crate2,truck1;]
+true 60 __method_precondition_m7_do_get_truck_7_precondition[truck1,depot0;]
+true 48 Drive[truck1,distributor0,depot0;]
+true 170 __method_precondition_m4_do_clear_4_precondition[crate0,depot0;]
+true 63 nop[;]
+true 163 Unload[hoist0,crate2,truck1,depot0;]
+true 102 Drop[hoist0,crate2,crate0,depot0;]
+true 140 __method_precondition_m2_do_put_on_2_precondition[crate7,truck1;]
+true 68 __method_precondition_m7_do_get_truck_7_precondition[truck1,distributor0;]
+true 34 Drive[truck1,depot0,distributor0;]
+true 31 __method_precondition_m4_do_clear_4_precondition[crate1,distributor0;]
+true 4 nop[;]
+true 130 Unload[hoist1,crate7,truck1,distributor0;]
+true 16 Drop[hoist1,crate7,crate1,distributor0;]
+true 116 __method_precondition_m2_do_put_on_2_precondition[crate8,truck1;]
+true 76 __method_precondition_m7_do_get_truck_7_precondition[truck1,distributor1;]
+true 39 Drive[truck1,distributor0,distributor1;]
+true 161 __method_precondition_m4_do_clear_4_precondition[crate3,distributor1;]
+true 113 nop[;]
+true 77 Unload[hoist2,crate8,truck1,distributor1;]
+true 23 Drop[hoist2,crate8,crate3,distributor1;]
+ done.
+Panda says: SOLUTION
+============ global ============
+randomseed     = 42
+peak memory    = 511039952
+planner result = SOLUTION
+============ properties ============
+acyclic                  = false
+mostly acyclic           = false
+regular                  = false
+tail recursive           = false
+totally ordered          = true
+last task in all methods = true
+============ problem ============
+number of constants                  = 0
+number of predicates                 = 158
+number of actions                    = 533
+number of abstract actions           = 84
+number of primitive actions          = 449
+number of methods                    = 425
+number of primitive shop actions     = 279
+number of primitive non-shop actions = 170
+size of largest method               = 11
+average method size                  = 5
+============ sat ============
+plan length                     = -1
+number of variables             = 211162
+number of clauses               = 1640953
+average size of clauses         = 2.035812725897695
+number of assert                = 43
+number of horn                  = 1576254
+K offset                        = 0
+K chosen value                  = 6
+state formula                   = 1578093
+method children clauses         = 0
+number of paths                 = 628
+maximum plan length             = 628
+number of decomposition clauses = 62860
+number of ordering clauses      = 0
+number of state clauses         = 1578093
+solved                          = true
+timeout                         = false
+
+----------------- TIMINGS -----------------
+============ total ============
+total = 15302
+============ parsing ============
+total                         = 1020
+file parser                   = 551
+sort expansion                = 206
+closed world assumption       = 75
+inherit preconditions         = 0
+shop methods                  = 23
+eliminate identical variables = 91
+strip domain of hybridity     = 10
+flatten formula               = 64
+============ preprocessing ============
+total                                      = 2886
+compile negative preconditions             = 55
+compile unit methods                       = 0
+split parameter                            = 48
+expand choiceless abstract tasks           = 531
+compile methods with identical tasks       = 21
+removing unnecessary predicates            = 245
+lifted reachabiltiy analysis               = 73
+grounded planning graph analysis           = 800
+grounded task decomposition graph analysis = 829
+grounding                                  = 274
+create artificial top task                 = 2
+============ search preparation ============
+compute state invariants = 765
+============ sat ============
+total                                        = 9166
+generate formula                             = 6360
+generate path decomposition tree             = 409
+normalise path decomposition tree            = 131
+sog optimisation                             = 138
+translate path decomposition tree to clauses = 582
+generate state formula                       = 5927
+generate state invariant formula             = 2424
+transform to DIMACS                          = 1142
+SAT solver                                   = 1150
+SAT solver for K=0002                        = 10
+SAT solver for K=0003                        = 80
+SAT solver for K=0004                        = 210
+SAT solver for K=0005                        = 310
+SAT solver for K=0006                        = 540
+
+#1 "40 sat:90:solved"="true";"30 problem:05:number of primitive actions"="449";"30 problem:01:number of constants"="0";"30 problem:04:number of abstract actions"="84";"02 properties:04:tail recursive"="false";"00 global:80:peak memory"="511039952";"40 sat:20:state formula"="1578093";"40 sat:01:number of variables"="211162";"40 sat:14:K offset"="0";"40 sat:30:number of paths"="628";"40 sat:00:plan length"="-1";"40 sat:50:number of ordering clauses"="0";"02 properties:02:mostly acyclic"="false";"30 problem:06:number of methods"="425";"30 problem:07:number of primitive shop actions"="279";"02 properties:05:totally ordered"="true";"02 properties:06:last task in all methods"="true";"30 problem:03:number of actions"="533";"30 problem:08:number of primitive non-shop actions"="170";"30 problem:02:number of predicates"="158";"40 sat:03:number of horn"="1576254";"40 sat:15:K chosen value"="6";"30 problem:10:average method size"="5";"02 properties:03:regular"="false";"30 problem:09:size of largest method"="11";"40 sat:03:average size of clauses"="2.035812725897695";"40 sat:02:number of clauses"="1640953";"40 sat:50:number of state clauses"="1578093";"40 sat:03:number of assert"="43";"40 sat:22:method children clauses"="0";"00 global:90:planner result"="SOLUTION";"02 properties:01:acyclic"="false";"40 sat:31:maximum plan length"="628";"40 sat:50:number of decomposition clauses"="62860";"00 global:02:randomseed"="42";"40 sat:91:timeout"="false";"01 parsing:01:file parser"="551";"01 parsing:08:flatten formula"="64";"40 sat:41:SAT solver for K=0004"="210";"40 sat:00:total"="9166";"40 sat:16:generate state formula"="5927";"40 sat:20:transform to DIMACS"="1142";"40 sat:11:generate path decomposition tree"="409";"02 preprocessing:07:compile methods with identical tasks"="21";"01 parsing:07:strip domain of hybridity"="10";"02 preprocessing:08:removing unnecessary predicates"="245";"01 parsing:03:closed world assumption"="75";"02 preprocessing:11:lifted reachabiltiy analysis"="73";"01 parsing:02:sort expansion"="206";"40 sat:12:normalise path decomposition tree"="131";"40 sat:40:SAT solver"="1150";"01 parsing:00:total"="1020";"40 sat:10:generate formula"="6360";"40 sat:41:SAT solver for K=0005"="310";"01 parsing:04:inherit preconditions"="0";"40 sat:41:SAT solver for K=0002"="10";"02 preprocessing:01:compile negative preconditions"="55";"00 total:00:total"="15302";"40 sat:13:sog optimisation"="138";"02 preprocessing:12:grounded planning graph analysis"="800";"02 preprocessing:02:compile unit methods"="0";"02 preprocessing:23:grounded task decomposition graph analysis"="829";"40 sat:41:SAT solver for K=0006"="540";"02 preprocessing:04:split parameter"="48";"01 parsing:05:shop methods"="23";"10 search preparation:02:compute state invariants"="765";"01 parsing:06:eliminate identical variables"="91";"40 sat:15:translate path decomposition tree to clauses"="582";"02 preprocessing:05:expand choiceless abstract tasks"="531";"40 sat:41:SAT solver for K=0003"="80";"40 sat:17:generate state invariant formula"="2424";"02 preprocessing:00:total"="2886";"02 preprocessing:99:create artificial top task"="2";"02 preprocessing:84:grounding"="274"
+#!verify __method_precondition_m10_do_load_truck_10_precondition[crate9,distributor1,crate5,hoist2];__method_precondition_m7_do_get_truck_7_precondition[truck1,distributor1];Drive[truck1,distributor0,distributor1];__method_precondition_m4_do_clear_4_precondition[crate9,distributor1];nop[];Lift[hoist2,crate9,crate5,distributor1];Load[hoist2,crate9,truck1,distributor1];Drive[truck1,distributor1,depot0];__method_precondition_m11_do_unload_truck_11_precondition[truck1,depot0,hoist0,crate9,pallet0];__method_precondition_m5_do_clear_5_precondition[pallet0,crate1,depot0,hoist0];__method_precondition_m5_do_clear_5_precondition[crate1,crate3,depot0,hoist0];__method_precondition_m5_do_clear_5_precondition[crate3,crate4,depot0,hoist0];__method_precondition_m4_do_clear_4_precondition[crate4,depot0];nop[];Lift[hoist0,crate4,crate3,depot0];__method_precondition_m6_do_get_truck_6_precondition[truck0,depot0];nop[];Load[hoist0,crate4,truck0,depot0];Lift[hoist0,crate3,crate1,depot0];__method_precondition_m6_do_get_truck_6_precondition[truck0,depot0];nop[];Load[hoist0,crate3,truck0,depot0];Lift[hoist0,crate1,pallet0,depot0];__method_precondition_m6_do_get_truck_6_precondition[truck1,depot0];nop[];Load[hoist0,crate1,truck1,depot0];Unload[hoist0,crate9,truck1,depot0];Drop[hoist0,crate9,pallet0,depot0];__method_precondition_m2_do_put_on_2_precondition[crate3,truck0];__method_precondition_m7_do_get_truck_7_precondition[truck0,distributor1];Drive[truck0,depot0,distributor1];__method_precondition_m5_do_clear_5_precondition[pallet2,crate0,distributor1,hoist2];__method_precondition_m5_do_clear_5_precondition[crate0,crate2,distributor1,hoist2];__method_precondition_m5_do_clear_5_precondition[crate2,crate5,distributor1,hoist2];__method_precondition_m4_do_clear_4_precondition[crate5,distributor1];nop[];Lift[hoist2,crate5,crate2,distributor1];__method_precondition_m6_do_get_truck_6_precondition[truck0,distributor1];nop[];Load[hoist2,crate5,truck0,distributor1];Lift[hoist2,crate2,crate0,distributor1];__method_precondition_m7_do_get_truck_7_precondition[truck1,distributor1];Drive[truck1,depot0,distributor1];Load[hoist2,crate2,truck1,distributor1];Lift[hoist2,crate0,pallet2,distributor1];__method_precondition_m6_do_get_truck_6_precondition[truck0,distributor1];nop[];Load[hoist2,crate0,truck0,distributor1];Unload[hoist2,crate3,truck0,distributor1];Drop[hoist2,crate3,pallet2,distributor1];__method_precondition_m2_do_put_on_2_precondition[crate1,truck1];__method_precondition_m7_do_get_truck_7_precondition[truck1,distributor0];Drive[truck1,distributor1,distributor0];__method_precondition_m5_do_clear_5_precondition[pallet1,crate6,distributor0,hoist1];__method_precondition_m5_do_clear_5_precondition[crate6,crate7,distributor0,hoist1];__method_precondition_m5_do_clear_5_precondition[crate7,crate8,distributor0,hoist1];__method_precondition_m4_do_clear_4_precondition[crate8,distributor0];nop[];Lift[hoist1,crate8,crate7,distributor0];__method_precondition_m6_do_get_truck_6_precondition[truck1,distributor0];nop[];Load[hoist1,crate8,truck1,distributor0];Lift[hoist1,crate7,crate6,distributor0];__method_precondition_m6_do_get_truck_6_precondition[truck1,distributor0];nop[];Load[hoist1,crate7,truck1,distributor0];Lift[hoist1,crate6,pallet1,distributor0];__method_precondition_m7_do_get_truck_7_precondition[truck0,distributor0];Drive[truck0,distributor1,distributor0];Load[hoist1,crate6,truck0,distributor0];Unload[hoist1,crate1,truck1,distributor0];Drop[hoist1,crate1,pallet1,distributor0];__method_precondition_m2_do_put_on_2_precondition[crate6,truck0];__method_precondition_m7_do_get_truck_7_precondition[truck0,depot0];Drive[truck0,distributor0,depot0];__method_precondition_m4_do_clear_4_precondition[crate9,depot0];nop[];Unload[hoist0,crate6,truck0,depot0];Drop[hoist0,crate6,crate9,depot0];__method_precondition_m2_do_put_on_2_precondition[crate4,truck0];__method_precondition_m6_do_get_truck_6_precondition[truck0,depot0];nop[];__method_precondition_m4_do_clear_4_precondition[crate6,depot0];nop[];Unload[hoist0,crate4,truck0,depot0];Drop[hoist0,crate4,crate6,depot0];__method_precondition_m2_do_put_on_2_precondition[crate5,truck0];__method_precondition_m6_do_get_truck_6_precondition[truck0,depot0];nop[];__method_precondition_m4_do_clear_4_precondition[crate4,depot0];nop[];Unload[hoist0,crate5,truck0,depot0];Drop[hoist0,crate5,crate4,depot0];__method_precondition_m2_do_put_on_2_precondition[crate0,truck0];__method_precondition_m6_do_get_truck_6_precondition[truck0,depot0];nop[];__method_precondition_m4_do_clear_4_precondition[crate5,depot0];nop[];Unload[hoist0,crate0,truck0,depot0];Drop[hoist0,crate0,crate5,depot0];__method_precondition_m2_do_put_on_2_precondition[crate2,truck1];__method_precondition_m7_do_get_truck_7_precondition[truck1,depot0];Drive[truck1,distributor0,depot0];__method_precondition_m4_do_clear_4_precondition[crate0,depot0];nop[];Unload[hoist0,crate2,truck1,depot0];Drop[hoist0,crate2,crate0,depot0];__method_precondition_m2_do_put_on_2_precondition[crate7,truck1];__method_precondition_m7_do_get_truck_7_precondition[truck1,distributor0];Drive[truck1,depot0,distributor0];__method_precondition_m4_do_clear_4_precondition[crate1,distributor0];nop[];Unload[hoist1,crate7,truck1,distributor0];Drop[hoist1,crate7,crate1,distributor0];__method_precondition_m2_do_put_on_2_precondition[crate8,truck1];__method_precondition_m7_do_get_truck_7_precondition[truck1,distributor1];Drive[truck1,distributor0,distributor1];__method_precondition_m4_do_clear_4_precondition[crate3,distributor1];nop[];Unload[hoist2,crate8,truck1,distributor1];Drop[hoist2,crate8,crate3,distributor1]
+==>
+0 __method_precondition_m10_do_load_truck_10_precondition crate9 distributor1 crate5 hoist2 
+1 __method_precondition_m7_do_get_truck_7_precondition truck1 distributor1 
+2 Drive truck1 distributor0 distributor1 
+3 __method_precondition_m4_do_clear_4_precondition crate9 distributor1 
+4 nop  
+5 Lift hoist2 crate9 crate5 distributor1 
+6 Load hoist2 crate9 truck1 distributor1 
+7 Drive truck1 distributor1 depot0 
+8 __method_precondition_m11_do_unload_truck_11_precondition truck1 depot0 hoist0 crate9 pallet0 
+9 __method_precondition_m5_do_clear_5_precondition pallet0 crate1 depot0 hoist0 
+10 __method_precondition_m5_do_clear_5_precondition crate1 crate3 depot0 hoist0 
+11 __method_precondition_m5_do_clear_5_precondition crate3 crate4 depot0 hoist0 
+12 __method_precondition_m4_do_clear_4_precondition crate4 depot0 
+13 nop  
+14 Lift hoist0 crate4 crate3 depot0 
+15 __method_precondition_m6_do_get_truck_6_precondition truck0 depot0 
+16 nop  
+17 Load hoist0 crate4 truck0 depot0 
+18 Lift hoist0 crate3 crate1 depot0 
+19 __method_precondition_m6_do_get_truck_6_precondition truck0 depot0 
+20 nop  
+21 Load hoist0 crate3 truck0 depot0 
+22 Lift hoist0 crate1 pallet0 depot0 
+23 __method_precondition_m6_do_get_truck_6_precondition truck1 depot0 
+24 nop  
+25 Load hoist0 crate1 truck1 depot0 
+26 Unload hoist0 crate9 truck1 depot0 
+27 Drop hoist0 crate9 pallet0 depot0 
+28 __method_precondition_m2_do_put_on_2_precondition crate3 truck0 
+29 __method_precondition_m7_do_get_truck_7_precondition truck0 distributor1 
+30 Drive truck0 depot0 distributor1 
+31 __method_precondition_m5_do_clear_5_precondition pallet2 crate0 distributor1 hoist2 
+32 __method_precondition_m5_do_clear_5_precondition crate0 crate2 distributor1 hoist2 
+33 __method_precondition_m5_do_clear_5_precondition crate2 crate5 distributor1 hoist2 
+34 __method_precondition_m4_do_clear_4_precondition crate5 distributor1 
+35 nop  
+36 Lift hoist2 crate5 crate2 distributor1 
+37 __method_precondition_m6_do_get_truck_6_precondition truck0 distributor1 
+38 nop  
+39 Load hoist2 crate5 truck0 distributor1 
+40 Lift hoist2 crate2 crate0 distributor1 
+41 __method_precondition_m7_do_get_truck_7_precondition truck1 distributor1 
+42 Drive truck1 depot0 distributor1 
+43 Load hoist2 crate2 truck1 distributor1 
+44 Lift hoist2 crate0 pallet2 distributor1 
+45 __method_precondition_m6_do_get_truck_6_precondition truck0 distributor1 
+46 nop  
+47 Load hoist2 crate0 truck0 distributor1 
+48 Unload hoist2 crate3 truck0 distributor1 
+49 Drop hoist2 crate3 pallet2 distributor1 
+50 __method_precondition_m2_do_put_on_2_precondition crate1 truck1 
+51 __method_precondition_m7_do_get_truck_7_precondition truck1 distributor0 
+52 Drive truck1 distributor1 distributor0 
+53 __method_precondition_m5_do_clear_5_precondition pallet1 crate6 distributor0 hoist1 
+54 __method_precondition_m5_do_clear_5_precondition crate6 crate7 distributor0 hoist1 
+55 __method_precondition_m5_do_clear_5_precondition crate7 crate8 distributor0 hoist1 
+56 __method_precondition_m4_do_clear_4_precondition crate8 distributor0 
+57 nop  
+58 Lift hoist1 crate8 crate7 distributor0 
+59 __method_precondition_m6_do_get_truck_6_precondition truck1 distributor0 
+60 nop  
+61 Load hoist1 crate8 truck1 distributor0 
+62 Lift hoist1 crate7 crate6 distributor0 
+63 __method_precondition_m6_do_get_truck_6_precondition truck1 distributor0 
+64 nop  
+65 Load hoist1 crate7 truck1 distributor0 
+66 Lift hoist1 crate6 pallet1 distributor0 
+67 __method_precondition_m7_do_get_truck_7_precondition truck0 distributor0 
+68 Drive truck0 distributor1 distributor0 
+69 Load hoist1 crate6 truck0 distributor0 
+70 Unload hoist1 crate1 truck1 distributor0 
+71 Drop hoist1 crate1 pallet1 distributor0 
+72 __method_precondition_m2_do_put_on_2_precondition crate6 truck0 
+73 __method_precondition_m7_do_get_truck_7_precondition truck0 depot0 
+74 Drive truck0 distributor0 depot0 
+75 __method_precondition_m4_do_clear_4_precondition crate9 depot0 
+76 nop  
+77 Unload hoist0 crate6 truck0 depot0 
+78 Drop hoist0 crate6 crate9 depot0 
+79 __method_precondition_m2_do_put_on_2_precondition crate4 truck0 
+80 __method_precondition_m6_do_get_truck_6_precondition truck0 depot0 
+81 nop  
+82 __method_precondition_m4_do_clear_4_precondition crate6 depot0 
+83 nop  
+84 Unload hoist0 crate4 truck0 depot0 
+85 Drop hoist0 crate4 crate6 depot0 
+86 __method_precondition_m2_do_put_on_2_precondition crate5 truck0 
+87 __method_precondition_m6_do_get_truck_6_precondition truck0 depot0 
+88 nop  
+89 __method_precondition_m4_do_clear_4_precondition crate4 depot0 
+90 nop  
+91 Unload hoist0 crate5 truck0 depot0 
+92 Drop hoist0 crate5 crate4 depot0 
+93 __method_precondition_m2_do_put_on_2_precondition crate0 truck0 
+94 __method_precondition_m6_do_get_truck_6_precondition truck0 depot0 
+95 nop  
+96 __method_precondition_m4_do_clear_4_precondition crate5 depot0 
+97 nop  
+98 Unload hoist0 crate0 truck0 depot0 
+99 Drop hoist0 crate0 crate5 depot0 
+100 __method_precondition_m2_do_put_on_2_precondition crate2 truck1 
+101 __method_precondition_m7_do_get_truck_7_precondition truck1 depot0 
+102 Drive truck1 distributor0 depot0 
+103 __method_precondition_m4_do_clear_4_precondition crate0 depot0 
+104 nop  
+105 Unload hoist0 crate2 truck1 depot0 
+106 Drop hoist0 crate2 crate0 depot0 
+107 __method_precondition_m2_do_put_on_2_precondition crate7 truck1 
+108 __method_precondition_m7_do_get_truck_7_precondition truck1 distributor0 
+109 Drive truck1 depot0 distributor0 
+110 __method_precondition_m4_do_clear_4_precondition crate1 distributor0 
+111 nop  
+112 Unload hoist1 crate7 truck1 distributor0 
+113 Drop hoist1 crate7 crate1 distributor0 
+114 __method_precondition_m2_do_put_on_2_precondition crate8 truck1 
+115 __method_precondition_m7_do_get_truck_7_precondition truck1 distributor1 
+116 Drive truck1 distributor0 distributor1 
+117 __method_precondition_m4_do_clear_4_precondition crate3 distributor1 
+118 nop  
+119 Unload hoist2 crate8 truck1 distributor1 
+120 Drop hoist2 crate8 crate3 distributor1 
+root 121
+121 __choicelessATCompilation__top_1  -> __top_1 130 165 163 159 135 129 132 168 164 127
+122 do_clear crate6 depot0  -> m4_do_clear 82 83
+123 do_get_truck truck1 distributor0  -> m6_do_get_truck 63 64
+124 do_clear pallet2 distributor1  -> m5_do_clear 31 125 44 158 47
+125 do_clear crate0 distributor1  -> m5_do_clear 32 141 40 143 43
+126 do_get_truck truck1 distributor0  -> m7_do_get_truck 108 109
+127 do_put_on crate8 crate3  -> m2_do_put_on 114 154 167 119 120
+128 do_get_truck truck0 depot0  -> m6_do_get_truck 94 95
+129 do_put_on crate5 crate4  -> m2_do_put_on 86 147 136 91 92
+130 do_put_on crate9 pallet0  -> <<<m3_do_put_on;do_unload_truck[crate9,pallet0,depot0,truck1];m11_do_unload_truck;2;0,1,-1,-2,-3,-4>;do_load_truck_m3_do_put_on_sip_2[crate9,distributor1,truck1];_m3_do_put_on_2;0;-1,1,2,3,4,5>;do_load_truck[crate9,crate5,distributor1,truck1];m10_do_load_truck;0;-1,-2,-3,-4,-5,1,2,3,4,5> 0 138 157 5 6 7 8 156 26 27
+131 do_clear pallet1 distributor0  -> m5_do_clear 53 153 66 160 69
+132 do_put_on crate0 crate5  -> m2_do_put_on 93 128 148 98 99
+133 do_get_truck truck0 depot0  -> m6_do_get_truck 80 81
+134 do_clear crate3 depot0  -> m5_do_clear 11 162 14 151 17
+135 do_put_on crate4 crate6  -> m2_do_put_on 79 133 122 84 85
+136 do_clear crate4 depot0  -> m4_do_clear 89 90
+137 do_get_truck truck0 depot0  -> m7_do_get_truck 73 74
+138 do_get_truck truck1 distributor1  -> m7_do_get_truck 1 2
+139 do_clear crate5 distributor1  -> m4_do_clear 34 35
+140 do_get_truck truck1 distributor0  -> m6_do_get_truck 59 60
+141 do_clear crate2 distributor1  -> m5_do_clear 33 139 36 161 39
+142 do_clear crate7 distributor0  -> <m5_do_clear;do_clear[crate8,distributor0];m4_do_clear;1;0,-1,-2,2,3,4> 55 56 57 58 140 61
+143 do_get_truck truck1 distributor1  -> m7_do_get_truck 41 42
+144 do_get_truck truck1 depot0  -> m7_do_get_truck 101 102
+145 do_clear crate1 depot0  -> m5_do_clear 10 134 18 149 21
+146 do_clear crate9 depot0  -> m4_do_clear 75 76
+147 do_get_truck truck0 depot0  -> m6_do_get_truck 87 88
+148 do_clear crate5 depot0  -> m4_do_clear 96 97
+149 do_get_truck truck0 depot0  -> m6_do_get_truck 19 20
+150 do_clear crate0 depot0  -> m4_do_clear 103 104
+151 do_get_truck truck0 depot0  -> m6_do_get_truck 15 16
+152 do_get_truck truck1 distributor0  -> m7_do_get_truck 51 52
+153 do_clear crate6 distributor0  -> m5_do_clear 54 142 62 123 65
+154 do_get_truck truck1 distributor1  -> m7_do_get_truck 115 116
+155 do_clear crate1 distributor0  -> m4_do_clear 110 111
+156 do_clear pallet0 depot0  -> m5_do_clear 9 145 22 166 25
+157 do_clear crate9 distributor1  -> m4_do_clear 3 4
+158 do_get_truck truck0 distributor1  -> m6_do_get_truck 45 46
+159 do_put_on crate6 crate9  -> m2_do_put_on 72 137 146 77 78
+160 do_get_truck truck0 distributor0  -> m7_do_get_truck 67 68
+161 do_get_truck truck0 distributor1  -> m6_do_get_truck 37 38
+162 do_clear crate4 depot0  -> m4_do_clear 12 13
+163 do_put_on crate1 pallet1  -> m2_do_put_on 50 152 131 70 71
+164 do_put_on crate7 crate1  -> m2_do_put_on 107 126 155 112 113
+165 do_put_on crate3 pallet2  -> m2_do_put_on 28 169 124 48 49
+166 do_get_truck truck1 depot0  -> m6_do_get_truck 23 24
+167 do_clear crate3 distributor1  -> m4_do_clear 117 118
+168 do_put_on crate2 crate0  -> m2_do_put_on 100 144 150 105 106
+169 do_get_truck truck0 distributor1  -> m7_do_get_truck 29 30
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 16.335 MEMPEAK_KBS 749407.232

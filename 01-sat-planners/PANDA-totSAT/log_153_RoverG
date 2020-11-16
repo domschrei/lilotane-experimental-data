@@ -1,0 +1,606 @@
+PANDA - Planning and Acting in a Network Decomposition Architecture
+Believe us: It's great, it's fantastic!
+
+PANDA Copyright (C) 2014-2018 Gregor Behnke, Pascal Bercher, Thomas Geier, Kadir
+Dede, Daniel Höller, Kristof Mickeleit, Matthias Englert
+This program comes with ABSOLUTELY NO WARRANTY
+This is free software, and you are welcome to redistribute it under certain
+conditions; run PANDA with -license for details.
+
+Main Developers:
+- Gregor Behnke, http://www.uni-ulm.de/in/ki/behnke
+- Daniel Höller, http://www.uni-ulm.de/in/ki/hoeller
+
+With many thanks to various further contributors.
+Run PANDA with the command line argument -contributors for an extensive list.
+
+Run it with -help for more information like available options.
+
+
+PANDA was called with: "-systemConfig AAAI-2018-totSAT(cryptominisat) -programPath cryptominisat=./cryptominisat5 instances/RoverG/domain.hddl instances/RoverG/p01.hddl"
+
+
+Planner Configuration
+=====================
+Domain: instances/RoverG/domain.hddl
+Problem: instances/RoverG/p01.hddl
+Output: none
+
+Planning Configuration
+======================
+	printGeneralInformation : true
+	printAdditionalData     : true
+	random seed             : 42
+	time limit (in seconds) : none
+
+	external programs:
+		cryptominisat : ./cryptominisat5
+
+	Parsing Configuration
+	---------------------
+	Parser                : autodetect file-type
+	Expand Sort Hierarchy : true
+	ClosedWordAssumption  : true
+	CompileSHOPMethods    : true
+	Eliminate Equality    : true
+	Strip Hybridity       : true
+	Reduce General Tasks  : true
+	
+	Preprocessing Configuration
+	---------------------------
+	Compile negative preconditions    : true
+	Compile unit methods              : false
+	Compile order in methods          : false
+	Compile initial plan              : true
+	Ensure Methods Have Last Task     : false
+	Split independent parameters      : true
+	Remove unnecessary predicates     : true
+	Expand choiceless abstract tasks  : true
+	Domain Cleanup                    : true
+	Convert to SAS+                   : false
+	Grounded Reachability Analysis    : Planning Graph (mutex-free)
+	Grounded Task Decomposition Graph : Two Way TDG
+	Iterate reachability analysis     : true
+	Ground domain                     : true
+	Iterate reachability analysis     : true
+	Stop directly after grounding     : false
+	
+	SAT-Planning Configuration
+	--------------------------
+	solver           : cryptominisat
+	full planner run : true
+	reduction method : only normalise 
+	check result     : true
+	
+	Post-processing Configuration
+	-----------------------------
+	search result with Decomposition Tree
+	statistics
+	timings
+	search status
+	search result
+#0 "00 global:01:problem"="p01.hddl";"00 global:00:domain"="domain.hddl"
+Parsing domain ... using HDDL parser ... done
+Preparing internal domain representation ... done.
+Initial domain
+	number of abstract tasks = 10
+	number of tasks = 40
+	number of decomposition methods = 16
+	number of predicates = 26
+	number of sorts = 8
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 16
+	number of epsilon methods = 0
+	number of primitive tasks = 30
+	number of constants = 14
+Compiling negative preconditions ... done.
+	number of abstract tasks = 10
+	number of tasks = 40
+	number of decomposition methods = 16
+	number of predicates = 52
+	number of sorts = 8
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 16
+	number of epsilon methods = 0
+	number of primitive tasks = 30
+	number of constants = 14
+Compiling split parameters ... done.
+	number of abstract tasks = 10
+	number of tasks = 40
+	number of decomposition methods = 16
+	number of predicates = 52
+	number of sorts = 8
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 16
+	number of epsilon methods = 0
+	number of primitive tasks = 30
+	number of constants = 14
+Lifted reachability analysis and domain cleanup ... done.
+	number of abstract tasks = 10
+	number of tasks = 40
+	number of decomposition methods = 16
+	number of predicates = 29
+	number of sorts = 8
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 16
+	number of epsilon methods = 0
+	number of primitive tasks = 30
+	number of constants = 14
+Grounded planning graph ... done in 177ms.
+	Number of Grounded Actions 88
+	Number of Grounded Literals 72
+	number of abstract tasks = 10
+	number of tasks = 40
+	number of decomposition methods = 16
+	number of predicates = 29
+	number of sorts = 8
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 16
+	number of epsilon methods = 0
+	number of primitive tasks = 30
+	number of constants = 14
+Two Way TDG ... done.
+	number of abstract tasks = 10
+	number of tasks = 40
+	number of decomposition methods = 16
+	number of predicates = 29
+	number of sorts = 8
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 16
+	number of epsilon methods = 0
+	number of primitive tasks = 30
+	number of constants = 14
+Grounding ... done.
+	number of abstract tasks = 28
+	number of tasks = 110
+	number of decomposition methods = 73
+	number of predicates = 88
+	number of sorts = 0
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 49
+	number of epsilon methods = 0
+	number of primitive tasks = 82
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 28
+	number of tasks = 110
+	number of decomposition methods = 73
+	number of predicates = 24
+	number of sorts = 0
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 49
+	number of epsilon methods = 0
+	number of primitive tasks = 82
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 42ms.
+	Number of Grounded Actions 82
+	Number of Grounded Literals 24
+	number of abstract tasks = 28
+	number of tasks = 110
+	number of decomposition methods = 73
+	number of predicates = 24
+	number of sorts = 0
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 49
+	number of epsilon methods = 0
+	number of primitive tasks = 82
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 28
+	number of tasks = 110
+	number of decomposition methods = 73
+	number of predicates = 24
+	number of sorts = 0
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 49
+	number of epsilon methods = 0
+	number of primitive tasks = 82
+	number of constants = 0
+Compiling expand choiceless abstract tasks ... done.
+	number of abstract tasks = 26
+	number of tasks = 108
+	number of decomposition methods = 71
+	number of predicates = 24
+	number of sorts = 0
+	number of tasks in largest method = 11
+	number of primitive SHOP tasks = 49
+	number of epsilon methods = 0
+	number of primitive tasks = 82
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 26
+	number of tasks = 108
+	number of decomposition methods = 71
+	number of predicates = 24
+	number of sorts = 0
+	number of tasks in largest method = 11
+	number of primitive SHOP tasks = 49
+	number of epsilon methods = 0
+	number of primitive tasks = 82
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 26
+	number of tasks = 108
+	number of decomposition methods = 71
+	number of predicates = 24
+	number of sorts = 0
+	number of tasks in largest method = 11
+	number of primitive SHOP tasks = 49
+	number of epsilon methods = 0
+	number of primitive tasks = 82
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 9ms.
+	Number of Grounded Actions 82
+	Number of Grounded Literals 24
+	number of abstract tasks = 26
+	number of tasks = 108
+	number of decomposition methods = 71
+	number of predicates = 24
+	number of sorts = 0
+	number of tasks in largest method = 11
+	number of primitive SHOP tasks = 49
+	number of epsilon methods = 0
+	number of primitive tasks = 82
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 26
+	number of tasks = 108
+	number of decomposition methods = 71
+	number of predicates = 24
+	number of sorts = 0
+	number of tasks in largest method = 11
+	number of primitive SHOP tasks = 49
+	number of epsilon methods = 0
+	number of primitive tasks = 82
+	number of constants = 0
+Compiling expand choiceless abstract tasks ... done.
+	number of abstract tasks = 26
+	number of tasks = 108
+	number of decomposition methods = 71
+	number of predicates = 24
+	number of sorts = 0
+	number of tasks in largest method = 11
+	number of primitive SHOP tasks = 49
+	number of epsilon methods = 0
+	number of primitive tasks = 82
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 26
+	number of tasks = 108
+	number of decomposition methods = 71
+	number of predicates = 24
+	number of sorts = 0
+	number of tasks in largest method = 11
+	number of primitive SHOP tasks = 49
+	number of epsilon methods = 0
+	number of primitive tasks = 82
+	number of constants = 0
+Compiling methods with identical tasks ... done.
+	number of abstract tasks = 32
+	number of tasks = 114
+	number of decomposition methods = 77
+	number of predicates = 24
+	number of sorts = 0
+	number of tasks in largest method = 11
+	number of primitive SHOP tasks = 49
+	number of epsilon methods = 0
+	number of primitive tasks = 82
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 32
+	number of tasks = 114
+	number of decomposition methods = 77
+	number of predicates = 24
+	number of sorts = 0
+	number of tasks in largest method = 11
+	number of primitive SHOP tasks = 49
+	number of epsilon methods = 0
+	number of primitive tasks = 82
+	number of constants = 0
+Tasks 82 - 21
+Domain is acyclic: true
+Domain is mostly acyclic: true
+Domain is regular: false
+Domain is tail recursive: true
+Domain is totally ordered: true
+Domain has last task in all methods: true
+Time remaining for planner 9223372036854773683ms
+Computing minimum decomposition height: 4
+
+Running SAT search with K = 4
+Generating initial PDT ... Still waiting ... running for 102 will abort at 9223372036854773625
+done
+initial PDT has 76 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 52 leafs
+SHOP LEAFS 25
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Computing invariants [Rintanen]
+candidates build 828
+Size 827 at 0/82
+Size 223
+Size 194 at 0/82
+Size 32
+Size 32 at 0/82
+Size 29
+Size 29 at 0/82
+Size 29
+Invariant time: 0.049
+Number of invariants: 29
+Invariant Clauses 1537
+NUMBER OF CLAUSES 6910
+NUMBER OF STATE CLAUSES 4371
+NUMBER OF DECOMPOSITION CLAUSES 2539
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 63.26% 36.74% 0.0% 
+NUMBER OF PATHS 52
+Starting cryptominisat
+Setting starttime of solver to 1603879060915
+Command exited with non-zero status 10
+0.00 0.00
+
+Time command gave the following runtime for the solver: 0
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... done
+SAT-Solver says: SATISFIABLE
+
+extracting solution
+Consider method^2_7;0,43 43 m6_empty_store
+7;0 7 pathaction!2_7;0,38
+Consider method^2_10;4,45 45 __UNIQUE-replacement_0
+10;4 35 pathaction!2_10;4,108
+Consider method^3_10;6;1,64 64 m0_do_navigate1
+10;6;1 26 pathaction!3_10;6;1,89
+Consider method^1_7,72 72 __UNIQUE-replacement_2
+7 31 pathaction!1_7,110
+Consider method^1_6,74 74 __UNIQUE-replacement_4
+6 16 pathaction!1_6,112
+Consider method^2_4;1,4 4 m1_do_navigate1
+4;1 8 pathaction!2_4;1,92
+Consider method^0_,76 76 <<__top_1;get_rock_data[waypoint0];m10_get_rock_data;1;0,-1,-2,-3,-4,-5,2>;get_soil_data[waypoint0];m7_get_soil_data;0;-1,-2,-3,-4,-5,1,2,3,4,5,6>
+ 49 pathaction!0_,107
+Consider method^2_10;2,46 46 __UNIQUE-replacement_1
+10;2 64 pathaction!2_10;2,109
+Consider method^3_9;1;2,63 63 m2_do_navigate2
+9;1;2 21 pathaction!3_9;1;2,14
+Consider method^2_9;1,2 2 m1_do_navigate1
+9;1 59 pathaction!2_9;1,89
+Consider method^2_10;6,67 67 m14_send_image_data
+10;6 5 pathaction!2_10;6,81
+Consider method^3_6;0;2,50 50 m3_do_navigate2
+6;0;2 29 pathaction!3_6;0;2,25
+Consider method^3_1;0;2,7 7 m3_do_navigate2
+1;0;2 22 pathaction!3_1;0;2,29
+Consider method^3_4;1;2,33 33 m3_do_navigate2
+4;1;2 62 pathaction!3_4;1;2,18
+Consider method^3_10;4;3,64 64 m0_do_navigate1
+10;4;3 25 pathaction!3_10;4;3,89
+Consider method^2_2;0,11 11 m5_empty_store
+2;0 0 pathaction!2_2;0,38
+Consider method^1_10,47 47 <m13_get_image_data;do_calibrate[rover0,camera0];m15_do_calibrate;1;0,-1,-2,-3,2,3,4>
+10 2 pathaction!1_10,64
+Consider method^2_1;0,38 38 m1_do_navigate1
+1;0 23 pathaction!2_1;0,89
+Consider method^1_1,75 75 __UNIQUE-replacement_5
+1 63 pathaction!1_1,113
+Consider method^1_4,16 16 m8_send_soil_data
+4 36 pathaction!1_4,61
+Consider method^1_9,21 21 m11_send_rock_data
+9 58 pathaction!1_9,99
+Consider method^3_10;2;3,64 64 m0_do_navigate1
+10;2;3 39 pathaction!3_10;2;3,89
+Consider method^2_6;0,9 9 m1_do_navigate1
+6;0 41 pathaction!2_6;0,89
+Consider method^1_2,73 73 __UNIQUE-replacement_3
+2 48 pathaction!1_2,111
+
+
+CHECKING primitive solution of length 44 ...
+true 34 __method_precondition_m7_get_soil_data_7_precondition[rover0store,rover0;]
+true 53 __method_precondition_m1_do_navigate1_1_precondition[rover0,waypoint1;]
+true 24 visit[waypoint1;]
+true 50 __method_precondition_m3_do_navigate2_3_precondition[rover0,waypoint1,waypoint0;]
+true 1 navigate[rover0,waypoint1,waypoint0;]
+true 57 unvisit[waypoint1;]
+true 20 __method_precondition_m5_empty_store_5_precondition[rover0store;]
+true 32 nop[;]
+true 15 sample_soil[rover0,rover0store,waypoint0;]
+true 44 __method_precondition_m8_send_soil_data_8_precondition[general,waypoint1,waypoint3;]
+true 54 __method_precondition_m1_do_navigate1_1_precondition[rover0,waypoint0;]
+true 60 visit[waypoint0;]
+true 45 __method_precondition_m3_do_navigate2_3_precondition[rover0,waypoint0,waypoint3;]
+true 66 navigate[rover0,waypoint0,waypoint3;]
+true 55 unvisit[waypoint0;]
+true 3 communicate_soil_data1[rover0,general,waypoint0,waypoint3,waypoint1;]
+true 6 __method_precondition_m10_get_rock_data_10_precondition[rover0store,rover0;]
+true 65 __method_precondition_m1_do_navigate1_1_precondition[rover0,waypoint3;]
+true 10 visit[waypoint3;]
+true 4 __method_precondition_m3_do_navigate2_3_precondition[rover0,waypoint3,waypoint0;]
+true 67 navigate[rover0,waypoint3,waypoint0;]
+true 40 unvisit[waypoint3;]
+true 13 __method_precondition_m6_empty_store_6_precondition[rover0store;]
+true 12 drop[rover0,rover0store;]
+true 43 sample_rock[rover0,rover0store,waypoint0;]
+true 42 __method_precondition_m11_send_rock_data_11_precondition[general,waypoint1,waypoint0;]
+true 17 __method_precondition_m1_do_navigate1_1_precondition[rover0,waypoint0;]
+true 46 visit[waypoint0;]
+true 18 __method_precondition_m2_do_navigate2_2_precondition[rover0,waypoint0;]
+true 11 nop[;]
+true 33 unvisit[waypoint0;]
+true 14 communicate_rock_data1[rover0,general,waypoint0,waypoint0,waypoint1;]
+true 52 __method_precondition_m13_get_image_data_13_precondition[low_res,camera0,rover0,objective1,waypoint0;]
+true 30 __method_precondition_m15_do_calibrate_15_precondition[camera0,objective0,waypoint0;]
+true 9 __method_precondition_m0_do_navigate1_0_precondition[rover0,waypoint0;]
+true 51 nop[;]
+true 38 calibrate[rover0,camera0,objective0,waypoint0;]
+true 47 __method_precondition_m0_do_navigate1_0_precondition[rover0,waypoint0;]
+true 19 nop[;]
+true 37 take_image[rover0,waypoint0,objective1,camera0,low_res;]
+true 56 __method_precondition_m14_send_image_data_14_precondition[general,waypoint1,waypoint0;]
+true 61 __method_precondition_m0_do_navigate1_0_precondition[rover0,waypoint0;]
+true 27 nop[;]
+true 28 communicate_image_data[rover0,general,objective1,low_res,waypoint0,waypoint1;]
+ done.
+Panda says: SOLUTION
+============ global ============
+randomseed     = 42
+peak memory    = 148745704
+planner result = SOLUTION
+============ properties ============
+acyclic                  = true
+mostly acyclic           = true
+regular                  = false
+tail recursive           = true
+totally ordered          = true
+last task in all methods = true
+============ problem ============
+number of constants                  = 0
+number of predicates                 = 24
+number of actions                    = 114
+number of abstract actions           = 32
+number of primitive actions          = 82
+number of methods                    = 77
+number of primitive shop actions     = 49
+number of primitive non-shop actions = 33
+size of largest method               = 11
+average method size                  = 3
+============ sat ============
+plan length                     = -1
+number of variables             = 3131
+number of clauses               = 6910
+average size of clauses         = 2.2863965267727933
+number of assert                = 12
+number of horn                  = 5997
+K offset                        = 0
+K chosen value                  = 4
+state formula                   = 4371
+method children clauses         = 0
+number of paths                 = 52
+maximum plan length             = 52
+number of decomposition clauses = 2539
+number of ordering clauses      = 0
+number of state clauses         = 4371
+solved                          = true
+timeout                         = false
+
+----------------- TIMINGS -----------------
+============ total ============
+total = 3047
+============ parsing ============
+total                         = 1056
+file parser                   = 607
+sort expansion                = 164
+closed world assumption       = 98
+inherit preconditions         = 0
+shop methods                  = 26
+eliminate identical variables = 70
+strip domain of hybridity     = 2
+flatten formula               = 89
+============ preprocessing ============
+total                                      = 999
+compile negative preconditions             = 22
+compile unit methods                       = 0
+split parameter                            = 27
+expand choiceless abstract tasks           = 93
+compile methods with identical tasks       = 8
+removing unnecessary predicates            = 44
+lifted reachabiltiy analysis               = 56
+grounded planning graph analysis           = 330
+grounded task decomposition graph analysis = 289
+grounding                                  = 117
+create artificial top task                 = 0
+============ search preparation ============
+compute state invariants = 60
+============ sat ============
+total                                        = 494
+generate formula                             = 388
+generate path decomposition tree             = 85
+normalise path decomposition tree            = 26
+sog optimisation                             = 29
+translate path decomposition tree to clauses = 116
+generate state formula                       = 386
+generate state invariant formula             = 12
+transform to DIMACS                          = 35
+SAT solver                                   = 0
+SAT solver for K=0004                        = 0
+
+#1 "40 sat:90:solved"="true";"30 problem:05:number of primitive actions"="82";"30 problem:01:number of constants"="0";"30 problem:04:number of abstract actions"="32";"02 properties:04:tail recursive"="true";"00 global:80:peak memory"="148745704";"40 sat:20:state formula"="4371";"40 sat:01:number of variables"="3131";"40 sat:14:K offset"="0";"40 sat:30:number of paths"="52";"40 sat:00:plan length"="-1";"40 sat:50:number of ordering clauses"="0";"02 properties:02:mostly acyclic"="true";"30 problem:06:number of methods"="77";"30 problem:07:number of primitive shop actions"="49";"02 properties:05:totally ordered"="true";"02 properties:06:last task in all methods"="true";"30 problem:03:number of actions"="114";"30 problem:08:number of primitive non-shop actions"="33";"30 problem:02:number of predicates"="24";"40 sat:03:number of horn"="5997";"40 sat:15:K chosen value"="4";"30 problem:10:average method size"="3";"02 properties:03:regular"="false";"30 problem:09:size of largest method"="11";"40 sat:03:average size of clauses"="2.2863965267727933";"40 sat:02:number of clauses"="6910";"40 sat:50:number of state clauses"="4371";"40 sat:03:number of assert"="12";"40 sat:22:method children clauses"="0";"00 global:90:planner result"="SOLUTION";"02 properties:01:acyclic"="true";"40 sat:31:maximum plan length"="52";"40 sat:50:number of decomposition clauses"="2539";"00 global:02:randomseed"="42";"40 sat:91:timeout"="false";"01 parsing:01:file parser"="607";"01 parsing:08:flatten formula"="89";"40 sat:41:SAT solver for K=0004"="0";"40 sat:00:total"="494";"40 sat:16:generate state formula"="386";"40 sat:20:transform to DIMACS"="35";"40 sat:11:generate path decomposition tree"="85";"02 preprocessing:07:compile methods with identical tasks"="8";"01 parsing:07:strip domain of hybridity"="2";"02 preprocessing:08:removing unnecessary predicates"="44";"01 parsing:03:closed world assumption"="98";"02 preprocessing:11:lifted reachabiltiy analysis"="56";"01 parsing:02:sort expansion"="164";"40 sat:12:normalise path decomposition tree"="26";"40 sat:40:SAT solver"="0";"01 parsing:00:total"="1056";"40 sat:10:generate formula"="388";"01 parsing:04:inherit preconditions"="0";"02 preprocessing:01:compile negative preconditions"="22";"00 total:00:total"="3047";"40 sat:13:sog optimisation"="29";"02 preprocessing:12:grounded planning graph analysis"="330";"02 preprocessing:02:compile unit methods"="0";"02 preprocessing:23:grounded task decomposition graph analysis"="289";"02 preprocessing:04:split parameter"="27";"01 parsing:05:shop methods"="26";"10 search preparation:02:compute state invariants"="60";"01 parsing:06:eliminate identical variables"="70";"40 sat:15:translate path decomposition tree to clauses"="116";"02 preprocessing:05:expand choiceless abstract tasks"="93";"40 sat:17:generate state invariant formula"="12";"02 preprocessing:00:total"="999";"02 preprocessing:99:create artificial top task"="0";"02 preprocessing:84:grounding"="117"
+#!verify __method_precondition_m7_get_soil_data_7_precondition[rover0store,rover0];__method_precondition_m1_do_navigate1_1_precondition[rover0,waypoint1];visit[waypoint1];__method_precondition_m3_do_navigate2_3_precondition[rover0,waypoint1,waypoint0];navigate[rover0,waypoint1,waypoint0];unvisit[waypoint1];__method_precondition_m5_empty_store_5_precondition[rover0store];nop[];sample_soil[rover0,rover0store,waypoint0];__method_precondition_m8_send_soil_data_8_precondition[general,waypoint1,waypoint3];__method_precondition_m1_do_navigate1_1_precondition[rover0,waypoint0];visit[waypoint0];__method_precondition_m3_do_navigate2_3_precondition[rover0,waypoint0,waypoint3];navigate[rover0,waypoint0,waypoint3];unvisit[waypoint0];communicate_soil_data1[rover0,general,waypoint0,waypoint3,waypoint1];__method_precondition_m10_get_rock_data_10_precondition[rover0store,rover0];__method_precondition_m1_do_navigate1_1_precondition[rover0,waypoint3];visit[waypoint3];__method_precondition_m3_do_navigate2_3_precondition[rover0,waypoint3,waypoint0];navigate[rover0,waypoint3,waypoint0];unvisit[waypoint3];__method_precondition_m6_empty_store_6_precondition[rover0store];drop[rover0,rover0store];sample_rock[rover0,rover0store,waypoint0];__method_precondition_m11_send_rock_data_11_precondition[general,waypoint1,waypoint0];__method_precondition_m1_do_navigate1_1_precondition[rover0,waypoint0];visit[waypoint0];__method_precondition_m2_do_navigate2_2_precondition[rover0,waypoint0];nop[];unvisit[waypoint0];communicate_rock_data1[rover0,general,waypoint0,waypoint0,waypoint1];__method_precondition_m13_get_image_data_13_precondition[low_res,camera0,rover0,objective1,waypoint0];__method_precondition_m15_do_calibrate_15_precondition[camera0,objective0,waypoint0];__method_precondition_m0_do_navigate1_0_precondition[rover0,waypoint0];nop[];calibrate[rover0,camera0,objective0,waypoint0];__method_precondition_m0_do_navigate1_0_precondition[rover0,waypoint0];nop[];take_image[rover0,waypoint0,objective1,camera0,low_res];__method_precondition_m14_send_image_data_14_precondition[general,waypoint1,waypoint0];__method_precondition_m0_do_navigate1_0_precondition[rover0,waypoint0];nop[];communicate_image_data[rover0,general,objective1,low_res,waypoint0,waypoint1]
+==>
+0 __method_precondition_m7_get_soil_data_7_precondition rover0store rover0 
+1 __method_precondition_m1_do_navigate1_1_precondition rover0 waypoint1 
+2 visit waypoint1 
+3 __method_precondition_m3_do_navigate2_3_precondition rover0 waypoint1 waypoint0 
+4 navigate rover0 waypoint1 waypoint0 
+5 unvisit waypoint1 
+6 __method_precondition_m5_empty_store_5_precondition rover0store 
+7 nop  
+8 sample_soil rover0 rover0store waypoint0 
+9 __method_precondition_m8_send_soil_data_8_precondition general waypoint1 waypoint3 
+10 __method_precondition_m1_do_navigate1_1_precondition rover0 waypoint0 
+11 visit waypoint0 
+12 __method_precondition_m3_do_navigate2_3_precondition rover0 waypoint0 waypoint3 
+13 navigate rover0 waypoint0 waypoint3 
+14 unvisit waypoint0 
+15 communicate_soil_data1 rover0 general waypoint0 waypoint3 waypoint1 
+16 __method_precondition_m10_get_rock_data_10_precondition rover0store rover0 
+17 __method_precondition_m1_do_navigate1_1_precondition rover0 waypoint3 
+18 visit waypoint3 
+19 __method_precondition_m3_do_navigate2_3_precondition rover0 waypoint3 waypoint0 
+20 navigate rover0 waypoint3 waypoint0 
+21 unvisit waypoint3 
+22 __method_precondition_m6_empty_store_6_precondition rover0store 
+23 drop rover0 rover0store 
+24 sample_rock rover0 rover0store waypoint0 
+25 __method_precondition_m11_send_rock_data_11_precondition general waypoint1 waypoint0 
+26 __method_precondition_m1_do_navigate1_1_precondition rover0 waypoint0 
+27 visit waypoint0 
+28 __method_precondition_m2_do_navigate2_2_precondition rover0 waypoint0 
+29 nop  
+30 unvisit waypoint0 
+31 communicate_rock_data1 rover0 general waypoint0 waypoint0 waypoint1 
+32 __method_precondition_m13_get_image_data_13_precondition low_res camera0 rover0 objective1 waypoint0 
+33 __method_precondition_m15_do_calibrate_15_precondition camera0 objective0 waypoint0 
+34 __method_precondition_m0_do_navigate1_0_precondition rover0 waypoint0 
+35 nop  
+36 calibrate rover0 camera0 objective0 waypoint0 
+37 __method_precondition_m0_do_navigate1_0_precondition rover0 waypoint0 
+38 nop  
+39 take_image rover0 waypoint0 objective1 camera0 low_res 
+40 __method_precondition_m14_send_image_data_14_precondition general waypoint1 waypoint0 
+41 __method_precondition_m0_do_navigate1_0_precondition rover0 waypoint0 
+42 nop  
+43 communicate_image_data rover0 general objective1 low_res waypoint0 waypoint1 
+root 56
+44 do_navigate1 rover0 waypoint0  -> m0_do_navigate1 37 38
+45 send_image_data rover0 objective1 low_res  -> m14_send_image_data 40 53 43
+46 do_navigate2 rover0 waypoint3 waypoint0  -> m3_do_navigate2 19 20
+47 send_rock_data rover0 waypoint0  -> m11_send_rock_data 25 61 31
+48 do_navigate2 rover0 waypoint1 waypoint0  -> m3_do_navigate2 3 4
+49 empty_store rover0store rover0  -> m6_empty_store 22 23
+50 do_navigate1 rover0 waypoint0  -> m1_do_navigate1 1 2 48 5
+51 do_navigate1 rover0 waypoint0  -> m1_do_navigate1 17 18 46 21
+52 do_navigate1 rover0 waypoint3  -> m1_do_navigate1 10 11 67 14
+53 do_navigate1 rover0 waypoint0  -> m0_do_navigate1 41 42
+54 get_image_data objective1 low_res  -> <m13_get_image_data;do_calibrate[rover0,camera0];m15_do_calibrate;1;0,-1,-2,-3,2,3,4> 32 33 57 36 60 39 45
+55 send_soil_data rover0 waypoint0  -> m8_send_soil_data 9 52 15
+56 __choicelessATCompilation__top_1  -> <<__top_1;get_rock_data[waypoint0];m10_get_rock_data;1;0,-1,-2,-3,-4,-5,2>;get_soil_data[waypoint0];m7_get_soil_data;0;-1,-2,-3,-4,-5,1,2,3,4,5,6> 0 59 63 8 55 16 64 62 24 47 54
+57 do_navigate1 rover0 waypoint0  -> __UNIQUE-replacement_1 65
+58 do_navigate2 rover0 waypoint0 waypoint0  -> m2_do_navigate2 28 29
+59 do_navigate1 rover0 waypoint0  -> __UNIQUE-replacement_5 50
+60 do_navigate1 rover0 waypoint0  -> __UNIQUE-replacement_0 44
+61 do_navigate1 rover0 waypoint0  -> m1_do_navigate1 26 27 58 30
+62 empty_store rover0store rover0  -> __UNIQUE-replacement_2 49
+63 empty_store rover0store rover0  -> __UNIQUE-replacement_3 66
+64 do_navigate1 rover0 waypoint0  -> __UNIQUE-replacement_4 51
+65 do_navigate1 rover0 waypoint0  -> m0_do_navigate1 34 35
+66 empty_store rover0store rover0  -> m5_empty_store 6 7
+67 do_navigate2 rover0 waypoint0 waypoint3  -> m3_do_navigate2 12 13
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 3.951 MEMPEAK_KBS 234128.384

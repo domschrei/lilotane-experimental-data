@@ -1,0 +1,884 @@
+PANDA - Planning and Acting in a Network Decomposition Architecture
+Believe us: It's great, it's fantastic!
+
+PANDA Copyright (C) 2014-2018 Gregor Behnke, Pascal Bercher, Thomas Geier, Kadir
+Dede, Daniel Höller, Kristof Mickeleit, Matthias Englert
+This program comes with ABSOLUTELY NO WARRANTY
+This is free software, and you are welcome to redistribute it under certain
+conditions; run PANDA with -license for details.
+
+Main Developers:
+- Gregor Behnke, http://www.uni-ulm.de/in/ki/behnke
+- Daniel Höller, http://www.uni-ulm.de/in/ki/hoeller
+
+With many thanks to various further contributors.
+Run PANDA with the command line argument -contributors for an extensive list.
+
+Run it with -help for more information like available options.
+
+
+PANDA was called with: "-systemConfig AAAI-2018-totSAT(cryptominisat) -programPath cryptominisat=./cryptominisat5 instances/HikingG/domain.hddl instances/HikingG/p02.hddl"
+
+
+Planner Configuration
+=====================
+Domain: instances/HikingG/domain.hddl
+Problem: instances/HikingG/p02.hddl
+Output: none
+
+Planning Configuration
+======================
+	printGeneralInformation : true
+	printAdditionalData     : true
+	random seed             : 42
+	time limit (in seconds) : none
+
+	external programs:
+		cryptominisat : ./cryptominisat5
+
+	Parsing Configuration
+	---------------------
+	Parser                : autodetect file-type
+	Expand Sort Hierarchy : true
+	ClosedWordAssumption  : true
+	CompileSHOPMethods    : true
+	Eliminate Equality    : true
+	Strip Hybridity       : true
+	Reduce General Tasks  : true
+	
+	Preprocessing Configuration
+	---------------------------
+	Compile negative preconditions    : true
+	Compile unit methods              : false
+	Compile order in methods          : false
+	Compile initial plan              : true
+	Ensure Methods Have Last Task     : false
+	Split independent parameters      : true
+	Remove unnecessary predicates     : true
+	Expand choiceless abstract tasks  : true
+	Domain Cleanup                    : true
+	Convert to SAS+                   : false
+	Grounded Reachability Analysis    : Planning Graph (mutex-free)
+	Grounded Task Decomposition Graph : Two Way TDG
+	Iterate reachability analysis     : true
+	Ground domain                     : true
+	Iterate reachability analysis     : true
+	Stop directly after grounding     : false
+	
+	SAT-Planning Configuration
+	--------------------------
+	solver           : cryptominisat
+	full planner run : true
+	reduction method : only normalise 
+	check result     : true
+	
+	Post-processing Configuration
+	-----------------------------
+	search result with Decomposition Tree
+	statistics
+	timings
+	search status
+	search result
+#0 "00 global:01:problem"="p02.hddl";"00 global:00:domain"="domain.hddl"
+Parsing domain ... using HDDL parser ... done
+Preparing internal domain representation ... done.
+Initial domain
+	number of abstract tasks = 8
+	number of tasks = 28
+	number of decomposition methods = 15
+	number of predicates = 8
+	number of sorts = 6
+	number of tasks in largest method = 10
+	number of primitive SHOP tasks = 12
+	number of epsilon methods = 0
+	number of primitive tasks = 20
+	number of constants = 20
+Compiling negative preconditions ... done.
+	number of abstract tasks = 8
+	number of tasks = 28
+	number of decomposition methods = 15
+	number of predicates = 16
+	number of sorts = 6
+	number of tasks in largest method = 10
+	number of primitive SHOP tasks = 12
+	number of epsilon methods = 0
+	number of primitive tasks = 20
+	number of constants = 20
+Compiling split parameters ... done.
+	number of abstract tasks = 8
+	number of tasks = 28
+	number of decomposition methods = 15
+	number of predicates = 16
+	number of sorts = 6
+	number of tasks in largest method = 10
+	number of primitive SHOP tasks = 12
+	number of epsilon methods = 0
+	number of primitive tasks = 20
+	number of constants = 20
+Lifted reachability analysis and domain cleanup ... done.
+	number of abstract tasks = 7
+	number of tasks = 25
+	number of decomposition methods = 14
+	number of predicates = 8
+	number of sorts = 6
+	number of tasks in largest method = 10
+	number of primitive SHOP tasks = 11
+	number of epsilon methods = 0
+	number of primitive tasks = 18
+	number of constants = 20
+Grounded planning graph ... done in 872ms.
+	Number of Grounded Actions 4900
+	Number of Grounded Literals 76
+	number of abstract tasks = 7
+	number of tasks = 25
+	number of decomposition methods = 14
+	number of predicates = 8
+	number of sorts = 6
+	number of tasks in largest method = 10
+	number of primitive SHOP tasks = 11
+	number of epsilon methods = 0
+	number of primitive tasks = 18
+	number of constants = 20
+Two Way TDG ... done.
+	number of abstract tasks = 7
+	number of tasks = 25
+	number of decomposition methods = 14
+	number of predicates = 8
+	number of sorts = 6
+	number of tasks in largest method = 10
+	number of primitive SHOP tasks = 11
+	number of epsilon methods = 0
+	number of primitive tasks = 18
+	number of constants = 20
+Grounding ... done.
+	number of abstract tasks = 49
+	number of tasks = 2672
+	number of decomposition methods = 2668
+	number of predicates = 76
+	number of sorts = 0
+	number of tasks in largest method = 10
+	number of primitive SHOP tasks = 1272
+	number of epsilon methods = 0
+	number of primitive tasks = 2623
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 49
+	number of tasks = 2672
+	number of decomposition methods = 2668
+	number of predicates = 70
+	number of sorts = 0
+	number of tasks in largest method = 10
+	number of primitive SHOP tasks = 1272
+	number of epsilon methods = 0
+	number of primitive tasks = 2623
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 398ms.
+	Number of Grounded Actions 2623
+	Number of Grounded Literals 70
+	number of abstract tasks = 49
+	number of tasks = 2672
+	number of decomposition methods = 2668
+	number of predicates = 70
+	number of sorts = 0
+	number of tasks in largest method = 10
+	number of primitive SHOP tasks = 1272
+	number of epsilon methods = 0
+	number of primitive tasks = 2623
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 49
+	number of tasks = 2672
+	number of decomposition methods = 2668
+	number of predicates = 70
+	number of sorts = 0
+	number of tasks in largest method = 10
+	number of primitive SHOP tasks = 1272
+	number of epsilon methods = 0
+	number of primitive tasks = 2623
+	number of constants = 0
+Compiling expand choiceless abstract tasks ... done.
+	number of abstract tasks = 34
+	number of tasks = 2657
+	number of decomposition methods = 2653
+	number of predicates = 70
+	number of sorts = 0
+	number of tasks in largest method = 10
+	number of primitive SHOP tasks = 1272
+	number of epsilon methods = 0
+	number of primitive tasks = 2623
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 34
+	number of tasks = 2657
+	number of decomposition methods = 2653
+	number of predicates = 70
+	number of sorts = 0
+	number of tasks in largest method = 10
+	number of primitive SHOP tasks = 1272
+	number of epsilon methods = 0
+	number of primitive tasks = 2623
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 34
+	number of tasks = 2657
+	number of decomposition methods = 2653
+	number of predicates = 70
+	number of sorts = 0
+	number of tasks in largest method = 10
+	number of primitive SHOP tasks = 1272
+	number of epsilon methods = 0
+	number of primitive tasks = 2623
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 209ms.
+	Number of Grounded Actions 2623
+	Number of Grounded Literals 70
+	number of abstract tasks = 34
+	number of tasks = 2657
+	number of decomposition methods = 2653
+	number of predicates = 70
+	number of sorts = 0
+	number of tasks in largest method = 10
+	number of primitive SHOP tasks = 1272
+	number of epsilon methods = 0
+	number of primitive tasks = 2623
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 34
+	number of tasks = 2657
+	number of decomposition methods = 2653
+	number of predicates = 70
+	number of sorts = 0
+	number of tasks in largest method = 10
+	number of primitive SHOP tasks = 1272
+	number of epsilon methods = 0
+	number of primitive tasks = 2623
+	number of constants = 0
+Compiling expand choiceless abstract tasks ... done.
+	number of abstract tasks = 31
+	number of tasks = 2654
+	number of decomposition methods = 2650
+	number of predicates = 70
+	number of sorts = 0
+	number of tasks in largest method = 10
+	number of primitive SHOP tasks = 1272
+	number of epsilon methods = 0
+	number of primitive tasks = 2623
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 31
+	number of tasks = 2654
+	number of decomposition methods = 2650
+	number of predicates = 70
+	number of sorts = 0
+	number of tasks in largest method = 10
+	number of primitive SHOP tasks = 1272
+	number of epsilon methods = 0
+	number of primitive tasks = 2623
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 31
+	number of tasks = 2654
+	number of decomposition methods = 2650
+	number of predicates = 70
+	number of sorts = 0
+	number of tasks in largest method = 10
+	number of primitive SHOP tasks = 1272
+	number of epsilon methods = 0
+	number of primitive tasks = 2623
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 142ms.
+	Number of Grounded Actions 2623
+	Number of Grounded Literals 70
+	number of abstract tasks = 31
+	number of tasks = 2654
+	number of decomposition methods = 2650
+	number of predicates = 70
+	number of sorts = 0
+	number of tasks in largest method = 10
+	number of primitive SHOP tasks = 1272
+	number of epsilon methods = 0
+	number of primitive tasks = 2623
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 31
+	number of tasks = 2654
+	number of decomposition methods = 2650
+	number of predicates = 70
+	number of sorts = 0
+	number of tasks in largest method = 10
+	number of primitive SHOP tasks = 1272
+	number of epsilon methods = 0
+	number of primitive tasks = 2623
+	number of constants = 0
+Compiling expand choiceless abstract tasks ... done.
+	number of abstract tasks = 31
+	number of tasks = 2654
+	number of decomposition methods = 2650
+	number of predicates = 70
+	number of sorts = 0
+	number of tasks in largest method = 10
+	number of primitive SHOP tasks = 1272
+	number of epsilon methods = 0
+	number of primitive tasks = 2623
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 31
+	number of tasks = 2654
+	number of decomposition methods = 2650
+	number of predicates = 70
+	number of sorts = 0
+	number of tasks in largest method = 10
+	number of primitive SHOP tasks = 1272
+	number of epsilon methods = 0
+	number of primitive tasks = 2623
+	number of constants = 0
+Compiling methods with identical tasks ... done.
+	number of abstract tasks = 895
+	number of tasks = 3518
+	number of decomposition methods = 3514
+	number of predicates = 70
+	number of sorts = 0
+	number of tasks in largest method = 10
+	number of primitive SHOP tasks = 1272
+	number of epsilon methods = 0
+	number of primitive tasks = 2623
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 895
+	number of tasks = 3518
+	number of decomposition methods = 3514
+	number of predicates = 70
+	number of sorts = 0
+	number of tasks in largest method = 10
+	number of primitive SHOP tasks = 1272
+	number of epsilon methods = 0
+	number of primitive tasks = 2623
+	number of constants = 0
+Tasks 2623 - 3
+Domain is acyclic: false
+Domain is mostly acyclic: false
+Domain is regular: false
+Domain is tail recursive: false
+Domain is totally ordered: true
+Domain has last task in all methods: true
+Time remaining for planner 9223372036854767727ms
+Computing minimum decomposition height: 3
+
+Running SAT search with K = 3
+Generating initial PDT ... Still waiting ... running for 111 will abort at 9223372036854767411
+done
+initial PDT has 13 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 8 leafs
+SHOP LEAFS 6
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Computing invariants [Rintanen]
+candidates build 7245
+Size 7245 at 0/2623
+Size 7243 at 500/2623
+Size 7009 at 1000/2623
+Size 2716 at 1500/2623
+Size 2550 at 2000/2623
+Size 1615 at 2500/2623
+Size 1615
+Size 1615 at 0/2623
+Size 1143 at 500/2623
+Size 1099 at 1000/2623
+Size 944 at 1500/2623
+Size 918 at 2000/2623
+Size 153 at 2500/2623
+Size 153
+Size 149 at 0/2623
+Size 145 at 500/2623
+Size 123 at 1000/2623
+Size 121 at 1500/2623
+Size 121 at 2000/2623
+Size 106 at 2500/2623
+Size 106
+Size 106 at 0/2623
+Size 106 at 500/2623
+Size 106 at 1000/2623
+Size 106 at 1500/2623
+Size 106 at 2000/2623
+Size 106 at 2500/2623
+Size 106
+Invariant time: 0.517
+Number of invariants: 106
+Invariant Clauses 954
+NUMBER OF CLAUSES 330442
+NUMBER OF STATE CLAUSES 14177
+NUMBER OF DECOMPOSITION CLAUSES 316265
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 4.29% 95.71000000000001% 0.0% 
+NUMBER OF PATHS 8
+Starting cryptominisat
+Setting starttime of solver to 1603876602107
+Command exited with non-zero status 20
+0.06 0.00
+
+Time command gave the following runtime for the solver: 60
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 4
+Generating initial PDT ... Still waiting ... running for 100 will abort at 9223372036854765194
+done
+initial PDT has 36 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 10 leafs
+SHOP LEAFS 7
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 1166
+NUMBER OF CLAUSES 346093
+NUMBER OF STATE CLAUSES 16685
+NUMBER OF DECOMPOSITION CLAUSES 329408
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 4.82% 95.18% 0.0% 
+NUMBER OF PATHS 10
+Starting cryptominisat
+Setting starttime of solver to 1603876603254
+Command exited with non-zero status 20
+0.06 0.00
+
+Time command gave the following runtime for the solver: 60
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 5
+Generating initial PDT ... Still waiting ... running for 100 will abort at 9223372036854764199
+done
+initial PDT has 71 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 43 leafs
+SHOP LEAFS 15
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 4664
+NUMBER OF CLAUSES 405089
+NUMBER OF STATE CLAUSES 31535
+NUMBER OF DECOMPOSITION CLAUSES 373554
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 7.78% 92.22% 0.0% 
+NUMBER OF PATHS 43
+Starting cryptominisat
+Setting starttime of solver to 1603876604426
+Command exited with non-zero status 20
+0.07 0.00
+
+Time command gave the following runtime for the solver: 70
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 6
+Generating initial PDT ... Still waiting ... running for 100 will abort at 9223372036854763016
+done
+initial PDT has 112 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 78 leafs
+SHOP LEAFS 25
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 8374
+NUMBER OF CLAUSES 482753
+NUMBER OF STATE CLAUSES 46958
+NUMBER OF DECOMPOSITION CLAUSES 435795
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 9.73% 90.27% 0.0% 
+NUMBER OF PATHS 78
+Starting cryptominisat
+Setting starttime of solver to 1603876605720
+Command exited with non-zero status 20
+0.12 0.00
+
+Time command gave the following runtime for the solver: 120
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 7
+Generating initial PDT ... Still waiting ... running for 100 will abort at 9223372036854761606
+done
+initial PDT has 159 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 119 leafs
+SHOP LEAFS 38
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 12720
+NUMBER OF CLAUSES 562869
+NUMBER OF STATE CLAUSES 64172
+NUMBER OF DECOMPOSITION CLAUSES 498697
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 11.4% 88.60000000000001% 0.0% 
+NUMBER OF PATHS 119
+Starting cryptominisat
+Setting starttime of solver to 1603876607252
+Command exited with non-zero status 20
+0.15 0.00
+
+Time command gave the following runtime for the solver: 150
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 8
+Generating initial PDT ... Still waiting ... running for 100 will abort at 9223372036854759994
+done
+initial PDT has 212 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 166 leafs
+SHOP LEAFS 54
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 17702
+NUMBER OF CLAUSES 645391
+NUMBER OF STATE CLAUSES 83177
+NUMBER OF DECOMPOSITION CLAUSES 562214
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 12.89% 87.11% 0.0% 
+NUMBER OF PATHS 166
+Starting cryptominisat
+Setting starttime of solver to 1603876608780
+Command exited with non-zero status 10
+0.23 0.01
+
+Time command gave the following runtime for the solver: 240
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... done
+SAT-Solver says: SATISFIABLE
+
+extracting solution
+Consider method^6_0;3;4;5;2;2,1997 1997 m5_walk_everyone
+0;3;4;5;2;2 93 pathaction!6_0;3;4;5;2;2,2651
+Consider method^0_,3513 3513 __top_1
+ 2 pathaction!0_,2653
+Consider method^4_0;3;2;5,2645 2645 m5_walk_everyone
+0;3;2;5 5 pathaction!4_0;3;2;5,2649
+Consider method^4_0;3;4;9,3333 3333 __UNIQUE-replacement_833
+0;3;4;9 53 pathaction!4_0;3;4;9,3487
+Consider method^3_0;3;4,3334 3334 m3_trip_to2
+0;3;4 11 pathaction!3_0;3;4,654
+Consider method^5_0;3;4;5;2,879 879 m5_walk_everyone
+0;3;4;5;2 50 pathaction!5_0;3;4;5;2,2651
+Consider method^6_0;3;2;5;2;2,2024 2024 m5_walk_everyone
+0;3;2;5;2;2 28 pathaction!6_0;3;2;5;2;2,2649
+Consider method^4_0;3;2;9,71 71 __UNIQUE-replacement_23
+0;3;2;9 24 pathaction!4_0;3;2;9,2677
+Consider method^2_0;2,2612 2612 m11_bring_cars
+0;2 8 pathaction!2_0;2,30
+Consider method^4_0;3;2;2,70 70 __UNIQUE-replacement_22
+0;3;2;2 59 pathaction!4_0;3;2;2,2676
+Consider method^4_0;3;5;5,3189 3189 m5_walk_everyone
+0;3;5;5 91 pathaction!4_0;3;5;5,2645
+Consider method^2_0;3,2339 2339 <<m0_trip_to1;trip_to2[couple2,place0,place3];m2_trip_to2;1;0,-1,-2,-3>;trip_to2[couple2,place1,place3];m2_trip_to2;3;0,1,2,-1,-2,-3>
+0;3 69 pathaction!2_0;3,127
+Consider method^4_0;3;4;2,3332 3332 __UNIQUE-replacement_832
+0;3;4;2 96 pathaction!4_0;3;4;2,3486
+Consider method^3_0;3;5,469 469 m3_trip_to2
+0;3;5 97 pathaction!3_0;3;5,652
+Consider method^4_0;3;4;5,1641 1641 m5_walk_everyone
+0;3;4;5 30 pathaction!4_0;3;4;5,2651
+Consider method^3_0;3;2,72 72 m3_trip_to2
+0;3;2 61 pathaction!3_0;3;2,649
+Consider method^6_0;3;5;5;2;2,3339 3339 m5_walk_everyone
+0;3;5;5;2;2 89 pathaction!6_0;3;5;5;2;2,2645
+Consider method^7_0;3;4;5;2;2;2,3035 3035 m4_walk_everyone
+0;3;4;5;2;2;2 74 pathaction!7_0;3;4;5;2;2;2,2651
+Consider method^7_0;3;2;5;2;2;2,1702 1702 m4_walk_everyone
+0;3;2;5;2;2;2 39 pathaction!7_0;3;2;5;2;2;2,2649
+Consider method^5_0;3;2;5;2,1516 1516 m5_walk_everyone
+0;3;2;5;2 3 pathaction!5_0;3;2;5;2,2649
+Consider method^7_0;3;5;5;2;2;2,1035 1035 m4_walk_everyone
+0;3;5;5;2;2;2 44 pathaction!7_0;3;5;5;2;2;2,2645
+Consider method^1_0,3071 3071 <m14_everyone_go_hiking;prepare_trip[place0];m6_prepare_trip;1;0,-1,-2,2>
+0 1 pathaction!1_0,1920
+Consider method^5_0;3;5;5;2,473 473 m5_walk_everyone
+0;3;5;5;2 37 pathaction!5_0;3;5;5;2,2645
+Consider method^4_0;3;5;2,467 467 __UNIQUE-replacement_116
+0;3;5;2 66 pathaction!4_0;3;5;2,2770
+Consider method^2_0;1,1527 1527 m10_bring_tent
+0;1 64 pathaction!2_0;1,142
+Consider method^4_0;3;5;9,468 468 __UNIQUE-replacement_117
+0;3;5;9 9 pathaction!4_0;3;5;9,2771
+
+
+CHECKING primitive solution of length 56 ...
+true 98 __method_precondition_m14_everyone_go_hiking_14_precondition[couple2,guy2,girl2,place0;]
+true 92 __method_precondition_m10_bring_tent_10_precondition[tent2,place0,guy0;]
+true 65 put_down[guy0,place0,tent2;]
+true 42 __method_precondition_m11_bring_cars_11_precondition[car2,place0,car3;]
+true 51 nop[;]
+true 36 __method_precondition_m0_trip_to1_0_precondition[couple2,guy2,girl2,place0;]
+true 70 __method_precondition_m2_trip_to2_2_precondition[place0,place1;]
+true 78 __method_precondition_m3_trip_to2_3_precondition[girl2,tent0,couple2,place0,car0,guy2,car2,place1;]
+true 48 drive_tent[guy2,place0,place1,car0,tent0;]
+true 85 drive[girl2,place0,place1,car2;]
+true 0 put_up[guy2,place1,tent0;]
+true 25 drive_passenger[girl2,place1,place0,car2,guy2;]
+true 23 __method_precondition_m5_walk_everyone_5_precondition[place0,guy1,couple1,place1,girl1;]
+true 54 walk_together[tent0,place1,guy1,place0,girl1,couple1;]
+true 67 __method_precondition_m5_walk_everyone_5_precondition[place0,guy0,couple0,place1,girl0;]
+true 56 walk_together[tent0,place1,guy0,place0,girl0,couple0;]
+true 16 __method_precondition_m5_walk_everyone_5_precondition[place0,guy2,couple2,place1,girl2;]
+true 49 walk_together[tent0,place1,guy2,place0,girl2,couple2;]
+true 6 nop[;]
+true 87 put_down[girl2,place1,tent0;]
+true 12 drive_passenger[guy2,place1,place0,car0,girl2;]
+true 57 drive[guy2,place0,place1,car0;]
+true 81 drive[girl2,place0,place1,car2;]
+true 32 __method_precondition_m2_trip_to2_2_precondition[place1,place2;]
+true 82 __method_precondition_m3_trip_to2_3_precondition[girl2,tent0,couple2,place1,car2,guy2,car0,place2;]
+true 7 drive_tent[guy2,place1,place2,car2,tent0;]
+true 80 drive[girl2,place1,place2,car0;]
+true 14 put_up[guy2,place2,tent0;]
+true 40 drive_passenger[girl2,place2,place1,car0,guy2;]
+true 21 __method_precondition_m5_walk_everyone_5_precondition[place1,guy1,couple1,place2,girl1;]
+true 84 walk_together[tent0,place2,guy1,place1,girl1,couple1;]
+true 10 __method_precondition_m5_walk_everyone_5_precondition[place1,guy0,couple0,place2,girl0;]
+true 68 walk_together[tent0,place2,guy0,place1,girl0,couple0;]
+true 31 __method_precondition_m5_walk_everyone_5_precondition[place1,guy2,couple2,place2,girl2;]
+true 27 walk_together[tent0,place2,guy2,place1,girl2,couple2;]
+true 43 nop[;]
+true 45 put_down[girl2,place2,tent0;]
+true 33 drive_passenger[guy2,place2,place1,car2,girl2;]
+true 29 drive[guy2,place1,place2,car2;]
+true 62 drive[girl2,place1,place2,car0;]
+true 41 __method_precondition_m3_trip_to2_3_precondition[girl2,tent0,couple2,place2,car2,guy2,car0,place3;]
+true 95 drive_tent[guy2,place2,place3,car2,tent0;]
+true 18 drive[girl2,place2,place3,car0;]
+true 34 put_up[guy2,place3,tent0;]
+true 13 drive_passenger[girl2,place3,place2,car0,guy2;]
+true 47 __method_precondition_m5_walk_everyone_5_precondition[place2,guy1,couple1,place3,girl1;]
+true 15 walk_together[tent0,place3,guy1,place2,girl1,couple1;]
+true 22 __method_precondition_m5_walk_everyone_5_precondition[place2,guy0,couple0,place3,girl0;]
+true 58 walk_together[tent0,place3,guy0,place2,girl0,couple0;]
+true 79 __method_precondition_m5_walk_everyone_5_precondition[place2,guy2,couple2,place3,girl2;]
+true 90 walk_together[tent0,place3,guy2,place2,girl2,couple2;]
+true 17 nop[;]
+true 60 put_down[girl2,place3,tent0;]
+true 73 drive_passenger[guy2,place3,place2,car2,girl2;]
+true 26 drive[guy2,place2,place3,car2;]
+true 77 drive[girl2,place2,place3,car0;]
+ done.
+Panda says: SOLUTION
+============ global ============
+randomseed     = 42
+peak memory    = 488542512
+planner result = SOLUTION
+============ properties ============
+acyclic                  = false
+mostly acyclic           = false
+regular                  = false
+tail recursive           = false
+totally ordered          = true
+last task in all methods = true
+============ problem ============
+number of constants                  = 0
+number of predicates                 = 70
+number of actions                    = 3518
+number of abstract actions           = 895
+number of primitive actions          = 2623
+number of methods                    = 3514
+number of primitive shop actions     = 1272
+number of primitive non-shop actions = 1351
+size of largest method               = 10
+average method size                  = 3
+============ sat ============
+plan length                     = -1
+number of variables             = 44909
+number of clauses               = 645391
+average size of clauses         = 3.065518422165788
+number of assert                = 23
+number of horn                  = 622748
+K offset                        = 0
+K chosen value                  = 8
+state formula                   = 83177
+method children clauses         = 0
+number of paths                 = 166
+maximum plan length             = 166
+number of decomposition clauses = 562214
+number of ordering clauses      = 0
+number of state clauses         = 83177
+solved                          = true
+timeout                         = false
+
+----------------- TIMINGS -----------------
+============ total ============
+total = 17904
+============ parsing ============
+total                         = 1047
+file parser                   = 597
+sort expansion                = 162
+closed world assumption       = 95
+inherit preconditions         = 0
+shop methods                  = 24
+eliminate identical variables = 55
+strip domain of hybridity     = 11
+flatten formula               = 103
+============ preprocessing ============
+total                                      = 6078
+compile negative preconditions             = 34
+compile unit methods                       = 0
+split parameter                            = 36
+expand choiceless abstract tasks           = 203
+compile methods with identical tasks       = 204
+removing unnecessary predicates            = 936
+lifted reachabiltiy analysis               = 64
+grounded planning graph analysis           = 2009
+grounded task decomposition graph analysis = 2113
+grounding                                  = 443
+create artificial top task                 = 24
+============ search preparation ============
+compute state invariants = 562
+============ sat ============
+total                                        = 7970
+generate formula                             = 6155
+generate path decomposition tree             = 878
+normalise path decomposition tree            = 255
+sog optimisation                             = 255
+translate path decomposition tree to clauses = 2674
+generate state formula                       = 5854
+generate state invariant formula             = 54
+transform to DIMACS                          = 854
+SAT solver                                   = 700
+SAT solver for K=0003                        = 60
+SAT solver for K=0004                        = 60
+SAT solver for K=0005                        = 70
+SAT solver for K=0006                        = 120
+SAT solver for K=0007                        = 150
+SAT solver for K=0008                        = 240
+
+#1 "40 sat:90:solved"="true";"30 problem:05:number of primitive actions"="2623";"30 problem:01:number of constants"="0";"30 problem:04:number of abstract actions"="895";"02 properties:04:tail recursive"="false";"00 global:80:peak memory"="488542512";"40 sat:20:state formula"="83177";"40 sat:01:number of variables"="44909";"40 sat:14:K offset"="0";"40 sat:30:number of paths"="166";"40 sat:00:plan length"="-1";"40 sat:50:number of ordering clauses"="0";"02 properties:02:mostly acyclic"="false";"30 problem:06:number of methods"="3514";"30 problem:07:number of primitive shop actions"="1272";"02 properties:05:totally ordered"="true";"02 properties:06:last task in all methods"="true";"30 problem:03:number of actions"="3518";"30 problem:08:number of primitive non-shop actions"="1351";"30 problem:02:number of predicates"="70";"40 sat:03:number of horn"="622748";"40 sat:15:K chosen value"="8";"30 problem:10:average method size"="3";"02 properties:03:regular"="false";"30 problem:09:size of largest method"="10";"40 sat:03:average size of clauses"="3.065518422165788";"40 sat:02:number of clauses"="645391";"40 sat:50:number of state clauses"="83177";"40 sat:03:number of assert"="23";"40 sat:22:method children clauses"="0";"00 global:90:planner result"="SOLUTION";"02 properties:01:acyclic"="false";"40 sat:31:maximum plan length"="166";"40 sat:50:number of decomposition clauses"="562214";"00 global:02:randomseed"="42";"40 sat:91:timeout"="false";"01 parsing:01:file parser"="597";"01 parsing:08:flatten formula"="103";"40 sat:41:SAT solver for K=0004"="60";"40 sat:00:total"="7970";"40 sat:16:generate state formula"="5854";"40 sat:20:transform to DIMACS"="854";"40 sat:11:generate path decomposition tree"="878";"02 preprocessing:07:compile methods with identical tasks"="204";"01 parsing:07:strip domain of hybridity"="11";"40 sat:41:SAT solver for K=0008"="240";"02 preprocessing:08:removing unnecessary predicates"="936";"01 parsing:03:closed world assumption"="95";"02 preprocessing:11:lifted reachabiltiy analysis"="64";"01 parsing:02:sort expansion"="162";"40 sat:12:normalise path decomposition tree"="255";"40 sat:40:SAT solver"="700";"01 parsing:00:total"="1047";"40 sat:10:generate formula"="6155";"40 sat:41:SAT solver for K=0005"="70";"01 parsing:04:inherit preconditions"="0";"02 preprocessing:01:compile negative preconditions"="34";"00 total:00:total"="17904";"40 sat:13:sog optimisation"="255";"02 preprocessing:12:grounded planning graph analysis"="2009";"02 preprocessing:02:compile unit methods"="0";"02 preprocessing:23:grounded task decomposition graph analysis"="2113";"40 sat:41:SAT solver for K=0006"="120";"02 preprocessing:04:split parameter"="36";"01 parsing:05:shop methods"="24";"10 search preparation:02:compute state invariants"="562";"01 parsing:06:eliminate identical variables"="55";"40 sat:15:translate path decomposition tree to clauses"="2674";"02 preprocessing:05:expand choiceless abstract tasks"="203";"40 sat:41:SAT solver for K=0003"="60";"40 sat:17:generate state invariant formula"="54";"02 preprocessing:00:total"="6078";"02 preprocessing:99:create artificial top task"="24";"02 preprocessing:84:grounding"="443";"40 sat:41:SAT solver for K=0007"="150"
+#!verify __method_precondition_m14_everyone_go_hiking_14_precondition[couple2,guy2,girl2,place0];__method_precondition_m10_bring_tent_10_precondition[tent2,place0,guy0];put_down[guy0,place0,tent2];__method_precondition_m11_bring_cars_11_precondition[car2,place0,car3];nop[];__method_precondition_m0_trip_to1_0_precondition[couple2,guy2,girl2,place0];__method_precondition_m2_trip_to2_2_precondition[place0,place1];__method_precondition_m3_trip_to2_3_precondition[girl2,tent0,couple2,place0,car0,guy2,car2,place1];drive_tent[guy2,place0,place1,car0,tent0];drive[girl2,place0,place1,car2];put_up[guy2,place1,tent0];drive_passenger[girl2,place1,place0,car2,guy2];__method_precondition_m5_walk_everyone_5_precondition[place0,guy1,couple1,place1,girl1];walk_together[tent0,place1,guy1,place0,girl1,couple1];__method_precondition_m5_walk_everyone_5_precondition[place0,guy0,couple0,place1,girl0];walk_together[tent0,place1,guy0,place0,girl0,couple0];__method_precondition_m5_walk_everyone_5_precondition[place0,guy2,couple2,place1,girl2];walk_together[tent0,place1,guy2,place0,girl2,couple2];nop[];put_down[girl2,place1,tent0];drive_passenger[guy2,place1,place0,car0,girl2];drive[guy2,place0,place1,car0];drive[girl2,place0,place1,car2];__method_precondition_m2_trip_to2_2_precondition[place1,place2];__method_precondition_m3_trip_to2_3_precondition[girl2,tent0,couple2,place1,car2,guy2,car0,place2];drive_tent[guy2,place1,place2,car2,tent0];drive[girl2,place1,place2,car0];put_up[guy2,place2,tent0];drive_passenger[girl2,place2,place1,car0,guy2];__method_precondition_m5_walk_everyone_5_precondition[place1,guy1,couple1,place2,girl1];walk_together[tent0,place2,guy1,place1,girl1,couple1];__method_precondition_m5_walk_everyone_5_precondition[place1,guy0,couple0,place2,girl0];walk_together[tent0,place2,guy0,place1,girl0,couple0];__method_precondition_m5_walk_everyone_5_precondition[place1,guy2,couple2,place2,girl2];walk_together[tent0,place2,guy2,place1,girl2,couple2];nop[];put_down[girl2,place2,tent0];drive_passenger[guy2,place2,place1,car2,girl2];drive[guy2,place1,place2,car2];drive[girl2,place1,place2,car0];__method_precondition_m3_trip_to2_3_precondition[girl2,tent0,couple2,place2,car2,guy2,car0,place3];drive_tent[guy2,place2,place3,car2,tent0];drive[girl2,place2,place3,car0];put_up[guy2,place3,tent0];drive_passenger[girl2,place3,place2,car0,guy2];__method_precondition_m5_walk_everyone_5_precondition[place2,guy1,couple1,place3,girl1];walk_together[tent0,place3,guy1,place2,girl1,couple1];__method_precondition_m5_walk_everyone_5_precondition[place2,guy0,couple0,place3,girl0];walk_together[tent0,place3,guy0,place2,girl0,couple0];__method_precondition_m5_walk_everyone_5_precondition[place2,guy2,couple2,place3,girl2];walk_together[tent0,place3,guy2,place2,girl2,couple2];nop[];put_down[girl2,place3,tent0];drive_passenger[guy2,place3,place2,car2,girl2];drive[guy2,place2,place3,car2];drive[girl2,place2,place3,car0]
+==>
+0 __method_precondition_m14_everyone_go_hiking_14_precondition couple2 guy2 girl2 place0 
+1 __method_precondition_m10_bring_tent_10_precondition tent2 place0 guy0 
+2 put_down guy0 place0 tent2 
+3 __method_precondition_m11_bring_cars_11_precondition car2 place0 car3 
+4 nop  
+5 __method_precondition_m0_trip_to1_0_precondition couple2 guy2 girl2 place0 
+6 __method_precondition_m2_trip_to2_2_precondition place0 place1 
+7 __method_precondition_m3_trip_to2_3_precondition girl2 tent0 couple2 place0 car0 guy2 car2 place1 
+8 drive_tent guy2 place0 place1 car0 tent0 
+9 drive girl2 place0 place1 car2 
+10 put_up guy2 place1 tent0 
+11 drive_passenger girl2 place1 place0 car2 guy2 
+12 __method_precondition_m5_walk_everyone_5_precondition place0 guy1 couple1 place1 girl1 
+13 walk_together tent0 place1 guy1 place0 girl1 couple1 
+14 __method_precondition_m5_walk_everyone_5_precondition place0 guy0 couple0 place1 girl0 
+15 walk_together tent0 place1 guy0 place0 girl0 couple0 
+16 __method_precondition_m5_walk_everyone_5_precondition place0 guy2 couple2 place1 girl2 
+17 walk_together tent0 place1 guy2 place0 girl2 couple2 
+18 nop  
+19 put_down girl2 place1 tent0 
+20 drive_passenger guy2 place1 place0 car0 girl2 
+21 drive guy2 place0 place1 car0 
+22 drive girl2 place0 place1 car2 
+23 __method_precondition_m2_trip_to2_2_precondition place1 place2 
+24 __method_precondition_m3_trip_to2_3_precondition girl2 tent0 couple2 place1 car2 guy2 car0 place2 
+25 drive_tent guy2 place1 place2 car2 tent0 
+26 drive girl2 place1 place2 car0 
+27 put_up guy2 place2 tent0 
+28 drive_passenger girl2 place2 place1 car0 guy2 
+29 __method_precondition_m5_walk_everyone_5_precondition place1 guy1 couple1 place2 girl1 
+30 walk_together tent0 place2 guy1 place1 girl1 couple1 
+31 __method_precondition_m5_walk_everyone_5_precondition place1 guy0 couple0 place2 girl0 
+32 walk_together tent0 place2 guy0 place1 girl0 couple0 
+33 __method_precondition_m5_walk_everyone_5_precondition place1 guy2 couple2 place2 girl2 
+34 walk_together tent0 place2 guy2 place1 girl2 couple2 
+35 nop  
+36 put_down girl2 place2 tent0 
+37 drive_passenger guy2 place2 place1 car2 girl2 
+38 drive guy2 place1 place2 car2 
+39 drive girl2 place1 place2 car0 
+40 __method_precondition_m3_trip_to2_3_precondition girl2 tent0 couple2 place2 car2 guy2 car0 place3 
+41 drive_tent guy2 place2 place3 car2 tent0 
+42 drive girl2 place2 place3 car0 
+43 put_up guy2 place3 tent0 
+44 drive_passenger girl2 place3 place2 car0 guy2 
+45 __method_precondition_m5_walk_everyone_5_precondition place2 guy1 couple1 place3 girl1 
+46 walk_together tent0 place3 guy1 place2 girl1 couple1 
+47 __method_precondition_m5_walk_everyone_5_precondition place2 guy0 couple0 place3 girl0 
+48 walk_together tent0 place3 guy0 place2 girl0 couple0 
+49 __method_precondition_m5_walk_everyone_5_precondition place2 guy2 couple2 place3 girl2 
+50 walk_together tent0 place3 guy2 place2 girl2 couple2 
+51 nop  
+52 put_down girl2 place3 tent0 
+53 drive_passenger guy2 place3 place2 car2 girl2 
+54 drive guy2 place2 place3 car2 
+55 drive girl2 place2 place3 car0 
+root 80
+56 walk_everyone tent0 place1 place0  -> m5_walk_everyone 14 15 72
+57 bring_cars place0  -> m11_bring_cars 3 4
+58 everyone_go_hiking place3  -> <m14_everyone_go_hiking;prepare_trip[place0];m6_prepare_trip;1;0,-1,-2,2> 0 73 57 66
+59 walk_everyone tent0 place3 place2  -> m4_walk_everyone 51
+60 walk_everyone tent0 place3 place2  -> m5_walk_everyone 49 50 59
+61 walk_everyone tent0 place1 place0  -> m4_walk_everyone 18
+62 drive girl2 place2 place3 car0  -> __UNIQUE-replacement_116 42
+63 drive girl2 place0 place1 car2  -> __UNIQUE-replacement_23 22
+64 drive girl2 place1 place2 car0  -> __UNIQUE-replacement_833 39
+65 trip_to2 couple2 place0 place1  -> m3_trip_to2 7 8 67 10 11 69 19 20 21 63
+66 trip_to1 couple2 place3  -> <<m0_trip_to1;trip_to2[couple2,place0,place3];m2_trip_to2;1;0,-1,-2,-3>;trip_to2[couple2,place1,place3];m2_trip_to2;3;0,1,2,-1,-2,-3> 5 6 65 23 78 79
+67 drive girl2 place0 place1 car2  -> __UNIQUE-replacement_22 9
+68 walk_everyone tent0 place3 place2  -> m5_walk_everyone 47 48 60
+69 walk_everyone tent0 place1 place0  -> m5_walk_everyone 12 13 56
+70 walk_everyone tent0 place2 place1  -> m5_walk_everyone 33 34 71
+71 walk_everyone tent0 place2 place1  -> m4_walk_everyone 35
+72 walk_everyone tent0 place1 place0  -> m5_walk_everyone 16 17 61
+73 bring_tent place0  -> m10_bring_tent 1 2
+74 drive girl2 place1 place2 car0  -> __UNIQUE-replacement_832 26
+75 walk_everyone tent0 place3 place2  -> m5_walk_everyone 45 46 68
+76 walk_everyone tent0 place2 place1  -> m5_walk_everyone 31 32 70
+77 drive girl2 place2 place3 car0  -> __UNIQUE-replacement_117 55
+78 trip_to2 couple2 place1 place2  -> m3_trip_to2 24 25 74 27 28 81 36 37 38 64
+79 trip_to2 couple2 place2 place3  -> m3_trip_to2 40 41 62 43 44 75 52 53 54 77
+80 __choicelessATCompilation__top_1  -> __top_1 58
+81 walk_everyone tent0 place2 place1  -> m5_walk_everyone 29 30 76
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 18.786 MEMPEAK_KBS 658955.264

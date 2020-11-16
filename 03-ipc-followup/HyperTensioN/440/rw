@@ -1,0 +1,200 @@
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 4077507
+max locked memory       (kbytes, -l) 65536
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 1024
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) unlimited
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 4077507
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+15728640
+----------------------Tasks-----------------------
+0 achieve_at obj21 pos1
+1 achieve_at obj13 apt1
+2 achieve_at obj23 pos1
+3 achieve_at obj11 apt1
+---------------------Planning---------------------
+Time: 0.0045206546783447266s
+-----------------------Plan-----------------------
+==>
+11 i_lock_at tru2 pos2
+12 i_unlock_at tru2 pos2
+10 load_truck obj21 tru2 pos2
+20 drive_truck tru2 pos2 pos2 cit2
+22 drive_truck tru2 pos2 apt2 cit2
+19 i_lock_at tru2 apt2
+24 i_unlock_at tru2 apt2
+17 unload_truck obj21 tru2 apt2
+30 i_lock_at apn1 apt2
+31 i_unlock_at apn1 apt2
+29 load_airplane obj21 apn1 apt2
+39 fly_airplane apn1 apt2 apt1
+38 i_lock_at apn1 apt1
+41 i_unlock_at apn1 apt1
+36 unload_airplane obj21 apn1 apt1
+49 drive_truck tru1 pos1 pos1 cit1
+51 drive_truck tru1 pos1 apt1 cit1
+48 i_lock_at tru1 apt1
+53 i_unlock_at tru1 apt1
+46 load_truck obj21 tru1 apt1
+61 drive_truck tru1 apt1 pos1 cit1
+60 i_lock_at tru1 pos1
+63 i_unlock_at tru1 pos1
+58 unload_truck obj21 tru1 pos1
+5 i_lock_at obj21 pos1
+71 i_lock_at tru1 pos1
+72 i_unlock_at tru1 pos1
+70 load_truck obj13 tru1 pos1
+80 drive_truck tru1 pos1 pos1 cit1
+82 drive_truck tru1 pos1 apt1 cit1
+79 i_lock_at tru1 apt1
+84 i_unlock_at tru1 apt1
+77 unload_truck obj13 tru1 apt1
+65 i_lock_at obj13 apt1
+94 drive_truck tru2 apt2 pos2 cit2
+93 i_lock_at tru2 pos2
+96 i_unlock_at tru2 pos2
+91 load_truck obj23 tru2 pos2
+104 drive_truck tru2 pos2 pos2 cit2
+106 drive_truck tru2 pos2 apt2 cit2
+103 i_lock_at tru2 apt2
+108 i_unlock_at tru2 apt2
+101 unload_truck obj23 tru2 apt2
+116 fly_airplane apn1 apt1 apt1
+118 fly_airplane apn1 apt1 apt2
+115 i_lock_at apn1 apt2
+120 i_unlock_at apn1 apt2
+113 load_airplane obj23 apn1 apt2
+128 fly_airplane apn1 apt2 apt1
+127 i_lock_at apn1 apt1
+130 i_unlock_at apn1 apt1
+125 unload_airplane obj23 apn1 apt1
+136 i_lock_at tru1 apt1
+137 i_unlock_at tru1 apt1
+135 load_truck obj23 tru1 apt1
+145 drive_truck tru1 apt1 pos1 cit1
+144 i_lock_at tru1 pos1
+147 i_unlock_at tru1 pos1
+142 unload_truck obj23 tru1 pos1
+86 i_lock_at obj23 pos1
+155 i_lock_at tru1 pos1
+156 i_unlock_at tru1 pos1
+154 load_truck obj11 tru1 pos1
+164 drive_truck tru1 pos1 pos1 cit1
+166 drive_truck tru1 pos1 apt1 cit1
+163 i_lock_at tru1 apt1
+168 i_unlock_at tru1 apt1
+161 unload_truck obj11 tru1 apt1
+149 i_lock_at obj11 apt1
+root 0 1 2 3
+0 achieve_at obj21 pos1 -> m10_achieve_at 4 5
+4 achieve_at0 obj21 pos1 -> m12_achieve_at0 6 7
+6 do_at_load_truck0 obj21 tru2 pos2 -> m4_do_at_load_truck0 8 9 10
+8 achieve_at_trk tru2 pos2 -> m33_achieve_at 11
+9 ifunlock_at tru2 pos2 -> ifunlock1_at 12
+7 achieve_at0 obj21 pos1 -> m14_achieve_at0 13 14
+13 do_in_unload_truck0 obj21 tru2 apt2 -> m6_do_in_unload_truck0 15 16 17
+15 achieve_at_trk tru2 apt2 -> m34_achieve_at 18 19
+18 achieve_at1 tru2 apt2 -> m36_achieve_at1 20 21
+21 achieve_at1 tru2 apt2 -> m36_achieve_at1 22 23
+23 achieve_at1 tru2 apt2 -> m35_achieve_at1 
+16 ifunlock_at tru2 apt2 -> ifunlock1_at 24
+14 achieve_at0 obj21 pos1 -> m13_achieve_at0 25 26
+25 do_at_load_airplane0 obj21 apn1 apt2 -> m5_do_at_load_airplane0 27 28 29
+27 achieve_at_air apn1 apt2 -> m38_achieve_at 30
+28 ifunlock_at apn1 apt2 -> ifunlock1_at 31
+26 achieve_at0 obj21 pos1 -> m15_achieve_at0 32 33
+32 do_in_unload_airplane0 obj21 apn1 apt1 -> m7_do_in_unload_airplane0 34 35 36
+34 achieve_at_air apn1 apt1 -> m39_achieve_at 37 38
+37 achieve_at2 apn1 apt1 -> m41_achieve_at2 39 40
+40 achieve_at2 apn1 apt1 -> m40_achieve_at2 
+35 ifunlock_at apn1 apt1 -> ifunlock1_at 41
+33 achieve_at0 obj21 pos1 -> m12_achieve_at0 42 43
+42 do_at_load_truck0 obj21 tru1 apt1 -> m4_do_at_load_truck0 44 45 46
+44 achieve_at_trk tru1 apt1 -> m34_achieve_at 47 48
+47 achieve_at1 tru1 apt1 -> m36_achieve_at1 49 50
+50 achieve_at1 tru1 apt1 -> m36_achieve_at1 51 52
+52 achieve_at1 tru1 apt1 -> m35_achieve_at1 
+45 ifunlock_at tru1 apt1 -> ifunlock1_at 53
+43 achieve_at0 obj21 pos1 -> m14_achieve_at0 54 55
+54 do_in_unload_truck0 obj21 tru1 pos1 -> m6_do_in_unload_truck0 56 57 58
+56 achieve_at_trk tru1 pos1 -> m34_achieve_at 59 60
+59 achieve_at1 tru1 pos1 -> m36_achieve_at1 61 62
+62 achieve_at1 tru1 pos1 -> m35_achieve_at1 
+57 ifunlock_at tru1 pos1 -> ifunlock1_at 63
+55 achieve_at0 obj21 pos1 -> m11_achieve_at0 
+1 achieve_at obj13 apt1 -> m10_achieve_at 64 65
+64 achieve_at0 obj13 apt1 -> m12_achieve_at0 66 67
+66 do_at_load_truck0 obj13 tru1 pos1 -> m4_do_at_load_truck0 68 69 70
+68 achieve_at_trk tru1 pos1 -> m33_achieve_at 71
+69 ifunlock_at tru1 pos1 -> ifunlock1_at 72
+67 achieve_at0 obj13 apt1 -> m14_achieve_at0 73 74
+73 do_in_unload_truck0 obj13 tru1 apt1 -> m6_do_in_unload_truck0 75 76 77
+75 achieve_at_trk tru1 apt1 -> m34_achieve_at 78 79
+78 achieve_at1 tru1 apt1 -> m36_achieve_at1 80 81
+81 achieve_at1 tru1 apt1 -> m36_achieve_at1 82 83
+83 achieve_at1 tru1 apt1 -> m35_achieve_at1 
+76 ifunlock_at tru1 apt1 -> ifunlock1_at 84
+74 achieve_at0 obj13 apt1 -> m11_achieve_at0 
+2 achieve_at obj23 pos1 -> m10_achieve_at 85 86
+85 achieve_at0 obj23 pos1 -> m12_achieve_at0 87 88
+87 do_at_load_truck0 obj23 tru2 pos2 -> m4_do_at_load_truck0 89 90 91
+89 achieve_at_trk tru2 pos2 -> m34_achieve_at 92 93
+92 achieve_at1 tru2 pos2 -> m36_achieve_at1 94 95
+95 achieve_at1 tru2 pos2 -> m35_achieve_at1 
+90 ifunlock_at tru2 pos2 -> ifunlock1_at 96
+88 achieve_at0 obj23 pos1 -> m14_achieve_at0 97 98
+97 do_in_unload_truck0 obj23 tru2 apt2 -> m6_do_in_unload_truck0 99 100 101
+99 achieve_at_trk tru2 apt2 -> m34_achieve_at 102 103
+102 achieve_at1 tru2 apt2 -> m36_achieve_at1 104 105
+105 achieve_at1 tru2 apt2 -> m36_achieve_at1 106 107
+107 achieve_at1 tru2 apt2 -> m35_achieve_at1 
+100 ifunlock_at tru2 apt2 -> ifunlock1_at 108
+98 achieve_at0 obj23 pos1 -> m13_achieve_at0 109 110
+109 do_at_load_airplane0 obj23 apn1 apt2 -> m5_do_at_load_airplane0 111 112 113
+111 achieve_at_air apn1 apt2 -> m39_achieve_at 114 115
+114 achieve_at2 apn1 apt2 -> m41_achieve_at2 116 117
+117 achieve_at2 apn1 apt2 -> m41_achieve_at2 118 119
+119 achieve_at2 apn1 apt2 -> m40_achieve_at2 
+112 ifunlock_at apn1 apt2 -> ifunlock1_at 120
+110 achieve_at0 obj23 pos1 -> m15_achieve_at0 121 122
+121 do_in_unload_airplane0 obj23 apn1 apt1 -> m7_do_in_unload_airplane0 123 124 125
+123 achieve_at_air apn1 apt1 -> m39_achieve_at 126 127
+126 achieve_at2 apn1 apt1 -> m41_achieve_at2 128 129
+129 achieve_at2 apn1 apt1 -> m40_achieve_at2 
+124 ifunlock_at apn1 apt1 -> ifunlock1_at 130
+122 achieve_at0 obj23 pos1 -> m12_achieve_at0 131 132
+131 do_at_load_truck0 obj23 tru1 apt1 -> m4_do_at_load_truck0 133 134 135
+133 achieve_at_trk tru1 apt1 -> m33_achieve_at 136
+134 ifunlock_at tru1 apt1 -> ifunlock1_at 137
+132 achieve_at0 obj23 pos1 -> m14_achieve_at0 138 139
+138 do_in_unload_truck0 obj23 tru1 pos1 -> m6_do_in_unload_truck0 140 141 142
+140 achieve_at_trk tru1 pos1 -> m34_achieve_at 143 144
+143 achieve_at1 tru1 pos1 -> m36_achieve_at1 145 146
+146 achieve_at1 tru1 pos1 -> m35_achieve_at1 
+141 ifunlock_at tru1 pos1 -> ifunlock1_at 147
+139 achieve_at0 obj23 pos1 -> m11_achieve_at0 
+3 achieve_at obj11 apt1 -> m10_achieve_at 148 149
+148 achieve_at0 obj11 apt1 -> m12_achieve_at0 150 151
+150 do_at_load_truck0 obj11 tru1 pos1 -> m4_do_at_load_truck0 152 153 154
+152 achieve_at_trk tru1 pos1 -> m33_achieve_at 155
+153 ifunlock_at tru1 pos1 -> ifunlock1_at 156
+151 achieve_at0 obj11 apt1 -> m14_achieve_at0 157 158
+157 do_in_unload_truck0 obj11 tru1 apt1 -> m6_do_in_unload_truck0 159 160 161
+159 achieve_at_trk tru1 apt1 -> m34_achieve_at 162 163
+162 achieve_at1 tru1 apt1 -> m36_achieve_at1 164 165
+165 achieve_at1 tru1 apt1 -> m36_achieve_at1 166 167
+167 achieve_at1 tru1 apt1 -> m35_achieve_at1 
+160 ifunlock_at tru1 apt1 -> ifunlock1_at 168
+158 achieve_at0 obj11 apt1 -> m11_achieve_at0 
+<==
+Total time: 0.04526543617248535s
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.224 MEMPEAK_KBS 0

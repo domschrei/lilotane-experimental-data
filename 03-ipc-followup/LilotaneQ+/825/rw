@@ -1,0 +1,117 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version rls-2020-11-02T15:57:46+01:00-glucose4
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020
+using SAT solver glucose4
+
+0.001 Sorts extracted.
+0.001 Mined 13 new reduction preconditions (+inf%).
+0.001 9 operators and 7 methods created.
+0.001 Iteration 0.
+0.001 Creating initial layer of size 2
+0.006 Attempting to solve formula with 3 clauses (3 literals) and 1 assumptions
+0.006 Unsolvable at layer 0 -- expanding.
+0.006 Iteration 1.
+0.006 New layer size: 4
+0.006 Instantiating ...
+0.006 Collected 0 relevant facts at this layer
+0.006 Encoding ...
+0.006 Attempting to solve formula with 14 clauses (22 literals) and 3 assumptions
+0.006 Unsolvable at layer 1 -- expanding.
+0.006 Iteration 2.
+0.006 New layer size: 13
+0.006 Instantiating ...
+0.006 Retroactively prune action (__SURROGATE*m_drive_to_ordering_0*drive* Q_2,0_location:0_9b3735742e106dfa city_loc_2 truck_0) due to impossible effect !(at truck_0 Q_2,0_location:0_9b3735742e106dfa)
+0.007 Collected 15 relevant facts at this layer
+0.007 Encoding ...
+0.007 Attempting to solve formula with 493 clauses (1324 literals) and 6 assumptions
+0.007 Unsolvable at layer 2 -- expanding.
+0.007 Iteration 3.
+0.007 New layer size: 19
+0.007 Instantiating ...
+0.008 Collected 15 relevant facts at this layer
+0.008 Encoding ...
+0.009 Attempting to solve formula with 999 clauses (2762 literals) and 6 assumptions
+c last restart ## conflicts  :  17 55 
+0.009 Found a solution at layer 3.
+0.009 Initial plan at most shallow layer has length 17
+0.009 Iteration 4. (extra)
+0.009 New layer size: 25
+0.009 Instantiating ...
+0.022 Collected 15 relevant facts at this layer
+0.022 Encoding ...
+0.023 Attempting to solve formula with 1672 clauses (4754 literals) and 6 assumptions
+c last restart ## conflicts  :  0 114 
+0.023 Initial plan at final layer has length 17
+0.023 Tightened initial plan length bounds at layer 4: [0,24] => [13,17]
+0.023 Searching for a plan of length < 17
+0.023 Attempting to solve formula with 1795 clauses (5093 literals) and 0 assumptions
+c last restart ## conflicts  :  9 113 
+0.023 Shorter plan (length 16) found
+0.023 Searching for a plan of length < 16
+0.023 Attempting to solve formula with 1797 clauses (5095 literals) and 0 assumptions
+c last restart ## conflicts  :  0 117 
+0.024 Shorter plan (length 15) found
+0.024 Searching for a plan of length < 15
+0.024 Attempting to solve formula with 1799 clauses (5097 literals) and 0 assumptions
+==>
+328 drive truck_0 city_loc_0 city_loc_1
+344 drive truck_0 city_loc_1 city_loc_2
+346 pick_up truck_0 city_loc_2 package_1 capacity_1 capacity_2
+349 drive truck_0 city_loc_2 city_loc_1
+371 drop truck_0 city_loc_1 package_1 capacity_1 capacity_2
+374 drive truck_0 city_loc_1 city_loc_1
+396 pick_up truck_0 city_loc_1 package_0 capacity_1 capacity_2
+400 drive truck_0 city_loc_1 city_loc_0
+421 drop truck_0 city_loc_0 package_0 capacity_1 capacity_2
+426 drive truck_0 city_loc_0 city_loc_1
+444 drive truck_0 city_loc_1 city_loc_2
+446 pick_up truck_0 city_loc_2 package_2 capacity_1 capacity_2
+449 drive truck_0 city_loc_2 city_loc_1
+469 drive truck_0 city_loc_1 city_loc_0
+471 drop truck_0 city_loc_0 package_2 capacity_1 capacity_2
+root 5 7 9
+5 deliver package_1 city_loc_1 -> m_deliver_ordering_0 13 345 348 370
+7 deliver package_0 city_loc_0 -> m_deliver_ordering_0 373 395 399 420
+9 deliver package_2 city_loc_0 -> m_deliver_ordering_0 129 445 159 470
+13 get_to truck_0 city_loc_2 -> m_drive_to_via_ordering_0 327 344
+129 get_to truck_0 city_loc_2 -> m_drive_to_via_ordering_0 425 444
+159 get_to truck_0 city_loc_0 -> m_drive_to_via_ordering_0 448 469
+327 get_to truck_0 city_loc_1 -> m_drive_to_ordering_0 328
+345 load truck_0 city_loc_2 package_1 -> m_load_ordering_0 346
+348 get_to truck_0 city_loc_1 -> m_drive_to_ordering_0 349
+370 unload truck_0 city_loc_1 package_1 -> m_unload_ordering_0 371
+373 get_to truck_0 city_loc_1 -> m_drive_to_ordering_0 374
+395 load truck_0 city_loc_1 package_0 -> m_load_ordering_0 396
+399 get_to truck_0 city_loc_0 -> m_drive_to_ordering_0 400
+420 unload truck_0 city_loc_0 package_0 -> m_unload_ordering_0 421
+425 get_to truck_0 city_loc_1 -> m_drive_to_ordering_0 426
+445 load truck_0 city_loc_2 package_2 -> m_load_ordering_0 446
+448 get_to truck_0 city_loc_1 -> m_drive_to_ordering_0 449
+470 unload truck_0 city_loc_0 package_2 -> m_unload_ordering_0 471
+<==
+0.024 End of solution plan. (counted length of 15)
+0.024 Total amount of clauses encoded: 1799
+0.024 - directframeaxioms : 234 cls
+0.024 - actionconstraints : 220 cls
+0.024 - indirectframeaxioms : 203 cls
+0.024 - qfactsemantics : 180 cls
+0.024 - atmostoneelement : 163 cls
+0.024 - qconstequality : 140 cls
+0.024 - predecessors : 136 cls
+0.024 - expansions : 133 cls
+0.024 - planlengthcounting : 121 cls
+0.024 - reductionconstraints : 86 cls
+0.024 - actioneffects : 82 cls
+0.024 - substitutionconstraints : 78 cls
+0.024 - truefacts : 15 cls
+0.024 - assumptions : 6 cls
+0.024 - axiomaticops : 2 cls
+0.024 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.001 MEMPEAK_KBS 0

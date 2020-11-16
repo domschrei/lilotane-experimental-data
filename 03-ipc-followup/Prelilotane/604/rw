@@ -1,0 +1,87 @@
+0.000 
+0.000 Hello from  L i l o t a n e  version rls-2020-11-06T08:48:42+01:00-glucose4
+0.000 by Dominik Schreiber <dominik.schreiber@kit.edu> 2020
+0.000 using SAT solver glucose4
+0.000 
+0.010 80 methods, 55 abstract tasks, 64 primitive tasks
+0.017 Sorts extracted.
+0.056 Mined 99 new reduction preconditions (+9900.0%).
+0.056 82 operators and 80 methods created.
+0.056 Iteration 0.
+0.056 Creating initial layer of size 2
+0.073 Attempting to solve formula with 2103 clauses (2104 literals) and 1 assumptions
+0.073 Unsolvable at layer 0 -- expanding.
+0.073 Iteration 1.
+0.073 New layer size: 2
+0.172 Attempting to solve formula with 2982 clauses (3993 literals) and 1 assumptions
+0.172 Unsolvable at layer 1 -- expanding.
+0.172 Iteration 2.
+0.172 New layer size: 2
+0.260 Forbidding reduction (m_tlt_clear_road_tree Q_1,0_5:0_point Q_1,0_6:1_point)@(1,0): no children at offset 0
+0.273 Attempting to solve formula with 3120 clauses (4389 literals) and 1 assumptions
+0.273 Unsolvable at layer 2 -- expanding.
+0.273 Iteration 3.
+0.273 New layer size: 4
+0.370 Forbidding reduction (m_clear_road_wreck Q_1,0_3:0_point Q_1,0_4:1_point)@(2,0): no children at offset 1
+0.433 Attempting to solve formula with 19144 clauses (53374 literals) and 3 assumptions
+0.433 Unsolvable at layer 3 -- expanding.
+0.433 Iteration 4.
+0.433 New layer size: 18
+0.584 Forbidding reduction (m_clean_up_hazard_normal Q_1,0_1:0_point Q_3,1_18:1_hazard_team Q_1,0_2:1_point very_hazardous very_hazardous)@(3,1): no children at offset 2
+0.638 Attempting to solve formula with 94799 clauses (286771 literals) and 15 assumptions
+0.640 Unsolvable at layer 4 -- expanding.
+0.640 Iteration 5.
+0.640 New layer size: 57
+0.982 Attempting to solve formula with 326580 clauses (978949 literals) and 35 assumptions
+0.987 Unsolvable at layer 5 -- expanding.
+0.987 Iteration 6.
+0.987 New layer size: 157
+1.639 Attempting to solve formula with 863014 clauses (2503465 literals) and 77 assumptions
+c last restart ## conflicts  :  4 5730 
+1.655 Found a solution at layer 6.
+==>
+94898 SHOP_methodm_provide_medical_attention_in_hospital_precondition person_208195 light_burn strong
+149666 SHOP_methodm_get_to_as_cargo_precondition person_208195 strong park_ridge plow1
+165035 SHOP_methodm_get_to_vehicle_gets_driven_precondition plow1 park_ridge marketplace pdriver2
+165058 SHOP_methodm_drive_to_precondition plow1 marketplace pdriver2
+165137 p_1Navegate_vehicle
+176746 SHOP_methodm_get_in_ambulatory_person_precondition person_208195 park_ridge plow1
+178905 p_2Climb_in
+185866 SHOP_methodm_get_to_vehicle_gets_driven_precondition plow1 strong park_ridge pdriver2
+185872 SHOP_methodm_drive_to_precondition plow1 park_ridge pdriver2
+185895 p_3Navegate_vehicle
+192664 climb_out person_208195 plow1 strong
+205779 treat_in_hospital person_208195 strong
+root 4200
+4200 tlt -> m_tlt_provide_medical_attention 4346
+4346 provide_medical_attention person_208195 -> m_provide_medical_attention_in_hospital 94898 4458 205779
+4458 get_to person_208195 strong -> m_get_to_as_cargo 149666 19988 22265 24416 192663
+19988 get_to plow1 park_ridge -> m_get_to_vehicle_gets_driven 165035 65683
+22265 get_in person_208195 plow1 -> m_get_in_ambulatory_person 176746 178904
+24416 get_to plow1 strong -> m_get_to_vehicle_gets_driven 185866 77775
+65683 drive_to pdriver2 plow1 park_ridge -> m_drive_to 165058 165136
+77775 drive_to pdriver2 plow1 strong -> m_drive_to 185872 185894
+165136 cnavegate_vehicle pdriver2 plow1 park_ridge marketplace -> prefix_1 165137
+178904 cclimb_in person_208195 plow1 park_ridge -> prefix_2 178905
+185894 cnavegate_vehicle pdriver2 plow1 strong park_ridge -> prefix_3 185895
+192663 get_out person_208195 plow1 -> m_get_out_ambulatory_person 192664
+<==
+1.656 End of solution plan.
+1.656 Total amount of clauses encoded: 863014
+1.656 - frameaxioms : 704901 cls
+1.656 - qfactsemantics : 110124 cls
+1.656 - reductionconstraints : 20932 cls
+1.656 - substitutionconstraints : 7707 cls
+1.656 - actionconstraints : 7685 cls
+1.656 - atmostoneelement : 3808 cls
+1.656 - truefacts : 2836 cls
+1.656 - expansions : 1693 cls
+1.656 - predecessors : 1214 cls
+1.656 - qconstequality : 385 cls
+1.656 - actioneffects : 362 cls
+1.656 - qtypeconstraints : 355 cls
+1.656 - atleastoneelement : 242 cls
+1.656 - axiomaticops : 2 cls
+1.656 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 2.345 MEMPEAK_KBS 116569.088

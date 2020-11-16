@@ -1,0 +1,28 @@
+----------------------Tasks-----------------------
+0 process p1 blue smooth smooth
+1 process p0 blue verysmooth smooth
+2 process p2 blue rough smooth
+3 invisible_goal
+---------------------Planning---------------------
+Time: 0.00031495094299316406s
+-----------------------Plan-----------------------
+==>
+6 do_saw_small b0 p1 walnut smooth s6 s5 small natural untreated
+7 do_glaze p1 glazer0 blue untreated untreated glazed natural
+10 do_plane p0 verysmooth natural glazed smooth untreated natural
+11 do_spray_varnish p0 spray_varnisher0 blue smooth untreated untreated varnished natural
+14 do_plane p2 rough blue glazed smooth untreated natural
+15 do_glaze p2 glazer0 blue untreated untreated glazed natural
+root 0 1 2
+0 process p1 blue smooth smooth -> method11 3 4
+3 cut_and_saw b0 p1 walnut smooth -> method10 5
+5 do_saw b0 p1 walnut smooth -> method5 6
+4 do_colour p1 blue glazer0 untreated -> method2 7
+1 process p0 blue verysmooth smooth -> method12 8 9
+8 grindnplane p0 verysmooth natural glazed smooth natural untreated -> method7 10
+9 do_colour p0 blue spray_varnisher0 untreated -> method1 11
+2 process p2 blue rough smooth -> method12 12 13
+12 grindnplane p2 rough blue glazed smooth natural untreated -> method7 14
+13 do_colour p2 blue glazer0 untreated -> method2 15
+<==
+Total time: 0.029590606689453125s

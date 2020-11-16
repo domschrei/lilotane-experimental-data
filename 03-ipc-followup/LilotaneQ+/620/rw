@@ -1,0 +1,92 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version rls-2020-11-02T15:57:46+01:00-glucose4
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020
+using SAT solver glucose4
+
+0.025 Sorts extracted.
+0.045 Mined 68 new reduction preconditions (+6800.0%).
+0.045 82 operators and 80 methods created.
+0.046 Iteration 0.
+0.046 Creating initial layer of size 2
+0.053 Attempting to solve formula with 5 clauses (6 literals) and 1 assumptions
+0.053 Unsolvable at layer 0 -- expanding.
+0.053 Iteration 1.
+0.053 New layer size: 2
+0.053 Instantiating ...
+0.095 Collected 1 relevant facts at this layer
+0.095 Encoding ...
+0.096 Attempting to solve formula with 1075 clauses (2307 literals) and 1 assumptions
+0.096 Unsolvable at layer 1 -- expanding.
+0.096 Iteration 2.
+0.096 New layer size: 2
+0.096 Instantiating ...
+0.097 Retroactively prune reduction (m_tlt_clear_road_tree Q_1,0_point:0_e350fcbcf04cdb0 Q_1,0_point:1_e350fcbcf04cdb0)@(1,0): no children at offset 0
+0.138 Collected 1 relevant facts at this layer
+0.138 Encoding ...
+0.139 Attempting to solve formula with 1244 clauses (2718 literals) and 1 assumptions
+0.139 Unsolvable at layer 2 -- expanding.
+0.139 Iteration 3.
+0.139 New layer size: 7
+0.139 Instantiating ...
+0.140 Retroactively prune reduction (m_provide_medical_attention_in_hospital Q_2,0_hospital:0_22e80876c446d05d Q_1,0_adult:0_c7bea27001c2b25f)@(2,0): no children at offset 0
+0.140 Retroactively prune reduction (m_provide_medical_attention_simple_on_site Q_1,0_adult:0_c7bea27001c2b25f)@(2,0): no children at offset 0
+0.155 Retroactively prune reduction (m_clear_road_wreck Q_1,0_point:0_e350fcbcf04cdb0 Q_1,0_point:1_e350fcbcf04cdb0)@(2,0): no children at offset 1
+0.207 Collected 76 relevant facts at this layer
+0.207 Encoding ...
+0.212 Attempting to solve formula with 3160 clauses (7640 literals) and 4 assumptions
+c last restart ## conflicts  :  0 181 
+0.212 Found a solution at layer 3.
+0.212 Initial plan at most shallow layer has length 6
+0.212 Iteration 4. (extra)
+0.212 New layer size: 27
+0.212 Instantiating ...
+0.280 Retroactively prune reduction (m_clean_up_hazard_normal Q_1,0_point:0_e350fcbcf04cdb0 Q_3,1_hazard_team:0_4ef5df2b913dc049 Q_1,0_point:1_e350fcbcf04cdb0 very_hazardous very_hazardous)@(3,1): no children at offset 2
+0.360 Collected 383 relevant facts at this layer
+0.360 Encoding ...
+0.387 Attempting to solve formula with 30864 clauses (90599 literals) and 22 assumptions
+c last restart ## conflicts  :  0 753 
+0.389 Initial plan at final layer has length 6
+0.389 Tightened initial plan length bounds at layer 4: [0,26] => [3,6]
+0.389 Searching for a plan of length < 6
+0.389 Attempting to solve formula with 31055 clauses (91088 literals) and 0 assumptions
+==>
+103 SHOP_methodm_plow_road_precondition twelve_corners strong plow2 henrietta_dump
+204 SHOP_methodm_get_to_already_there_precondition pdriver2 henrietta_dump
+325 p_1Navegate_snowplow
+441 p_2Engage_plow
+549 p_3Navegate_snowplow
+628 disengage_plow pdriver2 plow2
+root 7
+7 tlt -> m_tlt_plow_road 68
+68 plow_road twelve_corners strong -> m_plow_road 103 203 324 440 548 628
+203 get_to pdriver2 henrietta_dump -> m_get_to_already_there 204
+324 cnavegate_snowplow pdriver2 plow2 twelve_corners -> prefix_1 325
+440 cengage_plow pdriver2 plow2 -> prefix_2 441
+548 cnavegate_snowplow pdriver2 plow2 strong -> prefix_3 549
+<==
+0.389 End of solution plan. (counted length of 6)
+0.389 Total amount of clauses encoded: 31055
+0.389 - directframeaxioms : 17340 cls
+0.389 - reductionconstraints : 4977 cls
+0.389 - qfactsemantics : 4408 cls
+0.389 - actionconstraints : 1716 cls
+0.389 - atmostoneelement : 745 cls
+0.389 - indirectframeaxioms : 461 cls
+0.389 - truefacts : 383 cls
+0.389 - expansions : 295 cls
+0.389 - substitutionconstraints : 275 cls
+0.389 - predecessors : 223 cls
+0.389 - planlengthcounting : 169 cls
+0.389 - assumptions : 22 cls
+0.389 - forbiddenoperations : 11 cls
+0.389 - qtypeconstraints : 6 cls
+0.389 - axiomaticops : 2 cls
+0.389 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.521 MEMPEAK_KBS 0

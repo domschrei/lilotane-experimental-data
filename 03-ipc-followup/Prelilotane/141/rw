@@ -1,0 +1,81 @@
+0.000 
+0.000 Hello from  L i l o t a n e  version rls-2020-11-06T08:48:42+01:00-glucose4
+0.000 by Dominik Schreiber <dominik.schreiber@kit.edu> 2020
+0.000 using SAT solver glucose4
+0.000 
+0.003 15 methods, 9 abstract tasks, 17 primitive tasks
+0.003 Sorts extracted.
+0.029 Mined 11 new reduction preconditions (+44.0%).
+0.029 23 operators and 15 methods created.
+0.029 Iteration 0.
+0.029 Creating initial layer of size 2
+0.030 Attempting to solve formula with 65 clauses (67 literals) and 1 assumptions
+0.030 Unsolvable at layer 0 -- expanding.
+0.030 Iteration 1.
+0.030 New layer size: 3
+0.041 Attempting to solve formula with 147 clauses (271 literals) and 2 assumptions
+0.041 Unsolvable at layer 1 -- expanding.
+0.041 Iteration 2.
+0.041 New layer size: 9
+0.044 Attempting to solve formula with 1710 clauses (4705 literals) and 5 assumptions
+0.044 Unsolvable at layer 2 -- expanding.
+0.044 Iteration 3.
+0.044 New layer size: 16
+0.048 Attempting to solve formula with 3712 clauses (10173 literals) and 5 assumptions
+0.048 Unsolvable at layer 3 -- expanding.
+0.048 Iteration 4.
+0.048 New layer size: 25
+0.048 Forbidding action (__SURROGATE*m4_do_clear*nop* pallet1 depot0)@(3,1): no children at offset 0
+0.049 Forbidding action (Drop Q_1,0_0:3_hoist crate1 pallet1 depot0)@(3,8): no children at offset 0
+0.050 Forbidding action (__SURROGATE*m4_do_clear*nop* pallet2 Q_1,1_2:2_place)@(3,10): no children at offset 0
+0.051 Forbidding action (Drop Q_1,1_3:3_hoist crate0 pallet2 Q_1,1_2:2_place)@(3,14): no children at offset 0
+0.051 Attempting to solve formula with 5853 clauses (15671 literals) and 3 assumptions
+c last restart ## conflicts  :  0 186 
+0.051 Found a solution at layer 4.
+==>
+893 nop
+897 nop
+903 Lift hoist0 crate1 pallet0 depot0
+907 Load hoist0 crate1 truck1 depot0
+919 Drive truck1 depot0 distributor0
+938 nop
+948 Lift hoist1 crate0 pallet1 distributor0
+980 nop
+990 Load hoist1 crate0 truck1 distributor0
+1000 Unload hoist1 crate1 truck1 distributor0
+1005 Drop hoist1 crate1 pallet1 distributor0
+1013 Drive truck1 distributor0 distributor1
+1055 nop
+1064 Unload hoist2 crate0 truck1 distributor1
+1079 Drop hoist2 crate0 pallet2 distributor1
+root 121 129
+121 do_put_on crate1 pallet1 -> m3_do_put_on 641 919 299
+129 do_put_on crate0 pallet2 -> m2_do_put_on 443 1054 1064 1079
+299 do_unload_truck crate1 pallet1 distributor0 truck1 -> m11_do_unload_truck 697 1000 1005
+443 do_get_truck truck1 distributor1 -> m7_do_get_truck 1013
+641 do_load_truck crate1 pallet0 depot0 truck1 -> m10_do_load_truck 892 896 903 907
+697 do_clear pallet1 distributor0 -> m5_do_clear 937 948 979 990
+892 do_get_truck truck1 depot0 -> m6_do_get_truck 893
+896 do_clear crate1 depot0 -> m4_do_clear 897
+937 do_clear crate0 distributor0 -> m4_do_clear 938
+979 do_get_truck truck1 distributor0 -> m6_do_get_truck 980
+1054 do_clear pallet2 distributor1 -> m4_do_clear 1055
+<==
+0.071 End of solution plan.
+0.071 Total amount of clauses encoded: 5853
+0.071 - frameaxioms : 3599 cls
+0.071 - qfactsemantics : 994 cls
+0.071 - actionconstraints : 279 cls
+0.071 - actioneffects : 202 cls
+0.071 - expansions : 150 cls
+0.071 - atmostoneelement : 140 cls
+0.071 - predecessors : 138 cls
+0.071 - reductionconstraints : 118 cls
+0.071 - truefacts : 58 cls
+0.071 - atleastoneelement : 55 cls
+0.071 - substitutionconstraints : 46 cls
+0.071 - qconstequality : 23 cls
+0.071 - axiomaticops : 2 cls
+0.071 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.001 MEMPEAK_KBS 0

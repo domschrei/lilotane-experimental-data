@@ -1,0 +1,85 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version dbg-2020-10-21T11:59:28+02:00-glucose4
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020
+using SAT solver glucose4
+
+0.001 Sorts extracted.
+0.002 Mined 1 new reduction preconditions (+2.9%).
+0.002 22 operators and 14 methods created.
+0.002 Iteration 0.
+0.002 Creating initial layer of size 2
+0.003 Attempting to solve formula with 7 clauses (9 literals) and 1 assumptions
+0.003 Unsolvable at layer 0 -- expanding.
+0.003 Iteration 1.
+0.003 New layer size: 3
+0.003 Instantiating ...
+0.003 Collected 11 relevant facts at this layer
+0.003 Encoding ...
+0.003 Attempting to solve formula with 218 clauses (534 literals) and 2 assumptions
+0.003 Unsolvable at layer 1 -- expanding.
+0.003 Iteration 2.
+0.003 New layer size: 8
+0.003 Instantiating ...
+0.005 Collected 22 relevant facts at this layer
+0.005 Encoding ...
+0.005 Attempting to solve formula with 1148 clauses (3144 literals) and 5 assumptions
+0.005 Unsolvable at layer 2 -- expanding.
+0.005 Iteration 3.
+0.005 New layer size: 16
+0.005 Instantiating ...
+0.005 Retroactively prune action (board person1 plane1 Q_1,0_city:0_e41119bfeb10b537) due to impossible effect !(at person1 Q_1,0_city:0_e41119bfeb10b537)
+0.005 Retroactively prune reduction (m4_do_fly plane1 city1)@(2,2): no children at offset 0
+0.006 Collected 22 relevant facts at this layer
+0.006 Encoding ...
+0.007 Attempting to solve formula with 2107 clauses (6073 literals) and 4 assumptions
+c last restart ## conflicts  :  9 176 
+0.007 Found a solution at layer 3.
+==>
+338 nop
+340 refuel plane1 city0 fl2 fl3
+343 fly plane1 city0 city2 fl3 fl2
+360 board person1 plane1 city2
+365 nop
+385 nop
+394 fly plane1 city2 city1 fl2 fl1
+435 debark person1 plane1 city1
+440 nop
+452 nop
+481 fly plane1 city1 city2 fl1 fl0
+root 10 23
+10 do_carry_person person1 city1 -> m2_do_carry_person 90 131 187 250
+23 do_fly plane1 city2 -> m6_do_fly 451 481
+90 do_fly plane1 city2 -> m5_do_fly 337 340 343
+131 do_board plane1 person1 city2 -> m7_do_board 360 364
+187 do_fly plane1 city1 -> m6_do_fly 384 394
+250 do_debark plane1 person1 city1 -> m8_do_debark 435 439
+337 do_check_city plane1 city0 -> m11_do_check_city 338
+364 do_check_city plane1 city2 -> m11_do_check_city 365
+384 do_check_city plane1 city2 -> m11_do_check_city 385
+439 do_check_city plane1 city1 -> m11_do_check_city 440
+451 do_check_city plane1 city1 -> m11_do_check_city 452
+<==
+0.007 End of solution plan. (counted length of 12)
+0.007 Total amount of clauses encoded: 2107
+0.007 - reductionconstraints : 489 cls
+0.007 - directframeaxioms : 390 cls
+0.007 - qfactsemantics : 311 cls
+0.007 - substitutionconstraints : 272 cls
+0.007 - indirectframeaxioms : 225 cls
+0.007 - qconstequality : 112 cls
+0.007 - actionconstraints : 68 cls
+0.007 - predecessors : 60 cls
+0.007 - expansions : 53 cls
+0.007 - atmostoneelement : 50 cls
+0.007 - actioneffects : 46 cls
+0.007 - truefacts : 22 cls
+0.007 - forbiddenoperations : 7 cls
+0.007 - axiomaticops : 2 cls
+0.007 Exiting happily.
+RUNWATCH_RESULT EXIT TIME_SECS 0.027 MEMPEAK_KBS 5869.568

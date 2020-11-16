@@ -1,0 +1,56 @@
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 4077507
+max locked memory       (kbytes, -l) 65536
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 1024
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) unlimited
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 4077507
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+15728640
+----------------------Tasks-----------------------
+0 connectdevices pc printer data
+1 invisible_goal
+---------------------Planning---------------------
+Time: 0.002978801727294922s
+-----------------------Plan-----------------------
+==>
+3 connect_3 cablewithplugtype1_a printer_aplugtype1 plugtype1
+6 connect_3 cablewithplugtype1_b pc_bplugtype1 plugtype1
+7 disconnect cablewithplugtype1_b pc_bplugtype1
+11 connect_8 pc_bplugtype1 cablewithplugtype1_b plugtype1
+12 disconnect pc_bplugtype1 cablewithplugtype1_b
+14 disconnect cablewithplugtype1_a printer_aplugtype1
+18 connect_3 cablewithplugtype1_b printer_aplugtype1 plugtype1
+21 connect_8 pc_bplugtype1 cablewithplugtype1_a plugtype1
+22 guard
+26 ok
+root 0
+0 connectdevices pc printer data -> m1 1 2
+1 connect cablewithplugtype1_a printer_aplugtype1 -> c3 3
+2 connectdevices pc printer data -> m1 4 5
+4 connect cablewithplugtype1_b pc_bplugtype1 -> c3 6
+5 connectdevices pc printer data -> m2 7 8
+8 connectdevices pc printer data -> m1 9 10
+9 connect pc_bplugtype1 cablewithplugtype1_b -> c8 11
+10 connectdevices pc printer data -> m2 12 13
+13 connectdevices pc printer data -> m2 14 15
+15 connectdevices pc printer data -> m1 16 17
+16 connect cablewithplugtype1_b printer_aplugtype1 -> c3 18
+17 connectdevices pc printer data -> m1 19 20
+19 connect pc_bplugtype1 cablewithplugtype1_a -> c8 21
+20 connectdevices pc printer data -> m3 22 23
+23 validatedeviceconnection pc printer data -> vdc_to_vpc_1 24
+24 validateportconnection pc_bplugtype1 printer_aplugtype1 data -> vpc_to_vpc 25
+25 validateportconnection cablewithplugtype1_b printer_aplugtype1 data -> finish 26
+<==
+Total time: 0.02479243278503418s
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 1.509 MEMPEAK_KBS 0

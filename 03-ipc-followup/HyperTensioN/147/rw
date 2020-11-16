@@ -1,0 +1,93 @@
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 4077507
+max locked memory       (kbytes, -l) 65536
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 1024
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) unlimited
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 4077507
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+15728640
+----------------------Tasks-----------------------
+0 do_put_on crate3 pallet1
+1 do_put_on crate0 pallet3
+2 do_put_on crate4 pallet5
+3 do_put_on crate1 crate4
+4 do_put_on crate5 crate1
+5 invisible_goal
+---------------------Planning---------------------
+Time: 0.0025787353515625s
+-----------------------Plan-----------------------
+==>
+12 nop
+13 nop
+10 lift hoist2 crate3 crate2 distributor1
+11 load hoist2 crate3 truck0 distributor1
+6 drive truck0 distributor1 distributor0
+17 nop
+15 unload hoist1 crate3 truck0 distributor0
+16 drop hoist1 crate3 pallet1 distributor0
+26 nop
+23 lift hoist1 crate4 crate0 distributor0
+27 nop
+25 load hoist1 crate4 truck0 distributor0
+28 nop
+29 lift hoist1 crate0 pallet4 distributor0
+21 drop hoist1 crate0 pallet3 distributor0
+34 drive truck0 distributor0 distributor1
+39 nop
+36 lift hoist2 crate1 pallet5 distributor1
+40 nop
+38 load hoist2 crate1 truck0 distributor1
+32 unload hoist2 crate4 truck0 distributor1
+33 drop hoist2 crate4 pallet5 distributor1
+45 nop
+46 nop
+43 unload hoist2 crate1 truck0 distributor1
+44 drop hoist2 crate1 crate4 distributor1
+54 drive truck0 distributor1 depot0
+55 nop
+52 lift hoist0 crate5 pallet0 depot0
+53 load hoist0 crate5 truck0 depot0
+48 drive truck0 depot0 distributor1
+59 nop
+57 unload hoist2 crate5 truck0 distributor1
+58 drop hoist2 crate5 crate1 distributor1
+root 0 1 2 3 4
+0 do_put_on crate3 pallet1 -> m3_do_put_on 5 6 7
+5 do_load_truck crate3 crate2 distributor1 truck0 -> m10_do_load_truck 8 9 10 11
+8 do_get_truck truck0 distributor1 -> m6_do_get_truck 12
+9 do_clear crate3 distributor1 -> m4_do_clear 13
+7 do_unload_truck crate3 pallet1 distributor0 truck0 -> m11_do_unload_truck 14 15 16
+14 do_clear pallet1 distributor0 -> m4_do_clear 17
+1 do_put_on crate0 pallet3 -> m1_do_put_on 18 19 20 21
+18 do_clear crate0 distributor0 -> m5_do_clear 22 23 24 25
+22 do_clear crate4 distributor0 -> m4_do_clear 26
+24 do_get_truck truck0 distributor0 -> m6_do_get_truck 27
+19 do_clear pallet3 distributor0 -> m4_do_clear 28
+20 do_lift_crate crate0 distributor0 hoist1 -> m9_do_lift_crate 29
+2 do_put_on crate4 pallet5 -> m2_do_put_on 30 31 32 33
+30 do_get_truck truck0 distributor1 -> m7_do_get_truck 34
+31 do_clear pallet5 distributor1 -> m5_do_clear 35 36 37 38
+35 do_clear crate1 distributor1 -> m4_do_clear 39
+37 do_get_truck truck0 distributor1 -> m6_do_get_truck 40
+3 do_put_on crate1 crate4 -> m2_do_put_on 41 42 43 44
+41 do_get_truck truck0 distributor1 -> m6_do_get_truck 45
+42 do_clear crate4 distributor1 -> m4_do_clear 46
+4 do_put_on crate5 crate1 -> m3_do_put_on 47 48 49
+47 do_load_truck crate5 pallet0 depot0 truck0 -> m10_do_load_truck 50 51 52 53
+50 do_get_truck truck0 depot0 -> m7_do_get_truck 54
+51 do_clear crate5 depot0 -> m4_do_clear 55
+49 do_unload_truck crate5 crate1 distributor1 truck0 -> m11_do_unload_truck 56 57 58
+56 do_clear crate1 distributor1 -> m4_do_clear 59
+<==
+Total time: 0.014359235763549805s
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.175 MEMPEAK_KBS 0

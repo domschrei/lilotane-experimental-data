@@ -1,0 +1,123 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version dbg-2020-10-21T11:59:28+02:00-glucose4
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020
+using SAT solver glucose4
+
+0.002 Sorts extracted.
+0.002 Mined 1 new reduction preconditions (+2.9%).
+0.002 22 operators and 14 methods created.
+0.003 Iteration 0.
+0.003 Creating initial layer of size 2
+0.004 Attempting to solve formula with 17 clauses (24 literals) and 1 assumptions
+0.004 Unsolvable at layer 0 -- expanding.
+0.004 Iteration 1.
+0.004 New layer size: 8
+0.004 Instantiating ...
+0.007 Collected 63 relevant facts at this layer
+0.007 Encoding ...
+0.008 Attempting to solve formula with 1355 clauses (3696 literals) and 7 assumptions
+0.008 Unsolvable at layer 1 -- expanding.
+0.008 Iteration 2.
+0.008 New layer size: 28
+0.008 Instantiating ...
+0.019 Collected 84 relevant facts at this layer
+0.019 Encoding ...
+0.023 Attempting to solve formula with 10592 clauses (30602 literals) and 25 assumptions
+0.023 Unsolvable at layer 2 -- expanding.
+0.023 Iteration 3.
+0.023 New layer size: 71
+0.023 Instantiating ...
+0.045 Collected 84 relevant facts at this layer
+0.045 Encoding ...
+0.061 Attempting to solve formula with 42839 clauses (156859 literals) and 43 assumptions
+c last restart ## conflicts  :  54 1403 
+0.065 Found a solution at layer 3.
+==>
+3140 nop
+3152 fly plane3 city0 city1 fl3 fl2
+3284 board person1 plane3 city1
+3303 nop
+3436 nop
+3454 fly plane3 city1 city0 fl2 fl1
+3587 debark person1 plane3 city0
+3593 nop
+3610 nop
+4221 nop
+4241 fly plane1 city0 city2 fl6 fl5
+4426 board person3 plane1 city2
+4445 nop
+4630 nop
+4649 refuel plane1 city2 fl5 fl6
+4731 fly plane1 city2 city1 fl6 fl5
+4805 debark person3 plane1 city1
+4810 nop
+4832 nop
+5442 nop
+6049 nop
+6066 fly plane3 city0 city4 fl1 fl0
+6255 board person6 plane3 city4
+6273 nop
+6458 nop
+6476 refuel plane3 city4 fl0 fl1
+6558 fly plane3 city4 city2 fl1 fl0
+6632 debark person6 plane3 city2
+6637 nop
+6657 nop
+6714 fly plane1 city1 city3 fl5 fl4
+root 20 3609 166 4831 5441 402 480
+20 do_carry_person person1 city0 -> m2_do_carry_person 635 698 809 921
+166 do_carry_person person3 city1 -> m2_do_carry_person 1402 1450 1586 1719
+402 do_carry_person person6 city2 -> m2_do_carry_person 2630 2683 2815 2948
+480 do_fly plane1 city3 -> m6_do_fly 6656 6714
+635 do_fly plane3 city1 -> m6_do_fly 3139 3152
+698 do_board plane3 person1 city1 -> m7_do_board 3284 3302
+809 do_fly plane3 city0 -> m6_do_fly 3435 3454
+921 do_debark plane3 person1 city0 -> m8_do_debark 3587 3592
+1402 do_fly plane1 city2 -> m6_do_fly 4220 4241
+1450 do_board plane1 person3 city2 -> m7_do_board 4426 4444
+1586 do_fly plane1 city1 -> m5_do_fly 4629 4649 4731
+1719 do_debark plane1 person3 city1 -> m8_do_debark 4805 4809
+2630 do_fly plane3 city4 -> m6_do_fly 6048 6066
+2683 do_board plane3 person6 city4 -> m7_do_board 6255 6272
+2815 do_fly plane3 city2 -> m5_do_fly 6457 6476 6558
+2948 do_debark plane3 person6 city2 -> m8_do_debark 6632 6636
+3139 do_check_city plane3 city0 -> m11_do_check_city 3140
+3302 do_check_city plane3 city1 -> m11_do_check_city 3303
+3435 do_check_city plane3 city1 -> m11_do_check_city 3436
+3592 do_check_city plane3 city0 -> m11_do_check_city 3593
+3609 do_carry_person person2 city0 -> m0_do_carry_person 3610
+4220 do_check_city plane1 city0 -> m11_do_check_city 4221
+4444 do_check_city plane1 city2 -> m11_do_check_city 4445
+4629 do_check_city plane1 city2 -> m11_do_check_city 4630
+4809 do_check_city plane1 city1 -> m11_do_check_city 4810
+4831 do_carry_person person4 city0 -> m0_do_carry_person 4832
+5441 do_carry_person person5 city3 -> m0_do_carry_person 5442
+6048 do_check_city plane3 city0 -> m11_do_check_city 6049
+6272 do_check_city plane3 city4 -> m11_do_check_city 6273
+6457 do_check_city plane3 city4 -> m11_do_check_city 6458
+6636 do_check_city plane3 city2 -> m11_do_check_city 6637
+6656 do_check_city plane1 city1 -> m11_do_check_city 6657
+<==
+0.066 End of solution plan. (counted length of 32)
+0.066 Total amount of clauses encoded: 42839
+0.066 - directframeaxioms : 12888 cls
+0.066 - qfactsemantics : 10267 cls
+0.066 - indirectframeaxioms : 9553 cls
+0.066 - reductionconstraints : 3706 cls
+0.066 - substitutionconstraints : 2110 cls
+0.066 - actionconstraints : 1315 cls
+0.066 - atmostoneelement : 855 cls
+0.066 - qconstequality : 793 cls
+0.066 - expansions : 484 cls
+0.066 - predecessors : 436 cls
+0.066 - actioneffects : 346 cls
+0.066 - truefacts : 84 cls
+0.066 - axiomaticops : 2 cls
+0.066 Exiting happily.
+RUNWATCH_RESULT EXIT TIME_SECS 0.086 MEMPEAK_KBS 5738.496

@@ -1,0 +1,114 @@
+> Preprocessed problem (84 ms)
+Before elimination: 61 tasks
+After elimination: 61 tasks
+  61/105 tasks are reachable.
+Initial task network before elimination: 3 tasks
+Initial task network after elimination: 3 tasks
+  19/88 facts are reachable.
+> Created HtnProblemData instance (16 ms)
+> Encoded problem into SAT (44 ms)
+> Wrote formula to file (8 ms)
+> Executed SAT solver (38 ms)
+> Decoded result (3 ms)
+> Reported result (1 ms)
+Total execution time: 194ms. Exiting.
+Command: ['java', '-jar', 'htnsat_patched.jar', '-d', '../problems/Rover/domain.pddl', '-p', '../problems/Rover/p01.pddl', '-e', 't-rex', '-i', '"{-P,-b8192}"']
+Limiting to 300.00s of run time
+Limiting to 8000000.00KB of RSS memory
+Limiting to CPUs {0}
+[CHILD] Returned 0
+Command: ['java', '-jar', 'htnsat_patched.jar', '-d', '../problems/Rover/domain.pddl', '-p', '../problems/Rover/p01.pddl', '-e', 't-rex', '-i', '"{-P,-b8192}"']
+Limiting to 300.00s of run time
+Limiting to 8000000.00KB of RSS memory
+Limiting to CPUs {0}
+Child python process: PID 15118
+Watching PID 15119
+Using CPU 1 for watching
+RUNWATCH_RESULT EXIT TIME_SECS 0.702 MEMPEAK_KBS 63184.896
+> Preprocessed problem (84 ms)
+> Created HtnProblemData instance (16 ms)
+> Encoded problem into SAT (44 ms)
+> Wrote formula to file (8 ms)
+> Executed SAT solver (38 ms)
+> Decoded result (3 ms)
+> Reported result (1 ms)
+Total execution time: 194ms. Exiting.
+Command : ./interpreter_t-rex -P -b8192 -i f.cnf 
+[0.000] This is T-REX interpreter, prototype version 04/2018, patched 09/2020.
+[0.000] Reading problem encoding from file "f.cnf".
+[0.000] Parsed head comment information.
+[0.000] Processed problem encoding.
+[0.000] Calculated possible fact changes of composite elements.
+[0.000] Initialized instantiation procedure.
+Init
+  26 clauses, 127 variables
+Univ
+  0 clauses, 127 variables
+Goal
+  1 clauses, 127 variables
+Tran
+  0 clauses, 127 variables
+[0.000] 
+[0.000] *************************************
+[0.000] * * *   M a k e s p a n     0   * * *
+[0.000] *************************************
+[0.000] Instantiated 122 initial clauses.
+[0.000] The encoding contains a total of 76 distinct variables.
+[0.000] Attempting solve with solver <glucose4> ...
+c 4 assumptions
+[0.000] Executed solver; result: UNSAT.
+[0.000] 
+[0.000] *************************************
+[0.000] * * *   M a k e s p a n     1   * * *
+[0.000] *************************************
+[0.000] Computed next depth properties: array size of 13.
+[0.001] Instantiated 75 transitional clauses.
+[0.001] Instantiated 370 universal clauses.
+[0.001] Instantiated and added clauses for a total of 567 clauses.
+[0.001] The encoding contains a total of 259 distinct variables.
+[0.001] Attempting solve with solver <glucose4> ...
+c 13 assumptions
+[0.001] Executed solver; result: UNSAT.
+[0.001] 
+[0.001] *************************************
+[0.001] * * *   M a k e s p a n     2   * * *
+[0.001] *************************************
+[0.001] Computed next depth properties: array size of 23.
+[0.001] Instantiated 233 transitional clauses.
+[0.001] Instantiated 948 universal clauses.
+[0.001] Instantiated and added clauses for a total of 1,748 clauses.
+[0.001] The encoding contains a total of 526 distinct variables.
+[0.001] Attempting solve with solver <glucose4> ...
+c 23 assumptions
+c last restart ## conflicts  :  0 39 
+[0.001] Executed solver; result: SAT.
+[0.001] Solver returned SAT; a solution has been found at makespan 2.
+11
+solution 34 1
+5 14 6 18 19 17 23 24 34 28 31 
+[0.001] Total amount of clauses encoded: 1748
+[0.001] - actionconstraints : 135 cls
+[0.001] - actioneffects : 76 cls
+[0.001] - atmostoneelement : 444 cls
+[0.001] - expansions : 108 cls
+[0.001] - frameaxioms : 594 cls
+[0.001] - planlengthcounting : 0 cls
+[0.001] - predecessors : 159 cls
+[0.001] - reductionconstraints : 206 cls
+[0.001] - truefacts : 26 cls
+[0.001] Exiting.
+
+Compact plan:
+0: (visit waypoint1)
+1: (navigate rover0 waypoint1 waypoint0)
+2: (unvisit waypoint1)
+3: (sample_soil rover0 rover0store waypoint0)
+4: (communicate_soil_data1 rover0 general waypoint0 waypoint0 waypoint1)
+5: (drop rover0 rover0store)
+6: (sample_rock rover0 rover0store waypoint0)
+7: (communicate_rock_data1 rover0 general waypoint0 waypoint0 waypoint1)
+8: (calibrate rover0 camera0 objective0 waypoint0)
+9: (take_image rover0 waypoint0 objective1 camera0 low_res)
+10: (communicate_image_data rover0 general objective1 low_res waypoint0 waypoint1)
+
+

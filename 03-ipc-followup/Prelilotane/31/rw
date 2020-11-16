@@ -1,0 +1,103 @@
+0.000 
+0.000 Hello from  L i l o t a n e  version rls-2020-11-06T08:48:42+01:00-glucose4
+0.000 by Dominik Schreiber <dominik.schreiber@kit.edu> 2020
+0.000 using SAT solver glucose4
+0.000 
+0.003 24 methods, 12 abstract tasks, 33 primitive tasks
+0.004 Sorts extracted.
+0.071 Mined 2 new reduction preconditions (+4.3%).
+0.071 37 operators and 24 methods created.
+0.071 Iteration 0.
+0.071 Creating initial layer of size 2
+0.072 Attempting to solve formula with 45 clauses (45 literals) and 1 assumptions
+0.072 Unsolvable at layer 0 -- expanding.
+0.072 Iteration 1.
+0.072 New layer size: 2
+0.073 Attempting to solve formula with 53 clauses (58 literals) and 1 assumptions
+0.073 Unsolvable at layer 1 -- expanding.
+0.073 Iteration 2.
+0.073 New layer size: 5
+0.074 Attempting to solve formula with 317 clauses (712 literals) and 3 assumptions
+0.074 Unsolvable at layer 2 -- expanding.
+0.074 Iteration 3.
+0.074 New layer size: 13
+0.076 Attempting to solve formula with 1111 clauses (2834 literals) and 5 assumptions
+0.076 Unsolvable at layer 3 -- expanding.
+0.076 Iteration 4.
+0.076 New layer size: 23
+0.079 Attempting to solve formula with 2637 clauses (7057 literals) and 4 assumptions
+0.079 Unsolvable at layer 4 -- expanding.
+0.079 Iteration 5.
+0.079 New layer size: 33
+0.083 Attempting to solve formula with 4866 clauses (13347 literals) and 3 assumptions
+0.083 Unsolvable at layer 5 -- expanding.
+0.083 Iteration 6.
+0.083 New layer size: 40
+0.088 Attempting to solve formula with 7513 clauses (20906 literals) and 1 assumptions
+c last restart ## conflicts  :  29 340 
+0.089 Found a solution at layer 6.
+==>
+1099 grasp right shot1
+1108 fill-shot shot1 ingredient2 right left dispenser2
+1113 drop right shot1
+1116 grasp left shot1
+1119 pour-shot-to-clean-shaker shot1 ingredient2 shaker1 left level1 level1
+1171 clean-shot shot1 ingredient2 left right
+1323 fill-shot shot1 ingredient1 left right dispenser1
+1337 pour-shot-to-used-shaker shot1 ingredient1 shaker1 left level1 level1
+1340 drop left shot1
+1345 grasp left shaker1
+1350 shake cocktail1 ingredient2 ingredient1 shaker1 left right
+1377 drop left shaker1
+1380 grasp right shaker1
+1383 pour-shaker-to-shot cocktail1 shot2 right shaker1 level1 level1
+root 85
+85 AchieveContainsShotCocktail shot2 cocktail1 -> MakeAndPourCocktail 89 101 445 1382
+89 AchieveContainsShakerCocktail shaker1 cocktail1 -> MakeCocktail 212 214 228 284 321 1350
+101 AchieveCleanShot shot2 -> CleanShotNull
+212 AchieveCleanShaker shaker1 -> CleanShakerNull
+214 AchieveContainsShakerIngredient shaker1 ingredient2 -> AddIngredientToEmptyShaker 456 466 1119
+228 AchieveContainsShakerIngredient shaker1 ingredient1 -> AddIngredientToUsedShaker 514 537 1337
+284 AchieveHolding left shaker1 -> PickUp 1339 609 1345
+321 AchieveHandEmpty right -> HandEmptyNull
+445 AchieveHolding right shaker1 -> PickUp 704 1376 1380
+456 AchieveContainsShotIngredient shot1 ingredient2 -> AddIngredientToShot 753 756 760 1108
+466 AchieveHolding left shot1 -> PickUp 797 1112 1116
+514 AchieveContainsShotIngredient shot1 ingredient1 -> AddIngredientToShot 847 884 910 1323
+537 AchieveHolding left shot1 -> HoldingNull
+609 AchieveOnTable shaker1 -> OnTableNull
+704 AchieveHandEmpty right -> HandEmptyNull
+753 AchieveCleanShot shot1 -> CleanShotNull
+756 AchieveHolding right shot1 -> PickUp 1091 1096 1099
+760 AchieveHandEmpty left -> HandEmptyNull
+797 AchieveHandEmpty left -> HandEmptyNull
+847 AchieveCleanShot shot1 -> CleanEmptyShot 1127 1141 1171
+884 AchieveHolding left shot1 -> HoldingNull
+910 AchieveHandEmpty right -> HandEmptyNull
+1091 AchieveHandEmpty right -> HandEmptyNull
+1096 AchieveOnTable shot1 -> OnTableNull
+1112 AchieveOnTable shot1 -> PutDown 1113
+1127 AchieveHolding left shot1 -> HoldingNull
+1141 AchieveHandEmpty right -> HandEmptyNull
+1339 AchieveHandEmpty left -> EmptyHand 1340
+1376 AchieveOnTable shaker1 -> PutDown 1377
+1382 DoPourShakerToShot shaker1 shot2 cocktail1 -> pour_shaker_to_shot_action 1383
+<==
+0.090 End of solution plan.
+0.090 Total amount of clauses encoded: 7513
+0.090 - frameaxioms : 3957 cls
+0.090 - qfactsemantics : 1482 cls
+0.090 - actioneffects : 404 cls
+0.090 - actionconstraints : 374 cls
+0.090 - atmostoneelement : 290 cls
+0.090 - predecessors : 263 cls
+0.090 - expansions : 252 cls
+0.090 - reductionconstraints : 213 cls
+0.090 - atleastoneelement : 118 cls
+0.090 - truefacts : 50 cls
+0.090 - substitutionconstraints : 38 cls
+0.090 - qconstequality : 25 cls
+0.090 - axiomaticops : 2 cls
+0.090 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 1.162 MEMPEAK_KBS 0

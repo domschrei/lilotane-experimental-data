@@ -1,0 +1,145 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version dbg-2020-10-27T10:30:37+01:00-glucose4
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020
+using SAT solver glucose4
+
+0.002 Sorts extracted.
+0.002 Mined 1 new reduction preconditions (+2.7%).
+0.002 22 operators and 15 methods created.
+0.002 Iteration 0.
+0.002 Creating initial layer of size 2
+0.003 Attempting to solve formula with 11 clauses (15 literals) and 1 assumptions
+0.003 Unsolvable at layer 0 -- expanding.
+0.003 Iteration 1.
+0.003 New layer size: 5
+0.003 Instantiating ...
+0.005 Collected 27 relevant facts at this layer
+0.005 Encoding ...
+0.005 Attempting to solve formula with 398 clauses (1044 literals) and 4 assumptions
+0.005 Unsolvable at layer 1 -- expanding.
+0.005 Iteration 2.
+0.005 New layer size: 17
+0.005 Instantiating ...
+0.011 Collected 44 relevant facts at this layer
+0.011 Encoding ...
+0.012 Attempting to solve formula with 4397 clauses (12317 literals) and 16 assumptions
+0.012 Unsolvable at layer 2 -- expanding.
+0.012 Iteration 3.
+0.012 New layer size: 45
+0.012 Instantiating ...
+0.023 Collected 46 relevant facts at this layer
+0.023 Encoding ...
+0.030 Attempting to solve formula with 18023 clauses (63958 literals) and 28 assumptions
+c last restart ## conflicts  :  81 751 
+0.033 Found a solution at layer 3.
+0.034 Initial plan at final layer has length 36
+0.034 Tightened initial plan length bounds at layer 3: [0,44] => [7,36]
+0.034 Searching for a plan of length < 36
+0.034 Attempting to solve formula with 19403 clauses (68022 literals) and 0 assumptions
+c last restart ## conflicts  :  107 737 
+0.037 Shorter plan (length 35) found
+0.037 Searching for a plan of length < 35
+0.037 Attempting to solve formula with 19405 clauses (68024 literals) and 0 assumptions
+c last restart ## conflicts  :  63 747 
+0.039 Shorter plan (length 34) found
+0.039 Searching for a plan of length < 34
+0.039 Attempting to solve formula with 19407 clauses (68026 literals) and 0 assumptions
+==>
+1325 nop
+1340 refuel plane2 city2 fl0 fl1
+1384 fly plane2 city2 city3 fl1 fl0
+1437 board person1 plane2 city3
+1464 nop
+1560 nop
+1584 refuel plane2 city3 fl0 fl1
+1634 fly plane2 city3 city2 fl1 fl0
+1679 debark person1 plane2 city2
+1687 nop
+1709 nop
+1735 fly plane1 city1 city0 fl6 fl5
+1857 board person2 plane1 city0
+1880 nop
+2003 nop
+2027 fly plane1 city0 city3 fl5 fl4
+2132 debark person2 plane1 city3
+2138 nop
+2159 nop
+2188 fly plane1 city3 city0 fl4 fl3
+2308 board person3 plane1 city0
+2334 nop
+2454 nop
+2479 fly plane1 city0 city3 fl3 fl2
+2584 debark person3 plane1 city3
+2589 nop
+2611 nop
+2638 fly plane1 city3 city1 fl2 fl1
+2759 board person4 plane1 city1
+2783 nop
+2906 nop
+2930 fly plane1 city1 city3 fl1 fl0
+3035 debark person4 plane1 city3
+3041 nop
+root 13 45 87 128
+13 do_carry_person person1 city2 -> m2_do_carry_person 193 251 337 420
+45 do_carry_person person2 city3 -> m2_do_carry_person 464 513 607 699
+87 do_carry_person person3 city3 -> m2_do_carry_person 748 802 895 985
+128 do_carry_person person4 city3 -> m2_do_carry_person 1037 1085 1180 1271
+193 do_fly plane2 city3 -> m5_do_fly 1324 1340 1384
+251 do_board plane2 person1 city3 -> m7_do_board 1437 1463
+337 do_fly plane2 city2 -> m5_do_fly 1559 1584 1634
+420 do_debark plane2 person1 city2 -> m8_do_debark 1679 1686
+464 do_fly plane1 city0 -> m6_do_fly 1708 1735
+513 do_board plane1 person2 city0 -> m7_do_board 1857 1879
+607 do_fly plane1 city3 -> m6_do_fly 2002 2027
+699 do_debark plane1 person2 city3 -> m8_do_debark 2132 2137
+748 do_fly plane1 city0 -> m6_do_fly 2158 2188
+802 do_board plane1 person3 city0 -> m7_do_board 2308 2333
+895 do_fly plane1 city3 -> m6_do_fly 2453 2479
+985 do_debark plane1 person3 city3 -> m8_do_debark 2584 2588
+1037 do_fly plane1 city1 -> m6_do_fly 2610 2638
+1085 do_board plane1 person4 city1 -> m7_do_board 2759 2782
+1180 do_fly plane1 city3 -> m6_do_fly 2905 2930
+1271 do_debark plane1 person4 city3 -> m8_do_debark 3035 3040
+1324 do_check_city plane2 city2 -> m11_do_check_city 1325
+1463 do_check_city plane2 city3 -> m11_do_check_city 1464
+1559 do_check_city plane2 city3 -> m11_do_check_city 1560
+1686 do_check_city plane2 city2 -> m11_do_check_city 1687
+1708 do_check_city plane1 city1 -> m11_do_check_city 1709
+1879 do_check_city plane1 city0 -> m11_do_check_city 1880
+2002 do_check_city plane1 city0 -> m11_do_check_city 2003
+2137 do_check_city plane1 city3 -> m11_do_check_city 2138
+2158 do_check_city plane1 city3 -> m11_do_check_city 2159
+2333 do_check_city plane1 city0 -> m11_do_check_city 2334
+2453 do_check_city plane1 city0 -> m11_do_check_city 2454
+2588 do_check_city plane1 city3 -> m11_do_check_city 2589
+2610 do_check_city plane1 city3 -> m11_do_check_city 2611
+2782 do_check_city plane1 city1 -> m11_do_check_city 2783
+2905 do_check_city plane1 city1 -> m11_do_check_city 2906
+3040 do_check_city plane1 city3 -> m11_do_check_city 3041
+<==
+0.048 End of solution plan. (counted length of 35)
+0.048 Total amount of clauses encoded: 19407
+0.048 - qfactsemantics : 4302 cls
+0.048 - directframeaxioms : 4166 cls
+0.048 - indirectframeaxioms : 3515 cls
+0.048 - reductionconstraints : 1925 cls
+0.048 - planlengthcounting : 1356 cls
+0.048 - substitutionconstraints : 1179 cls
+0.048 - actionconstraints : 1079 cls
+0.048 - atmostoneelement : 532 cls
+0.048 - qconstequality : 490 cls
+0.048 - expansions : 298 cls
+0.048 - predecessors : 271 cls
+0.048 - actioneffects : 218 cls
+0.048 - truefacts : 46 cls
+0.048 - assumptions : 28 cls
+0.048 - axiomaticops : 2 cls
+0.048 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.065 MEMPEAK_KBS 3602.432

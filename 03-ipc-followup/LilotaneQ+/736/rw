@@ -1,0 +1,172 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version rls-2020-11-02T15:57:46+01:00-glucose4
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020
+using SAT solver glucose4
+
+0.016 Sorts extracted.
+0.017 Mined 34 new reduction preconditions (+109.7%).
+0.017 38 operators and 17 methods created.
+0.018 Iteration 0.
+0.018 Creating initial layer of size 2
+0.018 Attempting to solve formula with 17 clauses (24 literals) and 1 assumptions
+0.018 Unsolvable at layer 0 -- expanding.
+0.018 Iteration 1.
+0.018 New layer size: 8
+0.018 Instantiating ...
+0.020 Collected 7 relevant facts at this layer
+0.020 Encoding ...
+0.020 Attempting to solve formula with 114 clauses (253 literals) and 7 assumptions
+0.020 Unsolvable at layer 1 -- expanding.
+0.020 Iteration 2.
+0.020 New layer size: 29
+0.020 Instantiating ...
+0.023 Collected 36 relevant facts at this layer
+0.023 Encoding ...
+0.024 Attempting to solve formula with 1160 clauses (3103 literals) and 17 assumptions
+0.024 Unsolvable at layer 2 -- expanding.
+0.024 Iteration 3.
+0.024 New layer size: 53
+0.024 Instantiating ...
+0.037 Collected 40 relevant facts at this layer
+0.037 Encoding ...
+0.040 Attempting to solve formula with 3544 clauses (10422 literals) and 16 assumptions
+c last restart ## conflicts  :  14 232 
+0.040 Found a solution at layer 3.
+0.041 Initial plan at most shallow layer has length 46
+0.041 Iteration 4. (extra)
+0.041 New layer size: 91
+0.041 Instantiating ...
+0.053 Collected 40 relevant facts at this layer
+0.053 Encoding ...
+0.060 Attempting to solve formula with 8222 clauses (26630 literals) and 16 assumptions
+c last restart ## conflicts  :  0 508 
+0.061 Initial plan at final layer has length 48
+0.062 Tightened initial plan length bounds at layer 4: [0,90] => [36,46]
+0.062 Searching for a plan of length < 46
+0.062 Attempting to solve formula with 10093 clauses (32119 literals) and 0 assumptions
+c last restart ## conflicts  :  104 528 
+0.070 Shorter plan (length 44) found
+0.070 Searching for a plan of length < 44
+0.070 Attempting to solve formula with 10096 clauses (32122 literals) and 0 assumptions
+c last restart ## conflicts  :  186 451 
+0.075 Shorter plan (length 43) found
+0.075 Searching for a plan of length < 43
+0.075 Attempting to solve formula with 10098 clauses (32124 literals) and 0 assumptions
+c last restart ## conflicts  :  3 434 
+0.077 Shorter plan (length 42) found
+0.077 Searching for a plan of length < 42
+0.077 Attempting to solve formula with 10100 clauses (32126 literals) and 0 assumptions
+c last restart ## conflicts  :  1 457 
+0.078 Shorter plan (length 41) found
+0.078 Searching for a plan of length < 41
+0.078 Attempting to solve formula with 10102 clauses (32128 literals) and 0 assumptions
+c last restart ## conflicts  :  13 446 
+0.079 Shorter plan (length 40) found
+0.079 Searching for a plan of length < 40
+0.079 Attempting to solve formula with 10104 clauses (32130 literals) and 0 assumptions
+==>
+1110 visit waypoint0
+1112 navigate rover1 waypoint0 waypoint1
+1114 unvisit waypoint0
+1116 nop
+1118 sample_soil rover1 rover1store waypoint1
+1122 communicate_soil_data2 rover1 general waypoint1 waypoint3
+1163 visit waypoint1
+1169 navigate rover1 waypoint1 waypoint2
+1220 unvisit waypoint1
+1224 drop rover1 rover1store
+1226 sample_soil rover1 rover1store waypoint2
+1228 communicate_soil_data2 rover1 general waypoint2 waypoint3
+1274 nop
+1334 nop
+1336 sample_rock rover0 rover0store waypoint0
+1340 communicate_rock_data2 rover0 general waypoint0 waypoint3
+1383 visit waypoint0
+1389 navigate rover0 waypoint0 waypoint1
+1440 unvisit waypoint0
+1444 drop rover0 rover0store
+1446 sample_rock rover0 rover0store waypoint1
+1448 communicate_rock_data2 rover0 general waypoint1 waypoint3
+1493 nop
+1532 calibrate rover1 camera0 objective1 waypoint2
+1535 nop
+1596 take_image rover1 waypoint2 objective0 camera0 high_res
+1599 nop
+1637 communicate_image_data rover1 general objective0 high_res waypoint2 waypoint3
+1640 nop
+1679 calibrate rover1 camera0 objective1 waypoint2
+1682 nop
+1743 take_image rover1 waypoint2 objective2 camera0 high_res
+1746 nop
+1784 communicate_image_data rover1 general objective2 high_res waypoint2 waypoint3
+1788 nop
+1826 calibrate rover1 camera1 objective1 waypoint2
+1830 nop
+1890 take_image rover1 waypoint2 objective0 camera1 colour
+1892 nop
+1931 communicate_image_data rover1 general objective0 colour waypoint2 waypoint3
+root 19 25 32 39 46 58 69
+19 get_soil_data waypoint1 -> m7_get_soil_data 83 1115 1118 1121
+25 get_soil_data waypoint2 -> m7_get_soil_data 151 1223 1226 1227
+32 get_rock_data waypoint0 -> m10_get_rock_data 1273 1333 1336 1339
+39 get_rock_data waypoint1 -> m10_get_rock_data 275 1443 1446 1447
+46 get_image_data objective0 high_res -> m13_get_image_data 336 1534 1596 385
+58 get_image_data objective2 high_res -> m13_get_image_data 402 1681 1743 451
+69 get_image_data objective0 colour -> m13_get_image_data 468 1829 1890 517
+83 do_navigate1 rover1 waypoint1 -> m1_do_navigate1 1110 1111 1114
+151 do_navigate1 rover1 waypoint2 -> m1_do_navigate1 1163 1168 1220
+275 do_navigate1 rover0 waypoint1 -> m1_do_navigate1 1383 1388 1440
+336 do_calibrate rover1 camera0 -> m15_do_calibrate 1492 1532
+385 send_image_data rover1 objective0 high_res -> m14_send_image_data 1598 1637
+402 do_calibrate rover1 camera0 -> m15_do_calibrate 1639 1679
+451 send_image_data rover1 objective2 high_res -> m14_send_image_data 1745 1784
+468 do_calibrate rover1 camera1 -> m15_do_calibrate 1787 1826
+517 send_image_data rover1 objective0 colour -> m14_send_image_data 1891 1931
+1111 do_navigate2 rover1 waypoint0 waypoint1 -> m3_do_navigate2 1112
+1115 empty_store rover1store rover1 -> m5_empty_store 1116
+1121 send_soil_data rover1 waypoint1 -> m9_send_soil_data 1122
+1168 do_navigate2 rover1 waypoint1 waypoint2 -> m3_do_navigate2 1169
+1223 empty_store rover1store rover1 -> m6_empty_store 1224
+1227 send_soil_data rover1 waypoint2 -> m9_send_soil_data 1228
+1273 do_navigate1 rover0 waypoint0 -> m0_do_navigate1 1274
+1333 empty_store rover0store rover0 -> m5_empty_store 1334
+1339 send_rock_data rover0 waypoint0 -> m12_send_rock_data 1340
+1388 do_navigate2 rover0 waypoint0 waypoint1 -> m3_do_navigate2 1389
+1443 empty_store rover0store rover0 -> m6_empty_store 1444
+1447 send_rock_data rover0 waypoint1 -> m12_send_rock_data 1448
+1492 do_navigate1 rover1 waypoint2 -> m0_do_navigate1 1493
+1534 do_navigate1 rover1 waypoint2 -> m0_do_navigate1 1535
+1598 do_navigate1 rover1 waypoint2 -> m0_do_navigate1 1599
+1639 do_navigate1 rover1 waypoint2 -> m0_do_navigate1 1640
+1681 do_navigate1 rover1 waypoint2 -> m0_do_navigate1 1682
+1745 do_navigate1 rover1 waypoint2 -> m0_do_navigate1 1746
+1787 do_navigate1 rover1 waypoint2 -> m0_do_navigate1 1788
+1829 do_navigate1 rover1 waypoint2 -> m0_do_navigate1 1830
+1891 do_navigate1 rover1 waypoint2 -> m0_do_navigate1 1892
+<==
+0.080 End of solution plan. (counted length of 40)
+0.080 Total amount of clauses encoded: 10104
+0.080 - directframeaxioms : 2090 cls
+0.080 - planlengthcounting : 1866 cls
+0.080 - qfactsemantics : 1407 cls
+0.080 - substitutionconstraints : 1378 cls
+0.080 - indirectframeaxioms : 1096 cls
+0.080 - reductionconstraints : 568 cls
+0.080 - predecessors : 366 cls
+0.080 - expansions : 343 cls
+0.080 - atmostoneelement : 277 cls
+0.080 - qconstequality : 256 cls
+0.080 - actionconstraints : 253 cls
+0.080 - actioneffects : 146 cls
+0.080 - truefacts : 40 cls
+0.080 - assumptions : 16 cls
+0.080 - axiomaticops : 2 cls
+0.080 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 1.119 MEMPEAK_KBS 0

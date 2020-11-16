@@ -1,0 +1,82 @@
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 4077507
+max locked memory       (kbytes, -l) 65536
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 1024
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) unlimited
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 4077507
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+15728640
+----------------------Tasks-----------------------
+0 achieve_goals arm1
+1 invisible_goal
+---------------------Planning---------------------
+Time: 0.0003647804260253906s
+-----------------------Plan-----------------------
+==>
+1 mark_done b2
+5 unstack b5 b1 arm1
+8 putdown b5 arm1
+11 unstack b1 b3 arm1
+14 putdown b1 arm1
+17 unstack b3 b4 arm1
+20 putdown b3 arm1
+23 unstack b4 b2 arm1
+24 delete_goal_on_table b4
+25 mark_done b4
+28 putdown b4 arm1
+31 pickup b1 arm1
+32 delete_goal_on b1 b4
+33 mark_done b1
+36 stack b1 b4 arm1
+39 pickup b3 arm1
+40 delete_goal_on b3 b2
+41 mark_done b3
+44 stack b3 b2 arm1
+47 pickup b5 arm1
+48 delete_goal_on b5 b3
+49 mark_done b5
+52 stack b5 b3 arm1
+root 0
+0 achieve_goals arm1 -> mark_done_table 1 2
+2 achieve_goals arm1 -> unstack_block 3 4
+3 acquire_abstract b5 arm1 -> newmethod16 5
+4 release arm1 -> release_table 6 7
+6 putdown_abstract b5 -> newmethod14 8
+7 achieve_goals arm1 -> unstack_block 9 10
+9 acquire_abstract b1 arm1 -> newmethod16 11
+10 release arm1 -> release_table 12 13
+12 putdown_abstract b1 -> newmethod14 14
+13 achieve_goals arm1 -> unstack_block 15 16
+15 acquire_abstract b3 arm1 -> newmethod16 17
+16 release arm1 -> release_table 18 19
+18 putdown_abstract b3 -> newmethod14 20
+19 achieve_goals arm1 -> unstack_block 21 22
+21 acquire_abstract b4 arm1 -> newmethod16 23
+22 release arm1 -> release_table_done 24 25 26 27
+26 putdown_abstract b4 -> newmethod14 28
+27 achieve_goals arm1 -> pickup_ready_block 29 30
+29 acquire_abstract b1 arm1 -> newmethod13 31
+30 release arm1 -> release_stack 32 33 34 35
+34 stack_abstract b1 b4 -> newmethod15 36
+35 achieve_goals arm1 -> pickup_ready_block 37 38
+37 acquire_abstract b3 arm1 -> newmethod13 39
+38 release arm1 -> release_stack 40 41 42 43
+42 stack_abstract b3 b2 -> newmethod15 44
+43 achieve_goals arm1 -> pickup_ready_block 45 46
+45 acquire_abstract b5 arm1 -> newmethod13 47
+46 release arm1 -> release_stack 48 49 50 51
+50 stack_abstract b5 b3 -> newmethod15 52
+51 achieve_goals arm1 -> set_done 
+<==
+Total time: 0.006256103515625s
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.182 MEMPEAK_KBS 0

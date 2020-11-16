@@ -1,0 +1,113 @@
+0.000 
+0.000 Hello from  L i l o t a n e  version rls-2020-11-06T08:48:42+01:00-glucose4
+0.000 by Dominik Schreiber <dominik.schreiber@kit.edu> 2020
+0.000 using SAT solver glucose4
+0.000 
+0.002 15 methods, 9 abstract tasks, 17 primitive tasks
+0.002 Sorts extracted.
+0.015 Mined 11 new reduction preconditions (+44.0%).
+0.015 23 operators and 15 methods created.
+0.015 Iteration 0.
+0.015 Creating initial layer of size 2
+0.016 Attempting to solve formula with 178 clauses (183 literals) and 1 assumptions
+0.016 Unsolvable at layer 0 -- expanding.
+0.016 Iteration 1.
+0.016 New layer size: 6
+0.021 Attempting to solve formula with 425 clauses (813 literals) and 5 assumptions
+0.021 Unsolvable at layer 1 -- expanding.
+0.021 Iteration 2.
+0.021 New layer size: 21
+0.029 Attempting to solve formula with 9038 clauses (24131 literals) and 11 assumptions
+0.029 Unsolvable at layer 2 -- expanding.
+0.029 Iteration 3.
+0.029 New layer size: 37
+0.038 Attempting to solve formula with 20148 clauses (54429 literals) and 13 assumptions
+0.038 Unsolvable at layer 3 -- expanding.
+0.038 Iteration 4.
+0.038 New layer size: 58
+0.039 Forbidding action (__SURROGATE*m4_do_clear*nop* pallet1 distributor1)@(3,1): no children at offset 0
+0.039 Forbidding action (Drop Q_1,0_0:3_hoist crate3 pallet1 distributor1)@(3,5): no children at offset 0
+0.049 Attempting to solve formula with 34363 clauses (93094 literals) and 11 assumptions
+c last restart ## conflicts  :  20 630 
+0.050 Found a solution at layer 4.
+==>
+4659 nop
+4664 nop
+4670 Lift hoist2 crate3 crate2 distributor1
+4674 Load hoist2 crate3 truck0 distributor1
+4686 Drive truck0 distributor1 distributor0
+4689 nop
+4698 Unload hoist1 crate3 truck0 distributor0
+4703 Drop hoist1 crate3 pallet1 distributor0
+4712 nop
+5141 Lift hoist1 crate4 crate0 distributor0
+5151 nop
+5158 Load hoist1 crate4 truck0 distributor0
+5163 nop
+5171 Lift hoist1 crate0 pallet4 distributor0
+5187 Drop hoist1 crate0 pallet3 distributor0
+5193 Drive truck0 distributor0 distributor1
+5240 nop
+5539 Lift hoist2 crate1 pallet5 distributor1
+5549 nop
+5562 Load hoist2 crate1 truck0 distributor1
+5570 Unload hoist2 crate4 truck0 distributor1
+5856 Drop hoist2 crate4 pallet5 distributor1
+5863 nop
+5906 nop
+5913 Unload hoist2 crate1 truck0 distributor1
+5931 Drop hoist2 crate1 crate4 distributor1
+5937 nop
+5941 nop
+5952 Lift hoist0 crate5 pallet0 depot0
+5958 Load hoist0 crate5 truck1 depot0
+5981 Drive truck1 depot0 distributor1
+5988 nop
+5996 Unload hoist2 crate5 truck1 distributor1
+6002 Drop hoist2 crate5 crate1 distributor1
+root 341 350 546 739 934
+341 do_put_on crate3 pallet1 -> m3_do_put_on 3445 4686 1317
+350 do_put_on crate0 pallet3 -> m1_do_put_on 1523 5162 5170 5187
+546 do_put_on crate4 pallet5 -> m2_do_put_on 1962 1988 5570 5856
+739 do_put_on crate1 crate4 -> m2_do_put_on 5862 5905 5913 5931
+934 do_put_on crate5 crate1 -> m3_do_put_on 4550 5981 3210
+1317 do_unload_truck crate3 pallet1 distributor0 truck0 -> m11_do_unload_truck 4688 4698 4703
+1523 do_clear crate0 distributor0 -> m5_do_clear 4711 5141 5150 5158
+1962 do_get_truck truck0 distributor1 -> m7_do_get_truck 5193
+1988 do_clear pallet5 distributor1 -> m5_do_clear 5239 5539 5548 5562
+3210 do_unload_truck crate5 crate1 distributor1 truck1 -> m11_do_unload_truck 5987 5996 6002
+3445 do_load_truck crate3 crate2 distributor1 truck0 -> m10_do_load_truck 4658 4663 4670 4674
+4550 do_load_truck crate5 pallet0 depot0 truck1 -> m10_do_load_truck 5936 5940 5952 5958
+4658 do_get_truck truck0 distributor1 -> m6_do_get_truck 4659
+4663 do_clear crate3 distributor1 -> m4_do_clear 4664
+4688 do_clear pallet1 distributor0 -> m4_do_clear 4689
+4711 do_clear crate4 distributor0 -> m4_do_clear 4712
+5150 do_get_truck truck0 distributor0 -> m6_do_get_truck 5151
+5162 do_clear pallet3 distributor0 -> m4_do_clear 5163
+5170 do_lift_crate crate0 distributor0 hoist1 -> m9_do_lift_crate 5171
+5239 do_clear crate1 distributor1 -> m4_do_clear 5240
+5548 do_get_truck truck0 distributor1 -> m6_do_get_truck 5549
+5862 do_get_truck truck0 distributor1 -> m6_do_get_truck 5863
+5905 do_clear crate4 distributor1 -> m4_do_clear 5906
+5936 do_get_truck truck1 depot0 -> m6_do_get_truck 5937
+5940 do_clear crate5 depot0 -> m4_do_clear 5941
+5987 do_clear crate1 distributor1 -> m4_do_clear 5988
+<==
+0.051 End of solution plan.
+0.051 Total amount of clauses encoded: 34363
+0.051 - frameaxioms : 23932 cls
+0.051 - qfactsemantics : 5382 cls
+0.051 - actionconstraints : 1090 cls
+0.051 - reductionconstraints : 842 cls
+0.051 - actioneffects : 599 cls
+0.051 - substitutionconstraints : 557 cls
+0.051 - atmostoneelement : 536 cls
+0.051 - expansions : 420 cls
+0.051 - predecessors : 386 cls
+0.051 - truefacts : 168 cls
+0.051 - qconstequality : 158 cls
+0.051 - atleastoneelement : 124 cls
+0.051 - axiomaticops : 2 cls
+0.051 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.233 MEMPEAK_KBS 0

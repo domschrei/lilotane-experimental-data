@@ -1,0 +1,135 @@
+> Preprocessed problem (97 ms)
+Before elimination: 65 tasks
+After elimination: 65 tasks
+  65/115 tasks are reachable.
+Initial task network before elimination: 3 tasks
+Initial task network after elimination: 3 tasks
+  23/100 facts are reachable.
+> Created HtnProblemData instance (25 ms)
+> Encoded problem into SAT (32 ms)
+> Wrote formula to file (9 ms)
+> Executed SAT solver (24 ms)
+> Decoded result (2 ms)
+> Reported result (0 ms)
+Total execution time: 189ms. Exiting.
+Command: ['java', '-jar', 'htnsat_patched.jar', '-d', '../problems/Rover/domain.pddl', '-p', '../problems/Rover/p02.pddl', '-e', 't-rex', '-i', '"{-P,-b8192}"']
+Limiting to 300.00s of run time
+Limiting to 8000000.00KB of RSS memory
+Limiting to CPUs {0}
+[CHILD] Returned 0
+Command: ['java', '-jar', 'htnsat_patched.jar', '-d', '../problems/Rover/domain.pddl', '-p', '../problems/Rover/p02.pddl', '-e', 't-rex', '-i', '"{-P,-b8192}"']
+Limiting to 300.00s of run time
+Limiting to 8000000.00KB of RSS memory
+Limiting to CPUs {0}
+Child python process: PID 15169
+Watching PID 15170
+Using CPU 1 for watching
+RUNWATCH_RESULT EXIT TIME_SECS 0.631 MEMPEAK_KBS 60346.368
+> Preprocessed problem (97 ms)
+> Created HtnProblemData instance (25 ms)
+> Encoded problem into SAT (32 ms)
+> Wrote formula to file (9 ms)
+> Executed SAT solver (24 ms)
+> Decoded result (2 ms)
+> Reported result (0 ms)
+Total execution time: 189ms. Exiting.
+Command : ./interpreter_t-rex -P -b8192 -i f.cnf 
+[0.000] This is T-REX interpreter, prototype version 04/2018, patched 09/2020.
+[0.000] Reading problem encoding from file "f.cnf".
+[0.000] Parsed head comment information.
+[0.000] Processed problem encoding.
+[0.000] Calculated possible fact changes of composite elements.
+[0.000] Initialized instantiation procedure.
+Init
+  30 clauses, 141 variables
+Univ
+  0 clauses, 141 variables
+Goal
+  1 clauses, 141 variables
+Tran
+  0 clauses, 141 variables
+[0.000] 
+[0.000] *************************************
+[0.000] * * *   M a k e s p a n     0   * * *
+[0.000] *************************************
+[0.000] Instantiated 135 initial clauses.
+[0.000] The encoding contains a total of 85 distinct variables.
+[0.000] Attempting solve with solver <glucose4> ...
+c 4 assumptions
+[0.000] Executed solver; result: UNSAT.
+[0.000] 
+[0.000] *************************************
+[0.000] * * *   M a k e s p a n     1   * * *
+[0.000] *************************************
+[0.000] Computed next depth properties: array size of 13.
+[0.001] Instantiated 88 transitional clauses.
+[0.001] Instantiated 400 universal clauses.
+[0.001] Instantiated and added clauses for a total of 623 clauses.
+[0.001] The encoding contains a total of 276 distinct variables.
+[0.001] Attempting solve with solver <glucose4> ...
+c 13 assumptions
+[0.001] Executed solver; result: UNSAT.
+[0.001] 
+[0.001] *************************************
+[0.001] * * *   M a k e s p a n     2   * * *
+[0.001] *************************************
+[0.001] Computed next depth properties: array size of 23.
+[0.001] Instantiated 277 transitional clauses.
+[0.001] Instantiated 997 universal clauses.
+[0.001] Instantiated and added clauses for a total of 1,897 clauses.
+[0.001] The encoding contains a total of 561 distinct variables.
+[0.001] Attempting solve with solver <glucose4> ...
+c 23 assumptions
+[0.001] Executed solver; result: UNSAT.
+[0.001] 
+[0.001] *************************************
+[0.001] * * *   M a k e s p a n     3   * * *
+[0.001] *************************************
+[0.001] Computed next depth properties: array size of 40.
+[0.001] Instantiated 536 transitional clauses.
+[0.002] Instantiated 1,633 universal clauses.
+[0.002] Instantiated and added clauses for a total of 4,066 clauses.
+[0.002] The encoding contains a total of 963 distinct variables.
+[0.002] Attempting solve with solver <glucose4> ...
+c 40 assumptions
+c last restart ## conflicts  :  1 77 
+[0.002] Executed solver; result: SAT.
+[0.002] Solver returned SAT; a solution has been found at makespan 3.
+20
+solution 38 1
+9 16 5 12 6 10 18 7 14 8 19 5 13 6 17 23 26 38 31 34 
+[0.002] Total amount of clauses encoded: 4066
+[0.002] - actionconstraints : 325 cls
+[0.002] - actioneffects : 213 cls
+[0.002] - atmostoneelement : 1158 cls
+[0.002] - expansions : 423 cls
+[0.002] - frameaxioms : 1120 cls
+[0.002] - planlengthcounting : 0 cls
+[0.002] - predecessors : 356 cls
+[0.002] - reductionconstraints : 441 cls
+[0.002] - truefacts : 30 cls
+[0.002] Exiting.
+
+Compact plan:
+0: (visit waypoint3)
+1: (navigate rover0 waypoint3 waypoint1)
+2: (visit waypoint1)
+3: (navigate rover0 waypoint1 waypoint2)
+4: (unvisit waypoint1)
+5: (unvisit waypoint3)
+6: (sample_soil rover0 rover0store waypoint2)
+7: (visit waypoint2)
+8: (navigate rover0 waypoint2 waypoint1)
+9: (unvisit waypoint2)
+10: (communicate_soil_data1 rover0 general waypoint2 waypoint1 waypoint0)
+11: (visit waypoint1)
+12: (navigate rover0 waypoint1 waypoint3)
+13: (unvisit waypoint1)
+14: (drop rover0 rover0store)
+15: (sample_rock rover0 rover0store waypoint3)
+16: (communicate_rock_data1 rover0 general waypoint3 waypoint3 waypoint0)
+17: (calibrate rover0 camera0 objective1 waypoint3)
+18: (take_image rover0 waypoint3 objective1 camera0 high_res)
+19: (communicate_image_data rover0 general objective1 high_res waypoint3 waypoint0)
+
+

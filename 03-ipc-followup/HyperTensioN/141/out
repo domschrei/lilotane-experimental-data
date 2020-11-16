@@ -1,0 +1,37 @@
+----------------------Tasks-----------------------
+0 do_put_on crate1 pallet1
+1 do_put_on crate0 pallet2
+2 invisible_goal
+---------------------Planning---------------------
+Time: 0.000701904296875s
+-----------------------Plan-----------------------
+==>
+9 drive truck0 distributor1 depot0
+10 nop
+7 lift hoist0 crate1 pallet0 depot0
+8 load hoist0 crate1 truck0 depot0
+3 drive truck0 depot0 distributor0
+18 nop
+15 lift hoist1 crate0 pallet1 distributor0
+19 nop
+17 load hoist1 crate0 truck0 distributor0
+12 unload hoist1 crate1 truck0 distributor0
+13 drop hoist1 crate1 pallet1 distributor0
+24 drive truck0 distributor0 distributor1
+25 nop
+22 unload hoist2 crate0 truck0 distributor1
+23 drop hoist2 crate0 pallet2 distributor1
+root 0 1
+0 do_put_on crate1 pallet1 -> m3_do_put_on 2 3 4
+2 do_load_truck crate1 pallet0 depot0 truck0 -> m10_do_load_truck 5 6 7 8
+5 do_get_truck truck0 depot0 -> m7_do_get_truck 9
+6 do_clear crate1 depot0 -> m4_do_clear 10
+4 do_unload_truck crate1 pallet1 distributor0 truck0 -> m11_do_unload_truck 11 12 13
+11 do_clear pallet1 distributor0 -> m5_do_clear 14 15 16 17
+14 do_clear crate0 distributor0 -> m4_do_clear 18
+16 do_get_truck truck0 distributor0 -> m6_do_get_truck 19
+1 do_put_on crate0 pallet2 -> m2_do_put_on 20 21 22 23
+20 do_get_truck truck0 distributor1 -> m7_do_get_truck 24
+21 do_clear pallet2 distributor1 -> m4_do_clear 25
+<==
+Total time: 0.02475142478942871s

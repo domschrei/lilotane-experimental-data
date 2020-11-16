@@ -1,0 +1,201 @@
+----------------------Tasks-----------------------
+0 do_put_on crate2 pallet0
+1 do_put_on crate3 pallet1
+2 do_put_on crate7 pallet4
+3 do_put_on crate4 crate7
+4 do_put_on crate9 crate4
+5 do_put_on crate11 crate9
+6 do_put_on crate10 crate11
+7 do_put_on crate1 crate10
+8 do_put_on crate5 pallet5
+9 do_put_on crate12 crate5
+10 do_put_on crate6 pallet6
+11 do_put_on crate8 pallet7
+12 do_put_on crate0 crate8
+13 do_put_on crate13 pallet8
+14 do_put_on crate14 pallet9
+15 invisible_goal
+---------------------Planning---------------------
+Time: 0.0298612117767334s
+-----------------------Plan-----------------------
+==>
+22 drive truck0 distributor1 depot2
+31 nop
+28 lift hoist2 crate13 crate3 depot2
+32 nop
+30 load hoist2 crate13 truck0 depot2
+24 lift hoist2 crate3 crate2 depot2
+33 nop
+26 load hoist2 crate3 truck0 depot2
+20 lift hoist2 crate2 pallet8 depot2
+21 load hoist2 crate2 truck0 depot2
+16 drive truck0 depot2 depot0
+37 nop
+35 unload hoist0 crate2 truck0 depot0
+36 drop hoist0 crate2 pallet0 depot0
+42 drive truck0 depot0 depot1
+51 nop
+48 lift hoist1 crate7 crate6 depot1
+52 nop
+50 load hoist1 crate7 truck0 depot1
+44 lift hoist1 crate6 pallet1 depot1
+53 nop
+46 load hoist1 crate6 truck0 depot1
+40 unload hoist1 crate3 truck0 depot1
+41 drop hoist1 crate3 pallet1 depot1
+58 drive truck0 depot1 distributor1
+71 nop
+68 lift hoist4 crate12 crate10 distributor1
+72 nop
+70 load hoist4 crate12 truck0 distributor1
+64 lift hoist4 crate10 crate1 distributor1
+73 nop
+66 load hoist4 crate10 truck0 distributor1
+60 lift hoist4 crate1 pallet4 distributor1
+74 nop
+62 load hoist4 crate1 truck0 distributor1
+56 unload hoist4 crate7 truck0 distributor1
+57 drop hoist4 crate7 pallet4 distributor1
+82 drive truck0 distributor1 depot1
+83 nop
+80 lift hoist1 crate4 pallet6 depot1
+81 load hoist1 crate4 truck0 depot1
+76 drive truck0 depot1 distributor1
+87 nop
+85 unload hoist4 crate4 truck0 distributor1
+86 drop hoist4 crate4 crate7 distributor1
+95 drive truck0 distributor1 distributor0
+96 nop
+93 lift hoist3 crate9 pallet7 distributor0
+94 load hoist3 crate9 truck0 distributor0
+89 drive truck0 distributor0 distributor1
+100 nop
+98 unload hoist4 crate9 truck0 distributor1
+99 drop hoist4 crate9 crate4 distributor1
+108 drive truck0 distributor1 distributor2
+109 nop
+106 lift hoist5 crate11 crate5 distributor2
+107 load hoist5 crate11 truck0 distributor2
+102 drive truck0 distributor2 distributor1
+113 nop
+111 unload hoist4 crate11 truck0 distributor1
+112 drop hoist4 crate11 crate9 distributor1
+118 nop
+119 nop
+116 unload hoist4 crate10 truck0 distributor1
+117 drop hoist4 crate10 crate11 distributor1
+124 nop
+125 nop
+122 unload hoist4 crate1 truck0 distributor1
+123 drop hoist4 crate1 crate10 distributor1
+130 nop
+139 nop
+136 lift hoist5 crate5 crate0 distributor2
+140 drive truck0 distributor1 distributor2
+138 load hoist5 crate5 truck0 distributor2
+132 lift hoist5 crate0 pallet5 distributor2
+141 nop
+134 load hoist5 crate0 truck0 distributor2
+144 nop
+143 unload hoist5 crate5 truck0 distributor2
+129 drop hoist5 crate5 pallet5 distributor2
+149 nop
+150 nop
+147 unload hoist5 crate12 truck0 distributor2
+148 drop hoist5 crate12 crate5 distributor2
+155 drive truck0 distributor2 depot1
+156 nop
+153 unload hoist1 crate6 truck0 depot1
+154 drop hoist1 crate6 pallet6 depot1
+161 nop
+162 nop
+163 lift hoist3 crate8 pallet3 distributor0
+160 drop hoist3 crate8 pallet7 distributor0
+168 drive truck0 depot1 distributor0
+169 nop
+166 unload hoist3 crate0 truck0 distributor0
+167 drop hoist3 crate0 crate8 distributor0
+174 drive truck0 distributor0 depot2
+175 nop
+172 unload hoist2 crate13 truck0 depot2
+173 drop hoist2 crate13 pallet8 depot2
+176 nop
+root 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+0 do_put_on crate2 pallet0 -> m3_do_put_on 15 16 17
+15 do_load_truck crate2 pallet8 depot2 truck0 -> m10_do_load_truck 18 19 20 21
+18 do_get_truck truck0 depot2 -> m7_do_get_truck 22
+19 do_clear crate2 depot2 -> m5_do_clear 23 24 25 26
+23 do_clear crate3 depot2 -> m5_do_clear 27 28 29 30
+27 do_clear crate13 depot2 -> m4_do_clear 31
+29 do_get_truck truck0 depot2 -> m6_do_get_truck 32
+25 do_get_truck truck0 depot2 -> m6_do_get_truck 33
+17 do_unload_truck crate2 pallet0 depot0 truck0 -> m11_do_unload_truck 34 35 36
+34 do_clear pallet0 depot0 -> m4_do_clear 37
+1 do_put_on crate3 pallet1 -> m2_do_put_on 38 39 40 41
+38 do_get_truck truck0 depot1 -> m7_do_get_truck 42
+39 do_clear pallet1 depot1 -> m5_do_clear 43 44 45 46
+43 do_clear crate6 depot1 -> m5_do_clear 47 48 49 50
+47 do_clear crate7 depot1 -> m4_do_clear 51
+49 do_get_truck truck0 depot1 -> m6_do_get_truck 52
+45 do_get_truck truck0 depot1 -> m6_do_get_truck 53
+2 do_put_on crate7 pallet4 -> m2_do_put_on 54 55 56 57
+54 do_get_truck truck0 distributor1 -> m7_do_get_truck 58
+55 do_clear pallet4 distributor1 -> m5_do_clear 59 60 61 62
+59 do_clear crate1 distributor1 -> m5_do_clear 63 64 65 66
+63 do_clear crate10 distributor1 -> m5_do_clear 67 68 69 70
+67 do_clear crate12 distributor1 -> m4_do_clear 71
+69 do_get_truck truck0 distributor1 -> m6_do_get_truck 72
+65 do_get_truck truck0 distributor1 -> m6_do_get_truck 73
+61 do_get_truck truck0 distributor1 -> m6_do_get_truck 74
+3 do_put_on crate4 crate7 -> m3_do_put_on 75 76 77
+75 do_load_truck crate4 pallet6 depot1 truck0 -> m10_do_load_truck 78 79 80 81
+78 do_get_truck truck0 depot1 -> m7_do_get_truck 82
+79 do_clear crate4 depot1 -> m4_do_clear 83
+77 do_unload_truck crate4 crate7 distributor1 truck0 -> m11_do_unload_truck 84 85 86
+84 do_clear crate7 distributor1 -> m4_do_clear 87
+4 do_put_on crate9 crate4 -> m3_do_put_on 88 89 90
+88 do_load_truck crate9 pallet7 distributor0 truck0 -> m10_do_load_truck 91 92 93 94
+91 do_get_truck truck0 distributor0 -> m7_do_get_truck 95
+92 do_clear crate9 distributor0 -> m4_do_clear 96
+90 do_unload_truck crate9 crate4 distributor1 truck0 -> m11_do_unload_truck 97 98 99
+97 do_clear crate4 distributor1 -> m4_do_clear 100
+5 do_put_on crate11 crate9 -> m3_do_put_on 101 102 103
+101 do_load_truck crate11 crate5 distributor2 truck0 -> m10_do_load_truck 104 105 106 107
+104 do_get_truck truck0 distributor2 -> m7_do_get_truck 108
+105 do_clear crate11 distributor2 -> m4_do_clear 109
+103 do_unload_truck crate11 crate9 distributor1 truck0 -> m11_do_unload_truck 110 111 112
+110 do_clear crate9 distributor1 -> m4_do_clear 113
+6 do_put_on crate10 crate11 -> m2_do_put_on 114 115 116 117
+114 do_get_truck truck0 distributor1 -> m6_do_get_truck 118
+115 do_clear crate11 distributor1 -> m4_do_clear 119
+7 do_put_on crate1 crate10 -> m2_do_put_on 120 121 122 123
+120 do_get_truck truck0 distributor1 -> m6_do_get_truck 124
+121 do_clear crate10 distributor1 -> m4_do_clear 125
+8 do_put_on crate5 pallet5 -> m1_do_put_on 126 127 128 129
+126 do_clear crate5 distributor2 -> m4_do_clear 130
+127 do_clear pallet5 distributor2 -> m5_do_clear 131 132 133 134
+131 do_clear crate0 distributor2 -> m5_do_clear 135 136 137 138
+135 do_clear crate5 distributor2 -> m4_do_clear 139
+137 do_get_truck truck0 distributor2 -> m7_do_get_truck 140
+133 do_get_truck truck0 distributor2 -> m6_do_get_truck 141
+128 do_lift_crate crate5 distributor2 hoist5 -> m8_do_lift_crate 142 143
+142 do_get_truck truck0 distributor2 -> m6_do_get_truck 144
+9 do_put_on crate12 crate5 -> m2_do_put_on 145 146 147 148
+145 do_get_truck truck0 distributor2 -> m6_do_get_truck 149
+146 do_clear crate5 distributor2 -> m4_do_clear 150
+10 do_put_on crate6 pallet6 -> m2_do_put_on 151 152 153 154
+151 do_get_truck truck0 depot1 -> m7_do_get_truck 155
+152 do_clear pallet6 depot1 -> m4_do_clear 156
+11 do_put_on crate8 pallet7 -> m1_do_put_on 157 158 159 160
+157 do_clear crate8 distributor0 -> m4_do_clear 161
+158 do_clear pallet7 distributor0 -> m4_do_clear 162
+159 do_lift_crate crate8 distributor0 hoist3 -> m9_do_lift_crate 163
+12 do_put_on crate0 crate8 -> m2_do_put_on 164 165 166 167
+164 do_get_truck truck0 distributor0 -> m7_do_get_truck 168
+165 do_clear crate8 distributor0 -> m4_do_clear 169
+13 do_put_on crate13 pallet8 -> m2_do_put_on 170 171 172 173
+170 do_get_truck truck0 depot2 -> m7_do_get_truck 174
+171 do_clear pallet8 depot2 -> m4_do_clear 175
+14 do_put_on crate14 pallet9 -> m0_do_put_on 176
+<==
+Total time: 0.04692792892456055s

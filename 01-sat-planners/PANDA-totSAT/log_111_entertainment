@@ -1,0 +1,644 @@
+PANDA - Planning and Acting in a Network Decomposition Architecture
+Believe us: It's great, it's fantastic!
+
+PANDA Copyright (C) 2014-2018 Gregor Behnke, Pascal Bercher, Thomas Geier, Kadir
+Dede, Daniel Höller, Kristof Mickeleit, Matthias Englert
+This program comes with ABSOLUTELY NO WARRANTY
+This is free software, and you are welcome to redistribute it under certain
+conditions; run PANDA with -license for details.
+
+Main Developers:
+- Gregor Behnke, http://www.uni-ulm.de/in/ki/behnke
+- Daniel Höller, http://www.uni-ulm.de/in/ki/hoeller
+
+With many thanks to various further contributors.
+Run PANDA with the command line argument -contributors for an extensive list.
+
+Run it with -help for more information like available options.
+
+
+PANDA was called with: "-systemConfig AAAI-2018-totSAT(cryptominisat) -programPath cryptominisat=./cryptominisat5 instances/entertainment/domain.hddl instances/entertainment/p11-tv-ds1-one-dev-and-speaker.hddl"
+
+
+Planner Configuration
+=====================
+Domain: instances/entertainment/domain.hddl
+Problem: instances/entertainment/p11-tv-ds1-one-dev-and-speaker.hddl
+Output: none
+
+Planning Configuration
+======================
+	printGeneralInformation : true
+	printAdditionalData     : true
+	random seed             : 42
+	time limit (in seconds) : none
+
+	external programs:
+		cryptominisat : ./cryptominisat5
+
+	Parsing Configuration
+	---------------------
+	Parser                : autodetect file-type
+	Expand Sort Hierarchy : true
+	ClosedWordAssumption  : true
+	CompileSHOPMethods    : true
+	Eliminate Equality    : true
+	Strip Hybridity       : true
+	Reduce General Tasks  : true
+	
+	Preprocessing Configuration
+	---------------------------
+	Compile negative preconditions    : true
+	Compile unit methods              : false
+	Compile order in methods          : false
+	Compile initial plan              : true
+	Ensure Methods Have Last Task     : false
+	Split independent parameters      : true
+	Remove unnecessary predicates     : true
+	Expand choiceless abstract tasks  : true
+	Domain Cleanup                    : true
+	Convert to SAS+                   : false
+	Grounded Reachability Analysis    : Planning Graph (mutex-free)
+	Grounded Task Decomposition Graph : Two Way TDG
+	Iterate reachability analysis     : true
+	Ground domain                     : true
+	Iterate reachability analysis     : true
+	Stop directly after grounding     : false
+	
+	SAT-Planning Configuration
+	--------------------------
+	solver           : cryptominisat
+	full planner run : true
+	reduction method : only normalise 
+	check result     : true
+	
+	Post-processing Configuration
+	-----------------------------
+	search result with Decomposition Tree
+	statistics
+	timings
+	search status
+	search result
+#0 "00 global:01:problem"="p11-tv-ds1-one-dev-and-speaker.hddl";"00 global:00:domain"="domain.hddl"
+Parsing domain ... using HDDL parser ... done
+Preparing internal domain representation ... done.
+Initial domain
+	number of abstract tasks = 14
+	number of tasks = 29
+	number of decomposition methods = 30
+	number of predicates = 9
+	number of sorts = 3
+	number of tasks in largest method = 3
+	number of primitive SHOP tasks = 6
+	number of epsilon methods = 0
+	number of primitive tasks = 15
+	number of constants = 92
+Compiling negative preconditions ... done.
+	number of abstract tasks = 14
+	number of tasks = 29
+	number of decomposition methods = 30
+	number of predicates = 18
+	number of sorts = 3
+	number of tasks in largest method = 3
+	number of primitive SHOP tasks = 6
+	number of epsilon methods = 0
+	number of primitive tasks = 15
+	number of constants = 92
+Compiling split parameters ... done.
+	number of abstract tasks = 14
+	number of tasks = 29
+	number of decomposition methods = 30
+	number of predicates = 18
+	number of sorts = 3
+	number of tasks in largest method = 3
+	number of primitive SHOP tasks = 6
+	number of epsilon methods = 0
+	number of primitive tasks = 15
+	number of constants = 92
+Lifted reachability analysis and domain cleanup ... done.
+	number of abstract tasks = 14
+	number of tasks = 29
+	number of decomposition methods = 30
+	number of predicates = 11
+	number of sorts = 3
+	number of tasks in largest method = 3
+	number of primitive SHOP tasks = 6
+	number of epsilon methods = 0
+	number of primitive tasks = 15
+	number of constants = 92
+Grounded planning graph ... done in 575ms.
+	Number of Grounded Actions 2345
+	Number of Grounded Literals 1080
+	number of abstract tasks = 13
+	number of tasks = 24
+	number of decomposition methods = 24
+	number of predicates = 11
+	number of sorts = 3
+	number of tasks in largest method = 3
+	number of primitive SHOP tasks = 4
+	number of epsilon methods = 0
+	number of primitive tasks = 11
+	number of constants = 92
+Two Way TDG ... done.
+	number of abstract tasks = 10
+	number of tasks = 19
+	number of decomposition methods = 18
+	number of predicates = 11
+	number of sorts = 3
+	number of tasks in largest method = 2
+	number of primitive SHOP tasks = 4
+	number of epsilon methods = 0
+	number of primitive tasks = 9
+	number of constants = 92
+Grounding ... done.
+	number of abstract tasks = 653
+	number of tasks = 1192
+	number of decomposition methods = 1003
+	number of predicates = 1222
+	number of sorts = 0
+	number of tasks in largest method = 2
+	number of primitive SHOP tasks = 328
+	number of epsilon methods = 0
+	number of primitive tasks = 539
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 653
+	number of tasks = 1192
+	number of decomposition methods = 1003
+	number of predicates = 205
+	number of sorts = 0
+	number of tasks in largest method = 2
+	number of primitive SHOP tasks = 328
+	number of epsilon methods = 0
+	number of primitive tasks = 539
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 80ms.
+	Number of Grounded Actions 496
+	Number of Grounded Literals 162
+	number of abstract tasks = 498
+	number of tasks = 897
+	number of decomposition methods = 734
+	number of predicates = 205
+	number of sorts = 0
+	number of tasks in largest method = 2
+	number of primitive SHOP tasks = 225
+	number of epsilon methods = 0
+	number of primitive tasks = 399
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 498
+	number of tasks = 897
+	number of decomposition methods = 734
+	number of predicates = 205
+	number of sorts = 0
+	number of tasks in largest method = 2
+	number of primitive SHOP tasks = 225
+	number of epsilon methods = 0
+	number of primitive tasks = 399
+	number of constants = 0
+Compiling expand choiceless abstract tasks ... done.
+	number of abstract tasks = 328
+	number of tasks = 727
+	number of decomposition methods = 564
+	number of predicates = 205
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 225
+	number of epsilon methods = 0
+	number of primitive tasks = 399
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 328
+	number of tasks = 727
+	number of decomposition methods = 564
+	number of predicates = 205
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 225
+	number of epsilon methods = 0
+	number of primitive tasks = 399
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 328
+	number of tasks = 727
+	number of decomposition methods = 564
+	number of predicates = 130
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 225
+	number of epsilon methods = 0
+	number of primitive tasks = 399
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 27ms.
+	Number of Grounded Actions 399
+	Number of Grounded Literals 130
+	number of abstract tasks = 328
+	number of tasks = 727
+	number of decomposition methods = 564
+	number of predicates = 130
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 225
+	number of epsilon methods = 0
+	number of primitive tasks = 399
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 328
+	number of tasks = 727
+	number of decomposition methods = 564
+	number of predicates = 130
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 225
+	number of epsilon methods = 0
+	number of primitive tasks = 399
+	number of constants = 0
+Compiling expand choiceless abstract tasks ... done.
+	number of abstract tasks = 204
+	number of tasks = 603
+	number of decomposition methods = 440
+	number of predicates = 130
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 225
+	number of epsilon methods = 0
+	number of primitive tasks = 399
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 204
+	number of tasks = 603
+	number of decomposition methods = 440
+	number of predicates = 130
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 225
+	number of epsilon methods = 0
+	number of primitive tasks = 399
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 204
+	number of tasks = 603
+	number of decomposition methods = 440
+	number of predicates = 130
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 225
+	number of epsilon methods = 0
+	number of primitive tasks = 399
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 23ms.
+	Number of Grounded Actions 399
+	Number of Grounded Literals 130
+	number of abstract tasks = 204
+	number of tasks = 603
+	number of decomposition methods = 440
+	number of predicates = 130
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 225
+	number of epsilon methods = 0
+	number of primitive tasks = 399
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 204
+	number of tasks = 603
+	number of decomposition methods = 440
+	number of predicates = 130
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 225
+	number of epsilon methods = 0
+	number of primitive tasks = 399
+	number of constants = 0
+Compiling expand choiceless abstract tasks ... done.
+	number of abstract tasks = 128
+	number of tasks = 527
+	number of decomposition methods = 364
+	number of predicates = 130
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 225
+	number of epsilon methods = 0
+	number of primitive tasks = 399
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 128
+	number of tasks = 527
+	number of decomposition methods = 364
+	number of predicates = 130
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 225
+	number of epsilon methods = 0
+	number of primitive tasks = 399
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 128
+	number of tasks = 527
+	number of decomposition methods = 364
+	number of predicates = 130
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 225
+	number of epsilon methods = 0
+	number of primitive tasks = 399
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 15ms.
+	Number of Grounded Actions 399
+	Number of Grounded Literals 130
+	number of abstract tasks = 128
+	number of tasks = 527
+	number of decomposition methods = 364
+	number of predicates = 130
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 225
+	number of epsilon methods = 0
+	number of primitive tasks = 399
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 128
+	number of tasks = 527
+	number of decomposition methods = 364
+	number of predicates = 130
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 225
+	number of epsilon methods = 0
+	number of primitive tasks = 399
+	number of constants = 0
+Compiling expand choiceless abstract tasks ... done.
+	number of abstract tasks = 128
+	number of tasks = 527
+	number of decomposition methods = 364
+	number of predicates = 130
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 225
+	number of epsilon methods = 0
+	number of primitive tasks = 399
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 128
+	number of tasks = 527
+	number of decomposition methods = 364
+	number of predicates = 130
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 225
+	number of epsilon methods = 0
+	number of primitive tasks = 399
+	number of constants = 0
+Compiling methods with identical tasks ... done.
+	number of abstract tasks = 128
+	number of tasks = 527
+	number of decomposition methods = 364
+	number of predicates = 130
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 225
+	number of epsilon methods = 0
+	number of primitive tasks = 399
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 128
+	number of tasks = 527
+	number of decomposition methods = 364
+	number of predicates = 130
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 225
+	number of epsilon methods = 0
+	number of primitive tasks = 399
+	number of constants = 0
+Tasks 399 - 153
+Domain is acyclic: false
+Domain is mostly acyclic: false
+Domain is regular: false
+Domain is tail recursive: false
+Domain is totally ordered: true
+Domain has last task in all methods: true
+Time remaining for planner 9223372036854769904ms
+Computing minimum decomposition height: 4
+
+Running SAT search with K = 4
+Generating initial PDT ... Still waiting ... running for 102 will abort at 9223372036854769822
+done
+initial PDT has 17 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 17 leafs
+SHOP LEAFS 9
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Computing invariants [Rintanen]
+candidates build 25155
+Size 24645 at 0/399
+Size 310
+Size 310 at 0/399
+Size 310
+Invariant time: 0.132
+Number of invariants: 310
+Invariant Clauses 5580
+NUMBER OF CLAUSES 16315
+NUMBER OF STATE CLAUSES 10883
+NUMBER OF DECOMPOSITION CLAUSES 5432
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 66.71000000000001% 33.29% 0.0% 
+NUMBER OF PATHS 17
+Starting cryptominisat
+Setting starttime of solver to 1603876469963
+Command exited with non-zero status 10
+0.00 0.00
+
+Time command gave the following runtime for the solver: 0
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... done
+SAT-Solver says: SATISFIABLE
+
+extracting solution
+Consider method^3_2;0;1,263 263 _M-plug|CONSEQUENT|ANTECEDENT|DISJUNCT-0
+2;0;1 16 pathaction!3_2;0;1,223
+Consider method^1_2,303 303 <m-connect-rec-a;a_connect[amplifier-1,speaker-wire-2];m-connect-direct-a;0;-1,1>
+2 19 pathaction!1_2,56
+Consider method^3_1;1;1,343 343 _M-plug|CONSEQUENT|ANTECEDENT|DISJUNCT-1
+1;1;1 28 pathaction!3_1;1;1,226
+Consider method^2_3;1,278 278 <<<m-dconnect-v;plug[cinch-cable-4,cinch-cable-4-cinch-2,tv-1,tv-1-cinch-6];_M-plug|ANTECEDENT;1;0,-1>;plug|ANTECEDENT[cinch-cable-4,cinch-cable-4-cinch-2,tv-1,tv-1-cinch-6];_M-plug|ANTECEDENT|DISJUNCT-1;1;0,-1>;plug|ANTECEDENT|DISJUNCT-1[cinch-cable-4,cinch-cable-4-cinch-2,tv-1,tv-1-cinch-6];_M-plug|ANTECEDENT|DISJUNCT-1|CONSEQUENT;1;0,-1>
+3;1 3 pathaction!2_3;1,111
+Consider method^2_2;0,71 71 <<m-dconnect-a;plug[amplifier-1,amplifier-1-speakerWire-11,speaker-wire-2,speaker-wire-2-speakerWire-1];_M-plug|CONSEQUENT;1;0,-1>;plug|CONSEQUENT[amplifier-1,amplifier-1-speakerWire-11,speaker-wire-2,speaker-wire-2-speakerWire-1];_M-plug|CONSEQUENT|ANTECEDENT;1;0,-1>
+2;0 9 pathaction!2_2;0,408
+Consider method^1_1,185 185 <m-connect-rec-a;a_connect[amplifier-1,speaker-wire-1];m-connect-direct-a;0;-1,1>
+1 11 pathaction!1_1,54
+Consider method^3_1;0;1,35 35 _M-plug|CONSEQUENT|ANTECEDENT|DISJUNCT-1
+1;0;1 22 pathaction!3_1;0;1,218
+Consider method^2_1;1,130 130 <<m-dconnect-a;plug[speaker-wire-1,speaker-wire-1-speakerWire-2,box-1,box-1-speakerWire-1];_M-plug|CONSEQUENT;1;0,-1>;plug|CONSEQUENT[speaker-wire-1,speaker-wire-1-speakerWire-2,box-1,box-1-speakerWire-1];_M-plug|CONSEQUENT|ANTECEDENT;1;0,-1>
+1;1 8 pathaction!2_1;1,412
+Consider method^2_1;0,100 100 <<m-dconnect-a;plug[amplifier-1,amplifier-1-speakerWire-10,speaker-wire-1,speaker-wire-1-speakerWire-1];_M-plug|CONSEQUENT;1;0,-1>;plug|CONSEQUENT[amplifier-1,amplifier-1-speakerWire-10,speaker-wire-1,speaker-wire-1-speakerWire-1];_M-plug|CONSEQUENT|ANTECEDENT;1;0,-1>
+1;0 32 pathaction!2_1;0,416
+Consider method^2_0;0,63 63 <<<m-dconnect-a;plug[blu-ray-1,blu-ray-1-cinch-2,cinch-cable-2,cinch-cable-2-cinch-1];_M-plug|CONSEQUENT;1;0,-1>;plug|CONSEQUENT[blu-ray-1,blu-ray-1-cinch-2,cinch-cable-2,cinch-cable-2-cinch-1];_M-plug|CONSEQUENT|ANTECEDENT;1;0,-1>;plug|CONSEQUENT|ANTECEDENT[blu-ray-1,blu-ray-1-cinch-2,cinch-cable-2,cinch-cable-2-cinch-1];_M-plug|CONSEQUENT|ANTECEDENT|DISJUNCT-0;1;0,-1>
+0;0 7 pathaction!2_0;0,405
+Consider method^3_3;0;1,295 295 <<<m-dconnect-v;plug[blu-ray-1,blu-ray-1-cinch-3,cinch-cable-4,cinch-cable-4-cinch-1];_M-plug|ANTECEDENT;1;0,-1>;plug|ANTECEDENT[blu-ray-1,blu-ray-1-cinch-3,cinch-cable-4,cinch-cable-4-cinch-1];_M-plug|ANTECEDENT|DISJUNCT-0;1;0,-1>;plug|ANTECEDENT|DISJUNCT-0[blu-ray-1,blu-ray-1-cinch-3,cinch-cable-4,cinch-cable-4-cinch-1];_M-plug|ANTECEDENT|DISJUNCT-0|CONSEQUENT;1;0,-1>
+3;0;1 26 pathaction!3_3;0;1,105
+Consider method^2_0;1,30 30 <<<m-dconnect-a;plug[cinch-cable-2,cinch-cable-2-cinch-2,amplifier-1,amplifier-1-cinch-2];_M-plug|CONSEQUENT;1;0,-1>;plug|CONSEQUENT[cinch-cable-2,cinch-cable-2-cinch-2,amplifier-1,amplifier-1-cinch-2];_M-plug|CONSEQUENT|ANTECEDENT;1;0,-1>;plug|CONSEQUENT|ANTECEDENT[cinch-cable-2,cinch-cable-2-cinch-2,amplifier-1,amplifier-1-cinch-2];_M-plug|CONSEQUENT|ANTECEDENT|DISJUNCT-1;1;0,-1>
+0;1 30 pathaction!2_0;1,403
+Consider method^2_2;1,62 62 <<m-dconnect-a;plug[speaker-wire-2,speaker-wire-2-speakerWire-2,box-2,box-2-speakerWire-1];_M-plug|CONSEQUENT;1;0,-1>;plug|CONSEQUENT[speaker-wire-2,speaker-wire-2-speakerWire-2,box-2,box-2-speakerWire-1];_M-plug|CONSEQUENT|ANTECEDENT;1;0,-1>
+2;1 1 pathaction!2_2;1,397
+Consider method^1_3,265 265 m-connect-rec-v
+3 31 pathaction!1_3,430
+Consider method^3_2;1;1,236 236 _M-plug|CONSEQUENT|ANTECEDENT|DISJUNCT-0
+2;1;1 33 pathaction!3_2;1;1,222
+Consider method^2_3;0,272 272 m-connect-direct-v
+3;0 13 pathaction!2_3;0,420
+Consider method^1_0,193 193 <m-connect-rec-a;a_connect[blu-ray-1,cinch-cable-2];m-connect-direct-a;0;-1,1>
+0 37 pathaction!1_0,53
+Consider method^0_,363 363 __top_1
+ 23 pathaction!0_,526
+
+
+CHECKING primitive solution of length 16 ...
+true 24 __method_precondition_m-dconnect-a_9_precondition[blu-ray-1-cinch-2,cinch-cable-2-cinch-1;]
+true 0 plug|CONSEQUENT|ANTECEDENT|DISJUNCT-0[blu-ray-1,blu-ray-1-cinch-2,cinch-cable-2,cinch-cable-2-cinch-1;]
+true 14 __method_precondition_m-dconnect-a_9_precondition[cinch-cable-2-cinch-2,amplifier-1-cinch-2;]
+true 6 plug|CONSEQUENT|ANTECEDENT|DISJUNCT-1[cinch-cable-2,cinch-cable-2-cinch-2,amplifier-1,amplifier-1-cinch-2;]
+true 27 __method_precondition_m-dconnect-a_9_precondition[amplifier-1-speakerWire-10,speaker-wire-1-speakerWire-1;]
+true 4 plug|CONSEQUENT|ANTECEDENT|DISJUNCT-1[amplifier-1,amplifier-1-speakerWire-10,speaker-wire-1,speaker-wire-1-speakerWire-1;]
+true 29 __method_precondition_m-dconnect-a_9_precondition[speaker-wire-1-speakerWire-2,box-1-speakerWire-1;]
+true 21 plug|CONSEQUENT|ANTECEDENT|DISJUNCT-1[speaker-wire-1,speaker-wire-1-speakerWire-2,box-1,box-1-speakerWire-1;]
+true 15 __method_precondition_m-dconnect-a_9_precondition[amplifier-1-speakerWire-11,speaker-wire-2-speakerWire-1;]
+true 10 plug|CONSEQUENT|ANTECEDENT|DISJUNCT-0[amplifier-1,amplifier-1-speakerWire-11,speaker-wire-2,speaker-wire-2-speakerWire-1;]
+true 20 __method_precondition_m-dconnect-a_9_precondition[speaker-wire-2-speakerWire-2,box-2-speakerWire-1;]
+true 36 plug|CONSEQUENT|ANTECEDENT|DISJUNCT-0[speaker-wire-2,speaker-wire-2-speakerWire-2,box-2,box-2-speakerWire-1;]
+true 17 __method_precondition_m-dconnect-v_10_precondition[blu-ray-1-cinch-3,cinch-cable-4-cinch-1;]
+true 12 plug|ANTECEDENT|DISJUNCT-0|CONSEQUENT[blu-ray-1,blu-ray-1-cinch-3,cinch-cable-4,cinch-cable-4-cinch-1;]
+true 35 __method_precondition_m-dconnect-v_10_precondition[cinch-cable-4-cinch-2,tv-1-cinch-6;]
+true 25 plug|ANTECEDENT|DISJUNCT-1|CONSEQUENT[cinch-cable-4,cinch-cable-4-cinch-2,tv-1,tv-1-cinch-6;]
+ done.
+Panda says: SOLUTION
+============ global ============
+randomseed     = 42
+peak memory    = 185754320
+planner result = SOLUTION
+============ properties ============
+acyclic                  = false
+mostly acyclic           = false
+regular                  = false
+tail recursive           = false
+totally ordered          = true
+last task in all methods = true
+============ problem ============
+number of constants                  = 0
+number of predicates                 = 130
+number of actions                    = 527
+number of abstract actions           = 128
+number of primitive actions          = 399
+number of methods                    = 364
+number of primitive shop actions     = 225
+number of primitive non-shop actions = 174
+size of largest method               = 4
+average method size                  = 1
+============ sat ============
+plan length                     = -1
+number of variables             = 5267
+number of clauses               = 16315
+average size of clauses         = 2.5335580753907445
+number of assert                = 57
+number of horn                  = 15420
+K offset                        = 0
+K chosen value                  = 4
+state formula                   = 10883
+method children clauses         = 0
+number of paths                 = 17
+maximum plan length             = 17
+number of decomposition clauses = 5432
+number of ordering clauses      = 0
+number of state clauses         = 10883
+solved                          = true
+timeout                         = false
+
+----------------- TIMINGS -----------------
+============ total ============
+total = 7061
+============ parsing ============
+total                         = 1518
+file parser                   = 738
+sort expansion                = 261
+closed world assumption       = 254
+inherit preconditions         = 0
+shop methods                  = 8
+eliminate identical variables = 93
+strip domain of hybridity     = 1
+flatten formula               = 161
+============ preprocessing ============
+total                                      = 4293
+compile negative preconditions             = 73
+compile unit methods                       = 0
+split parameter                            = 41
+expand choiceless abstract tasks           = 467
+compile methods with identical tasks       = 4
+removing unnecessary predicates            = 260
+lifted reachabiltiy analysis               = 81
+grounded planning graph analysis           = 1312
+grounded task decomposition graph analysis = 1825
+grounding                                  = 200
+create artificial top task                 = 3
+============ search preparation ============
+compute state invariants = 240
+============ sat ============
+total                                        = 692
+generate formula                             = 559
+generate path decomposition tree             = 82
+normalise path decomposition tree            = 33
+sog optimisation                             = 11
+translate path decomposition tree to clauses = 120
+generate state formula                       = 557
+generate state invariant formula             = 6
+transform to DIMACS                          = 32
+SAT solver                                   = 0
+SAT solver for K=0004                        = 0
+
+#1 "40 sat:90:solved"="true";"30 problem:05:number of primitive actions"="399";"30 problem:01:number of constants"="0";"30 problem:04:number of abstract actions"="128";"02 properties:04:tail recursive"="false";"00 global:80:peak memory"="185754320";"40 sat:20:state formula"="10883";"40 sat:01:number of variables"="5267";"40 sat:14:K offset"="0";"40 sat:30:number of paths"="17";"40 sat:00:plan length"="-1";"40 sat:50:number of ordering clauses"="0";"02 properties:02:mostly acyclic"="false";"30 problem:06:number of methods"="364";"30 problem:07:number of primitive shop actions"="225";"02 properties:05:totally ordered"="true";"02 properties:06:last task in all methods"="true";"30 problem:03:number of actions"="527";"30 problem:08:number of primitive non-shop actions"="174";"30 problem:02:number of predicates"="130";"40 sat:03:number of horn"="15420";"40 sat:15:K chosen value"="4";"30 problem:10:average method size"="1";"02 properties:03:regular"="false";"30 problem:09:size of largest method"="4";"40 sat:03:average size of clauses"="2.5335580753907445";"40 sat:02:number of clauses"="16315";"40 sat:50:number of state clauses"="10883";"40 sat:03:number of assert"="57";"40 sat:22:method children clauses"="0";"00 global:90:planner result"="SOLUTION";"02 properties:01:acyclic"="false";"40 sat:31:maximum plan length"="17";"40 sat:50:number of decomposition clauses"="5432";"00 global:02:randomseed"="42";"40 sat:91:timeout"="false";"01 parsing:01:file parser"="738";"01 parsing:08:flatten formula"="161";"40 sat:41:SAT solver for K=0004"="0";"40 sat:00:total"="692";"40 sat:16:generate state formula"="557";"40 sat:20:transform to DIMACS"="32";"40 sat:11:generate path decomposition tree"="82";"02 preprocessing:07:compile methods with identical tasks"="4";"01 parsing:07:strip domain of hybridity"="1";"02 preprocessing:08:removing unnecessary predicates"="260";"01 parsing:03:closed world assumption"="254";"02 preprocessing:11:lifted reachabiltiy analysis"="81";"01 parsing:02:sort expansion"="261";"40 sat:12:normalise path decomposition tree"="33";"40 sat:40:SAT solver"="0";"01 parsing:00:total"="1518";"40 sat:10:generate formula"="559";"01 parsing:04:inherit preconditions"="0";"02 preprocessing:01:compile negative preconditions"="73";"00 total:00:total"="7061";"40 sat:13:sog optimisation"="11";"02 preprocessing:12:grounded planning graph analysis"="1312";"02 preprocessing:02:compile unit methods"="0";"02 preprocessing:23:grounded task decomposition graph analysis"="1825";"02 preprocessing:04:split parameter"="41";"01 parsing:05:shop methods"="8";"10 search preparation:02:compute state invariants"="240";"01 parsing:06:eliminate identical variables"="93";"40 sat:15:translate path decomposition tree to clauses"="120";"02 preprocessing:05:expand choiceless abstract tasks"="467";"40 sat:17:generate state invariant formula"="6";"02 preprocessing:00:total"="4293";"02 preprocessing:99:create artificial top task"="3";"02 preprocessing:84:grounding"="200"
+#!verify __method_precondition_m-dconnect-a_9_precondition[blu-ray-1-cinch-2,cinch-cable-2-cinch-1];plug|CONSEQUENT|ANTECEDENT|DISJUNCT-0[blu-ray-1,blu-ray-1-cinch-2,cinch-cable-2,cinch-cable-2-cinch-1];__method_precondition_m-dconnect-a_9_precondition[cinch-cable-2-cinch-2,amplifier-1-cinch-2];plug|CONSEQUENT|ANTECEDENT|DISJUNCT-1[cinch-cable-2,cinch-cable-2-cinch-2,amplifier-1,amplifier-1-cinch-2];__method_precondition_m-dconnect-a_9_precondition[amplifier-1-speakerWire-10,speaker-wire-1-speakerWire-1];plug|CONSEQUENT|ANTECEDENT|DISJUNCT-1[amplifier-1,amplifier-1-speakerWire-10,speaker-wire-1,speaker-wire-1-speakerWire-1];__method_precondition_m-dconnect-a_9_precondition[speaker-wire-1-speakerWire-2,box-1-speakerWire-1];plug|CONSEQUENT|ANTECEDENT|DISJUNCT-1[speaker-wire-1,speaker-wire-1-speakerWire-2,box-1,box-1-speakerWire-1];__method_precondition_m-dconnect-a_9_precondition[amplifier-1-speakerWire-11,speaker-wire-2-speakerWire-1];plug|CONSEQUENT|ANTECEDENT|DISJUNCT-0[amplifier-1,amplifier-1-speakerWire-11,speaker-wire-2,speaker-wire-2-speakerWire-1];__method_precondition_m-dconnect-a_9_precondition[speaker-wire-2-speakerWire-2,box-2-speakerWire-1];plug|CONSEQUENT|ANTECEDENT|DISJUNCT-0[speaker-wire-2,speaker-wire-2-speakerWire-2,box-2,box-2-speakerWire-1];__method_precondition_m-dconnect-v_10_precondition[blu-ray-1-cinch-3,cinch-cable-4-cinch-1];plug|ANTECEDENT|DISJUNCT-0|CONSEQUENT[blu-ray-1,blu-ray-1-cinch-3,cinch-cable-4,cinch-cable-4-cinch-1];__method_precondition_m-dconnect-v_10_precondition[cinch-cable-4-cinch-2,tv-1-cinch-6];plug|ANTECEDENT|DISJUNCT-1|CONSEQUENT[cinch-cable-4,cinch-cable-4-cinch-2,tv-1,tv-1-cinch-6]
+==>
+0 __method_precondition_m-dconnect-a_9_precondition blu-ray-1-cinch-2 cinch-cable-2-cinch-1 
+1 plug|DISJUNCT-0 blu-ray-1 blu-ray-1-cinch-2 cinch-cable-2 cinch-cable-2-cinch-1 
+2 __method_precondition_m-dconnect-a_9_precondition cinch-cable-2-cinch-2 amplifier-1-cinch-2 
+3 plug|DISJUNCT-1 cinch-cable-2 cinch-cable-2-cinch-2 amplifier-1 amplifier-1-cinch-2 
+4 __method_precondition_m-dconnect-a_9_precondition amplifier-1-speakerWire-10 speaker-wire-1-speakerWire-1 
+5 plug|DISJUNCT-1 amplifier-1 amplifier-1-speakerWire-10 speaker-wire-1 speaker-wire-1-speakerWire-1 
+6 __method_precondition_m-dconnect-a_9_precondition speaker-wire-1-speakerWire-2 box-1-speakerWire-1 
+7 plug|DISJUNCT-1 speaker-wire-1 speaker-wire-1-speakerWire-2 box-1 box-1-speakerWire-1 
+8 __method_precondition_m-dconnect-a_9_precondition amplifier-1-speakerWire-11 speaker-wire-2-speakerWire-1 
+9 plug|DISJUNCT-0 amplifier-1 amplifier-1-speakerWire-11 speaker-wire-2 speaker-wire-2-speakerWire-1 
+10 __method_precondition_m-dconnect-a_9_precondition speaker-wire-2-speakerWire-2 box-2-speakerWire-1 
+11 plug|DISJUNCT-0 speaker-wire-2 speaker-wire-2-speakerWire-2 box-2 box-2-speakerWire-1 
+12 __method_precondition_m-dconnect-v_10_precondition blu-ray-1-cinch-3 cinch-cable-4-cinch-1 
+13 plug|DISJUNCT-0 blu-ray-1 blu-ray-1-cinch-3 cinch-cable-4 cinch-cable-4-cinch-1 
+14 __method_precondition_m-dconnect-v_10_precondition cinch-cable-4-cinch-2 tv-1-cinch-6 
+15 plug|DISJUNCT-1 cinch-cable-4 cinch-cable-4-cinch-2 tv-1 tv-1-cinch-6 
+root 23
+16 direct_v_connect cinch-cable-4 tv-1  -> <<<m-dconnect-v;plug[cinch-cable-4,cinch-cable-4-cinch-2,tv-1,tv-1-cinch-6];_M-plug|ANTECEDENT;1;0,-1>;plug|ANTECEDENT[cinch-cable-4,cinch-cable-4-cinch-2,tv-1,tv-1-cinch-6];_M-plug|ANTECEDENT|DISJUNCT-1;1;0,-1>;plug|ANTECEDENT|DISJUNCT-1[cinch-cable-4,cinch-cable-4-cinch-2,tv-1,tv-1-cinch-6];_M-plug|ANTECEDENT|DISJUNCT-1|CONSEQUENT;1;0,-1> 14 15
+17 plug amplifier-1 amplifier-1-speakerWire-10 speaker-wire-1 speaker-wire-1-speakerWire-1  -> _M-plug|CONSEQUENT|ANTECEDENT|DISJUNCT-1 5
+18 plug speaker-wire-1 speaker-wire-1-speakerWire-2 box-1 box-1-speakerWire-1  -> _M-plug|CONSEQUENT|ANTECEDENT|DISJUNCT-1 7
+19 plug speaker-wire-2 speaker-wire-2-speakerWire-2 box-2 box-2-speakerWire-1  -> _M-plug|CONSEQUENT|ANTECEDENT|DISJUNCT-0 11
+20 a_connect blu-ray-1 amplifier-1  -> <m-connect-rec-a;a_connect[blu-ray-1,cinch-cable-2];m-connect-direct-a;0;-1,1> 30 22
+21 a_connect amplifier-1 box-1  -> <m-connect-rec-a;a_connect[amplifier-1,speaker-wire-1];m-connect-direct-a;0;-1,1> 25 33
+22 direct_a_connect cinch-cable-2 amplifier-1  -> <<<m-dconnect-a;plug[cinch-cable-2,cinch-cable-2-cinch-2,amplifier-1,amplifier-1-cinch-2];_M-plug|CONSEQUENT;1;0,-1>;plug|CONSEQUENT[cinch-cable-2,cinch-cable-2-cinch-2,amplifier-1,amplifier-1-cinch-2];_M-plug|CONSEQUENT|ANTECEDENT;1;0,-1>;plug|CONSEQUENT|ANTECEDENT[cinch-cable-2,cinch-cable-2-cinch-2,amplifier-1,amplifier-1-cinch-2];_M-plug|CONSEQUENT|ANTECEDENT|DISJUNCT-1;1;0,-1> 2 3
+23 __choicelessATCompilation__top_1  -> __top_1 20 21 28 29
+24 direct_a_connect speaker-wire-2 box-2  -> <<m-dconnect-a;plug[speaker-wire-2,speaker-wire-2-speakerWire-2,box-2,box-2-speakerWire-1];_M-plug|CONSEQUENT;1;0,-1>;plug|CONSEQUENT[speaker-wire-2,speaker-wire-2-speakerWire-2,box-2,box-2-speakerWire-1];_M-plug|CONSEQUENT|ANTECEDENT;1;0,-1> 10 19
+25 direct_a_connect amplifier-1 speaker-wire-1  -> <<m-dconnect-a;plug[amplifier-1,amplifier-1-speakerWire-10,speaker-wire-1,speaker-wire-1-speakerWire-1];_M-plug|CONSEQUENT;1;0,-1>;plug|CONSEQUENT[amplifier-1,amplifier-1-speakerWire-10,speaker-wire-1,speaker-wire-1-speakerWire-1];_M-plug|CONSEQUENT|ANTECEDENT;1;0,-1> 4 17
+26 plug amplifier-1 amplifier-1-speakerWire-11 speaker-wire-2 speaker-wire-2-speakerWire-1  -> _M-plug|CONSEQUENT|ANTECEDENT|DISJUNCT-0 9
+27 v_connect blu-ray-1 cinch-cable-4  -> m-connect-direct-v 32
+28 a_connect amplifier-1 box-2  -> <m-connect-rec-a;a_connect[amplifier-1,speaker-wire-2];m-connect-direct-a;0;-1,1> 31 24
+29 v_connect blu-ray-1 tv-1  -> m-connect-rec-v 27 16
+30 direct_a_connect blu-ray-1 cinch-cable-2  -> <<<m-dconnect-a;plug[blu-ray-1,blu-ray-1-cinch-2,cinch-cable-2,cinch-cable-2-cinch-1];_M-plug|CONSEQUENT;1;0,-1>;plug|CONSEQUENT[blu-ray-1,blu-ray-1-cinch-2,cinch-cable-2,cinch-cable-2-cinch-1];_M-plug|CONSEQUENT|ANTECEDENT;1;0,-1>;plug|CONSEQUENT|ANTECEDENT[blu-ray-1,blu-ray-1-cinch-2,cinch-cable-2,cinch-cable-2-cinch-1];_M-plug|CONSEQUENT|ANTECEDENT|DISJUNCT-0;1;0,-1> 0 1
+31 direct_a_connect amplifier-1 speaker-wire-2  -> <<m-dconnect-a;plug[amplifier-1,amplifier-1-speakerWire-11,speaker-wire-2,speaker-wire-2-speakerWire-1];_M-plug|CONSEQUENT;1;0,-1>;plug|CONSEQUENT[amplifier-1,amplifier-1-speakerWire-11,speaker-wire-2,speaker-wire-2-speakerWire-1];_M-plug|CONSEQUENT|ANTECEDENT;1;0,-1> 8 26
+32 direct_v_connect blu-ray-1 cinch-cable-4  -> <<<m-dconnect-v;plug[blu-ray-1,blu-ray-1-cinch-3,cinch-cable-4,cinch-cable-4-cinch-1];_M-plug|ANTECEDENT;1;0,-1>;plug|ANTECEDENT[blu-ray-1,blu-ray-1-cinch-3,cinch-cable-4,cinch-cable-4-cinch-1];_M-plug|ANTECEDENT|DISJUNCT-0;1;0,-1>;plug|ANTECEDENT|DISJUNCT-0[blu-ray-1,blu-ray-1-cinch-3,cinch-cable-4,cinch-cable-4-cinch-1];_M-plug|ANTECEDENT|DISJUNCT-0|CONSEQUENT;1;0,-1> 12 13
+33 direct_a_connect speaker-wire-1 box-1  -> <<m-dconnect-a;plug[speaker-wire-1,speaker-wire-1-speakerWire-2,box-1,box-1-speakerWire-1];_M-plug|CONSEQUENT;1;0,-1>;plug|CONSEQUENT[speaker-wire-1,speaker-wire-1-speakerWire-2,box-1,box-1-speakerWire-1];_M-plug|CONSEQUENT|ANTECEDENT;1;0,-1> 6 18
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 7.902 MEMPEAK_KBS 310876.16

@@ -1,0 +1,721 @@
+PANDA - Planning and Acting in a Network Decomposition Architecture
+Believe us: It's great, it's fantastic!
+
+PANDA Copyright (C) 2014-2018 Gregor Behnke, Pascal Bercher, Thomas Geier, Kadir
+Dede, Daniel Höller, Kristof Mickeleit, Matthias Englert
+This program comes with ABSOLUTELY NO WARRANTY
+This is free software, and you are welcome to redistribute it under certain
+conditions; run PANDA with -license for details.
+
+Main Developers:
+- Gregor Behnke, http://www.uni-ulm.de/in/ki/behnke
+- Daniel Höller, http://www.uni-ulm.de/in/ki/hoeller
+
+With many thanks to various further contributors.
+Run PANDA with the command line argument -contributors for an extensive list.
+
+Run it with -help for more information like available options.
+
+
+PANDA was called with: "-systemConfig AAAI-2018-totSAT(cryptominisat) -programPath cryptominisat=./cryptominisat5 instances/entertainment/domain.hddl instances/entertainment/p06-use-twice.hddl"
+
+
+Planner Configuration
+=====================
+Domain: instances/entertainment/domain.hddl
+Problem: instances/entertainment/p06-use-twice.hddl
+Output: none
+
+Planning Configuration
+======================
+	printGeneralInformation : true
+	printAdditionalData     : true
+	random seed             : 42
+	time limit (in seconds) : none
+
+	external programs:
+		cryptominisat : ./cryptominisat5
+
+	Parsing Configuration
+	---------------------
+	Parser                : autodetect file-type
+	Expand Sort Hierarchy : true
+	ClosedWordAssumption  : true
+	CompileSHOPMethods    : true
+	Eliminate Equality    : true
+	Strip Hybridity       : true
+	Reduce General Tasks  : true
+	
+	Preprocessing Configuration
+	---------------------------
+	Compile negative preconditions    : true
+	Compile unit methods              : false
+	Compile order in methods          : false
+	Compile initial plan              : true
+	Ensure Methods Have Last Task     : false
+	Split independent parameters      : true
+	Remove unnecessary predicates     : true
+	Expand choiceless abstract tasks  : true
+	Domain Cleanup                    : true
+	Convert to SAS+                   : false
+	Grounded Reachability Analysis    : Planning Graph (mutex-free)
+	Grounded Task Decomposition Graph : Two Way TDG
+	Iterate reachability analysis     : true
+	Ground domain                     : true
+	Iterate reachability analysis     : true
+	Stop directly after grounding     : false
+	
+	SAT-Planning Configuration
+	--------------------------
+	solver           : cryptominisat
+	full planner run : true
+	reduction method : only normalise 
+	check result     : true
+	
+	Post-processing Configuration
+	-----------------------------
+	search result with Decomposition Tree
+	statistics
+	timings
+	search status
+	search result
+#0 "00 global:01:problem"="p06-use-twice.hddl";"00 global:00:domain"="domain.hddl"
+Parsing domain ... using HDDL parser ... done
+Preparing internal domain representation ... done.
+Initial domain
+	number of abstract tasks = 14
+	number of tasks = 29
+	number of decomposition methods = 30
+	number of predicates = 9
+	number of sorts = 3
+	number of tasks in largest method = 3
+	number of primitive SHOP tasks = 6
+	number of epsilon methods = 0
+	number of primitive tasks = 15
+	number of constants = 26
+Compiling negative preconditions ... done.
+	number of abstract tasks = 14
+	number of tasks = 29
+	number of decomposition methods = 30
+	number of predicates = 18
+	number of sorts = 3
+	number of tasks in largest method = 3
+	number of primitive SHOP tasks = 6
+	number of epsilon methods = 0
+	number of primitive tasks = 15
+	number of constants = 26
+Compiling split parameters ... done.
+	number of abstract tasks = 14
+	number of tasks = 29
+	number of decomposition methods = 30
+	number of predicates = 18
+	number of sorts = 3
+	number of tasks in largest method = 3
+	number of primitive SHOP tasks = 6
+	number of epsilon methods = 0
+	number of primitive tasks = 15
+	number of constants = 26
+Lifted reachability analysis and domain cleanup ... done.
+	number of abstract tasks = 9
+	number of tasks = 18
+	number of decomposition methods = 19
+	number of predicates = 11
+	number of sorts = 3
+	number of tasks in largest method = 3
+	number of primitive SHOP tasks = 6
+	number of epsilon methods = 0
+	number of primitive tasks = 9
+	number of constants = 26
+Grounded planning graph ... done in 219ms.
+	Number of Grounded Actions 444
+	Number of Grounded Literals 293
+	number of abstract tasks = 8
+	number of tasks = 15
+	number of decomposition methods = 16
+	number of predicates = 11
+	number of sorts = 3
+	number of tasks in largest method = 3
+	number of primitive SHOP tasks = 6
+	number of epsilon methods = 0
+	number of primitive tasks = 7
+	number of constants = 26
+Two Way TDG ... done.
+	number of abstract tasks = 8
+	number of tasks = 15
+	number of decomposition methods = 16
+	number of predicates = 11
+	number of sorts = 3
+	number of tasks in largest method = 3
+	number of primitive SHOP tasks = 6
+	number of epsilon methods = 0
+	number of primitive tasks = 7
+	number of constants = 26
+Grounding ... done.
+	number of abstract tasks = 316
+	number of tasks = 560
+	number of decomposition methods = 944
+	number of predicates = 327
+	number of sorts = 0
+	number of tasks in largest method = 3
+	number of primitive SHOP tasks = 212
+	number of epsilon methods = 0
+	number of primitive tasks = 244
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 316
+	number of tasks = 560
+	number of decomposition methods = 944
+	number of predicates = 96
+	number of sorts = 0
+	number of tasks in largest method = 3
+	number of primitive SHOP tasks = 212
+	number of epsilon methods = 0
+	number of primitive tasks = 244
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 65ms.
+	Number of Grounded Actions 200
+	Number of Grounded Literals 64
+	number of abstract tasks = 230
+	number of tasks = 430
+	number of decomposition methods = 499
+	number of predicates = 96
+	number of sorts = 0
+	number of tasks in largest method = 3
+	number of primitive SHOP tasks = 168
+	number of epsilon methods = 0
+	number of primitive tasks = 200
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 230
+	number of tasks = 430
+	number of decomposition methods = 499
+	number of predicates = 96
+	number of sorts = 0
+	number of tasks in largest method = 3
+	number of primitive SHOP tasks = 168
+	number of epsilon methods = 0
+	number of primitive tasks = 200
+	number of constants = 0
+Compiling expand choiceless abstract tasks ... done.
+	number of abstract tasks = 167
+	number of tasks = 367
+	number of decomposition methods = 436
+	number of predicates = 96
+	number of sorts = 0
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 168
+	number of epsilon methods = 0
+	number of primitive tasks = 200
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 167
+	number of tasks = 367
+	number of decomposition methods = 436
+	number of predicates = 96
+	number of sorts = 0
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 168
+	number of epsilon methods = 0
+	number of primitive tasks = 200
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 167
+	number of tasks = 367
+	number of decomposition methods = 436
+	number of predicates = 64
+	number of sorts = 0
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 168
+	number of epsilon methods = 0
+	number of primitive tasks = 200
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 25ms.
+	Number of Grounded Actions 200
+	Number of Grounded Literals 64
+	number of abstract tasks = 167
+	number of tasks = 367
+	number of decomposition methods = 436
+	number of predicates = 64
+	number of sorts = 0
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 168
+	number of epsilon methods = 0
+	number of primitive tasks = 200
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 167
+	number of tasks = 367
+	number of decomposition methods = 436
+	number of predicates = 64
+	number of sorts = 0
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 168
+	number of epsilon methods = 0
+	number of primitive tasks = 200
+	number of constants = 0
+Compiling expand choiceless abstract tasks ... done.
+	number of abstract tasks = 135
+	number of tasks = 335
+	number of decomposition methods = 404
+	number of predicates = 64
+	number of sorts = 0
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 168
+	number of epsilon methods = 0
+	number of primitive tasks = 200
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 135
+	number of tasks = 335
+	number of decomposition methods = 404
+	number of predicates = 64
+	number of sorts = 0
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 168
+	number of epsilon methods = 0
+	number of primitive tasks = 200
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 135
+	number of tasks = 335
+	number of decomposition methods = 404
+	number of predicates = 64
+	number of sorts = 0
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 168
+	number of epsilon methods = 0
+	number of primitive tasks = 200
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 21ms.
+	Number of Grounded Actions 200
+	Number of Grounded Literals 64
+	number of abstract tasks = 135
+	number of tasks = 335
+	number of decomposition methods = 404
+	number of predicates = 64
+	number of sorts = 0
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 168
+	number of epsilon methods = 0
+	number of primitive tasks = 200
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 135
+	number of tasks = 335
+	number of decomposition methods = 404
+	number of predicates = 64
+	number of sorts = 0
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 168
+	number of epsilon methods = 0
+	number of primitive tasks = 200
+	number of constants = 0
+Compiling expand choiceless abstract tasks ... done.
+	number of abstract tasks = 135
+	number of tasks = 335
+	number of decomposition methods = 404
+	number of predicates = 64
+	number of sorts = 0
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 168
+	number of epsilon methods = 0
+	number of primitive tasks = 200
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 135
+	number of tasks = 335
+	number of decomposition methods = 404
+	number of predicates = 64
+	number of sorts = 0
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 168
+	number of epsilon methods = 0
+	number of primitive tasks = 200
+	number of constants = 0
+Compiling methods with identical tasks ... done.
+	number of abstract tasks = 135
+	number of tasks = 335
+	number of decomposition methods = 404
+	number of predicates = 64
+	number of sorts = 0
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 168
+	number of epsilon methods = 0
+	number of primitive tasks = 200
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 135
+	number of tasks = 335
+	number of decomposition methods = 404
+	number of predicates = 64
+	number of sorts = 0
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 168
+	number of epsilon methods = 0
+	number of primitive tasks = 200
+	number of constants = 0
+Tasks 200 - 96
+Domain is acyclic: false
+Domain is mostly acyclic: false
+Domain is regular: false
+Domain is tail recursive: false
+Domain is totally ordered: true
+Domain has last task in all methods: true
+Time remaining for planner 9223372036854771439ms
+Computing minimum decomposition height: 4
+
+Running SAT search with K = 4
+Generating initial PDT ... Still waiting ... running for 101 will abort at 9223372036854771387
+done
+initial PDT has 33 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 21 leafs
+SHOP LEAFS 12
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Computing invariants [Rintanen]
+candidates build 6048
+Size 6048 at 0/200
+Size 368
+Size 368 at 0/200
+Size 368
+Invariant time: 0.06
+Number of invariants: 368
+Invariant Clauses 8096
+NUMBER OF CLAUSES 13552
+NUMBER OF STATE CLAUSES 11136
+NUMBER OF DECOMPOSITION CLAUSES 2416
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 82.17% 17.830000000000002% 0.0% 
+NUMBER OF PATHS 21
+Starting cryptominisat
+Setting starttime of solver to 1603876428597
+Command exited with non-zero status 20
+0.00 0.00
+
+Time command gave the following runtime for the solver: 0
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 5
+Generating initial PDT ... done
+initial PDT has 84 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 66 leafs
+SHOP LEAFS 33
+Assignment implications
+Still waiting ... running for 100 will abort at 9223372036854770601
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 24656
+NUMBER OF CLAUSES 55522
+NUMBER OF STATE CLAUSES 35172
+NUMBER OF DECOMPOSITION CLAUSES 20350
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 63.35% 36.65% 0.0% 
+NUMBER OF PATHS 66
+Starting cryptominisat
+Setting starttime of solver to 1603876429233
+Command exited with non-zero status 10
+0.02 0.00
+
+Time command gave the following runtime for the solver: 20
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... done
+SAT-Solver says: SATISFIABLE
+
+extracting solution
+Consider method^3_0;0;1,290 290 <<m-dconnect-v;plug[scart-cable-1,scart-cable-1-scart-2,multi-scart-1,multi-scart-1-scart-3];_M-plug|CONSEQUENT;1;0,-1>;plug|CONSEQUENT[scart-cable-1,scart-cable-1-scart-2,multi-scart-1,multi-scart-1-scart-3];_M-plug|CONSEQUENT|CONSEQUENT;1;0,-1>
+0;0;1 33 pathaction!3_0;0;1,81
+Consider method^4_2;2;4;4,200 200 m-dconnect-av-empty
+2;2;4;4 42 pathaction!4_2;2;4;4,274
+Consider method^3_1;2;2,234 234 m-connect-direct-a
+1;2;2 40 pathaction!3_1;2;2,47
+Consider method^1_1,12 12 m-connect-split-2
+1 20 pathaction!1_1,187
+Consider method^1_2,287 287 m-connect-split-2
+2 0 pathaction!1_2,190
+Consider method^3_2;2;2,329 329 m-connect-direct-a
+2;2;2 29 pathaction!3_2;2;2,51
+Consider method^3_0;2;1,60 60 <<m-dconnect-v;plug[multi-scart-1,multi-scart-1-scart-1,scart-cable-2,scart-cable-2-scart-1];_M-plug|CONSEQUENT;1;0,-1>;plug|CONSEQUENT[multi-scart-1,multi-scart-1-scart-1,scart-cable-2,scart-cable-2-scart-1];_M-plug|CONSEQUENT|CONSEQUENT;1;0,-1>
+0;2;1 32 pathaction!3_0;2;1,67
+Consider method^4_1;2;2;2,173 173 m-dconnect-a-empty
+1;2;2;2 46 pathaction!4_1;2;2;2,122
+Consider method^3_1;2;4,134 134 m-connect-direct-av
+1;2;4 36 pathaction!3_1;2;4,193
+Consider method^4_0;2;4;4,68 68 <<m-dconnect-av;plug[scart-cable-2,scart-cable-2-scart-2,tv1-1,tv1-1-scart-1];_M-plug|CONSEQUENT;1;0,-1>;plug|CONSEQUENT[scart-cable-2,scart-cable-2-scart-2,tv1-1,tv1-1-scart-1];_M-plug|CONSEQUENT|CONSEQUENT;1;0,-1>
+0;2;4;4 51 pathaction!4_0;2;4;4,274
+Consider method^3_0;2;4,134 134 m-connect-direct-av
+0;2;4 28 pathaction!3_0;2;4,193
+Consider method^3_1;2;3,257 257 m-dconnect-a-empty
+1;2;3 71 pathaction!3_1;2;3,115
+Consider method^3_0;1;1,321 321 m-dconnect-a-empty
+0;1;1 1 pathaction!3_0;1;1,129
+Consider method^3_2;2;3,257 257 m-dconnect-a-empty
+2;2;3 16 pathaction!3_2;2;3,115
+Consider method^4_1;2;0;2,74 74 <<m-dconnect-v;plug[scart-cable-3,scart-cable-3-scart-2,multi-scart-1,multi-scart-1-scart-2];_M-plug|CONSEQUENT;1;0,-1>;plug|CONSEQUENT[scart-cable-3,scart-cable-3-scart-2,multi-scart-1,multi-scart-1-scart-2];_M-plug|CONSEQUENT|CONSEQUENT;1;0,-1>
+1;2;0;2 17 pathaction!4_1;2;0;2,74
+Consider method^3_1;2;1,186 186 m-dconnect-v-empty
+1;2;1 43 pathaction!3_1;2;1,67
+Consider method^3_1;0;1,41 41 <<m-dconnect-v;plug[dvd-1,dvd-1-scart-1,scart-cable-3,scart-cable-3-scart-1];_M-plug|CONSEQUENT;1;0,-1>;plug|CONSEQUENT[dvd-1,dvd-1-scart-1,scart-cable-3,scart-cable-3-scart-1];_M-plug|CONSEQUENT|CONSEQUENT;1;0,-1>
+1;0;1 31 pathaction!3_1;0;1,69
+Consider method^3_2;2;1,186 186 m-dconnect-v-empty
+2;2;1 63 pathaction!3_2;2;1,67
+Consider method^2_0;0,28 28 m-connect-rec-v
+0;0 37 pathaction!2_0;0,239
+Consider method^3_0;1;0,315 315 m-connect-direct-a
+0;1;0 49 pathaction!3_0;1;0,45
+Consider method^2_1;0,197 197 m-connect-direct-v
+1;0 74 pathaction!2_1;0,237
+Consider method^3_2;0;1,91 91 <<m-dconnect-v;plug[game-console-1,game-console-1-scart-1,scart-cable-4,scart-cable-4-scart-1];_M-plug|CONSEQUENT;1;0,-1>;plug|CONSEQUENT[game-console-1,game-console-1-scart-1,scart-cable-4,scart-cable-4-scart-1];_M-plug|CONSEQUENT|CONSEQUENT;1;0,-1>
+2;0;1 9 pathaction!3_2;0;1,66
+Consider method^3_2;2;0,248 248 m-connect-direct-v
+2;2;0 27 pathaction!3_2;2;0,246
+Consider method^2_0;1,16 16 m-connect-rec-a
+0;1 10 pathaction!2_0;1,44
+Consider method^4_2;2;0;2,71 71 <<m-dconnect-v;plug[scart-cable-4,scart-cable-4-scart-2,multi-scart-1,multi-scart-1-scart-4];_M-plug|CONSEQUENT;1;0,-1>;plug|CONSEQUENT[scart-cable-4,scart-cable-4-scart-2,multi-scart-1,multi-scart-1-scart-4];_M-plug|CONSEQUENT|CONSEQUENT;1;0,-1>
+2;2;0;2 58 pathaction!4_2;2;0;2,76
+Consider method^1_0,242 242 m-connect-split-2
+0 30 pathaction!1_0,192
+Consider method^3_0;0;0,320 320 m-connect-direct-v
+0;0;0 21 pathaction!3_0;0;0,240
+Consider method^2_1;2,40 40 <<m-connect-split-2;v_connect[scart-cable-3,scart-cable-2];m-connect-rec-v;0;-1,-2,1,2>;a_connect[scart-cable-3,scart-cable-2];m-connect-rec-a;2;0,1,-1,-2,3>
+1;2 25 pathaction!2_1;2,194
+Consider method^2_2;2,138 138 <<m-connect-split-2;v_connect[scart-cable-4,scart-cable-2];m-connect-rec-v;0;-1,-2,1,2>;a_connect[scart-cable-4,scart-cable-2];m-connect-rec-a;2;0,1,-1,-2,3>
+2;2 54 pathaction!2_2;2,188
+Consider method^2_1;1,352 352 m-connect-direct-a
+1;1 69 pathaction!2_1;1,42
+Consider method^0_,403 403 __top_1
+ 6 pathaction!0_,334
+Consider method^3_1;2;0,150 150 m-connect-direct-v
+1;2;0 38 pathaction!3_1;2;0,242
+Consider method^4_1;2;4;4,200 200 m-dconnect-av-empty
+1;2;4;4 23 pathaction!4_1;2;4;4,274
+Consider method^4_2;2;2;2,133 133 m-dconnect-a-empty
+2;2;2;2 64 pathaction!4_2;2;2;2,124
+Consider method^3_2;2;4,134 134 m-connect-direct-av
+2;2;4 57 pathaction!3_2;2;4,193
+Consider method^2_2;0,151 151 m-connect-direct-v
+2;0 5 pathaction!2_2;0,235
+Consider method^4_0;0;0;1,369 369 <<m-dconnect-v;plug[blu-ray-1,blu-ray-1-scart-1,scart-cable-1,scart-cable-1-scart-1];_M-plug|CONSEQUENT;1;0,-1>;plug|CONSEQUENT[blu-ray-1,blu-ray-1-scart-1,scart-cable-1,scart-cable-1-scart-1];_M-plug|CONSEQUENT|CONSEQUENT;1;0,-1>
+0;0;0;1 67 pathaction!4_0;0;0;1,72
+Consider method^3_0;2;3,257 257 m-dconnect-a-empty
+0;2;3 47 pathaction!3_0;2;3,115
+Consider method^2_2;1,222 222 m-connect-direct-a
+2;1 45 pathaction!2_2;1,40
+Consider method^2_0;2,110 110 <<m-connect-split-2;v_connect[multi-scart-1,scart-cable-2];m-connect-direct-v;0;-1,1,2>;a_connect[multi-scart-1,scart-cable-2];m-connect-direct-a;1;0,-1,2>
+0;2 35 pathaction!2_0;2,191
+Consider method^3_2;1;1,179 179 m-dconnect-a-empty
+2;1;1 19 pathaction!3_2;1;1,114
+Consider method^4_0;1;0;1,396 396 m-dconnect-a-empty
+0;1;0;1 56 pathaction!4_0;1;0;1,120
+Consider method^3_1;1;1,384 384 m-dconnect-a-empty
+1;1;1 65 pathaction!3_1;1;1,117
+
+
+CHECKING primitive solution of length 29 ...
+true 11 __method_precondition_m-dconnect-v_10_precondition[blu-ray-1-scart-1,scart-cable-1-scart-1;]
+true 59 plug|CONSEQUENT|CONSEQUENT[blu-ray-1,blu-ray-1-scart-1,scart-cable-1,scart-cable-1-scart-1;]
+true 60 __method_precondition_m-dconnect-v_10_precondition[scart-cable-1-scart-2,multi-scart-1-scart-3;]
+true 55 plug|CONSEQUENT|CONSEQUENT[scart-cable-1,scart-cable-1-scart-2,multi-scart-1,multi-scart-1-scart-3;]
+true 50 __method_precondition_m-dconnect-a-empty_12_precondition[blu-ray-1,scart-cable-1;]
+true 13 __method_precondition_m-dconnect-a-empty_12_precondition[scart-cable-1,multi-scart-1;]
+true 41 __method_precondition_m-dconnect-v_10_precondition[multi-scart-1-scart-1,scart-cable-2-scart-1;]
+true 70 plug|CONSEQUENT|CONSEQUENT[multi-scart-1,multi-scart-1-scart-1,scart-cable-2,scart-cable-2-scart-1;]
+true 18 __method_precondition_m-dconnect-a-empty_12_precondition[multi-scart-1,scart-cable-2;]
+true 15 __method_precondition_m-dconnect-av_8_precondition[scart-cable-2-scart-2,tv1-1-scart-1;]
+true 73 plug|CONSEQUENT|CONSEQUENT[scart-cable-2,scart-cable-2-scart-2,tv1-1,tv1-1-scart-1;]
+true 3 __method_precondition_m-dconnect-v_10_precondition[dvd-1-scart-1,scart-cable-3-scart-1;]
+true 44 plug|CONSEQUENT|CONSEQUENT[dvd-1,dvd-1-scart-1,scart-cable-3,scart-cable-3-scart-1;]
+true 39 __method_precondition_m-dconnect-a-empty_12_precondition[dvd-1,scart-cable-3;]
+true 68 __method_precondition_m-dconnect-v_10_precondition[scart-cable-3-scart-2,multi-scart-1-scart-2;]
+true 66 plug|CONSEQUENT|CONSEQUENT[scart-cable-3,scart-cable-3-scart-2,multi-scart-1,multi-scart-1-scart-2;]
+true 72 __method_precondition_m-dconnect-v-empty_13_precondition[multi-scart-1,scart-cable-2;]
+true 53 __method_precondition_m-dconnect-a-empty_12_precondition[scart-cable-3,multi-scart-1;]
+true 7 __method_precondition_m-dconnect-a-empty_12_precondition[multi-scart-1,scart-cable-2;]
+true 22 __method_precondition_m-dconnect-av-empty_11_precondition[scart-cable-2,tv1-1;]
+true 12 __method_precondition_m-dconnect-v_10_precondition[game-console-1-scart-1,scart-cable-4-scart-1;]
+true 4 plug|CONSEQUENT|CONSEQUENT[game-console-1,game-console-1-scart-1,scart-cable-4,scart-cable-4-scart-1;]
+true 14 __method_precondition_m-dconnect-a-empty_12_precondition[game-console-1,scart-cable-4;]
+true 2 __method_precondition_m-dconnect-v_10_precondition[scart-cable-4-scart-2,multi-scart-1-scart-4;]
+true 8 plug|CONSEQUENT|CONSEQUENT[scart-cable-4,scart-cable-4-scart-2,multi-scart-1,multi-scart-1-scart-4;]
+true 62 __method_precondition_m-dconnect-v-empty_13_precondition[multi-scart-1,scart-cable-2;]
+true 24 __method_precondition_m-dconnect-a-empty_12_precondition[scart-cable-4,multi-scart-1;]
+true 34 __method_precondition_m-dconnect-a-empty_12_precondition[multi-scart-1,scart-cable-2;]
+true 26 __method_precondition_m-dconnect-av-empty_11_precondition[scart-cable-2,tv1-1;]
+ done.
+Panda says: SOLUTION
+============ global ============
+randomseed     = 42
+peak memory    = 165234808
+planner result = SOLUTION
+============ properties ============
+acyclic                  = false
+mostly acyclic           = false
+regular                  = false
+tail recursive           = false
+totally ordered          = true
+last task in all methods = true
+============ problem ============
+number of constants                  = 0
+number of predicates                 = 64
+number of actions                    = 335
+number of abstract actions           = 135
+number of primitive actions          = 200
+number of methods                    = 404
+number of primitive shop actions     = 168
+number of primitive non-shop actions = 32
+size of largest method               = 5
+average method size                  = 1
+============ sat ============
+plan length                     = -1
+number of variables             = 11662
+number of clauses               = 55522
+average size of clauses         = 2.4819891214293435
+number of assert                = 17
+number of horn                  = 52261
+K offset                        = 0
+K chosen value                  = 5
+state formula                   = 35172
+method children clauses         = 0
+number of paths                 = 66
+maximum plan length             = 66
+number of decomposition clauses = 20350
+number of ordering clauses      = 0
+number of state clauses         = 35172
+solved                          = true
+timeout                         = false
+
+----------------- TIMINGS -----------------
+============ total ============
+total = 6055
+============ parsing ============
+total                         = 1088
+file parser                   = 567
+sort expansion                = 178
+closed world assumption       = 113
+inherit preconditions         = 0
+shop methods                  = 18
+eliminate identical variables = 76
+strip domain of hybridity     = 1
+flatten formula               = 134
+============ preprocessing ============
+total                                      = 3170
+compile negative preconditions             = 45
+compile unit methods                       = 0
+split parameter                            = 43
+expand choiceless abstract tasks           = 412
+compile methods with identical tasks       = 5
+removing unnecessary predicates            = 282
+lifted reachabiltiy analysis               = 55
+grounded planning graph analysis           = 671
+grounded task decomposition graph analysis = 1450
+grounding                                  = 193
+create artificial top task                 = 2
+============ search preparation ============
+compute state invariants = 96
+============ sat ============
+total                                        = 1073
+generate formula                             = 770
+generate path decomposition tree             = 185
+normalise path decomposition tree            = 58
+sog optimisation                             = 36
+translate path decomposition tree to clauses = 240
+generate state formula                       = 763
+generate state invariant formula             = 39
+transform to DIMACS                          = 81
+SAT solver                                   = 20
+SAT solver for K=0004                        = 0
+SAT solver for K=0005                        = 20
+
+#1 "40 sat:90:solved"="true";"30 problem:05:number of primitive actions"="200";"30 problem:01:number of constants"="0";"30 problem:04:number of abstract actions"="135";"02 properties:04:tail recursive"="false";"00 global:80:peak memory"="165234808";"40 sat:20:state formula"="35172";"40 sat:01:number of variables"="11662";"40 sat:14:K offset"="0";"40 sat:30:number of paths"="66";"40 sat:00:plan length"="-1";"40 sat:50:number of ordering clauses"="0";"02 properties:02:mostly acyclic"="false";"30 problem:06:number of methods"="404";"30 problem:07:number of primitive shop actions"="168";"02 properties:05:totally ordered"="true";"02 properties:06:last task in all methods"="true";"30 problem:03:number of actions"="335";"30 problem:08:number of primitive non-shop actions"="32";"30 problem:02:number of predicates"="64";"40 sat:03:number of horn"="52261";"40 sat:15:K chosen value"="5";"30 problem:10:average method size"="1";"02 properties:03:regular"="false";"30 problem:09:size of largest method"="5";"40 sat:03:average size of clauses"="2.4819891214293435";"40 sat:02:number of clauses"="55522";"40 sat:50:number of state clauses"="35172";"40 sat:03:number of assert"="17";"40 sat:22:method children clauses"="0";"00 global:90:planner result"="SOLUTION";"02 properties:01:acyclic"="false";"40 sat:31:maximum plan length"="66";"40 sat:50:number of decomposition clauses"="20350";"00 global:02:randomseed"="42";"40 sat:91:timeout"="false";"01 parsing:01:file parser"="567";"01 parsing:08:flatten formula"="134";"40 sat:41:SAT solver for K=0004"="0";"40 sat:00:total"="1073";"40 sat:16:generate state formula"="763";"40 sat:20:transform to DIMACS"="81";"40 sat:11:generate path decomposition tree"="185";"02 preprocessing:07:compile methods with identical tasks"="5";"01 parsing:07:strip domain of hybridity"="1";"02 preprocessing:08:removing unnecessary predicates"="282";"01 parsing:03:closed world assumption"="113";"02 preprocessing:11:lifted reachabiltiy analysis"="55";"01 parsing:02:sort expansion"="178";"40 sat:12:normalise path decomposition tree"="58";"40 sat:40:SAT solver"="20";"01 parsing:00:total"="1088";"40 sat:10:generate formula"="770";"40 sat:41:SAT solver for K=0005"="20";"01 parsing:04:inherit preconditions"="0";"02 preprocessing:01:compile negative preconditions"="45";"00 total:00:total"="6055";"40 sat:13:sog optimisation"="36";"02 preprocessing:12:grounded planning graph analysis"="671";"02 preprocessing:02:compile unit methods"="0";"02 preprocessing:23:grounded task decomposition graph analysis"="1450";"02 preprocessing:04:split parameter"="43";"01 parsing:05:shop methods"="18";"10 search preparation:02:compute state invariants"="96";"01 parsing:06:eliminate identical variables"="76";"40 sat:15:translate path decomposition tree to clauses"="240";"02 preprocessing:05:expand choiceless abstract tasks"="412";"40 sat:17:generate state invariant formula"="39";"02 preprocessing:00:total"="3170";"02 preprocessing:99:create artificial top task"="2";"02 preprocessing:84:grounding"="193"
+#!verify __method_precondition_m-dconnect-v_10_precondition[blu-ray-1-scart-1,scart-cable-1-scart-1];plug|CONSEQUENT|CONSEQUENT[blu-ray-1,blu-ray-1-scart-1,scart-cable-1,scart-cable-1-scart-1];__method_precondition_m-dconnect-v_10_precondition[scart-cable-1-scart-2,multi-scart-1-scart-3];plug|CONSEQUENT|CONSEQUENT[scart-cable-1,scart-cable-1-scart-2,multi-scart-1,multi-scart-1-scart-3];__method_precondition_m-dconnect-a-empty_12_precondition[blu-ray-1,scart-cable-1];__method_precondition_m-dconnect-a-empty_12_precondition[scart-cable-1,multi-scart-1];__method_precondition_m-dconnect-v_10_precondition[multi-scart-1-scart-1,scart-cable-2-scart-1];plug|CONSEQUENT|CONSEQUENT[multi-scart-1,multi-scart-1-scart-1,scart-cable-2,scart-cable-2-scart-1];__method_precondition_m-dconnect-a-empty_12_precondition[multi-scart-1,scart-cable-2];__method_precondition_m-dconnect-av_8_precondition[scart-cable-2-scart-2,tv1-1-scart-1];plug|CONSEQUENT|CONSEQUENT[scart-cable-2,scart-cable-2-scart-2,tv1-1,tv1-1-scart-1];__method_precondition_m-dconnect-v_10_precondition[dvd-1-scart-1,scart-cable-3-scart-1];plug|CONSEQUENT|CONSEQUENT[dvd-1,dvd-1-scart-1,scart-cable-3,scart-cable-3-scart-1];__method_precondition_m-dconnect-a-empty_12_precondition[dvd-1,scart-cable-3];__method_precondition_m-dconnect-v_10_precondition[scart-cable-3-scart-2,multi-scart-1-scart-2];plug|CONSEQUENT|CONSEQUENT[scart-cable-3,scart-cable-3-scart-2,multi-scart-1,multi-scart-1-scart-2];__method_precondition_m-dconnect-v-empty_13_precondition[multi-scart-1,scart-cable-2];__method_precondition_m-dconnect-a-empty_12_precondition[scart-cable-3,multi-scart-1];__method_precondition_m-dconnect-a-empty_12_precondition[multi-scart-1,scart-cable-2];__method_precondition_m-dconnect-av-empty_11_precondition[scart-cable-2,tv1-1];__method_precondition_m-dconnect-v_10_precondition[game-console-1-scart-1,scart-cable-4-scart-1];plug|CONSEQUENT|CONSEQUENT[game-console-1,game-console-1-scart-1,scart-cable-4,scart-cable-4-scart-1];__method_precondition_m-dconnect-a-empty_12_precondition[game-console-1,scart-cable-4];__method_precondition_m-dconnect-v_10_precondition[scart-cable-4-scart-2,multi-scart-1-scart-4];plug|CONSEQUENT|CONSEQUENT[scart-cable-4,scart-cable-4-scart-2,multi-scart-1,multi-scart-1-scart-4];__method_precondition_m-dconnect-v-empty_13_precondition[multi-scart-1,scart-cable-2];__method_precondition_m-dconnect-a-empty_12_precondition[scart-cable-4,multi-scart-1];__method_precondition_m-dconnect-a-empty_12_precondition[multi-scart-1,scart-cable-2];__method_precondition_m-dconnect-av-empty_11_precondition[scart-cable-2,tv1-1]
+==>
+0 __method_precondition_m-dconnect-v_10_precondition blu-ray-1-scart-1 scart-cable-1-scart-1 
+1 plug blu-ray-1 blu-ray-1-scart-1 scart-cable-1 scart-cable-1-scart-1 
+2 __method_precondition_m-dconnect-v_10_precondition scart-cable-1-scart-2 multi-scart-1-scart-3 
+3 plug scart-cable-1 scart-cable-1-scart-2 multi-scart-1 multi-scart-1-scart-3 
+4 __method_precondition_m-dconnect-a-empty_12_precondition blu-ray-1 scart-cable-1 
+5 __method_precondition_m-dconnect-a-empty_12_precondition scart-cable-1 multi-scart-1 
+6 __method_precondition_m-dconnect-v_10_precondition multi-scart-1-scart-1 scart-cable-2-scart-1 
+7 plug multi-scart-1 multi-scart-1-scart-1 scart-cable-2 scart-cable-2-scart-1 
+8 __method_precondition_m-dconnect-a-empty_12_precondition multi-scart-1 scart-cable-2 
+9 __method_precondition_m-dconnect-av_8_precondition scart-cable-2-scart-2 tv1-1-scart-1 
+10 plug scart-cable-2 scart-cable-2-scart-2 tv1-1 tv1-1-scart-1 
+11 __method_precondition_m-dconnect-v_10_precondition dvd-1-scart-1 scart-cable-3-scart-1 
+12 plug dvd-1 dvd-1-scart-1 scart-cable-3 scart-cable-3-scart-1 
+13 __method_precondition_m-dconnect-a-empty_12_precondition dvd-1 scart-cable-3 
+14 __method_precondition_m-dconnect-v_10_precondition scart-cable-3-scart-2 multi-scart-1-scart-2 
+15 plug scart-cable-3 scart-cable-3-scart-2 multi-scart-1 multi-scart-1-scart-2 
+16 __method_precondition_m-dconnect-v-empty_13_precondition multi-scart-1 scart-cable-2 
+17 __method_precondition_m-dconnect-a-empty_12_precondition scart-cable-3 multi-scart-1 
+18 __method_precondition_m-dconnect-a-empty_12_precondition multi-scart-1 scart-cable-2 
+19 __method_precondition_m-dconnect-av-empty_11_precondition scart-cable-2 tv1-1 
+20 __method_precondition_m-dconnect-v_10_precondition game-console-1-scart-1 scart-cable-4-scart-1 
+21 plug game-console-1 game-console-1-scart-1 scart-cable-4 scart-cable-4-scart-1 
+22 __method_precondition_m-dconnect-a-empty_12_precondition game-console-1 scart-cable-4 
+23 __method_precondition_m-dconnect-v_10_precondition scart-cable-4-scart-2 multi-scart-1-scart-4 
+24 plug scart-cable-4 scart-cable-4-scart-2 multi-scart-1 multi-scart-1-scart-4 
+25 __method_precondition_m-dconnect-v-empty_13_precondition multi-scart-1 scart-cable-2 
+26 __method_precondition_m-dconnect-a-empty_12_precondition scart-cable-4 multi-scart-1 
+27 __method_precondition_m-dconnect-a-empty_12_precondition multi-scart-1 scart-cable-2 
+28 __method_precondition_m-dconnect-av-empty_11_precondition scart-cable-2 tv1-1 
+root 39
+29 av_connect scart-cable-2 tv1-1  -> m-connect-direct-av 53
+30 av_connect scart-cable-4 tv1-1  -> <<m-connect-split-2;v_connect[scart-cable-4,scart-cable-2];m-connect-rec-v;0;-1,-2,1,2>;a_connect[scart-cable-4,scart-cable-2];m-connect-rec-a;2;0,1,-1,-2,3> 43 61 65 68 52
+31 a_connect blu-ray-1 scart-cable-1  -> m-connect-direct-a 49
+32 direct_a_connect multi-scart-1 scart-cable-2  -> m-dconnect-a-empty 18
+33 a_connect game-console-1 scart-cable-4  -> m-connect-direct-a 67
+34 v_connect game-console-1 scart-cable-4  -> m-connect-direct-v 54
+35 v_connect scart-cable-3 multi-scart-1  -> m-connect-direct-v 63
+36 v_connect blu-ray-1 scart-cable-1  -> m-connect-direct-v 60
+37 direct_v_connect dvd-1 scart-cable-3  -> <<m-dconnect-v;plug[dvd-1,dvd-1-scart-1,scart-cable-3,scart-cable-3-scart-1];_M-plug|CONSEQUENT;1;0,-1>;plug|CONSEQUENT[dvd-1,dvd-1-scart-1,scart-cable-3,scart-cable-3-scart-1];_M-plug|CONSEQUENT|CONSEQUENT;1;0,-1> 11 12
+38 direct_a_connect scart-cable-3 multi-scart-1  -> m-dconnect-a-empty 17
+39 __choicelessATCompilation__top_1  -> __top_1 46 70 58
+40 v_connect dvd-1 scart-cable-3  -> m-connect-direct-v 37
+41 direct_a_connect dvd-1 scart-cable-3  -> m-dconnect-a-empty 13
+42 a_connect blu-ray-1 multi-scart-1  -> m-connect-rec-a 31 69
+43 v_connect scart-cable-4 multi-scart-1  -> m-connect-direct-v 57
+44 av_connect scart-cable-2 tv1-1  -> m-connect-direct-av 56
+45 a_connect scart-cable-3 multi-scart-1  -> m-connect-direct-a 38
+46 av_connect blu-ray-1 tv1-1  -> m-connect-split-2 51 42 66
+47 direct_v_connect multi-scart-1 scart-cable-2  -> m-dconnect-v-empty 16
+48 direct_v_connect scart-cable-1 multi-scart-1  -> <<m-dconnect-v;plug[scart-cable-1,scart-cable-1-scart-2,multi-scart-1,multi-scart-1-scart-3];_M-plug|CONSEQUENT;1;0,-1>;plug|CONSEQUENT[scart-cable-1,scart-cable-1-scart-2,multi-scart-1,multi-scart-1-scart-3];_M-plug|CONSEQUENT|CONSEQUENT;1;0,-1> 2 3
+49 direct_a_connect blu-ray-1 scart-cable-1  -> m-dconnect-a-empty 4
+50 direct_a_connect scart-cable-4 multi-scart-1  -> m-dconnect-a-empty 26
+51 v_connect blu-ray-1 multi-scart-1  -> m-connect-rec-v 36 48
+52 av_connect scart-cable-2 tv1-1  -> m-connect-direct-av 55
+53 direct_av_connect scart-cable-2 tv1-1  -> <<m-dconnect-av;plug[scart-cable-2,scart-cable-2-scart-2,tv1-1,tv1-1-scart-1];_M-plug|CONSEQUENT;1;0,-1>;plug|CONSEQUENT[scart-cable-2,scart-cable-2-scart-2,tv1-1,tv1-1-scart-1];_M-plug|CONSEQUENT|CONSEQUENT;1;0,-1> 9 10
+54 direct_v_connect game-console-1 scart-cable-4  -> <<m-dconnect-v;plug[game-console-1,game-console-1-scart-1,scart-cable-4,scart-cable-4-scart-1];_M-plug|CONSEQUENT;1;0,-1>;plug|CONSEQUENT[game-console-1,game-console-1-scart-1,scart-cable-4,scart-cable-4-scart-1];_M-plug|CONSEQUENT|CONSEQUENT;1;0,-1> 20 21
+55 direct_av_connect scart-cable-2 tv1-1  -> m-dconnect-av-empty 28
+56 direct_av_connect scart-cable-2 tv1-1  -> m-dconnect-av-empty 19
+57 direct_v_connect scart-cable-4 multi-scart-1  -> <<m-dconnect-v;plug[scart-cable-4,scart-cable-4-scart-2,multi-scart-1,multi-scart-1-scart-4];_M-plug|CONSEQUENT;1;0,-1>;plug|CONSEQUENT[scart-cable-4,scart-cable-4-scart-2,multi-scart-1,multi-scart-1-scart-4];_M-plug|CONSEQUENT|CONSEQUENT;1;0,-1> 23 24
+58 av_connect game-console-1 tv1-1  -> m-connect-split-2 34 33 30
+59 direct_a_connect multi-scart-1 scart-cable-2  -> m-dconnect-a-empty 8
+60 direct_v_connect blu-ray-1 scart-cable-1  -> <<m-dconnect-v;plug[blu-ray-1,blu-ray-1-scart-1,scart-cable-1,scart-cable-1-scart-1];_M-plug|CONSEQUENT;1;0,-1>;plug|CONSEQUENT[blu-ray-1,blu-ray-1-scart-1,scart-cable-1,scart-cable-1-scart-1];_M-plug|CONSEQUENT|CONSEQUENT;1;0,-1> 0 1
+61 direct_v_connect multi-scart-1 scart-cable-2  -> m-dconnect-v-empty 25
+62 a_connect dvd-1 scart-cable-3  -> m-connect-direct-a 41
+63 direct_v_connect scart-cable-3 multi-scart-1  -> <<m-dconnect-v;plug[scart-cable-3,scart-cable-3-scart-2,multi-scart-1,multi-scart-1-scart-2];_M-plug|CONSEQUENT;1;0,-1>;plug|CONSEQUENT[scart-cable-3,scart-cable-3-scart-2,multi-scart-1,multi-scart-1-scart-2];_M-plug|CONSEQUENT|CONSEQUENT;1;0,-1> 14 15
+64 direct_v_connect multi-scart-1 scart-cable-2  -> <<m-dconnect-v;plug[multi-scart-1,multi-scart-1-scart-1,scart-cable-2,scart-cable-2-scart-1];_M-plug|CONSEQUENT;1;0,-1>;plug|CONSEQUENT[multi-scart-1,multi-scart-1-scart-1,scart-cable-2,scart-cable-2-scart-1];_M-plug|CONSEQUENT|CONSEQUENT;1;0,-1> 6 7
+65 a_connect scart-cable-4 multi-scart-1  -> m-connect-direct-a 50
+66 av_connect multi-scart-1 tv1-1  -> <<m-connect-split-2;v_connect[multi-scart-1,scart-cable-2];m-connect-direct-v;0;-1,1,2>;a_connect[multi-scart-1,scart-cable-2];m-connect-direct-a;1;0,-1,2> 64 59 29
+67 direct_a_connect game-console-1 scart-cable-4  -> m-dconnect-a-empty 22
+68 direct_a_connect multi-scart-1 scart-cable-2  -> m-dconnect-a-empty 27
+69 direct_a_connect scart-cable-1 multi-scart-1  -> m-dconnect-a-empty 5
+70 av_connect dvd-1 tv1-1  -> m-connect-split-2 40 62 71
+71 av_connect scart-cable-3 tv1-1  -> <<m-connect-split-2;v_connect[scart-cable-3,scart-cable-2];m-connect-rec-v;0;-1,-2,1,2>;a_connect[scart-cable-3,scart-cable-2];m-connect-rec-a;2;0,1,-1,-2,3> 35 47 45 32 44
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 6.984 MEMPEAK_KBS 300065.792

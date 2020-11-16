@@ -1,0 +1,1523 @@
+PANDA - Planning and Acting in a Network Decomposition Architecture
+Believe us: It's great, it's fantastic!
+
+PANDA Copyright (C) 2014-2018 Gregor Behnke, Pascal Bercher, Thomas Geier, Kadir
+Dede, Daniel Höller, Kristof Mickeleit, Matthias Englert
+This program comes with ABSOLUTELY NO WARRANTY
+This is free software, and you are welcome to redistribute it under certain
+conditions; run PANDA with -license for details.
+
+Main Developers:
+- Gregor Behnke, http://www.uni-ulm.de/in/ki/behnke
+- Daniel Höller, http://www.uni-ulm.de/in/ki/hoeller
+
+With many thanks to various further contributors.
+Run PANDA with the command line argument -contributors for an extensive list.
+
+Run it with -help for more information like available options.
+
+
+PANDA was called with: "-systemConfig AAAI-2018-totSAT(cryptominisat) -programPath cryptominisat=./cryptominisat5 instances/blocksworld/domain.hddl instances/blocksworld/p08.hddl"
+
+
+Planner Configuration
+=====================
+Domain: instances/blocksworld/domain.hddl
+Problem: instances/blocksworld/p08.hddl
+Output: none
+
+Planning Configuration
+======================
+	printGeneralInformation : true
+	printAdditionalData     : true
+	random seed             : 42
+	time limit (in seconds) : none
+
+	external programs:
+		cryptominisat : ./cryptominisat5
+
+	Parsing Configuration
+	---------------------
+	Parser                : autodetect file-type
+	Expand Sort Hierarchy : true
+	ClosedWordAssumption  : true
+	CompileSHOPMethods    : true
+	Eliminate Equality    : true
+	Strip Hybridity       : true
+	Reduce General Tasks  : true
+	
+	Preprocessing Configuration
+	---------------------------
+	Compile negative preconditions    : true
+	Compile unit methods              : false
+	Compile order in methods          : false
+	Compile initial plan              : true
+	Ensure Methods Have Last Task     : false
+	Split independent parameters      : true
+	Remove unnecessary predicates     : true
+	Expand choiceless abstract tasks  : true
+	Domain Cleanup                    : true
+	Convert to SAS+                   : false
+	Grounded Reachability Analysis    : Planning Graph (mutex-free)
+	Grounded Task Decomposition Graph : Two Way TDG
+	Iterate reachability analysis     : true
+	Ground domain                     : true
+	Iterate reachability analysis     : true
+	Stop directly after grounding     : false
+	
+	SAT-Planning Configuration
+	--------------------------
+	solver           : cryptominisat
+	full planner run : true
+	reduction method : only normalise 
+	check result     : true
+	
+	Post-processing Configuration
+	-----------------------------
+	search result with Decomposition Tree
+	statistics
+	timings
+	search status
+	search result
+#0 "00 global:01:problem"="p08.hddl";"00 global:00:domain"="domain.hddl"
+Parsing domain ... using HDDL parser ... done
+Preparing internal domain representation ... done.
+Initial domain
+	number of abstract tasks = 4
+	number of tasks = 17
+	number of decomposition methods = 8
+	number of predicates = 5
+	number of sorts = 2
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 8
+	number of epsilon methods = 0
+	number of primitive tasks = 13
+	number of constants = 19
+Compiling negative preconditions ... done.
+	number of abstract tasks = 4
+	number of tasks = 17
+	number of decomposition methods = 8
+	number of predicates = 10
+	number of sorts = 2
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 8
+	number of epsilon methods = 0
+	number of primitive tasks = 13
+	number of constants = 19
+Compiling split parameters ... done.
+	number of abstract tasks = 4
+	number of tasks = 17
+	number of decomposition methods = 8
+	number of predicates = 10
+	number of sorts = 2
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 8
+	number of epsilon methods = 0
+	number of primitive tasks = 13
+	number of constants = 19
+Lifted reachability analysis and domain cleanup ... done.
+	number of abstract tasks = 4
+	number of tasks = 17
+	number of decomposition methods = 8
+	number of predicates = 7
+	number of sorts = 2
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 8
+	number of epsilon methods = 0
+	number of primitive tasks = 13
+	number of constants = 19
+Grounded planning graph ... done in 246ms.
+	Number of Grounded Actions 225
+	Number of Grounded Literals 129
+	number of abstract tasks = 4
+	number of tasks = 17
+	number of decomposition methods = 8
+	number of predicates = 7
+	number of sorts = 2
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 8
+	number of epsilon methods = 0
+	number of primitive tasks = 13
+	number of constants = 19
+Two Way TDG ... done.
+	number of abstract tasks = 4
+	number of tasks = 17
+	number of decomposition methods = 8
+	number of predicates = 7
+	number of sorts = 2
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 8
+	number of epsilon methods = 0
+	number of primitive tasks = 13
+	number of constants = 19
+Grounding ... done.
+	number of abstract tasks = 70
+	number of tasks = 295
+	number of decomposition methods = 180
+	number of predicates = 129
+	number of sorts = 0
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 138
+	number of epsilon methods = 0
+	number of primitive tasks = 225
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 70
+	number of tasks = 295
+	number of decomposition methods = 180
+	number of predicates = 129
+	number of sorts = 0
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 138
+	number of epsilon methods = 0
+	number of primitive tasks = 225
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 56ms.
+	Number of Grounded Actions 225
+	Number of Grounded Literals 129
+	number of abstract tasks = 70
+	number of tasks = 295
+	number of decomposition methods = 180
+	number of predicates = 129
+	number of sorts = 0
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 138
+	number of epsilon methods = 0
+	number of primitive tasks = 225
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 70
+	number of tasks = 295
+	number of decomposition methods = 180
+	number of predicates = 129
+	number of sorts = 0
+	number of tasks in largest method = 5
+	number of primitive SHOP tasks = 138
+	number of epsilon methods = 0
+	number of primitive tasks = 225
+	number of constants = 0
+Compiling expand choiceless abstract tasks ... done.
+	number of abstract tasks = 70
+	number of tasks = 295
+	number of decomposition methods = 180
+	number of predicates = 129
+	number of sorts = 0
+	number of tasks in largest method = 22
+	number of primitive SHOP tasks = 138
+	number of epsilon methods = 0
+	number of primitive tasks = 225
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 70
+	number of tasks = 295
+	number of decomposition methods = 180
+	number of predicates = 129
+	number of sorts = 0
+	number of tasks in largest method = 22
+	number of primitive SHOP tasks = 138
+	number of epsilon methods = 0
+	number of primitive tasks = 225
+	number of constants = 0
+Compiling methods with identical tasks ... done.
+	number of abstract tasks = 80
+	number of tasks = 305
+	number of decomposition methods = 190
+	number of predicates = 129
+	number of sorts = 0
+	number of tasks in largest method = 22
+	number of primitive SHOP tasks = 138
+	number of epsilon methods = 0
+	number of primitive tasks = 225
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 80
+	number of tasks = 305
+	number of decomposition methods = 190
+	number of predicates = 129
+	number of sorts = 0
+	number of tasks in largest method = 22
+	number of primitive SHOP tasks = 138
+	number of epsilon methods = 0
+	number of primitive tasks = 225
+	number of constants = 0
+Tasks 225 - 0
+Domain is acyclic: false
+Domain is mostly acyclic: false
+Domain is regular: false
+Domain is tail recursive: false
+Domain is totally ordered: true
+Domain has last task in all methods: true
+Time remaining for planner 9223372036854773495ms
+Computing minimum decomposition height: 3
+
+Running SAT search with K = 3
+Generating initial PDT ... Still waiting ... running for 102 will abort at 9223372036854773414
+done
+initial PDT has 193 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 164 leafs
+SHOP LEAFS 108
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Computing invariants [Rintanen]
+candidates build 24768
+Size 24768 at 0/225
+Size 20259
+Size 20259 at 0/225
+Size 15474
+Size 15474 at 0/225
+Size 9606
+Size 9606 at 0/225
+Size 4642
+Size 4642 at 0/225
+Size 2068
+Size 2068 at 0/225
+Size 1245
+Size 1245 at 0/225
+Size 1105
+Size 1105 at 0/225
+Size 1105
+Invariant time: 0.326
+Number of invariants: 1105
+Invariant Clauses 182325
+NUMBER OF CLAUSES 227918
+NUMBER OF STATE CLAUSES 225818
+NUMBER OF DECOMPOSITION CLAUSES 2100
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 99.08% 0.92% 0.0% 
+NUMBER OF PATHS 164
+Starting cryptominisat
+Setting starttime of solver to 1603870914593
+Command exited with non-zero status 20
+0.05 0.00
+
+Time command gave the following runtime for the solver: 50
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 4
+Generating initial PDT ... done
+initial PDT has 372 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 336 leafs
+SHOP LEAFS 188
+Assignment implications
+Still waiting ... running for 100 will abort at 9223372036854771546
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 372385
+NUMBER OF CLAUSES 466863
+NUMBER OF STATE CLAUSES 461899
+NUMBER OF DECOMPOSITION CLAUSES 4964
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 98.94% 1.06% 0.0% 
+NUMBER OF PATHS 336
+Starting cryptominisat
+Setting starttime of solver to 1603870915917
+Command exited with non-zero status 20
+0.10 0.01
+
+Time command gave the following runtime for the solver: 110
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 5
+Generating initial PDT ... done
+initial PDT has 520 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 490 leafs
+SHOP LEAFS 244
+Assignment implications
+Still waiting ... running for 100 will abort at 9223372036854770117
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 542555
+NUMBER OF CLAUSES 683557
+NUMBER OF STATE CLAUSES 674195
+NUMBER OF DECOMPOSITION CLAUSES 9362
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 98.63% 1.37% 0.0% 
+NUMBER OF PATHS 490
+Starting cryptominisat
+Setting starttime of solver to 1603870917445
+Command exited with non-zero status 20
+0.16 0.01
+
+Time command gave the following runtime for the solver: 170
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 6
+Generating initial PDT ... done
+initial PDT has 676 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 653 leafs
+SHOP LEAFS 307
+Assignment implications
+Still waiting ... running for 100 will abort at 9223372036854768514
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 722670
+NUMBER OF CLAUSES 918896
+NUMBER OF STATE CLAUSES 900553
+NUMBER OF DECOMPOSITION CLAUSES 18343
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 98.0% 2.0% 0.0% 
+NUMBER OF PATHS 653
+Starting cryptominisat
+Setting starttime of solver to 1603870919553
+Command exited with non-zero status 20
+0.21 0.02
+
+Time command gave the following runtime for the solver: 230
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 7
+Generating initial PDT ... done
+initial PDT has 851 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... Still waiting ... running for 100 will abort at 9223372036854766452
+done
+PDT has 841 leafs
+SHOP LEAFS 383
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 930410
+NUMBER OF CLAUSES 1200331
+NUMBER OF STATE CLAUSES 1163913
+NUMBER OF DECOMPOSITION CLAUSES 36418
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 96.97% 3.0300000000000002% 0.0% 
+NUMBER OF PATHS 841
+Starting cryptominisat
+Setting starttime of solver to 1603870922247
+Command exited with non-zero status 20
+0.26 0.02
+
+Time command gave the following runtime for the solver: 280
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 8
+Generating initial PDT ... done
+initial PDT has 1023 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... Still waiting ... running for 100 will abort at 9223372036854763583
+done
+PDT has 1018 leafs
+SHOP LEAFS 464
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 1125995
+NUMBER OF CLAUSES 1485786
+NUMBER OF STATE CLAUSES 1416284
+NUMBER OF DECOMPOSITION CLAUSES 69502
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 95.32000000000001% 4.68% 0.0% 
+NUMBER OF PATHS 1018
+Starting cryptominisat
+Setting starttime of solver to 1603870925279
+Command exited with non-zero status 20
+0.34 0.02
+
+Time command gave the following runtime for the solver: 360
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 9
+Generating initial PDT ... done
+initial PDT has 1200 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... Still waiting ... running for 100 will abort at 9223372036854760503
+done
+PDT has 1200 leafs
+SHOP LEAFS 550
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 1327105
+NUMBER OF CLAUSES 1802186
+NUMBER OF STATE CLAUSES 1679922
+NUMBER OF DECOMPOSITION CLAUSES 122264
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 93.22% 6.78% 0.0% 
+NUMBER OF PATHS 1200
+Starting cryptominisat
+Setting starttime of solver to 1603870929192
+Command exited with non-zero status 20
+0.40 0.04
+
+Time command gave the following runtime for the solver: 440
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 10
+Generating initial PDT ... Still waiting ... running for 100 will abort at 9223372036854756539
+done
+initial PDT has 1372 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 1372 leafs
+SHOP LEAFS 636
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 1517165
+NUMBER OF CLAUSES 2129717
+NUMBER OF STATE CLAUSES 1933918
+NUMBER OF DECOMPOSITION CLAUSES 195799
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 90.81% 9.19% 0.0% 
+NUMBER OF PATHS 1372
+Starting cryptominisat
+Setting starttime of solver to 1603870933831
+Command exited with non-zero status 20
+0.49 0.03
+
+Time command gave the following runtime for the solver: 520
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 11
+Generating initial PDT ... Still waiting ... running for 100 will abort at 9223372036854751685
+done
+initial PDT has 1544 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 1544 leafs
+SHOP LEAFS 722
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 1707225
+NUMBER OF CLAUSES 2476144
+NUMBER OF STATE CLAUSES 2190796
+NUMBER OF DECOMPOSITION CLAUSES 285348
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 88.48% 11.52% 0.0% 
+NUMBER OF PATHS 1544
+Starting cryptominisat
+Setting starttime of solver to 1603870939272
+Command exited with non-zero status 20
+0.58 0.03
+
+Time command gave the following runtime for the solver: 610
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 12
+Generating initial PDT ... Still waiting ... running for 100 will abort at 9223372036854745733
+done
+initial PDT has 1716 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 1716 leafs
+SHOP LEAFS 808
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 1897285
+NUMBER OF CLAUSES 2831143
+NUMBER OF STATE CLAUSES 2449092
+NUMBER OF DECOMPOSITION CLAUSES 382051
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 86.51% 13.49% 0.0% 
+NUMBER OF PATHS 1716
+Starting cryptominisat
+Setting starttime of solver to 1603870946069
+Command exited with non-zero status 20
+0.70 0.04
+
+Time command gave the following runtime for the solver: 740
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 13
+Generating initial PDT ... done
+initial PDT has 1888 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... Still waiting ... running for 100 will abort at 9223372036854739265
+done
+PDT has 1888 leafs
+SHOP LEAFS 894
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 2087345
+NUMBER OF CLAUSES 3191299
+NUMBER OF STATE CLAUSES 2708191
+NUMBER OF DECOMPOSITION CLAUSES 483108
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 84.86% 15.14% 0.0% 
+NUMBER OF PATHS 1888
+Starting cryptominisat
+Setting starttime of solver to 1603870952923
+Command exited with non-zero status 10
+1.03 0.09
+
+Time command gave the following runtime for the solver: 1120
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... done
+SAT-Solver says: SATISFIABLE
+
+extracting solution
+Consider method^1_10,5 5 m1_do_put_on
+10 133 pathaction!1_10,250
+Consider method^3_1;0;1,178 178 m7_do_clear
+1;0;1 316 pathaction!3_1;0;1,124
+Consider method^3_3;0;1,159 159 m6_do_clear
+3;0;1 142 pathaction!3_3;0;1,126
+Consider method^2_18;2,63 63 m6_do_clear
+18;2 249 pathaction!2_18;2,134
+Consider method^2_6;1,8 8 m6_do_clear
+6;1 17 pathaction!2_6;1,135
+Consider method^2_8;2,23 23 m6_do_clear
+8;2 30 pathaction!2_8;2,125
+Consider method^2_10;4,99 99 m4_do_move
+10;4 3 pathaction!2_10;4,44
+Consider method^3_4;0;3,25 25 m3_do_on_table
+4;0;3 322 pathaction!3_4;0;3,58
+Consider method^3_1;0;4,16 16 m5_do_move
+1;0;4 161 pathaction!3_1;0;4,52
+Consider method^1_1,184 184 __UNIQUE-replacement_5
+1 238 pathaction!1_1,300
+Consider method^2_21;2,76 76 m6_do_clear
+21;2 112 pathaction!2_21;2,138
+Consider method^2_8;3,93 93 m3_do_on_table
+8;3 157 pathaction!2_8;3,57
+Consider method^2_20;3,94 94 m2_do_on_table
+20;3 265 pathaction!2_20;3,63
+Consider method^1_21,35 35 m1_do_put_on
+21 224 pathaction!1_21,251
+Consider method^2_9;1,144 144 m6_do_clear
+9;1 176 pathaction!2_9;1,136
+Consider method^3_0;0;3,168 168 m3_do_on_table
+0;0;3 43 pathaction!3_0;0;3,70
+Consider method^3_2;0;2,156 156 m6_do_clear
+2;0;2 331 pathaction!3_2;0;2,124
+Consider method^2_19;2,10 10 m6_do_clear
+19;2 254 pathaction!2_19;2,128
+Consider method^2_10;2,144 144 m6_do_clear
+10;2 299 pathaction!2_10;2,136
+Consider method^2_9;2,118 118 m6_do_clear
+9;2 308 pathaction!2_9;2,137
+Consider method^7_1;0;1;1;1;1;2,8 8 m6_do_clear
+1;0;1;1;1;1;2 263 pathaction!7_1;0;1;1;1;1;2,135
+Consider method^3_4;0;2,159 159 m6_do_clear
+4;0;2 218 pathaction!3_4;0;2,126
+Consider method^1_11,177 177 <m1_do_put_on;do_clear[b13];m6_do_clear;1;0,-1,-2,2,3,4>
+11 314 pathaction!1_11,253
+Consider method^2_5;3,13 13 m2_do_on_table
+5;3 259 pathaction!2_5;3,61
+Consider method^3_3;0;3,109 109 m3_do_on_table
+3;0;3 236 pathaction!3_3;0;3,59
+Consider method^2_20;2,101 101 m6_do_clear
+20;2 206 pathaction!2_20;2,132
+Consider method^1_20,53 53 m1_do_put_on
+20 135 pathaction!1_20,245
+Consider method^1_19,114 114 m1_do_put_on
+19 295 pathaction!1_19,256
+Consider method^2_6;3,155 155 m3_do_on_table
+6;3 2 pathaction!2_6;3,62
+Consider method^1_2,185 185 __UNIQUE-replacement_6
+2 15 pathaction!1_2,301
+Consider method^2_21;4,7 7 m4_do_move
+21;4 198 pathaction!2_21;4,45
+Consider method^2_7;3,91 91 m3_do_on_table
+7;3 71 pathaction!2_7;3,66
+Consider method^3_3;0;2,14 14 m6_do_clear
+3;0;2 141 pathaction!3_3;0;2,127
+Consider method^2_8;4,46 46 m4_do_move
+8;4 337 pathaction!2_8;4,51
+Consider method^3_0;0;2,170 170 m6_do_clear
+0;0;2 93 pathaction!3_0;0;2,139
+Consider method^12_0;0;1;1;1;1;1;2;2;2;2;2,166 166 <m7_do_clear;do_clear[b13];m6_do_clear;1;0,-1,-2,2,3>
+0;0;1;1;1;1;1;2;2;2;2;2 134 pathaction!12_0;0;1;1;1;1;1;2;2;2;2;2,128
+Consider method^3_1;0;2,15 15 m6_do_clear
+1;0;2 284 pathaction!3_1;0;2,140
+Consider method^2_6;2,165 165 m6_do_clear
+6;2 253 pathaction!2_6;2,130
+Consider method^1_7,119 119 m1_do_put_on
+7 287 pathaction!1_7,244
+Consider method^2_10;1,24 24 m6_do_clear
+10;1 101 pathaction!2_10;1,123
+Consider method^2_4;0,52 52 m1_do_put_on
+4;0 289 pathaction!2_4;0,247
+Consider method^2_5;1,165 165 m6_do_clear
+5;1 16 pathaction!2_5;1,130
+Consider method^1_13,183 183 __UNIQUE-replacement_4
+13 276 pathaction!1_13,299
+Consider method^1_3,179 179 __UNIQUE-replacement_0
+3 329 pathaction!1_3,295
+Consider method^1_4,188 188 __UNIQUE-replacement_9
+4 275 pathaction!1_4,304
+Consider method^0_,189 189 __top_1
+ 66 pathaction!0_,294
+Consider method^1_16,187 187 __UNIQUE-replacement_8
+16 0 pathaction!1_16,303
+Consider method^2_0;0,82 82 m1_do_put_on
+0;0 41 pathaction!2_0;0,248
+Consider method^2_16;0,49 49 m0_do_put_on
+16;0 144 pathaction!2_16;0,247
+Consider method^2_13;0,152 152 m0_do_put_on
+13;0 325 pathaction!2_13;0,258
+Consider method^3_2;0;4,21 21 m4_do_move
+2;0;4 309 pathaction!3_2;0;4,40
+Consider method^2_21;3,70 70 m3_do_on_table
+21;3 155 pathaction!2_21;3,69
+Consider method^2_1;0,88 88 m1_do_put_on
+1;0 52 pathaction!2_1;0,258
+Consider method^2_19;3,147 147 m3_do_on_table
+19;3 149 pathaction!2_19;3,60
+Consider method^1_9,44 44 m1_do_put_on
+9 20 pathaction!1_9,254
+Consider method^2_9;4,37 37 m4_do_move
+9;4 106 pathaction!2_9;4,48
+Consider method^2_15;0,75 75 m0_do_put_on
+15;0 78 pathaction!2_15;0,255
+Consider method^6_1;0;1;1;1;1,103 103 m7_do_clear
+1;0;1;1;1;1 35 pathaction!6_1;0;1;1;1;1,137
+Consider method^2_6;4,124 124 m4_do_move
+6;4 158 pathaction!2_6;4,53
+Consider method^3_1;0;3,9 9 m3_do_on_table
+1;0;3 194 pathaction!3_1;0;3,71
+Consider method^2_14;0,148 148 m0_do_put_on
+14;0 301 pathaction!2_14;0,246
+Consider method^1_12,181 181 __UNIQUE-replacement_2
+12 326 pathaction!1_12,297
+Consider method^3_0;0;4,72 72 m4_do_move
+0;0;4 90 pathaction!3_0;0;4,42
+Consider method^2_11;4,40 40 m3_do_on_table
+11;4 81 pathaction!2_11;4,55
+Consider method^8_0;0;1;1;1;1;1;2,120 120 m7_do_clear
+0;0;1;1;1;1;1;2 23 pathaction!8_0;0;1;1;1;1;1;2,130
+Consider method^2_20;4,39 39 m4_do_move
+20;4 156 pathaction!2_20;4,39
+Consider method^3_4;0;1,55 55 m6_do_clear
+4;0;1 267 pathaction!3_4;0;1,133
+Consider method^6_0;0;1;1;1;1,134 134 m7_do_clear
+0;0;1;1;1;1 65 pathaction!6_0;0;1;1;1;1,138
+Consider method^1_8,135 135 m1_do_put_on
+8 125 pathaction!1_8,257
+Consider method^2_10;3,167 167 m3_do_on_table
+10;3 179 pathaction!2_10;3,67
+Consider method^5_0;0;1;1;1,162 162 m7_do_clear
+0;0;1;1;1 213 pathaction!5_0;0;1;1;1,126
+Consider method^2_9;3,79 79 m3_do_on_table
+9;3 105 pathaction!2_9;3,68
+Consider method^2_21;1,157 157 m6_do_clear
+21;1 91 pathaction!2_21;1,131
+Consider method^1_18,139 139 m1_do_put_on
+18 277 pathaction!1_18,260
+Consider method^2_12;0,54 54 m0_do_put_on
+12;0 293 pathaction!2_12;0,248
+Consider method^2_7;4,143 143 m4_do_move
+7;4 269 pathaction!2_7;4,38
+Consider method^10_0;0;1;1;1;1;1;2;2;2,43 43 m7_do_clear
+0;0;1;1;1;1;1;2;2;2 187 pathaction!10_0;0;1;1;1;1;1;2;2;2,123
+Consider method^2_2;0,163 163 m1_do_put_on
+2;0 31 pathaction!2_2;0,246
+Consider method^1_5,65 65 m1_do_put_on
+5 13 pathaction!1_5,252
+Consider method^2_5;4,116 116 m4_do_move
+5;4 204 pathaction!2_5;4,46
+Consider method^3_4;0;4,3 3 m4_do_move
+4;0;4 6 pathaction!3_4;0;4,41
+Consider method^2_19;1,101 101 m6_do_clear
+19;1 45 pathaction!2_19;1,132
+Consider method^3_3;0;4,78 78 m4_do_move
+3;0;4 164 pathaction!3_3;0;4,49
+Consider method^2_17;2,55 55 m6_do_clear
+17;2 128 pathaction!2_17;2,133
+Consider method^2_18;4,85 85 m4_do_move
+18;4 250 pathaction!2_18;4,54
+Consider method^2_17;1,63 63 m6_do_clear
+17;1 108 pathaction!2_17;1,134
+Consider method^7_0;0;1;1;1;1;1,160 160 m7_do_clear
+0;0;1;1;1;1;1 343 pathaction!7_0;0;1;1;1;1;1,139
+Consider method^2_19;4,110 110 m4_do_move
+19;4 86 pathaction!2_19;4,50
+Consider method^1_14,186 186 __UNIQUE-replacement_7
+14 96 pathaction!1_14,302
+Consider method^2_3;0,71 71 m1_do_put_on
+3;0 192 pathaction!2_3;0,255
+Consider method^2_7;2,8 8 m6_do_clear
+7;2 305 pathaction!2_7;2,135
+Consider method^1_15,180 180 __UNIQUE-replacement_1
+15 39 pathaction!1_15,296
+Consider method^1_0,182 182 __UNIQUE-replacement_3
+0 7 pathaction!1_0,298
+Consider method^2_11;5,36 36 m4_do_move
+11;5 36 pathaction!2_11;5,47
+Consider method^2_5;2,142 142 m6_do_clear
+5;2 70 pathaction!2_5;2,129
+Consider method^2_8;1,118 118 m6_do_clear
+8;1 186 pathaction!2_8;1,137
+Consider method^2_20;1,76 76 m6_do_clear
+20;1 182 pathaction!2_20;1,138
+Consider method^2_7;1,23 23 m6_do_clear
+7;1 184 pathaction!2_7;1,125
+Consider method^3_2;0;1,14 14 m6_do_clear
+2;0;1 75 pathaction!3_2;0;1,127
+Consider method^11_0;0;1;1;1;1;1;2;2;2;2,45 45 m7_do_clear
+0;0;1;1;1;1;1;2;2;2;2 232 pathaction!11_0;0;1;1;1;1;1;2;2;2;2,133
+Consider method^2_17;3,171 171 m3_do_on_table
+17;3 120 pathaction!2_17;3,64
+Consider method^2_17;4,176 176 m4_do_move
+17;4 319 pathaction!2_17;4,43
+Consider method^3_0;0;1,59 59 m7_do_clear
+0;0;1 154 pathaction!3_0;0;1,140
+Consider method^2_18;1,10 10 m6_do_clear
+18;1 111 pathaction!2_18;1,128
+Consider method^1_17,123 123 m1_do_put_on
+17 122 pathaction!1_17,249
+Consider method^2_11;3,24 24 m6_do_clear
+11;3 318 pathaction!2_11;3,123
+Consider method^2_18;3,1 1 m3_do_on_table
+18;3 148 pathaction!2_18;3,65
+Consider method^1_6,68 68 m1_do_put_on
+6 40 pathaction!1_6,259
+Consider method^4_1;0;1;1,12 12 m7_do_clear
+1;0;1;1 315 pathaction!4_1;0;1;1,132
+Consider method^3_2;0;3,86 86 m3_do_on_table
+2;0;3 107 pathaction!3_2;0;3,56
+Consider method^9_0;0;1;1;1;1;1;2;2,6 6 m7_do_clear
+0;0;1;1;1;1;1;2;2 102 pathaction!9_0;0;1;1;1;1;1;2;2,125
+Consider method^5_1;0;1;1;1,83 83 m7_do_clear
+1;0;1;1;1 74 pathaction!5_1;0;1;1;1,136
+Consider method^4_0;0;1;1,105 105 m7_do_clear
+0;0;1;1 29 pathaction!4_0;0;1;1,131
+
+
+CHECKING primitive solution of length 224 ...
+true 203 __method_precondition_m1_do_put_on_1_precondition[;]
+true 312 __method_precondition_m7_do_clear_7_precondition[b16,b18;]
+true 180 __method_precondition_m7_do_clear_7_precondition[b18,b2;]
+true 292 __method_precondition_m7_do_clear_7_precondition[b2,b7;]
+true 104 __method_precondition_m7_do_clear_7_precondition[b7,b1;]
+true 88 __method_precondition_m7_do_clear_7_precondition[b1,b9;]
+true 333 __method_precondition_m7_do_clear_7_precondition[b9,b17;]
+true 46 __method_precondition_m7_do_clear_7_precondition[b17,b4;]
+true 123 __method_precondition_m7_do_clear_7_precondition[b4,b15;]
+true 113 __method_precondition_m7_do_clear_7_precondition[b15,b11;]
+true 147 __method_precondition_m7_do_clear_7_precondition[b11,b13;]
+true 130 __method_precondition_m6_do_clear_6_precondition[b13;]
+true 124 nop[;]
+true 109 unstack[b13,b11;]
+true 226 put-down[b13;]
+true 225 unstack[b11,b15;]
+true 222 put-down[b11;]
+true 219 unstack[b15,b4;]
+true 55 put-down[b15;]
+true 140 unstack[b4,b17;]
+true 341 put-down[b4;]
+true 82 unstack[b17,b9;]
+true 334 put-down[b17;]
+true 239 unstack[b9,b1;]
+true 332 put-down[b9;]
+true 32 unstack[b1,b7;]
+true 317 put-down[b1;]
+true 231 unstack[b7,b2;]
+true 27 put-down[b7;]
+true 126 unstack[b2,b18;]
+true 258 put-down[b2;]
+true 199 unstack[b18,b16;]
+true 323 put-down[b18;]
+true 241 __method_precondition_m6_do_clear_6_precondition[b1;]
+true 37 nop[;]
+true 291 __method_precondition_m3_do_on_table_3_precondition[b1;]
+true 346 nop[;]
+true 252 __method_precondition_m4_do_move_4_precondition[b16,b1;]
+true 163 pick-up[b16;]
+true 247 stack[b16,b1;]
+true 215 __method_precondition_m1_do_put_on_1_precondition[;]
+true 342 __method_precondition_m7_do_clear_7_precondition[b5,b19;]
+true 266 __method_precondition_m7_do_clear_7_precondition[b19,b12;]
+true 117 __method_precondition_m7_do_clear_7_precondition[b12,b10;]
+true 79 __method_precondition_m7_do_clear_7_precondition[b10,b14;]
+true 344 __method_precondition_m6_do_clear_6_precondition[b14;]
+true 205 nop[;]
+true 313 unstack[b14,b10;]
+true 271 put-down[b14;]
+true 191 unstack[b10,b12;]
+true 273 put-down[b10;]
+true 324 unstack[b12,b19;]
+true 230 put-down[b12;]
+true 336 unstack[b19,b5;]
+true 173 put-down[b19;]
+true 11 __method_precondition_m6_do_clear_6_precondition[b16;]
+true 223 nop[;]
+true 321 __method_precondition_m3_do_on_table_3_precondition[b16;]
+true 233 nop[;]
+true 281 __method_precondition_m5_do_move_5_precondition[b5,b16;]
+true 53 unstack[b5,b6;]
+true 83 stack[b5,b16;]
+true 193 __method_precondition_m1_do_put_on_1_precondition[;]
+true 229 __method_precondition_m6_do_clear_6_precondition[b6;]
+true 243 nop[;]
+true 58 __method_precondition_m6_do_clear_6_precondition[b5;]
+true 227 nop[;]
+true 38 __method_precondition_m3_do_on_table_3_precondition[b5;]
+true 260 nop[;]
+true 47 __method_precondition_m4_do_move_4_precondition[b6,b5;]
+true 217 pick-up[b6;]
+true 8 stack[b6,b5;]
+true 242 __method_precondition_m1_do_put_on_1_precondition[;]
+true 228 __method_precondition_m6_do_clear_6_precondition[b2;]
+true 307 nop[;]
+true 165 __method_precondition_m6_do_clear_6_precondition[b6;]
+true 207 nop[;]
+true 169 __method_precondition_m3_do_on_table_3_precondition[b6;]
+true 137 nop[;]
+true 110 __method_precondition_m4_do_move_4_precondition[b2,b6;]
+true 202 pick-up[b2;]
+true 261 stack[b2,b6;]
+true 151 __method_precondition_m1_do_put_on_1_precondition[;]
+true 211 __method_precondition_m6_do_clear_6_precondition[b15;]
+true 138 nop[;]
+true 159 __method_precondition_m6_do_clear_6_precondition[b2;]
+true 297 nop[;]
+true 171 __method_precondition_m3_do_on_table_3_precondition[b2;]
+true 256 nop[;]
+true 87 __method_precondition_m4_do_move_4_precondition[b15,b2;]
+true 296 pick-up[b15;]
+true 26 stack[b15,b2;]
+true 69 __method_precondition_m1_do_put_on_1_precondition[;]
+true 306 __method_precondition_m6_do_clear_6_precondition[b9;]
+true 174 nop[;]
+true 4 __method_precondition_m6_do_clear_6_precondition[b8;]
+true 170 nop[;]
+true 210 __method_precondition_m2_do_on_table_2_precondition[b8;]
+true 201 unstack[b8,b3;]
+true 48 put-down[b8;]
+true 85 __method_precondition_m4_do_move_4_precondition[b9,b8;]
+true 220 pick-up[b9;]
+true 95 stack[b9,b8;]
+true 146 __method_precondition_m1_do_put_on_1_precondition[;]
+true 131 __method_precondition_m6_do_clear_6_precondition[b14;]
+true 67 nop[;]
+true 279 __method_precondition_m6_do_clear_6_precondition[b9;]
+true 114 nop[;]
+true 89 __method_precondition_m3_do_on_table_3_precondition[b9;]
+true 188 nop[;]
+true 272 __method_precondition_m4_do_move_4_precondition[b14,b9;]
+true 50 pick-up[b14;]
+true 197 stack[b14,b9;]
+true 160 __method_precondition_m1_do_put_on_1_precondition[;]
+true 286 __method_precondition_m6_do_clear_6_precondition[b17;]
+true 21 nop[;]
+true 310 __method_precondition_m6_do_clear_6_precondition[b14;]
+true 132 nop[;]
+true 237 __method_precondition_m3_do_on_table_3_precondition[b14;]
+true 76 nop[;]
+true 54 __method_precondition_m4_do_move_4_precondition[b17,b14;]
+true 162 pick-up[b17;]
+true 251 stack[b17,b14;]
+true 327 __method_precondition_m1_do_put_on_1_precondition[;]
+true 121 __method_precondition_m6_do_clear_6_precondition[b10;]
+true 25 nop[;]
+true 274 __method_precondition_m6_do_clear_6_precondition[b17;]
+true 208 nop[;]
+true 264 __method_precondition_m3_do_on_table_3_precondition[b17;]
+true 340 nop[;]
+true 10 __method_precondition_m4_do_move_4_precondition[b10,b17;]
+true 92 pick-up[b10;]
+true 235 stack[b10,b17;]
+true 175 __method_precondition_m1_do_put_on_1_precondition[;]
+true 22 __method_precondition_m6_do_clear_6_precondition[b12;]
+true 280 nop[;]
+true 278 __method_precondition_m6_do_clear_6_precondition[b10;]
+true 139 nop[;]
+true 63 __method_precondition_m3_do_on_table_3_precondition[b10;]
+true 145 nop[;]
+true 294 __method_precondition_m4_do_move_4_precondition[b12,b10;]
+true 168 pick-up[b12;]
+true 302 stack[b12,b10;]
+true 5 __method_precondition_m1_do_put_on_1_precondition[;]
+true 68 __method_precondition_m6_do_clear_6_precondition[b4;]
+true 339 nop[;]
+true 190 __method_precondition_m6_do_clear_6_precondition[b12;]
+true 195 nop[;]
+true 200 __method_precondition_m3_do_on_table_3_precondition[b12;]
+true 150 nop[;]
+true 60 __method_precondition_m4_do_move_4_precondition[b4,b12;]
+true 80 pick-up[b4;]
+true 136 stack[b4,b12;]
+true 62 __method_precondition_m1_do_put_on_1_precondition[;]
+true 303 __method_precondition_m6_do_clear_6_precondition[b13;]
+true 328 nop[;]
+true 172 __method_precondition_m6_do_clear_6_precondition[b4;]
+true 1 nop[;]
+true 282 __method_precondition_m3_do_on_table_3_precondition[b4;]
+true 49 nop[;]
+true 246 __method_precondition_m4_do_move_4_precondition[b13,b4;]
+true 262 pick-up[b13;]
+true 234 stack[b13,b4;]
+true 56 __method_precondition_m0_do_put_on_0_precondition[b16,b1;]
+true 298 nop[;]
+true 28 __method_precondition_m0_do_put_on_0_precondition[b5,b16;]
+true 248 nop[;]
+true 153 __method_precondition_m0_do_put_on_0_precondition[b6,b5;]
+true 127 nop[;]
+true 152 __method_precondition_m0_do_put_on_0_precondition[b2,b6;]
+true 255 nop[;]
+true 177 __method_precondition_m0_do_put_on_0_precondition[b15,b2;]
+true 257 nop[;]
+true 116 __method_precondition_m1_do_put_on_1_precondition[;]
+true 103 __method_precondition_m6_do_clear_6_precondition[b3;]
+true 118 nop[;]
+true 97 __method_precondition_m6_do_clear_6_precondition[b15;]
+true 64 nop[;]
+true 283 __method_precondition_m3_do_on_table_3_precondition[b15;]
+true 98 nop[;]
+true 183 __method_precondition_m4_do_move_4_precondition[b3,b15;]
+true 84 pick-up[b3;]
+true 34 stack[b3,b15;]
+true 214 __method_precondition_m1_do_put_on_1_precondition[;]
+true 304 __method_precondition_m6_do_clear_6_precondition[b11;]
+true 345 nop[;]
+true 57 __method_precondition_m6_do_clear_6_precondition[b3;]
+true 335 nop[;]
+true 240 __method_precondition_m3_do_on_table_3_precondition[b3;]
+true 129 nop[;]
+true 244 __method_precondition_m4_do_move_4_precondition[b11,b3;]
+true 115 pick-up[b11;]
+true 285 stack[b11,b3;]
+true 209 __method_precondition_m1_do_put_on_1_precondition[;]
+true 99 __method_precondition_m6_do_clear_6_precondition[b19;]
+true 12 nop[;]
+true 245 __method_precondition_m6_do_clear_6_precondition[b11;]
+true 300 nop[;]
+true 59 __method_precondition_m3_do_on_table_3_precondition[b11;]
+true 221 nop[;]
+true 268 __method_precondition_m4_do_move_4_precondition[b19,b11;]
+true 143 pick-up[b19;]
+true 185 stack[b19,b11;]
+true 181 __method_precondition_m1_do_put_on_1_precondition[;]
+true 166 __method_precondition_m6_do_clear_6_precondition[b7;]
+true 73 nop[;]
+true 61 __method_precondition_m6_do_clear_6_precondition[b19;]
+true 24 nop[;]
+true 189 __method_precondition_m2_do_on_table_2_precondition[b19;]
+true 14 unstack[b19,b11;]
+true 212 put-down[b19;]
+true 216 __method_precondition_m4_do_move_4_precondition[b7,b19;]
+true 290 pick-up[b7;]
+true 44 stack[b7,b19;]
+true 51 __method_precondition_m1_do_put_on_1_precondition[;]
+true 178 __method_precondition_m6_do_clear_6_precondition[b18;]
+true 19 nop[;]
+true 311 __method_precondition_m6_do_clear_6_precondition[b7;]
+true 330 nop[;]
+true 33 __method_precondition_m3_do_on_table_3_precondition[b7;]
+true 9 nop[;]
+true 94 __method_precondition_m4_do_move_4_precondition[b18,b7;]
+true 18 pick-up[b18;]
+true 72 stack[b18,b7;]
+ done.
+Panda says: SOLUTION
+============ global ============
+randomseed     = 42
+peak memory    = 780546264
+planner result = SOLUTION
+============ properties ============
+acyclic                  = false
+mostly acyclic           = false
+regular                  = false
+tail recursive           = false
+totally ordered          = true
+last task in all methods = true
+============ problem ============
+number of constants                  = 0
+number of predicates                 = 129
+number of actions                    = 305
+number of abstract actions           = 80
+number of primitive actions          = 225
+number of methods                    = 190
+number of primitive shop actions     = 138
+number of primitive non-shop actions = 87
+size of largest method               = 22
+average method size                  = 3
+============ sat ============
+plan length                     = -1
+number of variables             = 543734
+number of clauses               = 3191299
+average size of clauses         = 2.2014913049513694
+number of assert                = 72
+number of horn                  = 3012979
+K offset                        = 0
+K chosen value                  = 13
+state formula                   = 2708191
+method children clauses         = 0
+number of paths                 = 1888
+maximum plan length             = 1888
+number of decomposition clauses = 483108
+number of ordering clauses      = 0
+number of state clauses         = 2708191
+solved                          = true
+timeout                         = false
+
+----------------- TIMINGS -----------------
+============ total ============
+total = 45546
+============ parsing ============
+total                         = 941
+file parser                   = 521
+sort expansion                = 163
+closed world assumption       = 112
+inherit preconditions         = 0
+shop methods                  = 7
+eliminate identical variables = 59
+strip domain of hybridity     = 1
+flatten formula               = 78
+============ preprocessing ============
+total                                      = 1224
+compile negative preconditions             = 45
+compile unit methods                       = 0
+split parameter                            = 46
+expand choiceless abstract tasks           = 63
+compile methods with identical tasks       = 21
+removing unnecessary predicates            = 11
+lifted reachabiltiy analysis               = 54
+grounded planning graph analysis           = 474
+grounded task decomposition graph analysis = 377
+grounding                                  = 125
+create artificial top task                 = 1
+============ search preparation ============
+compute state invariants = 438
+============ sat ============
+total                                        = 37976
+generate formula                             = 27510
+generate path decomposition tree             = 1113
+normalise path decomposition tree            = 437
+sog optimisation                             = 470
+translate path decomposition tree to clauses = 2947
+generate state formula                       = 24194
+generate state invariant formula             = 9504
+transform to DIMACS                          = 5103
+SAT solver                                   = 4630
+SAT solver for K=0003                        = 50
+SAT solver for K=0004                        = 110
+SAT solver for K=0005                        = 170
+SAT solver for K=0006                        = 230
+SAT solver for K=0007                        = 280
+SAT solver for K=0008                        = 360
+SAT solver for K=0009                        = 440
+SAT solver for K=0010                        = 520
+SAT solver for K=0011                        = 610
+SAT solver for K=0012                        = 740
+SAT solver for K=0013                        = 1120
+
+#1 "40 sat:90:solved"="true";"30 problem:05:number of primitive actions"="225";"30 problem:01:number of constants"="0";"30 problem:04:number of abstract actions"="80";"02 properties:04:tail recursive"="false";"00 global:80:peak memory"="780546264";"40 sat:20:state formula"="2708191";"40 sat:01:number of variables"="543734";"40 sat:14:K offset"="0";"40 sat:30:number of paths"="1888";"40 sat:00:plan length"="-1";"40 sat:50:number of ordering clauses"="0";"02 properties:02:mostly acyclic"="false";"30 problem:06:number of methods"="190";"30 problem:07:number of primitive shop actions"="138";"02 properties:05:totally ordered"="true";"02 properties:06:last task in all methods"="true";"30 problem:03:number of actions"="305";"30 problem:08:number of primitive non-shop actions"="87";"30 problem:02:number of predicates"="129";"40 sat:03:number of horn"="3012979";"40 sat:15:K chosen value"="13";"30 problem:10:average method size"="3";"02 properties:03:regular"="false";"30 problem:09:size of largest method"="22";"40 sat:03:average size of clauses"="2.2014913049513694";"40 sat:02:number of clauses"="3191299";"40 sat:50:number of state clauses"="2708191";"40 sat:03:number of assert"="72";"40 sat:22:method children clauses"="0";"00 global:90:planner result"="SOLUTION";"02 properties:01:acyclic"="false";"40 sat:31:maximum plan length"="1888";"40 sat:50:number of decomposition clauses"="483108";"00 global:02:randomseed"="42";"40 sat:91:timeout"="false";"01 parsing:01:file parser"="521";"01 parsing:08:flatten formula"="78";"40 sat:41:SAT solver for K=0004"="110";"40 sat:00:total"="37976";"40 sat:16:generate state formula"="24194";"40 sat:20:transform to DIMACS"="5103";"40 sat:11:generate path decomposition tree"="1113";"02 preprocessing:07:compile methods with identical tasks"="21";"01 parsing:07:strip domain of hybridity"="1";"40 sat:41:SAT solver for K=0008"="360";"02 preprocessing:08:removing unnecessary predicates"="11";"01 parsing:03:closed world assumption"="112";"02 preprocessing:11:lifted reachabiltiy analysis"="54";"01 parsing:02:sort expansion"="163";"40 sat:12:normalise path decomposition tree"="437";"40 sat:41:SAT solver for K=0012"="740";"40 sat:40:SAT solver"="4630";"01 parsing:00:total"="941";"40 sat:10:generate formula"="27510";"40 sat:41:SAT solver for K=0005"="170";"01 parsing:04:inherit preconditions"="0";"40 sat:41:SAT solver for K=0009"="440";"02 preprocessing:01:compile negative preconditions"="45";"40 sat:41:SAT solver for K=0013"="1120";"00 total:00:total"="45546";"40 sat:41:SAT solver for K=0011"="610";"40 sat:13:sog optimisation"="470";"02 preprocessing:12:grounded planning graph analysis"="474";"02 preprocessing:02:compile unit methods"="0";"02 preprocessing:23:grounded task decomposition graph analysis"="377";"40 sat:41:SAT solver for K=0006"="230";"02 preprocessing:04:split parameter"="46";"01 parsing:05:shop methods"="7";"10 search preparation:02:compute state invariants"="438";"01 parsing:06:eliminate identical variables"="59";"40 sat:15:translate path decomposition tree to clauses"="2947";"02 preprocessing:05:expand choiceless abstract tasks"="63";"40 sat:41:SAT solver for K=0003"="50";"40 sat:17:generate state invariant formula"="9504";"40 sat:41:SAT solver for K=0010"="520";"02 preprocessing:00:total"="1224";"02 preprocessing:99:create artificial top task"="1";"02 preprocessing:84:grounding"="125";"40 sat:41:SAT solver for K=0007"="280"
+#!verify __method_precondition_m1_do_put_on_1_precondition[];__method_precondition_m7_do_clear_7_precondition[b16,b18];__method_precondition_m7_do_clear_7_precondition[b18,b2];__method_precondition_m7_do_clear_7_precondition[b2,b7];__method_precondition_m7_do_clear_7_precondition[b7,b1];__method_precondition_m7_do_clear_7_precondition[b1,b9];__method_precondition_m7_do_clear_7_precondition[b9,b17];__method_precondition_m7_do_clear_7_precondition[b17,b4];__method_precondition_m7_do_clear_7_precondition[b4,b15];__method_precondition_m7_do_clear_7_precondition[b15,b11];__method_precondition_m7_do_clear_7_precondition[b11,b13];__method_precondition_m6_do_clear_6_precondition[b13];nop[];unstack[b13,b11];put-down[b13];unstack[b11,b15];put-down[b11];unstack[b15,b4];put-down[b15];unstack[b4,b17];put-down[b4];unstack[b17,b9];put-down[b17];unstack[b9,b1];put-down[b9];unstack[b1,b7];put-down[b1];unstack[b7,b2];put-down[b7];unstack[b2,b18];put-down[b2];unstack[b18,b16];put-down[b18];__method_precondition_m6_do_clear_6_precondition[b1];nop[];__method_precondition_m3_do_on_table_3_precondition[b1];nop[];__method_precondition_m4_do_move_4_precondition[b16,b1];pick-up[b16];stack[b16,b1];__method_precondition_m1_do_put_on_1_precondition[];__method_precondition_m7_do_clear_7_precondition[b5,b19];__method_precondition_m7_do_clear_7_precondition[b19,b12];__method_precondition_m7_do_clear_7_precondition[b12,b10];__method_precondition_m7_do_clear_7_precondition[b10,b14];__method_precondition_m6_do_clear_6_precondition[b14];nop[];unstack[b14,b10];put-down[b14];unstack[b10,b12];put-down[b10];unstack[b12,b19];put-down[b12];unstack[b19,b5];put-down[b19];__method_precondition_m6_do_clear_6_precondition[b16];nop[];__method_precondition_m3_do_on_table_3_precondition[b16];nop[];__method_precondition_m5_do_move_5_precondition[b5,b16];unstack[b5,b6];stack[b5,b16];__method_precondition_m1_do_put_on_1_precondition[];__method_precondition_m6_do_clear_6_precondition[b6];nop[];__method_precondition_m6_do_clear_6_precondition[b5];nop[];__method_precondition_m3_do_on_table_3_precondition[b5];nop[];__method_precondition_m4_do_move_4_precondition[b6,b5];pick-up[b6];stack[b6,b5];__method_precondition_m1_do_put_on_1_precondition[];__method_precondition_m6_do_clear_6_precondition[b2];nop[];__method_precondition_m6_do_clear_6_precondition[b6];nop[];__method_precondition_m3_do_on_table_3_precondition[b6];nop[];__method_precondition_m4_do_move_4_precondition[b2,b6];pick-up[b2];stack[b2,b6];__method_precondition_m1_do_put_on_1_precondition[];__method_precondition_m6_do_clear_6_precondition[b15];nop[];__method_precondition_m6_do_clear_6_precondition[b2];nop[];__method_precondition_m3_do_on_table_3_precondition[b2];nop[];__method_precondition_m4_do_move_4_precondition[b15,b2];pick-up[b15];stack[b15,b2];__method_precondition_m1_do_put_on_1_precondition[];__method_precondition_m6_do_clear_6_precondition[b9];nop[];__method_precondition_m6_do_clear_6_precondition[b8];nop[];__method_precondition_m2_do_on_table_2_precondition[b8];unstack[b8,b3];put-down[b8];__method_precondition_m4_do_move_4_precondition[b9,b8];pick-up[b9];stack[b9,b8];__method_precondition_m1_do_put_on_1_precondition[];__method_precondition_m6_do_clear_6_precondition[b14];nop[];__method_precondition_m6_do_clear_6_precondition[b9];nop[];__method_precondition_m3_do_on_table_3_precondition[b9];nop[];__method_precondition_m4_do_move_4_precondition[b14,b9];pick-up[b14];stack[b14,b9];__method_precondition_m1_do_put_on_1_precondition[];__method_precondition_m6_do_clear_6_precondition[b17];nop[];__method_precondition_m6_do_clear_6_precondition[b14];nop[];__method_precondition_m3_do_on_table_3_precondition[b14];nop[];__method_precondition_m4_do_move_4_precondition[b17,b14];pick-up[b17];stack[b17,b14];__method_precondition_m1_do_put_on_1_precondition[];__method_precondition_m6_do_clear_6_precondition[b10];nop[];__method_precondition_m6_do_clear_6_precondition[b17];nop[];__method_precondition_m3_do_on_table_3_precondition[b17];nop[];__method_precondition_m4_do_move_4_precondition[b10,b17];pick-up[b10];stack[b10,b17];__method_precondition_m1_do_put_on_1_precondition[];__method_precondition_m6_do_clear_6_precondition[b12];nop[];__method_precondition_m6_do_clear_6_precondition[b10];nop[];__method_precondition_m3_do_on_table_3_precondition[b10];nop[];__method_precondition_m4_do_move_4_precondition[b12,b10];pick-up[b12];stack[b12,b10];__method_precondition_m1_do_put_on_1_precondition[];__method_precondition_m6_do_clear_6_precondition[b4];nop[];__method_precondition_m6_do_clear_6_precondition[b12];nop[];__method_precondition_m3_do_on_table_3_precondition[b12];nop[];__method_precondition_m4_do_move_4_precondition[b4,b12];pick-up[b4];stack[b4,b12];__method_precondition_m1_do_put_on_1_precondition[];__method_precondition_m6_do_clear_6_precondition[b13];nop[];__method_precondition_m6_do_clear_6_precondition[b4];nop[];__method_precondition_m3_do_on_table_3_precondition[b4];nop[];__method_precondition_m4_do_move_4_precondition[b13,b4];pick-up[b13];stack[b13,b4];__method_precondition_m0_do_put_on_0_precondition[b16,b1];nop[];__method_precondition_m0_do_put_on_0_precondition[b5,b16];nop[];__method_precondition_m0_do_put_on_0_precondition[b6,b5];nop[];__method_precondition_m0_do_put_on_0_precondition[b2,b6];nop[];__method_precondition_m0_do_put_on_0_precondition[b15,b2];nop[];__method_precondition_m1_do_put_on_1_precondition[];__method_precondition_m6_do_clear_6_precondition[b3];nop[];__method_precondition_m6_do_clear_6_precondition[b15];nop[];__method_precondition_m3_do_on_table_3_precondition[b15];nop[];__method_precondition_m4_do_move_4_precondition[b3,b15];pick-up[b3];stack[b3,b15];__method_precondition_m1_do_put_on_1_precondition[];__method_precondition_m6_do_clear_6_precondition[b11];nop[];__method_precondition_m6_do_clear_6_precondition[b3];nop[];__method_precondition_m3_do_on_table_3_precondition[b3];nop[];__method_precondition_m4_do_move_4_precondition[b11,b3];pick-up[b11];stack[b11,b3];__method_precondition_m1_do_put_on_1_precondition[];__method_precondition_m6_do_clear_6_precondition[b19];nop[];__method_precondition_m6_do_clear_6_precondition[b11];nop[];__method_precondition_m3_do_on_table_3_precondition[b11];nop[];__method_precondition_m4_do_move_4_precondition[b19,b11];pick-up[b19];stack[b19,b11];__method_precondition_m1_do_put_on_1_precondition[];__method_precondition_m6_do_clear_6_precondition[b7];nop[];__method_precondition_m6_do_clear_6_precondition[b19];nop[];__method_precondition_m2_do_on_table_2_precondition[b19];unstack[b19,b11];put-down[b19];__method_precondition_m4_do_move_4_precondition[b7,b19];pick-up[b7];stack[b7,b19];__method_precondition_m1_do_put_on_1_precondition[];__method_precondition_m6_do_clear_6_precondition[b18];nop[];__method_precondition_m6_do_clear_6_precondition[b7];nop[];__method_precondition_m3_do_on_table_3_precondition[b7];nop[];__method_precondition_m4_do_move_4_precondition[b18,b7];pick-up[b18];stack[b18,b7]
+==>
+0 __method_precondition_m1_do_put_on_1_precondition  
+1 __method_precondition_m7_do_clear_7_precondition b16 b18 
+2 __method_precondition_m7_do_clear_7_precondition b18 b2 
+3 __method_precondition_m7_do_clear_7_precondition b2 b7 
+4 __method_precondition_m7_do_clear_7_precondition b7 b1 
+5 __method_precondition_m7_do_clear_7_precondition b1 b9 
+6 __method_precondition_m7_do_clear_7_precondition b9 b17 
+7 __method_precondition_m7_do_clear_7_precondition b17 b4 
+8 __method_precondition_m7_do_clear_7_precondition b4 b15 
+9 __method_precondition_m7_do_clear_7_precondition b15 b11 
+10 __method_precondition_m7_do_clear_7_precondition b11 b13 
+11 __method_precondition_m6_do_clear_6_precondition b13 
+12 nop  
+13 unstack b13 b11 
+14 put-down b13 
+15 unstack b11 b15 
+16 put-down b11 
+17 unstack b15 b4 
+18 put-down b15 
+19 unstack b4 b17 
+20 put-down b4 
+21 unstack b17 b9 
+22 put-down b17 
+23 unstack b9 b1 
+24 put-down b9 
+25 unstack b1 b7 
+26 put-down b1 
+27 unstack b7 b2 
+28 put-down b7 
+29 unstack b2 b18 
+30 put-down b2 
+31 unstack b18 b16 
+32 put-down b18 
+33 __method_precondition_m6_do_clear_6_precondition b1 
+34 nop  
+35 __method_precondition_m3_do_on_table_3_precondition b1 
+36 nop  
+37 __method_precondition_m4_do_move_4_precondition b16 b1 
+38 pick-up b16 
+39 stack b16 b1 
+40 __method_precondition_m1_do_put_on_1_precondition  
+41 __method_precondition_m7_do_clear_7_precondition b5 b19 
+42 __method_precondition_m7_do_clear_7_precondition b19 b12 
+43 __method_precondition_m7_do_clear_7_precondition b12 b10 
+44 __method_precondition_m7_do_clear_7_precondition b10 b14 
+45 __method_precondition_m6_do_clear_6_precondition b14 
+46 nop  
+47 unstack b14 b10 
+48 put-down b14 
+49 unstack b10 b12 
+50 put-down b10 
+51 unstack b12 b19 
+52 put-down b12 
+53 unstack b19 b5 
+54 put-down b19 
+55 __method_precondition_m6_do_clear_6_precondition b16 
+56 nop  
+57 __method_precondition_m3_do_on_table_3_precondition b16 
+58 nop  
+59 __method_precondition_m5_do_move_5_precondition b5 b16 
+60 unstack b5 b6 
+61 stack b5 b16 
+62 __method_precondition_m1_do_put_on_1_precondition  
+63 __method_precondition_m6_do_clear_6_precondition b6 
+64 nop  
+65 __method_precondition_m6_do_clear_6_precondition b5 
+66 nop  
+67 __method_precondition_m3_do_on_table_3_precondition b5 
+68 nop  
+69 __method_precondition_m4_do_move_4_precondition b6 b5 
+70 pick-up b6 
+71 stack b6 b5 
+72 __method_precondition_m1_do_put_on_1_precondition  
+73 __method_precondition_m6_do_clear_6_precondition b2 
+74 nop  
+75 __method_precondition_m6_do_clear_6_precondition b6 
+76 nop  
+77 __method_precondition_m3_do_on_table_3_precondition b6 
+78 nop  
+79 __method_precondition_m4_do_move_4_precondition b2 b6 
+80 pick-up b2 
+81 stack b2 b6 
+82 __method_precondition_m1_do_put_on_1_precondition  
+83 __method_precondition_m6_do_clear_6_precondition b15 
+84 nop  
+85 __method_precondition_m6_do_clear_6_precondition b2 
+86 nop  
+87 __method_precondition_m3_do_on_table_3_precondition b2 
+88 nop  
+89 __method_precondition_m4_do_move_4_precondition b15 b2 
+90 pick-up b15 
+91 stack b15 b2 
+92 __method_precondition_m1_do_put_on_1_precondition  
+93 __method_precondition_m6_do_clear_6_precondition b9 
+94 nop  
+95 __method_precondition_m6_do_clear_6_precondition b8 
+96 nop  
+97 __method_precondition_m2_do_on_table_2_precondition b8 
+98 unstack b8 b3 
+99 put-down b8 
+100 __method_precondition_m4_do_move_4_precondition b9 b8 
+101 pick-up b9 
+102 stack b9 b8 
+103 __method_precondition_m1_do_put_on_1_precondition  
+104 __method_precondition_m6_do_clear_6_precondition b14 
+105 nop  
+106 __method_precondition_m6_do_clear_6_precondition b9 
+107 nop  
+108 __method_precondition_m3_do_on_table_3_precondition b9 
+109 nop  
+110 __method_precondition_m4_do_move_4_precondition b14 b9 
+111 pick-up b14 
+112 stack b14 b9 
+113 __method_precondition_m1_do_put_on_1_precondition  
+114 __method_precondition_m6_do_clear_6_precondition b17 
+115 nop  
+116 __method_precondition_m6_do_clear_6_precondition b14 
+117 nop  
+118 __method_precondition_m3_do_on_table_3_precondition b14 
+119 nop  
+120 __method_precondition_m4_do_move_4_precondition b17 b14 
+121 pick-up b17 
+122 stack b17 b14 
+123 __method_precondition_m1_do_put_on_1_precondition  
+124 __method_precondition_m6_do_clear_6_precondition b10 
+125 nop  
+126 __method_precondition_m6_do_clear_6_precondition b17 
+127 nop  
+128 __method_precondition_m3_do_on_table_3_precondition b17 
+129 nop  
+130 __method_precondition_m4_do_move_4_precondition b10 b17 
+131 pick-up b10 
+132 stack b10 b17 
+133 __method_precondition_m1_do_put_on_1_precondition  
+134 __method_precondition_m6_do_clear_6_precondition b12 
+135 nop  
+136 __method_precondition_m6_do_clear_6_precondition b10 
+137 nop  
+138 __method_precondition_m3_do_on_table_3_precondition b10 
+139 nop  
+140 __method_precondition_m4_do_move_4_precondition b12 b10 
+141 pick-up b12 
+142 stack b12 b10 
+143 __method_precondition_m1_do_put_on_1_precondition  
+144 __method_precondition_m6_do_clear_6_precondition b4 
+145 nop  
+146 __method_precondition_m6_do_clear_6_precondition b12 
+147 nop  
+148 __method_precondition_m3_do_on_table_3_precondition b12 
+149 nop  
+150 __method_precondition_m4_do_move_4_precondition b4 b12 
+151 pick-up b4 
+152 stack b4 b12 
+153 __method_precondition_m1_do_put_on_1_precondition  
+154 __method_precondition_m6_do_clear_6_precondition b13 
+155 nop  
+156 __method_precondition_m6_do_clear_6_precondition b4 
+157 nop  
+158 __method_precondition_m3_do_on_table_3_precondition b4 
+159 nop  
+160 __method_precondition_m4_do_move_4_precondition b13 b4 
+161 pick-up b13 
+162 stack b13 b4 
+163 __method_precondition_m0_do_put_on_0_precondition b16 b1 
+164 nop  
+165 __method_precondition_m0_do_put_on_0_precondition b5 b16 
+166 nop  
+167 __method_precondition_m0_do_put_on_0_precondition b6 b5 
+168 nop  
+169 __method_precondition_m0_do_put_on_0_precondition b2 b6 
+170 nop  
+171 __method_precondition_m0_do_put_on_0_precondition b15 b2 
+172 nop  
+173 __method_precondition_m1_do_put_on_1_precondition  
+174 __method_precondition_m6_do_clear_6_precondition b3 
+175 nop  
+176 __method_precondition_m6_do_clear_6_precondition b15 
+177 nop  
+178 __method_precondition_m3_do_on_table_3_precondition b15 
+179 nop  
+180 __method_precondition_m4_do_move_4_precondition b3 b15 
+181 pick-up b3 
+182 stack b3 b15 
+183 __method_precondition_m1_do_put_on_1_precondition  
+184 __method_precondition_m6_do_clear_6_precondition b11 
+185 nop  
+186 __method_precondition_m6_do_clear_6_precondition b3 
+187 nop  
+188 __method_precondition_m3_do_on_table_3_precondition b3 
+189 nop  
+190 __method_precondition_m4_do_move_4_precondition b11 b3 
+191 pick-up b11 
+192 stack b11 b3 
+193 __method_precondition_m1_do_put_on_1_precondition  
+194 __method_precondition_m6_do_clear_6_precondition b19 
+195 nop  
+196 __method_precondition_m6_do_clear_6_precondition b11 
+197 nop  
+198 __method_precondition_m3_do_on_table_3_precondition b11 
+199 nop  
+200 __method_precondition_m4_do_move_4_precondition b19 b11 
+201 pick-up b19 
+202 stack b19 b11 
+203 __method_precondition_m1_do_put_on_1_precondition  
+204 __method_precondition_m6_do_clear_6_precondition b7 
+205 nop  
+206 __method_precondition_m6_do_clear_6_precondition b19 
+207 nop  
+208 __method_precondition_m2_do_on_table_2_precondition b19 
+209 unstack b19 b11 
+210 put-down b19 
+211 __method_precondition_m4_do_move_4_precondition b7 b19 
+212 pick-up b7 
+213 stack b7 b19 
+214 __method_precondition_m1_do_put_on_1_precondition  
+215 __method_precondition_m6_do_clear_6_precondition b18 
+216 nop  
+217 __method_precondition_m6_do_clear_6_precondition b7 
+218 nop  
+219 __method_precondition_m3_do_on_table_3_precondition b7 
+220 nop  
+221 __method_precondition_m4_do_move_4_precondition b18 b7 
+222 pick-up b18 
+223 stack b18 b7 
+root 325
+224 do_clear b15  -> m7_do_clear 9 323 15 16
+225 do_put_on b7 b19  -> m1_do_put_on 203 257 269 327 227
+226 do_clear b6  -> m6_do_clear 75 76
+227 do_move b7 b19  -> m4_do_move 211 212 213
+228 do_on_table b17  -> m3_do_on_table 128 129
+229 do_clear b9  -> m6_do_clear 106 107
+230 do_clear b18  -> m6_do_clear 215 216
+231 do_move b6 b5  -> m4_do_move 69 70 71
+232 do_clear b1  -> m6_do_clear 33 34
+233 do_put_on b16 b1  -> m0_do_put_on 163 164
+234 do_move b17 b14  -> m4_do_move 120 121 122
+235 do_clear b19  -> m7_do_clear 42 241 51 52
+236 do_on_table b10  -> m3_do_on_table 138 139
+237 do_on_table b11  -> m3_do_on_table 198 199
+238 do_move b10 b17  -> m4_do_move 130 131 132
+239 do_on_table b1  -> m3_do_on_table 35 36
+240 do_on_table b12  -> m3_do_on_table 148 149
+241 do_clear b12  -> m7_do_clear 43 328 49 50
+242 do_clear b9  -> m7_do_clear 6 300 21 22
+243 do_clear b2  -> m6_do_clear 73 74
+244 do_put_on b16 b1  -> __UNIQUE-replacement_3 259
+245 do_move b16 b1  -> m4_do_move 37 38 39
+246 do_clear b15  -> m6_do_clear 176 177
+247 do_on_table b6  -> m3_do_on_table 77 78
+248 do_clear b15  -> m6_do_clear 83 84
+249 do_clear b10  -> m6_do_clear 136 137
+250 do_clear b3  -> m6_do_clear 174 175
+251 do_move b2 b6  -> m4_do_move 79 80 81
+252 do_clear b16  -> m7_do_clear 1 304 31 32
+253 do_clear b10  -> m6_do_clear 124 125
+254 do_clear b8  -> m6_do_clear 95 96
+255 do_on_table b7  -> m3_do_on_table 219 220
+256 do_put_on b11 b3  -> m1_do_put_on 183 302 332 305 322
+257 do_clear b7  -> m6_do_clear 204 205
+258 do_clear b7  -> m7_do_clear 4 278 25 26
+259 do_put_on b16 b1  -> m1_do_put_on 0 252 232 239 245
+260 do_clear b17  -> m6_do_clear 126 127
+261 do_on_table b8  -> m2_do_on_table 97 98 99
+262 do_put_on b15 b2  -> m0_do_put_on 171 172
+263 do_move b9 b8  -> m4_do_move 100 101 102
+264 do_clear b4  -> m7_do_clear 8 224 17 18
+265 do_move b14 b9  -> m4_do_move 110 111 112
+266 do_put_on b2 b6  -> __UNIQUE-replacement_1 283
+267 do_move b19 b11  -> m4_do_move 200 201 202
+268 do_clear b19  -> m6_do_clear 194 195
+269 do_clear b19  -> m6_do_clear 206 207
+270 do_clear b12  -> m6_do_clear 146 147
+271 do_on_table b2  -> m3_do_on_table 87 88
+272 do_put_on b12 b10  -> m1_do_put_on 133 318 249 236 324
+273 do_clear b4  -> m6_do_clear 156 157
+274 do_clear b11  -> m6_do_clear 196 197
+275 do_put_on b6 b5  -> m0_do_put_on 167 168
+276 do_on_table b16  -> m3_do_on_table 57 58
+277 do_clear b14  -> m6_do_clear 45 46
+278 do_clear b1  -> m7_do_clear 5 242 23 24
+279 do_put_on b5 b16  -> m1_do_put_on 40 330 286 276 293
+280 do_put_on b15 b2  -> __UNIQUE-replacement_9 299
+281 do_on_table b4  -> m3_do_on_table 158 159
+282 do_move b13 b4  -> m4_do_move 160 161 162
+283 do_put_on b2 b6  -> m0_do_put_on 169 170
+284 do_clear b14  -> m6_do_clear 116 117
+285 do_move b15 b2  -> m4_do_move 89 90 91
+286 do_clear b16  -> m6_do_clear 55 56
+287 do_on_table b15  -> m3_do_on_table 178 179
+288 do_clear b2  -> m6_do_clear 85 86
+289 do_put_on b14 b9  -> m1_do_put_on 103 295 229 296 265
+290 do_on_table b14  -> m3_do_on_table 118 119
+291 do_put_on b17 b14  -> m1_do_put_on 113 333 284 290 234
+292 do_clear b5  -> m6_do_clear 65 66
+293 do_move b5 b16  -> m5_do_move 59 60 61
+294 do_clear b6  -> m6_do_clear 63 64
+295 do_clear b14  -> m6_do_clear 104 105
+296 do_on_table b9  -> m3_do_on_table 108 109
+297 do_put_on b5 b16  -> __UNIQUE-replacement_4 313
+298 do_put_on b16 b1  -> __UNIQUE-replacement_2 233
+299 do_put_on b15 b2  -> m1_do_put_on 82 248 288 271 285
+300 do_clear b17  -> m7_do_clear 7 264 19 20
+301 do_put_on b13 b4  -> <m1_do_put_on;do_clear[b13];m6_do_clear;1;0,-1,-2,2,3,4> 153 154 155 273 281 282
+302 do_clear b11  -> m6_do_clear 184 185
+303 do_put_on b3 b15  -> m1_do_put_on 173 250 246 287 320
+304 do_clear b18  -> m7_do_clear 2 308 29 30
+305 do_on_table b3  -> m3_do_on_table 188 189
+306 do_put_on b2 b6  -> __UNIQUE-replacement_0 307
+307 do_put_on b2 b6  -> m1_do_put_on 72 243 226 247 251
+308 do_clear b2  -> m7_do_clear 3 258 27 28
+309 do_put_on b6 b5  -> __UNIQUE-replacement_6 321
+310 do_clear b7  -> m6_do_clear 217 218
+311 do_put_on b18 b7  -> m1_do_put_on 214 230 310 255 329
+312 do_move b4 b12  -> m4_do_move 150 151 152
+313 do_put_on b5 b16  -> m0_do_put_on 165 166
+314 do_put_on b19 b11  -> m1_do_put_on 193 268 274 237 267
+315 do_put_on b15 b2  -> __UNIQUE-replacement_8 262
+316 do_clear b9  -> m6_do_clear 93 94
+317 do_put_on b6 b5  -> __UNIQUE-replacement_7 275
+318 do_clear b12  -> m6_do_clear 134 135
+319 do_on_table b5  -> m3_do_on_table 67 68
+320 do_move b3 b15  -> m4_do_move 180 181 182
+321 do_put_on b6 b5  -> m1_do_put_on 62 294 292 319 231
+322 do_move b11 b3  -> m4_do_move 190 191 192
+323 do_clear b11  -> <m7_do_clear;do_clear[b13];m6_do_clear;1;0,-1,-2,2,3> 10 11 12 13 14
+324 do_move b12 b10  -> m4_do_move 140 141 142
+325 __choicelessATCompilation__top_1  -> __top_1 244 334 309 306 280 336 289 291 326 272 335 301 298 297 317 266 315 303 256 314 225 311
+326 do_put_on b10 b17  -> m1_do_put_on 123 253 260 228 238
+327 do_on_table b19  -> m2_do_on_table 208 209 210
+328 do_clear b10  -> m7_do_clear 44 277 47 48
+329 do_move b18 b7  -> m4_do_move 221 222 223
+330 do_clear b5  -> m7_do_clear 41 235 53 54
+331 do_clear b4  -> m6_do_clear 144 145
+332 do_clear b3  -> m6_do_clear 186 187
+333 do_clear b17  -> m6_do_clear 114 115
+334 do_put_on b5 b16  -> __UNIQUE-replacement_5 279
+335 do_put_on b4 b12  -> m1_do_put_on 143 331 270 240 312
+336 do_put_on b9 b8  -> m1_do_put_on 92 316 254 261 263
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 47.028 MEMPEAK_KBS 1148496.896

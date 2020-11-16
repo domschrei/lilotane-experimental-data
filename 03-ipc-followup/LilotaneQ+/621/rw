@@ -1,0 +1,125 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version rls-2020-11-02T15:57:46+01:00-glucose4
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020
+using SAT solver glucose4
+
+0.017 Sorts extracted.
+0.028 Mined 78 new reduction preconditions (+7800.0%).
+0.028 80 operators and 79 methods created.
+0.029 Iteration 0.
+0.029 Creating initial layer of size 2
+0.034 Attempting to solve formula with 5 clauses (6 literals) and 1 assumptions
+0.034 Unsolvable at layer 0 -- expanding.
+0.034 Iteration 1.
+0.034 New layer size: 2
+0.034 Instantiating ...
+0.070 Collected 1 relevant facts at this layer
+0.070 Encoding ...
+0.071 Attempting to solve formula with 1099 clauses (2356 literals) and 1 assumptions
+0.071 Unsolvable at layer 1 -- expanding.
+0.071 Iteration 2.
+0.071 New layer size: 2
+0.071 Instantiating ...
+0.072 Retroactively prune reduction (m_tlt_clear_road_tree Q_1,0_point:0_4f9c08ee259c63cf Q_1,0_point:1_4f9c08ee259c63cf)@(1,0): no children at offset 0
+0.107 Collected 1 relevant facts at this layer
+0.107 Encoding ...
+0.108 Attempting to solve formula with 1249 clauses (2725 literals) and 1 assumptions
+0.108 Unsolvable at layer 2 -- expanding.
+0.108 Iteration 3.
+0.108 New layer size: 7
+0.108 Instantiating ...
+0.122 Retroactively prune reduction (m_clear_road_wreck Q_1,0_point:0_4f9c08ee259c63cf Q_1,0_point:1_4f9c08ee259c63cf)@(2,0): no children at offset 1
+0.170 Collected 229 relevant facts at this layer
+0.170 Encoding ...
+0.173 Attempting to solve formula with 5009 clauses (13149 literals) and 4 assumptions
+0.173 Unsolvable at layer 3 -- expanding.
+0.173 Iteration 4.
+0.173 New layer size: 27
+0.173 Instantiating ...
+0.237 Retroactively prune reduction (m_clean_up_hazard_normal Q_1,0_point:0_4f9c08ee259c63cf Q_3,1_hazard_team:0_de988e578880ff18 Q_1,0_point:1_4f9c08ee259c63cf very_hazardous very_hazardous)@(3,1): no children at offset 2
+0.304 Collected 607 relevant facts at this layer
+0.304 Encoding ...
+0.329 Attempting to solve formula with 46757 clauses (142780 literals) and 22 assumptions
+0.330 Unsolvable at layer 4 -- expanding.
+0.330 Iteration 5.
+0.330 New layer size: 77
+0.330 Instantiating ...
+0.523 Collected 609 relevant facts at this layer
+0.523 Encoding ...
+0.581 Attempting to solve formula with 148975 clauses (451811 literals) and 40 assumptions
+0.586 Unsolvable at layer 5 -- expanding.
+0.586 Iteration 6.
+0.586 New layer size: 204
+0.586 Instantiating ...
+1.128 Collected 664 relevant facts at this layer
+1.128 Encoding ...
+1.261 Attempting to solve formula with 369644 clauses (1119352 literals) and 98 assumptions
+c last restart ## conflicts  :  5 4765 
+1.277 Found a solution at layer 6.
+1.281 Initial plan at most shallow layer has length 12
+1.281 Iteration 7. (extra)
+1.281 New layer size: 362
+1.281 Instantiating ...
+1.981 Collected 664 relevant facts at this layer
+1.981 Encoding ...
+2.185 Attempting to solve formula with 680212 clauses (2052890 literals) and 134 assumptions
+c last restart ## conflicts  :  0 8602 
+2.217 Initial plan at final layer has length 12
+2.220 Tightened initial plan length bounds at layer 7: [0,361] => [2,12]
+2.230 Searching for a plan of length < 12
+2.230 Attempting to solve formula with 687539 clauses (2073963 literals) and 0 assumptions
+==>
+37538 SHOP_methodm_provide_medical_attention_in_hospital_precondition person_121967 head_injury park_ridge
+47631 SHOP_methodm_get_to_as_cargo_precondition person_121967 park_ridge marketplace pvan2
+53031 SHOP_methodm_get_to_vehicle_gets_driven_precondition pvan2 marketplace brighton_dump pu2
+55576 SHOP_methodm_drive_to_precondition pvan2 brighton_dump pu2
+55658 p_1Navegate_vehicle
+58266 SHOP_methodm_get_in_ambulatory_person_precondition person_121967 marketplace pvan2
+58990 p_2Climb_in
+61706 SHOP_methodm_get_to_vehicle_gets_driven_precondition pvan2 park_ridge marketplace pu2
+61714 SHOP_methodm_drive_to_precondition pvan2 marketplace pu2
+61736 navegate_vehicle pu2 pvan2 park_ridge marketplace
+64263 climb_out person_121967 pvan2 park_ridge
+72173 treat_in_hospital person_121967 park_ridge
+root 9
+9 tlt -> m_tlt_provide_medical_attention 67
+67 provide_medical_attention person_121967 -> m_provide_medical_attention_in_hospital 37538 361 72173
+361 get_to person_121967 park_ridge -> m_get_to_as_cargo 47631 5419 6084 6718 64262
+5419 get_to pvan2 marketplace -> m_get_to_vehicle_gets_driven 53031 21621
+6084 get_in person_121967 pvan2 -> m_get_in_ambulatory_person 58266 58989
+6718 get_to pvan2 park_ridge -> m_get_to_vehicle_gets_driven 61706 25937
+21621 drive_to pu2 pvan2 marketplace -> m_drive_to 55576 55657
+25937 drive_to pu2 pvan2 park_ridge -> m_drive_to 61714 61735
+55657 cnavegate_vehicle pu2 pvan2 marketplace brighton_dump -> prefix_1 55658
+58989 cclimb_in person_121967 pvan2 marketplace -> prefix_2 58990
+61735 cnavegate_vehicle pu2 pvan2 park_ridge marketplace -> regular_2 61736
+64262 get_out person_121967 pvan2 -> m_get_out_ambulatory_person 64263
+<==
+2.235 End of solution plan. (counted length of 12)
+2.235 Total amount of clauses encoded: 687539
+2.235 - directframeaxioms : 456044 cls
+2.235 - qfactsemantics : 100334 cls
+2.235 - indirectframeaxioms : 45190 cls
+2.235 - reductionconstraints : 35056 cls
+2.235 - actionconstraints : 16535 cls
+2.235 - substitutionconstraints : 10875 cls
+2.235 - planlengthcounting : 7193 cls
+2.235 - atmostoneelement : 6099 cls
+2.235 - expansions : 3725 cls
+2.235 - predecessors : 2795 cls
+2.235 - qconstequality : 1615 cls
+2.235 - truefacts : 664 cls
+2.235 - actioneffects : 638 cls
+2.235 - qtypeconstraints : 632 cls
+2.235 - assumptions : 134 cls
+2.235 - forbiddenoperations : 8 cls
+2.235 - axiomaticops : 2 cls
+2.235 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 2.540 MEMPEAK_KBS 258422.784

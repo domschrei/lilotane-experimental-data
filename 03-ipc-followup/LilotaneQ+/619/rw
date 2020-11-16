@@ -1,0 +1,120 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version rls-2020-11-02T15:57:46+01:00-glucose4
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020
+using SAT solver glucose4
+
+0.024 Sorts extracted.
+0.041 Mined 75 new reduction preconditions (+7500.0%).
+0.041 86 operators and 83 methods created.
+0.051 Iteration 0.
+0.051 Creating initial layer of size 2
+0.058 Attempting to solve formula with 5 clauses (6 literals) and 1 assumptions
+0.058 Unsolvable at layer 0 -- expanding.
+0.058 Iteration 1.
+0.059 New layer size: 2
+0.059 Instantiating ...
+0.109 Collected 1 relevant facts at this layer
+0.109 Encoding ...
+0.111 Attempting to solve formula with 1065 clauses (2286 literals) and 1 assumptions
+0.111 Unsolvable at layer 1 -- expanding.
+0.111 Iteration 2.
+0.111 New layer size: 2
+0.111 Instantiating ...
+0.112 Retroactively prune reduction (m_tlt_clear_road_tree Q_1,0_point:0_39255a2306a82f25 Q_1,0_point:1_39255a2306a82f25)@(1,0): no children at offset 0
+0.161 Collected 1 relevant facts at this layer
+0.161 Encoding ...
+0.162 Attempting to solve formula with 1206 clauses (2634 literals) and 1 assumptions
+0.162 Unsolvable at layer 2 -- expanding.
+0.162 Iteration 3.
+0.162 New layer size: 7
+0.162 Instantiating ...
+0.163 Retroactively prune reduction (m_provide_medical_attention_simple_on_site Q_1,0_adult:0_cb474ce4e1a86ee0)@(2,0): no children at offset 0
+0.163 Retroactively prune reduction (m_provide_medical_attention_in_hospital Q_2,0_hospital:0_3f3ecb2127c3ab2c Q_1,0_adult:0_cb474ce4e1a86ee0)@(2,0): no children at offset 0
+0.182 Retroactively prune reduction (m_clear_road_wreck Q_1,0_point:0_39255a2306a82f25 Q_1,0_point:1_39255a2306a82f25)@(2,0): no children at offset 1
+0.237 Collected 49 relevant facts at this layer
+0.237 Encoding ...
+0.241 Attempting to solve formula with 2538 clauses (6108 literals) and 4 assumptions
+0.241 Unsolvable at layer 3 -- expanding.
+0.241 Iteration 4.
+0.241 New layer size: 27
+0.241 Instantiating ...
+0.324 Retroactively prune reduction (m_clean_up_hazard_normal Q_1,0_point:0_39255a2306a82f25 Q_3,1_hazard_team:0_cc545ae98e31ed11 Q_1,0_point:1_39255a2306a82f25 very_hazardous very_hazardous)@(3,1): no children at offset 2
+0.405 Collected 336 relevant facts at this layer
+0.405 Encoding ...
+0.431 Attempting to solve formula with 25893 clauses (75612 literals) and 21 assumptions
+0.431 Unsolvable at layer 4 -- expanding.
+0.431 Iteration 5.
+0.431 New layer size: 72
+0.431 Instantiating ...
+0.672 Collected 478 relevant facts at this layer
+0.672 Encoding ...
+0.730 Attempting to solve formula with 90514 clauses (263932 literals) and 36 assumptions
+c last restart ## conflicts  :  2 1532 
+0.736 Found a solution at layer 5.
+0.737 Initial plan at most shallow layer has length 11
+0.737 Iteration 6. (extra)
+0.737 New layer size: 178
+0.737 Instantiating ...
+1.109 Collected 588 relevant facts at this layer
+1.109 Encoding ...
+1.256 Attempting to solve formula with 246976 clauses (744136 literals) and 81 assumptions
+c last restart ## conflicts  :  0 3890 
+1.273 Initial plan at final layer has length 11
+1.274 Tightened initial plan length bounds at layer 6: [0,177] => [3,11]
+1.277 Searching for a plan of length < 11
+1.277 Attempting to solve formula with 249863 clauses (752347 literals) and 0 assumptions
+==>
+8446 SHOP_methodm_get_to_person_drives_themself_precondition pcrew1 brighton_dump van1 pittsford_plaza
+8601 SHOP_methodm_drive_to_precondition van1 pittsford_plaza pcrew1
+8614 p_1Navegate_vehicle
+11367 SHOP_methodm_get_to_already_there_precondition van1 brighton_dump
+17673 SHOP_methodm_repair_line_without_tree_precondition brighton_dump pcrew1
+19029 SHOP_methodm_shut_off_power_precondition brighton_dump brighton rge
+19222 p_2Call
+19244 p_3Remove_wire
+20366 p_4String_wire
+20906 SHOP_methodm_turn_on_power_precondition brighton_dump brighton rge
+20954 call rge
+root 14
+14 tlt -> m_tlt_fix_power_line 62
+62 fix_power_line brighton_dump -> m_fix_power_line 101 11366 238
+101 get_to pcrew1 brighton_dump -> m_get_to_person_drives_themself 8446 789
+238 repair_line pcrew1 brighton_dump -> m_repair_line_without_tree 17673 4649 19243 20365 5710
+789 drive_to pcrew1 van1 brighton_dump -> m_drive_to 8601 8613
+4649 shut_off_power pcrew1 brighton_dump -> m_shut_off_power 19029 19221
+5710 turn_on_power pcrew1 brighton_dump -> m_turn_on_power 20906 20953
+8613 cnavegate_vehicle pcrew1 van1 brighton_dump pittsford_plaza -> prefix_1 8614
+11366 get_to van1 brighton_dump -> m_get_to_already_there 11367
+19221 ccall rge -> prefix_2 19222
+19243 cremove_wire pcrew1 brighton_dump -> prefix_3 19244
+20365 cstring_wire pcrew1 brighton_dump -> prefix_4 20366
+20953 ccall rge -> regular_2 20954
+<==
+1.321 End of solution plan. (counted length of 11)
+1.321 Total amount of clauses encoded: 249863
+1.321 - directframeaxioms : 161680 cls
+1.321 - qfactsemantics : 38295 cls
+1.321 - reductionconstraints : 17844 cls
+1.321 - indirectframeaxioms : 11370 cls
+1.321 - actionconstraints : 7449 cls
+1.321 - substitutionconstraints : 3476 cls
+1.321 - planlengthcounting : 2806 cls
+1.321 - atmostoneelement : 2477 cls
+1.321 - expansions : 1589 cls
+1.321 - predecessors : 1181 cls
+1.321 - truefacts : 588 cls
+1.321 - qconstequality : 476 cls
+1.321 - qtypeconstraints : 280 cls
+1.321 - actioneffects : 258 cls
+1.321 - assumptions : 81 cls
+1.321 - forbiddenoperations : 11 cls
+1.321 - axiomaticops : 2 cls
+1.321 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 1.595 MEMPEAK_KBS 0

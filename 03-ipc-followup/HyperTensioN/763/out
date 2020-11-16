@@ -1,0 +1,58 @@
+----------------------Tasks-----------------------
+0 do_mission phenomenon4 thermograph0
+1 do_mission star5 thermograph0
+2 do_mission phenomenon6 thermograph0
+3 invisible_goal
+---------------------Planning---------------------
+Time: 0.0004477500915527344s
+-----------------------Plan-----------------------
+==>
+7 switch_on instrument0 satellite0
+13 nop
+14 turn_to satellite0 groundstation2 phenomenon6
+10 calibrate satellite0 instrument0 groundstation2
+15 turn_to satellite0 phenomenon4 groundstation2
+4 take_image satellite0 phenomenon4 instrument0 thermograph0
+23 switch_off instrument0 satellite0
+21 switch_on instrument0 satellite0
+28 nop
+29 turn_to satellite0 groundstation2 phenomenon4
+25 calibrate satellite0 instrument0 groundstation2
+30 turn_to satellite0 star5 groundstation2
+17 take_image satellite0 star5 instrument0 thermograph0
+38 switch_off instrument0 satellite0
+36 switch_on instrument0 satellite0
+43 nop
+44 turn_to satellite0 groundstation2 star5
+40 calibrate satellite0 instrument0 groundstation2
+45 turn_to satellite0 phenomenon6 groundstation2
+32 take_image satellite0 phenomenon6 instrument0 thermograph0
+root 0 1 2
+0 do_mission phenomenon4 thermograph0 -> m0_do_mission 3 4
+3 do_prepare satellite0 instrument0 phenomenon4 -> m1_do_prepare 5 6
+5 do_switching satellite0 instrument0 -> m3_do_switching 7 8
+8 do_calibration satellite0 instrument0 groundstation2 -> m5_do_calibration 9 10
+9 do_prepare satellite0 instrument0 groundstation2 -> m1_do_prepare 11 12
+11 do_switching satellite0 instrument0 -> m4_do_switching 13
+12 do_turning satellite0 groundstation2 -> m8_do_turning 14
+6 do_turning satellite0 phenomenon4 -> m8_do_turning 15
+1 do_mission star5 thermograph0 -> m0_do_mission 16 17
+16 do_prepare satellite0 instrument0 star5 -> m1_do_prepare 18 19
+18 do_switching satellite0 instrument0 -> m2_do_switching 20 21 22
+20 make_power_available satellite0 instrument0 -> m7_make_power_available 23
+22 do_calibration satellite0 instrument0 groundstation2 -> m5_do_calibration 24 25
+24 do_prepare satellite0 instrument0 groundstation2 -> m1_do_prepare 26 27
+26 do_switching satellite0 instrument0 -> m4_do_switching 28
+27 do_turning satellite0 groundstation2 -> m8_do_turning 29
+19 do_turning satellite0 star5 -> m8_do_turning 30
+2 do_mission phenomenon6 thermograph0 -> m0_do_mission 31 32
+31 do_prepare satellite0 instrument0 phenomenon6 -> m1_do_prepare 33 34
+33 do_switching satellite0 instrument0 -> m2_do_switching 35 36 37
+35 make_power_available satellite0 instrument0 -> m7_make_power_available 38
+37 do_calibration satellite0 instrument0 groundstation2 -> m5_do_calibration 39 40
+39 do_prepare satellite0 instrument0 groundstation2 -> m1_do_prepare 41 42
+41 do_switching satellite0 instrument0 -> m4_do_switching 43
+42 do_turning satellite0 groundstation2 -> m8_do_turning 44
+34 do_turning satellite0 phenomenon6 -> m8_do_turning 45
+<==
+Total time: 0.00436711311340332s

@@ -1,0 +1,1421 @@
+PANDA - Planning and Acting in a Network Decomposition Architecture
+Believe us: It's great, it's fantastic!
+
+PANDA Copyright (C) 2014-2018 Gregor Behnke, Pascal Bercher, Thomas Geier, Kadir
+Dede, Daniel Höller, Kristof Mickeleit, Matthias Englert
+This program comes with ABSOLUTELY NO WARRANTY
+This is free software, and you are welcome to redistribute it under certain
+conditions; run PANDA with -license for details.
+
+Main Developers:
+- Gregor Behnke, http://www.uni-ulm.de/in/ki/behnke
+- Daniel Höller, http://www.uni-ulm.de/in/ki/hoeller
+
+With many thanks to various further contributors.
+Run PANDA with the command line argument -contributors for an extensive list.
+
+Run it with -help for more information like available options.
+
+
+PANDA was called with: "-systemConfig AAAI-2018-totSAT(cryptominisat) -programPath cryptominisat=./cryptominisat5 instances/SatelliteG/domain.hddl instances/SatelliteG/p09.hddl"
+
+
+Planner Configuration
+=====================
+Domain: instances/SatelliteG/domain.hddl
+Problem: instances/SatelliteG/p09.hddl
+Output: none
+
+Planning Configuration
+======================
+	printGeneralInformation : true
+	printAdditionalData     : true
+	random seed             : 42
+	time limit (in seconds) : none
+
+	external programs:
+		cryptominisat : ./cryptominisat5
+
+	Parsing Configuration
+	---------------------
+	Parser                : autodetect file-type
+	Expand Sort Hierarchy : true
+	ClosedWordAssumption  : true
+	CompileSHOPMethods    : true
+	Eliminate Equality    : true
+	Strip Hybridity       : true
+	Reduce General Tasks  : true
+	
+	Preprocessing Configuration
+	---------------------------
+	Compile negative preconditions    : true
+	Compile unit methods              : false
+	Compile order in methods          : false
+	Compile initial plan              : true
+	Ensure Methods Have Last Task     : false
+	Split independent parameters      : true
+	Remove unnecessary predicates     : true
+	Expand choiceless abstract tasks  : true
+	Domain Cleanup                    : true
+	Convert to SAS+                   : false
+	Grounded Reachability Analysis    : Planning Graph (mutex-free)
+	Grounded Task Decomposition Graph : Two Way TDG
+	Iterate reachability analysis     : true
+	Ground domain                     : true
+	Iterate reachability analysis     : true
+	Stop directly after grounding     : false
+	
+	SAT-Planning Configuration
+	--------------------------
+	solver           : cryptominisat
+	full planner run : true
+	reduction method : only normalise 
+	check result     : true
+	
+	Post-processing Configuration
+	-----------------------------
+	search result with Decomposition Tree
+	statistics
+	timings
+	search status
+	search result
+#0 "00 global:01:problem"="p09.hddl";"00 global:00:domain"="domain.hddl"
+Parsing domain ... using HDDL parser ... done
+Preparing internal domain representation ... done.
+Initial domain
+	number of abstract tasks = 6
+	number of tasks = 20
+	number of decomposition methods = 10
+	number of predicates = 8
+	number of sorts = 5
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 8
+	number of epsilon methods = 0
+	number of primitive tasks = 14
+	number of constants = 69
+Compiling negative preconditions ... done.
+	number of abstract tasks = 6
+	number of tasks = 20
+	number of decomposition methods = 10
+	number of predicates = 16
+	number of sorts = 5
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 8
+	number of epsilon methods = 0
+	number of primitive tasks = 14
+	number of constants = 69
+Compiling split parameters ... done.
+	number of abstract tasks = 7
+	number of tasks = 21
+	number of decomposition methods = 11
+	number of predicates = 16
+	number of sorts = 5
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 8
+	number of epsilon methods = 0
+	number of primitive tasks = 14
+	number of constants = 69
+Lifted reachability analysis and domain cleanup ... done.
+	number of abstract tasks = 7
+	number of tasks = 21
+	number of decomposition methods = 11
+	number of predicates = 11
+	number of sorts = 5
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 8
+	number of epsilon methods = 0
+	number of primitive tasks = 14
+	number of constants = 69
+Grounded planning graph ... done in 588ms.
+	Number of Grounded Actions 6877
+	Number of Grounded Literals 499
+	number of abstract tasks = 7
+	number of tasks = 21
+	number of decomposition methods = 11
+	number of predicates = 11
+	number of sorts = 5
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 8
+	number of epsilon methods = 0
+	number of primitive tasks = 14
+	number of constants = 69
+Two Way TDG ... done.
+	number of abstract tasks = 7
+	number of tasks = 21
+	number of decomposition methods = 11
+	number of predicates = 11
+	number of sorts = 5
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 8
+	number of epsilon methods = 0
+	number of primitive tasks = 14
+	number of constants = 69
+Grounding ... done.
+	number of abstract tasks = 1128
+	number of tasks = 6452
+	number of decomposition methods = 5185
+	number of predicates = 499
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 2736
+	number of epsilon methods = 0
+	number of primitive tasks = 5324
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 1128
+	number of tasks = 6452
+	number of decomposition methods = 5185
+	number of predicates = 358
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 2736
+	number of epsilon methods = 0
+	number of primitive tasks = 5324
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 459ms.
+	Number of Grounded Actions 4414
+	Number of Grounded Literals 330
+	number of abstract tasks = 1127
+	number of tasks = 5532
+	number of decomposition methods = 4721
+	number of predicates = 358
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 2272
+	number of epsilon methods = 0
+	number of primitive tasks = 4405
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 1127
+	number of tasks = 5532
+	number of decomposition methods = 4721
+	number of predicates = 358
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 2272
+	number of epsilon methods = 0
+	number of primitive tasks = 4405
+	number of constants = 0
+Compiling expand choiceless abstract tasks ... done.
+	number of abstract tasks = 221
+	number of tasks = 4626
+	number of decomposition methods = 3815
+	number of predicates = 358
+	number of sorts = 0
+	number of tasks in largest method = 41
+	number of primitive SHOP tasks = 2272
+	number of epsilon methods = 0
+	number of primitive tasks = 4405
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 221
+	number of tasks = 4626
+	number of decomposition methods = 3815
+	number of predicates = 358
+	number of sorts = 0
+	number of tasks in largest method = 41
+	number of primitive SHOP tasks = 2272
+	number of epsilon methods = 0
+	number of primitive tasks = 4405
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 221
+	number of tasks = 4626
+	number of decomposition methods = 3815
+	number of predicates = 330
+	number of sorts = 0
+	number of tasks in largest method = 41
+	number of primitive SHOP tasks = 2272
+	number of epsilon methods = 0
+	number of primitive tasks = 4405
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 181ms.
+	Number of Grounded Actions 4405
+	Number of Grounded Literals 330
+	number of abstract tasks = 221
+	number of tasks = 4626
+	number of decomposition methods = 3815
+	number of predicates = 330
+	number of sorts = 0
+	number of tasks in largest method = 41
+	number of primitive SHOP tasks = 2272
+	number of epsilon methods = 0
+	number of primitive tasks = 4405
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 221
+	number of tasks = 4626
+	number of decomposition methods = 2527
+	number of predicates = 330
+	number of sorts = 0
+	number of tasks in largest method = 41
+	number of primitive SHOP tasks = 2272
+	number of epsilon methods = 0
+	number of primitive tasks = 4405
+	number of constants = 0
+Compiling expand choiceless abstract tasks ... done.
+	number of abstract tasks = 221
+	number of tasks = 4626
+	number of decomposition methods = 2527
+	number of predicates = 330
+	number of sorts = 0
+	number of tasks in largest method = 41
+	number of primitive SHOP tasks = 2272
+	number of epsilon methods = 0
+	number of primitive tasks = 4405
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 221
+	number of tasks = 4626
+	number of decomposition methods = 2527
+	number of predicates = 330
+	number of sorts = 0
+	number of tasks in largest method = 41
+	number of primitive SHOP tasks = 2272
+	number of epsilon methods = 0
+	number of primitive tasks = 4405
+	number of constants = 0
+Compiling methods with identical tasks ... done.
+	number of abstract tasks = 221
+	number of tasks = 4626
+	number of decomposition methods = 2527
+	number of predicates = 330
+	number of sorts = 0
+	number of tasks in largest method = 41
+	number of primitive SHOP tasks = 2272
+	number of epsilon methods = 0
+	number of primitive tasks = 4405
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 221
+	number of tasks = 4626
+	number of decomposition methods = 2527
+	number of predicates = 330
+	number of sorts = 0
+	number of tasks in largest method = 41
+	number of primitive SHOP tasks = 2272
+	number of epsilon methods = 0
+	number of primitive tasks = 4405
+	number of constants = 0
+Tasks 4405 - 0
+Domain is acyclic: false
+Domain is mostly acyclic: false
+Domain is regular: false
+Domain is tail recursive: false
+Domain is totally ordered: true
+Domain has last task in all methods: true
+Time remaining for planner 9223372036854766074ms
+Computing minimum decomposition height: 3
+
+Running SAT search with K = 3
+Generating initial PDT ... Still waiting ... running for 102 will abort at 9223372036854765760
+done
+initial PDT has 322 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 282 leafs
+SHOP LEAFS 161
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Computing invariants [Rintanen]
+candidates build 162855
+Size 162855 at 0/4405
+Size 149795 at 500/4405
+Size 149795 at 1000/4405
+Size 149795 at 1500/4405
+Size 149795 at 2000/4405
+Size 148805 at 2500/4405
+Size 82743 at 3000/4405
+Size 61327 at 3500/4405
+Size 61327 at 4000/4405
+Size 61327
+Size 61327 at 0/4405
+Size 61327 at 500/4405
+Size 61327 at 1000/4405
+Size 61327 at 1500/4405
+Size 61327 at 2000/4405
+Size 26846 at 2500/4405
+Size 24850 at 3000/4405
+Size 24210 at 3500/4405
+Size 24210 at 4000/4405
+Size 24210
+Size 24210 at 0/4405
+Size 21602 at 500/4405
+Size 21602 at 1000/4405
+Size 21602 at 1500/4405
+Size 21602 at 2000/4405
+Size 4181 at 2500/4405
+Size 4181 at 3000/4405
+Size 4181 at 3500/4405
+Size 4181 at 4000/4405
+Size 4181
+Size 4181 at 0/4405
+Size 4181 at 500/4405
+Size 4181 at 1000/4405
+Size 4181 at 1500/4405
+Size 4181 at 2000/4405
+Size 4181 at 2500/4405
+Size 4181 at 3000/4405
+Size 4181 at 3500/4405
+Size 4181 at 4000/4405
+Size 4181
+Invariant time: 2.136
+Number of invariants: 4181
+Invariant Clauses 1183223
+NUMBER OF CLAUSES 1480539
+NUMBER OF STATE CLAUSES 1391664
+NUMBER OF DECOMPOSITION CLAUSES 88875
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 94.0% 6.0% 0.0% 
+NUMBER OF PATHS 282
+Starting cryptominisat
+Setting starttime of solver to 1603882152939
+Command exited with non-zero status 20
+0.35 0.02
+
+Time command gave the following runtime for the solver: 370
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 4
+Generating initial PDT ... Still waiting ... running for 100 will abort at 9223372036854759550
+done
+initial PDT has 402 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 362 leafs
+SHOP LEAFS 201
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 1517703
+NUMBER OF CLAUSES 1954103
+NUMBER OF STATE CLAUSES 1786718
+NUMBER OF DECOMPOSITION CLAUSES 167385
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 91.43% 8.57% 0.0% 
+NUMBER OF PATHS 362
+Starting cryptominisat
+Setting starttime of solver to 1603882156990
+Command exited with non-zero status 20
+0.45 0.02
+
+Time command gave the following runtime for the solver: 470
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 5
+Generating initial PDT ... Still waiting ... running for 100 will abort at 9223372036854755588
+done
+initial PDT has 722 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 642 leafs
+SHOP LEAFS 361
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 2688383
+NUMBER OF CLAUSES 3505476
+NUMBER OF STATE CLAUSES 3172322
+NUMBER OF DECOMPOSITION CLAUSES 333154
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 90.5% 9.5% 0.0% 
+NUMBER OF PATHS 642
+Starting cryptominisat
+Setting starttime of solver to 1603882163518
+Command exited with non-zero status 10
+1.29 0.03
+
+Time command gave the following runtime for the solver: 1320
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... done
+SAT-Solver says: SATISFIABLE
+
+extracting solution
+Consider method^2_16;1,2163 2163 m9_do_turning
+16;1 421 pathaction!2_16;1,2315
+Consider method^1_5,1051 1051 <m0_do_mission;do_prepare[satellite4,instrument26,Star6];m1_do_prepare;0;-1,-2,1>
+5 157 pathaction!1_5,2605
+Consider method^4_1;0;4;1,47 47 m4_do_switching
+1;0;4;1 308 pathaction!4_1;0;4;1,4584
+Consider method^4_0;0;4;1,2093 2093 m4_do_switching
+0;0;4;1 69 pathaction!4_0;0;4;1,4572
+Consider method^2_2;0,1321 1321 m3_do_switching
+2;0 315 pathaction!2_2;0,4569
+Consider method^2_29;1,2209 2209 m9_do_turning
+29;1 437 pathaction!2_29;1,2322
+Consider method^1_27,1295 1295 <m0_do_mission;do_prepare[satellite0,instrument8,Planet18];m1_do_prepare;0;-1,-2,1>
+27 2 pathaction!1_27,2616
+Consider method^2_36;0,1079 1079 m4_do_switching
+36;0 1 pathaction!2_36;0,4587
+Consider method^2_21;1,688 688 m8_do_turning
+21;1 60 pathaction!2_21;1,2341
+Consider method^2_14;0,47 47 m4_do_switching
+14;0 147 pathaction!2_14;0,4584
+Consider method^1_31,443 443 <m0_do_mission;do_prepare[satellite3,instrument20,Phenomenon21];m1_do_prepare;0;-1,-2,1>
+31 348 pathaction!1_31,2628
+Consider method^2_38;1,1229 1229 m8_do_turning
+38;1 174 pathaction!2_38;1,2316
+Consider method^1_40,1923 1923 m8_do_turning
+40 78 pathaction!1_40,2273
+Consider method^2_30;0,47 47 m4_do_switching
+30;0 245 pathaction!2_30;0,4584
+Consider method^2_37;1,141 141 m8_do_turning
+37;1 376 pathaction!2_37;1,2335
+Consider method^2_26;0,1076 1076 m4_do_switching
+26;0 377 pathaction!2_26;0,4596
+Consider method^1_38,771 771 <m0_do_mission;do_prepare[satellite1,instrument10,Star24];m1_do_prepare;0;-1,-2,1>
+38 431 pathaction!1_38,2626
+Consider method^2_6;0,2093 2093 m4_do_switching
+6;0 372 pathaction!2_6;0,4572
+Consider method^2_7;1,984 984 m8_do_turning
+7;1 179 pathaction!2_7;1,2276
+Consider method^1_36,2510 2510 <m0_do_mission;do_prepare[satellite3,instrument20,Star23];m1_do_prepare;0;-1,-2,1>
+36 64 pathaction!1_36,2623
+Consider method^2_38;0,2093 2093 m4_do_switching
+38;0 284 pathaction!2_38;0,4572
+Consider method^2_21;0,47 47 m4_do_switching
+21;0 143 pathaction!2_21;0,4584
+Consider method^2_20;1,229 229 m8_do_turning
+20;1 178 pathaction!2_20;1,2259
+Consider method^2_39;1,873 873 m8_do_turning
+39;1 391 pathaction!2_39;1,2269
+Consider method^1_6,1552 1552 <m0_do_mission;do_prepare[satellite1,instrument10,Planet7];m1_do_prepare;0;-1,-2,1>
+6 72 pathaction!1_6,2604
+Consider method^1_35,595 595 <m0_do_mission;do_prepare[satellite1,instrument10,Planet22];m1_do_prepare;0;-1,-2,1>
+35 53 pathaction!1_35,2627
+Consider method^2_1;0,1017 1017 m3_do_switching
+1;0 203 pathaction!2_1;0,4584
+Consider method^3_8;0;4,342 342 <m5_do_calibration;do_prepare[satellite3,instrument20,GroundStation1];m1_do_prepare;1;0,-1,-2,2>
+8;0;4 341 pathaction!3_8;0;4,2686
+Consider method^2_22;0,325 325 m4_do_switching
+22;0 218 pathaction!2_22;0,4569
+Consider method^2_33;0,47 47 m4_do_switching
+33;0 150 pathaction!2_33;0,4584
+Consider method^2_2;1,1926 1926 m8_do_turning
+2;1 248 pathaction!2_2;1,2279
+Consider method^4_2;0;4;2,1787 1787 m8_do_turning
+2;0;4;2 183 pathaction!4_2;0;4;2,2324
+Consider method^1_8,349 349 <m0_do_mission;do_prepare[satellite3,instrument20,Planet7];m1_do_prepare;0;-1,-2,1>
+8 221 pathaction!1_8,2621
+Consider method^4_8;0;4;2,1290 1290 m8_do_turning
+8;0;4;2 311 pathaction!4_8;0;4;2,2329
+Consider method^2_39;0,1076 1076 m4_do_switching
+39;0 327 pathaction!2_39;0,4596
+Consider method^1_15,941 941 <m0_do_mission;do_prepare[satellite3,instrument20,Star11];m1_do_prepare;0;-1,-2,1>
+15 98 pathaction!1_15,2603
+Consider method^2_37;0,47 47 m4_do_switching
+37;0 184 pathaction!2_37;0,4584
+Consider method^1_34,1250 1250 <m0_do_mission;do_prepare[satellite3,instrument20,Planet22];m1_do_prepare;0;-1,-2,1>
+34 100 pathaction!1_34,2634
+Consider method^1_0,1284 1284 <m0_do_mission;do_prepare[satellite1,instrument10,Phenomenon5];m1_do_prepare;0;-1,-2,1>
+0 176 pathaction!1_0,2610
+Consider method^4_1;0;4;2,2025 2025 m8_do_turning
+1;0;4;2 75 pathaction!4_1;0;4;2,2270
+Consider method^2_4;0,2093 2093 m4_do_switching
+4;0 244 pathaction!2_4;0,4572
+Consider method^2_4;1,1087 1087 m8_do_turning
+4;1 116 pathaction!2_4;1,2261
+Consider method^4_7;0;4;1,1076 1076 m4_do_switching
+7;0;4;1 290 pathaction!4_7;0;4;1,4596
+Consider method^4_7;0;4;2,1955 1955 m8_do_turning
+7;0;4;2 68 pathaction!4_7;0;4;2,2265
+Consider method^4_2;0;4;1,325 325 m4_do_switching
+2;0;4;1 368 pathaction!4_2;0;4;1,4569
+Consider method^2_35;0,2093 2093 m4_do_switching
+35;0 302 pathaction!2_35;0,4572
+Consider method^2_10;1,1617 1617 m8_do_turning
+10;1 19 pathaction!2_10;1,2274
+Consider method^1_9,1532 1532 <m0_do_mission;do_prepare[satellite1,instrument10,Phenomenon8];m1_do_prepare;0;-1,-2,1>
+9 194 pathaction!1_9,2618
+Consider method^2_0;0,656 656 m3_do_switching
+0;0 152 pathaction!2_0;0,4572
+Consider method^1_28,2068 2068 <m0_do_mission;do_prepare[satellite3,instrument20,Phenomenon19];m1_do_prepare;0;-1,-2,1>
+28 101 pathaction!1_28,2633
+Consider method^1_16,1992 1992 <m0_do_mission;do_prepare[satellite3,instrument20,Star11];m1_do_prepare;0;-1,-2,1>
+16 346 pathaction!1_16,2608
+Consider method^2_5;1,251 251 m8_do_turning
+5;1 357 pathaction!2_5;1,2275
+Consider method^2_12;0,2093 2093 m4_do_switching
+12;0 104 pathaction!2_12;0,4572
+Consider method^2_32;1,1607 1607 m9_do_turning
+32;1 38 pathaction!2_32;1,2299
+Consider method^2_30;1,874 874 m8_do_turning
+30;1 345 pathaction!2_30;1,2345
+Consider method^2_0;1,1833 1833 m8_do_turning
+0;1 172 pathaction!2_0;1,2257
+Consider method^1_37,1812 1812 <m0_do_mission;do_prepare[satellite0,instrument8,Star23];m1_do_prepare;0;-1,-2,1>
+37 426 pathaction!1_37,2600
+Consider method^2_27;0,47 47 m4_do_switching
+27;0 33 pathaction!2_27;0,4584
+Consider method^2_15;0,1079 1079 m4_do_switching
+15;0 139 pathaction!2_15;0,4587
+Consider method^2_19;1,2280 2280 m8_do_turning
+19;1 105 pathaction!2_19;1,2283
+Consider method^2_11;1,1116 1116 m8_do_turning
+11;1 353 pathaction!2_11;1,2330
+Consider method^2_31;0,1079 1079 m4_do_switching
+31;0 361 pathaction!2_31;0,4587
+Consider method^2_26;1,546 546 m8_do_turning
+26;1 429 pathaction!2_26;1,2334
+Consider method^2_34;1,1543 1543 m8_do_turning
+34;1 369 pathaction!2_34;1,2288
+Consider method^2_24;0,1079 1079 m4_do_switching
+24;0 267 pathaction!2_24;0,4587
+Consider method^4_0;0;4;2,178 178 m8_do_turning
+0;0;4;2 130 pathaction!4_0;0;4;2,2318
+Consider method^2_8;1,876 876 m8_do_turning
+8;1 89 pathaction!2_8;1,2308
+Consider method^3_7;0;4,1209 1209 <m5_do_calibration;do_prepare[satellite2,instrument17,Star0];m1_do_prepare;1;0,-1,-2,2>
+7;0;4 110 pathaction!3_7;0;4,2672
+Consider method^2_18;1,2383 2383 m8_do_turning
+18;1 187 pathaction!2_18;1,2262
+Consider method^2_27;1,2361 2361 m9_do_turning
+27;1 111 pathaction!2_27;1,2294
+Consider method^1_29,1134 1134 <m0_do_mission;do_prepare[satellite3,instrument20,Phenomenon19];m1_do_prepare;0;-1,-2,1>
+29 28 pathaction!1_29,2622
+Consider method^2_19;0,2093 2093 m4_do_switching
+19;0 121 pathaction!2_19;0,4572
+Consider method^1_22,193 193 <m0_do_mission;do_prepare[satellite4,instrument26,Planet15];m1_do_prepare;0;-1,-2,1>
+22 309 pathaction!1_22,2609
+Consider method^2_3;0,47 47 m4_do_switching
+3;0 108 pathaction!2_3;0,4584
+Consider method^2_32;0,1079 1079 m4_do_switching
+32;0 23 pathaction!2_32;0,4587
+Consider method^1_4,974 974 <m0_do_mission;do_prepare[satellite1,instrument10,Star6];m1_do_prepare;0;-1,-2,1>
+4 373 pathaction!1_4,2606
+Consider method^1_11,1510 1510 <m0_do_mission;do_prepare[satellite0,instrument8,Phenomenon8];m1_do_prepare;0;-1,-2,1>
+11 197 pathaction!1_11,2602
+Consider method^2_6;1,1367 1367 m8_do_turning
+6;1 154 pathaction!2_6;1,2302
+Consider method^2_22;1,1480 1480 m8_do_turning
+22;1 418 pathaction!2_22;1,2340
+Consider method^1_25,1989 1989 <m0_do_mission;do_prepare[satellite0,instrument8,Planet18];m1_do_prepare;0;-1,-2,1>
+25 92 pathaction!1_25,2613
+Consider method^1_10,869 869 <m0_do_mission;do_prepare[satellite2,instrument17,Phenomenon8];m1_do_prepare;0;-1,-2,1>
+10 193 pathaction!1_10,2597
+Consider method^2_20;0,1079 1079 m4_do_switching
+20;0 312 pathaction!2_20;0,4587
+Consider method^1_1,2499 2499 <m0_do_mission;do_prepare[satellite0,instrument8,Phenomenon5];m1_do_prepare;0;-1,-2,1>
+1 359 pathaction!1_1,2629
+Consider method^2_14;1,1225 1225 m8_do_turning
+14;1 415 pathaction!2_14;1,2304
+Consider method^1_7,195 195 <m0_do_mission;do_prepare[satellite2,instrument17,Planet7];m1_do_prepare;0;-1,-2,1>
+7 260 pathaction!1_7,2617
+Consider method^1_3,84 84 <m0_do_mission;do_prepare[satellite0,instrument8,Star6];m1_do_prepare;0;-1,-2,1>
+3 428 pathaction!1_3,2611
+Consider method^2_8;0,607 607 m3_do_switching
+8;0 397 pathaction!2_8;0,4587
+Consider method^3_2;0;4,20 20 <m5_do_calibration;do_prepare[satellite4,instrument26,Star4];m1_do_prepare;1;0,-1,-2,2>
+2;0;4 57 pathaction!3_2;0;4,2666
+Consider method^2_15;1,1893 1893 m8_do_turning
+15;1 90 pathaction!2_15;1,2315
+Consider method^1_18,1351 1351 <m0_do_mission;do_prepare[satellite2,instrument17,Planet13];m1_do_prepare;0;-1,-2,1>
+18 356 pathaction!1_18,2607
+Consider method^2_25;0,47 47 m4_do_switching
+25;0 262 pathaction!2_25;0,4584
+Consider method^2_9;1,1657 1657 m8_do_turning
+9;1 333 pathaction!2_9;1,2271
+Consider method^1_26,462 462 <m0_do_mission;do_prepare[satellite2,instrument17,Planet18];m1_do_prepare;0;-1,-2,1>
+26 350 pathaction!1_26,2614
+Consider method^2_33;1,1176 1176 m8_do_turning
+33;1 310 pathaction!2_33;1,2290
+Consider method^2_25;1,1930 1930 m8_do_turning
+25;1 228 pathaction!2_25;1,2294
+Consider method^2_31;1,628 628 m8_do_turning
+31;1 396 pathaction!2_31;1,2299
+Consider method^2_23;1,635 635 m8_do_turning
+23;1 128 pathaction!2_23;1,2278
+Consider method^1_32,81 81 <m0_do_mission;do_prepare[satellite3,instrument20,Phenomenon21];m1_do_prepare;0;-1,-2,1>
+32 381 pathaction!1_32,2615
+Consider method^1_21,1196 1196 <m0_do_mission;do_prepare[satellite0,instrument8,Phenomenon14];m1_do_prepare;0;-1,-2,1>
+21 335 pathaction!1_21,2624
+Consider method^1_20,1085 1085 <m0_do_mission;do_prepare[satellite3,instrument20,Planet13];m1_do_prepare;0;-1,-2,1>
+20 355 pathaction!1_20,2632
+Consider method^1_2,1731 1731 <m0_do_mission;do_prepare[satellite4,instrument26,Phenomenon5];m1_do_prepare;0;-1,-2,1>
+2 399 pathaction!1_2,2625
+Consider method^1_33,1164 1164 <m0_do_mission;do_prepare[satellite0,instrument8,Phenomenon21];m1_do_prepare;0;-1,-2,1>
+33 80 pathaction!1_33,2601
+Consider method^2_1;1,684 684 m8_do_turning
+1;1 182 pathaction!2_1;1,2301
+Consider method^1_24,2260 2260 <m0_do_mission;do_prepare[satellite3,instrument20,Star16];m1_do_prepare;0;-1,-2,1>
+24 392 pathaction!1_24,2599
+Consider method^2_17;0,1079 1079 m4_do_switching
+17;0 389 pathaction!2_17;0,4587
+Consider method^1_14,1224 1224 <m0_do_mission;do_prepare[satellite0,instrument8,Star11];m1_do_prepare;0;-1,-2,1>
+14 219 pathaction!1_14,2596
+Consider method^2_10;0,1076 1076 m4_do_switching
+10;0 18 pathaction!2_10;0,4596
+Consider method^1_39,1001 1001 <m0_do_mission;do_prepare[satellite2,instrument17,Star24];m1_do_prepare;0;-1,-2,1>
+39 344 pathaction!1_39,2598
+Consider method^2_28;0,1079 1079 m4_do_switching
+28;0 40 pathaction!2_28;0,4587
+Consider method^1_13,1052 1052 <m0_do_mission;do_prepare[satellite1,instrument10,Star10];m1_do_prepare;0;-1,-2,1>
+13 117 pathaction!1_13,2631
+Consider method^2_17;1,1708 1708 m8_do_turning
+17;1 383 pathaction!2_17;1,2285
+Consider method^2_16;0,1079 1079 m4_do_switching
+16;0 77 pathaction!2_16;0,4587
+Consider method^2_34;0,1079 1079 m4_do_switching
+34;0 232 pathaction!2_34;0,4587
+Consider method^2_12;1,1408 1408 m8_do_turning
+12;1 443 pathaction!2_12;1,2312
+Consider method^4_8;0;4;1,1079 1079 m4_do_switching
+8;0;4;1 168 pathaction!4_8;0;4;1,4587
+Consider method^2_9;0,2093 2093 m4_do_switching
+9;0 258 pathaction!2_9;0,4572
+Consider method^1_17,1795 1795 <m0_do_mission;do_prepare[satellite3,instrument20,Phenomenon12];m1_do_prepare;0;-1,-2,1>
+17 211 pathaction!1_17,2612
+Consider method^0_,2526 2526 __top_1
+ 332 pathaction!0_,4625
+Consider method^2_24;1,726 726 m8_do_turning
+24;1 188 pathaction!2_24;1,2267
+Consider method^1_12,2494 2494 <m0_do_mission;do_prepare[satellite1,instrument10,Planet9];m1_do_prepare;0;-1,-2,1>
+12 242 pathaction!1_12,2595
+Consider method^2_29;0,1079 1079 m4_do_switching
+29;0 41 pathaction!2_29;0,4587
+Consider method^2_36;1,1728 1728 m8_do_turning
+36;1 43 pathaction!2_36;1,2281
+Consider method^2_23;0,325 325 m4_do_switching
+23;0 293 pathaction!2_23;0,4569
+Consider method^2_5;0,325 325 m4_do_switching
+5;0 306 pathaction!2_5;0,4569
+Consider method^1_19,664 664 <m0_do_mission;do_prepare[satellite1,instrument10,Planet13];m1_do_prepare;0;-1,-2,1>
+19 85 pathaction!1_19,2630
+Consider method^1_30,1811 1811 <m0_do_mission;do_prepare[satellite0,instrument8,Star20];m1_do_prepare;0;-1,-2,1>
+30 241 pathaction!1_30,2620
+Consider method^3_1;0;4,2515 2515 <m5_do_calibration;do_prepare[satellite0,instrument8,Star2];m1_do_prepare;1;0,-1,-2,2>
+1;0;4 190 pathaction!3_1;0;4,2688
+Consider method^1_23,1185 1185 <m0_do_mission;do_prepare[satellite4,instrument26,Star16];m1_do_prepare;0;-1,-2,1>
+23 285 pathaction!1_23,2619
+Consider method^3_0;0;4,801 801 <m5_do_calibration;do_prepare[satellite1,instrument10,Star4];m1_do_prepare;1;0,-1,-2,2>
+0;0;4 58 pathaction!3_0;0;4,2664
+Consider method^2_35;1,1984 1984 m8_do_turning
+35;1 175 pathaction!2_35;1,2292
+Consider method^2_18;0,1076 1076 m4_do_switching
+18;0 180 pathaction!2_18;0,4596
+Consider method^2_28;1,1242 1242 m8_do_turning
+28;1 304 pathaction!2_28;1,2322
+Consider method^2_3;1,1237 1237 m8_do_turning
+3;1 233 pathaction!2_3;1,2313
+Consider method^2_13;0,2093 2093 m4_do_switching
+13;0 243 pathaction!2_13;0,4572
+Consider method^2_13;1,2464 2464 m8_do_turning
+13;1 386 pathaction!2_13;1,2332
+Consider method^2_7;0,1246 1246 m3_do_switching
+7;0 438 pathaction!2_7;0,4596
+Consider method^2_11;0,47 47 m4_do_switching
+11;0 385 pathaction!2_11;0,4584
+
+
+CHECKING primitive solution of length 232 ...
+true 138 __method_precondition_m3_do_switching_3_precondition[instrument10,satellite1;]
+true 48 switch_on[instrument10,satellite1;]
+true 67 __method_precondition_m5_do_calibration_5_precondition[instrument10;]
+true 76 __method_precondition_m4_do_switching_4_precondition[instrument10;]
+true 162 nop[;]
+true 59 __method_precondition_m8_do_turning_8_precondition[satellite1,Phenomenon19,Star4;]
+true 338 turn_to[satellite1,Star4,Phenomenon19;]
+true 51 calibrate[satellite1,instrument10,Star4;]
+true 63 __method_precondition_m8_do_turning_8_precondition[satellite1,Star4,Phenomenon5;]
+true 204 turn_to[satellite1,Phenomenon5,Star4;]
+true 323 take_image[satellite1,Phenomenon5,instrument10,thermograph8;]
+true 164 __method_precondition_m3_do_switching_3_precondition[instrument8,satellite0;]
+true 61 switch_on[instrument8,satellite0;]
+true 135 __method_precondition_m5_do_calibration_5_precondition[instrument8;]
+true 435 __method_precondition_m4_do_switching_4_precondition[instrument8;]
+true 288 nop[;]
+true 12 __method_precondition_m8_do_turning_8_precondition[satellite0,GroundStation1,Star2;]
+true 165 turn_to[satellite0,Star2,GroundStation1;]
+true 159 calibrate[satellite0,instrument8,Star2;]
+true 145 __method_precondition_m8_do_turning_8_precondition[satellite0,Star2,Phenomenon5;]
+true 278 turn_to[satellite0,Phenomenon5,Star2;]
+true 0 take_image[satellite0,Phenomenon5,instrument8,spectrograph0;]
+true 340 __method_precondition_m3_do_switching_3_precondition[instrument26,satellite4;]
+true 14 switch_on[instrument26,satellite4;]
+true 134 __method_precondition_m5_do_calibration_5_precondition[instrument26;]
+true 271 __method_precondition_m4_do_switching_4_precondition[instrument26;]
+true 124 nop[;]
+true 6 __method_precondition_m8_do_turning_8_precondition[satellite4,Star16,Star4;]
+true 214 turn_to[satellite4,Star4,Star16;]
+true 74 calibrate[satellite4,instrument26,Star4;]
+true 229 __method_precondition_m8_do_turning_8_precondition[satellite4,Star4,Phenomenon5;]
+true 425 turn_to[satellite4,Phenomenon5,Star4;]
+true 439 take_image[satellite4,Phenomenon5,instrument26,image3;]
+true 330 __method_precondition_m4_do_switching_4_precondition[instrument8;]
+true 240 nop[;]
+true 352 __method_precondition_m8_do_turning_8_precondition[satellite0,Phenomenon5,Star6;]
+true 20 turn_to[satellite0,Star6,Phenomenon5;]
+true 247 take_image[satellite0,Star6,instrument8,spectrograph0;]
+true 44 __method_precondition_m4_do_switching_4_precondition[instrument10;]
+true 347 nop[;]
+true 272 __method_precondition_m8_do_turning_8_precondition[satellite1,Phenomenon5,Star6;]
+true 299 turn_to[satellite1,Star6,Phenomenon5;]
+true 170 take_image[satellite1,Star6,instrument10,spectrograph6;]
+true 120 __method_precondition_m4_do_switching_4_precondition[instrument26;]
+true 8 nop[;]
+true 191 __method_precondition_m8_do_turning_8_precondition[satellite4,Phenomenon5,Star6;]
+true 275 turn_to[satellite4,Star6,Phenomenon5;]
+true 246 take_image[satellite4,Star6,instrument26,image3;]
+true 405 __method_precondition_m4_do_switching_4_precondition[instrument10;]
+true 25 nop[;]
+true 253 __method_precondition_m8_do_turning_8_precondition[satellite1,Star6,Planet7;]
+true 141 turn_to[satellite1,Planet7,Star6;]
+true 364 take_image[satellite1,Planet7,instrument10,spectrograph6;]
+true 102 __method_precondition_m3_do_switching_3_precondition[instrument17,satellite2;]
+true 114 switch_on[instrument17,satellite2;]
+true 351 __method_precondition_m5_do_calibration_5_precondition[instrument17;]
+true 71 __method_precondition_m4_do_switching_4_precondition[instrument17;]
+true 236 nop[;]
+true 395 __method_precondition_m8_do_turning_8_precondition[satellite2,Phenomenon14,Star0;]
+true 140 turn_to[satellite2,Star0,Phenomenon14;]
+true 54 calibrate[satellite2,instrument17,Star0;]
+true 50 __method_precondition_m8_do_turning_8_precondition[satellite2,Star0,Planet7;]
+true 406 turn_to[satellite2,Planet7,Star0;]
+true 146 take_image[satellite2,Planet7,instrument17,infrared5;]
+true 96 __method_precondition_m3_do_switching_3_precondition[instrument20,satellite3;]
+true 402 switch_on[instrument20,satellite3;]
+true 16 __method_precondition_m5_do_calibration_5_precondition[instrument20;]
+true 217 __method_precondition_m4_do_switching_4_precondition[instrument20;]
+true 237 nop[;]
+true 21 __method_precondition_m8_do_turning_8_precondition[satellite3,Star10,GroundStation1;]
+true 24 turn_to[satellite3,GroundStation1,Star10;]
+true 400 calibrate[satellite3,instrument20,GroundStation1;]
+true 358 __method_precondition_m8_do_turning_8_precondition[satellite3,GroundStation1,Planet7;]
+true 256 turn_to[satellite3,Planet7,GroundStation1;]
+true 343 take_image[satellite3,Planet7,instrument20,image2;]
+true 192 __method_precondition_m4_do_switching_4_precondition[instrument10;]
+true 115 nop[;]
+true 251 __method_precondition_m8_do_turning_8_precondition[satellite1,Planet7,Phenomenon8;]
+true 17 turn_to[satellite1,Phenomenon8,Planet7;]
+true 296 take_image[satellite1,Phenomenon8,instrument10,spectrograph6;]
+true 224 __method_precondition_m4_do_switching_4_precondition[instrument17;]
+true 226 nop[;]
+true 79 __method_precondition_m8_do_turning_8_precondition[satellite2,Planet7,Phenomenon8;]
+true 39 turn_to[satellite2,Phenomenon8,Planet7;]
+true 434 take_image[satellite2,Phenomenon8,instrument17,infrared5;]
+true 325 __method_precondition_m4_do_switching_4_precondition[instrument8;]
+true 123 nop[;]
+true 300 __method_precondition_m8_do_turning_8_precondition[satellite0,Star6,Phenomenon8;]
+true 378 turn_to[satellite0,Phenomenon8,Star6;]
+true 177 take_image[satellite0,Phenomenon8,instrument8,thermograph7;]
+true 11 __method_precondition_m4_do_switching_4_precondition[instrument10;]
+true 189 nop[;]
+true 441 __method_precondition_m8_do_turning_8_precondition[satellite1,Phenomenon8,Planet9;]
+true 410 turn_to[satellite1,Planet9,Phenomenon8;]
+true 70 take_image[satellite1,Planet9,instrument10,spectrograph6;]
+true 286 __method_precondition_m4_do_switching_4_precondition[instrument10;]
+true 276 nop[;]
+true 394 __method_precondition_m8_do_turning_8_precondition[satellite1,Planet9,Star10;]
+true 97 turn_to[satellite1,Star10,Planet9;]
+true 329 take_image[satellite1,Star10,instrument10,spectrograph6;]
+true 230 __method_precondition_m4_do_switching_4_precondition[instrument8;]
+true 35 nop[;]
+true 414 __method_precondition_m8_do_turning_8_precondition[satellite0,Phenomenon8,Star11;]
+true 324 turn_to[satellite0,Star11,Phenomenon8;]
+true 239 take_image[satellite0,Star11,instrument8,thermograph7;]
+true 56 __method_precondition_m4_do_switching_4_precondition[instrument20;]
+true 367 nop[;]
+true 144 __method_precondition_m8_do_turning_8_precondition[satellite3,Planet7,Star11;]
+true 287 turn_to[satellite3,Star11,Planet7;]
+true 384 take_image[satellite3,Star11,instrument20,image4;]
+true 282 __method_precondition_m4_do_switching_4_precondition[instrument20;]
+true 199 nop[;]
+true 336 __method_precondition_m9_do_turning_9_precondition[satellite3,Star11;]
+true 398 nop[;]
+true 99 take_image[satellite3,Star11,instrument20,image3;]
+true 29 __method_precondition_m4_do_switching_4_precondition[instrument20;]
+true 137 nop[;]
+true 263 __method_precondition_m8_do_turning_8_precondition[satellite3,Star11,Phenomenon12;]
+true 331 turn_to[satellite3,Phenomenon12,Star11;]
+true 215 take_image[satellite3,Phenomenon12,instrument20,image4;]
+true 86 __method_precondition_m4_do_switching_4_precondition[instrument17;]
+true 49 nop[;]
+true 181 __method_precondition_m8_do_turning_8_precondition[satellite2,Phenomenon8,Planet13;]
+true 238 turn_to[satellite2,Planet13,Phenomenon8;]
+true 37 take_image[satellite2,Planet13,instrument17,infrared5;]
+true 277 __method_precondition_m4_do_switching_4_precondition[instrument10;]
+true 126 nop[;]
+true 32 __method_precondition_m8_do_turning_8_precondition[satellite1,Star10,Planet13;]
+true 148 turn_to[satellite1,Planet13,Star10;]
+true 185 take_image[satellite1,Planet13,instrument10,spectrograph6;]
+true 404 __method_precondition_m4_do_switching_4_precondition[instrument20;]
+true 252 nop[;]
+true 370 __method_precondition_m8_do_turning_8_precondition[satellite3,Phenomenon12,Planet13;]
+true 171 turn_to[satellite3,Planet13,Phenomenon12;]
+true 155 take_image[satellite3,Planet13,instrument20,image2;]
+true 46 __method_precondition_m4_do_switching_4_precondition[instrument8;]
+true 313 nop[;]
+true 156 __method_precondition_m8_do_turning_8_precondition[satellite0,Star11,Phenomenon14;]
+true 161 turn_to[satellite0,Phenomenon14,Star11;]
+true 366 take_image[satellite0,Phenomenon14,instrument8,thermograph7;]
+true 427 __method_precondition_m4_do_switching_4_precondition[instrument26;]
+true 65 nop[;]
+true 419 __method_precondition_m8_do_turning_8_precondition[satellite4,Star6,Planet15;]
+true 255 turn_to[satellite4,Planet15,Star6;]
+true 27 take_image[satellite4,Planet15,instrument26,image3;]
+true 292 __method_precondition_m4_do_switching_4_precondition[instrument26;]
+true 337 nop[;]
+true 349 __method_precondition_m8_do_turning_8_precondition[satellite4,Planet15,Star16;]
+true 320 turn_to[satellite4,Star16,Planet15;]
+true 212 take_image[satellite4,Star16,instrument26,image3;]
+true 202 __method_precondition_m4_do_switching_4_precondition[instrument20;]
+true 319 nop[;]
+true 424 __method_precondition_m8_do_turning_8_precondition[satellite3,Planet13,Star16;]
+true 250 turn_to[satellite3,Star16,Planet13;]
+true 136 take_image[satellite3,Star16,instrument20,image4;]
+true 66 __method_precondition_m4_do_switching_4_precondition[instrument8;]
+true 10 nop[;]
+true 379 __method_precondition_m8_do_turning_8_precondition[satellite0,Phenomenon14,Planet18;]
+true 47 turn_to[satellite0,Planet18,Phenomenon14;]
+true 314 take_image[satellite0,Planet18,instrument8,infrared9;]
+true 93 __method_precondition_m4_do_switching_4_precondition[instrument17;]
+true 195 nop[;]
+true 283 __method_precondition_m8_do_turning_8_precondition[satellite2,Planet13,Planet18;]
+true 305 turn_to[satellite2,Planet18,Planet13;]
+true 205 take_image[satellite2,Planet18,instrument17,infrared5;]
+true 307 __method_precondition_m4_do_switching_4_precondition[instrument8;]
+true 393 nop[;]
+true 417 __method_precondition_m9_do_turning_9_precondition[satellite0,Planet18;]
+true 106 nop[;]
+true 208 take_image[satellite0,Planet18,instrument8,thermograph7;]
+true 87 __method_precondition_m4_do_switching_4_precondition[instrument20;]
+true 91 nop[;]
+true 412 __method_precondition_m8_do_turning_8_precondition[satellite3,Star16,Phenomenon19;]
+true 167 turn_to[satellite3,Phenomenon19,Star16;]
+true 264 take_image[satellite3,Phenomenon19,instrument20,image2;]
+true 433 __method_precondition_m4_do_switching_4_precondition[instrument20;]
+true 234 nop[;]
+true 273 __method_precondition_m9_do_turning_9_precondition[satellite3,Phenomenon19;]
+true 259 nop[;]
+true 131 take_image[satellite3,Phenomenon19,instrument20,image4;]
+true 362 __method_precondition_m4_do_switching_4_precondition[instrument8;]
+true 411 nop[;]
+true 301 __method_precondition_m8_do_turning_8_precondition[satellite0,Planet18,Star20;]
+true 13 turn_to[satellite0,Star20,Planet18;]
+true 374 take_image[satellite0,Star20,instrument8,spectrograph0;]
+true 82 __method_precondition_m4_do_switching_4_precondition[instrument20;]
+true 326 nop[;]
+true 109 __method_precondition_m8_do_turning_8_precondition[satellite3,Phenomenon19,Phenomenon21;]
+true 365 turn_to[satellite3,Phenomenon21,Phenomenon19;]
+true 408 take_image[satellite3,Phenomenon21,instrument20,image4;]
+true 249 __method_precondition_m4_do_switching_4_precondition[instrument20;]
+true 42 nop[;]
+true 30 __method_precondition_m9_do_turning_9_precondition[satellite3,Phenomenon21;]
+true 107 nop[;]
+true 322 take_image[satellite3,Phenomenon21,instrument20,image2;]
+true 261 __method_precondition_m4_do_switching_4_precondition[instrument8;]
+true 430 nop[;]
+true 201 __method_precondition_m8_do_turning_8_precondition[satellite0,Star20,Phenomenon21;]
+true 371 turn_to[satellite0,Phenomenon21,Star20;]
+true 45 take_image[satellite0,Phenomenon21,instrument8,thermograph7;]
+true 200 __method_precondition_m4_do_switching_4_precondition[instrument20;]
+true 26 nop[;]
+true 118 __method_precondition_m8_do_turning_8_precondition[satellite3,Phenomenon21,Planet22;]
+true 279 turn_to[satellite3,Planet22,Phenomenon21;]
+true 186 take_image[satellite3,Planet22,instrument20,image2;]
+true 149 __method_precondition_m4_do_switching_4_precondition[instrument10;]
+true 316 nop[;]
+true 113 __method_precondition_m8_do_turning_8_precondition[satellite1,Planet13,Planet22;]
+true 291 turn_to[satellite1,Planet22,Planet13;]
+true 209 take_image[satellite1,Planet22,instrument10,spectrograph6;]
+true 298 __method_precondition_m4_do_switching_4_precondition[instrument20;]
+true 254 nop[;]
+true 375 __method_precondition_m8_do_turning_8_precondition[satellite3,Planet22,Star23;]
+true 403 turn_to[satellite3,Star23,Planet22;]
+true 112 take_image[satellite3,Star23,instrument20,image2;]
+true 265 __method_precondition_m4_do_switching_4_precondition[instrument8;]
+true 257 nop[;]
+true 34 __method_precondition_m8_do_turning_8_precondition[satellite0,Phenomenon21,Star23;]
+true 294 turn_to[satellite0,Star23,Phenomenon21;]
+true 317 take_image[satellite0,Star23,instrument8,infrared9;]
+true 432 __method_precondition_m4_do_switching_4_precondition[instrument10;]
+true 380 nop[;]
+true 318 __method_precondition_m8_do_turning_8_precondition[satellite1,Planet22,Star24;]
+true 169 turn_to[satellite1,Star24,Planet22;]
+true 3 take_image[satellite1,Star24,instrument10,spectrograph6;]
+true 360 __method_precondition_m4_do_switching_4_precondition[instrument17;]
+true 220 nop[;]
+true 303 __method_precondition_m8_do_turning_8_precondition[satellite2,Planet18,Star24;]
+true 73 turn_to[satellite2,Star24,Planet18;]
+true 440 take_image[satellite2,Star24,instrument17,infrared5;]
+true 88 __method_precondition_m8_do_turning_8_precondition[satellite1,Star24,Phenomenon19;]
+true 52 turn_to[satellite1,Phenomenon19,Star24;]
+ done.
+Panda says: SOLUTION
+============ global ============
+randomseed     = 42
+peak memory    = 876126688
+planner result = SOLUTION
+============ properties ============
+acyclic                  = false
+mostly acyclic           = false
+regular                  = false
+tail recursive           = false
+totally ordered          = true
+last task in all methods = true
+============ problem ============
+number of constants                  = 0
+number of predicates                 = 330
+number of actions                    = 4626
+number of abstract actions           = 221
+number of primitive actions          = 4405
+number of methods                    = 2527
+number of primitive shop actions     = 2272
+number of primitive non-shop actions = 2133
+size of largest method               = 41
+average method size                  = 2
+============ sat ============
+plan length                     = -1
+number of variables             = 436723
+number of clauses               = 3505476
+average size of clauses         = 2.073020325912943
+number of assert                = 173
+number of horn                  = 2765083
+K offset                        = 0
+K chosen value                  = 5
+state formula                   = 3172322
+method children clauses         = 0
+number of paths                 = 642
+maximum plan length             = 642
+number of decomposition clauses = 333154
+number of ordering clauses      = 0
+number of state clauses         = 3172322
+solved                          = true
+timeout                         = false
+
+----------------- TIMINGS -----------------
+============ total ============
+total = 29867
+============ parsing ============
+total                         = 1265
+file parser                   = 611
+sort expansion                = 352
+closed world assumption       = 159
+inherit preconditions         = 0
+shop methods                  = 10
+eliminate identical variables = 59
+strip domain of hybridity     = 1
+flatten formula               = 73
+============ preprocessing ============
+total                                      = 8126
+compile negative preconditions             = 52
+compile unit methods                       = 0
+split parameter                            = 73
+expand choiceless abstract tasks           = 999
+compile methods with identical tasks       = 23
+removing unnecessary predicates            = 1284
+lifted reachabiltiy analysis               = 103
+grounded planning graph analysis           = 1790
+grounded task decomposition graph analysis = 3047
+grounding                                  = 699
+create artificial top task                 = 15
+============ search preparation ============
+compute state invariants = 2341
+============ sat ============
+total                                        = 16840
+generate formula                             = 12544
+generate path decomposition tree             = 522
+normalise path decomposition tree            = 209
+sog optimisation                             = 146
+translate path decomposition tree to clauses = 1186
+generate state formula                       = 11116
+generate state invariant formula             = 3586
+transform to DIMACS                          = 1577
+SAT solver                                   = 2160
+SAT solver for K=0003                        = 370
+SAT solver for K=0004                        = 470
+SAT solver for K=0005                        = 1320
+
+#1 "40 sat:90:solved"="true";"30 problem:05:number of primitive actions"="4405";"30 problem:01:number of constants"="0";"30 problem:04:number of abstract actions"="221";"02 properties:04:tail recursive"="false";"00 global:80:peak memory"="876126688";"40 sat:20:state formula"="3172322";"40 sat:01:number of variables"="436723";"40 sat:14:K offset"="0";"40 sat:30:number of paths"="642";"40 sat:00:plan length"="-1";"40 sat:50:number of ordering clauses"="0";"02 properties:02:mostly acyclic"="false";"30 problem:06:number of methods"="2527";"30 problem:07:number of primitive shop actions"="2272";"02 properties:05:totally ordered"="true";"02 properties:06:last task in all methods"="true";"30 problem:03:number of actions"="4626";"30 problem:08:number of primitive non-shop actions"="2133";"30 problem:02:number of predicates"="330";"40 sat:03:number of horn"="2765083";"40 sat:15:K chosen value"="5";"30 problem:10:average method size"="2";"02 properties:03:regular"="false";"30 problem:09:size of largest method"="41";"40 sat:03:average size of clauses"="2.073020325912943";"40 sat:02:number of clauses"="3505476";"40 sat:50:number of state clauses"="3172322";"40 sat:03:number of assert"="173";"40 sat:22:method children clauses"="0";"00 global:90:planner result"="SOLUTION";"02 properties:01:acyclic"="false";"40 sat:31:maximum plan length"="642";"40 sat:50:number of decomposition clauses"="333154";"00 global:02:randomseed"="42";"40 sat:91:timeout"="false";"01 parsing:01:file parser"="611";"01 parsing:08:flatten formula"="73";"40 sat:41:SAT solver for K=0004"="470";"40 sat:00:total"="16840";"40 sat:16:generate state formula"="11116";"40 sat:20:transform to DIMACS"="1577";"40 sat:11:generate path decomposition tree"="522";"02 preprocessing:07:compile methods with identical tasks"="23";"01 parsing:07:strip domain of hybridity"="1";"02 preprocessing:08:removing unnecessary predicates"="1284";"01 parsing:03:closed world assumption"="159";"02 preprocessing:11:lifted reachabiltiy analysis"="103";"01 parsing:02:sort expansion"="352";"40 sat:12:normalise path decomposition tree"="209";"40 sat:40:SAT solver"="2160";"01 parsing:00:total"="1265";"40 sat:10:generate formula"="12544";"40 sat:41:SAT solver for K=0005"="1320";"01 parsing:04:inherit preconditions"="0";"02 preprocessing:01:compile negative preconditions"="52";"00 total:00:total"="29867";"40 sat:13:sog optimisation"="146";"02 preprocessing:12:grounded planning graph analysis"="1790";"02 preprocessing:02:compile unit methods"="0";"02 preprocessing:23:grounded task decomposition graph analysis"="3047";"02 preprocessing:04:split parameter"="73";"01 parsing:05:shop methods"="10";"10 search preparation:02:compute state invariants"="2341";"01 parsing:06:eliminate identical variables"="59";"40 sat:15:translate path decomposition tree to clauses"="1186";"02 preprocessing:05:expand choiceless abstract tasks"="999";"40 sat:41:SAT solver for K=0003"="370";"40 sat:17:generate state invariant formula"="3586";"02 preprocessing:00:total"="8126";"02 preprocessing:99:create artificial top task"="15";"02 preprocessing:84:grounding"="699"
+#!verify __method_precondition_m3_do_switching_3_precondition[instrument10,satellite1];switch_on[instrument10,satellite1];__method_precondition_m5_do_calibration_5_precondition[instrument10];__method_precondition_m4_do_switching_4_precondition[instrument10];nop[];__method_precondition_m8_do_turning_8_precondition[satellite1,Phenomenon19,Star4];turn_to[satellite1,Star4,Phenomenon19];calibrate[satellite1,instrument10,Star4];__method_precondition_m8_do_turning_8_precondition[satellite1,Star4,Phenomenon5];turn_to[satellite1,Phenomenon5,Star4];take_image[satellite1,Phenomenon5,instrument10,thermograph8];__method_precondition_m3_do_switching_3_precondition[instrument8,satellite0];switch_on[instrument8,satellite0];__method_precondition_m5_do_calibration_5_precondition[instrument8];__method_precondition_m4_do_switching_4_precondition[instrument8];nop[];__method_precondition_m8_do_turning_8_precondition[satellite0,GroundStation1,Star2];turn_to[satellite0,Star2,GroundStation1];calibrate[satellite0,instrument8,Star2];__method_precondition_m8_do_turning_8_precondition[satellite0,Star2,Phenomenon5];turn_to[satellite0,Phenomenon5,Star2];take_image[satellite0,Phenomenon5,instrument8,spectrograph0];__method_precondition_m3_do_switching_3_precondition[instrument26,satellite4];switch_on[instrument26,satellite4];__method_precondition_m5_do_calibration_5_precondition[instrument26];__method_precondition_m4_do_switching_4_precondition[instrument26];nop[];__method_precondition_m8_do_turning_8_precondition[satellite4,Star16,Star4];turn_to[satellite4,Star4,Star16];calibrate[satellite4,instrument26,Star4];__method_precondition_m8_do_turning_8_precondition[satellite4,Star4,Phenomenon5];turn_to[satellite4,Phenomenon5,Star4];take_image[satellite4,Phenomenon5,instrument26,image3];__method_precondition_m4_do_switching_4_precondition[instrument8];nop[];__method_precondition_m8_do_turning_8_precondition[satellite0,Phenomenon5,Star6];turn_to[satellite0,Star6,Phenomenon5];take_image[satellite0,Star6,instrument8,spectrograph0];__method_precondition_m4_do_switching_4_precondition[instrument10];nop[];__method_precondition_m8_do_turning_8_precondition[satellite1,Phenomenon5,Star6];turn_to[satellite1,Star6,Phenomenon5];take_image[satellite1,Star6,instrument10,spectrograph6];__method_precondition_m4_do_switching_4_precondition[instrument26];nop[];__method_precondition_m8_do_turning_8_precondition[satellite4,Phenomenon5,Star6];turn_to[satellite4,Star6,Phenomenon5];take_image[satellite4,Star6,instrument26,image3];__method_precondition_m4_do_switching_4_precondition[instrument10];nop[];__method_precondition_m8_do_turning_8_precondition[satellite1,Star6,Planet7];turn_to[satellite1,Planet7,Star6];take_image[satellite1,Planet7,instrument10,spectrograph6];__method_precondition_m3_do_switching_3_precondition[instrument17,satellite2];switch_on[instrument17,satellite2];__method_precondition_m5_do_calibration_5_precondition[instrument17];__method_precondition_m4_do_switching_4_precondition[instrument17];nop[];__method_precondition_m8_do_turning_8_precondition[satellite2,Phenomenon14,Star0];turn_to[satellite2,Star0,Phenomenon14];calibrate[satellite2,instrument17,Star0];__method_precondition_m8_do_turning_8_precondition[satellite2,Star0,Planet7];turn_to[satellite2,Planet7,Star0];take_image[satellite2,Planet7,instrument17,infrared5];__method_precondition_m3_do_switching_3_precondition[instrument20,satellite3];switch_on[instrument20,satellite3];__method_precondition_m5_do_calibration_5_precondition[instrument20];__method_precondition_m4_do_switching_4_precondition[instrument20];nop[];__method_precondition_m8_do_turning_8_precondition[satellite3,Star10,GroundStation1];turn_to[satellite3,GroundStation1,Star10];calibrate[satellite3,instrument20,GroundStation1];__method_precondition_m8_do_turning_8_precondition[satellite3,GroundStation1,Planet7];turn_to[satellite3,Planet7,GroundStation1];take_image[satellite3,Planet7,instrument20,image2];__method_precondition_m4_do_switching_4_precondition[instrument10];nop[];__method_precondition_m8_do_turning_8_precondition[satellite1,Planet7,Phenomenon8];turn_to[satellite1,Phenomenon8,Planet7];take_image[satellite1,Phenomenon8,instrument10,spectrograph6];__method_precondition_m4_do_switching_4_precondition[instrument17];nop[];__method_precondition_m8_do_turning_8_precondition[satellite2,Planet7,Phenomenon8];turn_to[satellite2,Phenomenon8,Planet7];take_image[satellite2,Phenomenon8,instrument17,infrared5];__method_precondition_m4_do_switching_4_precondition[instrument8];nop[];__method_precondition_m8_do_turning_8_precondition[satellite0,Star6,Phenomenon8];turn_to[satellite0,Phenomenon8,Star6];take_image[satellite0,Phenomenon8,instrument8,thermograph7];__method_precondition_m4_do_switching_4_precondition[instrument10];nop[];__method_precondition_m8_do_turning_8_precondition[satellite1,Phenomenon8,Planet9];turn_to[satellite1,Planet9,Phenomenon8];take_image[satellite1,Planet9,instrument10,spectrograph6];__method_precondition_m4_do_switching_4_precondition[instrument10];nop[];__method_precondition_m8_do_turning_8_precondition[satellite1,Planet9,Star10];turn_to[satellite1,Star10,Planet9];take_image[satellite1,Star10,instrument10,spectrograph6];__method_precondition_m4_do_switching_4_precondition[instrument8];nop[];__method_precondition_m8_do_turning_8_precondition[satellite0,Phenomenon8,Star11];turn_to[satellite0,Star11,Phenomenon8];take_image[satellite0,Star11,instrument8,thermograph7];__method_precondition_m4_do_switching_4_precondition[instrument20];nop[];__method_precondition_m8_do_turning_8_precondition[satellite3,Planet7,Star11];turn_to[satellite3,Star11,Planet7];take_image[satellite3,Star11,instrument20,image4];__method_precondition_m4_do_switching_4_precondition[instrument20];nop[];__method_precondition_m9_do_turning_9_precondition[satellite3,Star11];nop[];take_image[satellite3,Star11,instrument20,image3];__method_precondition_m4_do_switching_4_precondition[instrument20];nop[];__method_precondition_m8_do_turning_8_precondition[satellite3,Star11,Phenomenon12];turn_to[satellite3,Phenomenon12,Star11];take_image[satellite3,Phenomenon12,instrument20,image4];__method_precondition_m4_do_switching_4_precondition[instrument17];nop[];__method_precondition_m8_do_turning_8_precondition[satellite2,Phenomenon8,Planet13];turn_to[satellite2,Planet13,Phenomenon8];take_image[satellite2,Planet13,instrument17,infrared5];__method_precondition_m4_do_switching_4_precondition[instrument10];nop[];__method_precondition_m8_do_turning_8_precondition[satellite1,Star10,Planet13];turn_to[satellite1,Planet13,Star10];take_image[satellite1,Planet13,instrument10,spectrograph6];__method_precondition_m4_do_switching_4_precondition[instrument20];nop[];__method_precondition_m8_do_turning_8_precondition[satellite3,Phenomenon12,Planet13];turn_to[satellite3,Planet13,Phenomenon12];take_image[satellite3,Planet13,instrument20,image2];__method_precondition_m4_do_switching_4_precondition[instrument8];nop[];__method_precondition_m8_do_turning_8_precondition[satellite0,Star11,Phenomenon14];turn_to[satellite0,Phenomenon14,Star11];take_image[satellite0,Phenomenon14,instrument8,thermograph7];__method_precondition_m4_do_switching_4_precondition[instrument26];nop[];__method_precondition_m8_do_turning_8_precondition[satellite4,Star6,Planet15];turn_to[satellite4,Planet15,Star6];take_image[satellite4,Planet15,instrument26,image3];__method_precondition_m4_do_switching_4_precondition[instrument26];nop[];__method_precondition_m8_do_turning_8_precondition[satellite4,Planet15,Star16];turn_to[satellite4,Star16,Planet15];take_image[satellite4,Star16,instrument26,image3];__method_precondition_m4_do_switching_4_precondition[instrument20];nop[];__method_precondition_m8_do_turning_8_precondition[satellite3,Planet13,Star16];turn_to[satellite3,Star16,Planet13];take_image[satellite3,Star16,instrument20,image4];__method_precondition_m4_do_switching_4_precondition[instrument8];nop[];__method_precondition_m8_do_turning_8_precondition[satellite0,Phenomenon14,Planet18];turn_to[satellite0,Planet18,Phenomenon14];take_image[satellite0,Planet18,instrument8,infrared9];__method_precondition_m4_do_switching_4_precondition[instrument17];nop[];__method_precondition_m8_do_turning_8_precondition[satellite2,Planet13,Planet18];turn_to[satellite2,Planet18,Planet13];take_image[satellite2,Planet18,instrument17,infrared5];__method_precondition_m4_do_switching_4_precondition[instrument8];nop[];__method_precondition_m9_do_turning_9_precondition[satellite0,Planet18];nop[];take_image[satellite0,Planet18,instrument8,thermograph7];__method_precondition_m4_do_switching_4_precondition[instrument20];nop[];__method_precondition_m8_do_turning_8_precondition[satellite3,Star16,Phenomenon19];turn_to[satellite3,Phenomenon19,Star16];take_image[satellite3,Phenomenon19,instrument20,image2];__method_precondition_m4_do_switching_4_precondition[instrument20];nop[];__method_precondition_m9_do_turning_9_precondition[satellite3,Phenomenon19];nop[];take_image[satellite3,Phenomenon19,instrument20,image4];__method_precondition_m4_do_switching_4_precondition[instrument8];nop[];__method_precondition_m8_do_turning_8_precondition[satellite0,Planet18,Star20];turn_to[satellite0,Star20,Planet18];take_image[satellite0,Star20,instrument8,spectrograph0];__method_precondition_m4_do_switching_4_precondition[instrument20];nop[];__method_precondition_m8_do_turning_8_precondition[satellite3,Phenomenon19,Phenomenon21];turn_to[satellite3,Phenomenon21,Phenomenon19];take_image[satellite3,Phenomenon21,instrument20,image4];__method_precondition_m4_do_switching_4_precondition[instrument20];nop[];__method_precondition_m9_do_turning_9_precondition[satellite3,Phenomenon21];nop[];take_image[satellite3,Phenomenon21,instrument20,image2];__method_precondition_m4_do_switching_4_precondition[instrument8];nop[];__method_precondition_m8_do_turning_8_precondition[satellite0,Star20,Phenomenon21];turn_to[satellite0,Phenomenon21,Star20];take_image[satellite0,Phenomenon21,instrument8,thermograph7];__method_precondition_m4_do_switching_4_precondition[instrument20];nop[];__method_precondition_m8_do_turning_8_precondition[satellite3,Phenomenon21,Planet22];turn_to[satellite3,Planet22,Phenomenon21];take_image[satellite3,Planet22,instrument20,image2];__method_precondition_m4_do_switching_4_precondition[instrument10];nop[];__method_precondition_m8_do_turning_8_precondition[satellite1,Planet13,Planet22];turn_to[satellite1,Planet22,Planet13];take_image[satellite1,Planet22,instrument10,spectrograph6];__method_precondition_m4_do_switching_4_precondition[instrument20];nop[];__method_precondition_m8_do_turning_8_precondition[satellite3,Planet22,Star23];turn_to[satellite3,Star23,Planet22];take_image[satellite3,Star23,instrument20,image2];__method_precondition_m4_do_switching_4_precondition[instrument8];nop[];__method_precondition_m8_do_turning_8_precondition[satellite0,Phenomenon21,Star23];turn_to[satellite0,Star23,Phenomenon21];take_image[satellite0,Star23,instrument8,infrared9];__method_precondition_m4_do_switching_4_precondition[instrument10];nop[];__method_precondition_m8_do_turning_8_precondition[satellite1,Planet22,Star24];turn_to[satellite1,Star24,Planet22];take_image[satellite1,Star24,instrument10,spectrograph6];__method_precondition_m4_do_switching_4_precondition[instrument17];nop[];__method_precondition_m8_do_turning_8_precondition[satellite2,Planet18,Star24];turn_to[satellite2,Star24,Planet18];take_image[satellite2,Star24,instrument17,infrared5];__method_precondition_m8_do_turning_8_precondition[satellite1,Star24,Phenomenon19];turn_to[satellite1,Phenomenon19,Star24]
+==>
+0 __method_precondition_m3_do_switching_3_precondition instrument10 satellite1 
+1 switch_on instrument10 satellite1 
+2 __method_precondition_m5_do_calibration_5_precondition instrument10 
+3 __method_precondition_m4_do_switching_4_precondition instrument10 
+4 nop  
+5 __method_precondition_m8_do_turning_8_precondition satellite1 Phenomenon19 Star4 
+6 turn_to satellite1 Star4 Phenomenon19 
+7 calibrate satellite1 instrument10 Star4 
+8 __method_precondition_m8_do_turning_8_precondition satellite1 Star4 Phenomenon5 
+9 turn_to satellite1 Phenomenon5 Star4 
+10 take_image satellite1 Phenomenon5 instrument10 thermograph8 
+11 __method_precondition_m3_do_switching_3_precondition instrument8 satellite0 
+12 switch_on instrument8 satellite0 
+13 __method_precondition_m5_do_calibration_5_precondition instrument8 
+14 __method_precondition_m4_do_switching_4_precondition instrument8 
+15 nop  
+16 __method_precondition_m8_do_turning_8_precondition satellite0 GroundStation1 Star2 
+17 turn_to satellite0 Star2 GroundStation1 
+18 calibrate satellite0 instrument8 Star2 
+19 __method_precondition_m8_do_turning_8_precondition satellite0 Star2 Phenomenon5 
+20 turn_to satellite0 Phenomenon5 Star2 
+21 take_image satellite0 Phenomenon5 instrument8 spectrograph0 
+22 __method_precondition_m3_do_switching_3_precondition instrument26 satellite4 
+23 switch_on instrument26 satellite4 
+24 __method_precondition_m5_do_calibration_5_precondition instrument26 
+25 __method_precondition_m4_do_switching_4_precondition instrument26 
+26 nop  
+27 __method_precondition_m8_do_turning_8_precondition satellite4 Star16 Star4 
+28 turn_to satellite4 Star4 Star16 
+29 calibrate satellite4 instrument26 Star4 
+30 __method_precondition_m8_do_turning_8_precondition satellite4 Star4 Phenomenon5 
+31 turn_to satellite4 Phenomenon5 Star4 
+32 take_image satellite4 Phenomenon5 instrument26 image3 
+33 __method_precondition_m4_do_switching_4_precondition instrument8 
+34 nop  
+35 __method_precondition_m8_do_turning_8_precondition satellite0 Phenomenon5 Star6 
+36 turn_to satellite0 Star6 Phenomenon5 
+37 take_image satellite0 Star6 instrument8 spectrograph0 
+38 __method_precondition_m4_do_switching_4_precondition instrument10 
+39 nop  
+40 __method_precondition_m8_do_turning_8_precondition satellite1 Phenomenon5 Star6 
+41 turn_to satellite1 Star6 Phenomenon5 
+42 take_image satellite1 Star6 instrument10 spectrograph6 
+43 __method_precondition_m4_do_switching_4_precondition instrument26 
+44 nop  
+45 __method_precondition_m8_do_turning_8_precondition satellite4 Phenomenon5 Star6 
+46 turn_to satellite4 Star6 Phenomenon5 
+47 take_image satellite4 Star6 instrument26 image3 
+48 __method_precondition_m4_do_switching_4_precondition instrument10 
+49 nop  
+50 __method_precondition_m8_do_turning_8_precondition satellite1 Star6 Planet7 
+51 turn_to satellite1 Planet7 Star6 
+52 take_image satellite1 Planet7 instrument10 spectrograph6 
+53 __method_precondition_m3_do_switching_3_precondition instrument17 satellite2 
+54 switch_on instrument17 satellite2 
+55 __method_precondition_m5_do_calibration_5_precondition instrument17 
+56 __method_precondition_m4_do_switching_4_precondition instrument17 
+57 nop  
+58 __method_precondition_m8_do_turning_8_precondition satellite2 Phenomenon14 Star0 
+59 turn_to satellite2 Star0 Phenomenon14 
+60 calibrate satellite2 instrument17 Star0 
+61 __method_precondition_m8_do_turning_8_precondition satellite2 Star0 Planet7 
+62 turn_to satellite2 Planet7 Star0 
+63 take_image satellite2 Planet7 instrument17 infrared5 
+64 __method_precondition_m3_do_switching_3_precondition instrument20 satellite3 
+65 switch_on instrument20 satellite3 
+66 __method_precondition_m5_do_calibration_5_precondition instrument20 
+67 __method_precondition_m4_do_switching_4_precondition instrument20 
+68 nop  
+69 __method_precondition_m8_do_turning_8_precondition satellite3 Star10 GroundStation1 
+70 turn_to satellite3 GroundStation1 Star10 
+71 calibrate satellite3 instrument20 GroundStation1 
+72 __method_precondition_m8_do_turning_8_precondition satellite3 GroundStation1 Planet7 
+73 turn_to satellite3 Planet7 GroundStation1 
+74 take_image satellite3 Planet7 instrument20 image2 
+75 __method_precondition_m4_do_switching_4_precondition instrument10 
+76 nop  
+77 __method_precondition_m8_do_turning_8_precondition satellite1 Planet7 Phenomenon8 
+78 turn_to satellite1 Phenomenon8 Planet7 
+79 take_image satellite1 Phenomenon8 instrument10 spectrograph6 
+80 __method_precondition_m4_do_switching_4_precondition instrument17 
+81 nop  
+82 __method_precondition_m8_do_turning_8_precondition satellite2 Planet7 Phenomenon8 
+83 turn_to satellite2 Phenomenon8 Planet7 
+84 take_image satellite2 Phenomenon8 instrument17 infrared5 
+85 __method_precondition_m4_do_switching_4_precondition instrument8 
+86 nop  
+87 __method_precondition_m8_do_turning_8_precondition satellite0 Star6 Phenomenon8 
+88 turn_to satellite0 Phenomenon8 Star6 
+89 take_image satellite0 Phenomenon8 instrument8 thermograph7 
+90 __method_precondition_m4_do_switching_4_precondition instrument10 
+91 nop  
+92 __method_precondition_m8_do_turning_8_precondition satellite1 Phenomenon8 Planet9 
+93 turn_to satellite1 Planet9 Phenomenon8 
+94 take_image satellite1 Planet9 instrument10 spectrograph6 
+95 __method_precondition_m4_do_switching_4_precondition instrument10 
+96 nop  
+97 __method_precondition_m8_do_turning_8_precondition satellite1 Planet9 Star10 
+98 turn_to satellite1 Star10 Planet9 
+99 take_image satellite1 Star10 instrument10 spectrograph6 
+100 __method_precondition_m4_do_switching_4_precondition instrument8 
+101 nop  
+102 __method_precondition_m8_do_turning_8_precondition satellite0 Phenomenon8 Star11 
+103 turn_to satellite0 Star11 Phenomenon8 
+104 take_image satellite0 Star11 instrument8 thermograph7 
+105 __method_precondition_m4_do_switching_4_precondition instrument20 
+106 nop  
+107 __method_precondition_m8_do_turning_8_precondition satellite3 Planet7 Star11 
+108 turn_to satellite3 Star11 Planet7 
+109 take_image satellite3 Star11 instrument20 image4 
+110 __method_precondition_m4_do_switching_4_precondition instrument20 
+111 nop  
+112 __method_precondition_m9_do_turning_9_precondition satellite3 Star11 
+113 nop  
+114 take_image satellite3 Star11 instrument20 image3 
+115 __method_precondition_m4_do_switching_4_precondition instrument20 
+116 nop  
+117 __method_precondition_m8_do_turning_8_precondition satellite3 Star11 Phenomenon12 
+118 turn_to satellite3 Phenomenon12 Star11 
+119 take_image satellite3 Phenomenon12 instrument20 image4 
+120 __method_precondition_m4_do_switching_4_precondition instrument17 
+121 nop  
+122 __method_precondition_m8_do_turning_8_precondition satellite2 Phenomenon8 Planet13 
+123 turn_to satellite2 Planet13 Phenomenon8 
+124 take_image satellite2 Planet13 instrument17 infrared5 
+125 __method_precondition_m4_do_switching_4_precondition instrument10 
+126 nop  
+127 __method_precondition_m8_do_turning_8_precondition satellite1 Star10 Planet13 
+128 turn_to satellite1 Planet13 Star10 
+129 take_image satellite1 Planet13 instrument10 spectrograph6 
+130 __method_precondition_m4_do_switching_4_precondition instrument20 
+131 nop  
+132 __method_precondition_m8_do_turning_8_precondition satellite3 Phenomenon12 Planet13 
+133 turn_to satellite3 Planet13 Phenomenon12 
+134 take_image satellite3 Planet13 instrument20 image2 
+135 __method_precondition_m4_do_switching_4_precondition instrument8 
+136 nop  
+137 __method_precondition_m8_do_turning_8_precondition satellite0 Star11 Phenomenon14 
+138 turn_to satellite0 Phenomenon14 Star11 
+139 take_image satellite0 Phenomenon14 instrument8 thermograph7 
+140 __method_precondition_m4_do_switching_4_precondition instrument26 
+141 nop  
+142 __method_precondition_m8_do_turning_8_precondition satellite4 Star6 Planet15 
+143 turn_to satellite4 Planet15 Star6 
+144 take_image satellite4 Planet15 instrument26 image3 
+145 __method_precondition_m4_do_switching_4_precondition instrument26 
+146 nop  
+147 __method_precondition_m8_do_turning_8_precondition satellite4 Planet15 Star16 
+148 turn_to satellite4 Star16 Planet15 
+149 take_image satellite4 Star16 instrument26 image3 
+150 __method_precondition_m4_do_switching_4_precondition instrument20 
+151 nop  
+152 __method_precondition_m8_do_turning_8_precondition satellite3 Planet13 Star16 
+153 turn_to satellite3 Star16 Planet13 
+154 take_image satellite3 Star16 instrument20 image4 
+155 __method_precondition_m4_do_switching_4_precondition instrument8 
+156 nop  
+157 __method_precondition_m8_do_turning_8_precondition satellite0 Phenomenon14 Planet18 
+158 turn_to satellite0 Planet18 Phenomenon14 
+159 take_image satellite0 Planet18 instrument8 infrared9 
+160 __method_precondition_m4_do_switching_4_precondition instrument17 
+161 nop  
+162 __method_precondition_m8_do_turning_8_precondition satellite2 Planet13 Planet18 
+163 turn_to satellite2 Planet18 Planet13 
+164 take_image satellite2 Planet18 instrument17 infrared5 
+165 __method_precondition_m4_do_switching_4_precondition instrument8 
+166 nop  
+167 __method_precondition_m9_do_turning_9_precondition satellite0 Planet18 
+168 nop  
+169 take_image satellite0 Planet18 instrument8 thermograph7 
+170 __method_precondition_m4_do_switching_4_precondition instrument20 
+171 nop  
+172 __method_precondition_m8_do_turning_8_precondition satellite3 Star16 Phenomenon19 
+173 turn_to satellite3 Phenomenon19 Star16 
+174 take_image satellite3 Phenomenon19 instrument20 image2 
+175 __method_precondition_m4_do_switching_4_precondition instrument20 
+176 nop  
+177 __method_precondition_m9_do_turning_9_precondition satellite3 Phenomenon19 
+178 nop  
+179 take_image satellite3 Phenomenon19 instrument20 image4 
+180 __method_precondition_m4_do_switching_4_precondition instrument8 
+181 nop  
+182 __method_precondition_m8_do_turning_8_precondition satellite0 Planet18 Star20 
+183 turn_to satellite0 Star20 Planet18 
+184 take_image satellite0 Star20 instrument8 spectrograph0 
+185 __method_precondition_m4_do_switching_4_precondition instrument20 
+186 nop  
+187 __method_precondition_m8_do_turning_8_precondition satellite3 Phenomenon19 Phenomenon21 
+188 turn_to satellite3 Phenomenon21 Phenomenon19 
+189 take_image satellite3 Phenomenon21 instrument20 image4 
+190 __method_precondition_m4_do_switching_4_precondition instrument20 
+191 nop  
+192 __method_precondition_m9_do_turning_9_precondition satellite3 Phenomenon21 
+193 nop  
+194 take_image satellite3 Phenomenon21 instrument20 image2 
+195 __method_precondition_m4_do_switching_4_precondition instrument8 
+196 nop  
+197 __method_precondition_m8_do_turning_8_precondition satellite0 Star20 Phenomenon21 
+198 turn_to satellite0 Phenomenon21 Star20 
+199 take_image satellite0 Phenomenon21 instrument8 thermograph7 
+200 __method_precondition_m4_do_switching_4_precondition instrument20 
+201 nop  
+202 __method_precondition_m8_do_turning_8_precondition satellite3 Phenomenon21 Planet22 
+203 turn_to satellite3 Planet22 Phenomenon21 
+204 take_image satellite3 Planet22 instrument20 image2 
+205 __method_precondition_m4_do_switching_4_precondition instrument10 
+206 nop  
+207 __method_precondition_m8_do_turning_8_precondition satellite1 Planet13 Planet22 
+208 turn_to satellite1 Planet22 Planet13 
+209 take_image satellite1 Planet22 instrument10 spectrograph6 
+210 __method_precondition_m4_do_switching_4_precondition instrument20 
+211 nop  
+212 __method_precondition_m8_do_turning_8_precondition satellite3 Planet22 Star23 
+213 turn_to satellite3 Star23 Planet22 
+214 take_image satellite3 Star23 instrument20 image2 
+215 __method_precondition_m4_do_switching_4_precondition instrument8 
+216 nop  
+217 __method_precondition_m8_do_turning_8_precondition satellite0 Phenomenon21 Star23 
+218 turn_to satellite0 Star23 Phenomenon21 
+219 take_image satellite0 Star23 instrument8 infrared9 
+220 __method_precondition_m4_do_switching_4_precondition instrument10 
+221 nop  
+222 __method_precondition_m8_do_turning_8_precondition satellite1 Planet22 Star24 
+223 turn_to satellite1 Star24 Planet22 
+224 take_image satellite1 Star24 instrument10 spectrograph6 
+225 __method_precondition_m4_do_switching_4_precondition instrument17 
+226 nop  
+227 __method_precondition_m8_do_turning_8_precondition satellite2 Planet18 Star24 
+228 turn_to satellite2 Star24 Planet18 
+229 take_image satellite2 Star24 instrument17 infrared5 
+230 __method_precondition_m8_do_turning_8_precondition satellite1 Star24 Phenomenon19 
+231 turn_to satellite1 Phenomenon19 Star24 
+root 293
+232 do_switching satellite3 instrument20  -> m4_do_switching 150 151
+233 do_switching satellite3 instrument20  -> m4_do_switching 110 111
+234 do_mission Phenomenon5 thermograph8  -> <m0_do_mission;do_prepare[satellite1,instrument10,Phenomenon5];m1_do_prepare;0;-1,-2,1> 306 284 10
+235 do_turning satellite2 Planet7  -> m8_do_turning 61 62
+236 do_turning satellite1 Planet7  -> m8_do_turning 50 51
+237 do_switching satellite2 instrument17  -> m4_do_switching 80 81
+238 do_switching satellite0 instrument8  -> m4_do_switching 180 181
+239 do_turning satellite4 Star6  -> m8_do_turning 45 46
+240 do_switching satellite4 instrument26  -> m4_do_switching 145 146
+241 do_mission Star6 image3  -> <m0_do_mission;do_prepare[satellite4,instrument26,Star6];m1_do_prepare;0;-1,-2,1> 263 239 47
+242 do_switching satellite1 instrument10  -> m4_do_switching 125 126
+243 do_turning satellite3 Phenomenon21  -> m9_do_turning 192 193
+244 do_turning satellite1 Star10  -> m8_do_turning 97 98
+245 do_switching satellite0 instrument8  -> m4_do_switching 165 166
+246 do_mission Star16 image3  -> <m0_do_mission;do_prepare[satellite4,instrument26,Star16];m1_do_prepare;0;-1,-2,1> 240 279 149
+247 do_switching satellite3 instrument20  -> m4_do_switching 200 201
+248 do_switching satellite0 instrument8  -> m4_do_switching 195 196
+249 do_mission Planet13 infrared5  -> <m0_do_mission;do_prepare[satellite2,instrument17,Planet13];m1_do_prepare;0;-1,-2,1> 298 254 124
+250 do_mission Star24 infrared5  -> <m0_do_mission;do_prepare[satellite2,instrument17,Star24];m1_do_prepare;0;-1,-2,1> 286 251 229
+251 do_turning satellite2 Star24  -> m8_do_turning 227 228
+252 do_switching satellite0 instrument8  -> m4_do_switching 85 86
+253 do_mission Phenomenon21 thermograph7  -> <m0_do_mission;do_prepare[satellite0,instrument8,Phenomenon21];m1_do_prepare;0;-1,-2,1> 248 277 199
+254 do_turning satellite2 Planet13  -> m8_do_turning 122 123
+255 do_turning satellite1 Planet22  -> m8_do_turning 207 208
+256 do_turning satellite3 Phenomenon19  -> m9_do_turning 177 178
+257 do_turning satellite1 Planet9  -> m8_do_turning 92 93
+258 do_mission Star23 image2  -> <m0_do_mission;do_prepare[satellite3,instrument20,Star23];m1_do_prepare;0;-1,-2,1> 355 363 214
+259 do_turning satellite0 Planet18  -> m8_do_turning 157 158
+260 do_turning satellite3 Phenomenon12  -> m8_do_turning 117 118
+261 do_switching satellite0 instrument8  -> m4_do_switching 100 101
+262 do_turning satellite3 Planet13  -> m8_do_turning 132 133
+263 do_switching satellite4 instrument26  -> m4_do_switching 43 44
+264 do_turning satellite4 Star4  -> m8_do_turning 27 28
+265 do_calibration satellite1 instrument10 Star4  -> <m5_do_calibration;do_prepare[satellite1,instrument10,Star4];m1_do_prepare;1;0,-1,-2,2> 2 362 326 7
+266 do_calibration satellite4 instrument26 Star4  -> <m5_do_calibration;do_prepare[satellite4,instrument26,Star4];m1_do_prepare;1;0,-1,-2,2> 24 340 264 29
+267 do_mission Planet18 infrared9  -> <m0_do_mission;do_prepare[satellite0,instrument8,Planet18];m1_do_prepare;0;-1,-2,1> 331 259 159
+268 do_mission Planet18 thermograph7  -> <m0_do_mission;do_prepare[satellite0,instrument8,Planet18];m1_do_prepare;0;-1,-2,1> 245 350 169
+269 do_mission Phenomenon21 image4  -> <m0_do_mission;do_prepare[satellite3,instrument20,Phenomenon21];m1_do_prepare;0;-1,-2,1> 278 321 189
+270 do_switching satellite2 instrument17  -> m4_do_switching 56 57
+271 do_mission Star11 image3  -> <m0_do_mission;do_prepare[satellite3,instrument20,Star11];m1_do_prepare;0;-1,-2,1> 233 339 114
+272 do_switching satellite2 instrument17  -> m3_do_switching 53 54 319
+273 do_turning satellite0 Phenomenon5  -> m8_do_turning 19 20
+274 do_mission Planet7 infrared5  -> <m0_do_mission;do_prepare[satellite2,instrument17,Planet7];m1_do_prepare;0;-1,-2,1> 272 235 63
+275 do_mission Star16 image4  -> <m0_do_mission;do_prepare[satellite3,instrument20,Star16];m1_do_prepare;0;-1,-2,1> 232 316 154
+276 do_switching satellite1 instrument10  -> m4_do_switching 38 39
+277 do_turning satellite0 Phenomenon21  -> m8_do_turning 197 198
+278 do_switching satellite3 instrument20  -> m4_do_switching 185 186
+279 do_turning satellite4 Star16  -> m8_do_turning 147 148
+280 do_turning satellite3 Planet7  -> m8_do_turning 72 73
+281 do_mission Planet13 spectrograph6  -> <m0_do_mission;do_prepare[satellite1,instrument10,Planet13];m1_do_prepare;0;-1,-2,1> 242 352 129
+282 do_switching satellite4 instrument26  -> m4_do_switching 140 141
+283 do_turning satellite1 Star6  -> m8_do_turning 40 41
+284 do_turning satellite1 Phenomenon5  -> m8_do_turning 8 9
+285 do_switching satellite1 instrument10  -> m4_do_switching 205 206
+286 do_switching satellite2 instrument17  -> m4_do_switching 225 226
+287 do_turning satellite2 Planet18  -> m8_do_turning 162 163
+288 do_mission Star6 spectrograph6  -> <m0_do_mission;do_prepare[satellite1,instrument10,Star6];m1_do_prepare;0;-1,-2,1> 276 283 42
+289 do_turning satellite1 Phenomenon8  -> m8_do_turning 77 78
+290 do_turning satellite1 Star24  -> m8_do_turning 222 223
+291 do_switching satellite1 instrument10  -> m4_do_switching 90 91
+292 do_switching satellite3 instrument20  -> m4_do_switching 190 191
+293 __choicelessATCompilation__top_1  -> __top_1 234 294 323 365 288 241 325 274 346 332 335 314 328 333 338 320 271 354 249 281 360 361 315 246 275 267 345 268 349 311 329 269 364 253 301 302 258 295 296 250 347
+294 do_mission Phenomenon5 spectrograph0  -> <m0_do_mission;do_prepare[satellite0,instrument8,Phenomenon5];m1_do_prepare;0;-1,-2,1> 343 273 21
+295 do_mission Star23 infrared9  -> <m0_do_mission;do_prepare[satellite0,instrument8,Star23];m1_do_prepare;0;-1,-2,1> 318 337 219
+296 do_mission Star24 spectrograph6  -> <m0_do_mission;do_prepare[satellite1,instrument10,Star24];m1_do_prepare;0;-1,-2,1> 308 290 224
+297 do_turning satellite0 Star11  -> m8_do_turning 102 103
+298 do_switching satellite2 instrument17  -> m4_do_switching 120 121
+299 do_switching satellite0 instrument8  -> m4_do_switching 14 15
+300 do_calibration satellite3 instrument20 GroundStation1  -> <m5_do_calibration;do_prepare[satellite3,instrument20,GroundStation1];m1_do_prepare;1;0,-1,-2,2> 66 342 348 71
+301 do_mission Planet22 image2  -> <m0_do_mission;do_prepare[satellite3,instrument20,Planet22];m1_do_prepare;0;-1,-2,1> 247 336 204
+302 do_mission Planet22 spectrograph6  -> <m0_do_mission;do_prepare[satellite1,instrument10,Planet22];m1_do_prepare;0;-1,-2,1> 285 255 209
+303 do_turning satellite2 Star0  -> m8_do_turning 58 59
+304 do_calibration satellite0 instrument8 Star2  -> <m5_do_calibration;do_prepare[satellite0,instrument8,Star2];m1_do_prepare;1;0,-1,-2,2> 13 299 313 18
+305 do_turning satellite2 Phenomenon8  -> m8_do_turning 82 83
+306 do_switching satellite1 instrument10  -> m3_do_switching 0 1 265
+307 do_switching satellite3 instrument20  -> m4_do_switching 175 176
+308 do_switching satellite1 instrument10  -> m4_do_switching 220 221
+309 do_switching satellite3 instrument20  -> m4_do_switching 115 116
+310 do_turning satellite3 Phenomenon19  -> m8_do_turning 172 173
+311 do_mission Phenomenon19 image4  -> <m0_do_mission;do_prepare[satellite3,instrument20,Phenomenon19];m1_do_prepare;0;-1,-2,1> 307 256 179
+312 do_switching satellite0 instrument8  -> m4_do_switching 33 34
+313 do_turning satellite0 Star2  -> m8_do_turning 16 17
+314 do_mission Phenomenon8 thermograph7  -> <m0_do_mission;do_prepare[satellite0,instrument8,Phenomenon8];m1_do_prepare;0;-1,-2,1> 252 353 89
+315 do_mission Planet15 image3  -> <m0_do_mission;do_prepare[satellite4,instrument26,Planet15];m1_do_prepare;0;-1,-2,1> 282 357 144
+316 do_turning satellite3 Star16  -> m8_do_turning 152 153
+317 do_switching satellite4 instrument26  -> m3_do_switching 22 23 266
+318 do_switching satellite0 instrument8  -> m4_do_switching 215 216
+319 do_calibration satellite2 instrument17 Star0  -> <m5_do_calibration;do_prepare[satellite2,instrument17,Star0];m1_do_prepare;1;0,-1,-2,2> 55 270 303 60
+320 do_mission Star11 image4  -> <m0_do_mission;do_prepare[satellite3,instrument20,Star11];m1_do_prepare;0;-1,-2,1> 358 330 109
+321 do_turning satellite3 Phenomenon21  -> m8_do_turning 187 188
+322 do_switching satellite1 instrument10  -> m4_do_switching 48 49
+323 do_mission Phenomenon5 image3  -> <m0_do_mission;do_prepare[satellite4,instrument26,Phenomenon5];m1_do_prepare;0;-1,-2,1> 317 366 32
+324 do_switching satellite3 instrument20  -> m3_do_switching 64 65 300
+325 do_mission Planet7 spectrograph6  -> <m0_do_mission;do_prepare[satellite1,instrument10,Planet7];m1_do_prepare;0;-1,-2,1> 322 236 52
+326 do_turning satellite1 Star4  -> m8_do_turning 5 6
+327 do_switching satellite2 instrument17  -> m4_do_switching 160 161
+328 do_mission Planet9 spectrograph6  -> <m0_do_mission;do_prepare[satellite1,instrument10,Planet9];m1_do_prepare;0;-1,-2,1> 291 257 94
+329 do_mission Star20 spectrograph0  -> <m0_do_mission;do_prepare[satellite0,instrument8,Star20];m1_do_prepare;0;-1,-2,1> 238 359 184
+330 do_turning satellite3 Star11  -> m8_do_turning 107 108
+331 do_switching satellite0 instrument8  -> m4_do_switching 155 156
+332 do_mission Phenomenon8 spectrograph6  -> <m0_do_mission;do_prepare[satellite1,instrument10,Phenomenon8];m1_do_prepare;0;-1,-2,1> 344 289 79
+333 do_mission Star10 spectrograph6  -> <m0_do_mission;do_prepare[satellite1,instrument10,Star10];m1_do_prepare;0;-1,-2,1> 351 244 99
+334 do_switching satellite0 instrument8  -> m4_do_switching 135 136
+335 do_mission Phenomenon8 infrared5  -> <m0_do_mission;do_prepare[satellite2,instrument17,Phenomenon8];m1_do_prepare;0;-1,-2,1> 237 305 84
+336 do_turning satellite3 Planet22  -> m8_do_turning 202 203
+337 do_turning satellite0 Star23  -> m8_do_turning 217 218
+338 do_mission Star11 thermograph7  -> <m0_do_mission;do_prepare[satellite0,instrument8,Star11];m1_do_prepare;0;-1,-2,1> 261 297 104
+339 do_turning satellite3 Star11  -> m9_do_turning 112 113
+340 do_switching satellite4 instrument26  -> m4_do_switching 25 26
+341 do_switching satellite3 instrument20  -> m4_do_switching 170 171
+342 do_switching satellite3 instrument20  -> m4_do_switching 67 68
+343 do_switching satellite0 instrument8  -> m3_do_switching 11 12 304
+344 do_switching satellite1 instrument10  -> m4_do_switching 75 76
+345 do_mission Planet18 infrared5  -> <m0_do_mission;do_prepare[satellite2,instrument17,Planet18];m1_do_prepare;0;-1,-2,1> 327 287 164
+346 do_mission Planet7 image2  -> <m0_do_mission;do_prepare[satellite3,instrument20,Planet7];m1_do_prepare;0;-1,-2,1> 324 280 74
+347 do_turning satellite1 Phenomenon19  -> m8_do_turning 230 231
+348 do_turning satellite3 GroundStation1  -> m8_do_turning 69 70
+349 do_mission Phenomenon19 image2  -> <m0_do_mission;do_prepare[satellite3,instrument20,Phenomenon19];m1_do_prepare;0;-1,-2,1> 341 310 174
+350 do_turning satellite0 Planet18  -> m9_do_turning 167 168
+351 do_switching satellite1 instrument10  -> m4_do_switching 95 96
+352 do_turning satellite1 Planet13  -> m8_do_turning 127 128
+353 do_turning satellite0 Phenomenon8  -> m8_do_turning 87 88
+354 do_mission Phenomenon12 image4  -> <m0_do_mission;do_prepare[satellite3,instrument20,Phenomenon12];m1_do_prepare;0;-1,-2,1> 309 260 119
+355 do_switching satellite3 instrument20  -> m4_do_switching 210 211
+356 do_turning satellite0 Phenomenon14  -> m8_do_turning 137 138
+357 do_turning satellite4 Planet15  -> m8_do_turning 142 143
+358 do_switching satellite3 instrument20  -> m4_do_switching 105 106
+359 do_turning satellite0 Star20  -> m8_do_turning 182 183
+360 do_mission Planet13 image2  -> <m0_do_mission;do_prepare[satellite3,instrument20,Planet13];m1_do_prepare;0;-1,-2,1> 368 262 134
+361 do_mission Phenomenon14 thermograph7  -> <m0_do_mission;do_prepare[satellite0,instrument8,Phenomenon14];m1_do_prepare;0;-1,-2,1> 334 356 139
+362 do_switching satellite1 instrument10  -> m4_do_switching 3 4
+363 do_turning satellite3 Star23  -> m8_do_turning 212 213
+364 do_mission Phenomenon21 image2  -> <m0_do_mission;do_prepare[satellite3,instrument20,Phenomenon21];m1_do_prepare;0;-1,-2,1> 292 243 194
+365 do_mission Star6 spectrograph0  -> <m0_do_mission;do_prepare[satellite0,instrument8,Star6];m1_do_prepare;0;-1,-2,1> 312 367 37
+366 do_turning satellite4 Phenomenon5  -> m8_do_turning 30 31
+367 do_turning satellite0 Star6  -> m8_do_turning 35 36
+368 do_switching satellite3 instrument20  -> m4_do_switching 130 131
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 31.500 MEMPEAK_KBS 1170478.08

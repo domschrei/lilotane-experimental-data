@@ -1,0 +1,66 @@
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 4077507
+max locked memory       (kbytes, -l) 65536
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 1024
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) unlimited
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 4077507
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+15728640
+----------------------Tasks-----------------------
+0 get_soil_data waypoint0
+1 get_rock_data waypoint0
+2 get_image_data objective1 low_res
+3 invisible_goal
+---------------------Planning---------------------
+Time: 0.0002732276916503906s
+-----------------------Plan-----------------------
+==>
+7 visit waypoint1
+10 navigate rover0 waypoint1 waypoint0
+9 unvisit waypoint1
+11 nop
+5 sample_soil rover0 rover0store waypoint0
+14 nop
+13 communicate_soil_data1 rover0 general waypoint0 waypoint0 waypoint1
+19 nop
+20 drop rover0 rover0store
+17 sample_rock rover0 rover0store waypoint0
+23 nop
+22 communicate_rock_data1 rover0 general waypoint0 waypoint0 waypoint1
+30 nop
+29 calibrate rover0 camera0 objective0 waypoint0
+31 nop
+26 take_image rover0 waypoint0 objective1 camera0 low_res
+34 nop
+33 communicate_image_data rover0 general objective1 low_res waypoint0 waypoint1
+root 0 1 2
+0 get_soil_data waypoint0 -> m7_get_soil_data 3 4 5 6
+3 do_navigate1 rover0 waypoint0 -> m1_do_navigate1 7 8 9
+8 do_navigate2 rover0 waypoint1 waypoint0 -> m3_do_navigate2 10
+4 empty_store rover0store rover0 -> m5_empty_store 11
+6 send_soil_data rover0 waypoint0 -> m8_send_soil_data 12 13
+12 do_navigate1 rover0 waypoint0 -> m0_do_navigate1 14
+1 get_rock_data waypoint0 -> m10_get_rock_data 15 16 17 18
+15 do_navigate1 rover0 waypoint0 -> m0_do_navigate1 19
+16 empty_store rover0store rover0 -> m6_empty_store 20
+18 send_rock_data rover0 waypoint0 -> m11_send_rock_data 21 22
+21 do_navigate1 rover0 waypoint0 -> m0_do_navigate1 23
+2 get_image_data objective1 low_res -> m13_get_image_data 24 25 26 27
+24 do_calibrate rover0 camera0 -> m15_do_calibrate 28 29
+28 do_navigate1 rover0 waypoint0 -> m0_do_navigate1 30
+25 do_navigate1 rover0 waypoint0 -> m0_do_navigate1 31
+27 send_image_data rover0 objective1 low_res -> m14_send_image_data 32 33
+32 do_navigate1 rover0 waypoint0 -> m0_do_navigate1 34
+<==
+Total time: 0.024488210678100586s
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 1.546 MEMPEAK_KBS 0

@@ -1,0 +1,103 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version dbg-2020-10-21T11:59:28+02:00-glucose4
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020
+using SAT solver glucose4
+
+0.002 Sorts extracted.
+0.002 Mined 1 new reduction preconditions (+2.9%).
+0.002 22 operators and 14 methods created.
+0.002 Iteration 0.
+0.002 Creating initial layer of size 2
+0.003 Attempting to solve formula with 13 clauses (18 literals) and 1 assumptions
+0.003 Unsolvable at layer 0 -- expanding.
+0.003 Iteration 1.
+0.003 New layer size: 6
+0.003 Instantiating ...
+0.005 Collected 29 relevant facts at this layer
+0.005 Encoding ...
+0.005 Attempting to solve formula with 571 clauses (1487 literals) and 5 assumptions
+0.005 Unsolvable at layer 1 -- expanding.
+0.005 Iteration 2.
+0.005 New layer size: 20
+0.005 Instantiating ...
+0.011 Collected 40 relevant facts at this layer
+0.011 Encoding ...
+0.013 Attempting to solve formula with 4832 clauses (13645 literals) and 17 assumptions
+0.013 Unsolvable at layer 2 -- expanding.
+0.013 Iteration 3.
+0.013 New layer size: 49
+0.013 Instantiating ...
+0.023 Collected 40 relevant facts at this layer
+0.023 Encoding ...
+0.029 Attempting to solve formula with 16781 clauses (59360 literals) and 29 assumptions
+c last restart ## conflicts  :  28 879 
+0.031 Found a solution at layer 3.
+==>
+1398 nop
+1489 board person1 plane1 city0
+1503 nop
+1586 nop
+1601 refuel plane1 city0 fl4 fl5
+1646 fly plane1 city0 city1 fl5 fl4
+1692 debark person1 plane1 city1
+1697 nop
+1713 nop
+2082 nop
+2100 fly plane2 city2 city1 fl5 fl4
+2200 board person3 plane2 city1
+2220 nop
+2321 nop
+2334 refuel plane2 city1 fl4 fl5
+2380 fly plane2 city1 city0 fl5 fl4
+2425 debark person3 plane2 city0
+2431 nop
+2447 nop
+2813 nop
+2849 fly plane2 city0 city2 fl4 fl3
+root 15 1712 91 2446 173
+15 do_carry_person person1 city1 -> m2_do_carry_person 270 312 391 472
+91 do_carry_person person3 city0 -> m2_do_carry_person 788 840 927 1013
+173 do_fly plane2 city2 -> m6_do_fly 2812 2849
+270 do_fly plane1 city0 -> m4_do_fly 1397
+312 do_board plane1 person1 city0 -> m7_do_board 1489 1502
+391 do_fly plane1 city1 -> m5_do_fly 1585 1601 1646
+472 do_debark plane1 person1 city1 -> m8_do_debark 1692 1696
+788 do_fly plane2 city1 -> m6_do_fly 2081 2100
+840 do_board plane2 person3 city1 -> m7_do_board 2200 2219
+927 do_fly plane2 city0 -> m5_do_fly 2320 2334 2380
+1013 do_debark plane2 person3 city0 -> m8_do_debark 2425 2430
+1397 do_check_city plane1 city0 -> m11_do_check_city 1398
+1502 do_check_city plane1 city0 -> m11_do_check_city 1503
+1585 do_check_city plane1 city0 -> m11_do_check_city 1586
+1696 do_check_city plane1 city1 -> m11_do_check_city 1697
+1712 do_carry_person person2 city0 -> m0_do_carry_person 1713
+2081 do_check_city plane2 city2 -> m11_do_check_city 2082
+2219 do_check_city plane2 city1 -> m11_do_check_city 2220
+2320 do_check_city plane2 city1 -> m11_do_check_city 2321
+2430 do_check_city plane2 city0 -> m11_do_check_city 2431
+2446 do_carry_person person4 city1 -> m0_do_carry_person 2447
+2812 do_check_city plane2 city0 -> m11_do_check_city 2813
+<==
+0.031 End of solution plan. (counted length of 22)
+0.031 Total amount of clauses encoded: 16781
+0.031 - directframeaxioms : 4022 cls
+0.031 - qfactsemantics : 3587 cls
+0.031 - indirectframeaxioms : 3414 cls
+0.031 - reductionconstraints : 1980 cls
+0.031 - substitutionconstraints : 1226 cls
+0.031 - actionconstraints : 587 cls
+0.031 - atmostoneelement : 555 cls
+0.031 - qconstequality : 519 cls
+0.031 - expansions : 321 cls
+0.031 - predecessors : 294 cls
+0.031 - actioneffects : 234 cls
+0.031 - truefacts : 40 cls
+0.031 - axiomaticops : 2 cls
+0.031 Exiting happily.
+RUNWATCH_RESULT EXIT TIME_SECS 0.050 MEMPEAK_KBS 5771.264

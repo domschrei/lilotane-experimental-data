@@ -1,0 +1,122 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version rls-2020-11-02T15:57:46+01:00-glucose4
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020
+using SAT solver glucose4
+
+0.012 Sorts extracted.
+0.041 Mined 138 new reduction preconditions (+13800.0%).
+0.041 87 operators and 84 methods created.
+0.042 Iteration 0.
+0.042 Creating initial layer of size 2
+0.048 Attempting to solve formula with 5 clauses (6 literals) and 1 assumptions
+0.048 Unsolvable at layer 0 -- expanding.
+0.048 Iteration 1.
+0.048 New layer size: 2
+0.048 Instantiating ...
+0.063 Collected 1 relevant facts at this layer
+0.063 Encoding ...
+0.064 Attempting to solve formula with 219 clauses (462 literals) and 1 assumptions
+0.064 Unsolvable at layer 1 -- expanding.
+0.064 Iteration 2.
+0.064 New layer size: 2
+0.064 Instantiating ...
+0.064 Retroactively prune reduction (m_tlt_provide_temp_heat Q_1,0_adult:0_81947d412ccc01c6)@(1,0): no children at offset 0
+0.074 Collected 1 relevant facts at this layer
+0.074 Encoding ...
+0.075 Attempting to solve formula with 236 clauses (499 literals) and 1 assumptions
+0.075 Unsolvable at layer 2 -- expanding.
+0.075 Iteration 3.
+0.075 New layer size: 7
+0.075 Instantiating ...
+0.090 Collected 2 relevant facts at this layer
+0.090 Encoding ...
+0.092 Attempting to solve formula with 374 clauses (805 literals) and 2 assumptions
+0.092 Unsolvable at layer 3 -- expanding.
+0.092 Iteration 4.
+0.092 New layer size: 11
+0.092 Instantiating ...
+0.107 Collected 194 relevant facts at this layer
+0.107 Encoding ...
+0.110 Attempting to solve formula with 3968 clauses (10753 literals) and 6 assumptions
+0.110 Unsolvable at layer 4 -- expanding.
+0.110 Iteration 5.
+0.110 New layer size: 22
+0.110 Instantiating ...
+0.116 Retroactively prune reduction (m_drive_to Q_2,0_point:0_166ce670edcf20e3 Q_2,0_plowdriver:0_6b0a27515a248626 Q_3,1_vehicle:0_e1ee197d0aa588f8 Q_4,2_point:0_81e545a0cbe7fd70)@(4,2): no children at offset 1
+0.135 Collected 342 relevant facts at this layer
+0.135 Encoding ...
+0.142 Attempting to solve formula with 15378 clauses (45009 literals) and 10 assumptions
+0.143 Unsolvable at layer 5 -- expanding.
+0.143 Iteration 6.
+0.143 New layer size: 33
+0.143 Instantiating ...
+0.145 Retroactively prune reduction (m_get_in_ambulatory_person Q_3,1_shelter_leader:0_30df7ad049119d8d Q_5,3_point:0_81e545a0cbe7fd70 Q_4,1_vehicle:0_3f5b278ec3cf7db8)@(5,3): no children at offset 1
+0.163 Collected 412 relevant facts at this layer
+0.163 Encoding ...
+0.170 Attempting to solve formula with 28041 clauses (78989 literals) and 4 assumptions
+c last restart ## conflicts  :  0 387 
+0.170 Found a solution at layer 6.
+0.170 Initial plan at final layer has length 15
+0.171 Tightened initial plan length bounds at layer 6: [0,32] => [3,15]
+0.171 Searching for a plan of length < 15
+0.171 Attempting to solve formula with 28411 clauses (80071 literals) and 0 assumptions
+==>
+4610 SHOP_methodm_plow_road_precondition brighton_dump pittsford_plaza plow2 mendon_pond
+4685 SHOP_methodm_get_to_as_cargo_precondition pdriver1 mendon_pond rochester_general amb1
+4739 SHOP_methodm_get_to_vehicle_gets_driven_precondition amb1 rochester_general twelve_corners emt1
+4742 SHOP_methodm_drive_to_precondition amb1 twelve_corners emt1
+4745 p_1Navegate_vehicle
+4749 SHOP_methodm_get_in_ambulatory_person_precondition pdriver1 rochester_general amb1
+4753 p_2Climb_in
+4755 SHOP_methodm_get_to_vehicle_gets_driven_precondition amb1 mendon_pond rochester_general emt1
+4759 SHOP_methodm_drive_to_precondition amb1 rochester_general emt1
+4763 p_3Navegate_vehicle
+4765 p_4Climb_out
+4769 p_5Navegate_snowplow
+5859 engage_plow pdriver1 plow2
+5897 navegate_snowplow pdriver1 plow2 pittsford_plaza
+5900 disengage_plow pdriver1 plow2
+root 7
+7 tlt -> m_tlt_plow_road 42
+42 plow_road brighton_dump pittsford_plaza -> m_plow_road 4610 58 4768 5859 5896 5900
+58 get_to pdriver1 mendon_pond -> m_get_to_as_cargo 4685 320 543 753 960
+320 get_to amb1 rochester_general -> m_get_to_vehicle_gets_driven 4739 2990
+543 get_in pdriver1 amb1 -> m_get_in_ambulatory_person 4749 4752
+753 get_to amb1 mendon_pond -> m_get_to_vehicle_gets_driven 4755 3181
+960 get_out pdriver1 amb1 -> m_get_out_ambulatory_person 4764
+2990 drive_to emt1 amb1 rochester_general -> m_drive_to 4742 4744
+3181 drive_to emt1 amb1 mendon_pond -> m_drive_to 4759 4762
+4744 cnavegate_vehicle emt1 amb1 rochester_general twelve_corners -> prefix_1 4745
+4752 cclimb_in pdriver1 amb1 rochester_general -> prefix_2 4753
+4762 cnavegate_vehicle emt1 amb1 mendon_pond rochester_general -> prefix_3 4763
+4764 cclimb_out pdriver1 amb1 mendon_pond -> prefix_4 4765
+4768 cnavegate_snowplow pdriver1 plow2 brighton_dump -> prefix_5 4769
+5896 cnavegate_snowplow pdriver1 plow2 pittsford_plaza -> regular_3 5897
+<==
+0.171 End of solution plan. (counted length of 15)
+0.171 Total amount of clauses encoded: 28411
+0.171 - directframeaxioms : 18680 cls
+0.171 - qfactsemantics : 4819 cls
+0.171 - reductionconstraints : 2024 cls
+0.171 - substitutionconstraints : 827 cls
+0.171 - truefacts : 412 cls
+0.171 - planlengthcounting : 366 cls
+0.171 - actionconstraints : 362 cls
+0.171 - indirectframeaxioms : 276 cls
+0.171 - expansions : 184 cls
+0.171 - predecessors : 169 cls
+0.171 - atmostoneelement : 138 cls
+0.171 - qtypeconstraints : 110 cls
+0.171 - actioneffects : 26 cls
+0.171 - forbiddenoperations : 12 cls
+0.171 - assumptions : 4 cls
+0.171 - axiomaticops : 2 cls
+0.171 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.416 MEMPEAK_KBS 0

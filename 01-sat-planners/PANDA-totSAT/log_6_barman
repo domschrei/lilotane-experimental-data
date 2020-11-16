@@ -1,0 +1,1480 @@
+PANDA - Planning and Acting in a Network Decomposition Architecture
+Believe us: It's great, it's fantastic!
+
+PANDA Copyright (C) 2014-2018 Gregor Behnke, Pascal Bercher, Thomas Geier, Kadir
+Dede, Daniel Höller, Kristof Mickeleit, Matthias Englert
+This program comes with ABSOLUTELY NO WARRANTY
+This is free software, and you are welcome to redistribute it under certain
+conditions; run PANDA with -license for details.
+
+Main Developers:
+- Gregor Behnke, http://www.uni-ulm.de/in/ki/behnke
+- Daniel Höller, http://www.uni-ulm.de/in/ki/hoeller
+
+With many thanks to various further contributors.
+Run PANDA with the command line argument -contributors for an extensive list.
+
+Run it with -help for more information like available options.
+
+
+PANDA was called with: "-systemConfig AAAI-2018-totSAT(cryptominisat) -programPath cryptominisat=./cryptominisat5 instances/barman/domain.hddl instances/barman/p06.hddl"
+
+
+Planner Configuration
+=====================
+Domain: instances/barman/domain.hddl
+Problem: instances/barman/p06.hddl
+Output: none
+
+Planning Configuration
+======================
+	printGeneralInformation : true
+	printAdditionalData     : true
+	random seed             : 42
+	time limit (in seconds) : none
+
+	external programs:
+		cryptominisat : ./cryptominisat5
+
+	Parsing Configuration
+	---------------------
+	Parser                : autodetect file-type
+	Expand Sort Hierarchy : true
+	ClosedWordAssumption  : true
+	CompileSHOPMethods    : true
+	Eliminate Equality    : true
+	Strip Hybridity       : true
+	Reduce General Tasks  : true
+	
+	Preprocessing Configuration
+	---------------------------
+	Compile negative preconditions    : true
+	Compile unit methods              : false
+	Compile order in methods          : false
+	Compile initial plan              : true
+	Ensure Methods Have Last Task     : false
+	Split independent parameters      : true
+	Remove unnecessary predicates     : true
+	Expand choiceless abstract tasks  : true
+	Domain Cleanup                    : true
+	Convert to SAS+                   : false
+	Grounded Reachability Analysis    : Planning Graph (mutex-free)
+	Grounded Task Decomposition Graph : Two Way TDG
+	Iterate reachability analysis     : true
+	Ground domain                     : true
+	Iterate reachability analysis     : true
+	Stop directly after grounding     : false
+	
+	SAT-Planning Configuration
+	--------------------------
+	solver           : cryptominisat
+	full planner run : true
+	reduction method : only normalise 
+	check result     : true
+	
+	Post-processing Configuration
+	-----------------------------
+	search result with Decomposition Tree
+	statistics
+	timings
+	search status
+	search result
+#0 "00 global:01:problem"="p06.hddl";"00 global:00:domain"="domain.hddl"
+Parsing domain ... using HDDL parser ... done
+Preparing internal domain representation ... done.
+Initial domain
+	number of abstract tasks = 7
+	number of tasks = 30
+	number of decomposition methods = 10
+	number of predicates = 15
+	number of sorts = 10
+	number of tasks in largest method = 8
+	number of primitive SHOP tasks = 10
+	number of epsilon methods = 0
+	number of primitive tasks = 23
+	number of constants = 42
+Compiling negative preconditions ... done.
+	number of abstract tasks = 7
+	number of tasks = 30
+	number of decomposition methods = 10
+	number of predicates = 30
+	number of sorts = 10
+	number of tasks in largest method = 8
+	number of primitive SHOP tasks = 10
+	number of epsilon methods = 0
+	number of primitive tasks = 23
+	number of constants = 42
+Compiling split parameters ... done.
+	number of abstract tasks = 15
+	number of tasks = 38
+	number of decomposition methods = 18
+	number of predicates = 30
+	number of sorts = 10
+	number of tasks in largest method = 8
+	number of primitive SHOP tasks = 10
+	number of epsilon methods = 0
+	number of primitive tasks = 23
+	number of constants = 42
+Lifted reachability analysis and domain cleanup ... done.
+	number of abstract tasks = 13
+	number of tasks = 34
+	number of decomposition methods = 16
+	number of predicates = 18
+	number of sorts = 10
+	number of tasks in largest method = 8
+	number of primitive SHOP tasks = 9
+	number of epsilon methods = 0
+	number of primitive tasks = 21
+	number of constants = 42
+Grounded planning graph ... done in 553ms.
+	Number of Grounded Actions 2836
+	Number of Grounded Literals 420
+	number of abstract tasks = 13
+	number of tasks = 34
+	number of decomposition methods = 16
+	number of predicates = 18
+	number of sorts = 10
+	number of tasks in largest method = 8
+	number of primitive SHOP tasks = 9
+	number of epsilon methods = 0
+	number of primitive tasks = 21
+	number of constants = 42
+Two Way TDG ... done.
+	number of abstract tasks = 13
+	number of tasks = 34
+	number of decomposition methods = 16
+	number of predicates = 18
+	number of sorts = 10
+	number of tasks in largest method = 8
+	number of primitive SHOP tasks = 9
+	number of epsilon methods = 0
+	number of primitive tasks = 21
+	number of constants = 42
+Grounding ... done.
+	number of abstract tasks = 1398
+	number of tasks = 4212
+	number of decomposition methods = 5376
+	number of predicates = 420
+	number of sorts = 0
+	number of tasks in largest method = 8
+	number of primitive SHOP tasks = 1101
+	number of epsilon methods = 0
+	number of primitive tasks = 2814
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 1398
+	number of tasks = 4212
+	number of decomposition methods = 5376
+	number of predicates = 390
+	number of sorts = 0
+	number of tasks in largest method = 8
+	number of primitive SHOP tasks = 1101
+	number of epsilon methods = 0
+	number of primitive tasks = 2814
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 457ms.
+	Number of Grounded Actions 2814
+	Number of Grounded Literals 390
+	number of abstract tasks = 1398
+	number of tasks = 4212
+	number of decomposition methods = 5376
+	number of predicates = 390
+	number of sorts = 0
+	number of tasks in largest method = 8
+	number of primitive SHOP tasks = 1101
+	number of epsilon methods = 0
+	number of primitive tasks = 2814
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 1398
+	number of tasks = 4212
+	number of decomposition methods = 5376
+	number of predicates = 390
+	number of sorts = 0
+	number of tasks in largest method = 8
+	number of primitive SHOP tasks = 1101
+	number of epsilon methods = 0
+	number of primitive tasks = 2814
+	number of constants = 0
+Compiling expand choiceless abstract tasks ... done.
+	number of abstract tasks = 991
+	number of tasks = 3805
+	number of decomposition methods = 4969
+	number of predicates = 390
+	number of sorts = 0
+	number of tasks in largest method = 14
+	number of primitive SHOP tasks = 1101
+	number of epsilon methods = 0
+	number of primitive tasks = 2814
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 991
+	number of tasks = 3805
+	number of decomposition methods = 4969
+	number of predicates = 390
+	number of sorts = 0
+	number of tasks in largest method = 14
+	number of primitive SHOP tasks = 1101
+	number of epsilon methods = 0
+	number of primitive tasks = 2814
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 991
+	number of tasks = 3805
+	number of decomposition methods = 4969
+	number of predicates = 390
+	number of sorts = 0
+	number of tasks in largest method = 14
+	number of primitive SHOP tasks = 1101
+	number of epsilon methods = 0
+	number of primitive tasks = 2814
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 243ms.
+	Number of Grounded Actions 2814
+	Number of Grounded Literals 390
+	number of abstract tasks = 991
+	number of tasks = 3805
+	number of decomposition methods = 4969
+	number of predicates = 390
+	number of sorts = 0
+	number of tasks in largest method = 14
+	number of primitive SHOP tasks = 1101
+	number of epsilon methods = 0
+	number of primitive tasks = 2814
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 991
+	number of tasks = 3805
+	number of decomposition methods = 4689
+	number of predicates = 390
+	number of sorts = 0
+	number of tasks in largest method = 14
+	number of primitive SHOP tasks = 1101
+	number of epsilon methods = 0
+	number of primitive tasks = 2814
+	number of constants = 0
+Compiling expand choiceless abstract tasks ... done.
+	number of abstract tasks = 991
+	number of tasks = 3805
+	number of decomposition methods = 4689
+	number of predicates = 390
+	number of sorts = 0
+	number of tasks in largest method = 14
+	number of primitive SHOP tasks = 1101
+	number of epsilon methods = 0
+	number of primitive tasks = 2814
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 991
+	number of tasks = 3805
+	number of decomposition methods = 4689
+	number of predicates = 390
+	number of sorts = 0
+	number of tasks in largest method = 14
+	number of primitive SHOP tasks = 1101
+	number of epsilon methods = 0
+	number of primitive tasks = 2814
+	number of constants = 0
+Compiling methods with identical tasks ... done.
+	number of abstract tasks = 991
+	number of tasks = 3805
+	number of decomposition methods = 4689
+	number of predicates = 390
+	number of sorts = 0
+	number of tasks in largest method = 14
+	number of primitive SHOP tasks = 1101
+	number of epsilon methods = 0
+	number of primitive tasks = 2814
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 991
+	number of tasks = 3805
+	number of decomposition methods = 4689
+	number of predicates = 390
+	number of sorts = 0
+	number of tasks in largest method = 14
+	number of primitive SHOP tasks = 1101
+	number of epsilon methods = 0
+	number of primitive tasks = 2814
+	number of constants = 0
+Tasks 2814 - 11
+Domain is acyclic: true
+Domain is mostly acyclic: true
+Domain is regular: false
+Domain is tail recursive: true
+Domain is totally ordered: true
+Domain has last task in all methods: true
+Time remaining for planner 9223372036854767403ms
+Computing minimum decomposition height: 4
+
+Running SAT search with K = 4
+Generating initial PDT ... Still waiting ... running for 101 will abort at 9223372036854766981
+done
+initial PDT has 294 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 294 leafs
+SHOP LEAFS 98
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Computing invariants [Rintanen]
+candidates build 227565
+Size 227565 at 0/2814
+Size 227490 at 500/2814
+Size 193543 at 1000/2814
+Size 47137 at 1500/2814
+Size 31133 at 2000/2814
+Size 31128 at 2500/2814
+Size 31128
+Size 31128 at 0/2814
+Size 31128 at 500/2814
+Size 22761 at 1000/2814
+Size 14125 at 1500/2814
+Size 4360 at 2000/2814
+Size 4291 at 2500/2814
+Size 4247
+Size 4247 at 0/2814
+Size 4247 at 500/2814
+Size 4235 at 1000/2814
+Size 4192 at 1500/2814
+Size 4089 at 2000/2814
+Size 4089 at 2500/2814
+Size 4084
+Size 4084 at 0/2814
+Size 4084 at 500/2814
+Size 4028 at 1000/2814
+Size 3888 at 1500/2814
+Size 3790 at 2000/2814
+Size 3790 at 2500/2814
+Size 3790
+Size 3790 at 0/2814
+Size 3790 at 500/2814
+Size 3790 at 1000/2814
+Size 3790 at 1500/2814
+Size 3790 at 2000/2814
+Size 3790 at 2500/2814
+Size 3790
+Invariant time: 2.679
+Number of invariants: 3790
+Invariant Clauses 1118050
+NUMBER OF CLAUSES 1780588
+NUMBER OF STATE CLAUSES 1442988
+NUMBER OF DECOMPOSITION CLAUSES 337600
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 81.04% 18.96% 0.0% 
+NUMBER OF PATHS 294
+Starting cryptominisat
+Setting starttime of solver to 1603870573560
+Command exited with non-zero status 10
+0.83 0.05
+
+Time command gave the following runtime for the solver: 880
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... done
+SAT-Solver says: SATISFIABLE
+
+extracting solution
+Consider method^3_2;1;2,1216 1216 _m2_get_first_ingredient_3
+2;1;2 252 pathaction!3_2;1;2,1144
+Consider method^2_13;2,1381 1381 m3_get_second_ingredient
+13;2 106 pathaction!2_13;2,3745
+Consider method^2_10;2,4535 4535 m3_get_second_ingredient
+10;2 78 pathaction!2_10;2,3750
+Consider method^0_,4688 4688 __top_1
+ 329 pathaction!0_,3804
+Consider method^3_3;1;1,161 161 m9_do_fill_shot
+3;1;1 402 pathaction!3_3;1;1,2605
+Consider method^3_3;2;2,1161 1161 _m3_get_second_ingredient_3
+3;2;2 420 pathaction!3_3;2;2,2416
+Consider method^3_5;3;1,658 658 <_m4_serve_shot_2;do_clean_shot[shot6,cocktail4,right];m5_do_clean_shot;0;-1,-2>
+5;3;1 371 pathaction!3_5;3;1,2304
+Consider method^2_12;2,1930 1930 m3_get_second_ingredient
+12;2 321 pathaction!2_12;2,3739
+Consider method^2_0;1,4384 4384 m2_get_first_ingredient
+0;1 60 pathaction!2_0;1,3330
+Consider method^3_1;1;1,4592 4592 m9_do_fill_shot
+1;1;1 105 pathaction!3_1;1;1,2605
+Consider method^2_13;3,1803 1803 <<m4_serve_shot;pour-shaker-to-shot_m4_serve_shot_sip_5[cocktail10,shot14,right,shaker1,l1];_m4_serve_shot_5;4;0,1,2,3,-1,5,6,7>;empty-shaker_m4_serve_shot_sip_6[right,shaker1,cocktail10,l1];_m4_serve_shot_6;5;0,1,2,3,4,-1,6,7>
+13;3 274 pathaction!2_13;3,3361
+Consider method^2_0;2,3162 3162 m3_get_second_ingredient
+0;2 79 pathaction!2_0;2,3741
+Consider method^3_13;2;1,4059 4059 _m3_get_second_ingredient_2
+13;2;1 62 pathaction!3_13;2;1,578
+Consider method^3_13;2;2,2726 2726 _m3_get_second_ingredient_3
+13;2;2 142 pathaction!3_13;2;2,2409
+Consider method^3_12;1;3,2476 2476 _m2_get_first_ingredient_4
+12;1;3 154 pathaction!3_12;1;3,2676
+Consider method^3_12;1;1,1611 1611 m9_do_fill_shot
+12;1;1 432 pathaction!3_12;1;1,2526
+Consider method^3_7;1;3,927 927 _m2_get_first_ingredient_4
+7;1;3 311 pathaction!3_7;1;3,2628
+Consider method^2_13;1,4057 4057 m2_get_first_ingredient
+13;1 160 pathaction!2_13;1,3334
+Consider method^3_11;2;2,1161 1161 _m3_get_second_ingredient_3
+11;2;2 175 pathaction!3_11;2;2,2416
+Consider method^2_3;2,793 793 m3_get_second_ingredient
+3;2 342 pathaction!2_3;2,3743
+Consider method^1_7,2266 2266 m0_do_cocktail_in_shot1
+7 97 pathaction!1_7,86
+Consider method^3_11;2;1,4659 4659 _m3_get_second_ingredient_2
+11;2;1 385 pathaction!3_11;2;1,675
+Consider method^2_1;2,1381 1381 m3_get_second_ingredient
+1;2 418 pathaction!2_1;2,3745
+Consider method^3_8;2;1,1164 1164 _m3_get_second_ingredient_2
+8;2;1 147 pathaction!3_8;2;1,688
+Consider method^2_3;1,691 691 m2_get_first_ingredient
+3;1 117 pathaction!2_3;1,3332
+Consider method^3_13;1;3,3811 3811 _m2_get_first_ingredient_4
+13;1;3 355 pathaction!3_13;1;3,2755
+Consider method^1_4,4529 4529 m0_do_cocktail_in_shot1
+4 50 pathaction!1_4,88
+Consider method^2_6;2,4098 4098 m3_get_second_ingredient
+6;2 14 pathaction!2_6;2,3746
+Consider method^2_11;2,3832 3832 m3_get_second_ingredient
+11;2 337 pathaction!2_11;2,3757
+Consider method^3_13;3;1,2588 2588 <_m4_serve_shot_2;do_clean_shot[shot14,cocktail10,left];m5_do_clean_shot;0;-1,-2>
+13;3;1 364 pathaction!3_13;3;1,2291
+Consider method^2_3;3,3790 3790 <<m4_serve_shot;pour-shaker-to-shot_m4_serve_shot_sip_5[cocktail7,shot4,right,shaker1,l1];_m4_serve_shot_5;4;0,1,2,3,-1,5,6,7>;empty-shaker_m4_serve_shot_sip_6[right,shaker1,cocktail7,l1];_m4_serve_shot_6;5;0,1,2,3,4,-1,6,7>
+3;3 426 pathaction!2_3;3,3353
+Consider method^3_0;2;1,4059 4059 _m3_get_second_ingredient_2
+0;2;1 211 pathaction!3_0;2;1,578
+Consider method^2_6;1,4079 4079 m2_get_first_ingredient
+6;1 165 pathaction!2_6;1,3335
+Consider method^2_4;3,3821 3821 <<m4_serve_shot;pour-shaker-to-shot_m4_serve_shot_sip_5[cocktail9,shot5,left,shaker1,l1];_m4_serve_shot_5;4;0,1,2,3,-1,5,6,7>;empty-shaker_m4_serve_shot_sip_6[left,shaker1,cocktail9,l1];_m4_serve_shot_6;5;0,1,2,3,4,-1,6,7>
+4;3 157 pathaction!2_4;3,3362
+Consider method^3_2;2;2,1033 1033 _m3_get_second_ingredient_3
+2;2;2 334 pathaction!3_2;2;2,2426
+Consider method^3_2;3;1,773 773 <_m4_serve_shot_2;do_clean_shot[shot3,cocktail3,right];m5_do_clean_shot;0;-1,-2>
+2;3;1 254 pathaction!3_2;3;1,2299
+Consider method^3_8;2;2,1695 1695 _m3_get_second_ingredient_3
+8;2;2 361 pathaction!3_8;2;2,2345
+Consider method^1_3,2146 2146 m0_do_cocktail_in_shot1
+3 234 pathaction!1_3,79
+Consider method^3_5;1;1,2611 2611 m9_do_fill_shot
+5;1;1 37 pathaction!3_5;1;1,2592
+Consider method^3_5;2;1,4498 4498 _m3_get_second_ingredient_2
+5;2;1 237 pathaction!3_5;2;1,679
+Consider method^3_12;2;2,1695 1695 _m3_get_second_ingredient_3
+12;2;2 339 pathaction!3_12;2;2,2345
+Consider method^3_11;1;2,3273 3273 _m2_get_first_ingredient_3
+11;1;2 251 pathaction!3_11;1;2,1154
+Consider method^1_10,2500 2500 m0_do_cocktail_in_shot1
+10 224 pathaction!1_10,84
+Consider method^2_1;3,3777 3777 <<m4_serve_shot;pour-shaker-to-shot_m4_serve_shot_sip_5[cocktail10,shot2,left,shaker1,l1];_m4_serve_shot_5;4;0,1,2,3,-1,5,6,7>;empty-shaker_m4_serve_shot_sip_6[left,shaker1,cocktail10,l1];_m4_serve_shot_6;5;0,1,2,3,4,-1,6,7>
+1;3 38 pathaction!2_1;3,3349
+Consider method^2_9;1,1000 1000 m2_get_first_ingredient
+9;1 317 pathaction!2_9;1,3346
+Consider method^3_9;2;2,1161 1161 _m3_get_second_ingredient_3
+9;2;2 2 pathaction!3_9;2;2,2416
+Consider method^3_6;3;1,2150 2150 <_m4_serve_shot_2;do_clean_shot[shot7,cocktail7,left];m5_do_clean_shot;0;-1,-2>
+6;3;1 236 pathaction!3_6;3;1,2297
+Consider method^3_3;2;1,4659 4659 _m3_get_second_ingredient_2
+3;2;1 116 pathaction!3_3;2;1,675
+Consider method^2_4;1,3926 3926 m2_get_first_ingredient
+4;1 335 pathaction!2_4;1,3340
+Consider method^3_8;1;2,3387 3387 _m2_get_first_ingredient_3
+8;1;2 239 pathaction!3_8;1;2,1058
+Consider method^2_12;3,1761 1761 <<m4_serve_shot;pour-shaker-to-shot_m4_serve_shot_sip_5[cocktail1,shot13,left,shaker1,l1];_m4_serve_shot_5;4;0,1,2,3,-1,5,6,7>;empty-shaker_m4_serve_shot_sip_6[left,shaker1,cocktail1,l1];_m4_serve_shot_6;5;0,1,2,3,4,-1,6,7>
+12;3 124 pathaction!2_12;3,3355
+Consider method^2_7;1,3982 3982 m2_get_first_ingredient
+7;1 356 pathaction!2_7;1,3337
+Consider method^3_7;3;1,3765 3765 <_m4_serve_shot_2;do_clean_shot[shot8,cocktail2,right];m5_do_clean_shot;0;-1,-2>
+7;3;1 183 pathaction!3_7;3;1,2287
+Consider method^3_11;1;1,3691 3691 m9_do_fill_shot
+11;1;1 226 pathaction!3_11;1;1,2510
+Consider method^3_9;1;3,4483 4483 _m2_get_first_ingredient_4
+9;1;3 186 pathaction!3_9;1;3,2660
+Consider method^1_5,988 988 m0_do_cocktail_in_shot1
+5 140 pathaction!1_5,78
+Consider method^3_3;1;3,3811 3811 _m2_get_first_ingredient_4
+3;1;3 39 pathaction!3_3;1;3,2755
+Consider method^3_12;2;1,1164 1164 _m3_get_second_ingredient_2
+12;2;1 347 pathaction!3_12;2;1,688
+Consider method^2_11;3,700 700 <<m4_serve_shot;pour-shaker-to-shot_m4_serve_shot_sip_5[cocktail8,shot12,left,shaker1,l1];_m4_serve_shot_5;4;0,1,2,3,-1,5,6,7>;empty-shaker_m4_serve_shot_sip_6[left,shaker1,cocktail8,l1];_m4_serve_shot_6;5;0,1,2,3,4,-1,6,7>
+11;3 352 pathaction!2_11;3,3359
+Consider method^3_4;1;2,703 703 _m2_get_first_ingredient_3
+4;1;2 387 pathaction!3_4;1;2,1133
+Consider method^3_2;1;1,4127 4127 m9_do_fill_shot
+2;1;1 177 pathaction!3_2;1;1,2579
+Consider method^2_1;1,4057 4057 m2_get_first_ingredient
+1;1 354 pathaction!2_1;1,3334
+Consider method^3_7;2;2,2459 2459 _m3_get_second_ingredient_3
+7;2;2 139 pathaction!3_7;2;2,2330
+Consider method^3_3;1;2,3763 3763 _m2_get_first_ingredient_3
+3;1;2 345 pathaction!3_3;1;2,1054
+Consider method^3_0;1;2,703 703 _m2_get_first_ingredient_3
+0;1;2 269 pathaction!3_0;1;2,1133
+Consider method^1_0,4131 4131 m0_do_cocktail_in_shot1
+0 195 pathaction!1_0,77
+Consider method^3_7;1;1,1020 1020 m9_do_fill_shot
+7;1;1 305 pathaction!3_7;1;1,2478
+Consider method^3_8;1;1,304 304 m7_do_fill_shot
+8;1;1 259 pathaction!3_8;1;1,2526
+Consider method^3_12;1;2,3387 3387 _m2_get_first_ingredient_3
+12;1;2 63 pathaction!3_12;1;2,1058
+Consider method^1_13,2864 2864 m0_do_cocktail_in_shot1
+13 294 pathaction!1_13,87
+Consider method^2_2;2,2372 2372 m3_get_second_ingredient
+2;2 383 pathaction!2_2;2,3759
+Consider method^3_4;1;1,173 173 m9_do_fill_shot
+4;1;1 93 pathaction!3_4;1;1,2606
+Consider method^3_10;3;1,826 826 <_m4_serve_shot_2;do_clean_shot[shot11,cocktail2,right];m5_do_clean_shot;0;-1,-2>
+10;3;1 344 pathaction!3_10;3;1,2301
+Consider method^3_0;1;3,1130 1130 _m2_get_first_ingredient_4
+0;1;3 90 pathaction!3_0;1;3,2756
+Consider method^3_9;3;1,2796 2796 <_m4_serve_shot_2;do_clean_shot[shot10,cocktail11,right];m5_do_clean_shot;0;-1,-2>
+9;3;1 295 pathaction!3_9;3;1,2305
+Consider method^2_6;3,2905 2905 <<m4_serve_shot;pour-shaker-to-shot_m4_serve_shot_sip_5[cocktail4,shot7,right,shaker1,l1];_m4_serve_shot_5;4;0,1,2,3,-1,5,6,7>;empty-shaker_m4_serve_shot_sip_6[right,shaker1,cocktail4,l1];_m4_serve_shot_6;5;0,1,2,3,4,-1,6,7>
+6;3 188 pathaction!2_6;3,3354
+Consider method^1_2,568 568 m0_do_cocktail_in_shot1
+2 119 pathaction!1_2,83
+Consider method^2_5;1,883 883 m2_get_first_ingredient
+5;1 163 pathaction!2_5;1,3329
+Consider method^3_0;3;1,2013 2013 <_m4_serve_shot_2;do_clean_shot[shot1,cocktail2,right];m5_do_clean_shot;0;-1,-2>
+0;3;1 217 pathaction!3_0;3;1,2296
+Consider method^3_4;3;1,190 190 <_m4_serve_shot_2;do_clean_shot[shot5,cocktail6,right];m5_do_clean_shot;0;-1,-2>
+4;3;1 365 pathaction!3_4;3;1,2282
+Consider method^1_6,3959 3959 m0_do_cocktail_in_shot1
+6 424 pathaction!1_6,80
+Consider method^2_9;2,3832 3832 m3_get_second_ingredient
+9;2 268 pathaction!2_9;2,3757
+Consider method^2_10;1,3037 3037 m2_get_first_ingredient
+10;1 11 pathaction!2_10;1,3339
+Consider method^3_5;1;3,2294 2294 _m2_get_first_ingredient_4
+5;1;3 284 pathaction!3_5;1;3,2742
+Consider method^3_11;1;3,4483 4483 _m2_get_first_ingredient_4
+11;1;3 144 pathaction!3_11;1;3,2660
+Consider method^3_6;1;3,927 927 _m2_get_first_ingredient_4
+6;1;3 134 pathaction!3_6;1;3,2628
+Consider method^3_5;2;2,750 750 _m3_get_second_ingredient_3
+5;2;2 306 pathaction!3_5;2;2,2397
+Consider method^3_9;1;2,3273 3273 _m2_get_first_ingredient_3
+9;1;2 246 pathaction!3_9;1;2,1154
+Consider method^3_6;1;1,1020 1020 m9_do_fill_shot
+6;1;1 323 pathaction!3_6;1;1,2478
+Consider method^3_1;2;1,4059 4059 _m3_get_second_ingredient_2
+1;2;1 67 pathaction!3_1;2;1,578
+Consider method^2_7;3,2573 2573 <<m4_serve_shot;pour-shaker-to-shot_m4_serve_shot_sip_5[cocktail2,shot8,left,shaker1,l1];_m4_serve_shot_5;4;0,1,2,3,-1,5,6,7>;empty-shaker_m4_serve_shot_sip_6[left,shaker1,cocktail2,l1];_m4_serve_shot_6;5;0,1,2,3,4,-1,6,7>
+7;3 77 pathaction!2_7;3,3360
+Consider method^3_6;1;2,1587 1587 _m2_get_first_ingredient_3
+6;1;2 430 pathaction!3_6;1;2,1092
+Consider method^2_2;3,2410 2410 <<m4_serve_shot;pour-shaker-to-shot_m4_serve_shot_sip_5[cocktail11,shot3,left,shaker1,l1];_m4_serve_shot_5;4;0,1,2,3,-1,5,6,7>;empty-shaker_m4_serve_shot_sip_6[left,shaker1,cocktail11,l1];_m4_serve_shot_6;5;0,1,2,3,4,-1,6,7>
+2;3 202 pathaction!2_2;3,3357
+Consider method^3_11;3;1,1480 1480 <_m4_serve_shot_2;do_clean_shot[shot12,cocktail8,right];m5_do_clean_shot;0;-1,-2>
+11;3;1 83 pathaction!3_11;3;1,2298
+Consider method^2_4;2,0 0 m3_get_second_ingredient
+4;2 101 pathaction!2_4;2,3751
+Consider method^2_7;2,1502 1502 m3_get_second_ingredient
+7;2 409 pathaction!2_7;2,3748
+Consider method^1_11,1198 1198 m0_do_cocktail_in_shot1
+11 135 pathaction!1_11,85
+Consider method^3_13;1;1,2577 2577 m9_do_fill_shot
+13;1;1 243 pathaction!3_13;1;1,2605
+Consider method^3_1;3;1,496 496 <_m4_serve_shot_2;do_clean_shot[shot2,cocktail1,right];m5_do_clean_shot;0;-1,-2>
+1;3;1 362 pathaction!3_1;3;1,2300
+Consider method^3_2;2;1,4648 4648 _m3_get_second_ingredient_2
+2;2;1 403 pathaction!3_2;2;1,606
+Consider method^3_9;1;1,2135 2135 m9_do_fill_shot
+9;1;1 260 pathaction!3_9;1;1,2510
+Consider method^2_12;1,1181 1181 m2_get_first_ingredient
+12;1 357 pathaction!2_12;1,3328
+Consider method^2_5;3,1567 1567 <<m4_serve_shot;pour-shaker-to-shot_m4_serve_shot_sip_5[cocktail5,shot6,left,shaker1,l1];_m4_serve_shot_5;4;0,1,2,3,-1,5,6,7>;empty-shaker_m4_serve_shot_sip_6[left,shaker1,cocktail5,l1];_m4_serve_shot_6;5;0,1,2,3,4,-1,6,7>
+5;3 182 pathaction!2_5;3,3352
+Consider method^3_12;3;1,840 840 <_m4_serve_shot_2;do_clean_shot[shot13,cocktail7,right];m5_do_clean_shot;0;-1,-2>
+12;3;1 255 pathaction!3_12;3;1,2281
+Consider method^3_10;1;1,1714 1714 m9_do_fill_shot
+10;1;1 110 pathaction!3_10;1;1,2482
+Consider method^3_10;1;2,61 61 _m2_get_first_ingredient_3
+10;1;2 281 pathaction!3_10;1;2,1137
+Consider method^2_5;2,963 963 m3_get_second_ingredient
+5;2 176 pathaction!2_5;2,3740
+Consider method^3_10;1;3,2967 2967 _m2_get_first_ingredient_4
+10;1;3 42 pathaction!3_10;1;3,2632
+Consider method^2_9;3,3123 3123 <<m4_serve_shot;pour-shaker-to-shot_m4_serve_shot_sip_5[cocktail8,shot10,left,shaker1,l1];_m4_serve_shot_5;4;0,1,2,3,-1,5,6,7>;empty-shaker_m4_serve_shot_sip_6[left,shaker1,cocktail8,l1];_m4_serve_shot_6;5;0,1,2,3,4,-1,6,7>
+9;3 291 pathaction!2_9;3,3356
+Consider method^3_3;3;1,576 576 <_m4_serve_shot_2;do_clean_shot[shot4,cocktail11,left];m5_do_clean_shot;0;-1,-2>
+3;3;1 209 pathaction!3_3;3;1,2295
+Consider method^3_1;1;3,3811 3811 _m2_get_first_ingredient_4
+1;1;3 431 pathaction!3_1;1;3,2755
+Consider method^2_8;1,1181 1181 m2_get_first_ingredient
+8;1 386 pathaction!2_8;1,3328
+Consider method^3_1;1;2,3763 3763 _m2_get_first_ingredient_3
+1;1;2 164 pathaction!3_1;1;2,1054
+Consider method^2_2;1,19 19 m2_get_first_ingredient
+2;1 312 pathaction!2_2;1,3348
+Consider method^3_13;1;2,3763 3763 _m2_get_first_ingredient_3
+13;1;2 406 pathaction!3_13;1;2,1054
+Consider method^3_4;2;2,1161 1161 _m3_get_second_ingredient_3
+4;2;2 303 pathaction!3_4;2;2,2416
+Consider method^3_0;2;2,2726 2726 _m3_get_second_ingredient_3
+0;2;2 410 pathaction!3_0;2;2,2409
+Consider method^3_5;1;2,518 518 _m2_get_first_ingredient_3
+5;1;2 98 pathaction!3_5;1;2,1073
+Consider method^3_0;1;1,3222 3222 m8_do_fill_shot
+0;1;1 148 pathaction!3_0;1;1,2606
+Consider method^3_2;1;3,2966 2966 _m2_get_first_ingredient_4
+2;1;3 350 pathaction!3_2;1;3,2729
+Consider method^2_11;1,1000 1000 m2_get_first_ingredient
+11;1 118 pathaction!2_11;1,3346
+Consider method^3_4;2;1,4659 4659 _m3_get_second_ingredient_2
+4;2;1 193 pathaction!3_4;2;1,675
+Consider method^1_9,667 667 m0_do_cocktail_in_shot1
+9 109 pathaction!1_9,82
+Consider method^3_10;2;1,4152 4152 _m3_get_second_ingredient_2
+10;2;1 8 pathaction!3_10;2;1,701
+Consider method^3_8;3;1,3951 3951 <_m4_serve_shot_2;do_clean_shot[shot9,cocktail5,left];m5_do_clean_shot;0;-1,-2>
+8;3;1 411 pathaction!3_8;3;1,2289
+Consider method^2_8;3,4567 4567 <<m4_serve_shot;pour-shaker-to-shot_m4_serve_shot_sip_5[cocktail1,shot9,right,shaker1,l1];_m4_serve_shot_5;4;0,1,2,3,-1,5,6,7>;empty-shaker_m4_serve_shot_sip_6[right,shaker1,cocktail1,l1];_m4_serve_shot_6;5;0,1,2,3,4,-1,6,7>
+8;3 71 pathaction!2_8;3,3350
+Consider method^2_8;2,1930 1930 m3_get_second_ingredient
+8;2 6 pathaction!2_8;2,3739
+Consider method^3_1;2;2,2726 2726 _m3_get_second_ingredient_3
+1;2;2 151 pathaction!3_1;2;2,2409
+Consider method^3_10;2;2,3446 3446 _m3_get_second_ingredient_3
+10;2;2 22 pathaction!3_10;2;2,2326
+Consider method^3_6;2;2,750 750 _m3_get_second_ingredient_3
+6;2;2 349 pathaction!3_6;2;2,2397
+Consider method^2_10;3,152 152 <<m4_serve_shot;pour-shaker-to-shot_m4_serve_shot_sip_5[cocktail6,shot11,left,shaker1,l1];_m4_serve_shot_5;4;0,1,2,3,-1,5,6,7>;empty-shaker_m4_serve_shot_sip_6[left,shaker1,cocktail6,l1];_m4_serve_shot_6;5;0,1,2,3,4,-1,6,7>
+10;3 293 pathaction!2_10;3,3358
+Consider method^3_8;1;3,2476 2476 _m2_get_first_ingredient_4
+8;1;3 395 pathaction!3_8;1;3,2676
+Consider method^3_4;1;3,1130 1130 _m2_get_first_ingredient_4
+4;1;3 69 pathaction!3_4;1;3,2756
+Consider method^2_0;3,1914 1914 <<m4_serve_shot;pour-shaker-to-shot_m4_serve_shot_sip_5[cocktail3,shot1,left,shaker1,l1];_m4_serve_shot_5;4;0,1,2,3,-1,5,6,7>;empty-shaker_m4_serve_shot_sip_6[left,shaker1,cocktail3,l1];_m4_serve_shot_6;5;0,1,2,3,4,-1,6,7>
+0;3 15 pathaction!2_0;3,3351
+Consider method^3_9;2;1,4659 4659 _m3_get_second_ingredient_2
+9;2;1 324 pathaction!3_9;2;1,675
+Consider method^1_12,1796 1796 m0_do_cocktail_in_shot1
+12 204 pathaction!1_12,81
+Consider method^3_7;2;1,3882 3882 _m3_get_second_ingredient_2
+7;2;1 159 pathaction!3_7;2;1,622
+Consider method^3_6;2;1,4498 4498 _m3_get_second_ingredient_2
+6;2;1 422 pathaction!3_6;2;1,679
+Consider method^1_8,726 726 m0_do_cocktail_in_shot1
+8 12 pathaction!1_8,76
+Consider method^3_7;1;2,1587 1587 _m2_get_first_ingredient_3
+7;1;2 374 pathaction!3_7;1;2,1092
+Consider method^1_1,1436 1436 m0_do_cocktail_in_shot1
+1 277 pathaction!1_1,75
+
+
+CHECKING primitive solution of length 292 ...
+true 103 __method_precondition_m0_do_cocktail_in_shot1_0_precondition[shot1,left;]
+true 343 __method_precondition_m2_get_first_ingredient_2_precondition[cocktail3,ingredient5,shot15;]
+true 7 __method_precondition_m8_do_fill_shot_8_precondition[shot15,dispenser5,ingredient5;]
+true 413 grasp[left,shot15;]
+true 46 fill-shot[shot15,ingredient5,left,right,dispenser5;]
+true 285 pour-shot-to-clean-shaker[shot15,ingredient5,shaker1,left,l0,l1;]
+true 220 clean-shot[shot15,ingredient5,left,right;]
+true 114 __method_precondition_m3_get_second_ingredient_3_precondition[cocktail3,ingredient4,left,shot15;]
+true 36 fill-shot[shot15,ingredient4,left,right,dispenser4;]
+true 210 pour-shot-to-used-shaker[shot15,ingredient4,shaker1,left,l1,l2;]
+true 393 leave[left,shot15;]
+true 290 __method_precondition_m4_serve_shot_4_precondition[cocktail3,ingredient5,ingredient4;]
+true 318 __method_precondition_m5_do_clean_shot_5_precondition[shot1;]
+true 21 nop[;]
+true 197 grasp[left,shaker1;]
+true 172 shake[cocktail3,ingredient5,ingredient4,shaker1,left,right;]
+true 145 pour-shaker-to-shot[cocktail3,shot1,left,shaker1,l2,l1;]
+true 95 empty-shaker[left,shaker1,cocktail3,l1,l0;]
+true 325 clean-shaker[left,right,shaker1;]
+true 377 leave[left,shaker1;]
+true 229 __method_precondition_m0_do_cocktail_in_shot1_0_precondition[shot2,left;]
+true 194 __method_precondition_m2_get_first_ingredient_2_precondition[cocktail10,ingredient1,shot15;]
+true 391 __method_precondition_m9_do_fill_shot_9_precondition[shot15,ingredient1,ingredient4,dispenser1;]
+true 3 grasp[left,shot15;]
+true 266 clean-shot[shot15,ingredient4,left,right;]
+true 173 fill-shot[shot15,ingredient1,left,right,dispenser1;]
+true 76 pour-shot-to-clean-shaker[shot15,ingredient1,shaker1,left,l0,l1;]
+true 17 clean-shot[shot15,ingredient1,left,right;]
+true 121 __method_precondition_m3_get_second_ingredient_3_precondition[cocktail10,ingredient4,left,shot15;]
+true 264 fill-shot[shot15,ingredient4,left,right,dispenser4;]
+true 201 pour-shot-to-used-shaker[shot15,ingredient4,shaker1,left,l1,l2;]
+true 389 leave[left,shot15;]
+true 23 __method_precondition_m4_serve_shot_4_precondition[cocktail10,ingredient1,ingredient4;]
+true 65 __method_precondition_m5_do_clean_shot_5_precondition[shot2;]
+true 86 nop[;]
+true 104 grasp[left,shaker1;]
+true 330 shake[cocktail10,ingredient1,ingredient4,shaker1,left,right;]
+true 363 pour-shaker-to-shot[cocktail10,shot2,left,shaker1,l2,l1;]
+true 29 empty-shaker[left,shaker1,cocktail10,l1,l0;]
+true 152 clean-shaker[left,right,shaker1;]
+true 238 leave[left,shaker1;]
+true 257 __method_precondition_m0_do_cocktail_in_shot1_0_precondition[shot3,left;]
+true 111 __method_precondition_m2_get_first_ingredient_2_precondition[cocktail11,ingredient2,shot15;]
+true 208 __method_precondition_m9_do_fill_shot_9_precondition[shot15,ingredient2,ingredient4,dispenser2;]
+true 271 grasp[left,shot15;]
+true 421 clean-shot[shot15,ingredient4,left,right;]
+true 304 fill-shot[shot15,ingredient2,left,right,dispenser2;]
+true 125 pour-shot-to-clean-shaker[shot15,ingredient2,shaker1,left,l0,l1;]
+true 128 clean-shot[shot15,ingredient2,left,right;]
+true 320 __method_precondition_m3_get_second_ingredient_3_precondition[cocktail11,ingredient3,left,shot15;]
+true 222 fill-shot[shot15,ingredient3,left,right,dispenser3;]
+true 218 pour-shot-to-used-shaker[shot15,ingredient3,shaker1,left,l1,l2;]
+true 216 leave[left,shot15;]
+true 178 __method_precondition_m4_serve_shot_4_precondition[cocktail11,ingredient2,ingredient3;]
+true 309 __method_precondition_m5_do_clean_shot_5_precondition[shot3;]
+true 419 nop[;]
+true 428 grasp[left,shaker1;]
+true 346 shake[cocktail11,ingredient2,ingredient3,shaker1,left,right;]
+true 53 pour-shaker-to-shot[cocktail11,shot3,left,shaker1,l2,l1;]
+true 180 empty-shaker[left,shaker1,cocktail11,l1,l0;]
+true 108 clean-shaker[left,right,shaker1;]
+true 215 leave[left,shaker1;]
+true 258 __method_precondition_m0_do_cocktail_in_shot1_0_precondition[shot4,left;]
+true 184 __method_precondition_m2_get_first_ingredient_2_precondition[cocktail7,ingredient1,shot15;]
+true 30 __method_precondition_m9_do_fill_shot_9_precondition[shot15,ingredient1,ingredient3,dispenser1;]
+true 44 grasp[left,shot15;]
+true 287 clean-shot[shot15,ingredient3,left,right;]
+true 366 fill-shot[shot15,ingredient1,left,right,dispenser1;]
+true 319 pour-shot-to-clean-shaker[shot15,ingredient1,shaker1,left,l0,l1;]
+true 26 clean-shot[shot15,ingredient1,left,right;]
+true 328 __method_precondition_m3_get_second_ingredient_3_precondition[cocktail7,ingredient2,left,shot15;]
+true 120 fill-shot[shot15,ingredient2,left,right,dispenser2;]
+true 308 pour-shot-to-used-shaker[shot15,ingredient2,shaker1,left,l1,l2;]
+true 280 leave[left,shot15;]
+true 247 __method_precondition_m4_serve_shot_4_precondition[cocktail7,ingredient1,ingredient2;]
+true 265 __method_precondition_m5_do_clean_shot_5_precondition[shot4;]
+true 66 nop[;]
+true 156 grasp[right,shaker1;]
+true 230 shake[cocktail7,ingredient1,ingredient2,shaker1,right,left;]
+true 24 pour-shaker-to-shot[cocktail7,shot4,right,shaker1,l2,l1;]
+true 407 empty-shaker[right,shaker1,cocktail7,l1,l0;]
+true 297 clean-shaker[right,left,shaker1;]
+true 51 leave[right,shaker1;]
+true 136 __method_precondition_m0_do_cocktail_in_shot1_0_precondition[shot5,left;]
+true 138 __method_precondition_m2_get_first_ingredient_2_precondition[cocktail9,ingredient5,shot15;]
+true 198 __method_precondition_m9_do_fill_shot_9_precondition[shot15,ingredient5,ingredient2,dispenser5;]
+true 369 grasp[left,shot15;]
+true 327 clean-shot[shot15,ingredient2,left,right;]
+true 47 fill-shot[shot15,ingredient5,left,right,dispenser5;]
+true 360 pour-shot-to-clean-shaker[shot15,ingredient5,shaker1,left,l0,l1;]
+true 112 clean-shot[shot15,ingredient5,left,right;]
+true 263 __method_precondition_m3_get_second_ingredient_3_precondition[cocktail9,ingredient2,left,shot15;]
+true 212 fill-shot[shot15,ingredient2,left,right,dispenser2;]
+true 213 pour-shot-to-used-shaker[shot15,ingredient2,shaker1,left,l1,l2;]
+true 249 leave[left,shot15;]
+true 379 __method_precondition_m4_serve_shot_4_precondition[cocktail9,ingredient5,ingredient2;]
+true 100 __method_precondition_m5_do_clean_shot_5_precondition[shot5;]
+true 376 nop[;]
+true 336 grasp[left,shaker1;]
+true 1 shake[cocktail9,ingredient5,ingredient2,shaker1,left,right;]
+true 286 pour-shaker-to-shot[cocktail9,shot5,left,shaker1,l2,l1;]
+true 18 empty-shaker[left,shaker1,cocktail9,l1,l0;]
+true 73 clean-shaker[left,right,shaker1;]
+true 288 leave[left,shaker1;]
+true 235 __method_precondition_m0_do_cocktail_in_shot1_0_precondition[shot6,right;]
+true 392 __method_precondition_m2_get_first_ingredient_2_precondition[cocktail5,ingredient5,shot15;]
+true 380 __method_precondition_m9_do_fill_shot_9_precondition[shot15,ingredient5,ingredient2,dispenser5;]
+true 282 grasp[right,shot15;]
+true 270 clean-shot[shot15,ingredient2,right,left;]
+true 153 fill-shot[shot15,ingredient5,right,left,dispenser5;]
+true 300 pour-shot-to-clean-shaker[shot15,ingredient5,shaker1,right,l0,l1;]
+true 314 clean-shot[shot15,ingredient5,right,left;]
+true 181 __method_precondition_m3_get_second_ingredient_3_precondition[cocktail5,ingredient1,right,shot15;]
+true 333 fill-shot[shot15,ingredient1,right,left,dispenser1;]
+true 262 pour-shot-to-used-shaker[shot15,ingredient1,shaker1,right,l1,l2;]
+true 394 leave[right,shot15;]
+true 19 __method_precondition_m4_serve_shot_4_precondition[cocktail5,ingredient5,ingredient1;]
+true 205 __method_precondition_m5_do_clean_shot_5_precondition[shot6;]
+true 358 nop[;]
+true 273 grasp[left,shaker1;]
+true 278 shake[cocktail5,ingredient5,ingredient1,shaker1,left,right;]
+true 203 pour-shaker-to-shot[cocktail5,shot6,left,shaker1,l2,l1;]
+true 302 empty-shaker[left,shaker1,cocktail5,l1,l0;]
+true 378 clean-shaker[left,right,shaker1;]
+true 40 leave[left,shaker1;]
+true 241 __method_precondition_m0_do_cocktail_in_shot1_0_precondition[shot7,right;]
+true 102 __method_precondition_m2_get_first_ingredient_2_precondition[cocktail4,ingredient4,shot15;]
+true 99 __method_precondition_m9_do_fill_shot_9_precondition[shot15,ingredient4,ingredient1,dispenser4;]
+true 244 grasp[right,shot15;]
+true 25 clean-shot[shot15,ingredient1,right,left;]
+true 88 fill-shot[shot15,ingredient4,right,left,dispenser4;]
+true 27 pour-shot-to-clean-shaker[shot15,ingredient4,shaker1,right,l0,l1;]
+true 179 clean-shot[shot15,ingredient4,right,left;]
+true 35 __method_precondition_m3_get_second_ingredient_3_precondition[cocktail4,ingredient1,right,shot15;]
+true 54 fill-shot[shot15,ingredient1,right,left,dispenser1;]
+true 81 pour-shot-to-used-shaker[shot15,ingredient1,shaker1,right,l1,l2;]
+true 107 leave[right,shot15;]
+true 191 __method_precondition_m4_serve_shot_4_precondition[cocktail4,ingredient4,ingredient1;]
+true 219 __method_precondition_m5_do_clean_shot_5_precondition[shot7;]
+true 373 nop[;]
+true 68 grasp[right,shaker1;]
+true 417 shake[cocktail4,ingredient4,ingredient1,shaker1,right,left;]
+true 150 pour-shaker-to-shot[cocktail4,shot7,right,shaker1,l2,l1;]
+true 272 empty-shaker[right,shaker1,cocktail4,l1,l0;]
+true 375 clean-shaker[right,left,shaker1;]
+true 390 leave[right,shaker1;]
+true 169 __method_precondition_m0_do_cocktail_in_shot1_0_precondition[shot8,right;]
+true 52 __method_precondition_m2_get_first_ingredient_2_precondition[cocktail2,ingredient4,shot15;]
+true 232 __method_precondition_m9_do_fill_shot_9_precondition[shot15,ingredient4,ingredient1,dispenser4;]
+true 129 grasp[right,shot15;]
+true 367 clean-shot[shot15,ingredient1,right,left;]
+true 196 fill-shot[shot15,ingredient4,right,left,dispenser4;]
+true 57 pour-shot-to-clean-shaker[shot15,ingredient4,shaker1,right,l0,l1;]
+true 96 clean-shot[shot15,ingredient4,right,left;]
+true 48 __method_precondition_m3_get_second_ingredient_3_precondition[cocktail2,ingredient3,right,shot15;]
+true 275 fill-shot[shot15,ingredient3,right,left,dispenser3;]
+true 423 pour-shot-to-used-shaker[shot15,ingredient3,shaker1,right,l1,l2;]
+true 401 leave[right,shot15;]
+true 4 __method_precondition_m4_serve_shot_4_precondition[cocktail2,ingredient4,ingredient3;]
+true 199 __method_precondition_m5_do_clean_shot_5_precondition[shot8;]
+true 127 nop[;]
+true 405 grasp[left,shaker1;]
+true 214 shake[cocktail2,ingredient4,ingredient3,shaker1,left,right;]
+true 231 pour-shaker-to-shot[cocktail2,shot8,left,shaker1,l2,l1;]
+true 168 empty-shaker[left,shaker1,cocktail2,l1,l0;]
+true 396 clean-shaker[left,right,shaker1;]
+true 149 leave[left,shaker1;]
+true 91 __method_precondition_m0_do_cocktail_in_shot1_0_precondition[shot9,right;]
+true 368 __method_precondition_m2_get_first_ingredient_2_precondition[cocktail1,ingredient3,shot15;]
+true 92 __method_precondition_m7_do_fill_shot_7_precondition[shot15,ingredient3,dispenser3;]
+true 384 grasp[right,shot15;]
+true 146 refill-shot[shot15,ingredient3,right,left,dispenser3;]
+true 351 pour-shot-to-clean-shaker[shot15,ingredient3,shaker1,right,l0,l1;]
+true 28 clean-shot[shot15,ingredient3,right,left;]
+true 233 __method_precondition_m3_get_second_ingredient_3_precondition[cocktail1,ingredient5,right,shot15;]
+true 399 fill-shot[shot15,ingredient5,right,left,dispenser5;]
+true 200 pour-shot-to-used-shaker[shot15,ingredient5,shaker1,right,l1,l2;]
+true 85 leave[right,shot15;]
+true 353 __method_precondition_m4_serve_shot_4_precondition[cocktail1,ingredient3,ingredient5;]
+true 158 __method_precondition_m5_do_clean_shot_5_precondition[shot9;]
+true 207 nop[;]
+true 89 grasp[right,shaker1;]
+true 58 shake[cocktail1,ingredient3,ingredient5,shaker1,right,left;]
+true 33 pour-shaker-to-shot[cocktail1,shot9,right,shaker1,l2,l1;]
+true 31 empty-shaker[right,shaker1,cocktail1,l1,l0;]
+true 316 clean-shaker[right,left,shaker1;]
+true 192 leave[right,shaker1;]
+true 20 __method_precondition_m0_do_cocktail_in_shot1_0_precondition[shot10,left;]
+true 10 __method_precondition_m2_get_first_ingredient_2_precondition[cocktail8,ingredient3,shot15;]
+true 381 __method_precondition_m9_do_fill_shot_9_precondition[shot15,ingredient3,ingredient5,dispenser3;]
+true 141 grasp[left,shot15;]
+true 310 clean-shot[shot15,ingredient5,left,right;]
+true 296 fill-shot[shot15,ingredient3,left,right,dispenser3;]
+true 74 pour-shot-to-clean-shaker[shot15,ingredient3,shaker1,left,l0,l1;]
+true 261 clean-shot[shot15,ingredient3,left,right;]
+true 13 __method_precondition_m3_get_second_ingredient_3_precondition[cocktail8,ingredient2,left,shot15;]
+true 16 fill-shot[shot15,ingredient2,left,right,dispenser2;]
+true 338 pour-shot-to-used-shaker[shot15,ingredient2,shaker1,left,l1,l2;]
+true 397 leave[left,shot15;]
+true 41 __method_precondition_m4_serve_shot_4_precondition[cocktail8,ingredient3,ingredient2;]
+true 315 __method_precondition_m5_do_clean_shot_5_precondition[shot10;]
+true 382 nop[;]
+true 64 grasp[left,shaker1;]
+true 225 shake[cocktail8,ingredient3,ingredient2,shaker1,left,right;]
+true 9 pour-shaker-to-shot[cocktail8,shot10,left,shaker1,l2,l1;]
+true 223 empty-shaker[left,shaker1,cocktail8,l1,l0;]
+true 187 clean-shaker[left,right,shaker1;]
+true 72 leave[left,shaker1;]
+true 155 __method_precondition_m0_do_cocktail_in_shot1_0_precondition[shot11,left;]
+true 322 __method_precondition_m2_get_first_ingredient_2_precondition[cocktail6,ingredient4,shot15;]
+true 45 __method_precondition_m9_do_fill_shot_9_precondition[shot15,ingredient4,ingredient2,dispenser4;]
+true 170 grasp[left,shot15;]
+true 228 clean-shot[shot15,ingredient2,left,right;]
+true 279 fill-shot[shot15,ingredient4,left,right,dispenser4;]
+true 61 pour-shot-to-clean-shaker[shot15,ingredient4,shaker1,left,l0,l1;]
+true 130 clean-shot[shot15,ingredient4,left,right;]
+true 415 __method_precondition_m3_get_second_ingredient_3_precondition[cocktail6,ingredient1,left,shot15;]
+true 256 fill-shot[shot15,ingredient1,left,right,dispenser1;]
+true 242 pour-shot-to-used-shaker[shot15,ingredient1,shaker1,left,l1,l2;]
+true 43 leave[left,shot15;]
+true 340 __method_precondition_m4_serve_shot_4_precondition[cocktail6,ingredient4,ingredient1;]
+true 123 __method_precondition_m5_do_clean_shot_5_precondition[shot11;]
+true 32 nop[;]
+true 55 grasp[left,shaker1;]
+true 400 shake[cocktail6,ingredient4,ingredient1,shaker1,left,right;]
+true 250 pour-shaker-to-shot[cocktail6,shot11,left,shaker1,l2,l1;]
+true 253 empty-shaker[left,shaker1,cocktail6,l1,l0;]
+true 240 clean-shaker[left,right,shaker1;]
+true 404 leave[left,shaker1;]
+true 122 __method_precondition_m0_do_cocktail_in_shot1_0_precondition[shot12,left;]
+true 94 __method_precondition_m2_get_first_ingredient_2_precondition[cocktail8,ingredient3,shot15;]
+true 174 __method_precondition_m9_do_fill_shot_9_precondition[shot15,ingredient3,ingredient1,dispenser3;]
+true 84 grasp[left,shot15;]
+true 341 clean-shot[shot15,ingredient1,left,right;]
+true 298 fill-shot[shot15,ingredient3,left,right,dispenser3;]
+true 427 pour-shot-to-clean-shaker[shot15,ingredient3,shaker1,left,l0,l1;]
+true 161 clean-shot[shot15,ingredient3,left,right;]
+true 276 __method_precondition_m3_get_second_ingredient_3_precondition[cocktail8,ingredient2,left,shot15;]
+true 245 fill-shot[shot15,ingredient2,left,right,dispenser2;]
+true 248 pour-shot-to-used-shaker[shot15,ingredient2,shaker1,left,l1,l2;]
+true 132 leave[left,shot15;]
+true 289 __method_precondition_m4_serve_shot_4_precondition[cocktail8,ingredient3,ingredient2;]
+true 133 __method_precondition_m5_do_clean_shot_5_precondition[shot12;]
+true 307 nop[;]
+true 299 grasp[left,shaker1;]
+true 359 shake[cocktail8,ingredient3,ingredient2,shaker1,left,right;]
+true 267 pour-shaker-to-shot[cocktail8,shot12,left,shaker1,l2,l1;]
+true 190 empty-shaker[left,shaker1,cocktail8,l1,l0;]
+true 416 clean-shaker[left,right,shaker1;]
+true 206 leave[left,shaker1;]
+true 137 __method_precondition_m0_do_cocktail_in_shot1_0_precondition[shot13,right;]
+true 429 __method_precondition_m2_get_first_ingredient_2_precondition[cocktail1,ingredient3,shot15;]
+true 0 __method_precondition_m9_do_fill_shot_9_precondition[shot15,ingredient3,ingredient2,dispenser3;]
+true 221 grasp[right,shot15;]
+true 332 clean-shot[shot15,ingredient2,right,left;]
+true 166 fill-shot[shot15,ingredient3,right,left,dispenser3;]
+true 412 pour-shot-to-clean-shaker[shot15,ingredient3,shaker1,right,l0,l1;]
+true 56 clean-shot[shot15,ingredient3,right,left;]
+true 388 __method_precondition_m3_get_second_ingredient_3_precondition[cocktail1,ingredient5,right,shot15;]
+true 313 fill-shot[shot15,ingredient5,right,left,dispenser5;]
+true 171 pour-shot-to-used-shaker[shot15,ingredient5,shaker1,right,l1,l2;]
+true 301 leave[right,shot15;]
+true 131 __method_precondition_m4_serve_shot_4_precondition[cocktail1,ingredient3,ingredient5;]
+true 49 __method_precondition_m5_do_clean_shot_5_precondition[shot13;]
+true 82 nop[;]
+true 292 grasp[left,shaker1;]
+true 185 shake[cocktail1,ingredient3,ingredient5,shaker1,left,right;]
+true 143 pour-shaker-to-shot[cocktail1,shot13,left,shaker1,l2,l1;]
+true 75 empty-shaker[left,shaker1,cocktail1,l1,l0;]
+true 87 clean-shaker[left,right,shaker1;]
+true 414 leave[left,shaker1;]
+true 189 __method_precondition_m0_do_cocktail_in_shot1_0_precondition[shot14,left;]
+true 425 __method_precondition_m2_get_first_ingredient_2_precondition[cocktail10,ingredient1,shot15;]
+true 34 __method_precondition_m9_do_fill_shot_9_precondition[shot15,ingredient1,ingredient5,dispenser1;]
+true 70 grasp[left,shot15;]
+true 162 clean-shot[shot15,ingredient5,left,right;]
+true 331 fill-shot[shot15,ingredient1,left,right,dispenser1;]
+true 326 pour-shot-to-clean-shaker[shot15,ingredient1,shaker1,left,l0,l1;]
+true 370 clean-shot[shot15,ingredient1,left,right;]
+true 283 __method_precondition_m3_get_second_ingredient_3_precondition[cocktail10,ingredient4,left,shot15;]
+true 59 fill-shot[shot15,ingredient4,left,right,dispenser4;]
+true 126 pour-shot-to-used-shaker[shot15,ingredient4,shaker1,left,l1,l2;]
+true 227 leave[left,shot15;]
+true 113 __method_precondition_m4_serve_shot_4_precondition[cocktail10,ingredient1,ingredient4;]
+true 372 __method_precondition_m5_do_clean_shot_5_precondition[shot14;]
+true 80 nop[;]
+true 348 grasp[right,shaker1;]
+true 167 shake[cocktail10,ingredient1,ingredient4,shaker1,right,left;]
+true 5 pour-shaker-to-shot[cocktail10,shot14,right,shaker1,l2,l1;]
+true 408 empty-shaker[right,shaker1,cocktail10,l1,l0;]
+true 115 clean-shaker[right,left,shaker1;]
+true 398 leave[right,shaker1;]
+ done.
+Panda says: SOLUTION
+============ global ============
+randomseed     = 42
+peak memory    = 588689040
+planner result = SOLUTION
+============ properties ============
+acyclic                  = true
+mostly acyclic           = true
+regular                  = false
+tail recursive           = true
+totally ordered          = true
+last task in all methods = true
+============ problem ============
+number of constants                  = 0
+number of predicates                 = 390
+number of actions                    = 3805
+number of abstract actions           = 991
+number of primitive actions          = 2814
+number of methods                    = 4689
+number of primitive shop actions     = 1101
+number of primitive non-shop actions = 1713
+size of largest method               = 14
+average method size                  = 3
+============ sat ============
+plan length                     = -1
+number of variables             = 260636
+number of clauses               = 1780588
+average size of clauses         = 2.373197505543113
+number of assert                = 171
+number of horn                  = 1569482
+K offset                        = 0
+K chosen value                  = 4
+state formula                   = 1442988
+method children clauses         = 0
+number of paths                 = 294
+maximum plan length             = 294
+number of decomposition clauses = 337600
+number of ordering clauses      = 0
+number of state clauses         = 1442988
+solved                          = true
+timeout                         = false
+
+----------------- TIMINGS -----------------
+============ total ============
+total = 19695
+============ parsing ============
+total                         = 1118
+file parser                   = 635
+sort expansion                = 207
+closed world assumption       = 135
+inherit preconditions         = 0
+shop methods                  = 26
+eliminate identical variables = 41
+strip domain of hybridity     = 1
+flatten formula               = 72
+============ preprocessing ============
+total                                      = 6628
+compile negative preconditions             = 32
+compile unit methods                       = 0
+split parameter                            = 96
+expand choiceless abstract tasks           = 595
+compile methods with identical tasks       = 30
+removing unnecessary predicates            = 1075
+lifted reachabiltiy analysis               = 58
+grounded planning graph analysis           = 1862
+grounded task decomposition graph analysis = 2096
+grounding                                  = 738
+create artificial top task                 = 17
+============ search preparation ============
+compute state invariants = 3016
+============ sat ============
+total                                        = 8388
+generate formula                             = 6643
+generate path decomposition tree             = 457
+normalise path decomposition tree            = 96
+sog optimisation                             = 86
+translate path decomposition tree to clauses = 889
+generate state formula                       = 6535
+generate state invariant formula             = 739
+transform to DIMACS                          = 559
+SAT solver                                   = 880
+SAT solver for K=0004                        = 880
+
+#1 "40 sat:90:solved"="true";"30 problem:05:number of primitive actions"="2814";"30 problem:01:number of constants"="0";"30 problem:04:number of abstract actions"="991";"02 properties:04:tail recursive"="true";"00 global:80:peak memory"="588689040";"40 sat:20:state formula"="1442988";"40 sat:01:number of variables"="260636";"40 sat:14:K offset"="0";"40 sat:30:number of paths"="294";"40 sat:00:plan length"="-1";"40 sat:50:number of ordering clauses"="0";"02 properties:02:mostly acyclic"="true";"30 problem:06:number of methods"="4689";"30 problem:07:number of primitive shop actions"="1101";"02 properties:05:totally ordered"="true";"02 properties:06:last task in all methods"="true";"30 problem:03:number of actions"="3805";"30 problem:08:number of primitive non-shop actions"="1713";"30 problem:02:number of predicates"="390";"40 sat:03:number of horn"="1569482";"40 sat:15:K chosen value"="4";"30 problem:10:average method size"="3";"02 properties:03:regular"="false";"30 problem:09:size of largest method"="14";"40 sat:03:average size of clauses"="2.373197505543113";"40 sat:02:number of clauses"="1780588";"40 sat:50:number of state clauses"="1442988";"40 sat:03:number of assert"="171";"40 sat:22:method children clauses"="0";"00 global:90:planner result"="SOLUTION";"02 properties:01:acyclic"="true";"40 sat:31:maximum plan length"="294";"40 sat:50:number of decomposition clauses"="337600";"00 global:02:randomseed"="42";"40 sat:91:timeout"="false";"01 parsing:01:file parser"="635";"01 parsing:08:flatten formula"="72";"40 sat:41:SAT solver for K=0004"="880";"40 sat:00:total"="8388";"40 sat:16:generate state formula"="6535";"40 sat:20:transform to DIMACS"="559";"40 sat:11:generate path decomposition tree"="457";"02 preprocessing:07:compile methods with identical tasks"="30";"01 parsing:07:strip domain of hybridity"="1";"02 preprocessing:08:removing unnecessary predicates"="1075";"01 parsing:03:closed world assumption"="135";"02 preprocessing:11:lifted reachabiltiy analysis"="58";"01 parsing:02:sort expansion"="207";"40 sat:12:normalise path decomposition tree"="96";"40 sat:40:SAT solver"="880";"01 parsing:00:total"="1118";"40 sat:10:generate formula"="6643";"01 parsing:04:inherit preconditions"="0";"02 preprocessing:01:compile negative preconditions"="32";"00 total:00:total"="19695";"40 sat:13:sog optimisation"="86";"02 preprocessing:12:grounded planning graph analysis"="1862";"02 preprocessing:02:compile unit methods"="0";"02 preprocessing:23:grounded task decomposition graph analysis"="2096";"02 preprocessing:04:split parameter"="96";"01 parsing:05:shop methods"="26";"10 search preparation:02:compute state invariants"="3016";"01 parsing:06:eliminate identical variables"="41";"40 sat:15:translate path decomposition tree to clauses"="889";"02 preprocessing:05:expand choiceless abstract tasks"="595";"40 sat:17:generate state invariant formula"="739";"02 preprocessing:00:total"="6628";"02 preprocessing:99:create artificial top task"="17";"02 preprocessing:84:grounding"="738"
+#!verify __method_precondition_m0_do_cocktail_in_shot1_0_precondition[shot1,left];__method_precondition_m2_get_first_ingredient_2_precondition[cocktail3,ingredient5,shot15];__method_precondition_m8_do_fill_shot_8_precondition[shot15,dispenser5,ingredient5];grasp[left,shot15];fill-shot[shot15,ingredient5,left,right,dispenser5];pour-shot-to-clean-shaker[shot15,ingredient5,shaker1,left,l0,l1];clean-shot[shot15,ingredient5,left,right];__method_precondition_m3_get_second_ingredient_3_precondition[cocktail3,ingredient4,left,shot15];fill-shot[shot15,ingredient4,left,right,dispenser4];pour-shot-to-used-shaker[shot15,ingredient4,shaker1,left,l1,l2];leave[left,shot15];__method_precondition_m4_serve_shot_4_precondition[cocktail3,ingredient5,ingredient4];__method_precondition_m5_do_clean_shot_5_precondition[shot1];nop[];grasp[left,shaker1];shake[cocktail3,ingredient5,ingredient4,shaker1,left,right];pour-shaker-to-shot[cocktail3,shot1,left,shaker1,l2,l1];empty-shaker[left,shaker1,cocktail3,l1,l0];clean-shaker[left,right,shaker1];leave[left,shaker1];__method_precondition_m0_do_cocktail_in_shot1_0_precondition[shot2,left];__method_precondition_m2_get_first_ingredient_2_precondition[cocktail10,ingredient1,shot15];__method_precondition_m9_do_fill_shot_9_precondition[shot15,ingredient1,ingredient4,dispenser1];grasp[left,shot15];clean-shot[shot15,ingredient4,left,right];fill-shot[shot15,ingredient1,left,right,dispenser1];pour-shot-to-clean-shaker[shot15,ingredient1,shaker1,left,l0,l1];clean-shot[shot15,ingredient1,left,right];__method_precondition_m3_get_second_ingredient_3_precondition[cocktail10,ingredient4,left,shot15];fill-shot[shot15,ingredient4,left,right,dispenser4];pour-shot-to-used-shaker[shot15,ingredient4,shaker1,left,l1,l2];leave[left,shot15];__method_precondition_m4_serve_shot_4_precondition[cocktail10,ingredient1,ingredient4];__method_precondition_m5_do_clean_shot_5_precondition[shot2];nop[];grasp[left,shaker1];shake[cocktail10,ingredient1,ingredient4,shaker1,left,right];pour-shaker-to-shot[cocktail10,shot2,left,shaker1,l2,l1];empty-shaker[left,shaker1,cocktail10,l1,l0];clean-shaker[left,right,shaker1];leave[left,shaker1];__method_precondition_m0_do_cocktail_in_shot1_0_precondition[shot3,left];__method_precondition_m2_get_first_ingredient_2_precondition[cocktail11,ingredient2,shot15];__method_precondition_m9_do_fill_shot_9_precondition[shot15,ingredient2,ingredient4,dispenser2];grasp[left,shot15];clean-shot[shot15,ingredient4,left,right];fill-shot[shot15,ingredient2,left,right,dispenser2];pour-shot-to-clean-shaker[shot15,ingredient2,shaker1,left,l0,l1];clean-shot[shot15,ingredient2,left,right];__method_precondition_m3_get_second_ingredient_3_precondition[cocktail11,ingredient3,left,shot15];fill-shot[shot15,ingredient3,left,right,dispenser3];pour-shot-to-used-shaker[shot15,ingredient3,shaker1,left,l1,l2];leave[left,shot15];__method_precondition_m4_serve_shot_4_precondition[cocktail11,ingredient2,ingredient3];__method_precondition_m5_do_clean_shot_5_precondition[shot3];nop[];grasp[left,shaker1];shake[cocktail11,ingredient2,ingredient3,shaker1,left,right];pour-shaker-to-shot[cocktail11,shot3,left,shaker1,l2,l1];empty-shaker[left,shaker1,cocktail11,l1,l0];clean-shaker[left,right,shaker1];leave[left,shaker1];__method_precondition_m0_do_cocktail_in_shot1_0_precondition[shot4,left];__method_precondition_m2_get_first_ingredient_2_precondition[cocktail7,ingredient1,shot15];__method_precondition_m9_do_fill_shot_9_precondition[shot15,ingredient1,ingredient3,dispenser1];grasp[left,shot15];clean-shot[shot15,ingredient3,left,right];fill-shot[shot15,ingredient1,left,right,dispenser1];pour-shot-to-clean-shaker[shot15,ingredient1,shaker1,left,l0,l1];clean-shot[shot15,ingredient1,left,right];__method_precondition_m3_get_second_ingredient_3_precondition[cocktail7,ingredient2,left,shot15];fill-shot[shot15,ingredient2,left,right,dispenser2];pour-shot-to-used-shaker[shot15,ingredient2,shaker1,left,l1,l2];leave[left,shot15];__method_precondition_m4_serve_shot_4_precondition[cocktail7,ingredient1,ingredient2];__method_precondition_m5_do_clean_shot_5_precondition[shot4];nop[];grasp[right,shaker1];shake[cocktail7,ingredient1,ingredient2,shaker1,right,left];pour-shaker-to-shot[cocktail7,shot4,right,shaker1,l2,l1];empty-shaker[right,shaker1,cocktail7,l1,l0];clean-shaker[right,left,shaker1];leave[right,shaker1];__method_precondition_m0_do_cocktail_in_shot1_0_precondition[shot5,left];__method_precondition_m2_get_first_ingredient_2_precondition[cocktail9,ingredient5,shot15];__method_precondition_m9_do_fill_shot_9_precondition[shot15,ingredient5,ingredient2,dispenser5];grasp[left,shot15];clean-shot[shot15,ingredient2,left,right];fill-shot[shot15,ingredient5,left,right,dispenser5];pour-shot-to-clean-shaker[shot15,ingredient5,shaker1,left,l0,l1];clean-shot[shot15,ingredient5,left,right];__method_precondition_m3_get_second_ingredient_3_precondition[cocktail9,ingredient2,left,shot15];fill-shot[shot15,ingredient2,left,right,dispenser2];pour-shot-to-used-shaker[shot15,ingredient2,shaker1,left,l1,l2];leave[left,shot15];__method_precondition_m4_serve_shot_4_precondition[cocktail9,ingredient5,ingredient2];__method_precondition_m5_do_clean_shot_5_precondition[shot5];nop[];grasp[left,shaker1];shake[cocktail9,ingredient5,ingredient2,shaker1,left,right];pour-shaker-to-shot[cocktail9,shot5,left,shaker1,l2,l1];empty-shaker[left,shaker1,cocktail9,l1,l0];clean-shaker[left,right,shaker1];leave[left,shaker1];__method_precondition_m0_do_cocktail_in_shot1_0_precondition[shot6,right];__method_precondition_m2_get_first_ingredient_2_precondition[cocktail5,ingredient5,shot15];__method_precondition_m9_do_fill_shot_9_precondition[shot15,ingredient5,ingredient2,dispenser5];grasp[right,shot15];clean-shot[shot15,ingredient2,right,left];fill-shot[shot15,ingredient5,right,left,dispenser5];pour-shot-to-clean-shaker[shot15,ingredient5,shaker1,right,l0,l1];clean-shot[shot15,ingredient5,right,left];__method_precondition_m3_get_second_ingredient_3_precondition[cocktail5,ingredient1,right,shot15];fill-shot[shot15,ingredient1,right,left,dispenser1];pour-shot-to-used-shaker[shot15,ingredient1,shaker1,right,l1,l2];leave[right,shot15];__method_precondition_m4_serve_shot_4_precondition[cocktail5,ingredient5,ingredient1];__method_precondition_m5_do_clean_shot_5_precondition[shot6];nop[];grasp[left,shaker1];shake[cocktail5,ingredient5,ingredient1,shaker1,left,right];pour-shaker-to-shot[cocktail5,shot6,left,shaker1,l2,l1];empty-shaker[left,shaker1,cocktail5,l1,l0];clean-shaker[left,right,shaker1];leave[left,shaker1];__method_precondition_m0_do_cocktail_in_shot1_0_precondition[shot7,right];__method_precondition_m2_get_first_ingredient_2_precondition[cocktail4,ingredient4,shot15];__method_precondition_m9_do_fill_shot_9_precondition[shot15,ingredient4,ingredient1,dispenser4];grasp[right,shot15];clean-shot[shot15,ingredient1,right,left];fill-shot[shot15,ingredient4,right,left,dispenser4];pour-shot-to-clean-shaker[shot15,ingredient4,shaker1,right,l0,l1];clean-shot[shot15,ingredient4,right,left];__method_precondition_m3_get_second_ingredient_3_precondition[cocktail4,ingredient1,right,shot15];fill-shot[shot15,ingredient1,right,left,dispenser1];pour-shot-to-used-shaker[shot15,ingredient1,shaker1,right,l1,l2];leave[right,shot15];__method_precondition_m4_serve_shot_4_precondition[cocktail4,ingredient4,ingredient1];__method_precondition_m5_do_clean_shot_5_precondition[shot7];nop[];grasp[right,shaker1];shake[cocktail4,ingredient4,ingredient1,shaker1,right,left];pour-shaker-to-shot[cocktail4,shot7,right,shaker1,l2,l1];empty-shaker[right,shaker1,cocktail4,l1,l0];clean-shaker[right,left,shaker1];leave[right,shaker1];__method_precondition_m0_do_cocktail_in_shot1_0_precondition[shot8,right];__method_precondition_m2_get_first_ingredient_2_precondition[cocktail2,ingredient4,shot15];__method_precondition_m9_do_fill_shot_9_precondition[shot15,ingredient4,ingredient1,dispenser4];grasp[right,shot15];clean-shot[shot15,ingredient1,right,left];fill-shot[shot15,ingredient4,right,left,dispenser4];pour-shot-to-clean-shaker[shot15,ingredient4,shaker1,right,l0,l1];clean-shot[shot15,ingredient4,right,left];__method_precondition_m3_get_second_ingredient_3_precondition[cocktail2,ingredient3,right,shot15];fill-shot[shot15,ingredient3,right,left,dispenser3];pour-shot-to-used-shaker[shot15,ingredient3,shaker1,right,l1,l2];leave[right,shot15];__method_precondition_m4_serve_shot_4_precondition[cocktail2,ingredient4,ingredient3];__method_precondition_m5_do_clean_shot_5_precondition[shot8];nop[];grasp[left,shaker1];shake[cocktail2,ingredient4,ingredient3,shaker1,left,right];pour-shaker-to-shot[cocktail2,shot8,left,shaker1,l2,l1];empty-shaker[left,shaker1,cocktail2,l1,l0];clean-shaker[left,right,shaker1];leave[left,shaker1];__method_precondition_m0_do_cocktail_in_shot1_0_precondition[shot9,right];__method_precondition_m2_get_first_ingredient_2_precondition[cocktail1,ingredient3,shot15];__method_precondition_m7_do_fill_shot_7_precondition[shot15,ingredient3,dispenser3];grasp[right,shot15];refill-shot[shot15,ingredient3,right,left,dispenser3];pour-shot-to-clean-shaker[shot15,ingredient3,shaker1,right,l0,l1];clean-shot[shot15,ingredient3,right,left];__method_precondition_m3_get_second_ingredient_3_precondition[cocktail1,ingredient5,right,shot15];fill-shot[shot15,ingredient5,right,left,dispenser5];pour-shot-to-used-shaker[shot15,ingredient5,shaker1,right,l1,l2];leave[right,shot15];__method_precondition_m4_serve_shot_4_precondition[cocktail1,ingredient3,ingredient5];__method_precondition_m5_do_clean_shot_5_precondition[shot9];nop[];grasp[right,shaker1];shake[cocktail1,ingredient3,ingredient5,shaker1,right,left];pour-shaker-to-shot[cocktail1,shot9,right,shaker1,l2,l1];empty-shaker[right,shaker1,cocktail1,l1,l0];clean-shaker[right,left,shaker1];leave[right,shaker1];__method_precondition_m0_do_cocktail_in_shot1_0_precondition[shot10,left];__method_precondition_m2_get_first_ingredient_2_precondition[cocktail8,ingredient3,shot15];__method_precondition_m9_do_fill_shot_9_precondition[shot15,ingredient3,ingredient5,dispenser3];grasp[left,shot15];clean-shot[shot15,ingredient5,left,right];fill-shot[shot15,ingredient3,left,right,dispenser3];pour-shot-to-clean-shaker[shot15,ingredient3,shaker1,left,l0,l1];clean-shot[shot15,ingredient3,left,right];__method_precondition_m3_get_second_ingredient_3_precondition[cocktail8,ingredient2,left,shot15];fill-shot[shot15,ingredient2,left,right,dispenser2];pour-shot-to-used-shaker[shot15,ingredient2,shaker1,left,l1,l2];leave[left,shot15];__method_precondition_m4_serve_shot_4_precondition[cocktail8,ingredient3,ingredient2];__method_precondition_m5_do_clean_shot_5_precondition[shot10];nop[];grasp[left,shaker1];shake[cocktail8,ingredient3,ingredient2,shaker1,left,right];pour-shaker-to-shot[cocktail8,shot10,left,shaker1,l2,l1];empty-shaker[left,shaker1,cocktail8,l1,l0];clean-shaker[left,right,shaker1];leave[left,shaker1];__method_precondition_m0_do_cocktail_in_shot1_0_precondition[shot11,left];__method_precondition_m2_get_first_ingredient_2_precondition[cocktail6,ingredient4,shot15];__method_precondition_m9_do_fill_shot_9_precondition[shot15,ingredient4,ingredient2,dispenser4];grasp[left,shot15];clean-shot[shot15,ingredient2,left,right];fill-shot[shot15,ingredient4,left,right,dispenser4];pour-shot-to-clean-shaker[shot15,ingredient4,shaker1,left,l0,l1];clean-shot[shot15,ingredient4,left,right];__method_precondition_m3_get_second_ingredient_3_precondition[cocktail6,ingredient1,left,shot15];fill-shot[shot15,ingredient1,left,right,dispenser1];pour-shot-to-used-shaker[shot15,ingredient1,shaker1,left,l1,l2];leave[left,shot15];__method_precondition_m4_serve_shot_4_precondition[cocktail6,ingredient4,ingredient1];__method_precondition_m5_do_clean_shot_5_precondition[shot11];nop[];grasp[left,shaker1];shake[cocktail6,ingredient4,ingredient1,shaker1,left,right];pour-shaker-to-shot[cocktail6,shot11,left,shaker1,l2,l1];empty-shaker[left,shaker1,cocktail6,l1,l0];clean-shaker[left,right,shaker1];leave[left,shaker1];__method_precondition_m0_do_cocktail_in_shot1_0_precondition[shot12,left];__method_precondition_m2_get_first_ingredient_2_precondition[cocktail8,ingredient3,shot15];__method_precondition_m9_do_fill_shot_9_precondition[shot15,ingredient3,ingredient1,dispenser3];grasp[left,shot15];clean-shot[shot15,ingredient1,left,right];fill-shot[shot15,ingredient3,left,right,dispenser3];pour-shot-to-clean-shaker[shot15,ingredient3,shaker1,left,l0,l1];clean-shot[shot15,ingredient3,left,right];__method_precondition_m3_get_second_ingredient_3_precondition[cocktail8,ingredient2,left,shot15];fill-shot[shot15,ingredient2,left,right,dispenser2];pour-shot-to-used-shaker[shot15,ingredient2,shaker1,left,l1,l2];leave[left,shot15];__method_precondition_m4_serve_shot_4_precondition[cocktail8,ingredient3,ingredient2];__method_precondition_m5_do_clean_shot_5_precondition[shot12];nop[];grasp[left,shaker1];shake[cocktail8,ingredient3,ingredient2,shaker1,left,right];pour-shaker-to-shot[cocktail8,shot12,left,shaker1,l2,l1];empty-shaker[left,shaker1,cocktail8,l1,l0];clean-shaker[left,right,shaker1];leave[left,shaker1];__method_precondition_m0_do_cocktail_in_shot1_0_precondition[shot13,right];__method_precondition_m2_get_first_ingredient_2_precondition[cocktail1,ingredient3,shot15];__method_precondition_m9_do_fill_shot_9_precondition[shot15,ingredient3,ingredient2,dispenser3];grasp[right,shot15];clean-shot[shot15,ingredient2,right,left];fill-shot[shot15,ingredient3,right,left,dispenser3];pour-shot-to-clean-shaker[shot15,ingredient3,shaker1,right,l0,l1];clean-shot[shot15,ingredient3,right,left];__method_precondition_m3_get_second_ingredient_3_precondition[cocktail1,ingredient5,right,shot15];fill-shot[shot15,ingredient5,right,left,dispenser5];pour-shot-to-used-shaker[shot15,ingredient5,shaker1,right,l1,l2];leave[right,shot15];__method_precondition_m4_serve_shot_4_precondition[cocktail1,ingredient3,ingredient5];__method_precondition_m5_do_clean_shot_5_precondition[shot13];nop[];grasp[left,shaker1];shake[cocktail1,ingredient3,ingredient5,shaker1,left,right];pour-shaker-to-shot[cocktail1,shot13,left,shaker1,l2,l1];empty-shaker[left,shaker1,cocktail1,l1,l0];clean-shaker[left,right,shaker1];leave[left,shaker1];__method_precondition_m0_do_cocktail_in_shot1_0_precondition[shot14,left];__method_precondition_m2_get_first_ingredient_2_precondition[cocktail10,ingredient1,shot15];__method_precondition_m9_do_fill_shot_9_precondition[shot15,ingredient1,ingredient5,dispenser1];grasp[left,shot15];clean-shot[shot15,ingredient5,left,right];fill-shot[shot15,ingredient1,left,right,dispenser1];pour-shot-to-clean-shaker[shot15,ingredient1,shaker1,left,l0,l1];clean-shot[shot15,ingredient1,left,right];__method_precondition_m3_get_second_ingredient_3_precondition[cocktail10,ingredient4,left,shot15];fill-shot[shot15,ingredient4,left,right,dispenser4];pour-shot-to-used-shaker[shot15,ingredient4,shaker1,left,l1,l2];leave[left,shot15];__method_precondition_m4_serve_shot_4_precondition[cocktail10,ingredient1,ingredient4];__method_precondition_m5_do_clean_shot_5_precondition[shot14];nop[];grasp[right,shaker1];shake[cocktail10,ingredient1,ingredient4,shaker1,right,left];pour-shaker-to-shot[cocktail10,shot14,right,shaker1,l2,l1];empty-shaker[right,shaker1,cocktail10,l1,l0];clean-shaker[right,left,shaker1];leave[right,shaker1]
+==>
+0 __method_precondition_m0_do_cocktail_in_shot1_0_precondition shot1 left 
+1 __method_precondition_m2_get_first_ingredient_2_precondition cocktail3 ingredient5 shot15 
+2 __method_precondition_m8_do_fill_shot_8_precondition shot15 dispenser5 ingredient5 
+3 grasp left shot15 
+4 fill-shot shot15 ingredient5 left right dispenser5 
+5 pour-shot-to-clean-shaker shot15 ingredient5 shaker1 left l0 l1 
+6 clean-shot shot15 ingredient5 left right 
+7 __method_precondition_m3_get_second_ingredient_3_precondition cocktail3 ingredient4 left shot15 
+8 fill-shot shot15 ingredient4 left right dispenser4 
+9 pour-shot-to-used-shaker shot15 ingredient4 shaker1 left l1 l2 
+10 leave left shot15 
+11 __method_precondition_m4_serve_shot_4_precondition cocktail3 ingredient5 ingredient4 
+12 __method_precondition_m5_do_clean_shot_5_precondition shot1 
+13 nop  
+14 grasp left shaker1 
+15 shake cocktail3 ingredient5 ingredient4 shaker1 left right 
+16 pour-shaker-to-shot cocktail3 shot1 left shaker1 l2 l1 
+17 empty-shaker left shaker1 cocktail3 l1 l0 
+18 clean-shaker left right shaker1 
+19 leave left shaker1 
+20 __method_precondition_m0_do_cocktail_in_shot1_0_precondition shot2 left 
+21 __method_precondition_m2_get_first_ingredient_2_precondition cocktail10 ingredient1 shot15 
+22 __method_precondition_m9_do_fill_shot_9_precondition shot15 ingredient1 ingredient4 dispenser1 
+23 grasp left shot15 
+24 clean-shot shot15 ingredient4 left right 
+25 fill-shot shot15 ingredient1 left right dispenser1 
+26 pour-shot-to-clean-shaker shot15 ingredient1 shaker1 left l0 l1 
+27 clean-shot shot15 ingredient1 left right 
+28 __method_precondition_m3_get_second_ingredient_3_precondition cocktail10 ingredient4 left shot15 
+29 fill-shot shot15 ingredient4 left right dispenser4 
+30 pour-shot-to-used-shaker shot15 ingredient4 shaker1 left l1 l2 
+31 leave left shot15 
+32 __method_precondition_m4_serve_shot_4_precondition cocktail10 ingredient1 ingredient4 
+33 __method_precondition_m5_do_clean_shot_5_precondition shot2 
+34 nop  
+35 grasp left shaker1 
+36 shake cocktail10 ingredient1 ingredient4 shaker1 left right 
+37 pour-shaker-to-shot cocktail10 shot2 left shaker1 l2 l1 
+38 empty-shaker left shaker1 cocktail10 l1 l0 
+39 clean-shaker left right shaker1 
+40 leave left shaker1 
+41 __method_precondition_m0_do_cocktail_in_shot1_0_precondition shot3 left 
+42 __method_precondition_m2_get_first_ingredient_2_precondition cocktail11 ingredient2 shot15 
+43 __method_precondition_m9_do_fill_shot_9_precondition shot15 ingredient2 ingredient4 dispenser2 
+44 grasp left shot15 
+45 clean-shot shot15 ingredient4 left right 
+46 fill-shot shot15 ingredient2 left right dispenser2 
+47 pour-shot-to-clean-shaker shot15 ingredient2 shaker1 left l0 l1 
+48 clean-shot shot15 ingredient2 left right 
+49 __method_precondition_m3_get_second_ingredient_3_precondition cocktail11 ingredient3 left shot15 
+50 fill-shot shot15 ingredient3 left right dispenser3 
+51 pour-shot-to-used-shaker shot15 ingredient3 shaker1 left l1 l2 
+52 leave left shot15 
+53 __method_precondition_m4_serve_shot_4_precondition cocktail11 ingredient2 ingredient3 
+54 __method_precondition_m5_do_clean_shot_5_precondition shot3 
+55 nop  
+56 grasp left shaker1 
+57 shake cocktail11 ingredient2 ingredient3 shaker1 left right 
+58 pour-shaker-to-shot cocktail11 shot3 left shaker1 l2 l1 
+59 empty-shaker left shaker1 cocktail11 l1 l0 
+60 clean-shaker left right shaker1 
+61 leave left shaker1 
+62 __method_precondition_m0_do_cocktail_in_shot1_0_precondition shot4 left 
+63 __method_precondition_m2_get_first_ingredient_2_precondition cocktail7 ingredient1 shot15 
+64 __method_precondition_m9_do_fill_shot_9_precondition shot15 ingredient1 ingredient3 dispenser1 
+65 grasp left shot15 
+66 clean-shot shot15 ingredient3 left right 
+67 fill-shot shot15 ingredient1 left right dispenser1 
+68 pour-shot-to-clean-shaker shot15 ingredient1 shaker1 left l0 l1 
+69 clean-shot shot15 ingredient1 left right 
+70 __method_precondition_m3_get_second_ingredient_3_precondition cocktail7 ingredient2 left shot15 
+71 fill-shot shot15 ingredient2 left right dispenser2 
+72 pour-shot-to-used-shaker shot15 ingredient2 shaker1 left l1 l2 
+73 leave left shot15 
+74 __method_precondition_m4_serve_shot_4_precondition cocktail7 ingredient1 ingredient2 
+75 __method_precondition_m5_do_clean_shot_5_precondition shot4 
+76 nop  
+77 grasp right shaker1 
+78 shake cocktail7 ingredient1 ingredient2 shaker1 right left 
+79 pour-shaker-to-shot cocktail7 shot4 right shaker1 l2 l1 
+80 empty-shaker right shaker1 cocktail7 l1 l0 
+81 clean-shaker right left shaker1 
+82 leave right shaker1 
+83 __method_precondition_m0_do_cocktail_in_shot1_0_precondition shot5 left 
+84 __method_precondition_m2_get_first_ingredient_2_precondition cocktail9 ingredient5 shot15 
+85 __method_precondition_m9_do_fill_shot_9_precondition shot15 ingredient5 ingredient2 dispenser5 
+86 grasp left shot15 
+87 clean-shot shot15 ingredient2 left right 
+88 fill-shot shot15 ingredient5 left right dispenser5 
+89 pour-shot-to-clean-shaker shot15 ingredient5 shaker1 left l0 l1 
+90 clean-shot shot15 ingredient5 left right 
+91 __method_precondition_m3_get_second_ingredient_3_precondition cocktail9 ingredient2 left shot15 
+92 fill-shot shot15 ingredient2 left right dispenser2 
+93 pour-shot-to-used-shaker shot15 ingredient2 shaker1 left l1 l2 
+94 leave left shot15 
+95 __method_precondition_m4_serve_shot_4_precondition cocktail9 ingredient5 ingredient2 
+96 __method_precondition_m5_do_clean_shot_5_precondition shot5 
+97 nop  
+98 grasp left shaker1 
+99 shake cocktail9 ingredient5 ingredient2 shaker1 left right 
+100 pour-shaker-to-shot cocktail9 shot5 left shaker1 l2 l1 
+101 empty-shaker left shaker1 cocktail9 l1 l0 
+102 clean-shaker left right shaker1 
+103 leave left shaker1 
+104 __method_precondition_m0_do_cocktail_in_shot1_0_precondition shot6 right 
+105 __method_precondition_m2_get_first_ingredient_2_precondition cocktail5 ingredient5 shot15 
+106 __method_precondition_m9_do_fill_shot_9_precondition shot15 ingredient5 ingredient2 dispenser5 
+107 grasp right shot15 
+108 clean-shot shot15 ingredient2 right left 
+109 fill-shot shot15 ingredient5 right left dispenser5 
+110 pour-shot-to-clean-shaker shot15 ingredient5 shaker1 right l0 l1 
+111 clean-shot shot15 ingredient5 right left 
+112 __method_precondition_m3_get_second_ingredient_3_precondition cocktail5 ingredient1 right shot15 
+113 fill-shot shot15 ingredient1 right left dispenser1 
+114 pour-shot-to-used-shaker shot15 ingredient1 shaker1 right l1 l2 
+115 leave right shot15 
+116 __method_precondition_m4_serve_shot_4_precondition cocktail5 ingredient5 ingredient1 
+117 __method_precondition_m5_do_clean_shot_5_precondition shot6 
+118 nop  
+119 grasp left shaker1 
+120 shake cocktail5 ingredient5 ingredient1 shaker1 left right 
+121 pour-shaker-to-shot cocktail5 shot6 left shaker1 l2 l1 
+122 empty-shaker left shaker1 cocktail5 l1 l0 
+123 clean-shaker left right shaker1 
+124 leave left shaker1 
+125 __method_precondition_m0_do_cocktail_in_shot1_0_precondition shot7 right 
+126 __method_precondition_m2_get_first_ingredient_2_precondition cocktail4 ingredient4 shot15 
+127 __method_precondition_m9_do_fill_shot_9_precondition shot15 ingredient4 ingredient1 dispenser4 
+128 grasp right shot15 
+129 clean-shot shot15 ingredient1 right left 
+130 fill-shot shot15 ingredient4 right left dispenser4 
+131 pour-shot-to-clean-shaker shot15 ingredient4 shaker1 right l0 l1 
+132 clean-shot shot15 ingredient4 right left 
+133 __method_precondition_m3_get_second_ingredient_3_precondition cocktail4 ingredient1 right shot15 
+134 fill-shot shot15 ingredient1 right left dispenser1 
+135 pour-shot-to-used-shaker shot15 ingredient1 shaker1 right l1 l2 
+136 leave right shot15 
+137 __method_precondition_m4_serve_shot_4_precondition cocktail4 ingredient4 ingredient1 
+138 __method_precondition_m5_do_clean_shot_5_precondition shot7 
+139 nop  
+140 grasp right shaker1 
+141 shake cocktail4 ingredient4 ingredient1 shaker1 right left 
+142 pour-shaker-to-shot cocktail4 shot7 right shaker1 l2 l1 
+143 empty-shaker right shaker1 cocktail4 l1 l0 
+144 clean-shaker right left shaker1 
+145 leave right shaker1 
+146 __method_precondition_m0_do_cocktail_in_shot1_0_precondition shot8 right 
+147 __method_precondition_m2_get_first_ingredient_2_precondition cocktail2 ingredient4 shot15 
+148 __method_precondition_m9_do_fill_shot_9_precondition shot15 ingredient4 ingredient1 dispenser4 
+149 grasp right shot15 
+150 clean-shot shot15 ingredient1 right left 
+151 fill-shot shot15 ingredient4 right left dispenser4 
+152 pour-shot-to-clean-shaker shot15 ingredient4 shaker1 right l0 l1 
+153 clean-shot shot15 ingredient4 right left 
+154 __method_precondition_m3_get_second_ingredient_3_precondition cocktail2 ingredient3 right shot15 
+155 fill-shot shot15 ingredient3 right left dispenser3 
+156 pour-shot-to-used-shaker shot15 ingredient3 shaker1 right l1 l2 
+157 leave right shot15 
+158 __method_precondition_m4_serve_shot_4_precondition cocktail2 ingredient4 ingredient3 
+159 __method_precondition_m5_do_clean_shot_5_precondition shot8 
+160 nop  
+161 grasp left shaker1 
+162 shake cocktail2 ingredient4 ingredient3 shaker1 left right 
+163 pour-shaker-to-shot cocktail2 shot8 left shaker1 l2 l1 
+164 empty-shaker left shaker1 cocktail2 l1 l0 
+165 clean-shaker left right shaker1 
+166 leave left shaker1 
+167 __method_precondition_m0_do_cocktail_in_shot1_0_precondition shot9 right 
+168 __method_precondition_m2_get_first_ingredient_2_precondition cocktail1 ingredient3 shot15 
+169 __method_precondition_m7_do_fill_shot_7_precondition shot15 ingredient3 dispenser3 
+170 grasp right shot15 
+171 refill-shot shot15 ingredient3 right left dispenser3 
+172 pour-shot-to-clean-shaker shot15 ingredient3 shaker1 right l0 l1 
+173 clean-shot shot15 ingredient3 right left 
+174 __method_precondition_m3_get_second_ingredient_3_precondition cocktail1 ingredient5 right shot15 
+175 fill-shot shot15 ingredient5 right left dispenser5 
+176 pour-shot-to-used-shaker shot15 ingredient5 shaker1 right l1 l2 
+177 leave right shot15 
+178 __method_precondition_m4_serve_shot_4_precondition cocktail1 ingredient3 ingredient5 
+179 __method_precondition_m5_do_clean_shot_5_precondition shot9 
+180 nop  
+181 grasp right shaker1 
+182 shake cocktail1 ingredient3 ingredient5 shaker1 right left 
+183 pour-shaker-to-shot cocktail1 shot9 right shaker1 l2 l1 
+184 empty-shaker right shaker1 cocktail1 l1 l0 
+185 clean-shaker right left shaker1 
+186 leave right shaker1 
+187 __method_precondition_m0_do_cocktail_in_shot1_0_precondition shot10 left 
+188 __method_precondition_m2_get_first_ingredient_2_precondition cocktail8 ingredient3 shot15 
+189 __method_precondition_m9_do_fill_shot_9_precondition shot15 ingredient3 ingredient5 dispenser3 
+190 grasp left shot15 
+191 clean-shot shot15 ingredient5 left right 
+192 fill-shot shot15 ingredient3 left right dispenser3 
+193 pour-shot-to-clean-shaker shot15 ingredient3 shaker1 left l0 l1 
+194 clean-shot shot15 ingredient3 left right 
+195 __method_precondition_m3_get_second_ingredient_3_precondition cocktail8 ingredient2 left shot15 
+196 fill-shot shot15 ingredient2 left right dispenser2 
+197 pour-shot-to-used-shaker shot15 ingredient2 shaker1 left l1 l2 
+198 leave left shot15 
+199 __method_precondition_m4_serve_shot_4_precondition cocktail8 ingredient3 ingredient2 
+200 __method_precondition_m5_do_clean_shot_5_precondition shot10 
+201 nop  
+202 grasp left shaker1 
+203 shake cocktail8 ingredient3 ingredient2 shaker1 left right 
+204 pour-shaker-to-shot cocktail8 shot10 left shaker1 l2 l1 
+205 empty-shaker left shaker1 cocktail8 l1 l0 
+206 clean-shaker left right shaker1 
+207 leave left shaker1 
+208 __method_precondition_m0_do_cocktail_in_shot1_0_precondition shot11 left 
+209 __method_precondition_m2_get_first_ingredient_2_precondition cocktail6 ingredient4 shot15 
+210 __method_precondition_m9_do_fill_shot_9_precondition shot15 ingredient4 ingredient2 dispenser4 
+211 grasp left shot15 
+212 clean-shot shot15 ingredient2 left right 
+213 fill-shot shot15 ingredient4 left right dispenser4 
+214 pour-shot-to-clean-shaker shot15 ingredient4 shaker1 left l0 l1 
+215 clean-shot shot15 ingredient4 left right 
+216 __method_precondition_m3_get_second_ingredient_3_precondition cocktail6 ingredient1 left shot15 
+217 fill-shot shot15 ingredient1 left right dispenser1 
+218 pour-shot-to-used-shaker shot15 ingredient1 shaker1 left l1 l2 
+219 leave left shot15 
+220 __method_precondition_m4_serve_shot_4_precondition cocktail6 ingredient4 ingredient1 
+221 __method_precondition_m5_do_clean_shot_5_precondition shot11 
+222 nop  
+223 grasp left shaker1 
+224 shake cocktail6 ingredient4 ingredient1 shaker1 left right 
+225 pour-shaker-to-shot cocktail6 shot11 left shaker1 l2 l1 
+226 empty-shaker left shaker1 cocktail6 l1 l0 
+227 clean-shaker left right shaker1 
+228 leave left shaker1 
+229 __method_precondition_m0_do_cocktail_in_shot1_0_precondition shot12 left 
+230 __method_precondition_m2_get_first_ingredient_2_precondition cocktail8 ingredient3 shot15 
+231 __method_precondition_m9_do_fill_shot_9_precondition shot15 ingredient3 ingredient1 dispenser3 
+232 grasp left shot15 
+233 clean-shot shot15 ingredient1 left right 
+234 fill-shot shot15 ingredient3 left right dispenser3 
+235 pour-shot-to-clean-shaker shot15 ingredient3 shaker1 left l0 l1 
+236 clean-shot shot15 ingredient3 left right 
+237 __method_precondition_m3_get_second_ingredient_3_precondition cocktail8 ingredient2 left shot15 
+238 fill-shot shot15 ingredient2 left right dispenser2 
+239 pour-shot-to-used-shaker shot15 ingredient2 shaker1 left l1 l2 
+240 leave left shot15 
+241 __method_precondition_m4_serve_shot_4_precondition cocktail8 ingredient3 ingredient2 
+242 __method_precondition_m5_do_clean_shot_5_precondition shot12 
+243 nop  
+244 grasp left shaker1 
+245 shake cocktail8 ingredient3 ingredient2 shaker1 left right 
+246 pour-shaker-to-shot cocktail8 shot12 left shaker1 l2 l1 
+247 empty-shaker left shaker1 cocktail8 l1 l0 
+248 clean-shaker left right shaker1 
+249 leave left shaker1 
+250 __method_precondition_m0_do_cocktail_in_shot1_0_precondition shot13 right 
+251 __method_precondition_m2_get_first_ingredient_2_precondition cocktail1 ingredient3 shot15 
+252 __method_precondition_m9_do_fill_shot_9_precondition shot15 ingredient3 ingredient2 dispenser3 
+253 grasp right shot15 
+254 clean-shot shot15 ingredient2 right left 
+255 fill-shot shot15 ingredient3 right left dispenser3 
+256 pour-shot-to-clean-shaker shot15 ingredient3 shaker1 right l0 l1 
+257 clean-shot shot15 ingredient3 right left 
+258 __method_precondition_m3_get_second_ingredient_3_precondition cocktail1 ingredient5 right shot15 
+259 fill-shot shot15 ingredient5 right left dispenser5 
+260 pour-shot-to-used-shaker shot15 ingredient5 shaker1 right l1 l2 
+261 leave right shot15 
+262 __method_precondition_m4_serve_shot_4_precondition cocktail1 ingredient3 ingredient5 
+263 __method_precondition_m5_do_clean_shot_5_precondition shot13 
+264 nop  
+265 grasp left shaker1 
+266 shake cocktail1 ingredient3 ingredient5 shaker1 left right 
+267 pour-shaker-to-shot cocktail1 shot13 left shaker1 l2 l1 
+268 empty-shaker left shaker1 cocktail1 l1 l0 
+269 clean-shaker left right shaker1 
+270 leave left shaker1 
+271 __method_precondition_m0_do_cocktail_in_shot1_0_precondition shot14 left 
+272 __method_precondition_m2_get_first_ingredient_2_precondition cocktail10 ingredient1 shot15 
+273 __method_precondition_m9_do_fill_shot_9_precondition shot15 ingredient1 ingredient5 dispenser1 
+274 grasp left shot15 
+275 clean-shot shot15 ingredient5 left right 
+276 fill-shot shot15 ingredient1 left right dispenser1 
+277 pour-shot-to-clean-shaker shot15 ingredient1 shaker1 left l0 l1 
+278 clean-shot shot15 ingredient1 left right 
+279 __method_precondition_m3_get_second_ingredient_3_precondition cocktail10 ingredient4 left shot15 
+280 fill-shot shot15 ingredient4 left right dispenser4 
+281 pour-shot-to-used-shaker shot15 ingredient4 shaker1 left l1 l2 
+282 leave left shot15 
+283 __method_precondition_m4_serve_shot_4_precondition cocktail10 ingredient1 ingredient4 
+284 __method_precondition_m5_do_clean_shot_5_precondition shot14 
+285 nop  
+286 grasp right shaker1 
+287 shake cocktail10 ingredient1 ingredient4 shaker1 right left 
+288 pour-shaker-to-shot cocktail10 shot14 right shaker1 l2 l1 
+289 empty-shaker right shaker1 cocktail10 l1 l0 
+290 clean-shaker right left shaker1 
+291 leave right shaker1 
+root 361
+292 serve_shot shot14 cocktail10  -> <<m4_serve_shot;pour-shaker-to-shot_m4_serve_shot_sip_5[cocktail10,shot14,right,shaker1,l1];_m4_serve_shot_5;4;0,1,2,3,-1,5,6,7>;empty-shaker_m4_serve_shot_sip_6[right,shaker1,cocktail10,l1];_m4_serve_shot_6;5;0,1,2,3,4,-1,6,7> 283 392 286 287 288 289 290 291
+293 fill-shot_m3_get_second_ingredient_sip_2 shot15 ingredient1 left  -> _m3_get_second_ingredient_2 217
+294 fill-shot_m3_get_second_ingredient_sip_2 shot15 ingredient4 left  -> _m3_get_second_ingredient_2 8
+295 pour-shot-to-used-shaker_m3_get_second_ingredient_sip_3 shot15 ingredient4 shaker1 left  -> _m3_get_second_ingredient_3 30
+296 pour-shot-to-clean-shaker_m2_get_first_ingredient_sip_3 shot15 ingredient5 shaker1 left  -> _m2_get_first_ingredient_3 89
+297 pour-shot-to-clean-shaker_m2_get_first_ingredient_sip_3 shot15 ingredient4 shaker1 right  -> _m2_get_first_ingredient_3 131
+298 fill-shot_m3_get_second_ingredient_sip_2 shot15 ingredient5 right  -> _m3_get_second_ingredient_2 259
+299 do_fill_shot shot15 ingredient2 left  -> m9_do_fill_shot 43 44 45 46
+300 do_fill_shot shot15 ingredient3 right  -> m7_do_fill_shot 169 170 171
+301 pour-shot-to-used-shaker_m3_get_second_ingredient_sip_3 shot15 ingredient2 shaker1 left  -> _m3_get_second_ingredient_3 93
+302 pour-shot-to-clean-shaker_m2_get_first_ingredient_sip_3 shot15 ingredient3 shaker1 left  -> _m2_get_first_ingredient_3 193
+303 do_clean_shot_m4_serve_shot_sip_2 shot3 right  -> <_m4_serve_shot_2;do_clean_shot[shot3,cocktail3,right];m5_do_clean_shot;0;-1,-2> 54 55
+304 clean-shot_m2_get_first_ingredient_sip_4 shot15 ingredient1 left  -> _m2_get_first_ingredient_4 69
+305 pour-shot-to-clean-shaker_m2_get_first_ingredient_sip_3 shot15 ingredient1 shaker1 left  -> _m2_get_first_ingredient_3 277
+306 pour-shot-to-used-shaker_m3_get_second_ingredient_sip_3 shot15 ingredient4 shaker1 left  -> _m3_get_second_ingredient_3 9
+307 do_fill_shot shot15 ingredient5 left  -> m9_do_fill_shot 85 86 87 88
+308 do_clean_shot_m4_serve_shot_sip_2 shot7 left  -> <_m4_serve_shot_2;do_clean_shot[shot7,cocktail7,left];m5_do_clean_shot;0;-1,-2> 138 139
+309 pour-shot-to-used-shaker_m3_get_second_ingredient_sip_3 shot15 ingredient2 shaker1 left  -> _m3_get_second_ingredient_3 72
+310 clean-shot_m2_get_first_ingredient_sip_4 shot15 ingredient4 right  -> _m2_get_first_ingredient_4 153
+311 clean-shot_m2_get_first_ingredient_sip_4 shot15 ingredient5 left  -> _m2_get_first_ingredient_4 90
+312 do_clean_shot_m4_serve_shot_sip_2 shot9 left  -> <_m4_serve_shot_2;do_clean_shot[shot9,cocktail5,left];m5_do_clean_shot;0;-1,-2> 179 180
+313 do_clean_shot_m4_serve_shot_sip_2 shot13 right  -> <_m4_serve_shot_2;do_clean_shot[shot13,cocktail7,right];m5_do_clean_shot;0;-1,-2> 263 264
+314 pour-shot-to-used-shaker_m3_get_second_ingredient_sip_3 shot15 ingredient4 shaker1 left  -> _m3_get_second_ingredient_3 281
+315 do_fill_shot shot15 ingredient4 right  -> m9_do_fill_shot 148 149 150 151
+316 serve_shot shot6 cocktail5  -> <<m4_serve_shot;pour-shaker-to-shot_m4_serve_shot_sip_5[cocktail5,shot6,left,shaker1,l1];_m4_serve_shot_5;4;0,1,2,3,-1,5,6,7>;empty-shaker_m4_serve_shot_sip_6[left,shaker1,cocktail5,l1];_m4_serve_shot_6;5;0,1,2,3,4,-1,6,7> 116 345 119 120 121 122 123 124
+317 clean-shot_m2_get_first_ingredient_sip_4 shot15 ingredient3 left  -> _m2_get_first_ingredient_4 236
+318 fill-shot_m3_get_second_ingredient_sip_2 shot15 ingredient2 left  -> _m3_get_second_ingredient_2 196
+319 clean-shot_m2_get_first_ingredient_sip_4 shot15 ingredient5 right  -> _m2_get_first_ingredient_4 111
+320 fill-shot_m3_get_second_ingredient_sip_2 shot15 ingredient4 left  -> _m3_get_second_ingredient_2 280
+321 get_first_ingredient cocktail2 right  -> m2_get_first_ingredient 147 315 340 310
+322 serve_shot shot1 cocktail3  -> <<m4_serve_shot;pour-shaker-to-shot_m4_serve_shot_sip_5[cocktail3,shot1,left,shaker1,l1];_m4_serve_shot_5;4;0,1,2,3,-1,5,6,7>;empty-shaker_m4_serve_shot_sip_6[left,shaker1,cocktail3,l1];_m4_serve_shot_6;5;0,1,2,3,4,-1,6,7> 11 380 14 15 16 17 18 19
+323 do_cocktail_in_shot1 shot7 cocktail4  -> m0_do_cocktail_in_shot1 125 381 328 341
+324 pour-shot-to-clean-shaker_m2_get_first_ingredient_sip_3 shot15 ingredient2 shaker1 left  -> _m2_get_first_ingredient_3 47
+325 get_first_ingredient cocktail8 left  -> m2_get_first_ingredient 230 335 370 317
+326 serve_shot shot10 cocktail8  -> <<m4_serve_shot;pour-shaker-to-shot_m4_serve_shot_sip_5[cocktail8,shot10,left,shaker1,l1];_m4_serve_shot_5;4;0,1,2,3,-1,5,6,7>;empty-shaker_m4_serve_shot_sip_6[left,shaker1,cocktail8,l1];_m4_serve_shot_6;5;0,1,2,3,4,-1,6,7> 199 365 202 203 204 205 206 207
+327 get_second_ingredient cocktail7 left  -> m3_get_second_ingredient 70 425 309 73
+328 get_second_ingredient cocktail4 right  -> m3_get_second_ingredient 133 388 407 136
+329 do_cocktail_in_shot1 shot5 cocktail9  -> m0_do_cocktail_in_shot1 83 368 344 393
+330 do_fill_shot shot15 ingredient3 right  -> m9_do_fill_shot 252 253 254 255
+331 clean-shot_m2_get_first_ingredient_sip_4 shot15 ingredient3 right  -> _m2_get_first_ingredient_4 257
+332 pour-shot-to-used-shaker_m3_get_second_ingredient_sip_3 shot15 ingredient1 shaker1 right  -> _m3_get_second_ingredient_3 114
+333 do_clean_shot_m4_serve_shot_sip_2 shot5 right  -> <_m4_serve_shot_2;do_clean_shot[shot5,cocktail6,right];m5_do_clean_shot;0;-1,-2> 96 97
+334 do_fill_shot shot15 ingredient4 left  -> m9_do_fill_shot 210 211 212 213
+335 do_fill_shot shot15 ingredient3 left  -> m9_do_fill_shot 231 232 233 234
+336 serve_shot shot12 cocktail8  -> <<m4_serve_shot;pour-shaker-to-shot_m4_serve_shot_sip_5[cocktail8,shot12,left,shaker1,l1];_m4_serve_shot_5;4;0,1,2,3,-1,5,6,7>;empty-shaker_m4_serve_shot_sip_6[left,shaker1,cocktail8,l1];_m4_serve_shot_6;5;0,1,2,3,4,-1,6,7> 241 401 244 245 246 247 248 249
+337 pour-shot-to-clean-shaker_m2_get_first_ingredient_sip_3 shot15 ingredient4 shaker1 left  -> _m2_get_first_ingredient_3 214
+338 serve_shot shot2 cocktail10  -> <<m4_serve_shot;pour-shaker-to-shot_m4_serve_shot_sip_5[cocktail10,shot2,left,shaker1,l1];_m4_serve_shot_5;4;0,1,2,3,-1,5,6,7>;empty-shaker_m4_serve_shot_sip_6[left,shaker1,cocktail10,l1];_m4_serve_shot_6;5;0,1,2,3,4,-1,6,7> 32 376 35 36 37 38 39 40
+339 fill-shot_m3_get_second_ingredient_sip_2 shot15 ingredient1 right  -> _m3_get_second_ingredient_2 113
+340 pour-shot-to-clean-shaker_m2_get_first_ingredient_sip_3 shot15 ingredient4 shaker1 right  -> _m2_get_first_ingredient_3 152
+341 serve_shot shot7 cocktail4  -> <<m4_serve_shot;pour-shaker-to-shot_m4_serve_shot_sip_5[cocktail4,shot7,right,shaker1,l1];_m4_serve_shot_5;4;0,1,2,3,-1,5,6,7>;empty-shaker_m4_serve_shot_sip_6[right,shaker1,cocktail4,l1];_m4_serve_shot_6;5;0,1,2,3,4,-1,6,7> 137 308 140 141 142 143 144 145
+342 pour-shot-to-clean-shaker_m2_get_first_ingredient_sip_3 shot15 ingredient5 shaker1 left  -> _m2_get_first_ingredient_3 5
+343 pour-shot-to-clean-shaker_m2_get_first_ingredient_sip_3 shot15 ingredient1 shaker1 left  -> _m2_get_first_ingredient_3 68
+344 get_second_ingredient cocktail9 left  -> m3_get_second_ingredient 91 399 301 94
+345 do_clean_shot_m4_serve_shot_sip_2 shot6 right  -> <_m4_serve_shot_2;do_clean_shot[shot6,cocktail4,right];m5_do_clean_shot;0;-1,-2> 117 118
+346 pour-shot-to-used-shaker_m3_get_second_ingredient_sip_3 shot15 ingredient2 shaker1 left  -> _m3_get_second_ingredient_3 197
+347 do_fill_shot shot15 ingredient5 left  -> m8_do_fill_shot 2 3 4
+348 fill-shot_m3_get_second_ingredient_sip_2 shot15 ingredient2 left  -> _m3_get_second_ingredient_2 238
+349 do_cocktail_in_shot1 shot13 cocktail1  -> m0_do_cocktail_in_shot1 250 383 360 377
+350 pour-shot-to-clean-shaker_m2_get_first_ingredient_sip_3 shot15 ingredient1 shaker1 left  -> _m2_get_first_ingredient_3 26
+351 get_second_ingredient cocktail2 right  -> m3_get_second_ingredient 154 413 364 157
+352 pour-shot-to-used-shaker_m3_get_second_ingredient_sip_3 shot15 ingredient2 shaker1 left  -> _m3_get_second_ingredient_3 239
+353 get_first_ingredient cocktail5 right  -> m2_get_first_ingredient 105 357 369 319
+354 get_first_ingredient cocktail3 left  -> m2_get_first_ingredient 1 347 342 403
+355 do_cocktail_in_shot1 shot8 cocktail2  -> m0_do_cocktail_in_shot1 146 321 351 418
+356 get_first_ingredient cocktail6 left  -> m2_get_first_ingredient 209 334 337 363
+357 do_fill_shot shot15 ingredient5 right  -> m9_do_fill_shot 106 107 108 109
+358 do_cocktail_in_shot1 shot10 cocktail8  -> m0_do_cocktail_in_shot1 187 420 396 326
+359 pour-shot-to-clean-shaker_m2_get_first_ingredient_sip_3 shot15 ingredient3 shaker1 right  -> _m2_get_first_ingredient_3 256
+360 get_second_ingredient cocktail1 right  -> m3_get_second_ingredient 258 298 427 261
+361 __choicelessATCompilation__top_1  -> __top_1 416 379 423 410 329 371 323 355 400 358 373 389 349 408
+362 fill-shot_m3_get_second_ingredient_sip_2 shot15 ingredient4 left  -> _m3_get_second_ingredient_2 29
+363 clean-shot_m2_get_first_ingredient_sip_4 shot15 ingredient4 left  -> _m2_get_first_ingredient_4 215
+364 pour-shot-to-used-shaker_m3_get_second_ingredient_sip_3 shot15 ingredient3 shaker1 right  -> _m3_get_second_ingredient_3 156
+365 do_clean_shot_m4_serve_shot_sip_2 shot10 right  -> <_m4_serve_shot_2;do_clean_shot[shot10,cocktail11,right];m5_do_clean_shot;0;-1,-2> 200 201
+366 get_second_ingredient cocktail10 left  -> m3_get_second_ingredient 279 320 314 282
+367 pour-shot-to-used-shaker_m3_get_second_ingredient_sip_3 shot15 ingredient5 shaker1 right  -> _m3_get_second_ingredient_3 176
+368 get_first_ingredient cocktail9 left  -> m2_get_first_ingredient 84 307 296 311
+369 pour-shot-to-clean-shaker_m2_get_first_ingredient_sip_3 shot15 ingredient5 shaker1 right  -> _m2_get_first_ingredient_3 110
+370 pour-shot-to-clean-shaker_m2_get_first_ingredient_sip_3 shot15 ingredient3 shaker1 left  -> _m2_get_first_ingredient_3 235
+371 do_cocktail_in_shot1 shot6 cocktail5  -> m0_do_cocktail_in_shot1 104 353 386 316
+372 get_second_ingredient cocktail1 right  -> m3_get_second_ingredient 174 382 367 177
+373 do_cocktail_in_shot1 shot11 cocktail6  -> m0_do_cocktail_in_shot1 208 356 430 395
+374 clean-shot_m2_get_first_ingredient_sip_4 shot15 ingredient1 left  -> _m2_get_first_ingredient_4 27
+375 do_clean_shot_m4_serve_shot_sip_2 shot11 right  -> <_m4_serve_shot_2;do_clean_shot[shot11,cocktail2,right];m5_do_clean_shot;0;-1,-2> 221 222
+376 do_clean_shot_m4_serve_shot_sip_2 shot2 right  -> <_m4_serve_shot_2;do_clean_shot[shot2,cocktail1,right];m5_do_clean_shot;0;-1,-2> 33 34
+377 serve_shot shot13 cocktail1  -> <<m4_serve_shot;pour-shaker-to-shot_m4_serve_shot_sip_5[cocktail1,shot13,left,shaker1,l1];_m4_serve_shot_5;4;0,1,2,3,-1,5,6,7>;empty-shaker_m4_serve_shot_sip_6[left,shaker1,cocktail1,l1];_m4_serve_shot_6;5;0,1,2,3,4,-1,6,7> 262 313 265 266 267 268 269 270
+378 clean-shot_m2_get_first_ingredient_sip_4 shot15 ingredient3 left  -> _m2_get_first_ingredient_4 194
+379 do_cocktail_in_shot1 shot2 cocktail10  -> m0_do_cocktail_in_shot1 20 426 402 338
+380 do_clean_shot_m4_serve_shot_sip_2 shot1 right  -> <_m4_serve_shot_2;do_clean_shot[shot1,cocktail2,right];m5_do_clean_shot;0;-1,-2> 12 13
+381 get_first_ingredient cocktail4 right  -> m2_get_first_ingredient 126 429 297 394
+382 fill-shot_m3_get_second_ingredient_sip_2 shot15 ingredient5 right  -> _m3_get_second_ingredient_2 175
+383 get_first_ingredient cocktail1 right  -> m2_get_first_ingredient 251 330 359 331
+384 pour-shot-to-used-shaker_m3_get_second_ingredient_sip_3 shot15 ingredient3 shaker1 left  -> _m3_get_second_ingredient_3 51
+385 get_second_ingredient cocktail11 left  -> m3_get_second_ingredient 49 391 384 52
+386 get_second_ingredient cocktail5 right  -> m3_get_second_ingredient 112 339 332 115
+387 serve_shot shot3 cocktail11  -> <<m4_serve_shot;pour-shaker-to-shot_m4_serve_shot_sip_5[cocktail11,shot3,left,shaker1,l1];_m4_serve_shot_5;4;0,1,2,3,-1,5,6,7>;empty-shaker_m4_serve_shot_sip_6[left,shaker1,cocktail11,l1];_m4_serve_shot_6;5;0,1,2,3,4,-1,6,7> 53 303 56 57 58 59 60 61
+388 fill-shot_m3_get_second_ingredient_sip_2 shot15 ingredient1 right  -> _m3_get_second_ingredient_2 134
+389 do_cocktail_in_shot1 shot12 cocktail8  -> m0_do_cocktail_in_shot1 229 325 417 336
+390 do_fill_shot shot15 ingredient1 left  -> m9_do_fill_shot 22 23 24 25
+391 fill-shot_m3_get_second_ingredient_sip_2 shot15 ingredient3 left  -> _m3_get_second_ingredient_2 50
+392 do_clean_shot_m4_serve_shot_sip_2 shot14 left  -> <_m4_serve_shot_2;do_clean_shot[shot14,cocktail10,left];m5_do_clean_shot;0;-1,-2> 284 285
+393 serve_shot shot5 cocktail9  -> <<m4_serve_shot;pour-shaker-to-shot_m4_serve_shot_sip_5[cocktail9,shot5,left,shaker1,l1];_m4_serve_shot_5;4;0,1,2,3,-1,5,6,7>;empty-shaker_m4_serve_shot_sip_6[left,shaker1,cocktail9,l1];_m4_serve_shot_6;5;0,1,2,3,4,-1,6,7> 95 333 98 99 100 101 102 103
+394 clean-shot_m2_get_first_ingredient_sip_4 shot15 ingredient4 right  -> _m2_get_first_ingredient_4 132
+395 serve_shot shot11 cocktail6  -> <<m4_serve_shot;pour-shaker-to-shot_m4_serve_shot_sip_5[cocktail6,shot11,left,shaker1,l1];_m4_serve_shot_5;4;0,1,2,3,-1,5,6,7>;empty-shaker_m4_serve_shot_sip_6[left,shaker1,cocktail6,l1];_m4_serve_shot_6;5;0,1,2,3,4,-1,6,7> 220 375 223 224 225 226 227 228
+396 get_second_ingredient cocktail8 left  -> m3_get_second_ingredient 195 318 346 198
+397 get_first_ingredient cocktail11 left  -> m2_get_first_ingredient 42 299 324 422
+398 do_fill_shot shot15 ingredient3 left  -> m9_do_fill_shot 189 190 191 192
+399 fill-shot_m3_get_second_ingredient_sip_2 shot15 ingredient2 left  -> _m3_get_second_ingredient_2 92
+400 do_cocktail_in_shot1 shot9 cocktail1  -> m0_do_cocktail_in_shot1 167 432 372 406
+401 do_clean_shot_m4_serve_shot_sip_2 shot12 right  -> <_m4_serve_shot_2;do_clean_shot[shot12,cocktail8,right];m5_do_clean_shot;0;-1,-2> 242 243
+402 get_second_ingredient cocktail10 left  -> m3_get_second_ingredient 28 362 295 31
+403 clean-shot_m2_get_first_ingredient_sip_4 shot15 ingredient5 left  -> _m2_get_first_ingredient_4 6
+404 clean-shot_m2_get_first_ingredient_sip_4 shot15 ingredient1 left  -> _m2_get_first_ingredient_4 278
+405 serve_shot shot4 cocktail7  -> <<m4_serve_shot;pour-shaker-to-shot_m4_serve_shot_sip_5[cocktail7,shot4,right,shaker1,l1];_m4_serve_shot_5;4;0,1,2,3,-1,5,6,7>;empty-shaker_m4_serve_shot_sip_6[right,shaker1,cocktail7,l1];_m4_serve_shot_6;5;0,1,2,3,4,-1,6,7> 74 409 77 78 79 80 81 82
+406 serve_shot shot9 cocktail1  -> <<m4_serve_shot;pour-shaker-to-shot_m4_serve_shot_sip_5[cocktail1,shot9,right,shaker1,l1];_m4_serve_shot_5;4;0,1,2,3,-1,5,6,7>;empty-shaker_m4_serve_shot_sip_6[right,shaker1,cocktail1,l1];_m4_serve_shot_6;5;0,1,2,3,4,-1,6,7> 178 312 181 182 183 184 185 186
+407 pour-shot-to-used-shaker_m3_get_second_ingredient_sip_3 shot15 ingredient1 shaker1 right  -> _m3_get_second_ingredient_3 135
+408 do_cocktail_in_shot1 shot14 cocktail10  -> m0_do_cocktail_in_shot1 271 424 366 292
+409 do_clean_shot_m4_serve_shot_sip_2 shot4 left  -> <_m4_serve_shot_2;do_clean_shot[shot4,cocktail11,left];m5_do_clean_shot;0;-1,-2> 75 76
+410 do_cocktail_in_shot1 shot4 cocktail7  -> m0_do_cocktail_in_shot1 62 419 327 405
+411 get_second_ingredient cocktail3 left  -> m3_get_second_ingredient 7 294 306 10
+412 do_fill_shot shot15 ingredient1 left  -> m9_do_fill_shot 64 65 66 67
+413 fill-shot_m3_get_second_ingredient_sip_2 shot15 ingredient3 right  -> _m3_get_second_ingredient_2 155
+414 pour-shot-to-clean-shaker_m2_get_first_ingredient_sip_3 shot15 ingredient3 shaker1 right  -> _m2_get_first_ingredient_3 172
+415 clean-shot_m2_get_first_ingredient_sip_4 shot15 ingredient3 right  -> _m2_get_first_ingredient_4 173
+416 do_cocktail_in_shot1 shot1 cocktail3  -> m0_do_cocktail_in_shot1 0 354 411 322
+417 get_second_ingredient cocktail8 left  -> m3_get_second_ingredient 237 348 352 240
+418 serve_shot shot8 cocktail2  -> <<m4_serve_shot;pour-shaker-to-shot_m4_serve_shot_sip_5[cocktail2,shot8,left,shaker1,l1];_m4_serve_shot_5;4;0,1,2,3,-1,5,6,7>;empty-shaker_m4_serve_shot_sip_6[left,shaker1,cocktail2,l1];_m4_serve_shot_6;5;0,1,2,3,4,-1,6,7> 158 431 161 162 163 164 165 166
+419 get_first_ingredient cocktail7 left  -> m2_get_first_ingredient 63 412 343 304
+420 get_first_ingredient cocktail8 left  -> m2_get_first_ingredient 188 398 302 378
+421 do_fill_shot shot15 ingredient1 left  -> m9_do_fill_shot 273 274 275 276
+422 clean-shot_m2_get_first_ingredient_sip_4 shot15 ingredient2 left  -> _m2_get_first_ingredient_4 48
+423 do_cocktail_in_shot1 shot3 cocktail11  -> m0_do_cocktail_in_shot1 41 397 385 387
+424 get_first_ingredient cocktail10 left  -> m2_get_first_ingredient 272 421 305 404
+425 fill-shot_m3_get_second_ingredient_sip_2 shot15 ingredient2 left  -> _m3_get_second_ingredient_2 71
+426 get_first_ingredient cocktail10 left  -> m2_get_first_ingredient 21 390 350 374
+427 pour-shot-to-used-shaker_m3_get_second_ingredient_sip_3 shot15 ingredient5 shaker1 right  -> _m3_get_second_ingredient_3 260
+428 pour-shot-to-used-shaker_m3_get_second_ingredient_sip_3 shot15 ingredient1 shaker1 left  -> _m3_get_second_ingredient_3 218
+429 do_fill_shot shot15 ingredient4 right  -> m9_do_fill_shot 127 128 129 130
+430 get_second_ingredient cocktail6 left  -> m3_get_second_ingredient 216 293 428 219
+431 do_clean_shot_m4_serve_shot_sip_2 shot8 right  -> <_m4_serve_shot_2;do_clean_shot[shot8,cocktail2,right];m5_do_clean_shot;0;-1,-2> 159 160
+432 get_first_ingredient cocktail1 right  -> m2_get_first_ingredient 168 300 414 415
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 21.598 MEMPEAK_KBS 779200.512

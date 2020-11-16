@@ -1,0 +1,104 @@
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 4077507
+max locked memory       (kbytes, -l) 65536
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 1024
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) unlimited
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 4077507
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+15728640
+----------------------Tasks-----------------------
+0 do_put_on crate3 pallet0
+1 do_put_on crate4 crate3
+2 do_put_on crate2 pallet1
+3 do_put_on crate5 pallet2
+4 do_put_on crate0 pallet3
+5 invisible_goal
+---------------------Planning---------------------
+Time: 0.003851175308227539s
+-----------------------Plan-----------------------
+==>
+12 nop
+13 nop
+10 lift hoist1 crate3 crate1 depot1
+11 load hoist1 crate3 truck0 depot1
+6 drive truck0 depot1 depot0
+25 nop
+22 lift hoist0 crate5 crate2 depot0
+26 nop
+24 load hoist0 crate5 truck0 depot0
+18 lift hoist0 crate2 pallet0 depot0
+27 nop
+20 load hoist0 crate2 truck0 depot0
+15 unload hoist0 crate3 truck0 depot0
+16 drop hoist0 crate3 pallet0 depot0
+35 drive truck0 depot0 distributor0
+36 nop
+33 lift hoist2 crate4 pallet2 distributor0
+34 load hoist2 crate4 truck0 distributor0
+29 drive truck0 distributor0 depot0
+40 nop
+38 unload hoist0 crate4 truck0 depot0
+39 drop hoist0 crate4 crate3 depot0
+45 drive truck0 depot0 depot1
+50 nop
+47 lift hoist1 crate1 pallet1 depot1
+51 nop
+49 load hoist1 crate1 truck0 depot1
+43 unload hoist1 crate2 truck0 depot1
+44 drop hoist1 crate2 pallet1 depot1
+56 drive truck0 depot1 distributor0
+57 nop
+54 unload hoist2 crate5 truck0 distributor0
+55 drop hoist2 crate5 pallet2 distributor0
+65 drive truck0 distributor0 depot1
+66 nop
+63 lift hoist1 crate0 pallet4 depot1
+64 load hoist1 crate0 truck0 depot1
+59 drive truck0 depot1 distributor1
+70 nop
+68 unload hoist3 crate0 truck0 distributor1
+69 drop hoist3 crate0 pallet3 distributor1
+root 0 1 2 3 4
+0 do_put_on crate3 pallet0 -> m3_do_put_on 5 6 7
+5 do_load_truck crate3 crate1 depot1 truck0 -> m10_do_load_truck 8 9 10 11
+8 do_get_truck truck0 depot1 -> m6_do_get_truck 12
+9 do_clear crate3 depot1 -> m4_do_clear 13
+7 do_unload_truck crate3 pallet0 depot0 truck0 -> m11_do_unload_truck 14 15 16
+14 do_clear pallet0 depot0 -> m5_do_clear 17 18 19 20
+17 do_clear crate2 depot0 -> m5_do_clear 21 22 23 24
+21 do_clear crate5 depot0 -> m4_do_clear 25
+23 do_get_truck truck0 depot0 -> m6_do_get_truck 26
+19 do_get_truck truck0 depot0 -> m6_do_get_truck 27
+1 do_put_on crate4 crate3 -> m3_do_put_on 28 29 30
+28 do_load_truck crate4 pallet2 distributor0 truck0 -> m10_do_load_truck 31 32 33 34
+31 do_get_truck truck0 distributor0 -> m7_do_get_truck 35
+32 do_clear crate4 distributor0 -> m4_do_clear 36
+30 do_unload_truck crate4 crate3 depot0 truck0 -> m11_do_unload_truck 37 38 39
+37 do_clear crate3 depot0 -> m4_do_clear 40
+2 do_put_on crate2 pallet1 -> m2_do_put_on 41 42 43 44
+41 do_get_truck truck0 depot1 -> m7_do_get_truck 45
+42 do_clear pallet1 depot1 -> m5_do_clear 46 47 48 49
+46 do_clear crate1 depot1 -> m4_do_clear 50
+48 do_get_truck truck0 depot1 -> m6_do_get_truck 51
+3 do_put_on crate5 pallet2 -> m2_do_put_on 52 53 54 55
+52 do_get_truck truck0 distributor0 -> m7_do_get_truck 56
+53 do_clear pallet2 distributor0 -> m4_do_clear 57
+4 do_put_on crate0 pallet3 -> m3_do_put_on 58 59 60
+58 do_load_truck crate0 pallet4 depot1 truck0 -> m10_do_load_truck 61 62 63 64
+61 do_get_truck truck0 depot1 -> m7_do_get_truck 65
+62 do_clear crate0 depot1 -> m4_do_clear 66
+60 do_unload_truck crate0 pallet3 distributor1 truck0 -> m11_do_unload_truck 67 68 69
+67 do_clear pallet3 distributor1 -> m4_do_clear 70
+<==
+Total time: 0.014296293258666992s
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 1.250 MEMPEAK_KBS 0

@@ -1,0 +1,55 @@
+----------------------Tasks-----------------------
+0 do_put_on crate3 pallet1
+1 do_put_on crate2 pallet0
+2 do_put_on crate1 crate3
+3 do_put_on crate0 pallet2
+4 invisible_goal
+---------------------Planning---------------------
+Time: 0.0006601810455322266s
+-----------------------Plan-----------------------
+==>
+4 nop
+12 drive truck0 depot0 distributor1
+13 nop
+10 lift hoist2 crate2 crate1 distributor1
+11 load hoist2 crate2 truck0 distributor1
+6 drive truck0 distributor1 depot0
+21 nop
+18 lift hoist0 crate0 pallet0 depot0
+22 nop
+20 load hoist0 crate0 truck0 depot0
+15 unload hoist0 crate2 truck0 depot0
+16 drop hoist0 crate2 pallet0 depot0
+30 drive truck0 depot0 distributor1
+31 nop
+28 lift hoist2 crate1 pallet2 distributor1
+29 load hoist2 crate1 truck0 distributor1
+24 drive truck0 distributor1 distributor0
+35 nop
+33 unload hoist1 crate1 truck0 distributor0
+34 drop hoist1 crate1 crate3 distributor0
+40 drive truck0 distributor0 distributor1
+41 nop
+38 unload hoist2 crate0 truck0 distributor1
+39 drop hoist2 crate0 pallet2 distributor1
+root 0 1 2 3
+0 do_put_on crate3 pallet1 -> m0_do_put_on 4
+1 do_put_on crate2 pallet0 -> m3_do_put_on 5 6 7
+5 do_load_truck crate2 crate1 distributor1 truck0 -> m10_do_load_truck 8 9 10 11
+8 do_get_truck truck0 distributor1 -> m7_do_get_truck 12
+9 do_clear crate2 distributor1 -> m4_do_clear 13
+7 do_unload_truck crate2 pallet0 depot0 truck0 -> m11_do_unload_truck 14 15 16
+14 do_clear pallet0 depot0 -> m5_do_clear 17 18 19 20
+17 do_clear crate0 depot0 -> m4_do_clear 21
+19 do_get_truck truck0 depot0 -> m6_do_get_truck 22
+2 do_put_on crate1 crate3 -> m3_do_put_on 23 24 25
+23 do_load_truck crate1 pallet2 distributor1 truck0 -> m10_do_load_truck 26 27 28 29
+26 do_get_truck truck0 distributor1 -> m7_do_get_truck 30
+27 do_clear crate1 distributor1 -> m4_do_clear 31
+25 do_unload_truck crate1 crate3 distributor0 truck0 -> m11_do_unload_truck 32 33 34
+32 do_clear crate3 distributor0 -> m4_do_clear 35
+3 do_put_on crate0 pallet2 -> m2_do_put_on 36 37 38 39
+36 do_get_truck truck0 distributor1 -> m7_do_get_truck 40
+37 do_clear pallet2 distributor1 -> m4_do_clear 41
+<==
+Total time: 0.014139890670776367s

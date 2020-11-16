@@ -1,0 +1,191 @@
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 4077507
+max locked memory       (kbytes, -l) 65536
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 1024
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) unlimited
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 4077507
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+15728640
+----------------------Tasks-----------------------
+0 achieve_at obj11 pos2
+1 achieve_at obj21 apt2
+2 achieve_at obj13 apt1
+3 achieve_at obj12 apt2
+---------------------Planning---------------------
+Time: 0.002763986587524414s
+-----------------------Plan-----------------------
+==>
+11 i_lock_at tru1 pos1
+12 i_unlock_at tru1 pos1
+10 load_truck obj11 tru1 pos1
+20 drive_truck tru1 pos1 pos1 cit1
+22 drive_truck tru1 pos1 apt1 cit1
+19 i_lock_at tru1 apt1
+24 i_unlock_at tru1 apt1
+17 unload_truck obj11 tru1 apt1
+32 fly_airplane apn1 apt2 apt2
+34 fly_airplane apn1 apt2 apt1
+31 i_lock_at apn1 apt1
+36 i_unlock_at apn1 apt1
+29 load_airplane obj11 apn1 apt1
+44 fly_airplane apn1 apt1 apt2
+43 i_lock_at apn1 apt2
+46 i_unlock_at apn1 apt2
+41 unload_airplane obj11 apn1 apt2
+54 drive_truck tru2 pos2 pos2 cit2
+56 drive_truck tru2 pos2 apt2 cit2
+53 i_lock_at tru2 apt2
+58 i_unlock_at tru2 apt2
+51 load_truck obj11 tru2 apt2
+66 drive_truck tru2 apt2 pos2 cit2
+65 i_lock_at tru2 pos2
+68 i_unlock_at tru2 pos2
+63 unload_truck obj11 tru2 pos2
+5 i_lock_at obj11 pos2
+76 i_lock_at tru2 pos2
+77 i_unlock_at tru2 pos2
+75 load_truck obj21 tru2 pos2
+85 drive_truck tru2 pos2 pos2 cit2
+87 drive_truck tru2 pos2 apt2 cit2
+84 i_lock_at tru2 apt2
+89 i_unlock_at tru2 apt2
+82 unload_truck obj21 tru2 apt2
+70 i_lock_at obj21 apt2
+99 drive_truck tru1 apt1 pos1 cit1
+98 i_lock_at tru1 pos1
+101 i_unlock_at tru1 pos1
+96 load_truck obj13 tru1 pos1
+109 drive_truck tru1 pos1 pos1 cit1
+111 drive_truck tru1 pos1 apt1 cit1
+108 i_lock_at tru1 apt1
+113 i_unlock_at tru1 apt1
+106 unload_truck obj13 tru1 apt1
+91 i_lock_at obj13 apt1
+123 drive_truck tru1 apt1 pos1 cit1
+122 i_lock_at tru1 pos1
+125 i_unlock_at tru1 pos1
+120 load_truck obj12 tru1 pos1
+133 drive_truck tru1 pos1 pos1 cit1
+135 drive_truck tru1 pos1 apt1 cit1
+132 i_lock_at tru1 apt1
+137 i_unlock_at tru1 apt1
+130 unload_truck obj12 tru1 apt1
+145 fly_airplane apn1 apt2 apt2
+147 fly_airplane apn1 apt2 apt1
+144 i_lock_at apn1 apt1
+149 i_unlock_at apn1 apt1
+142 load_airplane obj12 apn1 apt1
+157 fly_airplane apn1 apt1 apt2
+156 i_lock_at apn1 apt2
+159 i_unlock_at apn1 apt2
+154 unload_airplane obj12 apn1 apt2
+115 i_lock_at obj12 apt2
+root 0 1 2 3
+0 achieve_at obj11 pos2 -> m10_achieve_at 4 5
+4 achieve_at0 obj11 pos2 -> m12_achieve_at0 6 7
+6 do_at_load_truck0 obj11 tru1 pos1 -> m4_do_at_load_truck0 8 9 10
+8 achieve_at_trk tru1 pos1 -> m33_achieve_at 11
+9 ifunlock_at tru1 pos1 -> ifunlock1_at 12
+7 achieve_at0 obj11 pos2 -> m14_achieve_at0 13 14
+13 do_in_unload_truck0 obj11 tru1 apt1 -> m6_do_in_unload_truck0 15 16 17
+15 achieve_at_trk tru1 apt1 -> m34_achieve_at 18 19
+18 achieve_at1 tru1 apt1 -> m36_achieve_at1 20 21
+21 achieve_at1 tru1 apt1 -> m36_achieve_at1 22 23
+23 achieve_at1 tru1 apt1 -> m35_achieve_at1 
+16 ifunlock_at tru1 apt1 -> ifunlock1_at 24
+14 achieve_at0 obj11 pos2 -> m13_achieve_at0 25 26
+25 do_at_load_airplane0 obj11 apn1 apt1 -> m5_do_at_load_airplane0 27 28 29
+27 achieve_at_air apn1 apt1 -> m39_achieve_at 30 31
+30 achieve_at2 apn1 apt1 -> m41_achieve_at2 32 33
+33 achieve_at2 apn1 apt1 -> m41_achieve_at2 34 35
+35 achieve_at2 apn1 apt1 -> m40_achieve_at2 
+28 ifunlock_at apn1 apt1 -> ifunlock1_at 36
+26 achieve_at0 obj11 pos2 -> m15_achieve_at0 37 38
+37 do_in_unload_airplane0 obj11 apn1 apt2 -> m7_do_in_unload_airplane0 39 40 41
+39 achieve_at_air apn1 apt2 -> m39_achieve_at 42 43
+42 achieve_at2 apn1 apt2 -> m41_achieve_at2 44 45
+45 achieve_at2 apn1 apt2 -> m40_achieve_at2 
+40 ifunlock_at apn1 apt2 -> ifunlock1_at 46
+38 achieve_at0 obj11 pos2 -> m12_achieve_at0 47 48
+47 do_at_load_truck0 obj11 tru2 apt2 -> m4_do_at_load_truck0 49 50 51
+49 achieve_at_trk tru2 apt2 -> m34_achieve_at 52 53
+52 achieve_at1 tru2 apt2 -> m36_achieve_at1 54 55
+55 achieve_at1 tru2 apt2 -> m36_achieve_at1 56 57
+57 achieve_at1 tru2 apt2 -> m35_achieve_at1 
+50 ifunlock_at tru2 apt2 -> ifunlock1_at 58
+48 achieve_at0 obj11 pos2 -> m14_achieve_at0 59 60
+59 do_in_unload_truck0 obj11 tru2 pos2 -> m6_do_in_unload_truck0 61 62 63
+61 achieve_at_trk tru2 pos2 -> m34_achieve_at 64 65
+64 achieve_at1 tru2 pos2 -> m36_achieve_at1 66 67
+67 achieve_at1 tru2 pos2 -> m35_achieve_at1 
+62 ifunlock_at tru2 pos2 -> ifunlock1_at 68
+60 achieve_at0 obj11 pos2 -> m11_achieve_at0 
+1 achieve_at obj21 apt2 -> m10_achieve_at 69 70
+69 achieve_at0 obj21 apt2 -> m12_achieve_at0 71 72
+71 do_at_load_truck0 obj21 tru2 pos2 -> m4_do_at_load_truck0 73 74 75
+73 achieve_at_trk tru2 pos2 -> m33_achieve_at 76
+74 ifunlock_at tru2 pos2 -> ifunlock1_at 77
+72 achieve_at0 obj21 apt2 -> m14_achieve_at0 78 79
+78 do_in_unload_truck0 obj21 tru2 apt2 -> m6_do_in_unload_truck0 80 81 82
+80 achieve_at_trk tru2 apt2 -> m34_achieve_at 83 84
+83 achieve_at1 tru2 apt2 -> m36_achieve_at1 85 86
+86 achieve_at1 tru2 apt2 -> m36_achieve_at1 87 88
+88 achieve_at1 tru2 apt2 -> m35_achieve_at1 
+81 ifunlock_at tru2 apt2 -> ifunlock1_at 89
+79 achieve_at0 obj21 apt2 -> m11_achieve_at0 
+2 achieve_at obj13 apt1 -> m10_achieve_at 90 91
+90 achieve_at0 obj13 apt1 -> m12_achieve_at0 92 93
+92 do_at_load_truck0 obj13 tru1 pos1 -> m4_do_at_load_truck0 94 95 96
+94 achieve_at_trk tru1 pos1 -> m34_achieve_at 97 98
+97 achieve_at1 tru1 pos1 -> m36_achieve_at1 99 100
+100 achieve_at1 tru1 pos1 -> m35_achieve_at1 
+95 ifunlock_at tru1 pos1 -> ifunlock1_at 101
+93 achieve_at0 obj13 apt1 -> m14_achieve_at0 102 103
+102 do_in_unload_truck0 obj13 tru1 apt1 -> m6_do_in_unload_truck0 104 105 106
+104 achieve_at_trk tru1 apt1 -> m34_achieve_at 107 108
+107 achieve_at1 tru1 apt1 -> m36_achieve_at1 109 110
+110 achieve_at1 tru1 apt1 -> m36_achieve_at1 111 112
+112 achieve_at1 tru1 apt1 -> m35_achieve_at1 
+105 ifunlock_at tru1 apt1 -> ifunlock1_at 113
+103 achieve_at0 obj13 apt1 -> m11_achieve_at0 
+3 achieve_at obj12 apt2 -> m10_achieve_at 114 115
+114 achieve_at0 obj12 apt2 -> m12_achieve_at0 116 117
+116 do_at_load_truck0 obj12 tru1 pos1 -> m4_do_at_load_truck0 118 119 120
+118 achieve_at_trk tru1 pos1 -> m34_achieve_at 121 122
+121 achieve_at1 tru1 pos1 -> m36_achieve_at1 123 124
+124 achieve_at1 tru1 pos1 -> m35_achieve_at1 
+119 ifunlock_at tru1 pos1 -> ifunlock1_at 125
+117 achieve_at0 obj12 apt2 -> m14_achieve_at0 126 127
+126 do_in_unload_truck0 obj12 tru1 apt1 -> m6_do_in_unload_truck0 128 129 130
+128 achieve_at_trk tru1 apt1 -> m34_achieve_at 131 132
+131 achieve_at1 tru1 apt1 -> m36_achieve_at1 133 134
+134 achieve_at1 tru1 apt1 -> m36_achieve_at1 135 136
+136 achieve_at1 tru1 apt1 -> m35_achieve_at1 
+129 ifunlock_at tru1 apt1 -> ifunlock1_at 137
+127 achieve_at0 obj12 apt2 -> m13_achieve_at0 138 139
+138 do_at_load_airplane0 obj12 apn1 apt1 -> m5_do_at_load_airplane0 140 141 142
+140 achieve_at_air apn1 apt1 -> m39_achieve_at 143 144
+143 achieve_at2 apn1 apt1 -> m41_achieve_at2 145 146
+146 achieve_at2 apn1 apt1 -> m41_achieve_at2 147 148
+148 achieve_at2 apn1 apt1 -> m40_achieve_at2 
+141 ifunlock_at apn1 apt1 -> ifunlock1_at 149
+139 achieve_at0 obj12 apt2 -> m15_achieve_at0 150 151
+150 do_in_unload_airplane0 obj12 apn1 apt2 -> m7_do_in_unload_airplane0 152 153 154
+152 achieve_at_air apn1 apt2 -> m39_achieve_at 155 156
+155 achieve_at2 apn1 apt2 -> m41_achieve_at2 157 158
+158 achieve_at2 apn1 apt2 -> m40_achieve_at2 
+153 ifunlock_at apn1 apt2 -> ifunlock1_at 159
+151 achieve_at0 obj12 apt2 -> m11_achieve_at0 
+<==
+Total time: 0.0218353271484375s
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.673 MEMPEAK_KBS 0

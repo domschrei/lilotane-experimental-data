@@ -1,0 +1,799 @@
+PANDA - Planning and Acting in a Network Decomposition Architecture
+Believe us: It's great, it's fantastic!
+
+PANDA Copyright (C) 2014-2018 Gregor Behnke, Pascal Bercher, Thomas Geier, Kadir
+Dede, Daniel Höller, Kristof Mickeleit, Matthias Englert
+This program comes with ABSOLUTELY NO WARRANTY
+This is free software, and you are welcome to redistribute it under certain
+conditions; run PANDA with -license for details.
+
+Main Developers:
+- Gregor Behnke, http://www.uni-ulm.de/in/ki/behnke
+- Daniel Höller, http://www.uni-ulm.de/in/ki/hoeller
+
+With many thanks to various further contributors.
+Run PANDA with the command line argument -contributors for an extensive list.
+
+Run it with -help for more information like available options.
+
+
+PANDA was called with: "-systemConfig sat-exists-forbidden-implication-optimise(bin)(cms55) -programPath cryptominisat55=./cryptominisat5 instances/childsnack/domain.hddl instances/childsnack/p14.hddl"
+
+
+Planner Configuration
+=====================
+Domain: instances/childsnack/domain.hddl
+Problem: instances/childsnack/p14.hddl
+Output: none
+
+Planning Configuration
+======================
+	printGeneralInformation : true
+	printAdditionalData     : true
+	random seed             : 42
+	time limit (in seconds) : none
+
+	external programs:
+		cryptominisat5.5 : ./cryptominisat5
+
+	Parsing Configuration
+	---------------------
+	Parser                : autodetect file-type
+	Expand Sort Hierarchy : true
+	ClosedWordAssumption  : true
+	CompileSHOPMethods    : true
+	Eliminate Equality    : true
+	Strip Hybridity       : true
+	Reduce General Tasks  : true
+	
+	Preprocessing Configuration
+	---------------------------
+	Compile negative preconditions    : true
+	Compile unit methods              : false
+	Compile order in methods          : false
+	Compile initial plan              : true
+	Ensure Methods Have Last Task     : false
+	Split independent parameters      : true
+	Remove unnecessary predicates     : true
+	Expand choiceless abstract tasks  : false
+	Domain Cleanup                    : true
+	Convert to SAS+                   : false
+	Grounded Reachability Analysis    : Planning Graph (mutex-free)
+	Grounded Task Decomposition Graph : Two Way TDG
+	Iterate reachability analysis     : true
+	Ground domain                     : true
+	Iterate reachability analysis     : true
+	Stop directly after grounding     : false
+	
+	SAT-Planning Configuration
+	--------------------------
+	solver           : cryptominisat5.5
+	full planner run : true
+	optimise         : true
+	reduction method : only normalise 
+	check result     : true
+	
+	Post-processing Configuration
+	-----------------------------
+	search result with Decomposition Tree
+	statistics
+	timings
+	search status
+	search result
+#0 "00 global:01:problem"="p14.hddl";"00 global:00:domain"="domain.hddl"
+Parsing domain ... using HDDL parser ... done
+Preparing internal domain representation ... done.
+Initial domain
+	number of abstract tasks = 1
+	number of tasks = 10
+	number of decomposition methods = 2
+	number of predicates = 13
+	number of sorts = 7
+	number of tasks in largest method = 6
+	number of primitive SHOP tasks = 2
+	number of epsilon methods = 0
+	number of primitive tasks = 9
+	number of constants = 86
+Compiling negative preconditions ... done.
+	number of abstract tasks = 1
+	number of tasks = 10
+	number of decomposition methods = 2
+	number of predicates = 26
+	number of sorts = 7
+	number of tasks in largest method = 6
+	number of primitive SHOP tasks = 2
+	number of epsilon methods = 0
+	number of primitive tasks = 9
+	number of constants = 86
+Compiling split parameters ... done.
+	number of abstract tasks = 1
+	number of tasks = 10
+	number of decomposition methods = 2
+	number of predicates = 26
+	number of sorts = 7
+	number of tasks in largest method = 6
+	number of primitive SHOP tasks = 2
+	number of epsilon methods = 0
+	number of primitive tasks = 9
+	number of constants = 86
+Lifted reachability analysis and domain cleanup ... done.
+	number of abstract tasks = 1
+	number of tasks = 9
+	number of decomposition methods = 2
+	number of predicates = 15
+	number of sorts = 7
+	number of tasks in largest method = 6
+	number of primitive SHOP tasks = 2
+	number of epsilon methods = 0
+	number of primitive tasks = 8
+	number of constants = 86
+Grounded planning graph ... done in 1660ms.
+	Number of Grounded Actions 50980
+	Number of Grounded Literals 310
+	number of abstract tasks = 1
+	number of tasks = 9
+	number of decomposition methods = 2
+	number of predicates = 15
+	number of sorts = 7
+	number of tasks in largest method = 6
+	number of primitive SHOP tasks = 2
+	number of epsilon methods = 0
+	number of primitive tasks = 8
+	number of constants = 86
+Two Way TDG ... done.
+	number of abstract tasks = 1
+	number of tasks = 9
+	number of decomposition methods = 2
+	number of predicates = 15
+	number of sorts = 7
+	number of tasks in largest method = 6
+	number of primitive SHOP tasks = 2
+	number of epsilon methods = 0
+	number of primitive tasks = 8
+	number of constants = 86
+Grounding ... done.
+	number of abstract tasks = 18
+	number of tasks = 46122
+	number of decomposition methods = 160704
+	number of predicates = 346
+	number of sorts = 0
+	number of tasks in largest method = 6
+	number of primitive SHOP tasks = 40176
+	number of epsilon methods = 0
+	number of primitive tasks = 46104
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 18
+	number of tasks = 46122
+	number of decomposition methods = 160704
+	number of predicates = 238
+	number of sorts = 0
+	number of tasks in largest method = 6
+	number of primitive SHOP tasks = 40176
+	number of epsilon methods = 0
+	number of primitive tasks = 46104
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 3893ms.
+	Number of Grounded Actions 46104
+	Number of Grounded Literals 238
+	number of abstract tasks = 18
+	number of tasks = 46122
+	number of decomposition methods = 160704
+	number of predicates = 238
+	number of sorts = 0
+	number of tasks in largest method = 6
+	number of primitive SHOP tasks = 40176
+	number of epsilon methods = 0
+	number of primitive tasks = 46104
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 18
+	number of tasks = 46122
+	number of decomposition methods = 160704
+	number of predicates = 238
+	number of sorts = 0
+	number of tasks in largest method = 6
+	number of primitive SHOP tasks = 40176
+	number of epsilon methods = 0
+	number of primitive tasks = 46104
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 19
+	number of tasks = 46123
+	number of decomposition methods = 160705
+	number of predicates = 238
+	number of sorts = 0
+	number of tasks in largest method = 18
+	number of primitive SHOP tasks = 40176
+	number of epsilon methods = 0
+	number of primitive tasks = 46104
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 19
+	number of tasks = 46123
+	number of decomposition methods = 160705
+	number of predicates = 238
+	number of sorts = 0
+	number of tasks in largest method = 18
+	number of primitive SHOP tasks = 40176
+	number of epsilon methods = 0
+	number of primitive tasks = 46104
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 3317ms.
+	Number of Grounded Actions 46104
+	Number of Grounded Literals 238
+	number of abstract tasks = 19
+	number of tasks = 46123
+	number of decomposition methods = 160705
+	number of predicates = 238
+	number of sorts = 0
+	number of tasks in largest method = 18
+	number of primitive SHOP tasks = 40176
+	number of epsilon methods = 0
+	number of primitive tasks = 46104
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 19
+	number of tasks = 46123
+	number of decomposition methods = 160705
+	number of predicates = 238
+	number of sorts = 0
+	number of tasks in largest method = 18
+	number of primitive SHOP tasks = 40176
+	number of epsilon methods = 0
+	number of primitive tasks = 46104
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 19
+	number of tasks = 46123
+	number of decomposition methods = 160705
+	number of predicates = 238
+	number of sorts = 0
+	number of tasks in largest method = 18
+	number of primitive SHOP tasks = 40176
+	number of epsilon methods = 0
+	number of primitive tasks = 46104
+	number of constants = 0
+Compiling methods with identical tasks ... done.
+	number of abstract tasks = 19
+	number of tasks = 46123
+	number of decomposition methods = 160705
+	number of predicates = 238
+	number of sorts = 0
+	number of tasks in largest method = 18
+	number of primitive SHOP tasks = 40176
+	number of epsilon methods = 0
+	number of primitive tasks = 46104
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 19
+	number of tasks = 46123
+	number of decomposition methods = 160705
+	number of predicates = 238
+	number of sorts = 0
+	number of tasks in largest method = 18
+	number of primitive SHOP tasks = 40176
+	number of epsilon methods = 0
+	number of primitive tasks = 46104
+	number of constants = 0
+Tasks 46104 - 0
+Domain is acyclic: true
+Domain is mostly acyclic: true
+Domain is regular: false
+Domain is tail recursive: true
+Domain is totally ordered: true
+Domain has last task in all methods: true
+Time remaining for planner 9223372036854658558ms
+
+Running SAT search with K = 2
+Generating initial PDT ... Still waiting ... running for 102 will abort at 9223372036854654284
+done
+initial PDT has 108 leafs
+Checking whether the PDT can grow any more ... no ... done
+Normalising and optimising PDT ... done
+PDT has 108 leafs
+SHOP LEAFS 18
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Computing invariants [Rintanen]
+candidates build 84609
+Size 84609 at 0/46104
+Size 84609 at 500/46104
+Size 84609 at 1000/46104
+Size 84609 at 1500/46104
+Size 84609 at 2000/46104
+Size 84609 at 2500/46104
+Size 84609 at 3000/46104
+Size 84609 at 3500/46104
+Size 84609 at 4000/46104
+Size 84609 at 4500/46104
+Size 84609 at 5000/46104
+Size 84609 at 5500/46104
+Size 84609 at 6000/46104
+Size 84609 at 6500/46104
+Size 84609 at 7000/46104
+Size 84609 at 7500/46104
+Size 84609 at 8000/46104
+Size 60716 at 8500/46104
+Size 60716 at 9000/46104
+Size 53333 at 9500/46104
+Size 53331 at 10000/46104
+Size 53331 at 10500/46104
+Size 53331 at 11000/46104
+Size 53331 at 11500/46104
+Size 53331 at 12000/46104
+Size 53331 at 12500/46104
+Size 53331 at 13000/46104
+Size 53331 at 13500/46104
+Size 53331 at 14000/46104
+Size 53331 at 14500/46104
+Size 53331 at 15000/46104
+Size 53331 at 15500/46104
+Size 53331 at 16000/46104
+Size 53331 at 16500/46104
+Size 53331 at 17000/46104
+Size 53331 at 17500/46104
+Size 53331 at 18000/46104
+Size 53331 at 18500/46104
+Size 53331 at 19000/46104
+Size 53331 at 19500/46104
+Size 53331 at 20000/46104
+Size 53331 at 20500/46104
+Size 53331 at 21000/46104
+Size 53331 at 21500/46104
+Size 53331 at 22000/46104
+Size 53331 at 22500/46104
+Size 53331 at 23000/46104
+Size 53331 at 23500/46104
+Size 53331 at 24000/46104
+Size 53331 at 24500/46104
+Size 53331 at 25000/46104
+Size 53331 at 25500/46104
+Size 53331 at 26000/46104
+Size 53331 at 26500/46104
+Size 53331 at 27000/46104
+Size 53331 at 27500/46104
+Size 53331 at 28000/46104
+Size 53331 at 28500/46104
+Size 53331 at 29000/46104
+Size 53331 at 29500/46104
+Size 53331 at 30000/46104
+Size 53331 at 30500/46104
+Size 53331 at 31000/46104
+Size 53331 at 31500/46104
+Size 53331 at 32000/46104
+Size 53331 at 32500/46104
+Size 53331 at 33000/46104
+Size 53331 at 33500/46104
+Size 53331 at 34000/46104
+Size 53331 at 34500/46104
+Size 53331 at 35000/46104
+Size 53331 at 35500/46104
+Size 53331 at 36000/46104
+Size 53331 at 36500/46104
+Size 53331 at 37000/46104
+Size 53331 at 37500/46104
+Size 53331 at 38000/46104
+Size 53331 at 38500/46104
+Size 53331 at 39000/46104
+Size 53331 at 39500/46104
+Size 53331 at 40000/46104
+Size 53331 at 40500/46104
+Size 53331 at 41000/46104
+Size 53331 at 41500/46104
+Size 53331 at 42000/46104
+Size 53331 at 42500/46104
+Size 53331 at 43000/46104
+Size 53331 at 43500/46104
+Size 53331 at 44000/46104
+Size 52918 at 44500/46104
+Size 52293 at 45000/46104
+Size 51726 at 45500/46104
+Size 46753 at 46000/46104
+Size 7087
+Size 7087 at 0/46104
+Size 7087 at 500/46104
+Size 7087 at 1000/46104
+Size 7087 at 1500/46104
+Size 7087 at 2000/46104
+Size 7087 at 2500/46104
+Size 7087 at 3000/46104
+Size 7087 at 3500/46104
+Size 7087 at 4000/46104
+Size 7087 at 4500/46104
+Size 7087 at 5000/46104
+Size 7087 at 5500/46104
+Size 7087 at 6000/46104
+Size 7087 at 6500/46104
+Size 7087 at 7000/46104
+Size 7087 at 7500/46104
+Size 7087 at 8000/46104
+Size 7087 at 8500/46104
+Size 7087 at 9000/46104
+Size 7087 at 9500/46104
+Size 7087 at 10000/46104
+Size 7087 at 10500/46104
+Size 7087 at 11000/46104
+Size 7087 at 11500/46104
+Size 7087 at 12000/46104
+Size 7087 at 12500/46104
+Size 7087 at 13000/46104
+Size 7087 at 13500/46104
+Size 7087 at 14000/46104
+Size 7087 at 14500/46104
+Size 7087 at 15000/46104
+Size 7087 at 15500/46104
+Size 7087 at 16000/46104
+Size 7087 at 16500/46104
+Size 7087 at 17000/46104
+Size 7087 at 17500/46104
+Size 7087 at 18000/46104
+Size 7087 at 18500/46104
+Size 7087 at 19000/46104
+Size 7087 at 19500/46104
+Size 7087 at 20000/46104
+Size 7087 at 20500/46104
+Size 7087 at 21000/46104
+Size 7087 at 21500/46104
+Size 7087 at 22000/46104
+Size 7087 at 22500/46104
+Size 7087 at 23000/46104
+Size 7087 at 23500/46104
+Size 7087 at 24000/46104
+Size 7087 at 24500/46104
+Size 7087 at 25000/46104
+Size 7087 at 25500/46104
+Size 7087 at 26000/46104
+Size 7087 at 26500/46104
+Size 7087 at 27000/46104
+Size 7087 at 27500/46104
+Size 7087 at 28000/46104
+Size 7087 at 28500/46104
+Size 7087 at 29000/46104
+Size 7087 at 29500/46104
+Size 7087 at 30000/46104
+Size 7087 at 30500/46104
+Size 7087 at 31000/46104
+Size 7087 at 31500/46104
+Size 7087 at 32000/46104
+Size 7087 at 32500/46104
+Size 7087 at 33000/46104
+Size 7087 at 33500/46104
+Size 7087 at 34000/46104
+Size 7087 at 34500/46104
+Size 7087 at 35000/46104
+Size 7087 at 35500/46104
+Size 7087 at 36000/46104
+Size 7087 at 36500/46104
+Size 7087 at 37000/46104
+Size 7087 at 37500/46104
+Size 7087 at 38000/46104
+Size 7087 at 38500/46104
+Size 7087 at 39000/46104
+Size 7087 at 39500/46104
+Size 7087 at 40000/46104
+Size 7087 at 40500/46104
+Size 7087 at 41000/46104
+Size 7087 at 41500/46104
+Size 7087 at 42000/46104
+Size 7087 at 42500/46104
+Size 7087 at 43000/46104
+Size 7087 at 43500/46104
+Size 7087 at 44000/46104
+Size 4707 at 44500/46104
+Size 793 at 45000/46104
+Size 792 at 45500/46104
+Size 480 at 46000/46104
+Size 408
+Size 408 at 0/46104
+Size 408 at 500/46104
+Size 408 at 1000/46104
+Size 408 at 1500/46104
+Size 408 at 2000/46104
+Size 408 at 2500/46104
+Size 408 at 3000/46104
+Size 408 at 3500/46104
+Size 408 at 4000/46104
+Size 408 at 4500/46104
+Size 408 at 5000/46104
+Size 408 at 5500/46104
+Size 408 at 6000/46104
+Size 408 at 6500/46104
+Size 408 at 7000/46104
+Size 408 at 7500/46104
+Size 408 at 8000/46104
+Size 408 at 8500/46104
+Size 408 at 9000/46104
+Size 408 at 9500/46104
+Size 408 at 10000/46104
+Size 408 at 10500/46104
+Size 408 at 11000/46104
+Size 408 at 11500/46104
+Size 408 at 12000/46104
+Size 408 at 12500/46104
+Size 408 at 13000/46104
+Size 408 at 13500/46104
+Size 408 at 14000/46104
+Size 408 at 14500/46104
+Size 408 at 15000/46104
+Size 408 at 15500/46104
+Size 408 at 16000/46104
+Size 408 at 16500/46104
+Size 408 at 17000/46104
+Size 408 at 17500/46104
+Size 408 at 18000/46104
+Size 408 at 18500/46104
+Size 408 at 19000/46104
+Size 408 at 19500/46104
+Size 408 at 20000/46104
+Size 408 at 20500/46104
+Size 408 at 21000/46104
+Size 408 at 21500/46104
+Size 408 at 22000/46104
+Size 408 at 22500/46104
+Size 408 at 23000/46104
+Size 408 at 23500/46104
+Size 408 at 24000/46104
+Size 408 at 24500/46104
+Size 408 at 25000/46104
+Size 408 at 25500/46104
+Size 408 at 26000/46104
+Size 408 at 26500/46104
+Size 408 at 27000/46104
+Size 408 at 27500/46104
+Size 408 at 28000/46104
+Size 408 at 28500/46104
+Size 408 at 29000/46104
+Size 408 at 29500/46104
+Size 408 at 30000/46104
+Size 408 at 30500/46104
+Size 408 at 31000/46104
+Size 408 at 31500/46104
+Size 408 at 32000/46104
+Size 408 at 32500/46104
+Size 408 at 33000/46104
+Size 408 at 33500/46104
+Size 408 at 34000/46104
+Size 408 at 34500/46104
+Size 408 at 35000/46104
+Size 408 at 35500/46104
+Size 408 at 36000/46104
+Size 408 at 36500/46104
+Size 408 at 37000/46104
+Size 408 at 37500/46104
+Size 408 at 38000/46104
+Size 408 at 38500/46104
+Size 408 at 39000/46104
+Size 408 at 39500/46104
+Size 408 at 40000/46104
+Size 408 at 40500/46104
+Size 408 at 41000/46104
+Size 408 at 41500/46104
+Size 408 at 42000/46104
+Size 408 at 42500/46104
+Size 408 at 43000/46104
+Size 408 at 43500/46104
+Size 408 at 44000/46104
+Size 408 at 44500/46104
+Size 408 at 45000/46104
+Size 408 at 45500/46104
+Size 408 at 46000/46104
+Size 408
+Invariant time: 4.749
+Number of invariants: 408
+Invariant Clauses 44472
+NUMBER OF CLAUSES 2544100
+NUMBER OF STATE CLAUSES 440704
+NUMBER OF DECOMPOSITION CLAUSES 2103396
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 17.32% 82.68% 0.0% 
+NUMBER OF PATHS 108
+Starting cryptominisat5.5
+Setting starttime of solver to 1604506106736
+Command exited with non-zero status 10
+3.54 0.12
+
+Time command gave the following runtime for the solver: 3660
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... done
+SAT-Solver says: SATISFIABLE
+
+extracting solution
+Consider method^1_5,142950 142950 m1_serve
+5 101 pathaction!1_5,9422
+Consider method^1_2,64390 64390 m1_serve
+2 31 pathaction!1_2,9419
+Consider method^0_,160704 160704 __top_1
+ 30 pathaction!0_,46122
+Consider method^1_10,22676 22676 m1_serve
+10 58 pathaction!1_10,9425
+Consider method^1_12,79983 79983 m0_serve
+12 67 pathaction!1_12,9418
+Consider method^1_7,109981 109981 m0_serve
+7 54 pathaction!1_7,9409
+Consider method^1_1,92223 92223 m1_serve
+1 51 pathaction!1_1,9416
+Consider method^1_14,152303 152303 m1_serve
+14 59 pathaction!1_14,9410
+Consider method^1_8,112019 112019 m0_serve
+8 117 pathaction!1_8,9421
+Consider method^1_6,89195 89195 m1_serve
+6 36 pathaction!1_6,9413
+Consider method^1_9,133551 133551 m1_serve
+9 126 pathaction!1_9,9417
+Consider method^1_13,31266 31266 m0_serve
+13 34 pathaction!1_13,9415
+Consider method^1_0,107786 107786 m0_serve
+0 81 pathaction!1_0,9411
+Consider method^1_17,150619 150619 m0_serve
+17 29 pathaction!1_17,9408
+Consider method^1_3,61483 61483 m1_serve
+3 42 pathaction!1_3,9412
+Consider method^1_4,38451 38451 m1_serve
+4 91 pathaction!1_4,9414
+Consider method^1_16,96671 96671 m1_serve
+16 78 pathaction!1_16,9424
+Consider method^1_11,5266 5266 m0_serve
+11 69 pathaction!1_11,9423
+Consider method^1_15,77504 77504 m1_serve
+15 41 pathaction!1_15,9420
+
+
+CHECKING primitive solution of length 108 ...
+true 79 __method_precondition_m0_serve_0_precondition[child1,bread8,content4,sandw2,table3;]
+true 112 make_sandwich_no_gluten[sandw2,bread8,content4;]
+true 7 put_on_tray[sandw2,tray2;kitchen]
+true 70 move_tray[tray2,kitchen,table3;]
+true 39 serve_sandwich_no_gluten[sandw2,child1,tray2,table3;]
+true 68 move_tray[tray2,table3,kitchen;]
+true 15 __method_precondition_m1_serve_1_precondition[child2,bread9,content14,table1,sandw20;]
+true 111 make_sandwich[sandw20,bread9,content14;]
+true 116 put_on_tray[sandw20,tray3;kitchen]
+true 24 move_tray[tray3,kitchen,table1;]
+true 8 serve_sandwich[sandw20,child2,tray3,table1;]
+true 92 move_tray[tray3,table1,kitchen;]
+true 87 __method_precondition_m1_serve_1_precondition[child3,bread13,content6,table1,sandw9;]
+true 57 make_sandwich[sandw9,bread13,content6;]
+true 89 put_on_tray[sandw9,tray3;kitchen]
+true 109 move_tray[tray3,kitchen,table1;]
+true 96 serve_sandwich[sandw9,child3,tray3,table1;]
+true 53 move_tray[tray3,table1,kitchen;]
+true 90 __method_precondition_m1_serve_1_precondition[child4,bread14,content2,table3,sandw18;]
+true 9 make_sandwich[sandw18,bread14,content2;]
+true 84 put_on_tray[sandw18,tray3;kitchen]
+true 26 move_tray[tray3,kitchen,table3;]
+true 47 serve_sandwich[sandw18,child4,tray3,table3;]
+true 123 move_tray[tray3,table3,kitchen;]
+true 64 __method_precondition_m1_serve_1_precondition[child5,bread3,content11,table1,sandw19;]
+true 94 make_sandwich[sandw19,bread3,content11;]
+true 12 put_on_tray[sandw19,tray4;kitchen]
+true 99 move_tray[tray4,kitchen,table1;]
+true 63 serve_sandwich[sandw19,child5,tray4,table1;]
+true 107 move_tray[tray4,table1,kitchen;]
+true 115 __method_precondition_m1_serve_1_precondition[child6,bread12,content10,table1,sandw21;]
+true 13 make_sandwich[sandw21,bread12,content10;]
+true 16 put_on_tray[sandw21,tray1;kitchen]
+true 71 move_tray[tray1,kitchen,table1;]
+true 10 serve_sandwich[sandw21,child6,tray1,table1;]
+true 5 move_tray[tray1,table1,kitchen;]
+true 113 __method_precondition_m1_serve_1_precondition[child7,bread16,content16,table1,sandw15;]
+true 27 make_sandwich[sandw15,bread16,content16;]
+true 88 put_on_tray[sandw15,tray1;kitchen]
+true 65 move_tray[tray1,kitchen,table1;]
+true 76 serve_sandwich[sandw15,child7,tray1,table1;]
+true 97 move_tray[tray1,table1,kitchen;]
+true 11 __method_precondition_m0_serve_0_precondition[child8,bread11,content5,sandw5,table2;]
+true 75 make_sandwich_no_gluten[sandw5,bread11,content5;]
+true 4 put_on_tray[sandw5,tray4;kitchen]
+true 61 move_tray[tray4,kitchen,table2;]
+true 35 serve_sandwich_no_gluten[sandw5,child8,tray4,table2;]
+true 106 move_tray[tray4,table2,kitchen;]
+true 50 __method_precondition_m0_serve_0_precondition[child9,bread2,content9,sandw13,table3;]
+true 25 make_sandwich_no_gluten[sandw13,bread2,content9;]
+true 0 put_on_tray[sandw13,tray2;kitchen]
+true 77 move_tray[tray2,kitchen,table3;]
+true 38 serve_sandwich_no_gluten[sandw13,child9,tray2,table3;]
+true 124 move_tray[tray2,table3,kitchen;]
+true 40 __method_precondition_m1_serve_1_precondition[child10,bread15,content8,table1,sandw6;]
+true 86 make_sandwich[sandw6,bread15,content8;]
+true 6 put_on_tray[sandw6,tray4;kitchen]
+true 110 move_tray[tray4,kitchen,table1;]
+true 125 serve_sandwich[sandw6,child10,tray4,table1;]
+true 98 move_tray[tray4,table1,kitchen;]
+true 62 __method_precondition_m1_serve_1_precondition[child11,bread1,content13,table2,sandw4;]
+true 56 make_sandwich[sandw4,bread1,content13;]
+true 121 put_on_tray[sandw4,tray2;kitchen]
+true 43 move_tray[tray2,kitchen,table2;]
+true 46 serve_sandwich[sandw4,child11,tray2,table2;]
+true 3 move_tray[tray2,table2,kitchen;]
+true 93 __method_precondition_m0_serve_0_precondition[child12,bread6,content3,sandw24,table2;]
+true 120 make_sandwich_no_gluten[sandw24,bread6,content3;]
+true 32 put_on_tray[sandw24,tray4;kitchen]
+true 83 move_tray[tray4,kitchen,table2;]
+true 114 serve_sandwich_no_gluten[sandw24,child12,tray4,table2;]
+true 55 move_tray[tray4,table2,kitchen;]
+true 20 __method_precondition_m0_serve_0_precondition[child13,bread17,content7,sandw23,table3;]
+true 74 make_sandwich_no_gluten[sandw23,bread17,content7;]
+true 19 put_on_tray[sandw23,tray1;kitchen]
+true 52 move_tray[tray1,kitchen,table3;]
+true 66 serve_sandwich_no_gluten[sandw23,child13,tray1,table3;]
+true 119 move_tray[tray1,table3,kitchen;]
+true 105 __method_precondition_m0_serve_0_precondition[child14,bread4,content1,sandw11,table3;]
+true 85 make_sandwich_no_gluten[sandw11,bread4,content1;]
+true 33 put_on_tray[sandw11,tray2;kitchen]
+true 82 move_tray[tray2,kitchen,table3;]
+true 122 serve_sandwich_no_gluten[sandw11,child14,tray2,table3;]
+true 45 move_tray[tray2,table3,kitchen;]
+true 103 __method_precondition_m1_serve_1_precondition[child15,bread5,content12,table1,sandw17;]
+true 104 make_sandwich[sandw17,bread5,content12;]
+true 23 put_on_tray[sandw17,tray1;kitchen]
+true 102 move_tray[tray1,kitchen,table1;]
+true 2 serve_sandwich[sandw17,child15,tray1,table1;]
+true 22 move_tray[tray1,table1,kitchen;]
+true 28 __method_precondition_m1_serve_1_precondition[child16,bread18,content15,table2,sandw7;]
+true 118 make_sandwich[sandw7,bread18,content15;]
+true 1 put_on_tray[sandw7,tray2;kitchen]
+true 17 move_tray[tray2,kitchen,table2;]
+true 108 serve_sandwich[sandw7,child16,tray2,table2;]
+true 100 move_tray[tray2,table2,kitchen;]
+true 21 __method_precondition_m1_serve_1_precondition[child17,bread10,content18,table2,sandw10;]
+true 48 make_sandwich[sandw10,bread10,content18;]
+true 60 put_on_tray[sandw10,tray2;kitchen]
+true 18 move_tray[tray2,kitchen,table2;]
+true 73 serve_sandwich[sandw10,child17,tray2,table2;]
+true 72 move_tray[tray2,table2,kitchen;]
+true 80 __method_precondition_m0_serve_0_precondition[child18,bread7,content17,sandw14,table3;]
+true 44 make_sandwich_no_gluten[sandw14,bread7,content17;]
+true 95 put_on_tray[sandw14,tray4;kitchen]
+true 49 move_tray[tray4,kitchen,table3;]
+true 14 serve_sandwich_no_gluten[sandw14,child18,tray4,table3;]
+true 37 move_tray[tray4,table3,kitchen;]
+ done.
+Computing the upper bound
+Computing the lower bound
+LEN 1
+ICAPS: 40
+TSTG: 2
+Method: 1
+DP max: 0
+Taking minimum: 0
+LEN 2
+ICAPS: 80
+TSTG: 2
+Method: 2
+DP max: 0
+Taking minimum: 0
+LEN 3
+ICAPS: 120
+TSTG: 2
+Method: 2
+DP max: 0
+Taking minimum: 0
+LEN 4
+ICAPS: 160
+TSTG: 2
+Method: 2
+DP max: 0
+Taking minimum: 0
+LEN 5
+ICAPS: 200
+TSTG: 2
+Method: 2
+DP max: 0
+Taking minimum: 0
+LEN 6
+ICAPS: 240
+TSTG: 2
+Method: 2
+DP max: 0
+Taking minimum: 0
+LEN 7
+ICAPS: 280
+TSTG: 2
+Method: 3
+
+RUNWATCH_RESULT TIMEOUT RETVAL 130 TIME_SECS 300.233 MEMPEAK_KBS 7330473.984

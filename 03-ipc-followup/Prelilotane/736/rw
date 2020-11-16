@@ -1,0 +1,133 @@
+0.000 
+0.000 Hello from  L i l o t a n e  version rls-2020-11-06T08:48:42+01:00-glucose4
+0.000 by Dominik Schreiber <dominik.schreiber@kit.edu> 2020
+0.000 using SAT solver glucose4
+0.000 
+0.004 17 methods, 11 abstract tasks, 30 primitive tasks
+0.004 Sorts extracted.
+0.051 Mined 34 new reduction preconditions (+109.7%).
+0.051 38 operators and 17 methods created.
+0.051 Iteration 0.
+0.051 Creating initial layer of size 2
+0.052 Attempting to solve formula with 62 clauses (69 literals) and 1 assumptions
+0.052 Unsolvable at layer 0 -- expanding.
+0.052 Iteration 1.
+0.052 New layer size: 8
+0.053 Attempting to solve formula with 346 clauses (797 literals) and 7 assumptions
+0.053 Unsolvable at layer 1 -- expanding.
+0.053 Iteration 2.
+0.053 New layer size: 29
+0.058 Attempting to solve formula with 2239 clauses (6402 literals) and 17 assumptions
+0.058 Unsolvable at layer 2 -- expanding.
+0.058 Iteration 3.
+0.058 New layer size: 53
+0.066 Attempting to solve formula with 6397 clauses (19728 literals) and 16 assumptions
+c last restart ## conflicts  :  13 218 
+0.067 Found a solution at layer 3.
+==>
+813 visit waypoint0
+815 navigate rover1 waypoint0 waypoint1
+822 unvisit waypoint0
+830 nop
+832 sample_soil rover1 rover1store waypoint1
+835 communicate_soil_data2 rover1 general waypoint1 waypoint3
+863 visit waypoint1
+865 navigate rover1 waypoint1 waypoint2
+899 unvisit waypoint1
+918 drop rover1 rover1store
+921 sample_soil rover1 rover1store waypoint2
+923 communicate_soil_data2 rover1 general waypoint2 waypoint3
+954 nop
+999 nop
+1002 sample_rock rover0 rover0store waypoint0
+1004 communicate_rock_data2 rover0 general waypoint0 waypoint3
+1035 visit waypoint0
+1038 navigate rover0 waypoint0 waypoint1
+1060 unvisit waypoint0
+1078 drop rover0 rover0store
+1082 sample_rock rover0 rover0store waypoint1
+1084 communicate_rock_data2 rover0 general waypoint1 waypoint3
+1114 nop
+1123 calibrate rover0 camera2 objective1 waypoint1
+1138 visit waypoint1
+1142 navigate rover0 waypoint1 waypoint0
+1168 unvisit waypoint1
+1187 take_image rover0 waypoint0 objective0 camera2 high_res
+1190 nop
+1199 communicate_image_data rover0 general objective0 high_res waypoint0 waypoint3
+1214 nop
+1224 calibrate rover1 camera0 objective1 waypoint2
+1240 visit waypoint2
+1243 navigate rover1 waypoint2 waypoint1
+1263 unvisit waypoint2
+1282 take_image rover1 waypoint1 objective2 camera0 high_res
+1285 nop
+1294 communicate_image_data rover1 general objective2 high_res waypoint1 waypoint3
+1309 nop
+1319 calibrate rover1 camera1 objective1 waypoint1
+1334 visit waypoint1
+1339 navigate rover1 waypoint1 waypoint0
+1359 unvisit waypoint1
+1377 take_image rover1 waypoint0 objective0 camera1 colour
+1380 nop
+1389 communicate_image_data rover1 general objective0 colour waypoint0 waypoint3
+root 105 117 142 168 193 237 276
+105 get_soil_data waypoint1 -> m7_get_soil_data 317 829 832 834
+117 get_soil_data waypoint2 -> m7_get_soil_data 382 917 921 922
+142 get_rock_data waypoint0 -> m10_get_rock_data 953 998 1002 1003
+168 get_rock_data waypoint1 -> m10_get_rock_data 512 1077 1082 1083
+193 get_image_data objective0 high_res -> m13_get_image_data 576 598 1187 641
+237 get_image_data objective2 high_res -> m13_get_image_data 661 673 1282 716
+276 get_image_data objective0 colour -> m13_get_image_data 736 748 1377 791
+317 do_navigate1 rover1 waypoint1 -> m1_do_navigate1 813 814 822
+382 do_navigate1 rover1 waypoint2 -> m1_do_navigate1 863 864 899
+512 do_navigate1 rover0 waypoint1 -> m1_do_navigate1 1035 1037 1060
+576 do_calibrate rover0 camera2 -> m15_do_calibrate 1113 1123
+598 do_navigate1 rover0 waypoint0 -> m1_do_navigate1 1138 1141 1168
+641 send_image_data rover0 objective0 high_res -> m14_send_image_data 1189 1199
+661 do_calibrate rover1 camera0 -> m15_do_calibrate 1213 1224
+673 do_navigate1 rover1 waypoint1 -> m1_do_navigate1 1240 1242 1263
+716 send_image_data rover1 objective2 high_res -> m14_send_image_data 1284 1294
+736 do_calibrate rover1 camera1 -> m15_do_calibrate 1308 1319
+748 do_navigate1 rover1 waypoint0 -> m1_do_navigate1 1334 1338 1359
+791 send_image_data rover1 objective0 colour -> m14_send_image_data 1379 1389
+814 do_navigate2 rover1 waypoint0 waypoint1 -> m3_do_navigate2 815
+829 empty_store rover1store rover1 -> m5_empty_store 830
+834 send_soil_data rover1 waypoint1 -> m9_send_soil_data 835
+864 do_navigate2 rover1 waypoint1 waypoint2 -> m3_do_navigate2 865
+917 empty_store rover1store rover1 -> m6_empty_store 918
+922 send_soil_data rover1 waypoint2 -> m9_send_soil_data 923
+953 do_navigate1 rover0 waypoint0 -> m0_do_navigate1 954
+998 empty_store rover0store rover0 -> m5_empty_store 999
+1003 send_rock_data rover0 waypoint0 -> m12_send_rock_data 1004
+1037 do_navigate2 rover0 waypoint0 waypoint1 -> m3_do_navigate2 1038
+1077 empty_store rover0store rover0 -> m6_empty_store 1078
+1083 send_rock_data rover0 waypoint1 -> m12_send_rock_data 1084
+1113 do_navigate1 rover0 waypoint1 -> m0_do_navigate1 1114
+1141 do_navigate2 rover0 waypoint1 waypoint0 -> m3_do_navigate2 1142
+1189 do_navigate1 rover0 waypoint0 -> m0_do_navigate1 1190
+1213 do_navigate1 rover1 waypoint2 -> m0_do_navigate1 1214
+1242 do_navigate2 rover1 waypoint2 waypoint1 -> m3_do_navigate2 1243
+1284 do_navigate1 rover1 waypoint1 -> m0_do_navigate1 1285
+1308 do_navigate1 rover1 waypoint1 -> m0_do_navigate1 1309
+1338 do_navigate2 rover1 waypoint1 waypoint0 -> m3_do_navigate2 1339
+1379 do_navigate1 rover1 waypoint0 -> m0_do_navigate1 1380
+<==
+0.068 End of solution plan.
+0.068 Total amount of clauses encoded: 6397
+0.068 - qfactsemantics : 2342 cls
+0.068 - frameaxioms : 1946 cls
+0.068 - substitutionconstraints : 516 cls
+0.068 - reductionconstraints : 463 cls
+0.068 - actionconstraints : 314 cls
+0.068 - predecessors : 154 cls
+0.068 - truefacts : 126 cls
+0.068 - actioneffects : 120 cls
+0.068 - expansions : 119 cls
+0.068 - atleastoneelement : 92 cls
+0.068 - atmostoneelement : 86 cls
+0.068 - qconstequality : 34 cls
+0.068 - axiomaticops : 2 cls
+0.068 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.823 MEMPEAK_KBS 0

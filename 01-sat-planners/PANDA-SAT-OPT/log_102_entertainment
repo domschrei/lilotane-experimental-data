@@ -1,0 +1,715 @@
+PANDA - Planning and Acting in a Network Decomposition Architecture
+Believe us: It's great, it's fantastic!
+
+PANDA Copyright (C) 2014-2018 Gregor Behnke, Pascal Bercher, Thomas Geier, Kadir
+Dede, Daniel Höller, Kristof Mickeleit, Matthias Englert
+This program comes with ABSOLUTELY NO WARRANTY
+This is free software, and you are welcome to redistribute it under certain
+conditions; run PANDA with -license for details.
+
+Main Developers:
+- Gregor Behnke, http://www.uni-ulm.de/in/ki/behnke
+- Daniel Höller, http://www.uni-ulm.de/in/ki/hoeller
+
+With many thanks to various further contributors.
+Run PANDA with the command line argument -contributors for an extensive list.
+
+Run it with -help for more information like available options.
+
+
+PANDA was called with: "-systemConfig sat-exists-forbidden-implication-optimise(bin)(cms55) -programPath cryptominisat55=./cryptominisat5 instances/entertainment/domain.hddl instances/entertainment/p02-split-with-cable.hddl"
+
+
+Planner Configuration
+=====================
+Domain: instances/entertainment/domain.hddl
+Problem: instances/entertainment/p02-split-with-cable.hddl
+Output: none
+
+Planning Configuration
+======================
+	printGeneralInformation : true
+	printAdditionalData     : true
+	random seed             : 42
+	time limit (in seconds) : none
+
+	external programs:
+		cryptominisat5.5 : ./cryptominisat5
+
+	Parsing Configuration
+	---------------------
+	Parser                : autodetect file-type
+	Expand Sort Hierarchy : true
+	ClosedWordAssumption  : true
+	CompileSHOPMethods    : true
+	Eliminate Equality    : true
+	Strip Hybridity       : true
+	Reduce General Tasks  : true
+	
+	Preprocessing Configuration
+	---------------------------
+	Compile negative preconditions    : true
+	Compile unit methods              : false
+	Compile order in methods          : false
+	Compile initial plan              : true
+	Ensure Methods Have Last Task     : false
+	Split independent parameters      : true
+	Remove unnecessary predicates     : true
+	Expand choiceless abstract tasks  : false
+	Domain Cleanup                    : true
+	Convert to SAS+                   : false
+	Grounded Reachability Analysis    : Planning Graph (mutex-free)
+	Grounded Task Decomposition Graph : Two Way TDG
+	Iterate reachability analysis     : true
+	Ground domain                     : true
+	Iterate reachability analysis     : true
+	Stop directly after grounding     : false
+	
+	SAT-Planning Configuration
+	--------------------------
+	solver           : cryptominisat5.5
+	full planner run : true
+	optimise         : true
+	reduction method : only normalise 
+	check result     : true
+	
+	Post-processing Configuration
+	-----------------------------
+	search result with Decomposition Tree
+	statistics
+	timings
+	search status
+	search result
+#0 "00 global:01:problem"="p02-split-with-cable.hddl";"00 global:00:domain"="domain.hddl"
+Parsing domain ... using HDDL parser ... done
+Preparing internal domain representation ... done.
+Initial domain
+	number of abstract tasks = 14
+	number of tasks = 29
+	number of decomposition methods = 30
+	number of predicates = 9
+	number of sorts = 3
+	number of tasks in largest method = 3
+	number of primitive SHOP tasks = 6
+	number of epsilon methods = 0
+	number of primitive tasks = 15
+	number of constants = 9
+Compiling negative preconditions ... done.
+	number of abstract tasks = 14
+	number of tasks = 29
+	number of decomposition methods = 30
+	number of predicates = 18
+	number of sorts = 3
+	number of tasks in largest method = 3
+	number of primitive SHOP tasks = 6
+	number of epsilon methods = 0
+	number of primitive tasks = 15
+	number of constants = 9
+Compiling split parameters ... done.
+	number of abstract tasks = 14
+	number of tasks = 29
+	number of decomposition methods = 30
+	number of predicates = 18
+	number of sorts = 3
+	number of tasks in largest method = 3
+	number of primitive SHOP tasks = 6
+	number of epsilon methods = 0
+	number of primitive tasks = 15
+	number of constants = 9
+Lifted reachability analysis and domain cleanup ... done.
+	number of abstract tasks = 14
+	number of tasks = 29
+	number of decomposition methods = 30
+	number of predicates = 11
+	number of sorts = 3
+	number of tasks in largest method = 3
+	number of primitive SHOP tasks = 6
+	number of epsilon methods = 0
+	number of primitive tasks = 15
+	number of constants = 9
+Grounded planning graph ... done in 117ms.
+	Number of Grounded Actions 45
+	Number of Grounded Literals 51
+	number of abstract tasks = 14
+	number of tasks = 27
+	number of decomposition methods = 28
+	number of predicates = 11
+	number of sorts = 3
+	number of tasks in largest method = 3
+	number of primitive SHOP tasks = 6
+	number of epsilon methods = 0
+	number of primitive tasks = 13
+	number of constants = 9
+Two Way TDG ... done.
+	number of abstract tasks = 12
+	number of tasks = 23
+	number of decomposition methods = 24
+	number of predicates = 11
+	number of sorts = 3
+	number of tasks in largest method = 3
+	number of primitive SHOP tasks = 6
+	number of epsilon methods = 0
+	number of primitive tasks = 11
+	number of constants = 9
+Grounding ... done.
+	number of abstract tasks = 30
+	number of tasks = 51
+	number of decomposition methods = 44
+	number of predicates = 63
+	number of sorts = 0
+	number of tasks in largest method = 3
+	number of primitive SHOP tasks = 16
+	number of epsilon methods = 0
+	number of primitive tasks = 21
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 30
+	number of tasks = 51
+	number of decomposition methods = 44
+	number of predicates = 14
+	number of sorts = 0
+	number of tasks in largest method = 3
+	number of primitive SHOP tasks = 16
+	number of epsilon methods = 0
+	number of primitive tasks = 21
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 10ms.
+	Number of Grounded Actions 16
+	Number of Grounded Literals 10
+	number of abstract tasks = 23
+	number of tasks = 39
+	number of decomposition methods = 33
+	number of predicates = 14
+	number of sorts = 0
+	number of tasks in largest method = 3
+	number of primitive SHOP tasks = 11
+	number of epsilon methods = 0
+	number of primitive tasks = 16
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 23
+	number of tasks = 39
+	number of decomposition methods = 33
+	number of predicates = 14
+	number of sorts = 0
+	number of tasks in largest method = 3
+	number of primitive SHOP tasks = 11
+	number of epsilon methods = 0
+	number of primitive tasks = 16
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 23
+	number of tasks = 39
+	number of decomposition methods = 34
+	number of predicates = 14
+	number of sorts = 0
+	number of tasks in largest method = 3
+	number of primitive SHOP tasks = 11
+	number of epsilon methods = 0
+	number of primitive tasks = 16
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 23
+	number of tasks = 39
+	number of decomposition methods = 34
+	number of predicates = 10
+	number of sorts = 0
+	number of tasks in largest method = 3
+	number of primitive SHOP tasks = 11
+	number of epsilon methods = 0
+	number of primitive tasks = 16
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 16ms.
+	Number of Grounded Actions 16
+	Number of Grounded Literals 10
+	number of abstract tasks = 23
+	number of tasks = 39
+	number of decomposition methods = 34
+	number of predicates = 10
+	number of sorts = 0
+	number of tasks in largest method = 3
+	number of primitive SHOP tasks = 11
+	number of epsilon methods = 0
+	number of primitive tasks = 16
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 23
+	number of tasks = 39
+	number of decomposition methods = 33
+	number of predicates = 10
+	number of sorts = 0
+	number of tasks in largest method = 3
+	number of primitive SHOP tasks = 11
+	number of epsilon methods = 0
+	number of primitive tasks = 16
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 23
+	number of tasks = 39
+	number of decomposition methods = 34
+	number of predicates = 10
+	number of sorts = 0
+	number of tasks in largest method = 3
+	number of primitive SHOP tasks = 11
+	number of epsilon methods = 0
+	number of primitive tasks = 16
+	number of constants = 0
+Compiling methods with identical tasks ... done.
+	number of abstract tasks = 24
+	number of tasks = 40
+	number of decomposition methods = 35
+	number of predicates = 10
+	number of sorts = 0
+	number of tasks in largest method = 3
+	number of primitive SHOP tasks = 11
+	number of epsilon methods = 0
+	number of primitive tasks = 16
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 24
+	number of tasks = 40
+	number of decomposition methods = 35
+	number of predicates = 10
+	number of sorts = 0
+	number of tasks in largest method = 3
+	number of primitive SHOP tasks = 11
+	number of epsilon methods = 0
+	number of primitive tasks = 16
+	number of constants = 0
+Tasks 16 - 5
+Domain is acyclic: true
+Domain is mostly acyclic: true
+Domain is regular: false
+Domain is tail recursive: true
+Domain is totally ordered: true
+Domain has last task in all methods: true
+Time remaining for planner 9223372036854773926ms
+
+Running SAT search with K = 4
+Generating initial PDT ... done
+initial PDT has 7 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... Still waiting ... running for 102 will abort at 9223372036854773904
+done
+PDT has 3 leafs
+SHOP LEAFS 3
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Computing invariants [Rintanen]
+candidates build 135
+Size 105 at 0/16
+Size 24
+Size 24 at 0/16
+Size 24
+Invariant time: 0.016
+Number of invariants: 24
+Invariant Clauses 96
+NUMBER OF CLAUSES 273
+NUMBER OF STATE CLAUSES 172
+NUMBER OF DECOMPOSITION CLAUSES 101
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 63.0% 37.0% 0.0% 
+NUMBER OF PATHS 3
+Starting cryptominisat5.5
+Setting starttime of solver to 1604514187360
+Command exited with non-zero status 20
+0.00 0.00
+
+Time command gave the following runtime for the solver: 0
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 5
+Generating initial PDT ... done
+initial PDT has 11 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 5 leafs
+SHOP LEAFS 4
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 144
+NUMBER OF CLAUSES 599
+NUMBER OF STATE CLAUSES 271
+NUMBER OF DECOMPOSITION CLAUSES 328
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 45.24% 54.76% 0.0% 
+NUMBER OF PATHS 5
+Starting cryptominisat5.5
+Setting starttime of solver to 1604514187541
+Command exited with non-zero status 20
+0.00 0.00
+
+Time command gave the following runtime for the solver: 0
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+Still waiting ... running for 100 will abort at 9223372036854773558
+
+Running SAT search with K = 6
+Generating initial PDT ... done
+initial PDT has 11 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 7 leafs
+SHOP LEAFS 5
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 192
+NUMBER OF CLAUSES 808
+NUMBER OF STATE CLAUSES 365
+NUMBER OF DECOMPOSITION CLAUSES 443
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 45.17% 54.83% 0.0% 
+NUMBER OF PATHS 7
+Starting cryptominisat5.5
+Setting starttime of solver to 1604514187661
+Command exited with non-zero status 20
+0.00 0.00
+
+Time command gave the following runtime for the solver: 0
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+Still waiting ... running for 100 will abort at 9223372036854773429
+
+Running SAT search with K = 7
+Generating initial PDT ... done
+initial PDT has 11 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 10 leafs
+SHOP LEAFS 5
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 264
+NUMBER OF CLAUSES 1219
+NUMBER OF STATE CLAUSES 529
+NUMBER OF DECOMPOSITION CLAUSES 690
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 43.4% 56.6% 0.0% 
+NUMBER OF PATHS 10
+Starting cryptominisat5.5
+Setting starttime of solver to 1604514187798
+Command exited with non-zero status 10
+0.00 0.00
+
+Time command gave the following runtime for the solver: 0
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... done
+Still waiting ... running for 101 will abort at 9223372036854773291
+SAT-Solver says: SATISFIABLE
+
+extracting solution
+Consider method^4_0;1;0;0,10 10 m-dconnect-v
+0;1;0;0 10 pathaction!4_0;1;0;0,31
+Consider method^5_0;1;0;0;1,18 18 _M-plug|CONSEQUENT
+0;1;0;0;1 7 pathaction!5_0;1;0;0;1,33
+Consider method^2_0;1,15 15 m-connect-rec-v
+0;1 1 pathaction!2_0;1,15
+Consider method^4_0;2;1;1,25 25 _M-plug|CONSEQUENT
+0;2;1;1 12 pathaction!4_0;2;1;1,32
+Consider method^6_0;1;1;1;0;0,22 22 _M-plug|ANTECEDENT|DISJUNCT-0|CONSEQUENT
+0;1;1;1;0;0 14 pathaction!6_0;1;1;1;0;0,27
+Consider method^3_0;1;1,0 0 m-dconnect-v
+0;1;1 17 pathaction!3_0;1;1,30
+Consider method^5_0;1;1;1;0,1 1 _M-plug|ANTECEDENT|DISJUNCT-0
+0;1;1;1;0 19 pathaction!5_0;1;1;1;0,17
+Consider method^2_0;2,32 32 m-connect-rec-a
+0;2 11 pathaction!2_0;2,38
+Consider method^6_0;1;0;0;1;0,5 5 _M-plug|CONSEQUENT|CONSEQUENT
+0;1;0;0;1;0 24 pathaction!6_0;1;0;0;1;0,19
+Consider method^3_0;2;1,9 9 m-dconnect-a
+0;2;1 13 pathaction!3_0;2;1,5
+Consider method^4_0;1;1;1,3 3 _M-plug|ANTECEDENT
+0;1;1;1 5 pathaction!4_0;1;1;1,34
+Consider method^0_,34 34 __top_3
+ 9 pathaction!0_,39
+Consider method^3_0;2;0,14 14 m-connect-direct-a
+0;2;0 0 pathaction!3_0;2;0,37
+Consider method^6_0;2;1;1;1;0,7 7 _M-plug|CONSEQUENT|ANTECEDENT|DISJUNCT-1
+0;2;1;1;1;0 18 pathaction!6_0;2;1;1;1;0,9
+Consider method^5_0;2;1;1;1,11 11 _M-plug|CONSEQUENT|ANTECEDENT
+0;2;1;1;1 2 pathaction!5_0;2;1;1;1,18
+Consider method^4_0;2;0;0,29 29 m-dconnect-a-empty
+0;2;0;0 8 pathaction!4_0;2;0;0,6
+Consider method^3_0;1;0,16 16 m-connect-direct-v
+0;1;0 6 pathaction!3_0;1;0,14
+Consider method^1_0,13 13 m-connect-split-1
+0 21 pathaction!1_0,11
+
+
+CHECKING primitive solution of length 7 ...
+true 20 __method_precondition_m-dconnect-v_10_precondition[dvd-1-scart-1,scart-to-cinch-cable-1-scart-1;]
+true 26 plug|CONSEQUENT|CONSEQUENT[dvd-1,dvd-1-scart-1,scart-to-cinch-cable-1,scart-to-cinch-cable-1-scart-1;]
+true 23 __method_precondition_m-dconnect-v_10_precondition[scart-to-cinch-cable-1-cinch-3,simple-tv-1-cinch-1;]
+true 25 plug|ANTECEDENT|DISJUNCT-0|CONSEQUENT[scart-to-cinch-cable-1,scart-to-cinch-cable-1-cinch-3,simple-tv-1,simple-tv-1-cinch-1;]
+true 4 __method_precondition_m-dconnect-a-empty_12_precondition[dvd-1,scart-to-cinch-cable-1;]
+true 3 __method_precondition_m-dconnect-a_9_precondition[scart-to-cinch-cable-1-cinch-2,simple-tv-1-cinch-2;]
+true 22 plug|CONSEQUENT|ANTECEDENT|DISJUNCT-1[scart-to-cinch-cable-1,scart-to-cinch-cable-1-cinch-2,simple-tv-1,simple-tv-1-cinch-2;]
+ done.
+Computing the upper bound
+Computing the lower bound
+LEN 1
+ICAPS: 50
+TSTG: 8
+Method: 2147483647
+DP max: 9
+Taking minimum: 8
+Starting cost optimisation, using binary search = true
+=====================================================================
+  upper bound = 3
+  lower bound = 0
+
+Running SAT search with cost bound = 1
+==================================================
+  upper bound = 3
+  lower bound = 0
+LEN 1
+ICAPS: 50
+TSTG: 8
+Method: 2147483647
+DP max: 9
+Taking minimum: 8
+Generating initial PDT ... done
+initial PDT has 11 leafs
+Checking whether the PDT can grow any more ... no ... done
+Normalising and optimising PDT ... done
+PDT has 11 leafs
+SHOP LEAFS 6
+Assignment implications
+Generating clauses representing decomposition ... done
+At most K: 0ms input: 10 K = 1
+Number of actions Formula: 2ms for 28 clauses
+Layers: 4 paths 11
+Layer 1 g 0 = 0 - 1 / 0 clauses 78
+Layer 1 g 1 = 2 - 3 / 2 clauses 78
+Layer 1 g 2 = 4 - 5 / 4 clauses 78
+Layer 1 g 3 = 6 - 7 / 6 clauses 78
+Layer 1 g 4 = 8 - 9 / 8 clauses 78
+Layer 2 g 0 = 0 - 3 / 1 clauses 78
+Layer 2 g 1 = 4 - 7 / 5 clauses 78
+Layer 2 g 2 = 8 - 10 / 9 clauses 78
+Layer 3 g 0 = 0 - 7 / 3 clauses 78
+Layer 3 g 1 = 8 - 10 / 11 clauses 78
+Layer 4 g 0 = 0 - 10 / 7 clauses 78
+Still waiting ... running for 100 will abort at 9223372036854773058
+Invariant Clauses 288
+NUMBER OF CLAUSES 2480
+NUMBER OF STATE CLAUSES 1611
+NUMBER OF DECOMPOSITION CLAUSES 869
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 64.96000000000001% 35.04% 0.0% 
+NUMBER OF PATHS 11
+Starting cryptominisat5.5
+Setting starttime of solver to 1604514188127
+Command exited with non-zero status 20
+0.00 0.00
+
+Time command gave the following runtime for the solver: 0
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with cost bound = 2
+==================================================
+  upper bound = 3
+  lower bound = 1
+LEN 2
+ICAPS: 100
+TSTG: 8
+Method: 2147483647
+DP max: 9
+Taking minimum: 8
+Generating initial PDT ... done
+initial PDT has 11 leafs
+Checking whether the PDT can grow any more ... no ... done
+Normalising and optimising PDT ... done
+PDT has 11 leafs
+SHOP LEAFS 6
+Assignment implications
+Generating clauses representing decomposition ... done
+At most K: 3ms input: 10 K = 2
+Number of actions Formula: 3ms for 47 clauses
+Layers: 4 paths 11
+Layer 1 g 0 = 0 - 1 / 0 clauses 78
+Layer 1 g 1 = 2 - 3 / 2 clauses 78
+Layer 1 g 2 = 4 - 5 / 4 clauses 78
+Layer 1 g 3 = 6 - 7 / 6 clauses 78
+Layer 1 g 4 = 8 - 9 / 8 clauses 78
+Layer 2 g 0 = 0 - 3 / 1 clauses 78
+Layer 2 g 1 = 4 - 7 / 5 clauses 78
+Layer 2 g 2 = 8 - 10 / 9 clauses 78
+Layer 3 g 0 = 0 - 7 / 3 clauses 78
+Layer 3 g 1 = 8 - 10 / 11 clauses 78
+Layer 4 g 0 = 0 - 10 / 7 clauses 78
+Invariant Clauses 288
+NUMBER OF CLAUSES 2499
+NUMBER OF STATE CLAUSES 1611
+NUMBER OF DECOMPOSITION CLAUSES 888
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 64.47% 35.53% 0.0% 
+NUMBER OF PATHS 11
+Starting cryptominisat5.5
+Setting starttime of solver to 1604514188339
+Still waiting ... running for 100 will abort at 9223372036854772784
+Command exited with non-zero status 20
+0.00 0.00
+
+Time command gave the following runtime for the solver: 0
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+Panda says: SOLUTION
+============ global ============
+randomseed     = 42
+peak memory    = 154727664
+planner result = SOLUTION
+============ solution ============
+number of primitive plan steps = 7
+cost of solution               = 3
+============ properties ============
+acyclic                  = true
+mostly acyclic           = true
+regular                  = false
+tail recursive           = true
+totally ordered          = true
+last task in all methods = true
+============ problem ============
+number of constants                  = 0
+number of predicates                 = 10
+number of actions                    = 40
+number of abstract actions           = 24
+number of primitive actions          = 16
+number of methods                    = 35
+number of primitive shop actions     = 11
+number of primitive non-shop actions = 5
+size of largest method               = 3
+average method size                  = 1
+============ sat ============
+plan length                     = 2
+number of variables             = 1237
+number of clauses               = 2508
+average size of clauses         = 2.4808612440191387
+number of assert                = 7
+number of horn                  = 2209
+K offset                        = 0
+K chosen value                  = 8
+state formula                   = 1611
+method children clauses         = 0
+number of paths                 = 11
+maximum plan length             = 11
+number of decomposition clauses = 888
+number of ordering clauses      = 0
+number of state clauses         = 1611
+solved                          = true
+timeout                         = false
+
+----------------- TIMINGS -----------------
+============ total ============
+total = 3270
+============ parsing ============
+total                         = 993
+file parser                   = 545
+sort expansion                = 133
+closed world assumption       = 83
+inherit preconditions         = 0
+shop methods                  = 9
+eliminate identical variables = 62
+strip domain of hybridity     = 1
+flatten formula               = 158
+============ preprocessing ============
+total                                      = 827
+compile negative preconditions             = 44
+compile unit methods                       = 0
+split parameter                            = 12
+compile methods with identical tasks       = 2
+removing unnecessary predicates            = 55
+lifted reachabiltiy analysis               = 75
+grounded planning graph analysis           = 340
+grounded task decomposition graph analysis = 231
+grounding                                  = 60
+create artificial top task                 = 1
+============ search preparation ============
+compute state invariants = 22
+============ sat ============
+total                                        = 630
+generate formula                             = 516
+generate path decomposition tree             = 135
+normalise path decomposition tree            = 60
+sog optimisation                             = 38
+translate path decomposition tree to clauses = 127
+generate state formula                       = 516
+generate state invariant formula             = 21
+transform to DIMACS                          = 16
+SAT solver                                   = 0
+SAT solver for K=0004                        = 0
+SAT solver for K=0005                        = 0
+SAT solver for K=0006                        = 0
+SAT solver for K=0007                        = 0
+SAT solver for K=0008                        = 0
+
+#1 "40 sat:90:solved"="true";"30 problem:05:number of primitive actions"="16";"30 problem:01:number of constants"="0";"30 problem:04:number of abstract actions"="24";"02 properties:04:tail recursive"="true";"00 global:80:peak memory"="154727664";"40 sat:20:state formula"="1611";"40 sat:01:number of variables"="1237";"40 sat:14:K offset"="0";"40 sat:30:number of paths"="11";"40 sat:00:plan length"="2";"40 sat:50:number of ordering clauses"="0";"02 properties:02:mostly acyclic"="true";"30 problem:06:number of methods"="35";"01 solution:02:cost of solution"="3";"30 problem:07:number of primitive shop actions"="11";"01 solution:01:number of primitive plan steps"="7";"02 properties:05:totally ordered"="true";"02 properties:06:last task in all methods"="true";"30 problem:03:number of actions"="40";"30 problem:08:number of primitive non-shop actions"="5";"30 problem:02:number of predicates"="10";"40 sat:03:number of horn"="2209";"40 sat:15:K chosen value"="8";"30 problem:10:average method size"="1";"02 properties:03:regular"="false";"30 problem:09:size of largest method"="3";"40 sat:03:average size of clauses"="2.4808612440191387";"40 sat:02:number of clauses"="2508";"40 sat:50:number of state clauses"="1611";"40 sat:03:number of assert"="7";"40 sat:22:method children clauses"="0";"00 global:90:planner result"="SOLUTION";"02 properties:01:acyclic"="true";"40 sat:31:maximum plan length"="11";"40 sat:50:number of decomposition clauses"="888";"00 global:02:randomseed"="42";"40 sat:91:timeout"="false";"01 parsing:01:file parser"="545";"01 parsing:08:flatten formula"="158";"40 sat:41:SAT solver for K=0004"="0";"40 sat:00:total"="630";"40 sat:16:generate state formula"="516";"40 sat:20:transform to DIMACS"="16";"40 sat:11:generate path decomposition tree"="135";"02 preprocessing:07:compile methods with identical tasks"="2";"01 parsing:07:strip domain of hybridity"="1";"40 sat:41:SAT solver for K=0008"="0";"02 preprocessing:08:removing unnecessary predicates"="55";"01 parsing:03:closed world assumption"="83";"02 preprocessing:11:lifted reachabiltiy analysis"="75";"01 parsing:02:sort expansion"="133";"40 sat:12:normalise path decomposition tree"="60";"40 sat:40:SAT solver"="0";"01 parsing:00:total"="993";"40 sat:10:generate formula"="516";"40 sat:41:SAT solver for K=0005"="0";"01 parsing:04:inherit preconditions"="0";"02 preprocessing:01:compile negative preconditions"="44";"00 total:00:total"="3270";"40 sat:13:sog optimisation"="38";"02 preprocessing:12:grounded planning graph analysis"="340";"02 preprocessing:02:compile unit methods"="0";"02 preprocessing:23:grounded task decomposition graph analysis"="231";"40 sat:41:SAT solver for K=0006"="0";"02 preprocessing:04:split parameter"="12";"01 parsing:05:shop methods"="9";"10 search preparation:02:compute state invariants"="22";"01 parsing:06:eliminate identical variables"="62";"40 sat:15:translate path decomposition tree to clauses"="127";"40 sat:17:generate state invariant formula"="21";"02 preprocessing:00:total"="827";"02 preprocessing:99:create artificial top task"="1";"02 preprocessing:84:grounding"="60";"40 sat:41:SAT solver for K=0007"="0"
+#!verify __method_precondition_m-dconnect-v_10_precondition[dvd-1-scart-1,scart-to-cinch-cable-1-scart-1];plug|CONSEQUENT|CONSEQUENT[dvd-1,dvd-1-scart-1,scart-to-cinch-cable-1,scart-to-cinch-cable-1-scart-1];__method_precondition_m-dconnect-v_10_precondition[scart-to-cinch-cable-1-cinch-3,simple-tv-1-cinch-1];plug|ANTECEDENT|DISJUNCT-0|CONSEQUENT[scart-to-cinch-cable-1,scart-to-cinch-cable-1-cinch-3,simple-tv-1,simple-tv-1-cinch-1];__method_precondition_m-dconnect-a-empty_12_precondition[dvd-1,scart-to-cinch-cable-1];__method_precondition_m-dconnect-a_9_precondition[scart-to-cinch-cable-1-cinch-2,simple-tv-1-cinch-2];plug|CONSEQUENT|ANTECEDENT|DISJUNCT-1[scart-to-cinch-cable-1,scart-to-cinch-cable-1-cinch-2,simple-tv-1,simple-tv-1-cinch-2]
+==>
+0 __method_precondition_m-dconnect-v_10_precondition dvd-1-scart-1 scart-to-cinch-cable-1-scart-1 
+1 plug dvd-1 dvd-1-scart-1 scart-to-cinch-cable-1 scart-to-cinch-cable-1-scart-1 
+2 __method_precondition_m-dconnect-v_10_precondition scart-to-cinch-cable-1-cinch-3 simple-tv-1-cinch-1 
+3 plug|DISJUNCT-0 scart-to-cinch-cable-1 scart-to-cinch-cable-1-cinch-3 simple-tv-1 simple-tv-1-cinch-1 
+4 __method_precondition_m-dconnect-a-empty_12_precondition dvd-1 scart-to-cinch-cable-1 
+5 __method_precondition_m-dconnect-a_9_precondition scart-to-cinch-cable-1-cinch-2 simple-tv-1-cinch-2 
+6 plug|DISJUNCT-1 scart-to-cinch-cable-1 scart-to-cinch-cable-1-cinch-2 simple-tv-1 simple-tv-1-cinch-2 
+root 10
+7 v_connect dvd-1 scart-to-cinch-cable-1  -> m-connect-direct-v 21
+8 a_connect dvd-1 simple-tv-1  -> m-connect-rec-a 11 23
+9 plug dvd-1 dvd-1-scart-1 scart-to-cinch-cable-1 scart-to-cinch-cable-1-scart-1  -> _M-plug|CONSEQUENT|CONSEQUENT 1
+10 __MakeMethodSubTasksUniqueCompilation__top_3  -> __top_3 19
+11 a_connect dvd-1 scart-to-cinch-cable-1  -> m-connect-direct-a 17
+12 plug|DISJUNCT-0 scart-to-cinch-cable-1 scart-to-cinch-cable-1-cinch-3 simple-tv-1 simple-tv-1-cinch-1  -> _M-plug|ANTECEDENT|DISJUNCT-0|CONSEQUENT 3
+13 plug scart-to-cinch-cable-1 scart-to-cinch-cable-1-cinch-3 simple-tv-1 simple-tv-1-cinch-1  -> _M-plug|ANTECEDENT|DISJUNCT-0 12
+14 plug scart-to-cinch-cable-1 scart-to-cinch-cable-1-cinch-3 simple-tv-1 simple-tv-1-cinch-1  -> _M-plug|ANTECEDENT 13
+15 plug scart-to-cinch-cable-1 scart-to-cinch-cable-1-cinch-2 simple-tv-1 simple-tv-1-cinch-2  -> _M-plug|CONSEQUENT 18
+16 direct_v_connect scart-to-cinch-cable-1 simple-tv-1  -> m-dconnect-v 2 14
+17 direct_a_connect dvd-1 scart-to-cinch-cable-1  -> m-dconnect-a-empty 4
+18 plug scart-to-cinch-cable-1 scart-to-cinch-cable-1-cinch-2 simple-tv-1 simple-tv-1-cinch-2  -> _M-plug|CONSEQUENT|ANTECEDENT 22
+19 av_connect dvd-1 simple-tv-1  -> m-connect-split-1 20 8
+20 v_connect dvd-1 simple-tv-1  -> m-connect-rec-v 7 16
+21 direct_v_connect dvd-1 scart-to-cinch-cable-1  -> m-dconnect-v 0 24
+22 plug scart-to-cinch-cable-1 scart-to-cinch-cable-1-cinch-2 simple-tv-1 simple-tv-1-cinch-2  -> _M-plug|CONSEQUENT|ANTECEDENT|DISJUNCT-1 6
+23 direct_a_connect scart-to-cinch-cable-1 simple-tv-1  -> m-dconnect-a 5 15
+24 plug dvd-1 dvd-1-scart-1 scart-to-cinch-cable-1 scart-to-cinch-cable-1-scart-1  -> _M-plug|CONSEQUENT 9
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 4.143 MEMPEAK_KBS 201306.112

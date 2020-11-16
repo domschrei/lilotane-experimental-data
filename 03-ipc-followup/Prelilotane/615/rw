@@ -1,0 +1,120 @@
+0.000 
+0.000 Hello from  L i l o t a n e  version rls-2020-11-06T08:48:42+01:00-glucose4
+0.000 by Dominik Schreiber <dominik.schreiber@kit.edu> 2020
+0.000 using SAT solver glucose4
+0.000 
+0.021 79 methods, 55 abstract tasks, 63 primitive tasks
+0.021 Sorts extracted.
+0.086 Mined 95 new reduction preconditions (+9500.0%).
+0.086 80 operators and 79 methods created.
+0.086 Iteration 0.
+0.086 Creating initial layer of size 2
+0.109 Attempting to solve formula with 2193 clauses (2194 literals) and 1 assumptions
+0.109 Unsolvable at layer 0 -- expanding.
+0.109 Iteration 1.
+0.109 New layer size: 2
+0.246 Attempting to solve formula with 3038 clauses (4013 literals) and 1 assumptions
+0.246 Unsolvable at layer 1 -- expanding.
+0.246 Iteration 2.
+0.246 New layer size: 2
+0.360 Forbidding reduction (m_tlt_clear_road_tree Q_1,0_5:0_point Q_1,0_6:1_point)@(1,0): no children at offset 0
+0.381 Attempting to solve formula with 3173 clauses (4397 literals) and 1 assumptions
+0.381 Unsolvable at layer 2 -- expanding.
+0.381 Iteration 3.
+0.381 New layer size: 4
+0.420 Forbidding reduction (m_provide_medical_attention_simple_on_site Q_1,0_9:0_adult)@(2,0): no children at offset 0
+0.420 Forbidding reduction (m_provide_medical_attention_in_hospital Q_2,0_11:0_hospital Q_1,0_9:0_adult)@(2,0): no children at offset 0
+0.621 Attempting to solve formula with 19522 clauses (54293 literals) and 3 assumptions
+0.621 Unsolvable at layer 3 -- expanding.
+0.621 Iteration 4.
+0.621 New layer size: 18
+0.867 Forbidding reduction (m_clean_up_hazard_normal Q_1,0_1:0_point Q_3,1_14:1_hazard_team Q_1,0_2:1_point very_hazardous very_hazardous)@(3,1): no children at offset 2
+0.953 Attempting to solve formula with 97343 clauses (293490 literals) and 15 assumptions
+0.956 Unsolvable at layer 4 -- expanding.
+0.956 Iteration 5.
+0.956 New layer size: 57
+1.369 Attempting to solve formula with 340604 clauses (1017963 literals) and 36 assumptions
+1.374 Unsolvable at layer 5 -- expanding.
+1.374 Iteration 6.
+1.374 New layer size: 161
+2.415 Attempting to solve formula with 900902 clauses (2602088 literals) and 79 assumptions
+2.437 Unsolvable at layer 6 -- expanding.
+2.437 Iteration 7.
+2.437 New layer size: 330
+2.448 Forbidding reduction (m_drive_to Q_1,0_1:0_point Q_4,0_24:0_work_crew Q_5,0_76:2_vehicle Q_6,1_202:3_point)@(6,1): no children at offset 1
+5.031 Attempting to solve formula with 1926471 clauses (5445016 literals) and 136 assumptions
+5.135 Unsolvable at layer 7 -- expanding.
+5.135 Iteration 8.
+5.135 New layer size: 565
+5.146 Forbidding reduction (m_drive_to Q_5,0_79:1_point emt1 amb1 brighton_high)@(7,2): no children at offset 1
+9.321 Attempting to solve formula with 3493092 clauses (9647456 literals) and 165 assumptions
+c last restart ## conflicts  :  2 17838 
+9.475 Found a solution at layer 8.
+==>
+432580 SHOP_methodm_get_to_as_cargo_precondition tcrew1 brighton_high brighton_dump pvan1
+461969 SHOP_methodm_get_to_vehicle_gets_driven_precondition pvan1 brighton_dump twelve_corners pu1
+461978 SHOP_methodm_drive_to_precondition pvan1 twelve_corners pu1
+461980 p_1Navegate_vehicle
+461988 SHOP_methodm_get_in_ambulatory_person_precondition tcrew1 brighton_dump pvan1
+468713 p_2Climb_in
+471112 SHOP_methodm_get_to_vehicle_gets_driven_precondition pvan1 brighton_high brighton_dump pu1
+471117 SHOP_methodm_drive_to_precondition pvan1 brighton_dump pu1
+471125 navegate_vehicle pu1 pvan1 brighton_high brighton_dump
+473788 climb_out tcrew1 pvan1 brighton_high
+478630 place_cones tcrew1
+519843 SHOP_methodm_clear_wreck_precondition brighton_high twelve_corners vehicle_32818
+552275 SHOP_methodm_tow_to_precondition vehicle_32818 brighton_high
+552291 SHOP_methodm_get_to_vehicle_gets_driven_precondition ttruck1 brighton_high brighton_dump ttdriver1
+552295 SHOP_methodm_drive_to_precondition ttruck1 brighton_dump ttdriver1
+552298 navegate_vehicle ttdriver1 ttruck1 brighton_high brighton_dump
+552301 hook_to_tow_truck ttruck1 vehicle_32818
+552310 SHOP_methodm_get_to_vehicle_gets_driven_precondition ttruck1 henrietta_dump brighton_high ttdriver1
+552313 SHOP_methodm_drive_to_precondition ttruck1 brighton_high ttdriver1
+552316 navegate_vehicle ttdriver1 ttruck1 henrietta_dump brighton_high
+552319 unhook_from_tow_truck ttruck1 vehicle_32818
+599745 SHOP_methodm_get_to_already_there_precondition tcrew1 brighton_high
+664658 pickup_cones tcrew1
+root 4380
+4380 tlt -> m_tlt_clear_road_wreck 4521
+4521 clear_road_wreck brighton_high twelve_corners -> m_clear_road_wreck 4545 4604 7213
+4545 set_up_cones brighton_high twelve_corners -> m_set_up_cones 9426 478630
+4604 clear_wreck brighton_high twelve_corners -> m_clear_wreck 519843 68191
+7213 take_down_cones brighton_high twelve_corners -> m_take_down_cones 599744 664658
+9426 get_to tcrew1 brighton_high -> m_get_to_as_cargo 432580 34423 36662 37797 473787
+34423 get_to pvan1 brighton_dump -> m_get_to_vehicle_gets_driven 461969 108614
+36662 get_in tcrew1 pvan1 -> m_get_in_ambulatory_person 461988 468712
+37797 get_to pvan1 brighton_high -> m_get_to_vehicle_gets_driven 471112 113140
+68191 tow_to vehicle_32818 henrietta_dump -> m_tow_to 552275 173177 552301 174282 552319
+108614 drive_to pu1 pvan1 brighton_dump -> m_drive_to 461978 461979
+113140 drive_to pu1 pvan1 brighton_high -> m_drive_to 471117 471124
+173177 get_to ttruck1 brighton_high -> m_get_to_vehicle_gets_driven 552291 339927
+174282 get_to ttruck1 henrietta_dump -> m_get_to_vehicle_gets_driven 552310 339965
+339927 drive_to ttdriver1 ttruck1 brighton_high -> m_drive_to 552295 552297
+339965 drive_to ttdriver1 ttruck1 henrietta_dump -> m_drive_to 552313 552315
+461979 cnavegate_vehicle pu1 pvan1 brighton_dump twelve_corners -> prefix_1 461980
+468712 cclimb_in tcrew1 pvan1 brighton_dump -> prefix_2 468713
+471124 cnavegate_vehicle pu1 pvan1 brighton_high brighton_dump -> regular_2 471125
+473787 get_out tcrew1 pvan1 -> m_get_out_ambulatory_person 473788
+552297 cnavegate_vehicle ttdriver1 ttruck1 brighton_high brighton_dump -> regular_2 552298
+552315 cnavegate_vehicle ttdriver1 ttruck1 henrietta_dump brighton_high -> regular_2 552316
+599744 get_to tcrew1 brighton_high -> m_get_to_already_there 599745
+<==
+9.478 End of solution plan.
+9.478 Total amount of clauses encoded: 3493092
+9.478 - frameaxioms : 2960575 cls
+9.478 - qfactsemantics : 376276 cls
+9.478 - reductionconstraints : 56697 cls
+9.478 - actionconstraints : 30716 cls
+9.478 - substitutionconstraints : 30663 cls
+9.478 - atmostoneelement : 12612 cls
+9.478 - expansions : 6171 cls
+9.478 - predecessors : 5014 cls
+9.478 - qconstequality : 4010 cls
+9.478 - truefacts : 2917 cls
+9.478 - actioneffects : 2256 cls
+9.478 - qtypeconstraints : 1886 cls
+9.478 - atleastoneelement : 1141 cls
+9.478 - axiomaticops : 2 cls
+9.478 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 10.437 MEMPEAK_KBS 806956.032

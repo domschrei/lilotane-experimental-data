@@ -1,0 +1,689 @@
+PANDA - Planning and Acting in a Network Decomposition Architecture
+Believe us: It's great, it's fantastic!
+
+PANDA Copyright (C) 2014-2018 Gregor Behnke, Pascal Bercher, Thomas Geier, Kadir
+Dede, Daniel Höller, Kristof Mickeleit, Matthias Englert
+This program comes with ABSOLUTELY NO WARRANTY
+This is free software, and you are welcome to redistribute it under certain
+conditions; run PANDA with -license for details.
+
+Main Developers:
+- Gregor Behnke, http://www.uni-ulm.de/in/ki/behnke
+- Daniel Höller, http://www.uni-ulm.de/in/ki/hoeller
+
+With many thanks to various further contributors.
+Run PANDA with the command line argument -contributors for an extensive list.
+
+Run it with -help for more information like available options.
+
+
+PANDA was called with: "-systemConfig sat-exists-forbidden-implication(cms55) -programPath cryptominisat55=./cryptominisat5 instances/gripper/domain.hddl instances/gripper/p10.hddl"
+
+
+Planner Configuration
+=====================
+Domain: instances/gripper/domain.hddl
+Problem: instances/gripper/p10.hddl
+Output: none
+
+Planning Configuration
+======================
+	printGeneralInformation : true
+	printAdditionalData     : true
+	random seed             : 42
+	time limit (in seconds) : none
+
+	external programs:
+		cryptominisat5.5 : ./cryptominisat5
+
+	Parsing Configuration
+	---------------------
+	Parser                : autodetect file-type
+	Expand Sort Hierarchy : true
+	ClosedWordAssumption  : true
+	CompileSHOPMethods    : true
+	Eliminate Equality    : true
+	Strip Hybridity       : true
+	Reduce General Tasks  : true
+	
+	Preprocessing Configuration
+	---------------------------
+	Compile negative preconditions    : true
+	Compile unit methods              : false
+	Compile order in methods          : false
+	Compile initial plan              : true
+	Ensure Methods Have Last Task     : false
+	Split independent parameters      : true
+	Remove unnecessary predicates     : true
+	Expand choiceless abstract tasks  : true
+	Domain Cleanup                    : true
+	Convert to SAS+                   : false
+	Grounded Reachability Analysis    : Planning Graph (mutex-free)
+	Grounded Task Decomposition Graph : Two Way TDG
+	Iterate reachability analysis     : true
+	Ground domain                     : true
+	Iterate reachability analysis     : true
+	Stop directly after grounding     : false
+	
+	SAT-Planning Configuration
+	--------------------------
+	solver           : cryptominisat5.5
+	full planner run : true
+	reduction method : only normalise 
+	check result     : true
+	
+	Post-processing Configuration
+	-----------------------------
+	search result with Decomposition Tree
+	statistics
+	timings
+	search status
+	search result
+#0 "00 global:01:problem"="p10.hddl";"00 global:00:domain"="domain.hddl"
+Parsing domain ... using HDDL parser ... done
+Preparing internal domain representation ... done.
+Initial domain
+	number of abstract tasks = 3
+	number of tasks = 11
+	number of decomposition methods = 4
+	number of predicates = 4
+	number of sorts = 4
+	number of tasks in largest method = 7
+	number of primitive SHOP tasks = 4
+	number of epsilon methods = 0
+	number of primitive tasks = 8
+	number of constants = 26
+Compiling negative preconditions ... done.
+	number of abstract tasks = 3
+	number of tasks = 11
+	number of decomposition methods = 4
+	number of predicates = 8
+	number of sorts = 4
+	number of tasks in largest method = 7
+	number of primitive SHOP tasks = 4
+	number of epsilon methods = 0
+	number of primitive tasks = 8
+	number of constants = 26
+Compiling split parameters ... done.
+	number of abstract tasks = 3
+	number of tasks = 11
+	number of decomposition methods = 4
+	number of predicates = 8
+	number of sorts = 4
+	number of tasks in largest method = 7
+	number of primitive SHOP tasks = 4
+	number of epsilon methods = 0
+	number of primitive tasks = 8
+	number of constants = 26
+Lifted reachability analysis and domain cleanup ... done.
+	number of abstract tasks = 2
+	number of tasks = 9
+	number of decomposition methods = 3
+	number of predicates = 4
+	number of sorts = 4
+	number of tasks in largest method = 7
+	number of primitive SHOP tasks = 3
+	number of epsilon methods = 0
+	number of primitive tasks = 7
+	number of constants = 26
+Grounded planning graph ... done in 213ms.
+	Number of Grounded Actions 163
+	Number of Grounded Literals 92
+	number of abstract tasks = 2
+	number of tasks = 9
+	number of decomposition methods = 3
+	number of predicates = 4
+	number of sorts = 4
+	number of tasks in largest method = 7
+	number of primitive SHOP tasks = 3
+	number of epsilon methods = 0
+	number of primitive tasks = 7
+	number of constants = 26
+Two Way TDG ... done.
+	number of abstract tasks = 2
+	number of tasks = 9
+	number of decomposition methods = 3
+	number of predicates = 4
+	number of sorts = 4
+	number of tasks in largest method = 7
+	number of primitive SHOP tasks = 3
+	number of epsilon methods = 0
+	number of primitive tasks = 7
+	number of constants = 26
+Grounding ... done.
+	number of abstract tasks = 13
+	number of tasks = 175
+	number of decomposition methods = 92
+	number of predicates = 92
+	number of sorts = 0
+	number of tasks in largest method = 7
+	number of primitive SHOP tasks = 26
+	number of epsilon methods = 0
+	number of primitive tasks = 162
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 13
+	number of tasks = 175
+	number of decomposition methods = 92
+	number of predicates = 92
+	number of sorts = 0
+	number of tasks in largest method = 7
+	number of primitive SHOP tasks = 26
+	number of epsilon methods = 0
+	number of primitive tasks = 162
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 67ms.
+	Number of Grounded Actions 162
+	Number of Grounded Literals 92
+	number of abstract tasks = 13
+	number of tasks = 175
+	number of decomposition methods = 92
+	number of predicates = 92
+	number of sorts = 0
+	number of tasks in largest method = 7
+	number of primitive SHOP tasks = 26
+	number of epsilon methods = 0
+	number of primitive tasks = 162
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 13
+	number of tasks = 175
+	number of decomposition methods = 92
+	number of predicates = 92
+	number of sorts = 0
+	number of tasks in largest method = 7
+	number of primitive SHOP tasks = 26
+	number of epsilon methods = 0
+	number of primitive tasks = 162
+	number of constants = 0
+Compiling expand choiceless abstract tasks ... done.
+	number of abstract tasks = 13
+	number of tasks = 175
+	number of decomposition methods = 92
+	number of predicates = 92
+	number of sorts = 0
+	number of tasks in largest method = 7
+	number of primitive SHOP tasks = 26
+	number of epsilon methods = 0
+	number of primitive tasks = 162
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 14
+	number of tasks = 176
+	number of decomposition methods = 93
+	number of predicates = 92
+	number of sorts = 0
+	number of tasks in largest method = 11
+	number of primitive SHOP tasks = 26
+	number of epsilon methods = 0
+	number of primitive tasks = 162
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 14
+	number of tasks = 176
+	number of decomposition methods = 93
+	number of predicates = 92
+	number of sorts = 0
+	number of tasks in largest method = 11
+	number of primitive SHOP tasks = 26
+	number of epsilon methods = 0
+	number of primitive tasks = 162
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 13ms.
+	Number of Grounded Actions 162
+	Number of Grounded Literals 92
+	number of abstract tasks = 14
+	number of tasks = 176
+	number of decomposition methods = 93
+	number of predicates = 92
+	number of sorts = 0
+	number of tasks in largest method = 11
+	number of primitive SHOP tasks = 26
+	number of epsilon methods = 0
+	number of primitive tasks = 162
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 14
+	number of tasks = 176
+	number of decomposition methods = 93
+	number of predicates = 92
+	number of sorts = 0
+	number of tasks in largest method = 11
+	number of primitive SHOP tasks = 26
+	number of epsilon methods = 0
+	number of primitive tasks = 162
+	number of constants = 0
+Compiling expand choiceless abstract tasks ... done.
+	number of abstract tasks = 14
+	number of tasks = 176
+	number of decomposition methods = 93
+	number of predicates = 92
+	number of sorts = 0
+	number of tasks in largest method = 11
+	number of primitive SHOP tasks = 26
+	number of epsilon methods = 0
+	number of primitive tasks = 162
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 14
+	number of tasks = 176
+	number of decomposition methods = 93
+	number of predicates = 92
+	number of sorts = 0
+	number of tasks in largest method = 11
+	number of primitive SHOP tasks = 26
+	number of epsilon methods = 0
+	number of primitive tasks = 162
+	number of constants = 0
+Compiling methods with identical tasks ... done.
+	number of abstract tasks = 14
+	number of tasks = 176
+	number of decomposition methods = 93
+	number of predicates = 92
+	number of sorts = 0
+	number of tasks in largest method = 11
+	number of primitive SHOP tasks = 26
+	number of epsilon methods = 0
+	number of primitive tasks = 162
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 14
+	number of tasks = 176
+	number of decomposition methods = 93
+	number of predicates = 92
+	number of sorts = 0
+	number of tasks in largest method = 11
+	number of primitive SHOP tasks = 26
+	number of epsilon methods = 0
+	number of primitive tasks = 162
+	number of constants = 0
+Tasks 162 - 0
+Domain is acyclic: true
+Domain is mostly acyclic: true
+Domain is regular: false
+Domain is tail recursive: true
+Domain is totally ordered: true
+Domain has last task in all methods: true
+Time remaining for planner 9223372036854773610ms
+Computing minimum decomposition height: 3
+
+Running SAT search with K = 3
+Generating initial PDT ... done
+initial PDT has 88 leafs
+Checking whether the PDT can grow any more ... Still waiting ... running for 121 will abort at 9223372036854773578
+no ... done
+Normalising and optimising PDT ... done
+PDT has 88 leafs
+SHOP LEAFS 22
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Computing invariants [Rintanen]
+candidates build 12558
+Size 12553 at 0/162
+Size 4171
+Size 4043 at 0/162
+Size 640
+Size 640 at 0/162
+Size 640
+Invariant time: 0.108
+Number of invariants: 640
+Invariant Clauses 56960
+NUMBER OF CLAUSES 76550
+NUMBER OF STATE CLAUSES 74201
+NUMBER OF DECOMPOSITION CLAUSES 2349
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 96.93% 3.0700000000000003% 0.0% 
+NUMBER OF PATHS 88
+Starting cryptominisat5.5
+Setting starttime of solver to 1604481241375
+Command exited with non-zero status 10
+0.02 0.00
+
+Time command gave the following runtime for the solver: 20
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... done
+SAT-Solver says: SATISFIABLE
+
+extracting solution
+Consider method^1_6,0 0 m0_move_two_balls
+6 38 pathaction!1_6,52
+Consider method^1_3,25 25 m0_move_two_balls
+3 107 pathaction!1_3,45
+Consider method^1_2,50 50 m0_move_two_balls
+2 105 pathaction!1_2,48
+Consider method^1_4,58 58 m0_move_two_balls
+4 73 pathaction!1_4,53
+Consider method^2_6;1,39 39 m3_goto
+6;1 110 pathaction!2_6;1,168
+Consider method^1_7,51 51 m0_move_two_balls
+7 46 pathaction!1_7,50
+Consider method^2_3;1,39 39 m3_goto
+3;1 1 pathaction!2_3;1,168
+Consider method^1_9,86 86 m0_move_two_balls
+9 2 pathaction!1_9,49
+Consider method^2_7;1,39 39 m3_goto
+7;1 68 pathaction!2_7;1,168
+Consider method^1_8,71 71 m0_move_two_balls
+8 67 pathaction!1_8,51
+Consider method^0_,92 92 __top_1
+ 23 pathaction!0_,175
+Consider method^2_10;1,39 39 m3_goto
+10;1 62 pathaction!2_10;1,168
+Consider method^2_9;1,39 39 m3_goto
+9;1 52 pathaction!2_9;1,168
+Consider method^1_0,77 77 m0_move_two_balls
+0 75 pathaction!1_0,47
+Consider method^1_1,81 81 m0_move_two_balls
+1 40 pathaction!1_1,44
+Consider method^2_5;1,39 39 m3_goto
+5;1 17 pathaction!2_5;1,168
+Consider method^2_4;1,39 39 m3_goto
+4;1 35 pathaction!2_4;1,168
+Consider method^1_10,87 87 m0_move_two_balls
+10 57 pathaction!1_10,46
+Consider method^2_0;1,36 36 m2_goto
+0;1 53 pathaction!2_0;1,168
+Consider method^2_2;1,39 39 m3_goto
+2;1 78 pathaction!2_2;1,168
+Consider method^2_1;1,39 39 m3_goto
+1;1 77 pathaction!2_1;1,168
+Consider method^2_8;1,39 39 m3_goto
+8;1 89 pathaction!2_8;1,168
+Consider method^1_5,85 85 m0_move_two_balls
+5 95 pathaction!1_5,54
+
+
+CHECKING primitive solution of length 88 ...
+true 108 __method_precondition_m0_move_two_balls_0_precondition[ball1,rooma,ball2;]
+true 90 __method_precondition_m2_goto_2_precondition[rooma;]
+true 74 nop[;]
+true 31 pick[ball1,rooma,right;]
+true 12 pick[ball2,rooma,left;]
+true 14 move[rooma,roomb;]
+true 49 drop[ball1,roomb,right;]
+true 6 drop[ball2,roomb,left;]
+true 61 __method_precondition_m0_move_two_balls_0_precondition[ball3,rooma,ball4;]
+true 36 __method_precondition_m3_goto_3_precondition[roomb;]
+true 92 move[roomb,rooma;]
+true 0 pick[ball3,rooma,right;]
+true 58 pick[ball4,rooma,left;]
+true 51 move[rooma,roomb;]
+true 30 drop[ball3,roomb,right;]
+true 55 drop[ball4,roomb,left;]
+true 70 __method_precondition_m0_move_two_balls_0_precondition[ball5,rooma,ball6;]
+true 87 __method_precondition_m3_goto_3_precondition[roomb;]
+true 3 move[roomb,rooma;]
+true 25 pick[ball5,rooma,right;]
+true 26 pick[ball6,rooma,left;]
+true 27 move[rooma,roomb;]
+true 15 drop[ball5,roomb,right;]
+true 39 drop[ball6,roomb,left;]
+true 28 __method_precondition_m0_move_two_balls_0_precondition[ball7,rooma,ball8;]
+true 76 __method_precondition_m3_goto_3_precondition[roomb;]
+true 43 move[roomb,rooma;]
+true 47 pick[ball7,rooma,right;]
+true 32 pick[ball8,rooma,left;]
+true 11 move[rooma,roomb;]
+true 34 drop[ball7,roomb,right;]
+true 42 drop[ball8,roomb,left;]
+true 60 __method_precondition_m0_move_two_balls_0_precondition[ball9,rooma,ball10;]
+true 71 __method_precondition_m3_goto_3_precondition[roomb;]
+true 72 move[roomb,rooma;]
+true 22 pick[ball9,rooma,left;]
+true 4 pick[ball10,rooma,right;]
+true 80 move[rooma,roomb;]
+true 50 drop[ball9,roomb,left;]
+true 24 drop[ball10,roomb,right;]
+true 10 __method_precondition_m0_move_two_balls_0_precondition[ball11,rooma,ball12;]
+true 109 __method_precondition_m3_goto_3_precondition[roomb;]
+true 82 move[roomb,rooma;]
+true 83 pick[ball11,rooma,right;]
+true 56 pick[ball12,rooma,left;]
+true 91 move[rooma,roomb;]
+true 86 drop[ball11,roomb,right;]
+true 7 drop[ball12,roomb,left;]
+true 59 __method_precondition_m0_move_two_balls_0_precondition[ball13,rooma,ball14;]
+true 96 __method_precondition_m3_goto_3_precondition[roomb;]
+true 88 move[roomb,rooma;]
+true 99 pick[ball13,rooma,left;]
+true 97 pick[ball14,rooma,right;]
+true 13 move[rooma,roomb;]
+true 94 drop[ball13,roomb,left;]
+true 19 drop[ball14,roomb,right;]
+true 45 __method_precondition_m0_move_two_balls_0_precondition[ball15,rooma,ball16;]
+true 81 __method_precondition_m3_goto_3_precondition[roomb;]
+true 98 move[roomb,rooma;]
+true 41 pick[ball15,rooma,right;]
+true 101 pick[ball16,rooma,left;]
+true 79 move[rooma,roomb;]
+true 65 drop[ball15,roomb,right;]
+true 102 drop[ball16,roomb,left;]
+true 84 __method_precondition_m0_move_two_balls_0_precondition[ball17,rooma,ball18;]
+true 64 __method_precondition_m3_goto_3_precondition[roomb;]
+true 106 move[roomb,rooma;]
+true 54 pick[ball17,rooma,left;]
+true 85 pick[ball18,rooma,right;]
+true 48 move[rooma,roomb;]
+true 16 drop[ball17,roomb,left;]
+true 29 drop[ball18,roomb,right;]
+true 18 __method_precondition_m0_move_two_balls_0_precondition[ball19,rooma,ball20;]
+true 69 __method_precondition_m3_goto_3_precondition[roomb;]
+true 37 move[roomb,rooma;]
+true 66 pick[ball19,rooma,right;]
+true 93 pick[ball20,rooma,left;]
+true 20 move[rooma,roomb;]
+true 104 drop[ball19,roomb,right;]
+true 103 drop[ball20,roomb,left;]
+true 8 __method_precondition_m0_move_two_balls_0_precondition[ball21,rooma,ball22;]
+true 44 __method_precondition_m3_goto_3_precondition[roomb;]
+true 5 move[roomb,rooma;]
+true 63 pick[ball21,rooma,left;]
+true 21 pick[ball22,rooma,right;]
+true 9 move[rooma,roomb;]
+true 100 drop[ball21,roomb,left;]
+true 33 drop[ball22,roomb,right;]
+ done.
+Panda says: SOLUTION
+============ global ============
+randomseed     = 42
+peak memory    = 159963520
+planner result = SOLUTION
+============ properties ============
+acyclic                  = true
+mostly acyclic           = true
+regular                  = false
+tail recursive           = true
+totally ordered          = true
+last task in all methods = true
+============ problem ============
+number of constants                  = 0
+number of predicates                 = 92
+number of actions                    = 176
+number of abstract actions           = 14
+number of primitive actions          = 162
+number of methods                    = 93
+number of primitive shop actions     = 26
+number of primitive non-shop actions = 136
+size of largest method               = 11
+average method size                  = 6
+============ sat ============
+plan length                     = -1
+number of variables             = 17926
+number of clauses               = 76550
+average size of clauses         = 2.007838014369693
+number of assert                = 26
+number of horn                  = 75999
+K offset                        = 0
+K chosen value                  = 3
+state formula                   = 74201
+method children clauses         = 0
+number of paths                 = 88
+maximum plan length             = 88
+number of decomposition clauses = 2349
+number of ordering clauses      = 0
+number of state clauses         = 74201
+solved                          = true
+timeout                         = false
+
+----------------- TIMINGS -----------------
+============ total ============
+total = 4064
+============ parsing ============
+total                         = 866
+file parser                   = 508
+sort expansion                = 123
+closed world assumption       = 103
+inherit preconditions         = 0
+shop methods                  = 36
+eliminate identical variables = 44
+strip domain of hybridity     = 1
+flatten formula               = 50
+============ preprocessing ============
+total                                      = 1200
+compile negative preconditions             = 30
+compile unit methods                       = 0
+split parameter                            = 11
+expand choiceless abstract tasks           = 0
+compile methods with identical tasks       = 4
+removing unnecessary predicates            = 9
+lifted reachabiltiy analysis               = 72
+grounded planning graph analysis           = 449
+grounded task decomposition graph analysis = 483
+grounding                                  = 116
+create artificial top task                 = 2
+============ search preparation ============
+compute state invariants = 283
+============ sat ============
+total                                        = 1450
+generate formula                             = 1165
+generate path decomposition tree             = 94
+normalise path decomposition tree            = 15
+sog optimisation                             = 28
+translate path decomposition tree to clauses = 123
+generate state formula                       = 1141
+generate state invariant formula             = 357
+transform to DIMACS                          = 108
+SAT solver                                   = 20
+SAT solver for K=0003                        = 20
+
+#1 "40 sat:90:solved"="true";"30 problem:05:number of primitive actions"="162";"30 problem:01:number of constants"="0";"30 problem:04:number of abstract actions"="14";"02 properties:04:tail recursive"="true";"00 global:80:peak memory"="159963520";"40 sat:20:state formula"="74201";"40 sat:01:number of variables"="17926";"40 sat:14:K offset"="0";"40 sat:30:number of paths"="88";"40 sat:00:plan length"="-1";"40 sat:50:number of ordering clauses"="0";"02 properties:02:mostly acyclic"="true";"30 problem:06:number of methods"="93";"30 problem:07:number of primitive shop actions"="26";"02 properties:05:totally ordered"="true";"02 properties:06:last task in all methods"="true";"30 problem:03:number of actions"="176";"30 problem:08:number of primitive non-shop actions"="136";"30 problem:02:number of predicates"="92";"40 sat:03:number of horn"="75999";"40 sat:15:K chosen value"="3";"30 problem:10:average method size"="6";"02 properties:03:regular"="false";"30 problem:09:size of largest method"="11";"40 sat:03:average size of clauses"="2.007838014369693";"40 sat:02:number of clauses"="76550";"40 sat:50:number of state clauses"="74201";"40 sat:03:number of assert"="26";"40 sat:22:method children clauses"="0";"00 global:90:planner result"="SOLUTION";"02 properties:01:acyclic"="true";"40 sat:31:maximum plan length"="88";"40 sat:50:number of decomposition clauses"="2349";"00 global:02:randomseed"="42";"40 sat:91:timeout"="false";"01 parsing:01:file parser"="508";"01 parsing:08:flatten formula"="50";"40 sat:00:total"="1450";"40 sat:16:generate state formula"="1141";"40 sat:20:transform to DIMACS"="108";"40 sat:11:generate path decomposition tree"="94";"02 preprocessing:07:compile methods with identical tasks"="4";"01 parsing:07:strip domain of hybridity"="1";"02 preprocessing:08:removing unnecessary predicates"="9";"01 parsing:03:closed world assumption"="103";"02 preprocessing:11:lifted reachabiltiy analysis"="72";"01 parsing:02:sort expansion"="123";"40 sat:12:normalise path decomposition tree"="15";"40 sat:40:SAT solver"="20";"01 parsing:00:total"="866";"40 sat:10:generate formula"="1165";"01 parsing:04:inherit preconditions"="0";"02 preprocessing:01:compile negative preconditions"="30";"00 total:00:total"="4064";"40 sat:13:sog optimisation"="28";"02 preprocessing:12:grounded planning graph analysis"="449";"02 preprocessing:02:compile unit methods"="0";"02 preprocessing:23:grounded task decomposition graph analysis"="483";"02 preprocessing:04:split parameter"="11";"01 parsing:05:shop methods"="36";"10 search preparation:02:compute state invariants"="283";"01 parsing:06:eliminate identical variables"="44";"40 sat:15:translate path decomposition tree to clauses"="123";"02 preprocessing:05:expand choiceless abstract tasks"="0";"40 sat:41:SAT solver for K=0003"="20";"40 sat:17:generate state invariant formula"="357";"02 preprocessing:00:total"="1200";"02 preprocessing:99:create artificial top task"="2";"02 preprocessing:84:grounding"="116"
+#!verify __method_precondition_m0_move_two_balls_0_precondition[ball1,rooma,ball2];__method_precondition_m2_goto_2_precondition[rooma];nop[];pick[ball1,rooma,right];pick[ball2,rooma,left];move[rooma,roomb];drop[ball1,roomb,right];drop[ball2,roomb,left];__method_precondition_m0_move_two_balls_0_precondition[ball3,rooma,ball4];__method_precondition_m3_goto_3_precondition[roomb];move[roomb,rooma];pick[ball3,rooma,right];pick[ball4,rooma,left];move[rooma,roomb];drop[ball3,roomb,right];drop[ball4,roomb,left];__method_precondition_m0_move_two_balls_0_precondition[ball5,rooma,ball6];__method_precondition_m3_goto_3_precondition[roomb];move[roomb,rooma];pick[ball5,rooma,right];pick[ball6,rooma,left];move[rooma,roomb];drop[ball5,roomb,right];drop[ball6,roomb,left];__method_precondition_m0_move_two_balls_0_precondition[ball7,rooma,ball8];__method_precondition_m3_goto_3_precondition[roomb];move[roomb,rooma];pick[ball7,rooma,right];pick[ball8,rooma,left];move[rooma,roomb];drop[ball7,roomb,right];drop[ball8,roomb,left];__method_precondition_m0_move_two_balls_0_precondition[ball9,rooma,ball10];__method_precondition_m3_goto_3_precondition[roomb];move[roomb,rooma];pick[ball9,rooma,left];pick[ball10,rooma,right];move[rooma,roomb];drop[ball9,roomb,left];drop[ball10,roomb,right];__method_precondition_m0_move_two_balls_0_precondition[ball11,rooma,ball12];__method_precondition_m3_goto_3_precondition[roomb];move[roomb,rooma];pick[ball11,rooma,right];pick[ball12,rooma,left];move[rooma,roomb];drop[ball11,roomb,right];drop[ball12,roomb,left];__method_precondition_m0_move_two_balls_0_precondition[ball13,rooma,ball14];__method_precondition_m3_goto_3_precondition[roomb];move[roomb,rooma];pick[ball13,rooma,left];pick[ball14,rooma,right];move[rooma,roomb];drop[ball13,roomb,left];drop[ball14,roomb,right];__method_precondition_m0_move_two_balls_0_precondition[ball15,rooma,ball16];__method_precondition_m3_goto_3_precondition[roomb];move[roomb,rooma];pick[ball15,rooma,right];pick[ball16,rooma,left];move[rooma,roomb];drop[ball15,roomb,right];drop[ball16,roomb,left];__method_precondition_m0_move_two_balls_0_precondition[ball17,rooma,ball18];__method_precondition_m3_goto_3_precondition[roomb];move[roomb,rooma];pick[ball17,rooma,left];pick[ball18,rooma,right];move[rooma,roomb];drop[ball17,roomb,left];drop[ball18,roomb,right];__method_precondition_m0_move_two_balls_0_precondition[ball19,rooma,ball20];__method_precondition_m3_goto_3_precondition[roomb];move[roomb,rooma];pick[ball19,rooma,right];pick[ball20,rooma,left];move[rooma,roomb];drop[ball19,roomb,right];drop[ball20,roomb,left];__method_precondition_m0_move_two_balls_0_precondition[ball21,rooma,ball22];__method_precondition_m3_goto_3_precondition[roomb];move[roomb,rooma];pick[ball21,rooma,left];pick[ball22,rooma,right];move[rooma,roomb];drop[ball21,roomb,left];drop[ball22,roomb,right]
+==>
+0 __method_precondition_m0_move_two_balls_0_precondition ball1 rooma ball2 
+1 __method_precondition_m2_goto_2_precondition rooma 
+2 nop  
+3 pick ball1 rooma right 
+4 pick ball2 rooma left 
+5 move rooma roomb 
+6 drop ball1 roomb right 
+7 drop ball2 roomb left 
+8 __method_precondition_m0_move_two_balls_0_precondition ball3 rooma ball4 
+9 __method_precondition_m3_goto_3_precondition roomb 
+10 move roomb rooma 
+11 pick ball3 rooma right 
+12 pick ball4 rooma left 
+13 move rooma roomb 
+14 drop ball3 roomb right 
+15 drop ball4 roomb left 
+16 __method_precondition_m0_move_two_balls_0_precondition ball5 rooma ball6 
+17 __method_precondition_m3_goto_3_precondition roomb 
+18 move roomb rooma 
+19 pick ball5 rooma right 
+20 pick ball6 rooma left 
+21 move rooma roomb 
+22 drop ball5 roomb right 
+23 drop ball6 roomb left 
+24 __method_precondition_m0_move_two_balls_0_precondition ball7 rooma ball8 
+25 __method_precondition_m3_goto_3_precondition roomb 
+26 move roomb rooma 
+27 pick ball7 rooma right 
+28 pick ball8 rooma left 
+29 move rooma roomb 
+30 drop ball7 roomb right 
+31 drop ball8 roomb left 
+32 __method_precondition_m0_move_two_balls_0_precondition ball9 rooma ball10 
+33 __method_precondition_m3_goto_3_precondition roomb 
+34 move roomb rooma 
+35 pick ball9 rooma left 
+36 pick ball10 rooma right 
+37 move rooma roomb 
+38 drop ball9 roomb left 
+39 drop ball10 roomb right 
+40 __method_precondition_m0_move_two_balls_0_precondition ball11 rooma ball12 
+41 __method_precondition_m3_goto_3_precondition roomb 
+42 move roomb rooma 
+43 pick ball11 rooma right 
+44 pick ball12 rooma left 
+45 move rooma roomb 
+46 drop ball11 roomb right 
+47 drop ball12 roomb left 
+48 __method_precondition_m0_move_two_balls_0_precondition ball13 rooma ball14 
+49 __method_precondition_m3_goto_3_precondition roomb 
+50 move roomb rooma 
+51 pick ball13 rooma left 
+52 pick ball14 rooma right 
+53 move rooma roomb 
+54 drop ball13 roomb left 
+55 drop ball14 roomb right 
+56 __method_precondition_m0_move_two_balls_0_precondition ball15 rooma ball16 
+57 __method_precondition_m3_goto_3_precondition roomb 
+58 move roomb rooma 
+59 pick ball15 rooma right 
+60 pick ball16 rooma left 
+61 move rooma roomb 
+62 drop ball15 roomb right 
+63 drop ball16 roomb left 
+64 __method_precondition_m0_move_two_balls_0_precondition ball17 rooma ball18 
+65 __method_precondition_m3_goto_3_precondition roomb 
+66 move roomb rooma 
+67 pick ball17 rooma left 
+68 pick ball18 rooma right 
+69 move rooma roomb 
+70 drop ball17 roomb left 
+71 drop ball18 roomb right 
+72 __method_precondition_m0_move_two_balls_0_precondition ball19 rooma ball20 
+73 __method_precondition_m3_goto_3_precondition roomb 
+74 move roomb rooma 
+75 pick ball19 rooma right 
+76 pick ball20 rooma left 
+77 move rooma roomb 
+78 drop ball19 roomb right 
+79 drop ball20 roomb left 
+80 __method_precondition_m0_move_two_balls_0_precondition ball21 rooma ball22 
+81 __method_precondition_m3_goto_3_precondition roomb 
+82 move roomb rooma 
+83 pick ball21 rooma left 
+84 pick ball22 rooma right 
+85 move rooma roomb 
+86 drop ball21 roomb left 
+87 drop ball22 roomb right 
+root 102
+88 goto rooma  -> m3_goto 57 58
+89 move_two_balls ball13 ball14 roomb  -> m0_move_two_balls 48 104 51 52 53 54 55
+90 goto rooma  -> m3_goto 41 42
+91 goto rooma  -> m3_goto 9 10
+92 move_two_balls ball17 ball18 roomb  -> m0_move_two_balls 64 105 67 68 69 70 71
+93 goto rooma  -> m3_goto 33 34
+94 move_two_balls ball19 ball20 roomb  -> m0_move_two_balls 72 109 75 76 77 78 79
+95 move_two_balls ball21 ball22 roomb  -> m0_move_two_balls 80 98 83 84 85 86 87
+96 move_two_balls ball5 ball6 roomb  -> m0_move_two_balls 16 106 19 20 21 22 23
+97 move_two_balls ball15 ball16 roomb  -> m0_move_two_balls 56 88 59 60 61 62 63
+98 goto rooma  -> m3_goto 81 82
+99 goto rooma  -> m3_goto 25 26
+100 move_two_balls ball11 ball12 roomb  -> m0_move_two_balls 40 90 43 44 45 46 47
+101 move_two_balls ball7 ball8 roomb  -> m0_move_two_balls 24 99 27 28 29 30 31
+102 __artificialTopCompilation__top_1  -> __top_1 107 108 96 101 103 100 89 97 92 94 95
+103 move_two_balls ball9 ball10 roomb  -> m0_move_two_balls 32 93 35 36 37 38 39
+104 goto rooma  -> m3_goto 49 50
+105 goto rooma  -> m3_goto 65 66
+106 goto rooma  -> m3_goto 17 18
+107 move_two_balls ball1 ball2 roomb  -> m0_move_two_balls 0 110 3 4 5 6 7
+108 move_two_balls ball3 ball4 roomb  -> m0_move_two_balls 8 91 11 12 13 14 15
+109 goto rooma  -> m3_goto 73 74
+110 goto rooma  -> m2_goto 1 2
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 5.030 MEMPEAK_KBS 274272.256

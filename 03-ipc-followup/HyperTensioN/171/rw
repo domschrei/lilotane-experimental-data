@@ -1,0 +1,56 @@
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 4077507
+max locked memory       (kbytes, -l) 65536
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 1024
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) unlimited
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 4077507
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+15728640
+----------------------Tasks-----------------------
+0 achieve_served p0
+---------------------Planning---------------------
+Time: 0.00026035308837890625s
+-----------------------Plan-----------------------
+==>
+19 up f0 f1
+18 i_lock_lift_at f1
+21 i_unlock_lift_at f1
+16 board f1 p0
+11 i_lock_boarded p0
+24 down f1 f0
+23 i_lock_lift_at f0
+26 i_unlock_lift_at f0
+27 i_unlock_boarded p0
+9 depart f0 p0
+2 i_lock_served p0
+root 0
+0 achieve_served p0 -> m22_achieve_served 1 2
+1 achieve_served2 p0 -> m24_achieve_served2 3 4
+3 do_served_depart2 f0 p0 -> m8_do_served_depart2 5 6 7 8 9
+5 achieve_boarded p0 -> m17_achieve_boarded 10 11
+10 achieve_boarded1 p0 -> m19_achieve_boarded1 12 13
+12 do_boarded_board1 f1 p0 -> m7_do_boarded_board1 14 15 16
+14 achieve_lift_at f1 -> m11_achieve_lift_at 17 18
+17 achieve_lift_at0 f1 -> m13_achieve_lift_at0 19 20
+20 achieve_lift_at0 f1 -> m12_achieve_lift_at0 
+15 ifunlock_lift_at f1 -> ifunlock5_lift_at 21
+13 achieve_boarded1 p0 -> m18_achieve_boarded1 
+6 achieve_lift_at f0 -> m11_achieve_lift_at 22 23
+22 achieve_lift_at0 f0 -> m14_achieve_lift_at0 24 25
+25 achieve_lift_at0 f0 -> m12_achieve_lift_at0 
+7 ifunlock_lift_at f0 -> ifunlock5_lift_at 26
+8 ifunlock_boarded p0 -> ifunlock1_boarded 27
+4 achieve_served2 p0 -> m23_achieve_served2 
+<==
+Total time: 0.023290395736694336s
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.107 MEMPEAK_KBS 0

@@ -1,0 +1,129 @@
+    _           _         _
+   \ |         \ |       | |                       
+   | |     __  | |      _| |______                
+   | |     \/  | |     /_   ______\                
+   | |      _  | |   __  | |  ___   ___   ___       
+   | |___  | | | |  / .\ | | / , | |   \ / ·_\    
+   \_____\ |_| |__\ \__/ |_| \___) |_|_| \___\  
+[39mL i l o t a n e  version dbg-2020-10-27T10:30:37+01:00-glucose4
+by Dominik Schreiber <dominik.schreiber@kit.edu> 2020
+using SAT solver glucose4
+
+0.001 Sorts extracted.
+0.002 Mined 7 new reduction preconditions (+53.8%).
+0.002 20 operators and 13 methods created.
+0.002 Iteration 0.
+0.002 Creating initial layer of size 2
+0.002 Attempting to solve formula with 9 clauses (12 literals) and 1 assumptions
+0.002 Unsolvable at layer 0 -- expanding.
+0.002 Iteration 1.
+0.002 New layer size: 4
+0.002 Instantiating ...
+0.002 Collected 3 relevant facts at this layer
+0.002 Encoding ...
+0.002 Attempting to solve formula with 20 clauses (31 literals) and 3 assumptions
+0.002 Unsolvable at layer 1 -- expanding.
+0.002 Iteration 2.
+0.002 New layer size: 7
+0.002 Instantiating ...
+0.002 Collected 8 relevant facts at this layer
+0.002 Encoding ...
+0.002 Attempting to solve formula with 64 clauses (114 literals) and 3 assumptions
+0.002 Unsolvable at layer 2 -- expanding.
+0.002 Iteration 3.
+0.002 New layer size: 10
+0.002 Instantiating ...
+0.003 Collected 13 relevant facts at this layer
+0.003 Encoding ...
+0.003 Attempting to solve formula with 356 clauses (856 literals) and 3 assumptions
+0.003 Unsolvable at layer 3 -- expanding.
+0.003 Iteration 4.
+0.003 New layer size: 15
+0.003 Instantiating ...
+0.004 Collected 13 relevant facts at this layer
+0.004 Encoding ...
+0.004 Attempting to solve formula with 676 clauses (1625 literals) and 5 assumptions
+0.004 Unsolvable at layer 4 -- expanding.
+0.004 Iteration 5.
+0.004 New layer size: 15
+0.004 Instantiating ...
+0.004 Collected 13 relevant facts at this layer
+0.004 Encoding ...
+0.005 Attempting to solve formula with 872 clauses (2106 literals) and 5 assumptions
+0.005 Unsolvable at layer 5 -- expanding.
+0.005 Iteration 6.
+0.005 New layer size: 20
+0.005 Instantiating ...
+0.005 Collected 13 relevant facts at this layer
+0.005 Encoding ...
+0.005 Attempting to solve formula with 1266 clauses (3025 literals) and 5 assumptions
+0.005 Unsolvable at layer 6 -- expanding.
+0.005 Iteration 7.
+0.005 New layer size: 25
+0.005 Instantiating ...
+0.006 Collected 13 relevant facts at this layer
+0.006 Encoding ...
+0.007 Attempting to solve formula with 2196 clauses (5537 literals) and 5 assumptions
+c last restart ## conflicts  :  1 112 
+0.007 Found a solution at layer 7.
+0.007 Initial plan at final layer has length 20
+0.007 Tightened initial plan length bounds at layer 7: [0,24] => [12,20]
+0.007 Searching for a plan of length < 20
+0.007 Attempting to solve formula with 2359 clauses (6004 literals) and 0 assumptions
+c last restart ## conflicts  :  2 137 
+0.007 Shorter plan (length 16) found
+0.007 Searching for a plan of length < 16
+0.007 Attempting to solve formula with 2364 clauses (6009 literals) and 0 assumptions
+c last restart ## conflicts  :  8 133 
+0.008 Shorter plan (length 12) found
+0.008 Length of current plan is at lower bound (12): finished
+==>
+425 switch_on instrument0 satellite0
+427 nop
+432 turn_to satellite0 GroundStation2 Phenomenon6
+453 calibrate satellite0 instrument0 GroundStation2
+458 turn_to satellite0 Phenomenon4 GroundStation2
+460 take_image satellite0 Phenomenon4 instrument0 thermograph0
+462 nop
+536 turn_to satellite0 Star5 Phenomenon4
+538 take_image satellite0 Star5 instrument0 thermograph0
+540 nop
+613 turn_to satellite0 Phenomenon6 Star5
+616 take_image satellite0 Phenomenon6 instrument0 thermograph0
+root 11 13 16
+11 do_mission Phenomenon4 thermograph0 -> m0_do_mission 21 460
+13 do_mission Star5 thermograph0 -> m0_do_mission 35 538
+16 do_mission Phenomenon6 thermograph0 -> m0_do_mission 44 616
+21 do_prepare satellite0 instrument0 Phenomenon4 -> m1_do_prepare 55 457
+35 do_prepare satellite0 instrument0 Star5 -> m1_do_prepare 461 535
+44 do_prepare satellite0 instrument0 Phenomenon6 -> m1_do_prepare 539 612
+55 do_switching satellite0 instrument0 -> m3_do_switching 425 264
+264 do_calibration satellite0 instrument0 GroundStation2 -> m5_do_calibration 311 453
+311 do_prepare satellite0 instrument0 GroundStation2 -> m1_do_prepare 426 431
+426 do_switching satellite0 instrument0 -> m4_do_switching 427
+431 do_turning satellite0 GroundStation2 -> m8_do_turning 432
+457 do_turning satellite0 Phenomenon4 -> m8_do_turning 458
+461 do_switching satellite0 instrument0 -> m4_do_switching 462
+535 do_turning satellite0 Star5 -> m8_do_turning 536
+539 do_switching satellite0 instrument0 -> m4_do_switching 540
+612 do_turning satellite0 Phenomenon6 -> m8_do_turning 613
+<==
+0.008 End of solution plan. (counted length of 13)
+0.008 Total amount of clauses encoded: 2364
+0.008 - directframeaxioms : 660 cls
+0.008 - actionconstraints : 285 cls
+0.008 - qfactsemantics : 214 cls
+0.008 - predecessors : 194 cls
+0.008 - expansions : 182 cls
+0.008 - reductionconstraints : 174 cls
+0.008 - planlengthcounting : 163 cls
+0.008 - qconstequality : 105 cls
+0.008 - indirectframeaxioms : 88 cls
+0.008 - substitutionconstraints : 73 cls
+0.008 - actioneffects : 43 cls
+0.008 - truefacts : 13 cls
+0.008 - assumptions : 5 cls
+0.008 - axiomaticops : 2 cls
+0.008 Exiting happily.
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 0.025 MEMPEAK_KBS 3689.472

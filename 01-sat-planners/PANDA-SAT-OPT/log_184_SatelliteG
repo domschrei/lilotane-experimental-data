@@ -1,0 +1,909 @@
+PANDA - Planning and Acting in a Network Decomposition Architecture
+Believe us: It's great, it's fantastic!
+
+PANDA Copyright (C) 2014-2018 Gregor Behnke, Pascal Bercher, Thomas Geier, Kadir
+Dede, Daniel Höller, Kristof Mickeleit, Matthias Englert
+This program comes with ABSOLUTELY NO WARRANTY
+This is free software, and you are welcome to redistribute it under certain
+conditions; run PANDA with -license for details.
+
+Main Developers:
+- Gregor Behnke, http://www.uni-ulm.de/in/ki/behnke
+- Daniel Höller, http://www.uni-ulm.de/in/ki/hoeller
+
+With many thanks to various further contributors.
+Run PANDA with the command line argument -contributors for an extensive list.
+
+Run it with -help for more information like available options.
+
+
+PANDA was called with: "-systemConfig sat-exists-forbidden-implication-optimise(bin)(cms55) -programPath cryptominisat55=./cryptominisat5 instances/SatelliteG/domain.hddl instances/SatelliteG/p12.hddl"
+
+
+Planner Configuration
+=====================
+Domain: instances/SatelliteG/domain.hddl
+Problem: instances/SatelliteG/p12.hddl
+Output: none
+
+Planning Configuration
+======================
+	printGeneralInformation : true
+	printAdditionalData     : true
+	random seed             : 42
+	time limit (in seconds) : none
+
+	external programs:
+		cryptominisat5.5 : ./cryptominisat5
+
+	Parsing Configuration
+	---------------------
+	Parser                : autodetect file-type
+	Expand Sort Hierarchy : true
+	ClosedWordAssumption  : true
+	CompileSHOPMethods    : true
+	Eliminate Equality    : true
+	Strip Hybridity       : true
+	Reduce General Tasks  : true
+	
+	Preprocessing Configuration
+	---------------------------
+	Compile negative preconditions    : true
+	Compile unit methods              : false
+	Compile order in methods          : false
+	Compile initial plan              : true
+	Ensure Methods Have Last Task     : false
+	Split independent parameters      : true
+	Remove unnecessary predicates     : true
+	Expand choiceless abstract tasks  : false
+	Domain Cleanup                    : true
+	Convert to SAS+                   : false
+	Grounded Reachability Analysis    : Planning Graph (mutex-free)
+	Grounded Task Decomposition Graph : Two Way TDG
+	Iterate reachability analysis     : true
+	Ground domain                     : true
+	Iterate reachability analysis     : true
+	Stop directly after grounding     : false
+	
+	SAT-Planning Configuration
+	--------------------------
+	solver           : cryptominisat5.5
+	full planner run : true
+	optimise         : true
+	reduction method : only normalise 
+	check result     : true
+	
+	Post-processing Configuration
+	-----------------------------
+	search result with Decomposition Tree
+	statistics
+	timings
+	search status
+	search result
+#0 "00 global:01:problem"="p12.hddl";"00 global:00:domain"="domain.hddl"
+Parsing domain ... using HDDL parser ... done
+Preparing internal domain representation ... done.
+Initial domain
+	number of abstract tasks = 6
+	number of tasks = 20
+	number of decomposition methods = 10
+	number of predicates = 8
+	number of sorts = 5
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 8
+	number of epsilon methods = 0
+	number of primitive tasks = 14
+	number of constants = 106
+Compiling negative preconditions ... done.
+	number of abstract tasks = 6
+	number of tasks = 20
+	number of decomposition methods = 10
+	number of predicates = 16
+	number of sorts = 5
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 8
+	number of epsilon methods = 0
+	number of primitive tasks = 14
+	number of constants = 106
+Compiling split parameters ... done.
+	number of abstract tasks = 7
+	number of tasks = 21
+	number of decomposition methods = 11
+	number of predicates = 16
+	number of sorts = 5
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 8
+	number of epsilon methods = 0
+	number of primitive tasks = 14
+	number of constants = 106
+Lifted reachability analysis and domain cleanup ... done.
+	number of abstract tasks = 7
+	number of tasks = 21
+	number of decomposition methods = 11
+	number of predicates = 11
+	number of sorts = 5
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 8
+	number of epsilon methods = 0
+	number of primitive tasks = 14
+	number of constants = 106
+Grounded planning graph ... done in 2873ms.
+	Number of Grounded Actions 88080
+	Number of Grounded Literals 1408
+	number of abstract tasks = 7
+	number of tasks = 21
+	number of decomposition methods = 11
+	number of predicates = 11
+	number of sorts = 5
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 8
+	number of epsilon methods = 0
+	number of primitive tasks = 14
+	number of constants = 106
+Two Way TDG ... done.
+	number of abstract tasks = 7
+	number of tasks = 21
+	number of decomposition methods = 11
+	number of predicates = 11
+	number of sorts = 5
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 8
+	number of epsilon methods = 0
+	number of primitive tasks = 14
+	number of constants = 106
+Grounding ... done.
+	number of abstract tasks = 2770
+	number of tasks = 69101
+	number of decomposition methods = 38906
+	number of predicates = 1408
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 33084
+	number of epsilon methods = 0
+	number of primitive tasks = 66331
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 2770
+	number of tasks = 69101
+	number of decomposition methods = 38906
+	number of predicates = 1178
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 33084
+	number of epsilon methods = 0
+	number of primitive tasks = 66331
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 2321ms.
+	Number of Grounded Actions 52259
+	Number of Grounded Literals 1032
+	number of abstract tasks = 2770
+	number of tasks = 55029
+	number of decomposition methods = 31870
+	number of predicates = 1178
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 26048
+	number of epsilon methods = 0
+	number of primitive tasks = 52259
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 2770
+	number of tasks = 55029
+	number of decomposition methods = 31870
+	number of predicates = 1178
+	number of sorts = 0
+	number of tasks in largest method = 4
+	number of primitive SHOP tasks = 26048
+	number of epsilon methods = 0
+	number of primitive tasks = 52259
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 2771
+	number of tasks = 55030
+	number of decomposition methods = 31871
+	number of predicates = 1178
+	number of sorts = 0
+	number of tasks in largest method = 68
+	number of primitive SHOP tasks = 26048
+	number of epsilon methods = 0
+	number of primitive tasks = 52259
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 2771
+	number of tasks = 55030
+	number of decomposition methods = 31871
+	number of predicates = 1032
+	number of sorts = 0
+	number of tasks in largest method = 68
+	number of primitive SHOP tasks = 26048
+	number of epsilon methods = 0
+	number of primitive tasks = 52259
+	number of constants = 0
+Omitting lifted reachability analysis ... 
+Grounded planning graph ... done in 1524ms.
+	Number of Grounded Actions 52259
+	Number of Grounded Literals 1032
+	number of abstract tasks = 2771
+	number of tasks = 55030
+	number of decomposition methods = 31871
+	number of predicates = 1032
+	number of sorts = 0
+	number of tasks in largest method = 68
+	number of primitive SHOP tasks = 26048
+	number of epsilon methods = 0
+	number of primitive tasks = 52259
+	number of constants = 0
+Two Way TDG ... done.
+	number of abstract tasks = 2771
+	number of tasks = 55030
+	number of decomposition methods = 31871
+	number of predicates = 1032
+	number of sorts = 0
+	number of tasks in largest method = 68
+	number of primitive SHOP tasks = 26048
+	number of epsilon methods = 0
+	number of primitive tasks = 52259
+	number of constants = 0
+Compiling initial plan ... done.
+	number of abstract tasks = 2771
+	number of tasks = 55030
+	number of decomposition methods = 31871
+	number of predicates = 1032
+	number of sorts = 0
+	number of tasks in largest method = 68
+	number of primitive SHOP tasks = 26048
+	number of epsilon methods = 0
+	number of primitive tasks = 52259
+	number of constants = 0
+Compiling methods with identical tasks ... done.
+	number of abstract tasks = 2771
+	number of tasks = 55030
+	number of decomposition methods = 31871
+	number of predicates = 1032
+	number of sorts = 0
+	number of tasks in largest method = 68
+	number of primitive SHOP tasks = 26048
+	number of epsilon methods = 0
+	number of primitive tasks = 52259
+	number of constants = 0
+Removing unnecessary predicates ... done.
+	number of abstract tasks = 2771
+	number of tasks = 55030
+	number of decomposition methods = 31871
+	number of predicates = 1032
+	number of sorts = 0
+	number of tasks in largest method = 68
+	number of primitive SHOP tasks = 26048
+	number of epsilon methods = 0
+	number of primitive tasks = 52259
+	number of constants = 0
+Tasks 52259 - 0
+Domain is acyclic: false
+Domain is mostly acyclic: false
+Domain is regular: false
+Domain is tail recursive: false
+Domain is totally ordered: true
+Domain has last task in all methods: true
+Time remaining for planner 9223372036854736665ms
+
+Running SAT search with K = 4
+Generating initial PDT ... Still waiting ... running for 101 will abort at 9223372036854728768
+done
+initial PDT has 456 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 328 leafs
+SHOP LEAFS 196
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Computing invariants [Rintanen]
+candidates build 1595988
+Size 1595988 at 0/52259
+Size 1595643 at 500/52259
+Size 1595498 at 1000/52259
+Size 1595498 at 1500/52259
+Size 1595498 at 2000/52259
+Size 1595498 at 2500/52259
+Size 1595498 at 3000/52259
+Size 1595498 at 3500/52259
+Size 1595498 at 4000/52259
+Size 1595498 at 4500/52259
+Size 1595498 at 5000/52259
+Size 1595498 at 5500/52259
+Size 1595498 at 6000/52259
+Size 1595498 at 6500/52259
+Size 1595498 at 7000/52259
+Size 1595498 at 7500/52259
+Size 1595498 at 8000/52259
+Size 1595498 at 8500/52259
+Size 1595498 at 9000/52259
+Size 1595498 at 9500/52259
+Size 1595498 at 10000/52259
+Size 1595498 at 10500/52259
+Size 1595498 at 11000/52259
+Size 1595498 at 11500/52259
+Size 1595498 at 12000/52259
+Size 1595498 at 12500/52259
+Size 1595498 at 13000/52259
+Size 1595498 at 13500/52259
+Size 1595498 at 14000/52259
+Size 1595498 at 14500/52259
+Size 1595498 at 15000/52259
+Size 1595498 at 15500/52259
+Size 1595498 at 16000/52259
+Size 1595498 at 16500/52259
+Size 1595498 at 17000/52259
+Size 1595498 at 17500/52259
+Size 1595498 at 18000/52259
+Size 1595498 at 18500/52259
+Size 1595498 at 19000/52259
+Size 1595498 at 19500/52259
+Size 1595498 at 20000/52259
+Size 1595498 at 20500/52259
+Size 1595498 at 21000/52259
+Size 1595498 at 21500/52259
+Size 1595498 at 22000/52259
+Size 1595498 at 22500/52259
+Size 1595498 at 23000/52259
+Size 1595498 at 23500/52259
+Size 1595498 at 24000/52259
+Size 1595498 at 24500/52259
+Size 1595498 at 25000/52259
+Size 1595498 at 25500/52259
+Size 1595498 at 26000/52259
+Size 1595498 at 26500/52259
+Size 1566109 at 27000/52259
+Size 1476520 at 27500/52259
+Size 1310734 at 28000/52259
+Size 1061448 at 28500/52259
+Size 815038 at 29000/52259
+Size 650463 at 29500/52259
+Size 538426 at 30000/52259
+Size 414268 at 30500/52259
+Size 321789 at 31000/52259
+Size 265604 at 31500/52259
+Size 237710 at 32000/52259
+Size 226261 at 32500/52259
+Size 222059 at 33000/52259
+Size 221837 at 33500/52259
+Size 221767 at 34000/52259
+Size 221718 at 34500/52259
+Size 221718 at 35000/52259
+Size 221712 at 35500/52259
+Size 221712 at 36000/52259
+Size 221712 at 36500/52259
+Size 221712 at 37000/52259
+Size 221710 at 37500/52259
+Size 221710 at 38000/52259
+Size 221710 at 38500/52259
+Size 221710 at 39000/52259
+Size 221710 at 39500/52259
+Size 221710 at 40000/52259
+Size 221710 at 40500/52259
+Size 221710 at 41000/52259
+Size 221710 at 41500/52259
+Size 221710 at 42000/52259
+Size 221710 at 42500/52259
+Size 221710 at 43000/52259
+Size 221710 at 43500/52259
+Size 221710 at 44000/52259
+Size 221710 at 44500/52259
+Size 221710 at 45000/52259
+Size 221710 at 45500/52259
+Size 221710 at 46000/52259
+Size 221710 at 46500/52259
+Size 221710 at 47000/52259
+Size 221710 at 47500/52259
+Size 221710 at 48000/52259
+Size 221710 at 48500/52259
+Size 221710 at 49000/52259
+Size 221710 at 49500/52259
+Size 221710 at 50000/52259
+Size 221710 at 50500/52259
+Size 221710 at 51000/52259
+Size 221710 at 51500/52259
+Size 221710 at 52000/52259
+Size 151927
+Size 151927 at 0/52259
+Size 151446 at 500/52259
+Size 81722 at 1000/52259
+Size 81722 at 1500/52259
+Size 81722 at 2000/52259
+Size 81722 at 2500/52259
+Size 81722 at 3000/52259
+Size 81722 at 3500/52259
+Size 81722 at 4000/52259
+Size 81722 at 4500/52259
+Size 81722 at 5000/52259
+Size 81722 at 5500/52259
+Size 81722 at 6000/52259
+Size 81722 at 6500/52259
+Size 81722 at 7000/52259
+Size 81722 at 7500/52259
+Size 81722 at 8000/52259
+Size 81722 at 8500/52259
+Size 81722 at 9000/52259
+Size 81722 at 9500/52259
+Size 81722 at 10000/52259
+Size 81722 at 10500/52259
+Size 81722 at 11000/52259
+Size 81722 at 11500/52259
+Size 81722 at 12000/52259
+Size 81722 at 12500/52259
+Size 81722 at 13000/52259
+Size 81722 at 13500/52259
+Size 81722 at 14000/52259
+Size 81722 at 14500/52259
+Size 81722 at 15000/52259
+Size 81722 at 15500/52259
+Size 81722 at 16000/52259
+Size 81722 at 16500/52259
+Size 81722 at 17000/52259
+Size 81722 at 17500/52259
+Size 81722 at 18000/52259
+Size 81722 at 18500/52259
+Size 81722 at 19000/52259
+Size 81722 at 19500/52259
+Size 81722 at 20000/52259
+Size 81722 at 20500/52259
+Size 81722 at 21000/52259
+Size 81722 at 21500/52259
+Size 81722 at 22000/52259
+Size 81722 at 22500/52259
+Size 81722 at 23000/52259
+Size 81722 at 23500/52259
+Size 81722 at 24000/52259
+Size 81722 at 24500/52259
+Size 81722 at 25000/52259
+Size 81722 at 25500/52259
+Size 81722 at 26000/52259
+Size 81722 at 26500/52259
+Size 81722 at 27000/52259
+Size 81722 at 27500/52259
+Size 81722 at 28000/52259
+Size 81722 at 28500/52259
+Size 81722 at 29000/52259
+Size 81722 at 29500/52259
+Size 81722 at 30000/52259
+Size 81722 at 30500/52259
+Size 81722 at 31000/52259
+Size 81722 at 31500/52259
+Size 81722 at 32000/52259
+Size 81722 at 32500/52259
+Size 81722 at 33000/52259
+Size 81722 at 33500/52259
+Size 81722 at 34000/52259
+Size 81722 at 34500/52259
+Size 81722 at 35000/52259
+Size 81722 at 35500/52259
+Size 81722 at 36000/52259
+Size 81722 at 36500/52259
+Size 81722 at 37000/52259
+Size 81722 at 37500/52259
+Size 81722 at 38000/52259
+Size 81722 at 38500/52259
+Size 81722 at 39000/52259
+Size 81722 at 39500/52259
+Size 81722 at 40000/52259
+Size 81722 at 40500/52259
+Size 81722 at 41000/52259
+Size 81722 at 41500/52259
+Size 81722 at 42000/52259
+Size 81722 at 42500/52259
+Size 81722 at 43000/52259
+Size 81722 at 43500/52259
+Size 81722 at 44000/52259
+Size 81722 at 44500/52259
+Size 81722 at 45000/52259
+Size 81722 at 45500/52259
+Size 81722 at 46000/52259
+Size 81722 at 46500/52259
+Size 81722 at 47000/52259
+Size 81722 at 47500/52259
+Size 81722 at 48000/52259
+Size 81722 at 48500/52259
+Size 81722 at 49000/52259
+Size 81722 at 49500/52259
+Size 81722 at 50000/52259
+Size 81722 at 50500/52259
+Size 81722 at 51000/52259
+Size 81722 at 51500/52259
+Size 81722 at 52000/52259
+Size 81722
+Size 81716 at 0/52259
+Size 52139 at 500/52259
+Size 52139 at 1000/52259
+Size 52139 at 1500/52259
+Size 52139 at 2000/52259
+Size 52139 at 2500/52259
+Size 52139 at 3000/52259
+Size 52139 at 3500/52259
+Size 52139 at 4000/52259
+Size 52139 at 4500/52259
+Size 52139 at 5000/52259
+Size 52139 at 5500/52259
+Size 52139 at 6000/52259
+Size 52139 at 6500/52259
+Size 52139 at 7000/52259
+Size 52139 at 7500/52259
+Size 52139 at 8000/52259
+Size 52139 at 8500/52259
+Size 52139 at 9000/52259
+Size 52139 at 9500/52259
+Size 52139 at 10000/52259
+Size 52139 at 10500/52259
+Size 52139 at 11000/52259
+Size 52139 at 11500/52259
+Size 52139 at 12000/52259
+Size 52139 at 12500/52259
+Size 52139 at 13000/52259
+Size 52139 at 13500/52259
+Size 52139 at 14000/52259
+Size 52139 at 14500/52259
+Size 52139 at 15000/52259
+Size 52139 at 15500/52259
+Size 52139 at 16000/52259
+Size 52139 at 16500/52259
+Size 52139 at 17000/52259
+Size 52139 at 17500/52259
+Size 52139 at 18000/52259
+Size 52139 at 18500/52259
+Size 52139 at 19000/52259
+Size 52139 at 19500/52259
+Size 52139 at 20000/52259
+Size 52139 at 20500/52259
+Size 52139 at 21000/52259
+Size 52139 at 21500/52259
+Size 52139 at 22000/52259
+Size 52139 at 22500/52259
+Size 52139 at 23000/52259
+Size 52139 at 23500/52259
+Size 52139 at 24000/52259
+Size 52139 at 24500/52259
+Size 52139 at 25000/52259
+Size 52139 at 25500/52259
+Size 52139 at 26000/52259
+Size 52139 at 26500/52259
+Size 52139 at 27000/52259
+Size 52139 at 27500/52259
+Size 52139 at 28000/52259
+Size 52139 at 28500/52259
+Size 52139 at 29000/52259
+Size 52139 at 29500/52259
+Size 52139 at 30000/52259
+Size 52139 at 30500/52259
+Size 52139 at 31000/52259
+Size 52139 at 31500/52259
+Size 52139 at 32000/52259
+Size 52139 at 32500/52259
+Size 52139 at 33000/52259
+Size 52139 at 33500/52259
+Size 52139 at 34000/52259
+Size 52139 at 34500/52259
+Size 52139 at 35000/52259
+Size 52139 at 35500/52259
+Size 52139 at 36000/52259
+Size 52139 at 36500/52259
+Size 52139 at 37000/52259
+Size 52139 at 37500/52259
+Size 52139 at 38000/52259
+Size 52139 at 38500/52259
+Size 52139 at 39000/52259
+Size 52139 at 39500/52259
+Size 52139 at 40000/52259
+Size 52139 at 40500/52259
+Size 52139 at 41000/52259
+Size 52139 at 41500/52259
+Size 52139 at 42000/52259
+Size 52139 at 42500/52259
+Size 52139 at 43000/52259
+Size 52139 at 43500/52259
+Size 52139 at 44000/52259
+Size 52139 at 44500/52259
+Size 52139 at 45000/52259
+Size 52139 at 45500/52259
+Size 52139 at 46000/52259
+Size 52139 at 46500/52259
+Size 52139 at 47000/52259
+Size 52139 at 47500/52259
+Size 52139 at 48000/52259
+Size 52139 at 48500/52259
+Size 52139 at 49000/52259
+Size 52139 at 49500/52259
+Size 52139 at 50000/52259
+Size 52139 at 50500/52259
+Size 52139 at 51000/52259
+Size 52139 at 51500/52259
+Size 52139 at 52000/52259
+Size 52071
+Size 52071 at 0/52259
+Size 52071 at 500/52259
+Size 52003 at 1000/52259
+Size 52003 at 1500/52259
+Size 52003 at 2000/52259
+Size 52003 at 2500/52259
+Size 52003 at 3000/52259
+Size 52003 at 3500/52259
+Size 52003 at 4000/52259
+Size 52003 at 4500/52259
+Size 52003 at 5000/52259
+Size 52003 at 5500/52259
+Size 52003 at 6000/52259
+Size 52003 at 6500/52259
+Size 52003 at 7000/52259
+Size 52003 at 7500/52259
+Size 52003 at 8000/52259
+Size 52003 at 8500/52259
+Size 52003 at 9000/52259
+Size 52003 at 9500/52259
+Size 52003 at 10000/52259
+Size 52003 at 10500/52259
+Size 52003 at 11000/52259
+Size 52003 at 11500/52259
+Size 52003 at 12000/52259
+Size 52003 at 12500/52259
+Size 52003 at 13000/52259
+Size 52003 at 13500/52259
+Size 52003 at 14000/52259
+Size 52003 at 14500/52259
+Size 52003 at 15000/52259
+Size 52003 at 15500/52259
+Size 52003 at 16000/52259
+Size 52003 at 16500/52259
+Size 52003 at 17000/52259
+Size 52003 at 17500/52259
+Size 52003 at 18000/52259
+Size 52003 at 18500/52259
+Size 52003 at 19000/52259
+Size 52003 at 19500/52259
+Size 52003 at 20000/52259
+Size 52003 at 20500/52259
+Size 52003 at 21000/52259
+Size 52003 at 21500/52259
+Size 52003 at 22000/52259
+Size 52003 at 22500/52259
+Size 52003 at 23000/52259
+Size 52003 at 23500/52259
+Size 52003 at 24000/52259
+Size 52003 at 24500/52259
+Size 52003 at 25000/52259
+Size 52003 at 25500/52259
+Size 52003 at 26000/52259
+Size 52003 at 26500/52259
+Size 52003 at 27000/52259
+Size 52003 at 27500/52259
+Size 52003 at 28000/52259
+Size 52003 at 28500/52259
+Size 52003 at 29000/52259
+Size 52003 at 29500/52259
+Size 52003 at 30000/52259
+Size 52003 at 30500/52259
+Size 52003 at 31000/52259
+Size 52003 at 31500/52259
+Size 52003 at 32000/52259
+Size 52003 at 32500/52259
+Size 52003 at 33000/52259
+Size 52003 at 33500/52259
+Size 52003 at 34000/52259
+Size 52003 at 34500/52259
+Size 52003 at 35000/52259
+Size 52003 at 35500/52259
+Size 52003 at 36000/52259
+Size 52003 at 36500/52259
+Size 52003 at 37000/52259
+Size 52003 at 37500/52259
+Size 52003 at 38000/52259
+Size 52003 at 38500/52259
+Size 52003 at 39000/52259
+Size 52003 at 39500/52259
+Size 52003 at 40000/52259
+Size 52003 at 40500/52259
+Size 52003 at 41000/52259
+Size 52003 at 41500/52259
+Size 52003 at 42000/52259
+Size 52003 at 42500/52259
+Size 52003 at 43000/52259
+Size 52003 at 43500/52259
+Size 52003 at 44000/52259
+Size 52003 at 44500/52259
+Size 52003 at 45000/52259
+Size 52003 at 45500/52259
+Size 52003 at 46000/52259
+Size 52003 at 46500/52259
+Size 52003 at 47000/52259
+Size 52003 at 47500/52259
+Size 52003 at 48000/52259
+Size 52003 at 48500/52259
+Size 52003 at 49000/52259
+Size 52003 at 49500/52259
+Size 52003 at 50000/52259
+Size 52003 at 50500/52259
+Size 52003 at 51000/52259
+Size 52003 at 51500/52259
+Size 52003 at 52000/52259
+Size 52003
+Size 52003 at 0/52259
+Size 52003 at 500/52259
+Size 52003 at 1000/52259
+Size 52003 at 1500/52259
+Size 52003 at 2000/52259
+Size 52003 at 2500/52259
+Size 52003 at 3000/52259
+Size 52003 at 3500/52259
+Size 52003 at 4000/52259
+Size 52003 at 4500/52259
+Size 52003 at 5000/52259
+Size 52003 at 5500/52259
+Size 52003 at 6000/52259
+Size 52003 at 6500/52259
+Size 52003 at 7000/52259
+Size 52003 at 7500/52259
+Size 52003 at 8000/52259
+Size 52003 at 8500/52259
+Size 52003 at 9000/52259
+Size 52003 at 9500/52259
+Size 52003 at 10000/52259
+Size 52003 at 10500/52259
+Size 52003 at 11000/52259
+Size 52003 at 11500/52259
+Size 52003 at 12000/52259
+Size 52003 at 12500/52259
+Size 52003 at 13000/52259
+Size 52003 at 13500/52259
+Size 52003 at 14000/52259
+Size 52003 at 14500/52259
+Size 52003 at 15000/52259
+Size 52003 at 15500/52259
+Size 52003 at 16000/52259
+Size 52003 at 16500/52259
+Size 52003 at 17000/52259
+Size 52003 at 17500/52259
+Size 52003 at 18000/52259
+Size 52003 at 18500/52259
+Size 52003 at 19000/52259
+Size 52003 at 19500/52259
+Size 52003 at 20000/52259
+Size 52003 at 20500/52259
+Size 52003 at 21000/52259
+Size 52003 at 21500/52259
+Size 52003 at 22000/52259
+Size 52003 at 22500/52259
+Size 52003 at 23000/52259
+Size 52003 at 23500/52259
+Size 52003 at 24000/52259
+Size 52003 at 24500/52259
+Size 52003 at 25000/52259
+Size 52003 at 25500/52259
+Size 52003 at 26000/52259
+Size 52003 at 26500/52259
+Size 52003 at 27000/52259
+Size 52003 at 27500/52259
+Size 52003 at 28000/52259
+Size 52003 at 28500/52259
+Size 52003 at 29000/52259
+Size 52003 at 29500/52259
+Size 52003 at 30000/52259
+Size 52003 at 30500/52259
+Size 52003 at 31000/52259
+Size 52003 at 31500/52259
+Size 52003 at 32000/52259
+Size 52003 at 32500/52259
+Size 52003 at 33000/52259
+Size 52003 at 33500/52259
+Size 52003 at 34000/52259
+Size 52003 at 34500/52259
+Size 52003 at 35000/52259
+Size 52003 at 35500/52259
+Size 52003 at 36000/52259
+Size 52003 at 36500/52259
+Size 52003 at 37000/52259
+Size 52003 at 37500/52259
+Size 52003 at 38000/52259
+Size 52003 at 38500/52259
+Size 52003 at 39000/52259
+Size 52003 at 39500/52259
+Size 52003 at 40000/52259
+Size 52003 at 40500/52259
+Size 52003 at 41000/52259
+Size 52003 at 41500/52259
+Size 52003 at 42000/52259
+Size 52003 at 42500/52259
+Size 52003 at 43000/52259
+Size 52003 at 43500/52259
+Size 52003 at 44000/52259
+Size 52003 at 44500/52259
+Still waiting ... running for 63657 will abort at 9223372036854728768
+Size 52003 at 45000/52259
+Size 52003 at 45500/52259
+Size 52003 at 46000/52259
+Size 52003 at 46500/52259
+Size 52003 at 47000/52259
+Size 52003 at 47500/52259
+Size 52003 at 48000/52259
+Size 52003 at 48500/52259
+Size 52003 at 49000/52259
+Size 52003 at 49500/52259
+Size 52003 at 50000/52259
+Size 52003 at 50500/52259
+Size 52003 at 51000/52259
+Size 52003 at 51500/52259
+Size 52003 at 52000/52259
+Size 52003
+Invariant time: 52.648
+Number of invariants: 52003
+Invariant Clauses 17108987
+NUMBER OF CLAUSES 18420185
+NUMBER OF STATE CLAUSES 17964681
+NUMBER OF DECOMPOSITION CLAUSES 455504
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 97.53% 2.47% 0.0% 
+NUMBER OF PATHS 328
+Starting cryptominisat5.5
+Setting starttime of solver to 1604526567984
+Command exited with non-zero status 20
+4.07 0.19
+
+Time command gave the following runtime for the solver: 4260
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 5
+Generating initial PDT ... Still waiting ... running for 100 will abort at 9223372036854636078
+done
+initial PDT has 648 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 456 leafs
+SHOP LEAFS 260
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 23765371
+NUMBER OF CLAUSES 26352172
+NUMBER OF STATE CLAUSES 24890865
+NUMBER OF DECOMPOSITION CLAUSES 1461307
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 94.45% 5.55% 0.0% 
+NUMBER OF PATHS 456
+Starting cryptominisat5.5
+Setting starttime of solver to 1604526618478
+Command exited with non-zero status 20
+8.24 0.38
+
+Time command gave the following runtime for the solver: 8620
+Logging statistical information about the run ... done
+Reading solver output ... done
+Preparing solver output ... STARTOUTPUT
+s_UNSATISFIABLE
+
+ENDOUTPUT
+done
+SAT-Solver says: UNSATISFIABLE
+
+Running SAT search with K = 6
+Generating initial PDT ... Still waiting ... running for 100 will abort at 9223372036854579302
+done
+initial PDT has 776 leafs
+Checking whether the PDT can grow any more ... yes ... done
+Normalising and optimising PDT ... done
+PDT has 648 leafs
+SHOP LEAFS 388
+Assignment implications
+Generating clauses representing decomposition ... done
+Number of actions Formula: 0ms for 0 clauses
+Invariant Clauses 33749947
+NUMBER OF CLAUSES 39846060
+NUMBER OF STATE CLAUSES 35281058
+NUMBER OF DECOMPOSITION CLAUSES 4565002
+NUMBER OF ORDER CLAUSES 0
+PERCENTAGES 88.54% 11.46% 0.0% 
+
+RUNWATCH_RESULT MEMOUT RETVAL 130 TIME_SECS 273.548 MEMPEAK_KBS 8065746.944

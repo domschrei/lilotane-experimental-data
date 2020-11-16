@@ -1,0 +1,50 @@
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 4077507
+max locked memory       (kbytes, -l) 65536
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 1024
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) unlimited
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 4077507
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+15728640
+----------------------Tasks-----------------------
+0 __top
+1 invisible_goal
+---------------------Planning---------------------
+Time: 0.01667499542236328s
+-----------------------Plan-----------------------
+==>
+7 load_highspeed_saw b0 highspeed_saw0
+10 cut_board_medium b0 p1 highspeed_saw0 pine rough s3 s2 s1 medium natural untreated
+9 unload_highspeed_saw b0 highspeed_saw0
+11 do_plane p1 rough natural untreated smooth untreated natural
+12 do_glaze p1 glazer0 red untreated untreated glazed natural
+15 do_grind p0 smooth red varnished untreated verysmooth natural
+16 do_glaze p0 glazer0 red untreated untreated glazed natural
+19 do_grind p2 verysmooth natural varnished untreated verysmooth natural
+20 do_glaze p2 glazer0 red untreated untreated glazed natural
+root 0
+0 __top  -> __top_method 1 2 3
+1 process p1 red rough smooth -> method14 4 5 6
+4 cut_and_saw b0 p1 pine rough -> method6 7 8 9
+8 cut_board b0 p1 highspeed_saw0 pine rough -> method4b 10
+5 grindnplane p1 rough natural untreated smooth natural untreated -> method7 11
+6 do_colour p1 red glazer0 untreated -> method2 12
+2 process p0 red smooth verysmooth -> method12 13 14
+13 grindnplane p0 smooth red varnished verysmooth natural untreated -> method3 15
+14 do_colour p0 red glazer0 untreated -> method2 16
+3 process p2 red verysmooth verysmooth -> method12 17 18
+17 grindnplane p2 verysmooth natural varnished verysmooth natural untreated -> method3 19
+18 do_colour p2 red glazer0 untreated -> method2 20
+<==
+Total time: 0.055138587951660156s
+
+RUNWATCH_RESULT EXIT RETVAL 0 TIME_SECS 1.000 MEMPEAK_KBS 0
