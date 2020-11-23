@@ -10,3 +10,5 @@ The data file is structured as follows:
 The instance listing `instances.txt` is structured as follows:
 
     <instance-id> <problem-file> <domain-file>
+
+Note that the instances themselves can be found [in this repository](https://github.com/panda-planner-dev/ipc2020-domains/tree/master/total-order).

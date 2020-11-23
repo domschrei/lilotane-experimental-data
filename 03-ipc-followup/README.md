@@ -9,6 +9,8 @@ The instance listing `instances.txt` is structured as follows:
 
     <instance-id> <problem-file> <domain-file>
 
+Note that the instances themselves can be found [in this repository](https://github.com/panda-planner-dev/ipc2020-domains/tree/master/total-order).
+
 For the full output of each planner on each instance, see the respective directories `<participant>/<instance-id>/`.
 
 The planners have been configured as follows:

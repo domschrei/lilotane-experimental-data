@@ -16,7 +16,3 @@ Inside each directory, you find the following information:
 * `lits_per_clause` contains a sorted sequence of average clause lengths, one line and one number for each solved instance  
 _Note: For Tree-REX, the average clause lengths have been evaluated separately and retroactively as the necessary planner output was not part of the original evaluation. Hence, there might be a slight variation compared to the actual data of the depicted run._
 * `runtimes_stages` contains a partition of the total run times (sum over all solved instances) into major stages of the planning process
-
-The file `instances.txt` contains a list of all used benchmarks in the following form: 
-
-    <instance-id> <domain-file> <problem-file>
